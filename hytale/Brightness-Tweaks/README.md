@@ -13,7 +13,7 @@ Brightness Tweaks adds an adjustable, torch-like light around the player so you 
 
 ## Install (Server / Local)
 1. Build the jar: `.\gradlew.bat build`
-2. Copy `build/libs/Brightness-Tweaks.jar` to your server’s `mods/` folder (or your local `.../Hytale/UserData/Mods` folder).
+2. Copy `build/libs/Brightness-Tweaks-<version>.jar` to your server’s `mods/` folder (or your local `.../Hytale/UserData/Mods` folder).
 3. Start/restart the server.
 
 ## Support
@@ -22,4 +22,3 @@ Brightness Tweaks adds an adjustable, torch-like light around the player so you 
 
 ## Notes
 - This is an early mod. Hytale’s API is still evolving; updates may be frequent.
-
