@@ -1,19 +1,25 @@
 # Brightness Tweaks
 
-Brightness Tweaks adds an adjustable, torch-like light around the player so you can see better at night or underground.
+Brightness Tweaks boosts the in-game torch light, without making torches obsolete.
 
 ## Features
-- Player-centered dynamic light (torch effect)
+- Torch-only light boost (utility belt)
 - Adjustable strength with a command
-- Per-player (doesn’t change world lighting for everyone)
+- Per-player (doesn't change world lighting for everyone)
 
 ## Commands
-- `/brightness` disables the effect (resets to normal)
-- `/brightness <value>` sets brightness from `0.1` to `1.0`
+- `/brightness` disables the boost (reverts to normal torch behavior)
+- `/brightness <value>` sets the boost from `0.05` to `1.0`
+- `/brightness color` clears any custom tint override (uses the torch's normal tint)
+- `/brightness color <#RRGGBB>` sets a custom tint for the boosted light (example: `/brightness color #FFAA00`)
+- `/brightness warmth` clears any warmth override (uses the torch's normal tint)
+- `/brightness warmth <0.0-1.0>` sets how warm the boosted light is (`0.0` = torch tint, `1.0` = warmer torch tint)
+
+Note: the boost only applies while a torch item exists in your utility belt. If you remove all torches, the light is reverted.
 
 ## Install (Server / Local)
 1. Build the jar: `.\gradlew.bat build`
-2. Copy `build/libs/Brightness-Tweaks-<version>.jar` to your server’s `mods/` folder (or your local `.../Hytale/UserData/Mods` folder).
+2. Copy `build/libs/Brightness-Tweaks-<version>.jar` to your server's `mods/` folder (or your local `.../Hytale/UserData/Mods` folder).
 3. Start/restart the server.
 
 ## Support
@@ -21,4 +27,4 @@ Brightness Tweaks adds an adjustable, torch-like light around the player so you 
 - Telegram: `TBD`
 
 ## Notes
-- This is an early mod. Hytale’s API is still evolving; updates may be frequent.
+- This is an early mod. Hytale's API is still evolving; updates may be frequent.
