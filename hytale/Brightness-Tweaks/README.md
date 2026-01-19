@@ -6,16 +6,21 @@ Brightness Tweaks boosts the in-game torch light, without making torches obsolet
 - Torch-only light boost (utility belt)
 - Adjustable strength with a command
 - Per-player (doesn't change world lighting for everyone)
+- Persistent per-player settings (saved to JSON next to the mod jar)
 
 ## Commands
 - `/brightness` disables the boost (reverts to normal torch behavior)
-- `/brightness <value>` sets the boost from `0.05` to `1.0`
+- `/brightness <value>` sets the boost from `0.01` to `1.0`
 - `/brightness color` clears any custom tint override (uses the torch's normal tint)
 - `/brightness color <#RRGGBB>` sets a custom tint for the boosted light (example: `/brightness color #FFAA00`)
 - `/brightness warmth` clears any warmth override (uses the torch's normal tint)
 - `/brightness warmth <0.0-1.0>` sets how warm the boosted light is (`0.0` = torch tint, `1.0` = warmer torch tint)
+- `/br` opens an in-game settings UI for brightness/tint/warmth
 
 Note: the boost only applies while a torch item exists in your utility belt. If you remove all torches, the light is reverted.
+
+## Config
+- Settings are saved to `plugin-config/<Group>_<Name>/settings.json` next to the plugin jar (example: `.../Hytale/UserData/Mods/plugin-config/FLOCK4H_BrightnessTweaks/settings.json`).
 
 ## Install (Server / Local)
 1. Build the jar: `.\gradlew.bat build`

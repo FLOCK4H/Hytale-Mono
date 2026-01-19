@@ -1,0 +1,159 @@
+$C = "../Common.ui";
+
+$C.@Container {
+  Anchor: (Left: 50, Top: 170, Width: 420, Bottom: 120);
+
+  #Title {
+    Group {
+      LayoutMode: Left;
+      $C.@Title {
+        @Text = "Brightness Tweaks";
+      }
+    }
+  }
+
+  #Content {
+    LayoutMode: Top;
+
+    Label {
+      Text: "Boost applies only while a torch is in your utility belt.";
+      Style: (...$C.@DefaultLabelStyle, Wrap: true);
+      Padding: (Bottom: 6);
+    }
+
+    Label #Status {
+      Text: "Boost: Off • Tint: Torch";
+      Style: (...$C.@DefaultLabelStyle, RenderBold: true, Wrap: true);
+      Padding: (Bottom: 10);
+    }
+
+    Group {
+      LayoutMode: Top;
+      Background: (TexturePath: "../Common/ContainerPanelPatch.png", Border: 4);
+      Padding: (Horizontal: 12, Vertical: 12);
+
+      Label {
+        Text: "Brightness";
+        Style: (...$C.@DefaultLabelStyle, RenderUppercase: true, RenderBold: true, FontSize: 14);
+        Padding: (Bottom: 6);
+      }
+
+      Group {
+        LayoutMode: Left;
+        Padding: (Bottom: 10);
+
+        Slider #BrightnessSlider {
+          Anchor: (Width: 260, Height: 5);
+          Style: $C.@DefaultSliderStyle;
+          Min: 0;
+          Max: 100;
+          Step: 1;
+          Value: 0;
+        }
+
+        Label #BrightnessValue {
+          Anchor: (Left: 10, Width: 70);
+          Text: "Off";
+          Style: (HorizontalAlignment: Center, VerticalAlignment: Center);
+        }
+      }
+
+      Label {
+        Text: "Tip: set to 0 to disable the boost.";
+        Style: (...$C.@DefaultLabelStyle, Wrap: true);
+        Padding: (Bottom: 8);
+      }
+
+      $C.@PanelSeparatorFancy {}
+
+      Label {
+        Text: "Warmth (clears custom tint)";
+        Style: (...$C.@DefaultLabelStyle, RenderUppercase: true, RenderBold: true, FontSize: 14);
+        Padding: (Top: 10, Bottom: 6);
+      }
+
+      Group {
+        LayoutMode: Left;
+        Padding: (Bottom: 8);
+
+        Slider #WarmthSlider {
+          Anchor: (Width: 260, Height: 5);
+          Style: $C.@DefaultSliderStyle;
+          Min: 0;
+          Max: 100;
+          Step: 1;
+          Value: 0;
+        }
+
+        Label #WarmthValue {
+          Anchor: (Left: 10, Width: 70);
+          Text: "Torch";
+          Style: (HorizontalAlignment: Center, VerticalAlignment: Center);
+        }
+      }
+
+      $C.@TextButton #ClearWarmth {
+        @Anchor = (Width: 200);
+        Text: "Clear Warmth";
+      }
+
+      $C.@PanelSeparatorFancy {}
+
+      Label {
+        Text: "Tint (hex, clears warmth)";
+        Style: (...$C.@DefaultLabelStyle, RenderUppercase: true, RenderBold: true, FontSize: 14);
+        Padding: (Top: 10, Bottom: 6);
+      }
+
+      Group {
+        LayoutMode: Top;
+        Padding: (Bottom: 10);
+
+        Group {
+          LayoutMode: Left;
+
+          $C.@TextField #TintInput {
+            @Anchor = (Width: 320);
+            PlaceholderText: "#RRGGBB";
+          }
+        }
+
+        Group {
+          LayoutMode: Left;
+          Padding: (Top: 8);
+
+          TextButton #ApplyTint {
+            Anchor: (Width: 155, Height: 32);
+            Style: $C.@SmallSecondaryTextButtonStyle;
+            Padding: (Horizontal: 12);
+            Text: "Apply";
+          }
+
+          TextButton #ClearTint {
+            Anchor: (Left: 10, Width: 155, Height: 32);
+            Style: $C.@SmallSecondaryTextButtonStyle;
+            Padding: (Horizontal: 12);
+            Text: "Clear";
+          }
+        }
+      }
+
+      Label #Feedback {
+        Text: " ";
+        Style: (...$C.@DefaultLabelStyle, Wrap: true);
+      }
+
+      Group {
+        LayoutMode: Left;
+        Padding: (Top: 12);
+
+        $C.@TextButton #ResetAll {
+          @Anchor = (Width: 220);
+          Text: "Disable & Reset";
+        }
+      }
+    }
+  }
+}
+
+$C.@BackButton {}

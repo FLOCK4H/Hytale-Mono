@@ -18,14 +18,16 @@ import java.util.UUID;
  */
 public class BrightnessCommand extends CommandBase {
     private final BrightnessService brightnessService;
+    private final BrightnessTweaksConfigStore configStore;
 
     /**
      * Creates the brightness command and registers the value variant.
      */
-    public BrightnessCommand(@Nonnull BrightnessService brightnessService) {
+    public BrightnessCommand(@Nonnull BrightnessService brightnessService, @Nonnull BrightnessTweaksConfigStore configStore) {
         super("brightness", "Adjusts a torch-like light around your player.");
         this.setPermissionGroup(GameMode.Adventure);
         this.brightnessService = brightnessService;
+        this.configStore = configStore;
         this.addUsageVariant(new BrightnessValueCommand());
         this.addSubCommand(new BrightnessColorCommand());
         this.addSubCommand(new BrightnessWarmthCommand());
@@ -56,6 +58,7 @@ public class BrightnessCommand extends CommandBase {
 
         UUID playerUuid = player.getUuid();
         brightnessService.setDesiredBrightness(playerUuid, value);
+        configStore.setBrightness(playerUuid, value);
         brightnessService.syncPlayer(world, playerUuid, true);
     }
 
@@ -80,6 +83,7 @@ public class BrightnessCommand extends CommandBase {
         UUID playerUuid = player.getUuid();
         int rgbMasked = rgb & 0xFFFFFF;
         brightnessService.setDesiredTintRgb(playerUuid, rgbMasked);
+        configStore.setTintRgb(playerUuid, rgbMasked);
         brightnessService.syncPlayer(world, playerUuid, false);
 
         int red = (rgbMasked >> 16) & 0xFF;
@@ -108,6 +112,7 @@ public class BrightnessCommand extends CommandBase {
 
         UUID playerUuid = player.getUuid();
         brightnessService.setDesiredTintRgb(playerUuid, null);
+        configStore.setTintRgb(playerUuid, null);
         brightnessService.syncPlayer(world, playerUuid, false);
         ctx.sendMessage(Message.raw("Brightness tint cleared (reverts to the torch's default tint)."));
     }
@@ -133,6 +138,7 @@ public class BrightnessCommand extends CommandBase {
         UUID playerUuid = player.getUuid();
         float clamped = Math.max(0.0f, Math.min(1.0f, warmth01));
         brightnessService.setDesiredWarmth(playerUuid, clamped);
+        configStore.setWarmth01(playerUuid, clamped);
         brightnessService.syncPlayer(world, playerUuid, false);
         ctx.sendMessage(Message.raw("Brightness warmth set to " + clamped + " (0 = torch tint, 1 = warmer torch tint)."));
     }
@@ -157,6 +163,7 @@ public class BrightnessCommand extends CommandBase {
 
         UUID playerUuid = player.getUuid();
         brightnessService.setDesiredWarmth(playerUuid, null);
+        configStore.setWarmth01(playerUuid, null);
         brightnessService.syncPlayer(world, playerUuid, false);
         ctx.sendMessage(Message.raw("Brightness warmth cleared (reverts to the torch's default tint)."));
     }

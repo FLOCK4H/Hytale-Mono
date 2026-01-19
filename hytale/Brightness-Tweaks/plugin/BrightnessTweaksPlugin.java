@@ -4,6 +4,7 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.event.events.entity.LivingEntityInventoryChangeEvent;
+import com.hypixel.hytale.server.core.event.events.player.PlayerConnectEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
@@ -23,7 +24,9 @@ public class BrightnessTweaksPlugin extends JavaPlugin {
     private static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
 
     private final BrightnessService brightnessService = new BrightnessService();
+    private final BrightnessTweaksConfigStore configStore = BrightnessTweaksConfigStore.forPlugin(this);
     private EventRegistration<?, ?> inventoryListener;
+    private EventRegistration<?, ?> connectListener;
     private EventRegistration<?, ?> disconnectListener;
 
     public BrightnessTweaksPlugin(@Nonnull JavaPluginInit init) {
@@ -34,7 +37,14 @@ public class BrightnessTweaksPlugin extends JavaPlugin {
     @Override
     protected void setup() {
         LOGGER.atInfo().log("Setting up plugin " + this.getName());
-        this.getCommandRegistry().registerCommand(new BrightnessCommand(brightnessService));
+        configStore.loadBlocking();
+        this.getCommandRegistry().registerCommand(new BrightnessCommand(brightnessService, configStore));
+        this.getCommandRegistry().registerCommand(new BrightnessUiCommand(brightnessService, configStore));
+
+        this.connectListener = this.getEventRegistry().register(PlayerConnectEvent.class, event -> {
+            configStore.applyToService(event.getPlayerRef().getUuid(), brightnessService);
+            brightnessService.syncPlayer(event.getWorld(), event.getPlayerRef().getUuid(), false);
+        });
 
         this.inventoryListener = this.getEventRegistry().registerGlobal(LivingEntityInventoryChangeEvent.class, event -> {
             if (!(event.getEntity() instanceof Player playerEntity)) {
@@ -73,6 +83,10 @@ public class BrightnessTweaksPlugin extends JavaPlugin {
         if (inventoryListener != null) {
             inventoryListener.unregister();
             inventoryListener = null;
+        }
+        if (connectListener != null) {
+            connectListener.unregister();
+            connectListener = null;
         }
         if (disconnectListener != null) {
             disconnectListener.unregister();
