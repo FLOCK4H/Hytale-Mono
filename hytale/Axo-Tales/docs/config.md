@@ -1,6 +1,6 @@
 # Configuration
 
-Axo Tales creates `server-config.json` in the mod’s data folder after first run.
+Axo Tales creates `server-config.json` in the mod's data folder after first run.
 
 ## Common keys
 
@@ -9,6 +9,10 @@ Axo Tales creates `server-config.json` in the mod’s data folder after first ru
 - `spellbooks.inputDebounceSeconds`: animation/input spam guard
 - `spellbooks.castDebounceSeconds`: cast spam guard
 - `spellbooks.secondaryUseDelaySeconds`: delays RMB/Use effects to line up with the cast animation
+
+### Worldgen (Arcane Crystals)
+
+- `worldgen.arcaneCrystalChancePerNewChunk`
 
 ### Worldgen (Arcane Matter)
 
@@ -50,4 +54,3 @@ Axo Tales creates `server-config.json` in the mod’s data folder after first ru
 - `ancientSword.projectileId`
 - `ancientSword.manaCost`
 - `ancientSword.cooldownSeconds`
-
