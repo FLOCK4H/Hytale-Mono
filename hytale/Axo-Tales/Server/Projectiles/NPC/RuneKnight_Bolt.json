@@ -1,0 +1,32 @@
+{
+  "Appearance": "RuneKnight_Bolt",
+  "Radius": 0.1,
+  "Height": 0.2,
+  "VerticalCenterShot": 0.1,
+  "HorizontalCenterShot": 0.1,
+  "DepthShot": 1,
+  "PitchAdjustShot": false,
+  "SticksVertically": true,
+  "MuzzleVelocity": 42,
+  "TerminalVelocity": 60,
+  "Gravity": 0,
+  "Bounciness": 0,
+  "ImpactSlowdown": 0,
+  "TimeToLive": 8,
+  "Damage": 16,
+  "DeadTimeMiss": 0.2,
+  "DeadTime": 0.2,
+  "DeathEffectsOnHit": true,
+  "HitParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "MissParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "DeathParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "HitSoundEventId": "SFX_Ice_Bolt_Death",
+  "MissSoundEventId": "SFX_Arrow_Frost_Miss",
+  "DeathSoundEventId": "SFX_Ice_Bolt_Death"
+}

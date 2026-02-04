@@ -1,0 +1,28 @@
+{
+  "Appearance": "Potion_Empty_Projectile",
+  "VerticalCenterShot": 0.1,
+  "HorizontalCenterShot": 0.1,
+  "DepthShot": 1,
+  "PitchAdjustShot": false,
+  "SticksVertically": true,
+  "MuzzleVelocity": 20,
+  "TerminalVelocity": 20,
+  "Gravity": 20,
+  "Damage": 0,
+  "HitParticles": {
+    "SystemId": "Item_Break_Glass_Small"
+  },
+  "MissParticles": {
+    "SystemId": "Item_Break_Glass_Small"
+  },
+  "DeathParticles": {
+    "SystemId": "Item_Break_Glass_Small"
+  },
+  "DeathEffectsOnHit": true,
+  "HitSoundEventId": "SFX_Crystal_Break",
+  "MissSoundEventId": "SFX_Crystal_Break",
+  "DeathSoundEventId": "SFX_Crystal_Break",
+  "DeadTimeMiss": 0,
+  "DeadTime": 0
+}
+

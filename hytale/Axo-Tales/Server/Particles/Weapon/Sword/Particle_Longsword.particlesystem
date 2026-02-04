@@ -1,0 +1,13 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Longsword_Fire",
+      "PositionOffset": {
+        "X": 0.5,
+        "Y": 0,
+        "Z": 0
+      },
+      "FixedRotation": false
+    }
+  ]
+}

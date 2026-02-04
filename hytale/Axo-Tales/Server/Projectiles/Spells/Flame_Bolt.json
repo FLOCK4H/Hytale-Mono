@@ -1,0 +1,32 @@
+{
+  "Appearance": "Flame_Bolt",
+  "Radius": 0.1,
+  "Height": 0.2,
+  "VerticalCenterShot": 0.1,
+  "HorizontalCenterShot": 0.1,
+  "DepthShot": 1,
+  "PitchAdjustShot": false,
+  "SticksVertically": true,
+  "MuzzleVelocity": 50,
+  "TerminalVelocity": 80,
+  "Gravity": 0,
+  "Bounciness": 0,
+  "ImpactSlowdown": 0,
+  "TimeToLive": 8,
+  "Damage": 25,
+  "DeadTimeMiss": 0.2,
+  "DeadTime": 0.2,
+  "DeathEffectsOnHit": true,
+  "HitParticles": {
+    "SystemId": "Impact_Fire"
+  },
+  "MissParticles": {
+    "SystemId": "Impact_Fire"
+  },
+  "DeathParticles": {
+    "SystemId": "Impact_Fire"
+  },
+  "HitSoundEventId": "SFX_Staff_Flame_Fireball_Impact",
+  "MissSoundEventId": "SFX_Arrow_Fire_Miss",
+  "DeathSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
+}

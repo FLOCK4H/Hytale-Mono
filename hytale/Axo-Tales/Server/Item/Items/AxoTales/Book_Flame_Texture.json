@@ -1,0 +1,47 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.axos_flame_book.name",
+    "Description": "server.items.flock4h.axos_flame_book.description"
+  },
+  "Categories": [
+    "Items.Recipes"
+  ],
+  "Quality": "Legendary",
+  "ItemLevel": 1,
+  "Icon": "Icons/ItemsGenerated/Flame_Spellbook.png",
+  "Model": "Items/Books/Axo/Demon.blockymodel",
+  "Texture": "Items/Books/Book_Flame_Texture.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Crystal_Arcane",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Arcane_Matter",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Fire_Essence",
+        "Quantity": 20
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Arcanebench",
+        "Type": "Crafting",
+        "Categories": [
+          "Arcane_AxoTales"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "Interactions": {
+    "Secondary": "AxoFlameBook_Secondary"
+  },
+  "PlayerAnimationsId": "AxoTales_Spellbook",
+  "ItemSoundSetId": "ISS_Weapons_Books",
+  "MaxStack": 1
+}

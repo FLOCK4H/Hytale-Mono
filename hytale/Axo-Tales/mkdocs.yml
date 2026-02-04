@@ -1,0 +1,37 @@
+site_name: Axo Tales Guidebook
+site_description: Items, crafting, NPCs, and configuration for Axo Tales.
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Items:
+      - Overview: items/index.md
+      - Gear: items/gear.md
+      - Spellbooks: items/spellbooks.md
+      - Potions: items/potions.md
+  - Blocks & Ores: blocks-ores.md
+  - NPCs: npcs.md
+  - Crafting: crafting.md
+  - Configuration: config.md
+  - Troubleshooting: troubleshooting.md
+

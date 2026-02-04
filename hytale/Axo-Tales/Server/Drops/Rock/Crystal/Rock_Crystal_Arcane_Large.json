@@ -1,0 +1,16 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Ingredient_Crystal_Arcane",
+          "QuantityMin": 2,
+          "QuantityMax": 3
+        }
+      }
+    ]
+  }
+}
+

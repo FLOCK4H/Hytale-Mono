@@ -1,0 +1,59 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_matter_ore_volcanic.name",
+    "Description": "server.items.flock4h.arcane_matter_ore_volcanic.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Arcane_Matter_Volcanic.png",
+  "Parent": "Ore_Stone_Parent",
+  "BlockType": {
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OreIron",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Arcane_Matter"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Volcanic_Cobble"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Volcanic.png"
+      }
+    ],
+    "ParticleColor": "#d0d1c1",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Ores/sky_purple_ore.png",
+        "Weight": 1
+      }
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}

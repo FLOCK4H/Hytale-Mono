@@ -1,0 +1,312 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.axos_ancient_sword.name",
+    "Description": "server.items.flock4h.axos_ancient_sword.description"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Quality": "Legendary",
+  "ItemLevel": 30,
+  "Model": "Items/Weapons/Axo_Sword.blockymodel",
+  "Texture": "Items/Weapons/Axo_Sword_Texture.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Arcane_Matter",
+        "Quantity": 20
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Arcane",
+        "Quantity": 15
+      },
+      {
+        "ItemId": "Ingredient_Fire_Essence",
+        "Quantity": 12
+      },
+      {
+        "ItemId": "Ingredient_Ice_Essence",
+        "Quantity": 12
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Arcanebench",
+        "Type": "Crafting",
+        "Categories": [
+          "Arcane_AxoTales"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "PlayerAnimationsId": "Longsword",
+  "Interactions": {
+    "Primary": "Longsword_Attack",
+    "Secondary": "AxoAncientSword_Secondary"
+  },
+  "InteractionVars": {
+    "Longsword_Swing_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "Longsword_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Fire": 75
+            },
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Right_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "Longsword_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Right_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Fire": 75
+            },
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Up_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "Longsword_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Up_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Up_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Fire": 75
+            },
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    },
+    "Longsword_Stab_Charged_Effect": {
+      "Interactions": [
+        {
+          "Type": "ApplyForce",
+          "WaitForGround": false,
+          "Duration": 0.25,
+          "ChangeVelocityType": "Set",
+          "VelocityConfig": {
+            "AirResistance": 0.97,
+            "AirResistanceMax": 0.96,
+            "GroundResistance": 0.94,
+            "GroundResistanceMax": 0.82,
+            "Threshold": 5.0,
+            "Style": "Exp"
+          },
+          "Forces": [
+            {
+              "Direction": {
+                "Z": -1.0
+              },
+              "Force": 10.0,
+              "AdjustVertical": true
+            },
+            {
+              "Direction": {
+                "Z": -1.0
+              },
+              "Force": 6.0
+            }
+          ],
+          "VerticalClamp": [
+            0.0,
+            60.0
+          ]
+        },
+        {
+          "Parent": "Longsword_Stab_Charged_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "Longsword_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Weapon_Charge_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Stab_Charged_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Stab_Charged_Damage",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Fire": 95
+            },
+            "Type": "Absolute",
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact"
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      45,
+      90,
+      0
+    ],
+    "Translation": [
+      -42,
+      -43
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Longsword_Axo.png",
+  "Particles": [
+    {
+      "SystemId": "Particle_Longsword",
+      "TargetNodeName": "Handle",
+      "PositionOffset": {
+        "X": 1
+      },
+      "TargetEntityPart": "PrimaryItem"
+    }
+  ],
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Longsword"
+    ]
+  },
+  "Trails": [
+    {
+      "PositionOffset": {
+        "X": 0.9,
+        "Y": 0.1,
+        "Z": 0
+      },
+      "RotationOffset": {
+        "Pitch": 0,
+        "Roll": 90,
+        "Yaw": 0
+      },
+      "TargetNodeName": "Handle",
+      "TrailId": "Longsword_Trail",
+      "TargetEntityPart": "PrimaryItem"
+    }
+  ],
+  "DurabilityLossOnHit": 0.52,
+  "Weapon": {},
+  "Light": {
+    "Radius": 1,
+    "Color": "#87ceeb"
+  },
+  "ItemSoundSetId": "ISS_Weapons_Blade_Large"
+}

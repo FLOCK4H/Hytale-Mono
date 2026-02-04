@@ -1,0 +1,21 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "ResetCooldown",
+      "Cooldown": {
+        "Cooldown": 0.6
+      }
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.25,
+      "Effects": {
+        "ItemAnimationId": "CastHurlCharged",
+        "WaitForAnimationToFinish": true,
+        "ClearAnimationOnFinish": true,
+        "WorldSoundEventId": "SFX_Staff_Ice_Shoot"
+      }
+    }
+  ]
+}

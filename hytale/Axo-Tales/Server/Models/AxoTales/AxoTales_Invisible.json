@@ -1,0 +1,20 @@
+{
+  "Model": "VFX/Spells/Roots/Model.blockymodel",
+  "Texture": "VFX/AxoTales/Invisible.png",
+  "EyeHeight": 1.6,
+  "CrouchOffset": -0.4,
+  "HitBox": {
+    "Max": {
+      "X": 0.325,
+      "Y": 1.85,
+      "Z": 0.325
+    },
+    "Min": {
+      "X": -0.325,
+      "Y": 0,
+      "Z": -0.325
+    }
+  },
+  "MinScale": 1,
+  "MaxScale": 1
+}

@@ -1,0 +1,86 @@
+{
+  "Parent": "Potion_Template",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.strength_potion.name",
+    "Description": "server.items.flock4h.strength_potion.description"
+  },
+  "Quality": "Rare",
+  "ItemLevel": 1,
+  "Icon": "Icons/ItemsGenerated/Strength_Potion.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Empty_Potion_Bottle",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Arcane",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Bar_Adamantite",
+        "Quantity": 10
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Alchemybench",
+        "Type": "Crafting",
+        "Categories": [
+          "Alchemy_Potions"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 1
+  },
+  "Interactions": {
+    "Secondary": "Root_Secondary_Consume_Potion"
+  },
+  "InteractionVars": {
+    "Effect": {
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": "AxoTales_Strength"
+        }
+      ]
+    },
+    "ConsumeSFX": {
+      "Interactions": [
+        {
+          "Parent": "Consume_SFX",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Health_Potion_Low_Drink"
+          }
+        }
+      ]
+    },
+    "ConsumedSFX": {
+      "Interactions": [
+        {
+          "Parent": "Consumed_SFX",
+          "Effects": {
+            "LocalSoundEventId": "SFX_Potion_Drink_Success"
+          }
+        }
+      ]
+    }
+  },
+  "BlockType": {
+    "CustomModel": "Items/Potions/Throwables/Potion_Liquid.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/Potions/Potion_Strength.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#ff3730",
+    "Light": {
+      "Color": "#522"
+    }
+  },
+  "MaxStack": 10,
+  "Consumable": true,
+  "DropOnDeath": true
+}

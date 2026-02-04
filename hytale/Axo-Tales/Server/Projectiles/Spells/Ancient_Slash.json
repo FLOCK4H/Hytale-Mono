@@ -1,0 +1,32 @@
+{
+  "Appearance": "Ancient_Slash",
+  "Radius": 0.15,
+  "Height": 0.25,
+  "VerticalCenterShot": 0.1,
+  "HorizontalCenterShot": 0.1,
+  "DepthShot": 1,
+  "PitchAdjustShot": false,
+  "SticksVertically": true,
+  "MuzzleVelocity": 55,
+  "TerminalVelocity": 80,
+  "Gravity": 0,
+  "Bounciness": 0,
+  "ImpactSlowdown": 0,
+  "TimeToLive": 5,
+  "Damage": 45,
+  "DeadTimeMiss": 0.2,
+  "DeadTime": 0.2,
+  "DeathEffectsOnHit": true,
+  "HitParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "MissParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "DeathParticles": {
+    "SystemId": "Impact_Ice"
+  },
+  "HitSoundEventId": "SFX_Longsword_Special_Impact",
+  "MissSoundEventId": "SFX_Arrow_Frost_Miss",
+  "DeathSoundEventId": "SFX_Longsword_Special_Impact"
+}

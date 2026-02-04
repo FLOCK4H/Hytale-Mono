@@ -1,0 +1,85 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.sar_warfists.name",
+    "Description": "server.items.flock4h.sar_warfists.description"
+  },
+  "Quality": "Epic",
+  "ItemLevel": 20,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "Categories": [
+    "Items.Armors"
+  ],
+  "Icon": "Icons/ItemsGenerated/Sar_Hands.png",
+  "Model": "Items/Armors/Sar/Hands.blockymodel",
+  "Texture": "Items/Armors/Sar_Warfists.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Plant_Crop_Mana3",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Arcane_Matter",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Arcane",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Arcanebench",
+        "Type": "Crafting",
+        "Categories": [
+          "Arcane_AxoTales"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Hands",
+    "BaseDamageResistance": 0
+  },
+  "MaxDurability": 100,
+  "DurabilityLossOnHit": 0.5,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Iron"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -25.8
+    ]
+  }
+}

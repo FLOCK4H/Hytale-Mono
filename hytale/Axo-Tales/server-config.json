@@ -1,0 +1,150 @@
+{
+  "spellbooks": {
+    "inputDebounceSeconds": 0.6,
+    "castDebounceSeconds": 0.6,
+    "secondaryUseDelaySeconds": 0.3
+  },
+  "worldgen": {
+    "arcaneCrystalChancePerNewChunk": 0.08333333333333333,
+    "arcaneMatterOres": {
+      "enabled": true,
+      "processExistingChunks": true,
+      "stoneOreBlockId": "Ore_Stone_Parent",
+      "volcanicOreBlockId": "Arcane_Matter_Volcanic",
+      "stone": {
+        "enabled": true,
+        "matchAnyRock": true,
+        "chancePerNewChunk": 0.5,
+        "targetPlacementsPerChunk": 12,
+        "maxAttemptsPerChunk": 256,
+        "requireAdjacentAir": true,
+        "minY": 1,
+        "maxY": 9999,
+        "hostBlockIds": [
+          "Rock_Stone",
+          "Rock_Shale",
+          "Rock_Marble",
+          "Rock_Quartzite"
+        ]
+      },
+      "volcanic": {
+        "enabled": true,
+        "matchAnyVolcanicRock": true,
+        "chancePerNewChunk": 0.5,
+        "targetPlacementsPerChunk": 12,
+        "maxAttemptsPerChunk": 256,
+        "requireAdjacentAir": false,
+        "minY": 1,
+        "maxY": 9999,
+        "hostBlockIds": [
+          "Rock_Volcanic"
+        ]
+      }
+    }
+  },
+  "workarounds": {
+    "disableWorldMap": false
+  },
+  "runeKnight": {
+    "enabled": true,
+    "roleName": "Kudu_Rune_Knight",
+    "spawn": {
+      "maxActivePerWorld": 4,
+      "spawnsPerInterval": 1,
+      "intervalSeconds": 300.0,
+      "maxAttemptsPerInterval": 12,
+      "minDistanceFromPlayersBlocks": 16.0,
+      "radiusMinBlocks": 24.0,
+      "radiusMaxBlocks": 96.0,
+      "allowInMemoryChunks": true,
+      "nightSunlightThreshold": 0.25
+    },
+    "despawn": {
+      "onDay": true,
+      "afterSeconds": 300.0
+    },
+    "aggro": {
+      "radiusBlocks": 40.0
+    },
+    "projectiles": {
+      "enabled": true,
+      "projectileId": "RuneKnight_Bolt",
+      "cooldownSeconds": 1.25,
+      "rangeBlocks": 24.0,
+      "aimHeightBlocks": 1.25
+    },
+    "loot": {
+      "kuduBootsDropChancePercent": 5,
+      "frostBookDropChancePercent": 5
+    }
+  },
+  "kuduAdept": {
+    "enabled": false,
+    "roleName": "Kudu_Adept_Magician",
+    "spawn": {
+      "maxActivePerWorld": 20,
+      "spawnsPerInterval": 1,
+      "intervalSeconds": 30.0,
+      "maxAttemptsPerInterval": 24,
+      "minDistanceFromPlayersBlocks": 12.0,
+      "radiusMinBlocks": 18.0,
+      "radiusMaxBlocks": 96.0,
+      "allowInMemoryChunks": true,
+      "daySunlightThreshold": 0.25
+    },
+    "despawn": {
+      "onNight": true,
+      "afterSeconds": 600.0
+    }
+  },
+  "hordeBook": {
+    "manaCost": 25,
+    "minionLifetimeSeconds": 30,
+    "ownerFriendlySeconds": 60,
+    "spawnDistanceBlocks": 3.0
+  },
+  "doomBook": {
+    "manaCost": 15
+  },
+  "morphBook": {
+    "manaCost": 25
+  },
+  "frostBook": {
+    "manaCost": 20
+  },
+  "flameBook": {
+    "manaCost": 20
+  },
+  "teleportBook": {
+    "maxDistanceBlocks": 100,
+    "manaCost": 10
+  },
+  "miningBook": {
+    "maxDistanceBlocks": 12,
+    "manaCost": 5,
+    "gridSize": 3,
+    "maxBlocks": 9
+  },
+  "healingBook": {
+    "healAmount": "full",
+    "manaCost": 25
+  },
+  "immunityBook": {
+    "manaCost": 15,
+    "immunitySeconds": 3
+  },
+  "tauntBook": {
+    "manaCost": 20,
+    "launchHeightBlocks": 10,
+    "fallImmunitySeconds": 6,
+    "slamDamage": 40,
+    "slamRadiusBlocks": 7,
+    "breakBlockBelow": true
+  },
+  "ancientSword": {
+    "enabled": true,
+    "projectileId": "Ancient_Slash",
+    "manaCost": 20,
+    "cooldownSeconds": 1.25
+  }
+}

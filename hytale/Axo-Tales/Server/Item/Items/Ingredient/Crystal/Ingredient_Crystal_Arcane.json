@@ -1,0 +1,41 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Ingredient_Crystal_Arcane.name"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Model": "Resources/Crystals/Crystal_Fragment.blockymodel",
+  "Texture": "Items/Crystals/Arcane_Shards_Texture.png",
+  "Quality": "Common",
+  "ItemLevel": 10,
+  "PlayerAnimationsId": "Item",
+  "IconProperties": {
+    "Scale": 0.75,
+    "Translation": [
+      -0.3,
+      0.3
+    ],
+    "Rotation": [
+      34.315,
+      29.815,
+      22.5
+    ]
+  },
+  "Scale": 1.2,
+  "Icon": "Icons/ItemsGenerated/Arcane_Crystal_Shards.png",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ],
+    "Family": [
+      "Crystal"
+    ]
+  },
+  "ItemEntity": {
+    "ParticleSystemId": null
+  },
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "DropOnDeath": true
+}
+

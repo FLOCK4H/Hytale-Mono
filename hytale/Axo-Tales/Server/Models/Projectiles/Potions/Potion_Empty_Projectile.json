@@ -1,0 +1,28 @@
+{
+  "EyeHeight": 0.15,
+  "HitBox": {
+    "Max": {
+      "X": 0.15,
+      "Y": 0.3,
+      "Z": 0.15
+    },
+    "Min": {
+      "X": -0.15,
+      "Y": 0,
+      "Z": -0.15
+    }
+  },
+  "MinScale": 1,
+  "Model": "Items/Potions/Throwables/Potion_Empty.blockymodel",
+  "Texture": "Items/Potions/Potion_Empty.png",
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "Items/Animations/Spin_Pitch/Spin_Pitch_Down.blockyanim"
+        }
+      ]
+    }
+  }
+}
+

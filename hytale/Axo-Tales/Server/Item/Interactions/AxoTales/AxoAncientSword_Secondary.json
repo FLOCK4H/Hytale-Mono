@@ -1,0 +1,19 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "ResetCooldown",
+      "Cooldown": {
+        "Cooldown": 1.25
+      }
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.15,
+      "Effects": {
+        "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+      }
+    }
+  ]
+}
+

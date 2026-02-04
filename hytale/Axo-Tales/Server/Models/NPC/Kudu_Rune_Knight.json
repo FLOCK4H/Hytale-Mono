@@ -1,0 +1,261 @@
+{
+  "Model": "NPC/Kudu/Kudu_knight.blockymodel",
+  "Texture": "NPC/Kudu/Kudu_RuneKnight_Texture.png",
+  "AnimationSets": {
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Wake.blockyanim",
+          "Looping": false,
+          "Speed": 0.9
+        }
+      ]
+    },
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Idle.blockyanim",
+          "Looping": true,
+          "Speed": 0.5
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Idle.blockyanim",
+          "Looping": true,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Walk.blockyanim",
+          "Speed": 1.0
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Walk_Backward.blockyanim",
+          "Speed": 1.0
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Run.blockyanim",
+          "Speed": 0.9
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Run_Backward.blockyanim",
+          "Speed": 0.9
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Sprint.blockyanim",
+          "Speed": 1.1
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Crouch.blockyanim",
+          "BlendingDuration": 0.1,
+          "Speed": 0.5
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Crouch_Walk.blockyanim",
+          "BlendingDuration": 0.1,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Crouch_Walk_Backward.blockyanim",
+          "BlendingDuration": 0.1,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpCrouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Jump_Crouch.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Jump.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "JumpRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Jump_Far.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        },
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Jump_Far2.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.8
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Fall.blockyanim",
+          "BlendingDuration": 0.4
+        },
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Fall2.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "FallFar": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Fall_Far.blockyanim",
+          "BlendingDuration": 0.4
+        }
+      ]
+    },
+    "Interact": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Interact.blockyanim",
+          "BlendingDuration": 0.05,
+          "Looping": false,
+          "Speed": 1.25
+        }
+      ]
+    },
+    "CastMagic": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Interact.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 0.9
+        }
+      ]
+    },
+    "DashForward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Dash_Front.blockyanim",
+          "BlendingDuration": 0.05,
+          "Looping": false,
+          "Speed": 1.15
+        }
+      ]
+    },
+    "DashBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Dash_Back.blockyanim",
+          "BlendingDuration": 0.05,
+          "Looping": false,
+          "Speed": 1.15
+        }
+      ]
+    },
+    "DashLeft": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Dash_Left.blockyanim",
+          "BlendingDuration": 0.05,
+          "Looping": false,
+          "Speed": 1.15
+        }
+      ]
+    },
+    "DashRight": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Dash_Right.blockyanim",
+          "BlendingDuration": 0.05,
+          "Looping": false,
+          "Speed": 1.15
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/Default/Wake.blockyanim",
+          "Looping": false,
+          "Speed": 0.9
+        }
+      ]
+    },
+    "DeathDrop": {
+      "Animations": [
+        {
+          "Animation": "NPC/Kudu/Animations/AxoTales/Death_Drop.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "Speed": 1.0
+        }
+      ]
+    }
+  },
+  "EyeHeight": 1.6,
+  "CrouchOffset": -0.4,
+  "HitBox": {
+    "Max": {
+      "X": 0.325,
+      "Y": 1.85,
+      "Z": 0.325
+    },
+    "Min": {
+      "X": -0.325,
+      "Y": 0,
+      "Z": -0.325
+    }
+  },
+  "MinScale": 1,
+  "MaxScale": 1
+}

@@ -1,0 +1,61 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.empty_potion_bottle.name",
+    "Description": "server.items.flock4h.empty_potion_bottle.description"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Quality": "Common",
+  "ItemLevel": 1,
+  "PlayerAnimationsId": "Item",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Potion_Empty",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Arcane",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Alchemybench",
+        "Type": "Crafting",
+        "Categories": [
+          "Alchemy_Potions_Misc"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 1
+  },
+  "Interactions": {
+    "Secondary": "Item_Throw"
+  },
+  "InteractionVars": {
+    "Item_Throw_Projectile": {
+      "Interactions": [
+        {
+          "Parent": "Item_Throw_Projectile",
+          "ProjectileId": "Potion_Empty_Projectile"
+        }
+      ]
+    }
+  },
+  "MaxStack": 16,
+  "Icon": "Icons/ItemsGenerated/Empty_Potion_Bottle.png",
+  "Model": "Items/Potions/Throwables/Potion_Empty.blockymodel",
+  "Texture": "Items/Potions/Potion_Empty.png",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Bomb"
+    ]
+  },
+  "Weapon": {}
+}

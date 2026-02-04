@@ -1,0 +1,12 @@
+{
+  "Duration": 60,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Duration",
+  "Infinite": false,
+  "Debuff": false,
+  "StatusEffectIcon": "Icons/ItemsGenerated/Speed_Potion.png",
+  "ApplicationEffects": {
+    "EntityBottomTint": "#b4f6ff",
+    "EntityTopTint": "#b4f6ff"
+  }
+}

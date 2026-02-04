@@ -1,0 +1,20 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.axos_frost_book.name",
+    "Description": "server.items.flock4h.axos_frost_book.description"
+  },
+  "Categories": [
+    "Items.Recipes"
+  ],
+  "Quality": "Legendary",
+  "ItemLevel": 1,
+  "Icon": "Icons/ItemsGenerated/Frost_Spellbook.png",
+  "Model": "Items/Books/Axo/Demon.blockymodel",
+  "Texture": "Items/Books/Book_Frost_Texture.png",
+  "Interactions": {
+    "Secondary": "AxoFrostBook_Secondary"
+  },
+  "PlayerAnimationsId": "AxoTales_Spellbook",
+  "ItemSoundSetId": "ISS_Weapons_Books",
+  "MaxStack": 1
+}

@@ -1,0 +1,35 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Trork_Melee",
+  "Modify": {
+    "Appearance": "Kudu_Rune_Knight",
+    "DropList": "Empty",
+    "Weapons": [
+      "Weapon_Spellbook_Frost"
+    ],
+    "ViewSector": 270,
+    "HearingRange": 12,
+    "CombatRelativeTurnSpeed": 1.25,
+    "AttackDistance": 3.5,
+    "TargetGroups": [
+      "Outlander"
+    ],
+    "DisableDamageGroups": [
+      "Self",
+      "Outlander"
+    ],
+    "AttitudeGroup": "Outlander",
+    "MaxSpeed": 6.5,
+    "RelativeChaseSpeed": 0.65,
+    "MaxHealth": 120,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Kudu_Rune_Knight.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

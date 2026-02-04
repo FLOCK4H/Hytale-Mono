@@ -1,0 +1,69 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.curse_potion.name",
+    "Description": "server.items.flock4h.curse_potion.description"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Quality": "Rare",
+  "ItemLevel": 1,
+  "PlayerAnimationsId": "Item",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Empty_Potion_Bottle",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Arcane",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Fire_Essence",
+        "Quantity": 5
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Alchemybench",
+        "Type": "Crafting",
+        "Categories": [
+          "Alchemy_Bombs"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 1
+  },
+  "Interactions": {
+    "Secondary": "Item_Throw"
+  },
+  "InteractionVars": {
+    "Item_Throw_Projectile": {
+      "Interactions": [
+        {
+          "Parent": "Item_Throw_Projectile",
+          "ProjectileId": "Potion_Curse_Projectile"
+        }
+      ]
+    }
+  },
+  "MaxStack": 16,
+  "Icon": "Icons/ItemsGenerated/Curse_Potion.png",
+  "Model": "Items/Potions/Throwables/Potion_Liquid.blockymodel",
+  "Texture": "Items/Potions/Potion_Curse.png",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Bomb"
+    ]
+  },
+  "Weapon": {},
+  "Light": {
+    "Radius": 1,
+    "Color": "#f22"
+  }
+}

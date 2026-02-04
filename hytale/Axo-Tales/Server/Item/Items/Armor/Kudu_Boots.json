@@ -1,0 +1,62 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.kudu_boots.name",
+    "Description": "server.items.flock4h.kudu_boots.description"
+  },
+  "Quality": "Rare",
+  "ItemLevel": 10,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "Categories": [
+    "Items.Armors"
+  ],
+  "Icon": "Icons/ItemsGenerated/Kudu_Boots.png",
+  "Model": "Items/Armors/Kudu/Kudu_boots.blockymodel",
+  "Texture": "Items/Armors/Kudu/Kudu_Boots_Texture.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes"
+    ]
+  },
+  "MaxDurability": 100,
+  "DurabilityLossOnHit": 0.5,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Iron"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -25.8
+    ]
+  }
+}

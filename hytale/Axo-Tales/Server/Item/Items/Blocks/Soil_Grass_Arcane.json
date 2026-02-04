@@ -1,0 +1,56 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_grass.name",
+    "Description": "server.items.flock4h.arcane_grass.description"
+  },
+  "ItemLevel": 6,
+  "Icon": "Icons/ItemsGenerated/Arcane_Grass.png",
+  "Categories": [
+    "Blocks.Soils"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Set": "Soil_Grass",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Group": "Grass",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Soils",
+        "ItemId": "Soil_Dirt"
+      }
+    },
+    "BlockParticleSetId": "Grass_Earth",
+    "Textures": [
+      {
+        "Down": "BlockTextures/Soil_Dirt.png",
+        "Sides": "BlockTextures/Arcane_Grass_Side_32x32.png",
+        "Up": "BlockTextures/Arcane_Grass_Top_32x32.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#709d2c",
+    "BlockSoundSetId": "Grass",
+    "TransitionTexture": "BlockTextures/Transition_Arcane_Grass.png",
+    "TransitionToGroups": [
+      "Stone",
+      "Dirt",
+      "Dirt_Dark",
+      "Sand",
+      "Sand_White",
+      "Gravel",
+      "Grass"
+    ],
+    "TransitionToTag": "Fluid=Water"
+  },
+  "Tags": {
+    "Family": [
+      "Grass"
+    ],
+    "Type": [
+      "Soil"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Soft"
+}

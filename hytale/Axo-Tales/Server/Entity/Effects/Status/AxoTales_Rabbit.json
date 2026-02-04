@@ -1,0 +1,12 @@
+{
+  "Duration": 60,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Duration",
+  "Infinite": false,
+  "Debuff": false,
+  "StatusEffectIcon": "Icons/ItemsGenerated/Jump_Potion.png",
+  "ApplicationEffects": {
+    "EntityBottomTint": "#f6b4ff",
+    "EntityTopTint": "#f6b4ff"
+  }
+}
