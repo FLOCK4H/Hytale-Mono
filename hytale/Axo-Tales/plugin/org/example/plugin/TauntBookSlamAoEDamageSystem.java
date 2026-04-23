@@ -18,6 +18,7 @@ import com.hypixel.hytale.server.core.modules.entity.damage.DamageSystems;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatValue;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
+import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -103,9 +104,11 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
                         + " caster.uuid=" + slam.casterUuid
                         + " taunt.cast.chainId=" + slam.castChainId
                         + " taunt.cast.interactionType=" + slam.castInteractionType
+                        + " taunt.stackCount=" + slam.tauntStackCount
                         + " taunt.active.expiresAtNanos=" + slam.tauntExpiresAtNanos
                         + " slam.center=(" + slam.centerX + "," + slam.centerY + "," + slam.centerZ + ")"
                         + " slam.radiusBlocks=" + slam.radiusBlocks
+                        + " slam.breakRadiusBlocks=" + slam.groundBreakRadiusBlocks
                         + " slam.damageAmount=" + slam.damageAmount
                         + " slam.candidatesChecked=" + slam.candidatesChecked
                         + " slam.inRadius=" + slam.inRadius
@@ -141,7 +144,7 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
         float predictedHealthCurrent = Float.NaN;
         float predictedHealthMin = Float.NaN;
         float predictedHealthMax = Float.NaN;
-        int healthIndex = DefaultEntityStatTypes.getHealth();
+        int healthIndex = resolveEntityStatIndex(HEALTH_STAT_NAME, DefaultEntityStatTypes.getHealth());
 
         DamageCause slamCause = resolveSlamDamageCause();
         if (slamCause == null) {
@@ -180,25 +183,13 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
 
             EntityStatValue healthStat = null;
             String healthStatSource = "missing";
-            if (targetStats != null) {
+            if (targetStats != null && healthIndex >= 0) {
                 try {
-                    // Prefer lookup by name so we don't depend on DefaultEntityStatTypes.update() timing.
-                    healthStat = targetStats.get(HEALTH_STAT_NAME);
-                    healthStatSource = "name(" + HEALTH_STAT_NAME + ")";
+                    healthStat = targetStats.get(healthIndex);
+                    healthStatSource = "assetMapIndex(" + HEALTH_STAT_NAME + "=" + healthIndex + ")";
                 } catch (Throwable ignored) {
                     healthStat = null;
-                    healthStatSource = "nameLookupFailed";
-                }
-
-                // Fallback: lookup by index (useful if name lookup isn't supported / mismatched).
-                if (healthStat == null && healthIndex >= 0) {
-                    try {
-                        healthStat = targetStats.get(healthIndex);
-                        healthStatSource = "index(" + healthIndex + ")";
-                    } catch (Throwable ignored) {
-                        healthStat = null;
-                        healthStatSource = "indexLookupFailed(" + healthIndex + ")";
-                    }
+                    healthStatSource = "indexLookupFailed(" + healthIndex + ")";
                 }
             }
 
@@ -241,6 +232,7 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
                         + " world=" + world.getName()
                         + " world.tick=" + worldTick
                         + " caster.uuid=" + slam.casterUuid
+                        + " taunt.stackCount=" + slam.tauntStackCount
                         + " targetRef=" + targetRef
                         + " distanceSq=" + distSq
                         + " damage.requested=" + requestedDamage
@@ -285,6 +277,7 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
                         + " world=" + world.getName()
                         + " world.tick=" + worldTick
                         + " caster.uuid=" + slam.casterUuid
+                        + " taunt.stackCount=" + slam.tauntStackCount
                         + " targetRef=" + targetRef
                         + " distanceSq=" + distSq
                         + " damage.requested=" + requestedDamage
@@ -298,6 +291,21 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
                 );
             }
         }
+    }
+
+    private static int resolveEntityStatIndex(@Nonnull String statName, int fallbackIndex) {
+        try {
+            var map = EntityStatType.getAssetMap();
+            if (map != null) {
+                int index = map.getIndex(statName);
+                if (index >= 0) {
+                    return index;
+                }
+            }
+        } catch (Throwable ignored) {
+            // Use the default stat cache below if asset-map lookup is unavailable.
+        }
+        return fallbackIndex;
     }
 
     private @Nullable DamageCause resolveSlamDamageCause() {

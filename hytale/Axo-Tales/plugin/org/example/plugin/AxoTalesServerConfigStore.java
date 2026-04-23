@@ -21,6 +21,51 @@ import java.util.Map;
 public final class AxoTalesServerConfigStore {
 
     private static final String CONFIG_FILE_NAME = "server-config.json";
+    private static final double OLD_ARCANE_CRYSTAL_DEFAULT_CHANCE_PER_CHUNK = 0.25 / 3.0;
+    private static final double OLD_ARCANE_CRYSTAL_CELL_DEFAULT_CHANCE_PER_CHUNK = 1.0;
+    private static final double DEFAULT_ARCANE_CRYSTAL_CHANCE_PER_CHUNK = 0.33;
+    private static final int OLD_ARCANE_CRYSTAL_DEBUG_PLACEMENTS_PER_CHUNK = 12;
+    private static final int DEFAULT_ARCANE_CRYSTAL_PLACEMENTS_PER_CHUNK = 1;
+    private static final int DEFAULT_ARCANE_CRYSTAL_DENSITY_RADIUS_BLOCKS = 64;
+    private static final int OLD_ARCANE_CRYSTAL_MAX_PLACEMENTS_PER_RADIUS = 3;
+    private static final int DEFAULT_ARCANE_CRYSTAL_MAX_PLACEMENTS_PER_RADIUS = 1;
+    private static final int CURRENT_ARCANE_CRYSTAL_DEFAULTS_VERSION = 3;
+    private static final double OLD_KUDU_ADEPT_INTERVAL_SECONDS = 30.0;
+    private static final double PREVIOUS_KUDU_ADEPT_INTERVAL_SECONDS = 150.0;
+    private static final double LAST_KUDU_ADEPT_INTERVAL_SECONDS = 5.0;
+    private static final double DEFAULT_KUDU_ADEPT_INTERVAL_SECONDS = 120.0;
+    private static final int DEFAULT_KUDU_ADEPT_MAX_ACTIVE_PER_WORLD = 500;
+    private static final int LAST_KUDU_ADEPT_SPAWNS_PER_INTERVAL = 8;
+    private static final int DEFAULT_KUDU_ADEPT_SPAWNS_PER_INTERVAL = 1;
+    private static final int LAST_KUDU_ADEPT_MAX_ATTEMPTS_PER_INTERVAL = 128;
+    private static final int DEFAULT_KUDU_ADEPT_MAX_ATTEMPTS_PER_INTERVAL = 3;
+    private static final double PREVIOUS_KUDU_ADEPT_DENSITY_CELL_SIZE_BLOCKS = 200.0;
+    private static final double LAST_KUDU_ADEPT_DENSITY_CELL_SIZE_BLOCKS = 32.0;
+    private static final double DEFAULT_KUDU_ADEPT_DENSITY_CELL_SIZE_BLOCKS = 256.0;
+    private static final int LAST_KUDU_ADEPT_CELL_SPAWN_CHANCE_PERCENT = 100;
+    private static final int DEFAULT_KUDU_ADEPT_CELL_SPAWN_CHANCE_PERCENT = 33;
+    private static final double PREVIOUS_KUDU_ADEPT_MIN_DISTANCE_FROM_PLAYERS_BLOCKS = 12.0;
+    private static final double DEFAULT_KUDU_ADEPT_MIN_DISTANCE_FROM_PLAYERS_BLOCKS = 8.0;
+    private static final double PREVIOUS_KUDU_ADEPT_RADIUS_MIN_BLOCKS = 18.0;
+    private static final double DEFAULT_KUDU_ADEPT_RADIUS_MIN_BLOCKS = 8.0;
+    private static final double PREVIOUS_KUDU_ADEPT_RADIUS_MAX_BLOCKS = 96.0;
+    private static final double LAST_KUDU_ADEPT_RADIUS_MAX_BLOCKS = 48.0;
+    private static final double DEFAULT_KUDU_ADEPT_RADIUS_MAX_BLOCKS = 280.0;
+    private static final double PREVIOUS_KUDU_ADEPT_DESPAWN_AFTER_SECONDS = 600.0;
+    private static final double DEFAULT_KUDU_ADEPT_DESPAWN_AFTER_SECONDS = 0.0;
+    private static final int CURRENT_KUDU_ADEPT_DEFAULTS_VERSION = 6;
+    private static final double PREVIOUS_CLOUD_BLOCK_IMPULSE_VELOCITY = 5.0;
+    private static final double PREVIOUS_CLOUD_BLOCK_MAX_VERTICAL_SPEED = 18.0;
+    private static final double DEFAULT_CLOUD_BLOCK_TARGET_HEIGHT_BLOCKS = 6.0;
+    private static final double DEFAULT_CLOUD_BLOCK_MAX_VERTICAL_SPEED = 32.0;
+    private static final double DEFAULT_CLOUD_BLOCK_CHAIN_VELOCITY_MULTIPLIER = 1.5;
+    private static final double DEFAULT_CLOUD_BLOCK_CHAIN_RESET_SECONDS = 4.0;
+    private static final double DEFAULT_BOUNCE_BLOCK_BASE_TARGET_HEIGHT_BLOCKS = 4.0;
+    private static final double DEFAULT_BOUNCE_BLOCK_HEIGHT_GAIN_PER_BOUNCE_BLOCKS = 2.0;
+    private static final double DEFAULT_BOUNCE_BLOCK_MAX_TARGET_HEIGHT_BLOCKS = 18.0;
+    private static final double DEFAULT_BOUNCE_BLOCK_MAX_VERTICAL_SPEED = 48.0;
+    private static final double DEFAULT_BOUNCE_BLOCK_COOLDOWN_SECONDS = 0.2;
+    private static final double DEFAULT_BOUNCE_BLOCK_STREAK_RESET_SECONDS = 8.0;
 
     private final PluginDebugReporter debug;
     private final PluginErrorReporter errors;
@@ -90,6 +135,9 @@ public final class AxoTalesServerConfigStore {
             JsonObject user = parseObjectBestEffort(raw);
             if (user != null) {
                 migrateRuneKnightConfig(user);
+                migrateArcaneCrystalConfig(user);
+                migrateKuduAdeptConfig(user);
+                migrateCloudBlockConfig(user);
                 deepMerge(merged, user);
             }
 
@@ -206,6 +254,272 @@ public final class AxoTalesServerConfigStore {
         }
     }
 
+    private void migrateArcaneCrystalConfig(@Nonnull JsonObject root) {
+        if (!root.has("worldgen") || !root.get("worldgen").isJsonObject()) {
+            return;
+        }
+
+        JsonObject worldgen = root.getAsJsonObject("worldgen");
+        boolean hadNewPlacementKey = worldgen.has("arcaneCrystalPlacementsPerChunk");
+        boolean hadProcessExistingKey = worldgen.has("arcaneCrystalProcessExistingChunks");
+        boolean hadPruneLegacyKey = worldgen.has("arcaneCrystalPruneLegacyClusters");
+        boolean hadDensityRadiusKey = worldgen.has("arcaneCrystalDensityRadiusBlocks");
+        boolean hadMaxPerRadiusKey = worldgen.has("arcaneCrystalMaxPlacementsPerRadius");
+        int defaultsVersion = 0;
+        try {
+            if (worldgen.has("arcaneCrystalDefaultsVersion")) {
+                var defaultsVersionValue = worldgen.getAsJsonPrimitive("arcaneCrystalDefaultsVersion");
+                if (defaultsVersionValue != null && defaultsVersionValue.isNumber()) {
+                    defaultsVersion = defaultsVersionValue.getAsInt();
+                }
+            }
+        } catch (Throwable ignored) {
+            defaultsVersion = 0;
+        }
+        boolean changed = false;
+
+        if (!hadNewPlacementKey) {
+            worldgen.addProperty("arcaneCrystalPlacementsPerChunk", DEFAULT_ARCANE_CRYSTAL_PLACEMENTS_PER_CHUNK);
+            changed = true;
+        }
+        if (!hadProcessExistingKey) {
+            worldgen.addProperty("arcaneCrystalProcessExistingChunks", false);
+            changed = true;
+        }
+        if (!hadPruneLegacyKey) {
+            worldgen.addProperty("arcaneCrystalPruneLegacyClusters", true);
+            changed = true;
+        }
+        if (!hadDensityRadiusKey) {
+            worldgen.addProperty("arcaneCrystalDensityRadiusBlocks", DEFAULT_ARCANE_CRYSTAL_DENSITY_RADIUS_BLOCKS);
+            changed = true;
+        }
+        if (!hadMaxPerRadiusKey) {
+            worldgen.addProperty("arcaneCrystalMaxPlacementsPerRadius", DEFAULT_ARCANE_CRYSTAL_MAX_PLACEMENTS_PER_RADIUS);
+            changed = true;
+        }
+        if (defaultsVersion < CURRENT_ARCANE_CRYSTAL_DEFAULTS_VERSION
+            && hadMaxPerRadiusKey
+            && worldgen.has("arcaneCrystalMaxPlacementsPerRadius")) {
+            try {
+                var maxPerRadius = worldgen.getAsJsonPrimitive("arcaneCrystalMaxPlacementsPerRadius");
+                if (maxPerRadius != null && maxPerRadius.isNumber()
+                    && maxPerRadius.getAsInt() == OLD_ARCANE_CRYSTAL_MAX_PLACEMENTS_PER_RADIUS) {
+                    worldgen.addProperty("arcaneCrystalMaxPlacementsPerRadius", DEFAULT_ARCANE_CRYSTAL_MAX_PLACEMENTS_PER_RADIUS);
+                    changed = true;
+                }
+            } catch (Throwable ignored) {
+                // Best effort.
+            }
+        }
+        if (defaultsVersion < CURRENT_ARCANE_CRYSTAL_DEFAULTS_VERSION) {
+            try {
+                var chance = worldgen.getAsJsonPrimitive("arcaneCrystalChancePerNewChunk");
+                if (chance != null && chance.isNumber()
+                    && Math.abs(chance.getAsDouble() - OLD_ARCANE_CRYSTAL_CELL_DEFAULT_CHANCE_PER_CHUNK) < 0.000000001) {
+                    worldgen.addProperty("arcaneCrystalChancePerNewChunk", DEFAULT_ARCANE_CRYSTAL_CHANCE_PER_CHUNK);
+                    changed = true;
+                }
+            } catch (Throwable ignored) {
+                // Best effort.
+            }
+            try {
+                var processExisting = worldgen.getAsJsonPrimitive("arcaneCrystalProcessExistingChunks");
+                if (processExisting != null && processExisting.isBoolean() && processExisting.getAsBoolean()) {
+                    worldgen.addProperty("arcaneCrystalProcessExistingChunks", false);
+                    changed = true;
+                }
+            } catch (Throwable ignored) {
+                // Best effort.
+            }
+            worldgen.addProperty("arcaneCrystalDefaultsVersion", CURRENT_ARCANE_CRYSTAL_DEFAULTS_VERSION);
+            changed = true;
+        }
+
+        if (!hadNewPlacementKey && worldgen.has("arcaneCrystalChancePerNewChunk")) {
+            try {
+                var chance = worldgen.getAsJsonPrimitive("arcaneCrystalChancePerNewChunk");
+                if (chance != null && chance.isNumber()) {
+                    double value = chance.getAsDouble();
+                    if (Math.abs(value - OLD_ARCANE_CRYSTAL_DEFAULT_CHANCE_PER_CHUNK) < 0.000000001) {
+                        worldgen.addProperty("arcaneCrystalChancePerNewChunk", DEFAULT_ARCANE_CRYSTAL_CHANCE_PER_CHUNK);
+                        changed = true;
+                    }
+                }
+            } catch (Throwable ignored) {
+                // Best effort.
+            }
+        }
+        if (!hadMaxPerRadiusKey && worldgen.has("arcaneCrystalPlacementsPerChunk")) {
+            try {
+                var placements = worldgen.getAsJsonPrimitive("arcaneCrystalPlacementsPerChunk");
+                if (placements != null && placements.isNumber()
+                    && placements.getAsInt() == OLD_ARCANE_CRYSTAL_DEBUG_PLACEMENTS_PER_CHUNK) {
+                    worldgen.addProperty("arcaneCrystalPlacementsPerChunk", DEFAULT_ARCANE_CRYSTAL_PLACEMENTS_PER_CHUNK);
+                    changed = true;
+                }
+            } catch (Throwable ignored) {
+                // Best effort.
+            }
+        }
+
+        if (changed) {
+            debug.traceFileOnly(
+                null,
+                "Config migrate: updated arcane crystal worldgen defaults (chance="
+                    + DEFAULT_ARCANE_CRYSTAL_CHANCE_PER_CHUNK
+                    + ", placementsPerChunk="
+                    + DEFAULT_ARCANE_CRYSTAL_PLACEMENTS_PER_CHUNK
+                    + ", densityRadiusBlocks="
+                    + DEFAULT_ARCANE_CRYSTAL_DENSITY_RADIUS_BLOCKS
+                    + ", maxPlacementsPerRadius="
+                    + DEFAULT_ARCANE_CRYSTAL_MAX_PLACEMENTS_PER_RADIUS
+                    + ", processExistingChunks=false)."
+            );
+        }
+    }
+
+    private void migrateKuduAdeptConfig(@Nonnull JsonObject root) {
+        if (!root.has("kuduAdept") || !root.get("kuduAdept").isJsonObject()) {
+            return;
+        }
+
+        JsonObject adept = root.getAsJsonObject("kuduAdept");
+        int defaultsVersion = 0;
+        try {
+            if (adept.has("defaultsVersion")) {
+                var defaultsVersionValue = adept.getAsJsonPrimitive("defaultsVersion");
+                if (defaultsVersionValue != null && defaultsVersionValue.isNumber()) {
+                    defaultsVersion = defaultsVersionValue.getAsInt();
+                }
+            }
+        } catch (Throwable ignored) {
+            defaultsVersion = 0;
+        }
+
+        if (defaultsVersion >= CURRENT_KUDU_ADEPT_DEFAULTS_VERSION) {
+            return;
+        }
+
+        boolean changed = false;
+        if (!adept.has("enabled")
+            || adept.get("enabled").isJsonNull()
+            || (adept.get("enabled").isJsonPrimitive() && !adept.getAsJsonPrimitive("enabled").getAsBoolean())) {
+            adept.addProperty("enabled", true);
+            changed = true;
+        }
+
+        JsonObject spawn = ensureObject(adept, "spawn");
+        if (!spawn.has("maxActivePerWorld") || jsonNumberEquals(spawn, "maxActivePerWorld", 20)) {
+            spawn.addProperty("maxActivePerWorld", DEFAULT_KUDU_ADEPT_MAX_ACTIVE_PER_WORLD);
+            changed = true;
+        }
+        if (!spawn.has("spawnsPerInterval")
+            || jsonNumberEquals(spawn, "spawnsPerInterval", LAST_KUDU_ADEPT_SPAWNS_PER_INTERVAL)) {
+            spawn.addProperty("spawnsPerInterval", DEFAULT_KUDU_ADEPT_SPAWNS_PER_INTERVAL);
+            changed = true;
+        }
+        if (!spawn.has("maxAttemptsPerInterval")
+            || jsonNumberEquals(spawn, "maxAttemptsPerInterval", 24)
+            || jsonNumberEquals(spawn, "maxAttemptsPerInterval", LAST_KUDU_ADEPT_MAX_ATTEMPTS_PER_INTERVAL)) {
+            spawn.addProperty("maxAttemptsPerInterval", DEFAULT_KUDU_ADEPT_MAX_ATTEMPTS_PER_INTERVAL);
+            changed = true;
+        }
+        if (!spawn.has("daySunlightThreshold") || jsonNumberEquals(spawn, "daySunlightThreshold", 0.25)) {
+            spawn.addProperty("daySunlightThreshold", 0.0);
+            changed = true;
+        }
+        if (!spawn.has("intervalSeconds")
+            || jsonNumberEquals(spawn, "intervalSeconds", OLD_KUDU_ADEPT_INTERVAL_SECONDS)
+            || jsonNumberEquals(spawn, "intervalSeconds", PREVIOUS_KUDU_ADEPT_INTERVAL_SECONDS)
+            || jsonNumberEquals(spawn, "intervalSeconds", LAST_KUDU_ADEPT_INTERVAL_SECONDS)) {
+            spawn.addProperty("intervalSeconds", DEFAULT_KUDU_ADEPT_INTERVAL_SECONDS);
+            changed = true;
+        }
+        if (!spawn.has("densityCellSizeBlocks")
+            || jsonNumberEquals(spawn, "densityCellSizeBlocks", PREVIOUS_KUDU_ADEPT_DENSITY_CELL_SIZE_BLOCKS)
+            || jsonNumberEquals(spawn, "densityCellSizeBlocks", LAST_KUDU_ADEPT_DENSITY_CELL_SIZE_BLOCKS)) {
+            spawn.addProperty("densityCellSizeBlocks", DEFAULT_KUDU_ADEPT_DENSITY_CELL_SIZE_BLOCKS);
+            changed = true;
+        }
+        if (!spawn.has("cellSpawnChancePercent")
+            || jsonNumberEquals(spawn, "cellSpawnChancePercent", LAST_KUDU_ADEPT_CELL_SPAWN_CHANCE_PERCENT)) {
+            spawn.addProperty("cellSpawnChancePercent", DEFAULT_KUDU_ADEPT_CELL_SPAWN_CHANCE_PERCENT);
+            changed = true;
+        }
+        if (!spawn.has("minDistanceFromPlayersBlocks")
+            || jsonNumberEquals(spawn, "minDistanceFromPlayersBlocks", PREVIOUS_KUDU_ADEPT_MIN_DISTANCE_FROM_PLAYERS_BLOCKS)) {
+            spawn.addProperty("minDistanceFromPlayersBlocks", DEFAULT_KUDU_ADEPT_MIN_DISTANCE_FROM_PLAYERS_BLOCKS);
+            changed = true;
+        }
+        if (!spawn.has("radiusMinBlocks")
+            || jsonNumberEquals(spawn, "radiusMinBlocks", PREVIOUS_KUDU_ADEPT_RADIUS_MIN_BLOCKS)) {
+            spawn.addProperty("radiusMinBlocks", DEFAULT_KUDU_ADEPT_RADIUS_MIN_BLOCKS);
+            changed = true;
+        }
+        if (!spawn.has("radiusMaxBlocks")
+            || jsonNumberEquals(spawn, "radiusMaxBlocks", PREVIOUS_KUDU_ADEPT_RADIUS_MAX_BLOCKS)
+            || jsonNumberEquals(spawn, "radiusMaxBlocks", LAST_KUDU_ADEPT_RADIUS_MAX_BLOCKS)) {
+            spawn.addProperty("radiusMaxBlocks", DEFAULT_KUDU_ADEPT_RADIUS_MAX_BLOCKS);
+            changed = true;
+        }
+        if (!spawn.has("allowInMemoryChunks")) {
+            spawn.addProperty("allowInMemoryChunks", true);
+            changed = true;
+        }
+
+        JsonObject despawn = ensureObject(adept, "despawn");
+        if (!despawn.has("onNight")
+            || (despawn.get("onNight").isJsonPrimitive() && despawn.getAsJsonPrimitive("onNight").getAsBoolean())) {
+            despawn.addProperty("onNight", false);
+            changed = true;
+        }
+        if (!despawn.has("afterSeconds") || jsonNumberEquals(despawn, "afterSeconds", PREVIOUS_KUDU_ADEPT_DESPAWN_AFTER_SECONDS)) {
+            despawn.addProperty("afterSeconds", DEFAULT_KUDU_ADEPT_DESPAWN_AFTER_SECONDS);
+            changed = true;
+        }
+
+        adept.addProperty("defaultsVersion", CURRENT_KUDU_ADEPT_DEFAULTS_VERSION);
+        if (changed) {
+            debug.traceFileOnly(
+                null,
+                "Config migrate: Kudu Adept defaults now use 120s intervals, 1 spawn with 3 attempts, 256-block density cells, 33% cell chance, 8-280 block sampling, all-time spawning, no night despawn, and no lifetime despawn."
+            );
+        }
+    }
+
+    private void migrateCloudBlockConfig(@Nonnull JsonObject root) {
+        if (!root.has("cloudBlock") || !root.get("cloudBlock").isJsonObject()) {
+            return;
+        }
+
+        JsonObject cloud = root.getAsJsonObject("cloudBlock");
+        boolean changed = false;
+        if (!cloud.has("targetHeightBlocks")) {
+            cloud.addProperty("targetHeightBlocks", DEFAULT_CLOUD_BLOCK_TARGET_HEIGHT_BLOCKS);
+            changed = true;
+        }
+        if (jsonNumberEquals(cloud, "maxVerticalSpeed", PREVIOUS_CLOUD_BLOCK_MAX_VERTICAL_SPEED)) {
+            cloud.addProperty("maxVerticalSpeed", DEFAULT_CLOUD_BLOCK_MAX_VERTICAL_SPEED);
+            changed = true;
+        }
+        if (jsonNumberEquals(cloud, "impulseVelocity", PREVIOUS_CLOUD_BLOCK_IMPULSE_VELOCITY)) {
+            cloud.remove("impulseVelocity");
+            changed = true;
+        }
+
+        if (changed) {
+            debug.traceFileOnly(
+                null,
+                "Config migrate: Cloud Block now uses targetHeightBlocks="
+                    + DEFAULT_CLOUD_BLOCK_TARGET_HEIGHT_BLOCKS
+                    + " and maxVerticalSpeed="
+                    + DEFAULT_CLOUD_BLOCK_MAX_VERTICAL_SPEED
+                    + "."
+            );
+        }
+    }
+
     private static @Nonnull JsonObject ensureObject(@Nonnull JsonObject parent, @Nonnull String key) {
         if (parent.has(key) && parent.get(key).isJsonObject()) {
             return parent.getAsJsonObject(key);
@@ -213,6 +527,17 @@ public final class AxoTalesServerConfigStore {
         JsonObject obj = new JsonObject();
         parent.add(key, obj);
         return obj;
+    }
+
+    private static boolean jsonNumberEquals(@Nonnull JsonObject object, @Nonnull String key, double expected) {
+        try {
+            if (!object.has(key) || !object.get(key).isJsonPrimitive() || !object.getAsJsonPrimitive(key).isNumber()) {
+                return false;
+            }
+            return Math.abs(object.getAsJsonPrimitive(key).getAsDouble() - expected) < 0.0000001;
+        } catch (Throwable ignored) {
+            return false;
+        }
     }
 
     private static boolean moveIfPresent(@Nonnull JsonObject from, @Nonnull String fromKey, @Nonnull JsonObject to, @Nonnull String toKey) {
@@ -244,6 +569,12 @@ public final class AxoTalesServerConfigStore {
         }
         if (config.workarounds == null) {
             config.workarounds = new AxoTalesServerConfig.Workarounds();
+        }
+        if (config.cloudBlock == null) {
+            config.cloudBlock = new AxoTalesServerConfig.CloudBlock();
+        }
+        if (config.bounceBlock == null) {
+            config.bounceBlock = new AxoTalesServerConfig.BounceBlock();
         }
         if (config.runeKnight == null) {
             config.runeKnight = new AxoTalesServerConfig.RuneKnight();
@@ -320,6 +651,10 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: spellbooks.castDebounceSeconds is not finite; resetting to 0.6.");
             config.spellbooks.castDebounceSeconds = 0.6;
         }
+        if (!Double.isFinite(config.spellbooks.secondaryUseDelaySeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: spellbooks.secondaryUseDelaySeconds is not finite; resetting to 0.3.");
+            config.spellbooks.secondaryUseDelaySeconds = 0.3;
+        }
         if (config.spellbooks.inputDebounceSeconds < 0) {
             debug.traceFileOnly(null, "Config sanitize: spellbooks.inputDebounceSeconds < 0; clamping to 0.");
             config.spellbooks.inputDebounceSeconds = 0;
@@ -327,6 +662,10 @@ public final class AxoTalesServerConfigStore {
         if (config.spellbooks.castDebounceSeconds < 0) {
             debug.traceFileOnly(null, "Config sanitize: spellbooks.castDebounceSeconds < 0; clamping to 0.");
             config.spellbooks.castDebounceSeconds = 0;
+        }
+        if (config.spellbooks.secondaryUseDelaySeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: spellbooks.secondaryUseDelaySeconds < 0; clamping to 0.");
+            config.spellbooks.secondaryUseDelaySeconds = 0;
         }
         if (config.spellbooks.inputDebounceSeconds > 5) {
             debug.traceFileOnly(null, "Config sanitize: spellbooks.inputDebounceSeconds > 5; clamping to 5.");
@@ -336,13 +675,165 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: spellbooks.castDebounceSeconds > 5; clamping to 5.");
             config.spellbooks.castDebounceSeconds = 5;
         }
+        if (config.spellbooks.secondaryUseDelaySeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: spellbooks.secondaryUseDelaySeconds > 5; clamping to 5.");
+            config.spellbooks.secondaryUseDelaySeconds = 5;
+        }
+
+        if (!Double.isFinite(config.cloudBlock.targetHeightBlocks)) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.targetHeightBlocks is not finite; resetting to 6.");
+            config.cloudBlock.targetHeightBlocks = DEFAULT_CLOUD_BLOCK_TARGET_HEIGHT_BLOCKS;
+        }
+        if (config.cloudBlock.targetHeightBlocks < 0.25) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.targetHeightBlocks < 0.25; clamping to 0.25.");
+            config.cloudBlock.targetHeightBlocks = 0.25;
+        }
+        if (config.cloudBlock.targetHeightBlocks > 64) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.targetHeightBlocks > 64; clamping to 64.");
+            config.cloudBlock.targetHeightBlocks = 64.0;
+        }
+        if (!Double.isFinite(config.cloudBlock.maxVerticalSpeed)) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.maxVerticalSpeed is not finite; resetting to 32.");
+            config.cloudBlock.maxVerticalSpeed = DEFAULT_CLOUD_BLOCK_MAX_VERTICAL_SPEED;
+        }
+        if (config.cloudBlock.maxVerticalSpeed < 0.1) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.maxVerticalSpeed < 0.1; clamping to 0.1.");
+            config.cloudBlock.maxVerticalSpeed = 0.1;
+        }
+        if (config.cloudBlock.maxVerticalSpeed > 80) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.maxVerticalSpeed > 80; clamping to 80.");
+            config.cloudBlock.maxVerticalSpeed = 80.0;
+        }
+        if (!Double.isFinite(config.cloudBlock.minContactVelocity)) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.minContactVelocity is not finite; resetting to 0.12.");
+            config.cloudBlock.minContactVelocity = 0.12;
+        }
+        if (config.cloudBlock.minContactVelocity < 0) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.minContactVelocity < 0; clamping to 0.");
+            config.cloudBlock.minContactVelocity = 0.0;
+        }
+        if (config.cloudBlock.minContactVelocity > 10) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.minContactVelocity > 10; clamping to 10.");
+            config.cloudBlock.minContactVelocity = 10.0;
+        }
+        if (!Double.isFinite(config.cloudBlock.cooldownSeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.cooldownSeconds is not finite; resetting to 1.0.");
+            config.cloudBlock.cooldownSeconds = 1.0;
+        }
+        if (config.cloudBlock.cooldownSeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.cooldownSeconds < 0; clamping to 0.");
+            config.cloudBlock.cooldownSeconds = 0.0;
+        }
+        if (config.cloudBlock.cooldownSeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.cooldownSeconds > 5; clamping to 5.");
+            config.cloudBlock.cooldownSeconds = 5.0;
+        }
+        if (!Double.isFinite(config.cloudBlock.chainVelocityMultiplier)) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.chainVelocityMultiplier is not finite; resetting to 1.5.");
+            config.cloudBlock.chainVelocityMultiplier = DEFAULT_CLOUD_BLOCK_CHAIN_VELOCITY_MULTIPLIER;
+        }
+        if (config.cloudBlock.chainVelocityMultiplier < 1.0) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.chainVelocityMultiplier < 1; clamping to 1.");
+            config.cloudBlock.chainVelocityMultiplier = 1.0;
+        }
+        if (config.cloudBlock.chainVelocityMultiplier > 5.0) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.chainVelocityMultiplier > 5; clamping to 5.");
+            config.cloudBlock.chainVelocityMultiplier = 5.0;
+        }
+        if (!Double.isFinite(config.cloudBlock.chainResetSeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.chainResetSeconds is not finite; resetting to 4.");
+            config.cloudBlock.chainResetSeconds = DEFAULT_CLOUD_BLOCK_CHAIN_RESET_SECONDS;
+        }
+        if (config.cloudBlock.chainResetSeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.chainResetSeconds < 0; clamping to 0.");
+            config.cloudBlock.chainResetSeconds = 0.0;
+        }
+        if (config.cloudBlock.chainResetSeconds > 30) {
+            debug.traceFileOnly(null, "Config sanitize: cloudBlock.chainResetSeconds > 30; clamping to 30.");
+            config.cloudBlock.chainResetSeconds = 30.0;
+        }
+
+        if (!Double.isFinite(config.bounceBlock.baseTargetHeightBlocks)) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.baseTargetHeightBlocks is not finite; resetting to 4.");
+            config.bounceBlock.baseTargetHeightBlocks = DEFAULT_BOUNCE_BLOCK_BASE_TARGET_HEIGHT_BLOCKS;
+        }
+        if (config.bounceBlock.baseTargetHeightBlocks < 0.25) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.baseTargetHeightBlocks < 0.25; clamping to 0.25.");
+            config.bounceBlock.baseTargetHeightBlocks = 0.25;
+        }
+        if (config.bounceBlock.baseTargetHeightBlocks > 64) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.baseTargetHeightBlocks > 64; clamping to 64.");
+            config.bounceBlock.baseTargetHeightBlocks = 64.0;
+        }
+        if (!Double.isFinite(config.bounceBlock.heightGainPerBounceBlocks)) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.heightGainPerBounceBlocks is not finite; resetting to 2.");
+            config.bounceBlock.heightGainPerBounceBlocks = DEFAULT_BOUNCE_BLOCK_HEIGHT_GAIN_PER_BOUNCE_BLOCKS;
+        }
+        if (config.bounceBlock.heightGainPerBounceBlocks < 0) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.heightGainPerBounceBlocks < 0; clamping to 0.");
+            config.bounceBlock.heightGainPerBounceBlocks = 0.0;
+        }
+        if (config.bounceBlock.heightGainPerBounceBlocks > 64) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.heightGainPerBounceBlocks > 64; clamping to 64.");
+            config.bounceBlock.heightGainPerBounceBlocks = 64.0;
+        }
+        if (!Double.isFinite(config.bounceBlock.maxTargetHeightBlocks)) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.maxTargetHeightBlocks is not finite; resetting to 18.");
+            config.bounceBlock.maxTargetHeightBlocks = DEFAULT_BOUNCE_BLOCK_MAX_TARGET_HEIGHT_BLOCKS;
+        }
+        if (config.bounceBlock.maxTargetHeightBlocks < config.bounceBlock.baseTargetHeightBlocks) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.maxTargetHeightBlocks < baseTargetHeightBlocks; clamping to baseTargetHeightBlocks.");
+            config.bounceBlock.maxTargetHeightBlocks = config.bounceBlock.baseTargetHeightBlocks;
+        }
+        if (config.bounceBlock.maxTargetHeightBlocks > 128) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.maxTargetHeightBlocks > 128; clamping to 128.");
+            config.bounceBlock.maxTargetHeightBlocks = 128.0;
+        }
+        if (!Double.isFinite(config.bounceBlock.maxVerticalSpeed)) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.maxVerticalSpeed is not finite; resetting to 48.");
+            config.bounceBlock.maxVerticalSpeed = DEFAULT_BOUNCE_BLOCK_MAX_VERTICAL_SPEED;
+        }
+        if (config.bounceBlock.maxVerticalSpeed < 0.1) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.maxVerticalSpeed < 0.1; clamping to 0.1.");
+            config.bounceBlock.maxVerticalSpeed = 0.1;
+        }
+        if (config.bounceBlock.maxVerticalSpeed > 120) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.maxVerticalSpeed > 120; clamping to 120.");
+            config.bounceBlock.maxVerticalSpeed = 120.0;
+        }
+        if (!Double.isFinite(config.bounceBlock.cooldownSeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.cooldownSeconds is not finite; resetting to 0.2.");
+            config.bounceBlock.cooldownSeconds = DEFAULT_BOUNCE_BLOCK_COOLDOWN_SECONDS;
+        }
+        if (config.bounceBlock.cooldownSeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.cooldownSeconds < 0; clamping to 0.");
+            config.bounceBlock.cooldownSeconds = 0.0;
+        }
+        if (config.bounceBlock.cooldownSeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.cooldownSeconds > 5; clamping to 5.");
+            config.bounceBlock.cooldownSeconds = 5.0;
+        }
+        if (!Double.isFinite(config.bounceBlock.streakResetSeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.streakResetSeconds is not finite; resetting to 8.");
+            config.bounceBlock.streakResetSeconds = DEFAULT_BOUNCE_BLOCK_STREAK_RESET_SECONDS;
+        }
+        if (config.bounceBlock.streakResetSeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.streakResetSeconds < 0; clamping to 0.");
+            config.bounceBlock.streakResetSeconds = 0.0;
+        }
+        if (config.bounceBlock.streakResetSeconds > 60) {
+            debug.traceFileOnly(null, "Config sanitize: bounceBlock.streakResetSeconds > 60; clamping to 60.");
+            config.bounceBlock.streakResetSeconds = 60.0;
+        }
 
         if (!Double.isFinite(config.worldgen.arcaneCrystalChancePerNewChunk)) {
             debug.traceFileOnly(
                 null,
-                "Config sanitize: worldgen.arcaneCrystalChancePerNewChunk is not finite; resetting to " + (0.25 / 3.0) + "."
+                "Config sanitize: worldgen.arcaneCrystalChancePerNewChunk is not finite; resetting to "
+                    + DEFAULT_ARCANE_CRYSTAL_CHANCE_PER_CHUNK
+                    + "."
             );
-            config.worldgen.arcaneCrystalChancePerNewChunk = 0.25 / 3.0;
+            config.worldgen.arcaneCrystalChancePerNewChunk = DEFAULT_ARCANE_CRYSTAL_CHANCE_PER_CHUNK;
         }
         if (config.worldgen.arcaneCrystalChancePerNewChunk < 0) {
             debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalChancePerNewChunk < 0; clamping to 0.");
@@ -351,6 +842,30 @@ public final class AxoTalesServerConfigStore {
         if (config.worldgen.arcaneCrystalChancePerNewChunk > 1) {
             debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalChancePerNewChunk > 1; clamping to 1.");
             config.worldgen.arcaneCrystalChancePerNewChunk = 1;
+        }
+        if (config.worldgen.arcaneCrystalPlacementsPerChunk < 0) {
+            debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalPlacementsPerChunk < 0; clamping to 0.");
+            config.worldgen.arcaneCrystalPlacementsPerChunk = 0;
+        }
+        if (config.worldgen.arcaneCrystalPlacementsPerChunk > 128) {
+            debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalPlacementsPerChunk > 128; clamping to 128.");
+            config.worldgen.arcaneCrystalPlacementsPerChunk = 128;
+        }
+        if (config.worldgen.arcaneCrystalDensityRadiusBlocks < 1) {
+            debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalDensityRadiusBlocks < 1; clamping to 1.");
+            config.worldgen.arcaneCrystalDensityRadiusBlocks = 1;
+        }
+        if (config.worldgen.arcaneCrystalDensityRadiusBlocks > 512) {
+            debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalDensityRadiusBlocks > 512; clamping to 512.");
+            config.worldgen.arcaneCrystalDensityRadiusBlocks = 512;
+        }
+        if (config.worldgen.arcaneCrystalMaxPlacementsPerRadius < 0) {
+            debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalMaxPlacementsPerRadius < 0; clamping to 0.");
+            config.worldgen.arcaneCrystalMaxPlacementsPerRadius = 0;
+        }
+        if (config.worldgen.arcaneCrystalMaxPlacementsPerRadius > 128) {
+            debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneCrystalMaxPlacementsPerRadius > 128; clamping to 128.");
+            config.worldgen.arcaneCrystalMaxPlacementsPerRadius = 128;
         }
 
         // Arcane Matter ore worldgen.
@@ -624,8 +1139,8 @@ public final class AxoTalesServerConfigStore {
         }
 
         if (!Double.isFinite(config.kuduAdept.spawn.intervalSeconds)) {
-            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.intervalSeconds is not finite; resetting to 30.");
-            config.kuduAdept.spawn.intervalSeconds = 30.0;
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.intervalSeconds is not finite; resetting to 120.");
+            config.kuduAdept.spawn.intervalSeconds = DEFAULT_KUDU_ADEPT_INTERVAL_SECONDS;
         }
         if (config.kuduAdept.spawn.intervalSeconds < 0) {
             debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.intervalSeconds < 0; clamping to 0.");
@@ -659,13 +1174,33 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.maxAttemptsPerInterval > 500; clamping to 500.");
             config.kuduAdept.spawn.maxAttemptsPerInterval = 500;
         }
+        if (!Double.isFinite(config.kuduAdept.spawn.densityCellSizeBlocks)) {
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.densityCellSizeBlocks is not finite; resetting to 256.");
+            config.kuduAdept.spawn.densityCellSizeBlocks = DEFAULT_KUDU_ADEPT_DENSITY_CELL_SIZE_BLOCKS;
+        }
+        if (config.kuduAdept.spawn.densityCellSizeBlocks < 32) {
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.densityCellSizeBlocks < 32; clamping to 32.");
+            config.kuduAdept.spawn.densityCellSizeBlocks = 32;
+        }
+        if (config.kuduAdept.spawn.densityCellSizeBlocks > 2048) {
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.densityCellSizeBlocks > 2048; clamping to 2048.");
+            config.kuduAdept.spawn.densityCellSizeBlocks = 2048;
+        }
+        if (config.kuduAdept.spawn.cellSpawnChancePercent < 0) {
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.cellSpawnChancePercent < 0; clamping to 0.");
+            config.kuduAdept.spawn.cellSpawnChancePercent = 0;
+        }
+        if (config.kuduAdept.spawn.cellSpawnChancePercent > 100) {
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.cellSpawnChancePercent > 100; clamping to 100.");
+            config.kuduAdept.spawn.cellSpawnChancePercent = 100;
+        }
         if (!Double.isFinite(config.kuduAdept.spawn.radiusMinBlocks)) {
-            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.radiusMinBlocks is not finite; resetting to 18.");
-            config.kuduAdept.spawn.radiusMinBlocks = 18.0;
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.radiusMinBlocks is not finite; resetting to 8.");
+            config.kuduAdept.spawn.radiusMinBlocks = DEFAULT_KUDU_ADEPT_RADIUS_MIN_BLOCKS;
         }
         if (!Double.isFinite(config.kuduAdept.spawn.radiusMaxBlocks)) {
-            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.radiusMaxBlocks is not finite; resetting to 96.");
-            config.kuduAdept.spawn.radiusMaxBlocks = 96.0;
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.radiusMaxBlocks is not finite; resetting to 280.");
+            config.kuduAdept.spawn.radiusMaxBlocks = DEFAULT_KUDU_ADEPT_RADIUS_MAX_BLOCKS;
         }
         if (config.kuduAdept.spawn.radiusMinBlocks < 0) {
             debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.radiusMinBlocks < 0; clamping to 0.");
@@ -680,8 +1215,8 @@ public final class AxoTalesServerConfigStore {
             config.kuduAdept.spawn.radiusMaxBlocks = 512;
         }
         if (!Double.isFinite(config.kuduAdept.spawn.minDistanceFromPlayersBlocks)) {
-            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.minDistanceFromPlayersBlocks is not finite; resetting to 12.");
-            config.kuduAdept.spawn.minDistanceFromPlayersBlocks = 12.0;
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.minDistanceFromPlayersBlocks is not finite; resetting to 8.");
+            config.kuduAdept.spawn.minDistanceFromPlayersBlocks = DEFAULT_KUDU_ADEPT_MIN_DISTANCE_FROM_PLAYERS_BLOCKS;
         }
         if (config.kuduAdept.spawn.minDistanceFromPlayersBlocks < 0) {
             debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.minDistanceFromPlayersBlocks < 0; clamping to 0.");
@@ -692,8 +1227,8 @@ public final class AxoTalesServerConfigStore {
             config.kuduAdept.spawn.minDistanceFromPlayersBlocks = 512;
         }
         if (!Double.isFinite(config.kuduAdept.spawn.daySunlightThreshold)) {
-            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.daySunlightThreshold is not finite; resetting to 0.25.");
-            config.kuduAdept.spawn.daySunlightThreshold = 0.25;
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.daySunlightThreshold is not finite; resetting to 0.");
+            config.kuduAdept.spawn.daySunlightThreshold = 0.0;
         }
         if (config.kuduAdept.spawn.daySunlightThreshold < 0) {
             debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.daySunlightThreshold < 0; clamping to 0.");
@@ -704,8 +1239,8 @@ public final class AxoTalesServerConfigStore {
             config.kuduAdept.spawn.daySunlightThreshold = 1;
         }
         if (!Double.isFinite(config.kuduAdept.despawn.afterSeconds)) {
-            debug.traceFileOnly(null, "Config sanitize: kuduAdept.despawn.afterSeconds is not finite; resetting to 600.");
-            config.kuduAdept.despawn.afterSeconds = 600.0;
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.despawn.afterSeconds is not finite; resetting to 0.");
+            config.kuduAdept.despawn.afterSeconds = DEFAULT_KUDU_ADEPT_DESPAWN_AFTER_SECONDS;
         }
         if (config.kuduAdept.despawn.afterSeconds < 0) {
             debug.traceFileOnly(null, "Config sanitize: kuduAdept.despawn.afterSeconds < 0; clamping to 0.");
@@ -757,6 +1292,18 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: doomBook.manaCost < 0; clamping to 0.");
             config.doomBook.manaCost = 0;
         }
+        if (!Double.isFinite(config.doomBook.projectileDelaySeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: doomBook.projectileDelaySeconds is not finite; resetting to 0.24.");
+            config.doomBook.projectileDelaySeconds = 0.24;
+        }
+        if (config.doomBook.projectileDelaySeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: doomBook.projectileDelaySeconds < 0; clamping to 0.");
+            config.doomBook.projectileDelaySeconds = 0;
+        }
+        if (config.doomBook.projectileDelaySeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: doomBook.projectileDelaySeconds > 5; clamping to 5.");
+            config.doomBook.projectileDelaySeconds = 5;
+        }
 
         if (config.morphBook.manaCost < 0) {
             debug.traceFileOnly(null, "Config sanitize: morphBook.manaCost < 0; clamping to 0.");
@@ -780,6 +1327,18 @@ public final class AxoTalesServerConfigStore {
         if (config.teleportBook.manaCost < 0) {
             debug.traceFileOnly(null, "Config sanitize: teleportBook.manaCost < 0; clamping to 0.");
             config.teleportBook.manaCost = 0;
+        }
+        if (!Double.isFinite(config.teleportBook.castDelaySeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: teleportBook.castDelaySeconds is not finite; resetting to 0.5.");
+            config.teleportBook.castDelaySeconds = 0.5;
+        }
+        if (config.teleportBook.castDelaySeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: teleportBook.castDelaySeconds < 0; clamping to 0.");
+            config.teleportBook.castDelaySeconds = 0;
+        }
+        if (config.teleportBook.castDelaySeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: teleportBook.castDelaySeconds > 5; clamping to 5.");
+            config.teleportBook.castDelaySeconds = 5;
         }
 
         if (config.miningBook.maxDistanceBlocks < 1) {
@@ -812,6 +1371,18 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: miningBook.maxBlocks > gridSize^2; clamping to " + miningGridArea + ".");
             config.miningBook.maxBlocks = miningGridArea;
         }
+        if (!Double.isFinite(config.flameBook.projectileDelaySeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: flameBook.projectileDelaySeconds is not finite; resetting to 0.2.");
+            config.flameBook.projectileDelaySeconds = 0.2;
+        }
+        if (config.flameBook.projectileDelaySeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: flameBook.projectileDelaySeconds < 0; clamping to 0.");
+            config.flameBook.projectileDelaySeconds = 0;
+        }
+        if (config.flameBook.projectileDelaySeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: flameBook.projectileDelaySeconds > 5; clamping to 5.");
+            config.flameBook.projectileDelaySeconds = 5;
+        }
         if (!config.healingBook.healAmount.full && config.healingBook.healAmount.value < 0) {
             debug.traceFileOnly(null, "Config sanitize: healingBook.healAmount < 0; clamping to 0.");
             config.healingBook.healAmount.value = 0;
@@ -819,6 +1390,18 @@ public final class AxoTalesServerConfigStore {
         if (!config.healingBook.manaCost.full && config.healingBook.manaCost.value < 0) {
             debug.traceFileOnly(null, "Config sanitize: healingBook.manaCost < 0; clamping to 0.");
             config.healingBook.manaCost.value = 0;
+        }
+        if (!Double.isFinite(config.healingBook.projectileDelaySeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: healingBook.projectileDelaySeconds is not finite; resetting to 0.15.");
+            config.healingBook.projectileDelaySeconds = 0.15;
+        }
+        if (config.healingBook.projectileDelaySeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: healingBook.projectileDelaySeconds < 0; clamping to 0.");
+            config.healingBook.projectileDelaySeconds = 0;
+        }
+        if (config.healingBook.projectileDelaySeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: healingBook.projectileDelaySeconds > 5; clamping to 5.");
+            config.healingBook.projectileDelaySeconds = 5;
         }
 
         if (config.immunityBook.manaCost < 0) {
@@ -850,6 +1433,34 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: tauntBook.slamRadiusBlocks < 0; clamping to 0.");
             config.tauntBook.slamRadiusBlocks = 0;
         }
+        if (config.tauntBook.groundBreakDepthBlocks < 1) {
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakDepthBlocks < 1; clamping to 1.");
+            config.tauntBook.groundBreakDepthBlocks = 1;
+        }
+        if (config.tauntBook.groundBreakDepthBlocks > 8) {
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakDepthBlocks > 8; clamping to 8.");
+            config.tauntBook.groundBreakDepthBlocks = 8;
+        }
+        if (config.tauntBook.groundBreakDepthPerStack < 0) {
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakDepthPerStack < 0; clamping to 0.");
+            config.tauntBook.groundBreakDepthPerStack = 0;
+        }
+        if (config.tauntBook.groundBreakDepthPerStack > 4) {
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakDepthPerStack > 4; clamping to 4.");
+            config.tauntBook.groundBreakDepthPerStack = 4;
+        }
+        if (!Double.isFinite(config.tauntBook.groundBreakSparingChance)) {
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakSparingChance is not finite; resetting to 0.18.");
+            config.tauntBook.groundBreakSparingChance = 0.18;
+        }
+        if (config.tauntBook.groundBreakSparingChance < 0) {
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakSparingChance < 0; clamping to 0.");
+            config.tauntBook.groundBreakSparingChance = 0;
+        }
+        if (config.tauntBook.groundBreakSparingChance > 0.85) {
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakSparingChance > 0.85; clamping to 0.85.");
+            config.tauntBook.groundBreakSparingChance = 0.85;
+        }
 
         if (config.ancientSword.manaCost < 0) {
             debug.traceFileOnly(null, "Config sanitize: ancientSword.manaCost < 0; clamping to 0.");
@@ -870,6 +1481,18 @@ public final class AxoTalesServerConfigStore {
         if (config.ancientSword.cooldownSeconds > 5) {
             debug.traceFileOnly(null, "Config sanitize: ancientSword.cooldownSeconds > 5; clamping to 5.");
             config.ancientSword.cooldownSeconds = 5;
+        }
+        if (!Double.isFinite(config.ancientSword.castDelaySeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: ancientSword.castDelaySeconds is not finite; resetting to 0.34.");
+            config.ancientSword.castDelaySeconds = 0.34;
+        }
+        if (config.ancientSword.castDelaySeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: ancientSword.castDelaySeconds < 0; clamping to 0.");
+            config.ancientSword.castDelaySeconds = 0;
+        }
+        if (config.ancientSword.castDelaySeconds > 2) {
+            debug.traceFileOnly(null, "Config sanitize: ancientSword.castDelaySeconds > 2; clamping to 2.");
+            config.ancientSword.castDelaySeconds = 2;
         }
     }
 

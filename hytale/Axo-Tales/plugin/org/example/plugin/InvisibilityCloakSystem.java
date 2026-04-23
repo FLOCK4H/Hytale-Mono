@@ -124,7 +124,7 @@ public final class InvisibilityCloakSystem extends TickingSystem<EntityStore> {
                             continue;
                         }
 
-                        String chestItemId = ArmorManaMaxBonusEffect.getArmorItemId(player, ItemArmorSlot.Chest);
+                        String chestItemId = InventoryComponentAccess.armorItemId(store, entityRef, ItemArmorSlot.Chest);
                         boolean wearing = CLOAK_ITEM_ID.equals(chestItemId);
 
                         Boolean last = lastWearingByPlayer.put(uuid, wearing);

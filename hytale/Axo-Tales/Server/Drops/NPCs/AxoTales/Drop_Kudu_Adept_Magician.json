@@ -1,0 +1,28 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Ingredient_Crystal_Arcane",
+          "QuantityMin": 1,
+          "QuantityMax": 1
+        }
+      },
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Arcane_Matter",
+          "QuantityMin": 1,
+          "QuantityMax": 1
+        }
+      },
+      {
+        "Type": "Droplist",
+        "Weight": 33,
+        "DroplistId": "Drop_AxoTales_Cloud_Or_Bounce"
+      }
+    ]
+  }
+}

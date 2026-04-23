@@ -33,7 +33,7 @@
         "Id": "Arcanebench",
         "Type": "Crafting",
         "Categories": [
-          "Arcane_AxoTales"
+          "Arcane_AxoTales_Armor"
         ]
       }
     ],
@@ -58,9 +58,78 @@
   },
   "Armor": {
     "ArmorSlot": "Head",
-    "BaseDamageResistance": 0
+    "BaseDamageResistance": 0,
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.16,
+          "CalculationType": "Multiplicative"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.16,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Oxygen": [
+        {
+          "Amount": 500,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Health": [
+        {
+          "Amount": 25,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Stamina": [
+        {
+          "Amount": 10,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "Regenerating": {
+      "Stamina": [
+        {
+          "$Comment": "Sa'r armor pieces each add +25% of the default positive stamina regeneration.",
+          "Interval": 0.1,
+          "Amount": 0.075,
+          "RegenType": "Additive",
+          "Conditions": [
+            {
+              "Id": "Stat",
+              "Stat": "StaminaRegenDelay",
+              "Amount": 0
+            },
+            {
+              "Id": "Stat",
+              "Stat": "Stamina",
+              "Amount": 0,
+              "Comparison": "Gte"
+            },
+            {
+              "Id": "Wielding",
+              "Inverse": true
+            },
+            {
+              "Id": "Sprinting",
+              "Inverse": true
+            },
+            {
+              "Id": "Gliding",
+              "Inverse": true
+            }
+          ]
+        }
+      ]
+    }
   },
-  "MaxDurability": 100,
+  "MaxDurability": 500,
   "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [

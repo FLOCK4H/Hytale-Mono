@@ -1,0 +1,20 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Spellbook",
+    "ItemAnimationId": "CastHurlCharging"
+  },
+  "RunTime": 0.45,
+  "Next": {
+    "Type": "LaunchProjectile",
+    "RunTime": 0.2,
+    "Effects": {
+      "ItemAnimationId": "CastHurlCharged",
+      "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
+    },
+    "ProjectileId": "KuduAdept_Firebolt",
+    "Tags": {
+      "AimingReference": []
+    }
+  }
+}

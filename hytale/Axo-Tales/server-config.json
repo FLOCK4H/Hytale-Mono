@@ -5,7 +5,13 @@
     "secondaryUseDelaySeconds": 0.3
   },
   "worldgen": {
-    "arcaneCrystalChancePerNewChunk": 0.08333333333333333,
+    "arcaneCrystalChancePerNewChunk": 0.33,
+    "arcaneCrystalPlacementsPerChunk": 1,
+    "arcaneCrystalDensityRadiusBlocks": 64,
+    "arcaneCrystalMaxPlacementsPerRadius": 1,
+    "arcaneCrystalDefaultsVersion": 3,
+    "arcaneCrystalProcessExistingChunks": false,
+    "arcaneCrystalPruneLegacyClusters": true,
     "arcaneMatterOres": {
       "enabled": true,
       "processExistingChunks": true,
@@ -45,6 +51,24 @@
   "workarounds": {
     "disableWorldMap": false
   },
+  "cloudBlock": {
+    "enabled": true,
+    "targetHeightBlocks": 6.0,
+    "maxVerticalSpeed": 32.0,
+    "minContactVelocity": 0.12,
+    "cooldownSeconds": 1.0,
+    "chainVelocityMultiplier": 1.5,
+    "chainResetSeconds": 4.0
+  },
+  "bounceBlock": {
+    "enabled": true,
+    "baseTargetHeightBlocks": 4.0,
+    "heightGainPerBounceBlocks": 2.0,
+    "maxTargetHeightBlocks": 18.0,
+    "maxVerticalSpeed": 48.0,
+    "cooldownSeconds": 0.2,
+    "streakResetSeconds": 8.0
+  },
   "runeKnight": {
     "enabled": true,
     "roleName": "Kudu_Rune_Knight",
@@ -79,22 +103,25 @@
     }
   },
   "kuduAdept": {
-    "enabled": false,
+    "enabled": true,
+    "defaultsVersion": 6,
     "roleName": "Kudu_Adept_Magician",
     "spawn": {
-      "maxActivePerWorld": 20,
+      "maxActivePerWorld": 500,
       "spawnsPerInterval": 1,
-      "intervalSeconds": 30.0,
-      "maxAttemptsPerInterval": 24,
-      "minDistanceFromPlayersBlocks": 12.0,
-      "radiusMinBlocks": 18.0,
-      "radiusMaxBlocks": 96.0,
+      "intervalSeconds": 120.0,
+      "maxAttemptsPerInterval": 3,
+      "densityCellSizeBlocks": 256.0,
+      "cellSpawnChancePercent": 33,
+      "minDistanceFromPlayersBlocks": 8.0,
+      "radiusMinBlocks": 8.0,
+      "radiusMaxBlocks": 280.0,
       "allowInMemoryChunks": true,
-      "daySunlightThreshold": 0.25
+      "daySunlightThreshold": 0.0
     },
     "despawn": {
-      "onNight": true,
-      "afterSeconds": 600.0
+      "onNight": false,
+      "afterSeconds": 0.0
     }
   },
   "hordeBook": {
@@ -104,7 +131,8 @@
     "spawnDistanceBlocks": 3.0
   },
   "doomBook": {
-    "manaCost": 15
+    "manaCost": 25,
+    "projectileDelaySeconds": 0.24
   },
   "morphBook": {
     "manaCost": 25
@@ -113,11 +141,13 @@
     "manaCost": 20
   },
   "flameBook": {
-    "manaCost": 20
+    "manaCost": 20,
+    "projectileDelaySeconds": 0.2
   },
   "teleportBook": {
     "maxDistanceBlocks": 100,
-    "manaCost": 10
+    "manaCost": 10,
+    "castDelaySeconds": 0.5
   },
   "miningBook": {
     "maxDistanceBlocks": 12,
@@ -127,24 +157,29 @@
   },
   "healingBook": {
     "healAmount": "full",
-    "manaCost": 25
+    "manaCost": 25,
+    "projectileDelaySeconds": 0.15
   },
   "immunityBook": {
     "manaCost": 15,
     "immunitySeconds": 3
   },
   "tauntBook": {
-    "manaCost": 20,
+    "manaCost": 25,
     "launchHeightBlocks": 10,
     "fallImmunitySeconds": 6,
     "slamDamage": 40,
     "slamRadiusBlocks": 7,
-    "breakBlockBelow": true
+    "breakBlockBelow": true,
+    "groundBreakDepthBlocks": 2,
+    "groundBreakDepthPerStack": 1,
+    "groundBreakSparingChance": 0.18
   },
   "ancientSword": {
     "enabled": true,
     "projectileId": "Ancient_Slash",
     "manaCost": 20,
-    "cooldownSeconds": 1.25
+    "cooldownSeconds": 1.25,
+    "castDelaySeconds": 0.34
   }
 }

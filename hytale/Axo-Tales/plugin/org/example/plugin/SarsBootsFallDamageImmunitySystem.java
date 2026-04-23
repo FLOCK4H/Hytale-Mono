@@ -2,6 +2,7 @@ package org.example.plugin;
 
 import com.hypixel.hytale.component.ArchetypeChunk;
 import com.hypixel.hytale.component.CommandBuffer;
+import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.SystemGroup;
 import com.hypixel.hytale.component.query.Query;
@@ -56,12 +57,12 @@ public final class SarsBootsFallDamageImmunitySystem extends DamageEventSystem {
             return;
         }
 
-        Player player = chunk.getComponent(index, Player.getComponentType());
-        if (player == null) {
+        Ref<EntityStore> playerEntityRef = chunk.getReferenceTo(index);
+        if (playerEntityRef == null || !playerEntityRef.isValid()) {
             return;
         }
 
-        if (!SarsBootsPassiveEffect.isWearingSarsBoots(player)) {
+        if (!SarsBootsPassiveEffect.isWearingSarsBoots(store, playerEntityRef)) {
             return;
         }
 

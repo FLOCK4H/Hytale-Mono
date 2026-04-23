@@ -34,14 +34,14 @@
         "Id": "Arcanebench",
         "Type": "Crafting",
         "Categories": [
-          "Arcane_AxoTales"
+          "Arcane_AxoTales_Spellblades"
         ]
       }
     ],
     "KnowledgeRequired": false,
     "TimeSeconds": 3
   },
-  "PlayerAnimationsId": "Longsword",
+  "PlayerAnimationsId": "AxoTales_AncientSword",
   "Interactions": {
     "Primary": "Longsword_Attack",
     "Secondary": "AxoAncientSword_Secondary"
@@ -80,7 +80,7 @@
           "DamageCalculator": {
             "Type": "Absolute",
             "BaseDamage": {
-              "Fire": 75
+              "Physical": 83
             },
             "RandomPercentageModifier": 0.15
           },
@@ -123,7 +123,7 @@
           "DamageCalculator": {
             "Type": "Absolute",
             "BaseDamage": {
-              "Fire": 75
+              "Physical": 83
             },
             "RandomPercentageModifier": 0.15
           },
@@ -166,7 +166,7 @@
           "DamageCalculator": {
             "Type": "Absolute",
             "BaseDamage": {
-              "Fire": 75
+              "Physical": 83
             },
             "RandomPercentageModifier": 0.15
           },
@@ -241,7 +241,7 @@
           "Parent": "Longsword_Stab_Charged_Damage",
           "DamageCalculator": {
             "BaseDamage": {
-              "Fire": 95
+              "Physical": 105
             },
             "Type": "Absolute",
             "RandomPercentageModifier": 0.15

@@ -13,6 +13,33 @@
   "Icon": "Icons/ItemsGenerated/Kudu_Boots.png",
   "Model": "Items/Armors/Kudu/Kudu_boots.blockymodel",
   "Texture": "Items/Armors/Kudu/Kudu_Boots_Texture.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Crystal_Arcane",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Arcane_Matter",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Ice_Essence",
+        "Quantity": 10
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Arcanebench",
+        "Type": "Crafting",
+        "Categories": [
+          "Arcane_AxoTales_Armor"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
   "Interactions": {
     "Primary": {
       "Interactions": [
@@ -37,7 +64,7 @@
       "Shoes"
     ]
   },
-  "MaxDurability": 100,
+  "MaxDurability": 500,
   "DurabilityLossOnHit": 0.5,
   "Tags": {
     "Type": [

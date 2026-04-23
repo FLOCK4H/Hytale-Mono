@@ -12,7 +12,6 @@ import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.asset.type.fluid.Fluid;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.movement.MovementStatesComponent;
-import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
@@ -118,7 +117,7 @@ public final class KuduBootsWaterWalkSystem extends TickingSystem<EntityStore> {
                             PositionDataComponent posData = chunk.getComponent(index, PositionDataComponent.getComponentType());
                             PositionDataSnapshot posSnapshot = PositionDataSnapshot.from(posData);
 
-                            ArmorLegSlotSnapshot legSlot = readLegArmorSlot(player);
+                            ArmorLegSlotSnapshot legSlot = readLegArmorSlot(store, playerEntityRef);
                             boolean wearing = KUDU_BOOTS_ITEM_ID.equals(legSlot.itemId);
                             if (!wearing) {
                                 markInactive(playerRef, uuid, "notWearingKuduBoots slotLegs.itemId=" + legSlot.itemId);
@@ -305,13 +304,11 @@ public final class KuduBootsWaterWalkSystem extends TickingSystem<EntityStore> {
     }
 
     @Nonnull
-    private static ArmorLegSlotSnapshot readLegArmorSlot(@Nonnull Player player) {
-        Inventory inventory = player.getInventory();
-        if (inventory == null) {
-            return new ArmorLegSlotSnapshot(null);
-        }
-
-        ItemContainer armor = inventory.getArmor();
+    private static ArmorLegSlotSnapshot readLegArmorSlot(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> playerEntityRef
+    ) {
+        ItemContainer armor = InventoryComponentAccess.armor(store, playerEntityRef);
         if (armor == null) {
             return new ArmorLegSlotSnapshot(null);
         }

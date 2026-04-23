@@ -1,37 +1,75 @@
 site_name: Axo Tales Guidebook
-site_description: Items, crafting, NPCs, and configuration for Axo Tales.
+site_description: Modern player and server guide for Axo Tales on Hytale 2026.03.26-89796e57b.
+site_url: https://flock4h.github.io/Axo-Tales/
+repo_url: https://github.com/FLOCK4H/Axo-Tales
+repo_name: FLOCK4H/Axo-Tales
 
 theme:
   name: material
+  font: false
+  logo: assets/images/brand/axotales.png
+  favicon: assets/images/brand/axotales.png
   palette:
+    - scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to night mode
     - scheme: slate
-      primary: deep purple
-      accent: cyan
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to day mode
   features:
     - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.expand
     - navigation.tracking
     - navigation.top
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - header.autohide
     - content.code.copy
+    - content.tabs.link
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - tables
   - toc:
       permalink: true
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - assets/stylesheets/axotales.css
+
+extra_javascript:
+  - assets/javascripts/axotales.js
+
+extra:
+  generator: false
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - Items:
+  - What's New Since 0.1.147: whats-new.md
+  - Start Here: getting-started.md
+  - Arsenal:
       - Overview: items/index.md
-      - Gear: items/gear.md
+      - Gear & Spellblade: items/gear.md
       - Spellbooks: items/spellbooks.md
       - Potions: items/potions.md
-  - Blocks & Ores: blocks-ores.md
-  - NPCs: npcs.md
-  - Crafting: crafting.md
-  - Configuration: config.md
-  - Troubleshooting: troubleshooting.md
-
+  - World:
+      - Blocks & Ores: blocks-ores.md
+      - NPCs & Encounters: npcs.md
+      - Crafting Flow: crafting.md
+  - Ops:
+      - Configuration: config.md
+      - Troubleshooting: troubleshooting.md

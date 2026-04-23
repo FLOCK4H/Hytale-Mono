@@ -1,6 +1,10 @@
 package org.example.plugin;
 
+import com.hypixel.hytale.assetstore.event.LoadedAssetsEvent;
+import com.hypixel.hytale.component.ComponentType;
+import com.hypixel.hytale.event.EventPriority;
 import com.hypixel.hytale.logger.HytaleLogger;
+import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.event.events.player.AddPlayerToWorldEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
@@ -12,7 +16,6 @@ import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.events.ChunkPreLoadProcessEvent;
-import com.hypixel.hytale.server.core.universe.world.events.ecs.ChunkUnloadEvent;
 import com.hypixel.hytale.server.core.universe.world.worldmap.provider.DisabledWorldMapProvider;
 import com.hypixel.hytale.server.core.universe.world.worldmap.provider.chunk.WorldGenWorldMapProvider;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -29,6 +32,7 @@ public class AxoTales extends JavaPlugin {
     private static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
     private PluginErrorReporter errors;
     private PluginDebugReporter debug;
+    private ArcaneWorkbenchCategoryPatcher arcaneWorkbenchCategoryPatcher;
     private AxoTalesServerConfig serverConfig;
     private TauntBookEffectState tauntBookEffectState;
     private ImmunityBookEffectState immunityBookEffectState;
@@ -58,6 +62,10 @@ public class AxoTales extends JavaPlugin {
     private InvisibilityHiddenPlayersSystem invisibilityHiddenPlayersSystem;
     private KuduBootsWaterWalkSystem kuduBootsWaterWalkSystem;
     private MovementBuffSystem movementBuffSystem;
+    private SarsWarfistsInputInterceptor sarsWarfistsInputInterceptor;
+    private SarsWarfistsProjectileHitSystem sarsWarfistsProjectileHitSystem;
+    private CloudBlockVelocitySystem cloudBlockVelocitySystem;
+    private BounceBlockVelocitySystem bounceBlockVelocitySystem;
     private FrostBookImpactTracker frostBookImpactTracker;
     private FrostBookProjectileHitSystem frostBookProjectileHitSystem;
     private FrostBookBlockImpactSystem frostBookBlockImpactSystem;
@@ -66,6 +74,7 @@ public class AxoTales extends JavaPlugin {
     private FlameBookBlockImpactSystem flameBookBlockImpactSystem;
     private MorphBookProjectileHitSystem morphBookProjectileHitSystem;
     private HealingBookProjectileHitSystem healingBookProjectileHitSystem;
+    private DoomBookProjectileHitSystem doomBookProjectileHitSystem;
     private RuneKnightSpawnState runeKnightSpawnState;
     private RuneKnightSpawnerSystem runeKnightSpawnerSystem;
     private RuneKnightAggroSystem runeKnightAggroSystem;
@@ -74,9 +83,12 @@ public class AxoTales extends JavaPlugin {
     private KuduAdeptSpawnState kuduAdeptSpawnState;
     private KuduAdeptSpawnerSystem kuduAdeptSpawnerSystem;
     private KuduAdeptBondState kuduAdeptBondState;
+    private ComponentType<EntityStore, KuduAdeptBondPersistedComponent> kuduAdeptBondPersistedComponentType;
     private KuduAdeptBondSystem kuduAdeptBondSystem;
+    private KuduAdeptCrystalDropOwnerSystem kuduAdeptCrystalDropOwnerSystem;
+    private KuduAdeptMasterTargetingSystem kuduAdeptMasterTargetingSystem;
     private KuduAdeptNoPlayerDamageSystem kuduAdeptNoPlayerDamageSystem;
-    private KuduAdeptProjectileSystem kuduAdeptProjectileSystem;
+    private KuduAdeptProjectileDamageSystem kuduAdeptProjectileDamageSystem;
     private KuduAdeptNoMeleeDamageSystem kuduAdeptNoMeleeDamageSystem;
 
     public AxoTales(@Nonnull JavaPluginInit init) {
@@ -90,6 +102,26 @@ public class AxoTales extends JavaPlugin {
         this.errors = new PluginErrorReporter(this);
         this.debug = new PluginDebugReporter(this);
         this.debug.trace(null, "Spellbook debug logging enabled. File: " + this.debug.getLogFile());
+        this.arcaneWorkbenchCategoryPatcher = new ArcaneWorkbenchCategoryPatcher(errors, debug);
+        @SuppressWarnings("unchecked")
+        Class<LoadedAssetsEvent<String, BlockType, ?>> loadedBlockTypesEventClass =
+            (Class<LoadedAssetsEvent<String, BlockType, ?>>) (Class<?>) LoadedAssetsEvent.class;
+        this.getEventRegistry().registerGlobal(
+            EventPriority.LAST,
+            loadedBlockTypesEventClass,
+            event -> {
+                try {
+                    arcaneWorkbenchCategoryPatcher.onLoadedAssets(event);
+                } catch (Throwable t) {
+                    errors.report(
+                        (com.hypixel.hytale.server.core.universe.PlayerRef) null,
+                        "ArcaneWorkbenchCategoryPatcher: asset-load handler failed.",
+                        t
+                    );
+                }
+            }
+        );
+        this.debug.traceFileOnly(null, "ArcaneWorkbenchCategoryPatcher registered for LoadedAssetsEvent.");
 
         try {
             AxoTalesServerConfigStore configStore = new AxoTalesServerConfigStore(this.getDataDirectory(), errors, debug);
@@ -99,11 +131,16 @@ public class AxoTales extends JavaPlugin {
                 "Loaded server config: file=" + configStore.getConfigPath()
                     + " teleportBook.maxDistanceBlocks=" + serverConfig.teleportBook.maxDistanceBlocks
                     + " teleportBook.manaCost=" + serverConfig.teleportBook.manaCost
+                    + " teleportBook.castDelaySeconds=" + serverConfig.teleportBook.castDelaySeconds
                     + " miningBook.maxDistanceBlocks=" + serverConfig.miningBook.maxDistanceBlocks
                     + " miningBook.manaCost=" + serverConfig.miningBook.manaCost
                     + " miningBook.gridSize=" + serverConfig.miningBook.gridSize
                     + " miningBook.maxBlocks=" + serverConfig.miningBook.maxBlocks
                     + " worldgen.arcaneCrystalChancePerNewChunk=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalChancePerNewChunk : null)
+                    + " worldgen.arcaneCrystalPlacementsPerChunk=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalPlacementsPerChunk : null)
+                    + " worldgen.arcaneCrystalDensityRadiusBlocks=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalDensityRadiusBlocks : null)
+                    + " worldgen.arcaneCrystalMaxPlacementsPerRadius=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalMaxPlacementsPerRadius : null)
+                    + " worldgen.arcaneCrystalProcessExistingChunks=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalProcessExistingChunks : null)
                     + " worldgen.arcaneMatterOres.enabled=" + (serverConfig.worldgen != null && serverConfig.worldgen.arcaneMatterOres != null && serverConfig.worldgen.arcaneMatterOres.enabled)
                     + " worldgen.arcaneMatterOres.processExistingChunks=" + (serverConfig.worldgen != null && serverConfig.worldgen.arcaneMatterOres != null ? serverConfig.worldgen.arcaneMatterOres.processExistingChunks : null)
                     + " worldgen.arcaneMatterOres.stone.targetPlacementsPerChunk=" + (serverConfig.worldgen != null && serverConfig.worldgen.arcaneMatterOres != null && serverConfig.worldgen.arcaneMatterOres.stone != null ? serverConfig.worldgen.arcaneMatterOres.stone.targetPlacementsPerChunk : null)
@@ -132,11 +169,14 @@ public class AxoTales extends JavaPlugin {
                     + " hordeBook.ownerFriendlySeconds=" + serverConfig.hordeBook.ownerFriendlySeconds
                     + " hordeBook.spawnDistanceBlocks=" + serverConfig.hordeBook.spawnDistanceBlocks
                     + " doomBook.manaCost=" + serverConfig.doomBook.manaCost
+                    + " doomBook.projectileDelaySeconds=" + serverConfig.doomBook.projectileDelaySeconds
                     + " morphBook.manaCost=" + serverConfig.morphBook.manaCost
                     + " frostBook.manaCost=" + serverConfig.frostBook.manaCost
                     + " flameBook.manaCost=" + (serverConfig.flameBook != null ? serverConfig.flameBook.manaCost : null)
+                    + " flameBook.projectileDelaySeconds=" + (serverConfig.flameBook != null ? serverConfig.flameBook.projectileDelaySeconds : null)
                     + " healingBook.healAmount=" + serverConfig.healingBook.healAmount
                     + " healingBook.manaCost=" + serverConfig.healingBook.manaCost
+                    + " healingBook.projectileDelaySeconds=" + serverConfig.healingBook.projectileDelaySeconds
                     + " immunityBook.manaCost=" + serverConfig.immunityBook.manaCost
                     + " immunityBook.immunitySeconds=" + serverConfig.immunityBook.immunitySeconds
                     + " tauntBook.manaCost=" + serverConfig.tauntBook.manaCost
@@ -147,6 +187,7 @@ public class AxoTales extends JavaPlugin {
                     + " tauntBook.breakBlockBelow=" + serverConfig.tauntBook.breakBlockBelow
                     + " spellbooks.inputDebounceSeconds=" + (serverConfig.spellbooks != null ? serverConfig.spellbooks.inputDebounceSeconds : null)
                     + " spellbooks.castDebounceSeconds=" + (serverConfig.spellbooks != null ? serverConfig.spellbooks.castDebounceSeconds : null)
+                    + " spellbooks.secondaryUseDelaySeconds=" + (serverConfig.spellbooks != null ? serverConfig.spellbooks.secondaryUseDelaySeconds : null)
             );
         } catch (Throwable t) {
             errors.report((com.hypixel.hytale.server.core.universe.PlayerRef) null, "Failed to load server config; using defaults.", t);
@@ -168,6 +209,10 @@ public class AxoTales extends JavaPlugin {
         this.invisibilityHiddenPlayersSystem = new InvisibilityHiddenPlayersSystem(errors, debug);
         this.kuduBootsWaterWalkSystem = new KuduBootsWaterWalkSystem(errors, debug);
         this.movementBuffSystem = new MovementBuffSystem(errors, debug);
+        this.sarsWarfistsInputInterceptor = new SarsWarfistsInputInterceptor(errors, debug);
+        this.sarsWarfistsProjectileHitSystem = new SarsWarfistsProjectileHitSystem(errors, debug);
+        this.cloudBlockVelocitySystem = new CloudBlockVelocitySystem(errors, debug, serverConfig);
+        this.bounceBlockVelocitySystem = new BounceBlockVelocitySystem(errors, debug, serverConfig);
         this.frostBookImpactTracker = new FrostBookImpactTracker();
         this.frostBookProjectileHitSystem = new FrostBookProjectileHitSystem(errors, debug, frostBookImpactTracker);
         this.frostBookBlockImpactSystem = new FrostBookBlockImpactSystem(errors, debug, frostBookImpactTracker);
@@ -176,20 +221,36 @@ public class AxoTales extends JavaPlugin {
         this.flameBookBlockImpactSystem = new FlameBookBlockImpactSystem(errors, debug, flameBookImpactTracker);
         this.morphBookProjectileHitSystem = new MorphBookProjectileHitSystem(errors, debug, morphBookModelState);
         this.healingBookProjectileHitSystem = new HealingBookProjectileHitSystem(errors, debug);
+        this.doomBookProjectileHitSystem = new DoomBookProjectileHitSystem(errors, debug);
         this.runeKnightSpawnerSystem = new RuneKnightSpawnerSystem(errors, debug, serverConfig, runeKnightSpawnState);
         this.runeKnightAggroSystem = new RuneKnightAggroSystem(errors, debug, serverConfig, runeKnightSpawnState);
         this.runeKnightProjectileSystem = new RuneKnightProjectileSystem(errors, debug, serverConfig, runeKnightSpawnState);
         this.runeKnightLootSystem = new RuneKnightLootSystem(errors, debug, serverConfig, runeKnightSpawnState);
-        this.kuduAdeptSpawnerSystem = new KuduAdeptSpawnerSystem(errors, debug, serverConfig, kuduAdeptSpawnState);
-        this.kuduAdeptBondSystem = new KuduAdeptBondSystem(errors, debug, serverConfig, kuduAdeptBondState);
+        this.kuduAdeptBondPersistedComponentType = this.getEntityStoreRegistry().registerComponent(
+            KuduAdeptBondPersistedComponent.class,
+            "AxoTales_KuduAdeptBondPersistedComponent",
+            KuduAdeptBondPersistedComponent.CODEC
+        );
+        this.kuduAdeptSpawnerSystem = new KuduAdeptSpawnerSystem(errors, debug, serverConfig, kuduAdeptSpawnState, kuduAdeptBondState);
+        this.kuduAdeptBondSystem = new KuduAdeptBondSystem(
+            errors,
+            debug,
+            serverConfig,
+            kuduAdeptBondState,
+            kuduAdeptBondPersistedComponentType
+        );
+        this.kuduAdeptCrystalDropOwnerSystem = new KuduAdeptCrystalDropOwnerSystem(errors, debug, serverConfig, kuduAdeptBondState);
+        this.kuduAdeptMasterTargetingSystem = new KuduAdeptMasterTargetingSystem(errors, debug, serverConfig, kuduAdeptBondState);
         this.kuduAdeptNoPlayerDamageSystem = new KuduAdeptNoPlayerDamageSystem(errors, debug, serverConfig);
-        this.kuduAdeptProjectileSystem = new KuduAdeptProjectileSystem(errors, debug, serverConfig, kuduAdeptBondState);
+        this.kuduAdeptProjectileDamageSystem = new KuduAdeptProjectileDamageSystem(errors, debug, serverConfig, kuduAdeptBondState);
         this.kuduAdeptNoMeleeDamageSystem = new KuduAdeptNoMeleeDamageSystem(errors, debug, serverConfig);
         this.customPlaceholderBlockWorldgen = new CustomPlaceholderBlockWorldgen(errors, debug, serverConfig);
         this.arcaneMatterOreWorldgen = new ArcaneMatterOreWorldgen(errors, debug, serverConfig);
         this.spellbookInputInterceptor = new SpellbookInputInterceptor(errors, debug, serverConfig, tauntBookEffectState, immunityBookEffectState, hordeBookSummonState, morphBookModelState);
         this.spellbookInputInterceptor.register();
         this.debug.trace(null, "Spellbook input interception enabled (SyncInteractionChains id=290).");
+        this.sarsWarfistsInputInterceptor.register();
+        this.debug.trace(null, "Sa'r Warfists input interception enabled (SyncInteractionChains id=290).");
         this.sarsBootsPassiveEffect = new SarsBootsPassiveEffect(errors, this.getDataDirectory());
         this.sarsBootsFallDamageImmunitySystem = new SarsBootsFallDamageImmunitySystem();
         this.armorManaMaxBonusEffect = new ArmorManaMaxBonusEffect(errors, debug);
@@ -261,6 +322,15 @@ public class AxoTales extends JavaPlugin {
             if (!EntityStore.REGISTRY.hasSystem(movementBuffSystem)) {
                 EntityStore.REGISTRY.registerSystem(movementBuffSystem);
             }
+            if (!EntityStore.REGISTRY.hasSystem(sarsWarfistsProjectileHitSystem)) {
+                EntityStore.REGISTRY.registerSystem(sarsWarfistsProjectileHitSystem);
+            }
+            if (!EntityStore.REGISTRY.hasSystem(cloudBlockVelocitySystem)) {
+                EntityStore.REGISTRY.registerSystem(cloudBlockVelocitySystem);
+            }
+            if (!EntityStore.REGISTRY.hasSystem(bounceBlockVelocitySystem)) {
+                EntityStore.REGISTRY.registerSystem(bounceBlockVelocitySystem);
+            }
             if (!EntityStore.REGISTRY.hasSystem(frostBookProjectileHitSystem)) {
                 EntityStore.REGISTRY.registerSystem(frostBookProjectileHitSystem);
             }
@@ -278,6 +348,9 @@ public class AxoTales extends JavaPlugin {
             }
             if (!EntityStore.REGISTRY.hasSystem(healingBookProjectileHitSystem)) {
                 EntityStore.REGISTRY.registerSystem(healingBookProjectileHitSystem);
+            }
+            if (!EntityStore.REGISTRY.hasSystem(doomBookProjectileHitSystem)) {
+                EntityStore.REGISTRY.registerSystem(doomBookProjectileHitSystem);
             }
             if (!EntityStore.REGISTRY.hasSystem(runeKnightSpawnerSystem)) {
                 EntityStore.REGISTRY.registerSystem(runeKnightSpawnerSystem);
@@ -297,11 +370,17 @@ public class AxoTales extends JavaPlugin {
             if (!EntityStore.REGISTRY.hasSystem(kuduAdeptBondSystem)) {
                 EntityStore.REGISTRY.registerSystem(kuduAdeptBondSystem);
             }
+            if (!EntityStore.REGISTRY.hasSystem(kuduAdeptCrystalDropOwnerSystem)) {
+                EntityStore.REGISTRY.registerSystem(kuduAdeptCrystalDropOwnerSystem);
+            }
+            if (!EntityStore.REGISTRY.hasSystem(kuduAdeptMasterTargetingSystem)) {
+                EntityStore.REGISTRY.registerSystem(kuduAdeptMasterTargetingSystem);
+            }
             if (!EntityStore.REGISTRY.hasSystem(kuduAdeptNoPlayerDamageSystem)) {
                 EntityStore.REGISTRY.registerSystem(kuduAdeptNoPlayerDamageSystem);
             }
-            if (!EntityStore.REGISTRY.hasSystem(kuduAdeptProjectileSystem)) {
-                EntityStore.REGISTRY.registerSystem(kuduAdeptProjectileSystem);
+            if (!EntityStore.REGISTRY.hasSystem(kuduAdeptProjectileDamageSystem)) {
+                EntityStore.REGISTRY.registerSystem(kuduAdeptProjectileDamageSystem);
             }
             if (!EntityStore.REGISTRY.hasSystem(kuduAdeptNoMeleeDamageSystem)) {
                 EntityStore.REGISTRY.registerSystem(kuduAdeptNoMeleeDamageSystem);
@@ -336,14 +415,8 @@ public class AxoTales extends JavaPlugin {
         });
         this.debug.trace(null, "Arcane crystal worldgen enabled (" + CustomPlaceholderBlockWorldgen.BLOCK_ITEM_ID + ").");
         this.debug.trace(null, "Arcane Matter ore worldgen enabled (Ore_Stone_Parent + Arcane_Matter_Volcanic).");
-
-        this.getEventRegistry().registerGlobal(ChunkUnloadEvent.class, event -> {
-            try {
-                customPlaceholderBlockWorldgen.onChunkUnload(event);
-            } catch (Throwable t) {
-                errors.report((com.hypixel.hytale.server.core.universe.PlayerRef) null, "CustomPlaceholderBlockWorldgen: unload handler failed.", t);
-            }
-        });
+        this.debug.trace(null, "Cloud block velocity system enabled (" + CloudBlockVelocitySystem.CLOUD_BLOCK_ITEM_ID + ").");
+        this.debug.trace(null, "Bounce block velocity system enabled (" + BounceBlockVelocitySystem.BOUNCE_BLOCK_ITEM_ID + ").");
 
         this.getEventRegistry().registerGlobal(
             AddPlayerToWorldEvent.class,
@@ -389,6 +462,15 @@ public class AxoTales extends JavaPlugin {
                 if (movementBuffSystem != null) {
                     movementBuffSystem.onPlayerDisconnect(event.getPlayerRef());
                 }
+                if (sarsWarfistsInputInterceptor != null) {
+                    sarsWarfistsInputInterceptor.onPlayerDisconnect(event.getPlayerRef());
+                }
+                if (cloudBlockVelocitySystem != null) {
+                    cloudBlockVelocitySystem.onPlayerDisconnect(event.getPlayerRef());
+                }
+                if (bounceBlockVelocitySystem != null) {
+                    bounceBlockVelocitySystem.onPlayerDisconnect(event.getPlayerRef());
+                }
                 sarsBootsPassiveEffect.onPlayerDisconnect(event);
                 armorManaMaxBonusEffect.onPlayerDisconnect(event);
             } catch (Throwable t) {
@@ -398,7 +480,6 @@ public class AxoTales extends JavaPlugin {
 
         this.getEventRegistry().registerGlobal(ShutdownEvent.class, event -> {
             try {
-                restoreCustomPlaceholderBlocks();
                 sarsBootsPassiveEffect.shutdown();
                 armorManaMaxBonusEffect.shutdown();
                 if (kuduBootsWaterWalkSystem != null) {
@@ -406,6 +487,12 @@ public class AxoTales extends JavaPlugin {
                 }
                 if (movementBuffSystem != null) {
                     movementBuffSystem.shutdown();
+                }
+                if (cloudBlockVelocitySystem != null) {
+                    cloudBlockVelocitySystem.shutdown();
+                }
+                if (bounceBlockVelocitySystem != null) {
+                    bounceBlockVelocitySystem.shutdown();
                 }
                 if (frostBookBlockImpactSystem != null) {
                     frostBookBlockImpactSystem.shutdown();
@@ -428,18 +515,11 @@ public class AxoTales extends JavaPlugin {
     @Override
     protected void shutdown() {
         try {
-            restoreCustomPlaceholderBlocks();
-        } catch (Throwable t) {
-            if (errors != null) {
-                errors.report((com.hypixel.hytale.server.core.universe.PlayerRef) null, "Failed to cleanup placeholder block worldgen.", t);
-            } else {
-                LOGGER.atWarning().withCause(t).log("Failed to cleanup placeholder block worldgen.");
-            }
-        }
-
-        try {
             if (spellbookInputInterceptor != null) {
                 spellbookInputInterceptor.deregister();
+            }
+            if (sarsWarfistsInputInterceptor != null) {
+                sarsWarfistsInputInterceptor.deregister();
             }
         } catch (Throwable t) {
             if (errors != null) {
@@ -453,36 +533,6 @@ public class AxoTales extends JavaPlugin {
             super.shutdown();
         } catch (Throwable ignored) {
             // Best effort: base shutdown is typically empty, but avoid failing teardown on unexpected internals.
-        }
-    }
-
-    private void restoreCustomPlaceholderBlocks() {
-        try {
-            if (customPlaceholderBlockWorldgen == null) {
-                return;
-            }
-
-            var universe = Universe.get();
-            if (universe == null) {
-                return;
-            }
-
-            var worlds = universe.getWorlds();
-            if (worlds == null) {
-                return;
-            }
-
-            for (World world : worlds.values()) {
-                if (world != null) {
-                    customPlaceholderBlockWorldgen.restoreTrackedBlocksInWorld(world);
-                }
-            }
-        } catch (Throwable t) {
-            if (errors != null) {
-                errors.report((com.hypixel.hytale.server.core.universe.PlayerRef) null, "Failed to cleanup placeholder blocks.", t);
-            } else {
-                LOGGER.atWarning().withCause(t).log("Failed to cleanup placeholder blocks.");
-            }
         }
     }
 

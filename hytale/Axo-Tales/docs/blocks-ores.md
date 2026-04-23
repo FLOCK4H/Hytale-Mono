@@ -1,51 +1,96 @@
-# Blocks & Ores
+# Blocks and Ores
 
-## Arcane Matter
+<div class="page-header" data-reveal>
+  <div markdown="1">
+    <span class="hero-kicker">World route</span>
 
-**What it is**
-- A craft ingredient used in most Axo Tales recipes.
+    # Axo Tales now has both resource nodes and movement-tech blocks
 
-**How to get**
-- Mine Arcane Matter Ore (stone or volcanic).
+    The world side of the mod is no longer just "mine Arcane Matter." You now have deterministic Arcane Crystals, Kudu-linked resource loops, and two bonus-drop movement blocks that can reshape traversal builds.
+  </div>
+</div>
 
-## Arcane Matter Ore (Stone / Volcanic)
+## Core resource chain
 
-**What it is**
-- Two ore blocks that generate in the world:
-  - Stone-hosted Arcane Matter Ore
-  - Volcanic-hosted Arcane Matter Ore
+<div class="card-grid">
+  <div class="card media-card tilt-card texture-panel texture-panel--ore" data-reveal>
+    <div class="media-card__visual media-card__visual--single">
+      <img src="assets/images/blocks/arcane_matter_ore.png" alt="Arcane Matter Ore icon">
+    </div>
+    <div class="media-card__copy">
+      <h3>Arcane Matter Ore</h3>
+      <p>Ships in stone and volcanic variants. Both drop Arcane Matter plus the matching cobble type. The packaged defaults still generate both ore families aggressively enough to support regular crafting.</p>
+      <p><strong>Shipped defaults</strong>: 50% chance per new chunk, target 12 placements, max 256 attempts.</p>
+    </div>
+  </div>
+  <div class="card media-card tilt-card texture-panel texture-panel--crystal" data-reveal>
+    <div class="media-card__visual media-card__visual--single">
+      <img src="assets/images/blocks/arcane_crystal.png" alt="Arcane Crystal icon">
+    </div>
+    <div class="media-card__copy">
+      <h3>Arcane Crystal</h3>
+      <p>The big worldgen rewrite after 0.1.147. Crystals now act like routeable surface nodes instead of random clutter.</p>
+      <p><strong>Shipped defaults</strong>: 64-block density radius, max 1 crystal in that radius, 33% chance, no existing-chunk seeding, legacy cluster pruning enabled.</p>
+    </div>
+  </div>
+  <div class="card media-card tilt-card" data-reveal>
+    <div class="media-card__visual media-card__visual--single">
+      <img src="assets/images/blocks/arcane_crystal_shard.png" alt="Arcane Crystal Shard icon">
+    </div>
+    <div class="media-card__copy">
+      <h3>Arcane Crystal Shards</h3>
+      <p>The universal premium craft ingredient. They also double as the bonding trigger for Kudu Adepts when dropped nearby.</p>
+    </div>
+  </div>
+</div>
 
-**Drops**
-- Arcane Matter
-- Matching cobble type (stone or volcanic)
+## Decorative and movement blocks
 
-**World generation**
-- Controlled by `worldgen.arcaneMatterOres.*` in `server-config.json`.
-- Defaults:
-  - Stone ore: underground on exposed rock (caves/dungeons are the easiest way to spot it).
-  - Volcanic ore: inside volcanic rock (volcanic areas are the best place to mine for it).
+<div class="card-grid">
+  <div class="card media-card tilt-card texture-panel texture-panel--grass" data-reveal>
+    <div class="media-card__visual media-card__visual--single">
+      <img src="assets/images/blocks/arcane_grass.png" alt="Arcane Grass icon">
+    </div>
+    <div class="media-card__copy">
+      <h3>Arcane Grass</h3>
+      <p>A builder-facing arcane grass variant with transition textures. It currently drops dirt, so treat it as creative or decorative content rather than a survival farm target.</p>
+    </div>
+  </div>
+  <div class="card media-card tilt-card texture-panel texture-panel--cloud" data-reveal>
+    <div class="media-card__visual media-card__visual--single">
+      <img src="assets/images/blocks/cloud_block.png" alt="Cloud Block icon">
+    </div>
+    <div class="media-card__copy">
+      <h3>Cloud Block</h3>
+      <p>Pass-through, translucent, placeable on floors, walls, or ceilings. It launches up or down based on entry direction and chains at 1.5x per same-direction follow-up cloud.</p>
+      <p><strong>Shipped defaults</strong>: 6-block target height, 1.0s rearm, 4.0s chain reset.</p>
+    </div>
+  </div>
+  <div class="card media-card tilt-card texture-panel texture-panel--bounce" data-reveal>
+    <div class="media-card__visual media-card__visual--single">
+      <img src="assets/images/blocks/bounce_block.png" alt="Bounce Block icon">
+    </div>
+    <div class="media-card__copy">
+      <h3>Bounce Block</h3>
+      <p>Solid upward-only launch block. Streaked bounces scale from a 4-block target up to an 18-block cap, making it the more predictable vertical route compared with Cloud's directional chaos.</p>
+      <p><strong>Shipped defaults</strong>: +2 target height per chained bounce, 0.2s rearm, 8.0s streak reset.</p>
+    </div>
+  </div>
+</div>
 
-## Arcane Crystal
+## How the movement blocks enter progression
 
-**What it is**
-- A surface crystal formation.
+- Cloud and Bounce Blocks are not standard bench crafts right now.
+- Arcane Matter ore can drop one as a bonus at a 25% total chance, split 50/50 between the two block types.
+- Kudu Rune Knights and Kudu Adepts can also drop one as a bonus at a 33% total chance, again split 50/50 between Cloud and Bounce.
 
-**Drops**
-- Arcane Crystal Shards (2-3)
+## Config keys that matter most here
 
-**World generation (defaults)**
-- Spawns on the surface in newly-generated chunks (about 1 per ~12 chunks by default; configurable).
-- Controlled by `worldgen.arcaneCrystalChancePerNewChunk` in `server-config.json`.
-
-## Arcane Grass
-
-**What it is**
-- A custom grass block for building.
-
-**Notes**
-- Breaking it drops dirt by default (so survival collection isn't intended).
-
-## Custom Placeholder Block
-
-**What it is**
-- A debug marker block used for worldgen/testing.
+- `worldgen.arcaneCrystalChancePerNewChunk`
+- `worldgen.arcaneCrystalPlacementsPerChunk`
+- `worldgen.arcaneCrystalDensityRadiusBlocks`
+- `worldgen.arcaneCrystalMaxPlacementsPerRadius`
+- `worldgen.arcaneMatterOres.stone.*`
+- `worldgen.arcaneMatterOres.volcanic.*`
+- `cloudBlock.*`
+- `bounceBlock.*`

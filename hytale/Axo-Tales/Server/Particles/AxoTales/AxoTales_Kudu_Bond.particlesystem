@@ -1,0 +1,34 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Kudu_Bond_Glow",
+      "FixedRotation": true,
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0.15,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Kudu_Bond_Ring",
+      "FixedRotation": true,
+      "PositionOffset": {
+        "X": 0,
+        "Y": -0.55,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Kudu_Bond_Spawner",
+      "FixedRotation": true,
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      }
+    }
+  ],
+  "BoundingRadius": 5,
+  "CullDistance": 64,
+  "LifeSpan": 2.5
+}

@@ -18,6 +18,8 @@ public final class AxoTalesServerConfig {
     public Spellbooks spellbooks = new Spellbooks();
     public Worldgen worldgen = new Worldgen();
     public Workarounds workarounds = new Workarounds();
+    public CloudBlock cloudBlock = new CloudBlock();
+    public BounceBlock bounceBlock = new BounceBlock();
     public RuneKnight runeKnight = new RuneKnight();
     public KuduAdept kuduAdept = new KuduAdept();
     public HordeBook hordeBook = new HordeBook();
@@ -61,11 +63,39 @@ public final class AxoTalesServerConfig {
      */
     public static final class Worldgen {
         /**
-         * Chance (0..1) to place an Arcane Crystal marker in each newly-generated chunk.
-         *
-         * <p>Default is 3x rarer than the original v0.1.79 tuning (0.25 -> 0.083333...).</p>
+         * Chance (0..1) to attempt Arcane Crystal placement in each eligible chunk.
          */
-        public double arcaneCrystalChancePerNewChunk = 0.25 / 3.0;
+        public double arcaneCrystalChancePerNewChunk = 0.33;
+
+        /**
+         * Target placements to try per eligible chunk before the radius density cap is applied.
+         */
+        public int arcaneCrystalPlacementsPerChunk = 1;
+
+        /**
+         * Horizontal radius, in blocks, used by the Arcane Crystal density cap.
+         */
+        public int arcaneCrystalDensityRadiusBlocks = 64;
+
+        /**
+         * Maximum Arcane Crystal columns allowed within {@link #arcaneCrystalDensityRadiusBlocks} of a candidate.
+         */
+        public int arcaneCrystalMaxPlacementsPerRadius = 1;
+
+        /**
+         * Internal one-time migration marker for Arcane Crystal default-density changes.
+         */
+        public int arcaneCrystalDefaultsVersion = 3;
+
+        /**
+         * When true, also attempts to seed Arcane Crystals into already-generated chunks as they load.
+         */
+        public boolean arcaneCrystalProcessExistingChunks = false;
+
+        /**
+         * When true, trims old over-dense generated crystal clusters in already-generated chunks.
+         */
+        public boolean arcaneCrystalPruneLegacyClusters = true;
 
         /**
          * Arcane Matter ore generation tuning.
@@ -207,6 +237,80 @@ public final class AxoTalesServerConfig {
          * <p>Warning: this may cause the in-game map to show "Unknown location".</p>
          */
         public boolean disableWorldMap = false;
+    }
+
+    /**
+     * Cloud Block movement tuning.
+     */
+    public static final class CloudBlock {
+        public boolean enabled = true;
+
+        /**
+         * Approximate upward/downward launch distance when entering the cloud.
+         */
+        public double targetHeightBlocks = 6.0;
+
+        /**
+         * Absolute cap for the resulting vertical speed.
+         */
+        public double maxVerticalSpeed = 32.0;
+
+        /**
+         * Minimum absolute Y velocity required before the cloud decides up/down.
+         */
+        public double minContactVelocity = 0.12;
+
+        /**
+         * Seconds the player must be clear of the cloud before it can launch again.
+         */
+        public double cooldownSeconds = 1.0;
+
+        /**
+         * Multiplier applied for each next cloud block touched in the same vertical direction.
+         */
+        public double chainVelocityMultiplier = 1.5;
+
+        /**
+         * Seconds before the cloud chain resets after the last successful cloud launch.
+         */
+        public double chainResetSeconds = 4.0;
+    }
+
+    /**
+     * Orange Bounce Block upward-only launch tuning.
+     */
+    public static final class BounceBlock {
+        public boolean enabled = true;
+
+        /**
+         * Starting approximate upward launch distance.
+         */
+        public double baseTargetHeightBlocks = 4.0;
+
+        /**
+         * Extra target height added for each chained bounce.
+         */
+        public double heightGainPerBounceBlocks = 2.0;
+
+        /**
+         * Maximum chained upward launch distance.
+         */
+        public double maxTargetHeightBlocks = 18.0;
+
+        /**
+         * Absolute cap for the resulting upward speed.
+         */
+        public double maxVerticalSpeed = 48.0;
+
+        /**
+         * Seconds the player must be clear of the block before it can bounce again.
+         */
+        public double cooldownSeconds = 0.2;
+
+        /**
+         * Seconds before the bounce chain resets after the last successful bounce.
+         */
+        public double streakResetSeconds = 8.0;
     }
 
     /**
@@ -359,9 +463,14 @@ public final class AxoTalesServerConfig {
      */
     public static final class KuduAdept {
         /**
-         * Master toggle for Kudu Adept spawning.
+         * Master toggle for Kudu Adept spawning and bonding systems.
          */
-        public boolean enabled = false;
+        public boolean enabled = true;
+
+        /**
+         * Internal one-time migration marker for Kudu Adept default spawning behavior.
+         */
+        public int defaultsVersion = 6;
 
         /**
          * NPC role asset id to spawn (JSON filename without extension).
@@ -382,7 +491,7 @@ public final class AxoTalesServerConfig {
             /**
              * The maximum number of active Kudu Adepts per world.
              */
-            public int maxActivePerWorld = 20;
+            public int maxActivePerWorld = 500;
 
             /**
              * How many Kudu Adepts to attempt to spawn each interval (clamped by {@link #maxActivePerWorld}).
@@ -392,27 +501,37 @@ public final class AxoTalesServerConfig {
             /**
              * Interval (in seconds) between spawn attempts while it's day.
              */
-            public double intervalSeconds = 30.0;
+            public double intervalSeconds = 120.0;
 
             /**
              * Maximum total spawn attempts per interval (sampling random locations around players).
              */
-            public int maxAttemptsPerInterval = 24;
+            public int maxAttemptsPerInterval = 3;
+
+            /**
+             * Approximate density cell size. By default, each 256x256 block cell around active players can own one wild adept spawn slot.
+             */
+            public double densityCellSizeBlocks = 256.0;
+
+            /**
+             * Chance for an eligible density cell to spawn an adept.
+             */
+            public int cellSpawnChancePercent = 33;
 
             /**
              * Minimum horizontal distance (in blocks) from any player for a spawn location.
              */
-            public double minDistanceFromPlayersBlocks = 12.0;
+            public double minDistanceFromPlayersBlocks = 8.0;
 
             /**
              * Minimum horizontal radius (in blocks) around the anchor player for random spawn sampling.
              */
-            public double radiusMinBlocks = 18.0;
+            public double radiusMinBlocks = 8.0;
 
             /**
              * Maximum horizontal radius (in blocks) around the anchor player for random spawn sampling.
              */
-            public double radiusMaxBlocks = 96.0;
+            public double radiusMaxBlocks = 280.0;
 
             /**
              * If true, allows using chunks that are in-memory but not fully loaded yet for spawn checks.
@@ -420,21 +539,21 @@ public final class AxoTalesServerConfig {
             public boolean allowInMemoryChunks = true;
 
             /**
-             * Sunlight factor threshold above which we consider it "day" (0..1).
+             * Sunlight factor threshold above which spawning is allowed (0..1). Use 0 to allow all times of day.
              */
-            public double daySunlightThreshold = 0.25;
+            public double daySunlightThreshold = 0.0;
         }
 
         public static final class Despawn {
             /**
              * If true, despawn all tracked Kudu Adepts when it becomes night.
              */
-            public boolean onNight = true;
+            public boolean onNight = false;
 
             /**
              * Maximum lifetime (in seconds) before despawning a spawned Kudu Adept. Set to 0 to disable.
              */
-            public double afterSeconds = 600.0;
+            public double afterSeconds = 0.0;
         }
     }
 
@@ -464,7 +583,12 @@ public final class AxoTalesServerConfig {
         /**
          * Mana points consumed per cast.
          */
-        public int manaCost = 15;
+        public int manaCost = 25;
+
+        /**
+         * Delay (in seconds) before the Doom projectile is spawned so the explosion leaves slightly earlier in the cast.
+         */
+        public double projectileDelaySeconds = 0.24;
     }
 
     public static final class MorphBook {
@@ -486,6 +610,11 @@ public final class AxoTalesServerConfig {
          * Mana points consumed per cast.
          */
         public int manaCost = 20;
+
+        /**
+         * Delay (in seconds) before the flame projectile is spawned so the launch lines up with the visible cast.
+         */
+        public double projectileDelaySeconds = 0.2;
     }
 
     public static final class TeleportBook {
@@ -498,6 +627,11 @@ public final class AxoTalesServerConfig {
          * Mana points consumed per successful teleport cast.
          */
         public int manaCost = 10;
+
+        /**
+         * Delay (in seconds) before applying the teleport so the blink lands well after the Taunt-mirrored charge cast starts settling.
+         */
+        public double castDelaySeconds = 0.5;
     }
 
     public static final class MiningBook {
@@ -532,6 +666,11 @@ public final class AxoTalesServerConfig {
          * Mana cost per cast. Use "full" to drain the full mana bar (requires full mana), or an integer to drain that many points.
          */
         public FullOrInt manaCost = FullOrInt.of(25);
+
+        /**
+         * Delay (in seconds) before the healing projectile is spawned so the cast lines up with the hand motion.
+         */
+        public double projectileDelaySeconds = 0.15;
     }
 
     public static final class ImmunityBook {
@@ -550,7 +689,7 @@ public final class AxoTalesServerConfig {
         /**
          * Mana points consumed per successful cast.
          */
-        public int manaCost = 20;
+        public int manaCost = 25;
 
         /**
          * Vertical height (in blocks) the player is launched upwards.
@@ -576,6 +715,21 @@ public final class AxoTalesServerConfig {
          * Whether to destroy the block below the player on landing (if breakable).
          */
         public boolean breakBlockBelow = true;
+
+        /**
+         * Base crater depth (in blocks) carved downward from the impacted surface.
+         */
+        public int groundBreakDepthBlocks = 2;
+
+        /**
+         * Extra crater depth added per stacked taunt recast.
+         */
+        public int groundBreakDepthPerStack = 1;
+
+        /**
+         * Chance (0..1) for non-core crater columns to remain intact for a rougher, more natural break pattern.
+         */
+        public double groundBreakSparingChance = 0.18;
     }
 
     /**
@@ -601,6 +755,11 @@ public final class AxoTalesServerConfig {
          * Debounce/cooldown window (in seconds) between casts.
          */
         public double cooldownSeconds = 1.25;
+
+        /**
+         * Delay (in seconds) before the projectile is spawned so the secondary cast lines up with the sword animation.
+         */
+        public double castDelaySeconds = 0.34;
     }
 
     public static final class FullOrInt {

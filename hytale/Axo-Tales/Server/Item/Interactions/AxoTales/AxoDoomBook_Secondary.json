@@ -11,7 +11,7 @@
       "Type": "Simple",
       "RunTime": 0.25,
       "Effects": {
-        "ItemAnimationId": "CastHurlCharged",
+        "ItemAnimationId": "CastDoom",
         "WaitForAnimationToFinish": true,
         "ClearAnimationOnFinish": true,
         "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Launch"

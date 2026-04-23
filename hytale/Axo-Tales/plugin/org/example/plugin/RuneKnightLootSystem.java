@@ -12,6 +12,8 @@ import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3f;
 import com.hypixel.hytale.protocol.AnimationSlot;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
+import com.hypixel.hytale.server.core.asset.type.item.config.ItemDrop;
+import com.hypixel.hytale.server.core.asset.type.item.config.ItemDropList;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
@@ -25,7 +27,9 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 
 import javax.annotation.Nonnull;
+import org.bson.BsonDocument;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -39,6 +43,14 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
     private static final String DEFAULT_ROLE_NAME = RuneKnightSpawnerSystem.DEFAULT_ROLE_NAME;
     private static final String KUDU_BOOTS_ITEM_ID = "Kudu_Boots";
     private static final String FROST_BOOK_ITEM_ID = "Book_Frost_Texture";
+    private static final String ARCANE_CRYSTAL_ITEM_ID = "Ingredient_Crystal_Arcane";
+    private static final String ARCANE_MATTER_ITEM_ID = "Arcane_Matter";
+    private static final String CLOUD_OR_BOUNCE_DROP_LIST_ID = "Drop_AxoTales_Cloud_Or_Bounce";
+    private static final int ARCANE_CRYSTAL_DROP_MIN = 1;
+    private static final int ARCANE_CRYSTAL_DROP_MAX = 2;
+    private static final int ARCANE_MATTER_DROP_QUANTITY = 1;
+    private static final int CLOUD_OR_BOUNCE_DROP_CHANCE_PERCENT = 33;
+    private static final double CLOUD_OR_BOUNCE_DROP_CHANCE = CLOUD_OR_BOUNCE_DROP_CHANCE_PERCENT / 100.0;
 
     private static final long TICK_INTERVAL_NANOS = 250_000_000L;
     private static final long DEATH_CLEANUP_DELAY_NANOS = 1_200_000_000L;
@@ -199,6 +211,15 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                                     + " frost.itemId=" + FROST_BOOK_ITEM_ID
                                     + " frost.chancePercent=" + frostChancePercent
                                     + " frost.drop=false"
+                                    + " arcaneCrystal.itemId=" + ARCANE_CRYSTAL_ITEM_ID
+                                    + " arcaneCrystal.quantityRange=" + ARCANE_CRYSTAL_DROP_MIN + "-" + ARCANE_CRYSTAL_DROP_MAX
+                                    + " arcaneCrystal.drop=false"
+                                    + " arcaneMatter.itemId=" + ARCANE_MATTER_ITEM_ID
+                                    + " arcaneMatter.quantity=" + ARCANE_MATTER_DROP_QUANTITY
+                                    + " arcaneMatter.drop=false"
+                                    + " platformBlock.dropListId=" + CLOUD_OR_BOUNCE_DROP_LIST_ID
+                                    + " platformBlock.chancePercent=" + CLOUD_OR_BOUNCE_DROP_CHANCE_PERCENT
+                                    + " platformBlock.drop=false"
                                     + " reason=positionInvalid"
                                     + " world=" + world.getName()
                             );
@@ -209,6 +230,8 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                         boolean kuduDrop = kuduRoll < kuduChance;
                         double frostRoll = ThreadLocalRandom.current().nextDouble();
                         boolean frostDrop = frostRoll < frostChance;
+                        double platformBlockRoll = ThreadLocalRandom.current().nextDouble();
+                        boolean platformBlockDrop = platformBlockRoll < CLOUD_OR_BOUNCE_DROP_CHANCE;
 
                         deathDrops.add(
                             new DeathDrop(
@@ -222,7 +245,9 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                                 kuduRoll,
                                 kuduDrop,
                                 frostRoll,
-                                frostDrop
+                                frostDrop,
+                                platformBlockRoll,
+                                platformBlockDrop
                             )
                         );
                     }
@@ -230,6 +255,21 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
             );
 
             for (DeathDrop drop : deathDrops) {
+                int arcaneCrystalQuantity = ThreadLocalRandom.current().nextInt(
+                    ARCANE_CRYSTAL_DROP_MIN,
+                    ARCANE_CRYSTAL_DROP_MAX + 1
+                );
+                int arcaneCrystalSpawned = spawnItemDrop(
+                    store,
+                    new ItemStack(ARCANE_CRYSTAL_ITEM_ID, arcaneCrystalQuantity),
+                    drop.position
+                );
+                int arcaneMatterSpawned = spawnItemDrop(
+                    store,
+                    new ItemStack(ARCANE_MATTER_ITEM_ID, ARCANE_MATTER_DROP_QUANTITY),
+                    drop.position
+                );
+
                 int kuduSpawned = 0;
                 if (drop.kuduDrop) {
                     kuduSpawned = spawnItemDrop(store, new ItemStack(KUDU_BOOTS_ITEM_ID, 1), drop.position);
@@ -238,6 +278,11 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                 int frostSpawned = 0;
                 if (drop.frostDrop) {
                     frostSpawned = spawnItemDrop(store, new ItemStack(FROST_BOOK_ITEM_ID, 1), drop.position);
+                }
+
+                DropListSpawnResult platformBlockDrop = DropListSpawnResult.empty();
+                if (drop.platformBlockDrop) {
+                    platformBlockDrop = spawnDropList(store, CLOUD_OR_BOUNCE_DROP_LIST_ID, drop.position);
                 }
 
                 boolean deathAnimPlayed = playDeathAnimationMaybe(store, drop.npcRef);
@@ -262,6 +307,18 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                         + " frost.roll=" + String.format(java.util.Locale.ROOT, "%.4f", drop.frostRoll)
                         + " frost.drop=" + drop.frostDrop
                         + " frost.spawned=" + frostSpawned
+                        + " arcaneCrystal.itemId=" + ARCANE_CRYSTAL_ITEM_ID
+                        + " arcaneCrystal.quantity=" + arcaneCrystalQuantity
+                        + " arcaneCrystal.spawned=" + arcaneCrystalSpawned
+                        + " arcaneMatter.itemId=" + ARCANE_MATTER_ITEM_ID
+                        + " arcaneMatter.quantity=" + ARCANE_MATTER_DROP_QUANTITY
+                        + " arcaneMatter.spawned=" + arcaneMatterSpawned
+                        + " platformBlock.dropListId=" + CLOUD_OR_BOUNCE_DROP_LIST_ID
+                        + " platformBlock.chancePercent=" + CLOUD_OR_BOUNCE_DROP_CHANCE_PERCENT
+                        + " platformBlock.roll=" + String.format(java.util.Locale.ROOT, "%.4f", drop.platformBlockRoll)
+                        + " platformBlock.drop=" + drop.platformBlockDrop
+                        + " platformBlock.itemId=" + platformBlockDrop.itemId
+                        + " platformBlock.spawned=" + platformBlockDrop.entitiesSpawned
                         + " death.anim=" + DEATH_ANIMATION_ID
                         + " death.animPlayed=" + deathAnimPlayed
                         + " cleanup.delaySeconds=" + (DEATH_CLEANUP_DELAY_NANOS / 1_000_000_000.0)
@@ -333,6 +390,60 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
         }
     }
 
+    private static @Nonnull DropListSpawnResult spawnDropList(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull String dropListId,
+        @Nonnull Vector3d entityPosition
+    ) {
+        ItemDropList dropList = ItemDropList.getAssetMap().getAsset(dropListId);
+        if (dropList == null) {
+            return DropListSpawnResult.empty();
+        }
+
+        var container = dropList.getContainer();
+        if (container == null) {
+            return DropListSpawnResult.empty();
+        }
+
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        List<ItemDrop> drops = new ArrayList<>();
+        container.populateDrops(drops, random::nextDouble, dropListId);
+
+        int entitiesSpawned = 0;
+        int itemsTotal = 0;
+        String firstItemId = "none";
+        for (ItemDrop drop : drops) {
+            if (drop == null) {
+                continue;
+            }
+
+            String itemId = drop.getItemId();
+            if (itemId == null || itemId.isBlank()) {
+                continue;
+            }
+
+            int quantity = Math.max(0, drop.getRandomQuantity(random));
+            if (quantity <= 0) {
+                continue;
+            }
+
+            BsonDocument metadata = drop.getMetadata();
+            ItemStack stack = metadata != null ? new ItemStack(itemId, quantity, metadata) : new ItemStack(itemId, quantity);
+            int spawned = spawnItemDrop(store, stack, entityPosition);
+            if (spawned <= 0) {
+                continue;
+            }
+
+            if ("none".equals(firstItemId)) {
+                firstItemId = itemId;
+            }
+            entitiesSpawned += spawned;
+            itemsTotal += quantity;
+        }
+
+        return new DropListSpawnResult(firstItemId, entitiesSpawned, itemsTotal);
+    }
+
     private static int spawnItemDrop(@Nonnull Store<EntityStore> store, @Nonnull ItemStack stack, @Nonnull Vector3d entityPosition) {
         if (!stack.isValid()) {
             return 0;
@@ -376,7 +487,15 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
         double kuduRoll,
         boolean kuduDrop,
         double frostRoll,
-        boolean frostDrop
+        boolean frostDrop,
+        double platformBlockRoll,
+        boolean platformBlockDrop
     ) {
+    }
+
+    private record DropListSpawnResult(@Nonnull String itemId, int entitiesSpawned, int itemsTotal) {
+        private static @Nonnull DropListSpawnResult empty() {
+            return new DropListSpawnResult("none", 0, 0);
+        }
     }
 }

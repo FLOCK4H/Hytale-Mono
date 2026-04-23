@@ -2,11 +2,9 @@ package org.example.plugin;
 
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
-import com.hypixel.hytale.protocol.ItemArmorSlot;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
-import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
@@ -107,11 +105,6 @@ public final class ArmorManaMaxBonusEffect {
                     return;
                 }
 
-                Inventory inventory = player.getInventory();
-                if (inventory == null) {
-                    return;
-                }
-
                 List<Registration> previous = itemChangeRegistrationsByPlayer.remove(playerUuid);
                 if (previous != null) {
                     for (Registration registration : previous) {
@@ -122,27 +115,27 @@ public final class ArmorManaMaxBonusEffect {
                 }
 
                 List<Registration> registrations = new ArrayList<>();
-                ItemContainer armor = inventory.getArmor();
+                ItemContainer armor = InventoryComponentAccess.armor(store, playerEntityRef);
                 if (armor != null) {
                     registrations.add(armor.registerChangeEvent(changeEvent -> refresh(playerUuid)));
                 }
-                ItemContainer hotbar = inventory.getHotbar();
+                ItemContainer hotbar = InventoryComponentAccess.hotbar(store, playerEntityRef);
                 if (hotbar != null) {
                     registrations.add(hotbar.registerChangeEvent(changeEvent -> refresh(playerUuid)));
                 }
-                ItemContainer storage = inventory.getStorage();
+                ItemContainer storage = InventoryComponentAccess.storage(store, playerEntityRef);
                 if (storage != null) {
                     registrations.add(storage.registerChangeEvent(changeEvent -> refresh(playerUuid)));
                 }
-                ItemContainer utility = inventory.getUtility();
+                ItemContainer utility = InventoryComponentAccess.utility(store, playerEntityRef);
                 if (utility != null) {
                     registrations.add(utility.registerChangeEvent(changeEvent -> refresh(playerUuid)));
                 }
-                ItemContainer tools = inventory.getTools();
+                ItemContainer tools = InventoryComponentAccess.tools(store, playerEntityRef);
                 if (tools != null) {
                     registrations.add(tools.registerChangeEvent(changeEvent -> refresh(playerUuid)));
                 }
-                ItemContainer backpack = inventory.getBackpack();
+                ItemContainer backpack = InventoryComponentAccess.backpack(store, playerEntityRef);
                 if (backpack != null) {
                     registrations.add(backpack.registerChangeEvent(changeEvent -> refresh(playerUuid)));
                 }
@@ -246,12 +239,7 @@ public final class ArmorManaMaxBonusEffect {
                 return;
             }
 
-            Inventory inventory = player.getInventory();
-            if (inventory == null) {
-                return;
-            }
-
-            ItemContainer armor = inventory.getArmor();
+            ItemContainer armor = InventoryComponentAccess.armor(store, playerEntityRef);
             if (armor == null) {
                 return;
             }
@@ -274,7 +262,7 @@ public final class ArmorManaMaxBonusEffect {
             float manaMaxBefore = manaBefore != null ? manaBefore.getMax() : Float.NaN;
 
             List<String> equippedArmorItemIds = readArmorItemIds(armor);
-            List<String> inventoryBonusItemIds = readInventoryBonusItemIds(inventory);
+            List<String> inventoryBonusItemIds = readInventoryBonusItemIds(store, playerEntityRef);
             Set<String> inventoryBonusItemIdSet = new HashSet<>(inventoryBonusItemIds);
             float desiredBonusTotal = 0f;
             for (var entry : ARMOR_MANA_MAX_BONUSES_BY_ITEM_ID.entrySet()) {
@@ -492,17 +480,20 @@ public final class ArmorManaMaxBonusEffect {
     }
 
     @Nonnull
-    private static List<String> readInventoryBonusItemIds(@Nonnull Inventory inventory) {
+    private static List<String> readInventoryBonusItemIds(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> playerEntityRef
+    ) {
         if (INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.isEmpty()) {
             return List.of();
         }
 
         LinkedHashSet<String> found = new LinkedHashSet<>();
-        readRelevantItemIds(inventory.getHotbar(), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
-        readRelevantItemIds(inventory.getStorage(), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
-        readRelevantItemIds(inventory.getUtility(), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
-        readRelevantItemIds(inventory.getTools(), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
-        readRelevantItemIds(inventory.getBackpack(), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
+        readRelevantItemIds(InventoryComponentAccess.hotbar(store, playerEntityRef), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
+        readRelevantItemIds(InventoryComponentAccess.storage(store, playerEntityRef), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
+        readRelevantItemIds(InventoryComponentAccess.utility(store, playerEntityRef), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
+        readRelevantItemIds(InventoryComponentAccess.tools(store, playerEntityRef), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
+        readRelevantItemIds(InventoryComponentAccess.backpack(store, playerEntityRef), INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet(), found);
 
         return new ArrayList<>(found);
     }
@@ -566,28 +557,4 @@ public final class ArmorManaMaxBonusEffect {
         );
     }
 
-    @Nullable
-    static String getArmorItemId(@Nonnull Player player, @Nonnull ItemArmorSlot slot) {
-        Inventory inventory = player.getInventory();
-        if (inventory == null) {
-            return null;
-        }
-
-        ItemContainer armor = inventory.getArmor();
-        if (armor == null) {
-            return null;
-        }
-
-        short slotIndex = (short) slot.getValue();
-        if (slotIndex < 0 || slotIndex >= armor.getCapacity()) {
-            return null;
-        }
-
-        ItemStack stack = armor.getItemStack(slotIndex);
-        if (stack == null || !stack.isValid()) {
-            return null;
-        }
-
-        return stack.getItemId();
-    }
 }

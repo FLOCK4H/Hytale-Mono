@@ -100,6 +100,8 @@ public final class TauntBookSlamSystem extends DamageEventSystem {
                     + " damage.amount.after=0.0"
                     + " taunt.cast.chainId=" + active.castChainId
                     + " taunt.cast.interactionType=" + active.castInteractionType
+                    + " taunt.stackCount=" + active.stackCount
+                    + " slam.damageAmount=" + active.getEffectiveSlamDamage()
                     + " taunt.active.expiresAtNanos=" + active.expiresAtNanos
             );
         } catch (Throwable t) {
@@ -107,4 +109,3 @@ public final class TauntBookSlamSystem extends DamageEventSystem {
         }
     }
 }
-

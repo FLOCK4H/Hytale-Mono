@@ -1,59 +1,83 @@
-# Crafting
+# Crafting Flow
 
-## Arcane Workbench (Axo Tales tab)
+<div class="page-header" data-reveal>
+  <div markdown="1">
+    <span class="hero-kicker">Progression routing</span>
 
-Used for Axo Tales gear and spellbooks.
+    # Axo Tales crafting is cleaner after the bench-tab rebuild
 
-Notes:
-- Arcane Crystal Shards come from Arcane Crystals (see [Blocks & Ores](blocks-ores.md)).
+    The current setup uses two dedicated Arcanist tabs instead of throwing everything into one generic bucket. That change matters more than it sounds: it makes the mod read like an actual progression tree instead of a dump of custom recipes.
+  </div>
+</div>
 
-### Sa'r gear
+## Bench map
 
-- **Sa'r Boots**: Dark Feathers x4 + Cobalt Bars x4 + Arcane Crystal Shards x6 + Arcane Matter x12
-- **Sa'r Diadem**: Arcane Crystal Shards x4 + Cobalt Bars x2 + Arcane Matter x8
-- **Sa'r Armor**: Cobalt Bars x12 + Arcane Matter x20 + Arcane Crystal Shards x10
-- **Sa'r Warfists**: Azure Kelp x2 + Arcane Matter x2 + Arcane Crystal Shards x2
+<div class="card-grid">
+  <div class="card" data-reveal>
+    <h3>Arcanist's Workbench - Armor</h3>
+    <p>Sa'r Boots, Sa'r Diadem, Sa'r Armor, Sa'r Warfists, and Kudu Boots all live here now.</p>
+  </div>
+  <div class="card" data-reveal>
+    <h3>Arcanist's Workbench - Spellblades</h3>
+    <p>All spellbooks plus Axo's Ancient Sword live in this tab.</p>
+  </div>
+  <div class="card" data-reveal>
+    <h3>Alchemybench</h3>
+    <p>Axo's Empty Potion Bottle and every Axo Tales potion recipe stay on the vanilla alchemy bench.</p>
+  </div>
+</div>
 
-### Weapons
+## Armor tab recipes
 
-- **Axo's Ancient Sword**: Arcane Matter x20 + Arcane Crystal Shards x15 + Essence of Fire x12 + Essence of Ice x12
+| Item | Recipe |
+| --- | --- |
+| Sa'r Boots | 4 Dark Feathers, 4 Cobalt Bars, 6 Arcane Crystal Shards, 12 Arcane Matter |
+| Sa'r Diadem | 4 Arcane Crystal Shards, 2 Cobalt Bars, 8 Arcane Matter |
+| Sa'r Armor | 12 Cobalt Bars, 20 Arcane Matter, 10 Arcane Crystal Shards |
+| Sa'r Warfists | 2 Azure Kelp, 2 Arcane Matter, 2 Arcane Crystal Shards |
+| Kudu Boots | 2 Arcane Crystal Shards, 2 Arcane Matter, 10 Ice Essence |
 
-### Spellbooks
+## Spellblades tab recipes
 
-Each crafted spellbook recipe includes:
-- Arcane Crystal Shards x2
-- Arcane Matter x2
+<div class="card accent-card" data-reveal>
+  <h3>Shared spellbook backbone</h3>
+  <p>Every crafted spellbook starts with <strong>2 Arcane Crystal Shards</strong> and <strong>2 Arcane Matter</strong>, then adds one thematic ingredient.</p>
+</div>
 
-Plus one extra ingredient:
-- **Healing Book**: Azure Fruit x4
-- **Teleport Book**: Blue Crystal Shards x2
-- **Mining Book**: Volcanic Cobble x10
-- **Immunity Book**: Cobalt Shield x1
-- **Horde Book**: Feran Candle x3
-- **Book of Doom**: Voidhearts x4
-- **Morph Book**: Dark Feathers x2
-- **Taunt Book**: Essence of Fire x5
-- **Flame Book**: Essence of Fire x20
+| Spellbook | Extra ingredient |
+| --- | --- |
+| Healing Book | 4 Azure Fruit |
+| Teleport Book | 2 Blue Crystal Shards |
+| Mining Book | 10 Volcanic Cobble |
+| Immunity Book | 1 Cobalt Shield |
+| Horde Book | 3 Feran Candles |
+| Book of Doom | 4 Voidhearts |
+| Morph Book | 2 Dark Feathers |
+| Taunt Book | 5 Fire Essence |
+| Flame Book | 20 Fire Essence |
+| Frost Book | 20 Ice Essence |
 
-Notes:
-- Frost Book has no recipe by default (Rune Knight drop).
-- Kudu Boots can be crafted, and can also drop.
+### Ancient Sword
 
-## Alchemybench (vanilla)
+- 20 Arcane Matter
+- 15 Arcane Crystal Shards
+- 12 Fire Essence
+- 12 Ice Essence
 
-### Axo's Empty Potion Bottle
+## Alchemybench recipes
 
-- Empty Potion Bottle (`Potion_Empty`) x1
-- Arcane Crystal Shard (`Ingredient_Crystal_Arcane`) x1
+| Item | Recipe |
+| --- | --- |
+| Axo's Empty Potion Bottle | 1 Empty Potion Bottle, 1 Arcane Crystal Shard |
+| Swift Potion | Empty Bottle, 2 Arcane Crystal Shards, 2 Cyan Hibiscus |
+| Strength Potion | Empty Bottle, 2 Arcane Crystal Shards, 10 Adamantite Ingots |
+| Rabbit Potion | Empty Bottle, 2 Arcane Crystal Shards, 1 Dark Feather |
+| Invisibility Potion | Empty Bottle, 2 Arcane Crystal Shards, 1 Azure Kelp |
+| Curse Potion | Empty Bottle, 2 Arcane Crystal Shards, 5 Fire Essence |
 
-### Potions
+## The fastest live progression route
 
-Every Axo Tales potion recipe requires:
-- Axo's Empty Potion Bottle x1
-
-Then add:
-- **Swift Potion**: Arcane Crystal Shards x2 + Cyan Hibiscus x2
-- **Strength Potion**: Arcane Crystal Shards x2 + Adamantite Ingots x10
-- **Rabbit Potion**: Arcane Crystal Shards x2 + Dark Feather x1
-- **Invisibility Potion**: Arcane Crystal Shards x2 + Azure Kelp x1
-- **Curse Potion**: Arcane Crystal Shards x2 + Essence of Fire x5
+1. Farm Arcane Matter ore and Arcane Crystals first.
+2. Use the Arcanist's Workbench to start mana scaling through Sa'r gear or your first spellbook.
+3. Add Kudu farming if you want Frost Book, Kudu Boots, or passive shard and Arcane Matter income.
+4. Move into Cloud and Bounce drops once you want traversal tech for builds or arenas.

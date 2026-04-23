@@ -8,7 +8,7 @@
       "shape": {
         "type": "none",
         "offset": {"x": 0, "y": 0, "z": 0},
-        "stretch": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
         "settings": {
           "isPiece": true
         },
@@ -21,7 +21,7 @@
       "children": [
         {
           "id": "2",
-          "name": "PantPelvis",
+          "name": "PelvisPantGroup",
           "position": {"x": 0, "y": 0, "z": 0},
           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
           "shape": {
@@ -80,7 +80,7 @@
       "shape": {
         "type": "none",
         "offset": {"x": 0, "y": 0, "z": 0},
-        "stretch": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
         "settings": {
           "isPiece": true
         },
@@ -93,7 +93,7 @@
       "children": [
         {
           "id": "4",
-          "name": "Pant",
+          "name": "LPantGroup",
           "position": {"x": 0, "y": 0, "z": -1.556},
           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
           "shape": {
@@ -152,7 +152,7 @@
       "shape": {
         "type": "none",
         "offset": {"x": 0, "y": 0, "z": 0},
-        "stretch": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
         "settings": {
           "isPiece": true
         },
@@ -171,7 +171,7 @@
           "shape": {
             "type": "none",
             "offset": {"x": 0, "y": 0, "z": 0},
-            "stretch": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
             "settings": {
               "isPiece": true
             },
@@ -184,7 +184,7 @@
           "children": [
             {
               "id": "7",
-              "name": "LBoot",
+              "name": "LBootShellGroup",
               "position": {"x": 0.038, "y": 0.5, "z": -1},
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
               "shape": {
@@ -235,13 +235,13 @@
               "children": [
                 {
                   "id": "8",
-                  "name": "End",
+                  "name": "LBootToePivot",
                   "position": {"x": 0, "y": 0.29499, "z": 7},
                   "orientation": {"x": 0, "y": -0.70711, "z": 0, "w": 0.70711},
                   "shape": {
                     "type": "none",
                     "offset": {"x": 0, "y": 0, "z": 0},
-                    "stretch": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false
                     },
@@ -254,13 +254,13 @@
                   "children": [
                     {
                       "id": "9",
-                      "name": "End",
+                      "name": "LBootToeGuide",
                       "position": {"x": 0, "y": -4.5, "z": 0},
                       "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
                       "shape": {
                         "type": "none",
                         "offset": {"x": 0, "y": 0, "z": 0},
-                        "stretch": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
                         "settings": {
                           "isPiece": false
                         },
@@ -279,7 +279,7 @@
         },
         {
           "id": "10",
-          "name": "LBoot2",
+          "name": "LGreaveGroup",
           "position": {"x": 0, "y": -1, "z": -4},
           "orientation": {"x": -0.04358, "y": 0, "z": -0.00168, "w": 0.99905},
           "shape": {
@@ -330,16 +330,16 @@
           "children": [
             {
               "id": "11",
-              "name": "LBootPlate",
+              "name": "LBootPlateGroup",
               "position": {"x": -0.0714, "y": -1.60609, "z": 6.8863},
               "orientation": {"x": 0.08716, "y": 0, "z": 0, "w": 0.99619},
               "shape": {
                 "type": "box",
-                "offset": {"x": 0, "y": 0, "z": -0.5},
+                "offset": {"x": 0, "y": 0.00609, "z": -0.4863},
                 "stretch": {"x": 1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false,
-                  "size": {"x": 15, "y": 22, "z": 9}
+                  "size": {"x": 15, "y": 22.5, "z": 9.5}
                 },
                 "textureLayout": {
                   "back": {
@@ -381,13 +381,13 @@
               "children": [
                 {
                   "id": "12",
-                  "name": "LKnee",
-                  "position": {"x": 0.02646, "y": 15.46633, "z": 5.16882},
+                  "name": "LKneeAnchor",
+                  "position": {"x": 0.02646, "y": 15.46024, "z": 5.15512},
                   "orientation": {"x": -0.35467, "y": 0.68256, "z": 0.18408, "w": 0.6119},
                   "shape": {
                     "type": "none",
                     "offset": {"x": 0, "y": 0, "z": 0},
-                    "stretch": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false
                     },
@@ -397,21 +397,177 @@
                     "doubleSided": false,
                     "shadingMode": "flat"
                   }
+                },
+                {
+                  "id": "13",
+                  "name": "LArcaneKneeSigil--C1",
+                  "position": {"x": 0, "y": 1.9125, "z": 5.125},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 9, "y": 6.075, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "14",
+                  "name": "LArcaneKneeSigil_copy--C2",
+                  "position": {"x": 0, "y": 1.9125, "z": 5.125},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 9, "y": 6.075, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "15",
+                  "name": "LArcaneKneeSigil_copy2--C3",
+                  "position": {"x": 0, "y": 1.9125, "z": 5.125},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 9, "y": 6.075, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
                 }
               ]
             },
             {
-              "id": "13",
-              "name": "LBootTrim",
+              "id": "16",
+              "name": "LBootTrimGroup",
               "position": {"x": -0.11305, "y": 10.60952, "z": 4.9428},
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
               "shape": {
                 "type": "box",
-                "offset": {"x": 0, "y": 0, "z": -1.5},
+                "offset": {"x": 0.00005, "y": 0.09048, "z": -1.4928},
                 "stretch": {"x": 1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false,
-                  "size": {"x": 16, "y": 4, "z": 20}
+                  "size": {"x": 16, "y": 4.7, "z": 20.5}
                 },
                 "textureLayout": {
                   "back": {
@@ -449,21 +605,179 @@
                 "visible": true,
                 "doubleSided": false,
                 "shadingMode": "flat"
-              }
+              },
+              "children": [
+                {
+                  "id": "17",
+                  "name": "LArcaneAnkleCharm--C1",
+                  "position": {"x": 0, "y": -0.3875, "z": 10.625},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 11.2, "y": 3.125, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "reflective"
+                  }
+                },
+                {
+                  "id": "18",
+                  "name": "LArcaneAnkleCharm_copy--C2",
+                  "position": {"x": 0, "y": -0.3875, "z": 10.625},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 11.2, "y": 3.125, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "reflective"
+                  }
+                },
+                {
+                  "id": "19",
+                  "name": "LArcaneAnkleCharm_copy2--C3",
+                  "position": {"x": 0, "y": -0.3875, "z": 10.625},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 11.2, "y": 3.125, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "reflective"
+                  }
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
-      "id": "14",
+      "id": "20",
       "name": "R-Thigh",
       "position": {"x": -15, "y": 25, "z": 0},
       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
       "shape": {
         "type": "none",
         "offset": {"x": 0, "y": 0, "z": 0},
-        "stretch": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
         "settings": {
           "isPiece": true
         },
@@ -475,8 +789,8 @@
       },
       "children": [
         {
-          "id": "15",
-          "name": "Pant",
+          "id": "21",
+          "name": "RPantGroup",
           "position": {"x": 0.43996, "y": 0, "z": -1.5729},
           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
           "shape": {
@@ -528,14 +842,14 @@
       ]
     },
     {
-      "id": "16",
+      "id": "22",
       "name": "R-Calf",
       "position": {"x": -15, "y": 13, "z": 2},
       "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
       "shape": {
         "type": "none",
         "offset": {"x": 0, "y": 0, "z": 0},
-        "stretch": {"x": 0, "y": 0, "z": 0},
+        "stretch": {"x": 1, "y": 1, "z": 1},
         "settings": {
           "isPiece": true
         },
@@ -547,14 +861,14 @@
       },
       "children": [
         {
-          "id": "17",
+          "id": "23",
           "name": "R-Foot",
           "position": {"x": 0, "y": -10, "z": -4},
           "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
           "shape": {
             "type": "none",
             "offset": {"x": 0, "y": 0, "z": 0},
-            "stretch": {"x": 0, "y": 0, "z": 0},
+            "stretch": {"x": 1, "y": 1, "z": 1},
             "settings": {
               "isPiece": true
             },
@@ -566,8 +880,8 @@
           },
           "children": [
             {
-              "id": "18",
-              "name": "RBoot",
+              "id": "24",
+              "name": "RBootShellGroup",
               "position": {"x": -0.038, "y": 0.5, "z": -1},
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
               "shape": {
@@ -617,14 +931,14 @@
               },
               "children": [
                 {
-                  "id": "19",
-                  "name": "End",
+                  "id": "25",
+                  "name": "RBootToePivot",
                   "position": {"x": 0, "y": 0.29499, "z": 7},
                   "orientation": {"x": 0, "y": 0.70711, "z": 0, "w": 0.70711},
                   "shape": {
                     "type": "none",
                     "offset": {"x": 0, "y": 0, "z": 0},
-                    "stretch": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false
                     },
@@ -636,14 +950,14 @@
                   },
                   "children": [
                     {
-                      "id": "20",
-                      "name": "End",
+                      "id": "26",
+                      "name": "RBootToeGuide",
                       "position": {"x": 0, "y": -4.5, "z": 0},
                       "orientation": {"x": -0.70711, "y": 0, "z": 0, "w": 0.70711},
                       "shape": {
                         "type": "none",
                         "offset": {"x": 0, "y": 0, "z": 0},
-                        "stretch": {"x": 0, "y": 0, "z": 0},
+                        "stretch": {"x": 1, "y": 1, "z": 1},
                         "settings": {
                           "isPiece": false
                         },
@@ -661,8 +975,8 @@
           ]
         },
         {
-          "id": "21",
-          "name": "LBoot2",
+          "id": "27",
+          "name": "RGreaveGroup",
           "position": {"x": 0, "y": -1, "z": -4},
           "orientation": {"x": -0.04358, "y": 0, "z": 0.00168, "w": 0.99905},
           "shape": {
@@ -712,17 +1026,17 @@
           },
           "children": [
             {
-              "id": "22",
-              "name": "LBootPlate",
+              "id": "28",
+              "name": "RBootPlateGroup",
               "position": {"x": 0.0714, "y": -1.60609, "z": 6.8863},
               "orientation": {"x": 0.08716, "y": 0, "z": 0, "w": 0.99619},
               "shape": {
                 "type": "box",
-                "offset": {"x": 0, "y": 0, "z": -0.5},
+                "offset": {"x": 0, "y": 0.00609, "z": -0.4863},
                 "stretch": {"x": -1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false,
-                  "size": {"x": 15, "y": 22, "z": 9}
+                  "size": {"x": 15, "y": 22.5, "z": 9.5}
                 },
                 "textureLayout": {
                   "back": {
@@ -763,14 +1077,14 @@
               },
               "children": [
                 {
-                  "id": "23",
-                  "name": "LKnee",
-                  "position": {"x": -0.02646, "y": 15.46633, "z": 5.16882},
+                  "id": "29",
+                  "name": "RKneeAnchor",
+                  "position": {"x": -0.02646, "y": 15.46024, "z": 5.15512},
                   "orientation": {"x": -0.35467, "y": -0.68256, "z": -0.18408, "w": 0.6119},
                   "shape": {
                     "type": "none",
                     "offset": {"x": 0, "y": 0, "z": 0},
-                    "stretch": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
                     "settings": {
                       "isPiece": false
                     },
@@ -780,21 +1094,177 @@
                     "doubleSided": false,
                     "shadingMode": "flat"
                   }
+                },
+                {
+                  "id": "30",
+                  "name": "RArcaneKneeSigil--C1",
+                  "position": {"x": 0, "y": 1.9125, "z": 5.125},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 9, "y": 6.075, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "31",
+                  "name": "RArcaneKneeSigil_copy--C2",
+                  "position": {"x": 0, "y": 1.9125, "z": 5.125},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 9, "y": 6.075, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
+                },
+                {
+                  "id": "32",
+                  "name": "RArcaneKneeSigil_copy2--C3",
+                  "position": {"x": 0, "y": 1.9125, "z": 5.125},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 9, "y": 6.075, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright"
+                  }
                 }
               ]
             },
             {
-              "id": "24",
-              "name": "LBootTrim",
+              "id": "33",
+              "name": "RBootTrimGroup",
               "position": {"x": 0.11305, "y": 10.60952, "z": 4.9428},
               "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
               "shape": {
                 "type": "box",
-                "offset": {"x": 0, "y": 0, "z": -1.5},
+                "offset": {"x": 0.00005, "y": 0.09048, "z": -1.4928},
                 "stretch": {"x": -1, "y": 1, "z": 1},
                 "settings": {
                   "isPiece": false,
-                  "size": {"x": 16, "y": 4, "z": 20}
+                  "size": {"x": 16, "y": 4.7, "z": 20.5}
                 },
                 "textureLayout": {
                   "back": {
@@ -832,7 +1302,165 @@
                 "visible": true,
                 "doubleSided": false,
                 "shadingMode": "flat"
-              }
+              },
+              "children": [
+                {
+                  "id": "34",
+                  "name": "RArcaneAnkleCharm--C1",
+                  "position": {"x": 0, "y": -0.3875, "z": 10.625},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 11.2, "y": 3.125, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "reflective"
+                  }
+                },
+                {
+                  "id": "35",
+                  "name": "RArcaneAnkleCharm_copy--C2",
+                  "position": {"x": 0, "y": -0.3875, "z": 10.625},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 11.2, "y": 3.125, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "reflective"
+                  }
+                },
+                {
+                  "id": "36",
+                  "name": "RArcaneAnkleCharm_copy2--C3",
+                  "position": {"x": 0, "y": -0.3875, "z": 10.625},
+                  "orientation": {"x": 0, "y": 0, "z": 0, "w": 1},
+                  "shape": {
+                    "type": "box",
+                    "offset": {"x": 0, "y": 0, "z": 0},
+                    "stretch": {"x": 1, "y": 1, "z": 1},
+                    "settings": {
+                      "isPiece": false,
+                      "size": {"x": 11.2, "y": 3.125, "z": 0.85},
+                      "isStaticBox": true
+                    },
+                    "textureLayout": {
+                      "back": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "front": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {"x": 0, "y": 0},
+                        "mirror": {"x": false, "y": false},
+                        "angle": 0
+                      }
+                    },
+                    "unwrapMode": "custom",
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "reflective"
+                  }
+                }
+              ]
             }
           ]
         }

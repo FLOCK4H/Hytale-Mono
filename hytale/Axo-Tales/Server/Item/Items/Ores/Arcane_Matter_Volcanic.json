@@ -24,6 +24,11 @@
                 "Item": {
                   "ItemId": "Rock_Volcanic_Cobble"
                 }
+              },
+              {
+                "Type": "Droplist",
+                "Weight": 25,
+                "DroplistId": "Drop_AxoTales_Cloud_Or_Bounce"
               }
             ]
           }

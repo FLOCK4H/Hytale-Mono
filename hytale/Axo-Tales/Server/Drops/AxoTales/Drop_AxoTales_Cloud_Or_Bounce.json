@@ -1,0 +1,25 @@
+{
+  "Container": {
+    "Type": "Choice",
+    "Containers": [
+      {
+        "Type": "Single",
+        "Weight": 1,
+        "Item": {
+          "ItemId": "AxoTales_Cloud_Block",
+          "QuantityMin": 1,
+          "QuantityMax": 1
+        }
+      },
+      {
+        "Type": "Single",
+        "Weight": 1,
+        "Item": {
+          "ItemId": "AxoTales_Bounce_Block",
+          "QuantityMin": 1,
+          "QuantityMax": 1
+        }
+      }
+    ]
+  }
+}

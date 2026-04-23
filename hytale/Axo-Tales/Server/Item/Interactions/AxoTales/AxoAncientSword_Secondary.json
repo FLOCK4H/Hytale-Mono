@@ -9,11 +9,13 @@
     },
     {
       "Type": "Simple",
-      "RunTime": 0.15,
+      "RunTime": 0.35,
       "Effects": {
+        "ItemAnimationId": "SpellCast",
+        "WaitForAnimationToFinish": true,
+        "ClearAnimationOnFinish": true,
         "WorldSoundEventId": "SFX_Longsword_Special_Swing"
       }
     }
   ]
 }
-

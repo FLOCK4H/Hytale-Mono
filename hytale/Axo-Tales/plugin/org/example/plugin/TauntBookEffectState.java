@@ -16,11 +16,16 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public final class TauntBookEffectState {
 
+    public static final double STACK_DAMAGE_MULTIPLIER = 1.5d;
+    public static final int STACK_DAMAGE_CAP = 2000;
+
     public static final class ActiveTaunt {
         public final long castAtNanos;
         public final long expiresAtNanos;
         public final int castChainId;
         public final @Nonnull InteractionType castInteractionType;
+        public final int stackCount;
+        public final double slamDamage;
         public volatile boolean slamPending;
         public volatile boolean leftGround;
 
@@ -28,28 +33,69 @@ public final class TauntBookEffectState {
             long castAtNanos,
             long expiresAtNanos,
             @Nonnull InteractionType castInteractionType,
-            int castChainId
+            int castChainId,
+            int stackCount,
+            double slamDamage
         ) {
             this.castAtNanos = castAtNanos;
             this.expiresAtNanos = expiresAtNanos;
             this.castInteractionType = castInteractionType;
             this.castChainId = castChainId;
+            this.stackCount = Math.max(1, stackCount);
+            this.slamDamage = sanitizeSlamDamage(slamDamage);
             this.slamPending = true;
             this.leftGround = false;
+        }
+
+        public int getEffectiveSlamDamage() {
+            return (int) Math.min(STACK_DAMAGE_CAP, Math.round(slamDamage));
+        }
+
+        public int getGroundBreakRadiusBlocks() {
+            return Math.max(0, stackCount - 1);
         }
     }
 
     private final Map<UUID, ActiveTaunt> activeTaunts = new ConcurrentHashMap<>();
 
-    public void activate(
+    public @Nonnull ActiveTaunt activate(
         @Nonnull UUID playerUuid,
         @Nonnull InteractionType interactionType,
         int chainId,
         long nowNanos,
-        long durationNanos
+        long durationNanos,
+        int baseSlamDamage
     ) {
         long expiresAt = nowNanos + Math.max(0L, durationNanos);
-        activeTaunts.put(playerUuid, new ActiveTaunt(nowNanos, expiresAt, interactionType, chainId));
+        ActiveTaunt next = activeTaunts.compute(
+            playerUuid,
+            (ignored, current) -> {
+                if (canStack(current, nowNanos)) {
+                    int nextStackCount = current.stackCount + 1;
+                    double nextDamage = Math.min(STACK_DAMAGE_CAP, current.slamDamage * STACK_DAMAGE_MULTIPLIER);
+                    ActiveTaunt stacked = new ActiveTaunt(
+                        nowNanos,
+                        Math.max(expiresAt, current.expiresAtNanos),
+                        interactionType,
+                        chainId,
+                        nextStackCount,
+                        nextDamage
+                    );
+                    stacked.leftGround = current.leftGround;
+                    stacked.slamPending = current.slamPending;
+                    return stacked;
+                }
+                return new ActiveTaunt(
+                    nowNanos,
+                    expiresAt,
+                    interactionType,
+                    chainId,
+                    1,
+                    sanitizeSlamDamage(baseSlamDamage)
+                );
+            }
+        );
+        return next != null ? next : new ActiveTaunt(nowNanos, expiresAt, interactionType, chainId, 1, sanitizeSlamDamage(baseSlamDamage));
     }
 
     public @Nullable ActiveTaunt getIfActive(@Nonnull UUID playerUuid, long nowNanos) {
@@ -78,5 +124,18 @@ public final class TauntBookEffectState {
 
     public void clear(@Nonnull UUID playerUuid) {
         activeTaunts.remove(playerUuid);
+    }
+
+    private static boolean canStack(@Nullable ActiveTaunt current, long nowNanos) {
+        return current != null
+            && current.slamPending
+            && nowNanos <= current.expiresAtNanos;
+    }
+
+    private static double sanitizeSlamDamage(double damage) {
+        if (!Double.isFinite(damage) || damage <= 0d) {
+            return 0d;
+        }
+        return Math.min(STACK_DAMAGE_CAP, damage);
     }
 }

@@ -1,0 +1,49 @@
+{
+  "Class": "Instruction",
+  "Interface": "Hytale.Instruction.AttackSequence",
+  "Parameters": {
+    "AttackDistance": {
+      "Value": 12,
+      "Description": "The distance at which a Kudu Adept will execute ranged attacks"
+    },
+    "CombatRelativeTurnSpeed": {
+      "Value": 1.4,
+      "Description": "Modifier that decides turn speed difference in combat"
+    }
+  },
+  "Content": {
+    "Sensor": {
+      "Type": "Target",
+      "Range": {
+        "Compute": "AttackDistance"
+      },
+      "Filters": [
+        {
+          "Type": "LineOfSight"
+        }
+      ]
+    },
+    "ActionsBlocking": true,
+    "Actions": [
+      {
+        "Type": "Attack",
+        "Attack": "Kudu_Adept_Spellbook_Firebolt",
+        "AimingTimeRange": [
+          3,
+          3
+        ],
+        "AttackPauseRange": [
+          0.75,
+          1.5
+        ]
+      }
+    ],
+    "HeadMotion": {
+      "Type": "Aim",
+      "RelativeTurnSpeed": {
+        "Compute": "CombatRelativeTurnSpeed"
+      }
+    }
+  },
+  "Type": "Component"
+}

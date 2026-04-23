@@ -22,8 +22,6 @@ import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.util.TargetUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
-import com.hypixel.hytale.server.npc.role.Role;
-import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -148,24 +146,45 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                     continue;
                 }
 
-                Role role = npc.getRole();
-                MarkedEntitySupport marked = role != null ? role.getMarkedEntitySupport() : null;
-                if (role == null || marked == null) {
+                KuduAdeptBondState.OwnerTarget ownerTarget = bondState.getOwnerTarget(ownerUuid);
+                if (ownerTarget == null || ownerTarget.targetUuid() == null) {
+                    debugFailureMaybe(store, world, nowNanos, adeptUuid, null, projectileId, "noMasterTarget");
                     continue;
                 }
 
-                Ref<EntityStore> targetRef = marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
+                Ref<EntityStore> targetRef = external.getRefFromUUID(ownerTarget.targetUuid());
                 if (targetRef == null || !targetRef.isValid()) {
+                    debugFailureMaybe(store, world, nowNanos, adeptUuid, null, projectileId, "masterTargetInvalidRef");
                     continue;
                 }
 
                 Ref<EntityStore> ownerRef = external.getRefFromUUID(ownerUuid);
                 if (ownerRef != null && ownerRef.isValid() && targetRef.equals(ownerRef)) {
+                    debugFailureMaybe(store, world, nowNanos, adeptUuid, targetRef, projectileId, "ownerTarget");
                     continue;
                 }
 
                 // Safety: never shoot players.
                 if (store.getComponent(targetRef, PlayerRef.getComponentType()) != null) {
+                    debugFailureMaybe(store, world, nowNanos, adeptUuid, targetRef, projectileId, "playerTarget");
+                    continue;
+                }
+
+                UUID targetUuid = null;
+                try {
+                    UUIDComponent targetUuidComponent = store.getComponent(targetRef, UUIDComponent.getComponentType());
+                    if (targetUuidComponent != null) {
+                        targetUuid = targetUuidComponent.getUuid();
+                    }
+                } catch (Throwable ignored) {
+                    // Best effort.
+                }
+                if (targetUuid == null) {
+                    debugFailureMaybe(store, world, nowNanos, adeptUuid, targetRef, projectileId, "targetUuidMissing");
+                    continue;
+                }
+                if (bondState.getByAdept(targetUuid) != null) {
+                    debugFailureMaybe(store, world, nowNanos, adeptUuid, targetRef, projectileId, "bondedAdeptTarget");
                     continue;
                 }
 
@@ -245,16 +264,6 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                 }
 
                 nextFireAtNanosByAdept.put(adeptUuid, nowNanos + COOLDOWN_NANOS);
-
-                UUID targetUuid = null;
-                try {
-                    UUIDComponent targetUuidComponent = store.getComponent(targetRef, UUIDComponent.getComponentType());
-                    if (targetUuidComponent != null) {
-                        targetUuid = targetUuidComponent.getUuid();
-                    }
-                } catch (Throwable ignored) {
-                    // Best effort.
-                }
 
                 debug.traceFileOnly(
                     null,
@@ -409,4 +418,3 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
         return new Vector3f(pitch, yaw, 0f);
     }
 }
-

@@ -11,7 +11,7 @@
       "Type": "Simple",
       "RunTime": 0.25,
       "Effects": {
-        "ItemAnimationId": "CastHurlCharged",
+        "ItemAnimationId": "CastMining",
         "WaitForAnimationToFinish": true,
         "ClearAnimationOnFinish": true,
         "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"

@@ -13,7 +13,7 @@
   "Bounciness": 0,
   "ImpactSlowdown": 0,
   "TimeToLive": 5,
-  "Damage": 45,
+  "Damage": 50,
   "DeadTimeMiss": 0.2,
   "DeadTime": 0.2,
   "DeathEffectsOnHit": true,

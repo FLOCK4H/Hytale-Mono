@@ -1,24 +1,34 @@
 {
   "Type": "Variant",
-  "Reference": "Template_Trork_Melee",
+  "Reference": "Template_Trork_Mage",
   "Modify": {
     "Appearance": "Kudu_Adept_Magician",
-    "DropList": "Empty",
+    "DropList": "Drop_Kudu_Adept_Magician",
     "Weapons": [
-      "Weapon_Spellbook_Frost"
+      "Weapon_Spellbook_Fire",
+      "Weapon_Spellbook_Fire"
     ],
+    "RangedAttack": "Kudu_Adept_Spellbook_Firebolt",
+    "RangedAttackSequence": "Component_Instruction_Attack_Sequence_Kudu_Adept_Ranged",
     "ViewSector": 270,
     "HearingRange": 12,
-    "CombatRelativeTurnSpeed": 1.25,
-    "AttackDistance": 3.5,
-    "TargetGroups": [],
+    "AlertedRange": 48,
+    "TooCloseDistance": 0.1,
+    "CloseRange": 4,
+    "CombatRelativeTurnSpeed": 1.4,
+    "DesiredRangedAttackDistanceRange": [
+      3,
+      8
+    ],
+    "TargetGroups": [
+      "Trork"
+    ],
     "DisableDamageGroups": [
       "Self",
-      "Outlander"
+      "Trork"
     ],
-    "AttitudeGroup": "Outlander",
+    "AttitudeGroup": "Trork",
     "MaxSpeed": 6.0,
-    "RelativeChaseSpeed": 0.65,
     "MaxHealth": 120,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
@@ -31,4 +41,3 @@
     }
   }
 }
-

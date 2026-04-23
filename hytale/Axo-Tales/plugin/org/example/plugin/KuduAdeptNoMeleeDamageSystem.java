@@ -81,6 +81,11 @@ public final class KuduAdeptNoMeleeDamageSystem extends DamageEventSystem {
                 return; // only cancel direct/melee-like damage; projectiles remain allowed
             }
 
+            String causeId = getCauseId(damage);
+            if ("Projectile".equals(causeId)) {
+                return;
+            }
+
             Ref<EntityStore> attackerRef = entitySource.getRef();
             if (attackerRef == null || !attackerRef.isValid()) {
                 return;
@@ -130,15 +135,6 @@ public final class KuduAdeptNoMeleeDamageSystem extends DamageEventSystem {
             }
             nextDebugAtNanosByAttacker.put(attackerUuid, nowNanos + DEBUG_INTERVAL_NANOS);
 
-            String causeId = null;
-            int causeIndex = damage.getDamageCauseIndex();
-            if (causeIndex >= 0) {
-                DamageCause cause = DamageCause.getAssetMap().getAsset(causeIndex);
-                if (cause != null) {
-                    causeId = cause.getId();
-                }
-            }
-
             debug.traceFileOnly(
                 null,
                 "KuduAdeptMeleeDisabled event=Damage"
@@ -153,5 +149,17 @@ public final class KuduAdeptNoMeleeDamageSystem extends DamageEventSystem {
             errors.report((PlayerRef) null, "KuduAdeptNoMeleeDamageSystem: failed to handle damage.", t);
         }
     }
-}
 
+    private static @Nullable String getCauseId(@Nonnull Damage damage) {
+        try {
+            int causeIndex = damage.getDamageCauseIndex();
+            if (causeIndex < 0) {
+                return null;
+            }
+            DamageCause cause = DamageCause.getAssetMap().getAsset(causeIndex);
+            return cause != null ? cause.getId() : null;
+        } catch (Throwable ignored) {
+            return null;
+        }
+    }
+}

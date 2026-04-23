@@ -28,6 +28,8 @@ public final class TauntBookSlamQueue {
         public final int castChainId;
         public final @Nonnull InteractionType castInteractionType;
         public final long tauntExpiresAtNanos;
+        public final int tauntStackCount;
+        public final int groundBreakRadiusBlocks;
         public final double centerX;
         public final double centerY;
         public final double centerZ;
@@ -52,6 +54,8 @@ public final class TauntBookSlamQueue {
             @Nonnull InteractionType castInteractionType,
             int castChainId,
             long tauntExpiresAtNanos,
+            int tauntStackCount,
+            int groundBreakRadiusBlocks,
             @Nonnull Vector3d center,
             int radiusBlocks,
             int damageAmount
@@ -62,6 +66,8 @@ public final class TauntBookSlamQueue {
             this.castInteractionType = castInteractionType;
             this.castChainId = castChainId;
             this.tauntExpiresAtNanos = tauntExpiresAtNanos;
+            this.tauntStackCount = Math.max(1, tauntStackCount);
+            this.groundBreakRadiusBlocks = Math.max(0, groundBreakRadiusBlocks);
             this.centerX = center.x;
             this.centerY = center.y;
             this.centerZ = center.z;
@@ -122,4 +128,3 @@ public final class TauntBookSlamQueue {
         return byWorld.computeIfAbsent(world, ignored -> new PerWorldQueue());
     }
 }
-

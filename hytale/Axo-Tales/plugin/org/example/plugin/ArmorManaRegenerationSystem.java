@@ -2,11 +2,11 @@ package org.example.plugin;
 
 import com.hypixel.hytale.component.ArchetypeChunk;
 import com.hypixel.hytale.component.CommandBuffer;
+import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.server.core.entity.entities.Player;
-import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
@@ -80,7 +80,12 @@ public final class ArmorManaRegenerationSystem extends TickingSystem<EntityStore
                                 continue;
                             }
 
-                            RegenArmorSnapshot snapshot = countWornRegenArmor(player);
+                            Ref<EntityStore> playerEntityRef = chunk.getReferenceTo(index);
+                            if (playerEntityRef == null || !playerEntityRef.isValid()) {
+                                continue;
+                            }
+
+                            RegenArmorSnapshot snapshot = countWornRegenArmor(store, playerEntityRef);
                             if (snapshot.count <= 0) {
                                 Integer previousCount = lastWornCountByPlayer.remove(playerUuid);
                                 lastRegenAtNanosByPlayer.remove(playerUuid);
@@ -196,13 +201,11 @@ public final class ArmorManaRegenerationSystem extends TickingSystem<EntityStore
     private record RegenArmorSnapshot(int count, @Nonnull java.util.List<String> itemIds) {}
 
     @Nonnull
-    private static RegenArmorSnapshot countWornRegenArmor(@Nonnull Player player) {
-        Inventory inventory = player.getInventory();
-        if (inventory == null) {
-            return new RegenArmorSnapshot(0, java.util.List.of());
-        }
-
-        ItemContainer armor = inventory.getArmor();
+    private static RegenArmorSnapshot countWornRegenArmor(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> playerEntityRef
+    ) {
+        ItemContainer armor = InventoryComponentAccess.armor(store, playerEntityRef);
         if (armor == null) {
             return new RegenArmorSnapshot(0, java.util.List.of());
         }

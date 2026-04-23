@@ -8,7 +8,6 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
-import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
@@ -97,12 +96,7 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
                     return;
                 }
 
-                Inventory inventory = player.getInventory();
-                if (inventory == null) {
-                    return;
-                }
-
-                ItemContainer armor = inventory.getArmor();
+                ItemContainer armor = InventoryComponentAccess.armor(store, playerEntityRef);
                 if (armor == null) {
                     return;
                 }
@@ -201,7 +195,7 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
                 return;
             }
 
-            boolean wearing = isWearingSarsBoots(player);
+            boolean wearing = isWearingSarsBoots(store, playerEntityRef);
             if (wearing) {
                 maybeSendFeltLightMessage(playerRef, playerUuid);
             }
@@ -279,13 +273,11 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
         }
     }
 
-    static boolean isWearingSarsBoots(@Nonnull Player player) {
-        Inventory inventory = player.getInventory();
-        if (inventory == null) {
-            return false;
-        }
-
-        ItemContainer armor = inventory.getArmor();
+    static boolean isWearingSarsBoots(
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> playerEntityRef
+    ) {
+        ItemContainer armor = InventoryComponentAccess.armor(store, playerEntityRef);
         if (armor == null) {
             return false;
         }
