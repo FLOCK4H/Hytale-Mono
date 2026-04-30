@@ -72,6 +72,9 @@ public class AxoTales extends JavaPlugin {
     private FlameBookImpactTracker flameBookImpactTracker;
     private FlameBookProjectileHitSystem flameBookProjectileHitSystem;
     private FlameBookBlockImpactSystem flameBookBlockImpactSystem;
+    private LightBookProjectileState lightBookProjectileState;
+    private LightBookProjectileSystem lightBookProjectileSystem;
+    private LightBookProjectileHitSystem lightBookProjectileHitSystem;
     private MorphBookProjectileHitSystem morphBookProjectileHitSystem;
     private HealingBookProjectileHitSystem healingBookProjectileHitSystem;
     private DoomBookProjectileHitSystem doomBookProjectileHitSystem;
@@ -134,8 +137,11 @@ public class AxoTales extends JavaPlugin {
                     + " teleportBook.castDelaySeconds=" + serverConfig.teleportBook.castDelaySeconds
                     + " miningBook.maxDistanceBlocks=" + serverConfig.miningBook.maxDistanceBlocks
                     + " miningBook.manaCost=" + serverConfig.miningBook.manaCost
-                    + " miningBook.gridSize=" + serverConfig.miningBook.gridSize
-                    + " miningBook.maxBlocks=" + serverConfig.miningBook.maxBlocks
+                    + " miningBook.minChargeBlocks=" + serverConfig.miningBook.minChargeBlocks
+                    + " miningBook.blocksPerChargeTier=" + serverConfig.miningBook.blocksPerChargeTier
+                    + " miningBook.chargeTierSeconds=" + serverConfig.miningBook.chargeTierSeconds
+                    + " miningBook.maxChargeSeconds=" + serverConfig.miningBook.maxChargeSeconds
+                    + " miningBook.maxTunnelBlocks=" + serverConfig.miningBook.maxTunnelBlocks
                     + " worldgen.arcaneCrystalChancePerNewChunk=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalChancePerNewChunk : null)
                     + " worldgen.arcaneCrystalPlacementsPerChunk=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalPlacementsPerChunk : null)
                     + " worldgen.arcaneCrystalDensityRadiusBlocks=" + (serverConfig.worldgen != null ? serverConfig.worldgen.arcaneCrystalDensityRadiusBlocks : null)
@@ -174,6 +180,12 @@ public class AxoTales extends JavaPlugin {
                     + " frostBook.manaCost=" + serverConfig.frostBook.manaCost
                     + " flameBook.manaCost=" + (serverConfig.flameBook != null ? serverConfig.flameBook.manaCost : null)
                     + " flameBook.projectileDelaySeconds=" + (serverConfig.flameBook != null ? serverConfig.flameBook.projectileDelaySeconds : null)
+                    + " lightBook.manaCost=" + (serverConfig.lightBook != null ? serverConfig.lightBook.manaCost : null)
+                    + " lightBook.projectileDelaySeconds=" + (serverConfig.lightBook != null ? serverConfig.lightBook.projectileDelaySeconds : null)
+                    + " lightBook.maxDistanceBlocks=" + (serverConfig.lightBook != null ? serverConfig.lightBook.maxDistanceBlocks : null)
+                    + " lightBook.initialSpeedBlocksPerSecond=" + (serverConfig.lightBook != null ? serverConfig.lightBook.initialSpeedBlocksPerSecond : null)
+                    + " lightBook.cruiseSpeedBlocksPerSecond=" + (serverConfig.lightBook != null ? serverConfig.lightBook.cruiseSpeedBlocksPerSecond : null)
+                    + " lightBook.slowdownSeconds=" + (serverConfig.lightBook != null ? serverConfig.lightBook.slowdownSeconds : null)
                     + " healingBook.healAmount=" + serverConfig.healingBook.healAmount
                     + " healingBook.manaCost=" + serverConfig.healingBook.manaCost
                     + " healingBook.projectileDelaySeconds=" + serverConfig.healingBook.projectileDelaySeconds
@@ -219,6 +231,9 @@ public class AxoTales extends JavaPlugin {
         this.flameBookImpactTracker = new FlameBookImpactTracker();
         this.flameBookProjectileHitSystem = new FlameBookProjectileHitSystem(errors, debug, flameBookImpactTracker);
         this.flameBookBlockImpactSystem = new FlameBookBlockImpactSystem(errors, debug, flameBookImpactTracker);
+        this.lightBookProjectileState = new LightBookProjectileState();
+        this.lightBookProjectileSystem = new LightBookProjectileSystem(errors, debug, serverConfig, lightBookProjectileState);
+        this.lightBookProjectileHitSystem = new LightBookProjectileHitSystem(errors, debug, lightBookProjectileState);
         this.morphBookProjectileHitSystem = new MorphBookProjectileHitSystem(errors, debug, morphBookModelState);
         this.healingBookProjectileHitSystem = new HealingBookProjectileHitSystem(errors, debug);
         this.doomBookProjectileHitSystem = new DoomBookProjectileHitSystem(errors, debug);
@@ -246,7 +261,7 @@ public class AxoTales extends JavaPlugin {
         this.kuduAdeptNoMeleeDamageSystem = new KuduAdeptNoMeleeDamageSystem(errors, debug, serverConfig);
         this.customPlaceholderBlockWorldgen = new CustomPlaceholderBlockWorldgen(errors, debug, serverConfig);
         this.arcaneMatterOreWorldgen = new ArcaneMatterOreWorldgen(errors, debug, serverConfig);
-        this.spellbookInputInterceptor = new SpellbookInputInterceptor(errors, debug, serverConfig, tauntBookEffectState, immunityBookEffectState, hordeBookSummonState, morphBookModelState);
+        this.spellbookInputInterceptor = new SpellbookInputInterceptor(errors, debug, serverConfig, tauntBookEffectState, immunityBookEffectState, hordeBookSummonState, morphBookModelState, lightBookProjectileState);
         this.spellbookInputInterceptor.register();
         this.debug.trace(null, "Spellbook input interception enabled (SyncInteractionChains id=290).");
         this.sarsWarfistsInputInterceptor.register();
@@ -342,6 +357,12 @@ public class AxoTales extends JavaPlugin {
             }
             if (!EntityStore.REGISTRY.hasSystem(flameBookBlockImpactSystem)) {
                 EntityStore.REGISTRY.registerSystem(flameBookBlockImpactSystem);
+            }
+            if (!EntityStore.REGISTRY.hasSystem(lightBookProjectileSystem)) {
+                EntityStore.REGISTRY.registerSystem(lightBookProjectileSystem);
+            }
+            if (!EntityStore.REGISTRY.hasSystem(lightBookProjectileHitSystem)) {
+                EntityStore.REGISTRY.registerSystem(lightBookProjectileHitSystem);
             }
             if (!EntityStore.REGISTRY.hasSystem(morphBookProjectileHitSystem)) {
                 EntityStore.REGISTRY.registerSystem(morphBookProjectileHitSystem);
@@ -505,6 +526,12 @@ public class AxoTales extends JavaPlugin {
                 }
                 if (flameBookImpactTracker != null) {
                     flameBookImpactTracker.clear();
+                }
+                if (lightBookProjectileSystem != null) {
+                    lightBookProjectileSystem.shutdown();
+                }
+                if (lightBookProjectileState != null) {
+                    lightBookProjectileState.clearAll();
                 }
             } catch (Throwable t) {
                 errors.report((com.hypixel.hytale.server.core.universe.PlayerRef) null, "Failed to cleanup plugin state.", t);

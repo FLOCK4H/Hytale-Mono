@@ -144,6 +144,19 @@
     "manaCost": 20,
     "projectileDelaySeconds": 0.2
   },
+  "lightBook": {
+    "defaultsVersion": 4,
+    "manaCost": 15,
+    "projectileDelaySeconds": 0.16,
+    "maxDistanceBlocks": 100.0,
+    "initialSpeedBlocksPerSecond": 55.0,
+    "cruiseSpeedBlocksPerSecond": 0.75,
+    "slowdownSeconds": 1.2,
+    "dynamicLightRadius": 1,
+    "dynamicLightRed": 32,
+    "dynamicLightGreen": 24,
+    "dynamicLightBlue": 16
+  },
   "teleportBook": {
     "maxDistanceBlocks": 100,
     "manaCost": 10,
@@ -152,8 +165,11 @@
   "miningBook": {
     "maxDistanceBlocks": 12,
     "manaCost": 5,
-    "gridSize": 3,
-    "maxBlocks": 9
+    "minChargeBlocks": 1,
+    "blocksPerChargeTier": 2,
+    "chargeTierSeconds": 1.0,
+    "maxChargeSeconds": 5.0,
+    "maxTunnelBlocks": 10
   },
   "healingBook": {
     "healAmount": "full",
@@ -173,7 +189,7 @@
     "breakBlockBelow": true,
     "groundBreakDepthBlocks": 2,
     "groundBreakDepthPerStack": 1,
-    "groundBreakSparingChance": 0.18
+    "groundBreakSparingChance": 0.0
   },
   "ancientSword": {
     "enabled": true,

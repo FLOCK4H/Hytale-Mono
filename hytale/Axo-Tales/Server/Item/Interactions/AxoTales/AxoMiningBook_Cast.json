@@ -1,0 +1,7 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.1,
+  "Effects": {
+    "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
+  }
+}

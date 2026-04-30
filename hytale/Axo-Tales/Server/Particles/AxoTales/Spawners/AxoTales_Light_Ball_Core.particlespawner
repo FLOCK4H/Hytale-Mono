@@ -1,0 +1,139 @@
+{
+  "RenderMode": "BlendAdd",
+  "Shape": "Cube",
+  "EmitOffset": {
+    "X": {
+      "Min": -0.08,
+      "Max": 0.08
+    },
+    "Y": {
+      "Min": -0.08,
+      "Max": 0.08
+    },
+    "Z": {
+      "Min": -0.08,
+      "Max": 0.08
+    }
+  },
+  "ParticleRotationInfluence": "BillboardY",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": false,
+  "TrailSpawnerPositionMultiplier": 0,
+  "TrailSpawnerRotationMultiplier": 0,
+  "MaxConcurrentParticles": 12,
+  "ParticleLifeSpan": {
+    "Min": 0.28,
+    "Max": 0.46
+  },
+  "SpawnRate": {
+    "Min": 10,
+    "Max": 18
+  },
+  "TotalParticles": {
+    "Min": -1,
+    "Max": -1
+  },
+  "InitialVelocity": {
+    "Speed": {
+      "Min": 0.08,
+      "Max": 0.32
+    },
+    "Yaw": {
+      "Min": 0,
+      "Max": 360
+    },
+    "Pitch": {
+      "Min": -90,
+      "Max": 90
+    }
+  },
+  "Attractors": [
+    {
+      "DampingMultiplier": {
+        "X": 0.8,
+        "Y": 0.82,
+        "Z": 0.8
+      }
+    }
+  ],
+  "Particle": {
+    "Texture": "Particles/Fire_Impact.png",
+    "FrameSize": {
+      "Width": 32,
+      "Height": 32
+    },
+    "ScaleRatioConstraint": "None",
+    "UVOption": "RandomFlipU",
+    "Animation": {
+      "0": {
+        "Color": "#ffffff",
+        "Scale": {
+          "X": {
+            "Min": 0.18,
+            "Max": 0.32
+          },
+          "Y": {
+            "Min": 0.18,
+            "Max": 0.32
+          }
+        },
+        "Opacity": 0.0,
+        "FrameIndex": {
+          "Min": 0,
+          "Max": 0
+        }
+      },
+      "18": {
+        "Opacity": 0.14,
+        "Color": "#b27a45",
+        "FrameIndex": {
+          "Min": 1,
+          "Max": 1
+        }
+      },
+      "58": {
+        "Opacity": 0.08,
+        "Color": "#7d4f32",
+        "FrameIndex": {
+          "Min": 3,
+          "Max": 3
+        }
+      },
+      "100": {
+        "Opacity": 0.0,
+        "Scale": {
+          "X": {
+            "Min": 0.28,
+            "Max": 0.45
+          },
+          "Y": {
+            "Min": 0.28,
+            "Max": 0.45
+          }
+        }
+      }
+    },
+    "InitialAnimationFrame": {
+      "Scale": {
+        "X": {
+          "Min": 0.18,
+          "Max": 0.32
+        },
+        "Y": {
+          "Min": 0.18,
+          "Max": 0.32
+        }
+      },
+      "Opacity": 0.14,
+      "Color": "#b27a45",
+      "FrameIndex": {
+        "Min": 0,
+        "Max": 0
+      }
+    },
+    "UseSpriteBlending": false,
+    "SoftParticlesFadeFactor": 1.02,
+    "SoftParticles": "Disable"
+  }
+}

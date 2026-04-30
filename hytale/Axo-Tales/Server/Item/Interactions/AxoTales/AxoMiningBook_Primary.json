@@ -1,0 +1,18 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "ResetCooldown",
+      "Cooldown": {
+        "Cooldown": 0.15
+      }
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.12,
+      "Effects": {
+        "ClearAnimationOnFinish": true
+      }
+    }
+  ]
+}

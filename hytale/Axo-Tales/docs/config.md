@@ -1,13 +1,8 @@
 # Configuration
 
-<div class="page-header" data-reveal>
-  <div markdown="1">
-    <span class="hero-kicker">Server tuning</span>
-
-    # Read the packaged defaults before you tune a live world
-
-    The values below describe the <strong>shipped default</strong> config from <code>src/main/resources/server-config.json</code>. Once a world or server has already generated its own runtime <code>server-config.json</code>, that live file wins.
-  </div>
+<div class="page-header">
+  <p class="eyebrow">Server tuning</p>
+  <p class="lead-text">The values below describe the <strong>packaged defaults</strong> from <code>src/main/resources/server-config.json</code>. A live world can diverge once it has already written its own runtime <code>server-config.json</code>.</p>
 </div>
 
 ## High-impact defaults
@@ -37,14 +32,15 @@
 | --- | --- |
 | Healing Book | `manaCost = 25`, `healAmount = "full"`, `projectileDelaySeconds = 0.15` |
 | Teleport Book | `maxDistanceBlocks = 100`, `manaCost = 10`, `castDelaySeconds = 0.5` |
-| Mining Book | `maxDistanceBlocks = 12`, `manaCost = 5`, `gridSize = 3`, `maxBlocks = 9` |
+| Mining Book | `maxDistanceBlocks = 12`, `manaCost = 5`, `chargeTierSeconds = 1.0`, `maxTunnelBlocks = 10` |
 | Immunity Book | `manaCost = 15`, `immunitySeconds = 3` |
-| Taunt Book | `manaCost = 25`, `launchHeightBlocks = 10`, `fallImmunitySeconds = 6`, `slamDamage = 40`, `slamRadiusBlocks = 7` |
+| Taunt Book | `manaCost = 25`, `launchHeightBlocks = 10`, `fallImmunitySeconds = 6`, `slamDamage = 40`, `groundBreakDepthBlocks = 2` |
 | Horde Book | `manaCost = 25`, `minionLifetimeSeconds = 30`, `ownerFriendlySeconds = 60` |
 | Doom Book | `manaCost = 25`, `projectileDelaySeconds = 0.24` |
 | Morph Book | `manaCost = 25` |
 | Frost Book | `manaCost = 20` |
 | Flame Book | `manaCost = 20`, `projectileDelaySeconds = 0.2` |
+| Light Book | `manaCost = 15`, `projectileDelaySeconds = 0.16`, `dynamicLightRadius = 1` |
 | Ancient Sword | `manaCost = 20`, `cooldownSeconds = 1.25`, `castDelaySeconds = 0.34` |
 
 ## World and NPC keys
@@ -84,7 +80,7 @@
 
 ## Practical tuning advice
 
-- If a live server already has a runtime config, compare it against the packaged defaults before assuming the docs are wrong.
-- Tune `teleportBook.castDelaySeconds`, `doomBook.projectileDelaySeconds`, and `flameBook.projectileDelaySeconds` independently; those three were separated on purpose during the spell feel pass.
-- Keep `worldgen.arcaneCrystalMaxPlacementsPerRadius = 1` unless you intentionally want crystals to become common visual clutter again.
-- When debugging player reports, pair config review with `spellbooks-debug.log`; a surprising amount of "bad balance" bugs are actually bad input or stat-gate state.
+- Compare the live runtime config with the packaged defaults before assuming the guidebook is out of date.
+- Tune `teleportBook.castDelaySeconds`, `doomBook.projectileDelaySeconds`, `flameBook.projectileDelaySeconds`, and `lightBook.projectileDelaySeconds` independently. They are separate on purpose.
+- Keep `worldgen.arcaneCrystalMaxPlacementsPerRadius = 1` unless you intentionally want crystals to become much more common again.
+- Pair config review with `spellbooks-debug.log` whenever a spell or movement report sounds vague. A lot of "balance" bugs are actually state or routing bugs.

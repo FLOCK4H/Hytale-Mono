@@ -31,6 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * <p>Currently supports:</p>
  * <ul>
  *   <li>Sa'r Boots: +15% speed and +2 blocks jump height</li>
+ *   <li>Sa'r Diadem: swim speed/jump and oxygen refill</li>
  *   <li>Swift Potion: +20% speed</li>
  *   <li>Rabbit Potion: +2 blocks jump height</li>
  * </ul>
@@ -53,7 +54,7 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
     private static final long SWEEP_INTERVAL_NANOS = 200_000_000L;
     private static final long AQUATIC_DEBUG_INTERVAL_NANOS = 10_000_000_000L;
 
-    private record MovementDefaults(float baseSpeed, float jumpForce, float swimJumpForce) {}
+    private record MovementDefaults(float baseSpeed, float jumpForce, float swimJumpForce, @Nonnull String source) {}
 
     private record BuffFlags(
         boolean wearingSarsBoots,
@@ -174,23 +175,44 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
                             );
                         }
 
-                        MovementDefaults defaults = defaultsByPlayer.computeIfAbsent(
-                            playerUuid,
-                            uuid -> new MovementDefaults(settings.baseSpeed, settings.jumpForce, settings.swimJumpForce)
-                        );
-
                         float speedMultiplier = (wearingSarsBoots ? SARS_SPEED_MULTIPLIER : 1f)
                             * (swiftActive ? SWIFT_SPEED_MULTIPLIER : 1f)
                             * (aquaticBoostActive ? SAR_DIADEM_SWIM_SPEED_MULTIPLIER : 1f);
-                        float targetSpeed = defaults.baseSpeed * speedMultiplier;
 
                         float bonusBlocks = (wearingSarsBoots ? JUMP_BONUS_BLOCKS : 0f)
                             + (rabbitActive ? JUMP_BONUS_BLOCKS : 0f);
                         float jumpMultiplier = bonusBlocks > 0f
                             ? (float) Math.sqrt((BASE_JUMP_HEIGHT_BLOCKS + bonusBlocks) / BASE_JUMP_HEIGHT_BLOCKS)
                             : 1f;
-                        float targetJumpForce = defaults.jumpForce * jumpMultiplier;
                         float swimJumpMultiplier = wearingSarDiadem ? SAR_DIADEM_SWIM_JUMP_MULTIPLIER : 1f;
+
+                        MovementDefaults defaults = resolveMovementDefaults(
+                            movementManager,
+                            settings,
+                            speedMultiplier,
+                            jumpMultiplier,
+                            swimJumpMultiplier
+                        );
+                        MovementDefaults previousDefaults = defaultsByPlayer.put(playerUuid, defaults);
+                        if (previousDefaults == null || !previousDefaults.equals(defaults)) {
+                            debug.traceFileOnly(
+                                playerRef,
+                                "MovementBuff event=defaultsChanged"
+                                    + " defaults.source=" + defaults.source
+                                    + " defaults.baseSpeed=" + defaults.baseSpeed
+                                    + " defaults.jumpForce=" + defaults.jumpForce
+                                    + " defaults.swimJumpForce=" + defaults.swimJumpForce
+                                    + " movement.baseSpeed.current=" + settings.baseSpeed
+                                    + " movement.jumpForce.current=" + settings.jumpForce
+                                    + " movement.swimJumpForce.current=" + settings.swimJumpForce
+                                    + " speed.multiplier=" + speedMultiplier
+                                    + " jump.multiplier=" + jumpMultiplier
+                                    + " swimJump.multiplier=" + swimJumpMultiplier
+                            );
+                        }
+
+                        float targetSpeed = defaults.baseSpeed * speedMultiplier;
+                        float targetJumpForce = defaults.jumpForce * jumpMultiplier;
                         float targetSwimJumpForce = defaults.swimJumpForce * swimJumpMultiplier;
 
                         int oxygenIndex = DefaultEntityStatTypes.getOxygen();
@@ -263,6 +285,7 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
                                 + " aquaticBoost.active=" + aquaticBoostActive
                                 + " states.inFluid=" + movementStates.inFluid
                                 + " states.swimming=" + movementStates.swimming
+                                + " defaults.source=" + defaults.source
                                 + " defaults.baseSpeed=" + defaults.baseSpeed
                                 + " defaults.jumpForce=" + defaults.jumpForce
                                 + " defaults.swimJumpForce=" + defaults.swimJumpForce
@@ -312,6 +335,52 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
             rabbitEffectIndex = resolved;
         }
         return resolved;
+    }
+
+    @Nonnull
+    private static MovementDefaults resolveMovementDefaults(
+        @Nonnull MovementManager movementManager,
+        @Nonnull MovementSettings settings,
+        float speedMultiplier,
+        float jumpMultiplier,
+        float swimJumpMultiplier
+    ) {
+        MovementSettings defaultSettings = movementManager.getDefaultSettings();
+        if (isUsableDefault(defaultSettings)) {
+            return new MovementDefaults(
+                defaultSettings.baseSpeed,
+                defaultSettings.jumpForce,
+                defaultSettings.swimJumpForce,
+                "movementManager.defaultSettings"
+            );
+        }
+
+        return new MovementDefaults(
+            normalizeDefault(settings.baseSpeed, speedMultiplier),
+            normalizeDefault(settings.jumpForce, jumpMultiplier),
+            normalizeDefault(settings.swimJumpForce, swimJumpMultiplier),
+            "currentSettings.normalized"
+        );
+    }
+
+    private static boolean isUsableDefault(@Nullable MovementSettings settings) {
+        return settings != null
+            && Float.isFinite(settings.baseSpeed)
+            && Float.isFinite(settings.jumpForce)
+            && Float.isFinite(settings.swimJumpForce)
+            && settings.baseSpeed > EPSILON
+            && settings.jumpForce > EPSILON
+            && settings.swimJumpForce > EPSILON;
+    }
+
+    private static float normalizeDefault(float currentValue, float multiplier) {
+        if (!Float.isFinite(currentValue)
+            || !Float.isFinite(multiplier)
+            || multiplier <= EPSILON) {
+            return currentValue;
+        }
+
+        return currentValue / multiplier;
     }
 
     public void onPlayerDisconnect(@Nullable PlayerRef playerRef) {

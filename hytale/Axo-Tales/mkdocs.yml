@@ -1,8 +1,8 @@
 site_name: Axo Tales Guidebook
-site_description: Modern player and server guide for Axo Tales on Hytale 2026.03.26-89796e57b.
+site_description: Current player and server guide for Axo Tales on Hytale 2026.03.26-89796e57b.
 site_url: https://flock4h.github.io/Hytale-Mono/
 repo_url: https://github.com/FLOCK4H/Hytale-Mono
-repo_name: FLOCK4H/Hytale-Mono
+repo_name: Axo Tales source
 
 theme:
   name: material
@@ -29,7 +29,6 @@ theme:
     - navigation.expand
     - navigation.tracking
     - navigation.top
-    - toc.follow
     - search.highlight
     - search.suggest
     - header.autohide
@@ -59,7 +58,7 @@ extra:
 
 nav:
   - Home: index.md
-  - What's New Since 0.1.147: whats-new.md
+  - Returning Players: whats-new.md
   - Start Here: getting-started.md
   - Arsenal:
       - Overview: items/index.md

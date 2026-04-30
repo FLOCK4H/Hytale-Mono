@@ -1,16 +1,16 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.flock4h.axos_mining_spellbook.name",
-    "Description": "server.items.flock4h.axos_mining_spellbook.description"
+    "Name": "server.items.flock4h.axos_light_book.name",
+    "Description": "server.items.flock4h.axos_light_book.description"
   },
   "Categories": [
     "Items.Recipes"
   ],
   "Quality": "Epic",
   "ItemLevel": 1,
-  "Icon": "Icons/ItemsGenerated/Mining_Spellbook.png",
+  "Icon": "Icons/ItemsGenerated/Light_Spellbook.png",
   "Model": "Items/Books/Axo/Demon.blockymodel",
-  "Texture": "Items/Books/Book_Mining_Texture.png",
+  "Texture": "Items/Books/Book_Light_Texture.png",
   "Recipe": {
     "Input": [
       {
@@ -22,8 +22,8 @@
         "Quantity": 2
       },
       {
-        "ItemId": "Rock_Volcanic_Cobble",
-        "Quantity": 10
+        "ItemId": "Ingredient_Crystal_Cyan",
+        "Quantity": 6
       }
     ],
     "BenchRequirement": [
@@ -39,8 +39,7 @@
     "TimeSeconds": 3
   },
   "Interactions": {
-    "Primary": "AxoMiningBook_Primary",
-    "Secondary": "AxoMiningBook_Secondary"
+    "Secondary": "AxoLightBook_Secondary"
   },
   "PlayerAnimationsId": "AxoTales_Spellbook",
   "ItemSoundSetId": "ISS_Weapons_Books",

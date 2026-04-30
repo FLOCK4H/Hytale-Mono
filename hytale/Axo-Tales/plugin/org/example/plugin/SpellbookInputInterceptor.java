@@ -37,6 +37,7 @@ import com.hypixel.hytale.server.core.asset.type.item.config.ItemDrop;
 import com.hypixel.hytale.server.core.asset.type.item.config.ItemDropList;
 import com.hypixel.hytale.server.core.asset.type.model.config.Model;
 import com.hypixel.hytale.server.core.modules.entity.component.ModelComponent;
+import com.hypixel.hytale.server.core.modules.entity.component.DynamicLight;
 import com.hypixel.hytale.server.core.modules.entity.item.ItemComponent;
 import com.hypixel.hytale.server.core.modules.entity.player.PlayerSkinComponent;
 import com.hypixel.hytale.server.core.modules.collision.BlockCollisionData;
@@ -88,6 +89,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     public static final String MORPH_BOOK_ITEM_ID = "Book_Morph_Texture";
     public static final String FROST_BOOK_ITEM_ID = "Book_Frost_Texture";
     public static final String FLAME_BOOK_ITEM_ID = "Book_Flame_Texture";
+    public static final String LIGHT_BOOK_ITEM_ID = "Book_Light_Texture";
     public static final String ANCIENT_SWORD_ITEM_ID = "Axo_Ancient_Sword";
     private static final float FLOAT_EPSILON = 0.0001f;
     private static final double MINING_HARD_MAX_DISTANCE = 256.0;
@@ -98,12 +100,14 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private static final String MORPH_PROJECTILE_ASSET_ID = "Morph_Vortex";
     private static final String FROST_PROJECTILE_ASSET_ID = "Frost_Shard";
     private static final String FLAME_PROJECTILE_ASSET_ID = "Flame_Bolt";
+    private static final String LIGHT_PROJECTILE_ASSET_ID = LightBookProjectileSystem.LIGHT_PROJECTILE_ID;
     private static final String HEALING_PROJECTILE_ASSET_ID = "Healing_Bolt";
     private static final String ANCIENT_SWORD_PROJECTILE_DEFAULT_ASSET_ID = "Ancient_Slash";
     private static final String IMMUNE_EFFECT_ID = "Immune";
     private static final float MINING_DROP_PICKUP_DELAY_SECONDS = 0.25f;
     private static final float MINING_DROP_VELOCITY_HORIZONTAL_STDDEV = 0.06f;
     private static final float MINING_DROP_VELOCITY_Y = 0.35f;
+    private static final long MINING_SHAPE_TOGGLE_DEBOUNCE_NANOS = 150_000_000L;
 
     private record InteractionSnapshot(
         @Nonnull InteractionType interactionType,
@@ -123,6 +127,52 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
     private record DelayScheduleDecision(boolean scheduled, boolean deduped, @Nonnull String reason) {}
 
+    private record MiningChargeState(
+        int chainId,
+        @Nonnull InteractionType interactionType,
+        long startedAtNanos
+    ) {}
+
+    private record MiningChargeResolution(
+        boolean allowCast,
+        @Nonnull String reason,
+        @Nullable InteractionState terminalState,
+        double chargeSeconds,
+        int requestedTunnelBlocks,
+        boolean usedFallbackStart
+    ) {}
+
+    private enum MiningShape {
+        ONE_BY_ONE("1x1", "#55E8FF", 1),
+        THREE_BY_THREE("3x3", "#FFD25A", 9),
+        CROSS("Cross", "#FF7EC7", 5);
+
+        private final String displayName;
+        private final String colorHex;
+        private final int blocksPerDepth;
+
+        MiningShape(@Nonnull String displayName, @Nonnull String colorHex, int blocksPerDepth) {
+            this.displayName = displayName;
+            this.colorHex = colorHex;
+            this.blocksPerDepth = blocksPerDepth;
+        }
+
+        private @Nonnull MiningShape next() {
+            return switch (this) {
+                case ONE_BY_ONE -> THREE_BY_THREE;
+                case THREE_BY_THREE -> CROSS;
+                case CROSS -> ONE_BY_ONE;
+            };
+        }
+    }
+
+    private record MiningShapeChangeDecision(
+        boolean allow,
+        @Nonnull String reason,
+        @Nonnull MiningShape previousShape,
+        @Nonnull MiningShape nextShape
+    ) {}
+
     private final PluginErrorReporter errors;
     private final PluginDebugReporter debug;
     private final AxoTalesServerConfig config;
@@ -130,9 +180,11 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private final ImmunityBookEffectState immunityState;
     private final HordeBookSummonState hordeSummonState;
     private final MorphBookModelState morphBookModelState;
+    private final LightBookProjectileState lightBookProjectileState;
     private final Map<UUID, Integer> lastProcessedSecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedUseChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedHealingPrimaryChainId = new ConcurrentHashMap<>();
+    private final Map<UUID, Integer> lastProcessedMiningPrimaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedImmunitySecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedImmunityUseChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedTeleportSecondaryChainId = new ConcurrentHashMap<>();
@@ -152,8 +204,11 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private final Map<UUID, Integer> lastProcessedFrostUseChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedFlameSecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedFlameUseChainId = new ConcurrentHashMap<>();
+    private final Map<UUID, Integer> lastProcessedLightSecondaryChainId = new ConcurrentHashMap<>();
+    private final Map<UUID, Integer> lastProcessedLightUseChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedAncientSwordSecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastHealingCastAttemptAtNanos = new ConcurrentHashMap<>();
+    private final Map<UUID, Long> lastMiningShapeToggleAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastImmunityCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastTeleportCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastMiningCastAttemptAtNanos = new ConcurrentHashMap<>();
@@ -163,7 +218,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private final Map<UUID, Long> lastMorphCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastFrostCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastFlameCastAttemptAtNanos = new ConcurrentHashMap<>();
+    private final Map<UUID, Long> lastLightCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastAncientSwordCastAttemptAtNanos = new ConcurrentHashMap<>();
+    private final Map<UUID, MiningChargeState> activeMiningCharges = new ConcurrentHashMap<>();
+    private final Map<UUID, MiningShape> miningShapeByPlayer = new ConcurrentHashMap<>();
 
     private final Map<UUID, Integer> lastScheduledSpellbookSecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastScheduledSpellbookUseChainId = new ConcurrentHashMap<>();
@@ -186,7 +244,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         @Nonnull TauntBookEffectState tauntState,
         @Nonnull ImmunityBookEffectState immunityState,
         @Nonnull HordeBookSummonState hordeSummonState,
-        @Nonnull MorphBookModelState morphBookModelState
+        @Nonnull MorphBookModelState morphBookModelState,
+        @Nonnull LightBookProjectileState lightBookProjectileState
     ) {
         this.errors = errors;
         this.debug = debug;
@@ -195,6 +254,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         this.immunityState = immunityState;
         this.hordeSummonState = hordeSummonState;
         this.morphBookModelState = morphBookModelState;
+        this.lightBookProjectileState = lightBookProjectileState;
     }
 
     public void register() {
@@ -224,6 +284,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             lastProcessedSecondaryChainId.remove(uuid);
             lastProcessedUseChainId.remove(uuid);
             lastProcessedHealingPrimaryChainId.remove(uuid);
+            lastProcessedMiningPrimaryChainId.remove(uuid);
             lastProcessedImmunitySecondaryChainId.remove(uuid);
             lastProcessedImmunityUseChainId.remove(uuid);
             lastProcessedTeleportSecondaryChainId.remove(uuid);
@@ -243,8 +304,11 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             lastProcessedFrostUseChainId.remove(uuid);
             lastProcessedFlameSecondaryChainId.remove(uuid);
             lastProcessedFlameUseChainId.remove(uuid);
+            lastProcessedLightSecondaryChainId.remove(uuid);
+            lastProcessedLightUseChainId.remove(uuid);
             lastProcessedAncientSwordSecondaryChainId.remove(uuid);
             lastHealingCastAttemptAtNanos.remove(uuid);
+            lastMiningShapeToggleAtNanos.remove(uuid);
             lastImmunityCastAttemptAtNanos.remove(uuid);
             lastTeleportCastAttemptAtNanos.remove(uuid);
             lastMiningCastAttemptAtNanos.remove(uuid);
@@ -254,7 +318,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             lastMorphCastAttemptAtNanos.remove(uuid);
             lastFrostCastAttemptAtNanos.remove(uuid);
             lastFlameCastAttemptAtNanos.remove(uuid);
+            lastLightCastAttemptAtNanos.remove(uuid);
             lastAncientSwordCastAttemptAtNanos.remove(uuid);
+            activeMiningCharges.remove(uuid);
+            miningShapeByPlayer.remove(uuid);
             lastScheduledSpellbookSecondaryChainId.remove(uuid);
             lastScheduledSpellbookUseChainId.remove(uuid);
             lastScheduledHealingPrimaryChainId.remove(uuid);
@@ -367,7 +434,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 && chain.interactionType != InteractionType.Use) {
                 continue;
             }
-            if (!chain.initial && !clientReportsAnySpellbook(chain.itemInHandId, chain.utilityItemId, chain.toolsItemId)) {
+            boolean terminalInteractionState = chain.state != null && chain.state != InteractionState.NotFinished;
+            if (!chain.initial && !clientReportsAnySpellbook(chain.itemInHandId, chain.utilityItemId, chain.toolsItemId) && !terminalInteractionState) {
                 continue;
             }
             snapshots.add(new InteractionSnapshot(
@@ -422,6 +490,12 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         return secondsToNanosClamped(seconds);
     }
 
+    private long getLightBookProjectileDelayNanos() {
+        AxoTalesServerConfig.LightBook lightBook = config != null ? config.lightBook : null;
+        double seconds = lightBook != null ? lightBook.projectileDelaySeconds : 0.16;
+        return secondsToNanosClamped(seconds);
+    }
+
     private long getHealingBookPrimaryDelayNanos() {
         AxoTalesServerConfig.HealingBook healingBook = config != null ? config.healingBook : null;
         double seconds = healingBook != null ? healingBook.projectileDelaySeconds : 0.15;
@@ -442,6 +516,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
         if (isFlameBookInSnapshot(snapshot) || isFlameBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem)) {
             return getFlameBookProjectileDelayNanos();
+        }
+        if (isLightBookInSnapshot(snapshot) || isLightBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem)) {
+            return getLightBookProjectileDelayNanos();
         }
         return getSpellbookSecondaryUseDelayNanos();
     }
@@ -807,6 +884,32 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                                 + " reason=" + decision.reason
                         );
                     }
+                } else if (MINING_BOOK_ITEM_ID.equals(primarySnapshot.itemInHandId) || MINING_BOOK_ITEM_ID.equals(serverItemInHand)) {
+                    MiningShapeChangeDecision decision = cycleMiningBookShape(
+                        playerRef,
+                        primarySnapshot,
+                        nowNanos,
+                        serverItemInHand
+                    );
+                    debug.traceFileOnly(
+                        playerRef,
+                        "SpellDecision itemId=" + MINING_BOOK_ITEM_ID
+                            + " event=SyncInteractionChains(id=290)"
+                            + " interactionType=" + primarySnapshot.interactionType
+                            + " chainId=" + primarySnapshot.chainId
+                            + " initial=" + primarySnapshot.initial
+                            + " cancelled=false"
+                            + " usedItemSource=" + resolveItemSource(primarySnapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
+                            + " mana.index=" + mana.index
+                            + " mana.current=" + mana.current
+                            + " mana.min=" + mana.min
+                            + " mana.max=" + mana.max
+                            + " mining.shape.previous=" + decision.previousShape.displayName
+                            + " mining.shape.current=" + decision.nextShape.displayName
+                            + " mining.shape.blocksPerDepth=" + decision.nextShape.blocksPerDepth
+                            + " allow=" + decision.allow
+                            + " reason=" + decision.reason
+                    );
                 } else if (isMorphBookInSnapshot(primarySnapshot) || MORPH_BOOK_ITEM_ID.equals(serverItemInHand)) {
                     MorphResetDecision decision = tryResetMorphBookPrimary(
                         playerRef,
@@ -838,7 +941,134 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 }
             }
 
-            InteractionSnapshot castSnapshot = selectCastSnapshot(snapshots);
+            InteractionSnapshot miningChargeStartSnapshot = selectMiningChargeStartSnapshot(
+                snapshots,
+                serverItemInHand,
+                serverUtilityItem,
+                serverToolsItem
+            );
+            if (miningChargeStartSnapshot != null && uuid != null) {
+                boolean miningDetectedNow = isMiningBookInSnapshot(miningChargeStartSnapshot)
+                    || isMiningBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem);
+                if (miningDetectedNow) {
+                    trackMiningChargeStart(
+                        playerRef,
+                        miningChargeStartSnapshot,
+                        nowNanos,
+                        serverItemInHand,
+                        serverUtilityItem,
+                        serverToolsItem,
+                        mana
+                    );
+                }
+            }
+
+            InteractionSnapshot miningChargeTerminalSnapshot = selectMiningChargeTerminalSnapshot(
+                snapshots,
+                serverItemInHand,
+                serverUtilityItem,
+                serverToolsItem
+            );
+            if (miningChargeTerminalSnapshot != null && uuid != null) {
+                MiningChargeResolution chargeResolution = resolveMiningChargeRelease(
+                    playerRef,
+                    miningChargeTerminalSnapshot,
+                    nowNanos,
+                    serverItemInHand,
+                    serverUtilityItem,
+                    serverToolsItem,
+                    mana
+                );
+                if (chargeResolution.allowCast) {
+                    MiningDecision decision = tryCastMiningBook(
+                        playerRef,
+                        store,
+                        playerEntityRef,
+                        stats,
+                        mana,
+                        nowNanos,
+                        miningChargeTerminalSnapshot,
+                        serverItemInHand,
+                        chargeResolution.chargeSeconds,
+                        chargeResolution.requestedTunnelBlocks
+                    );
+                    debug.traceFileOnly(
+                        playerRef,
+                        "SpellDecision itemId=" + MINING_BOOK_ITEM_ID
+                            + " event=SyncInteractionChains(id=290)"
+                            + " interactionType=" + miningChargeTerminalSnapshot.interactionType
+                            + " chainId=" + miningChargeTerminalSnapshot.chainId
+                            + " initial=" + miningChargeTerminalSnapshot.initial
+                            + " state=" + miningChargeTerminalSnapshot.state
+                            + " cancelled=false"
+                            + " usedItemSource=" + resolveItemSource(miningChargeTerminalSnapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
+                            + " mana.index=" + mana.index
+                            + " mana.current=" + mana.current
+                            + " mana.min=" + mana.min
+                            + " mana.max=" + mana.max
+                            + " cost.mana=" + config.miningBook.manaCost
+                            + " mining.chargeSeconds=" + String.format("%.3f", decision.chargeSeconds)
+                            + " mining.requestedTunnelBlocks=" + decision.requestedTunnelBlocks
+                            + " mining.shape=" + decision.miningShape
+                            + " mining.shape.blocksPerDepth=" + decision.miningShapeBlocksPerDepth
+                            + " mining.minChargeBlocks=" + config.miningBook.minChargeBlocks
+                            + " mining.blocksPerChargeTier=" + config.miningBook.blocksPerChargeTier
+                            + " mining.chargeTierSeconds=" + config.miningBook.chargeTierSeconds
+                            + " mining.maxChargeSeconds=" + config.miningBook.maxChargeSeconds
+                            + " mining.maxTunnelBlocks=" + config.miningBook.maxTunnelBlocks
+                            + " limit.maxDistanceBlocks=" + getEffectiveMiningMaxDistanceBlocks()
+                            + " ray.maxDistance=" + decision.rayMaxDistance
+                            + " ray.hit=" + decision.rayHit
+                            + (decision.rayHit != null
+                                ? " ray.hit.block=(" + decision.rayHit.x + "," + decision.rayHit.y + "," + decision.rayHit.z + ")"
+                                    + " ray.hit.point=" + Vector3d.formatShortString(decision.rayHit.collisionPoint)
+                                    + " ray.hit.normal=" + Vector3d.formatShortString(decision.rayHit.collisionNormal)
+                                : "")
+                            + (decision.hitDistanceBlocks > 0 ? " ray.hit.distanceBlocks=" + String.format("%.2f", decision.hitDistanceBlocks) : "")
+                            + (decision.faceAxis != null ? " mining.faceAxis=" + decision.faceAxis : "")
+                            + (decision.targetBlockTypeId != null ? " targetBlockTypeId=" + decision.targetBlockTypeId : "")
+                            + " mining.blocksConsidered=" + decision.blocksConsidered
+                            + " mining.blocksBroken=" + decision.blocksBroken
+                            + " mining.blocksSkipped.chunkNotLoaded=" + decision.blocksSkippedChunkNotLoaded
+                            + " mining.blocksSkipped.unbreakable=" + decision.blocksSkippedUnbreakable
+                            + " mining.blocksBreakFailed=" + decision.blocksBreakFailed
+                            + " mining.blocksBreakExceptions=" + decision.blocksBreakExceptions
+                            + " mining.dropEntitiesSpawned=" + decision.dropEntitiesSpawned
+                            + " mining.dropItemsTotal=" + decision.dropItemsTotal
+                            + " mining.dropsSkipped.noDropData=" + decision.dropsSkippedNoDropData
+                            + " mining.dropsSkipped.missingDropList=" + decision.dropsSkippedMissingDropList
+                            + " mining.dropSpawnExceptions=" + decision.dropSpawnExceptions
+                            + " allow=" + decision.allow
+                            + " reason=" + decision.reason
+                    );
+                } else {
+                    debug.traceFileOnly(
+                        playerRef,
+                        "MiningCharge event=end"
+                            + " interactionType=" + miningChargeTerminalSnapshot.interactionType
+                            + " chainId=" + miningChargeTerminalSnapshot.chainId
+                            + " initial=" + miningChargeTerminalSnapshot.initial
+                            + " state=" + miningChargeTerminalSnapshot.state
+                            + " usedItemSource=" + resolveItemSource(miningChargeTerminalSnapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
+                            + " mana.index=" + mana.index
+                            + " mana.current=" + mana.current
+                            + " mana.min=" + mana.min
+                            + " mana.max=" + mana.max
+                            + " charge.seconds=" + String.format("%.3f", chargeResolution.chargeSeconds)
+                            + " charge.requestedTunnelBlocks=" + chargeResolution.requestedTunnelBlocks
+                            + " charge.usedFallbackStart=" + chargeResolution.usedFallbackStart
+                            + " allow=false"
+                            + " reason=" + chargeResolution.reason
+                    );
+                }
+            }
+
+            InteractionSnapshot castSnapshot = selectCastSnapshot(
+                snapshots,
+                serverItemInHand,
+                serverUtilityItem,
+                serverToolsItem
+            );
             if (castSnapshot != null && uuid != null) {
                 boolean delayed = false;
                 if (allowCastDelay && holdingAnySpellbookNow) {
@@ -1012,6 +1242,46 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " allow=" + decision.allow
                             + " reason=" + decision.reason
                     );
+                } else if (isLightBookInSnapshot(castSnapshot) || LIGHT_BOOK_ITEM_ID.equals(serverItemInHand)) {
+                    LightDecision decision = tryCastLightBook(
+                        playerRef,
+                        store,
+                        playerEntityRef,
+                        stats,
+                        mana,
+                        nowNanos,
+                        castSnapshot,
+                        serverItemInHand,
+                        serverUtilityItem,
+                        serverToolsItem
+                    );
+                    debug.traceFileOnly(
+                        playerRef,
+                        "SpellDecision itemId=" + LIGHT_BOOK_ITEM_ID
+                            + " event=SyncInteractionChains(id=290)"
+                            + " interactionType=" + castSnapshot.interactionType
+                            + " chainId=" + castSnapshot.chainId
+                            + " initial=" + castSnapshot.initial
+                            + " cancelled=false"
+                            + " usedItemSource=" + resolveItemSource(castSnapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
+                            + " mana.index=" + mana.index
+                            + " mana.current=" + mana.current
+                            + " mana.min=" + mana.min
+                            + " mana.max=" + mana.max
+                            + " cost.mana=" + getLightBookManaCost()
+                            + " projectile.delaySeconds=" + (config != null && config.lightBook != null ? config.lightBook.projectileDelaySeconds : 0.16)
+                            + " projectile.assetId=" + decision.projectileAssetName
+                            + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
+                            + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                            + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
+                            + " projectile.dynamicLightApplied=" + decision.dynamicLightApplied
+                            + " projectile.maxDistanceBlocks=" + (config != null && config.lightBook != null ? config.lightBook.maxDistanceBlocks : 100.0)
+                            + " projectile.initialSpeed=" + (config != null && config.lightBook != null ? config.lightBook.initialSpeedBlocksPerSecond : 55.0)
+                            + " projectile.cruiseSpeed=" + (config != null && config.lightBook != null ? config.lightBook.cruiseSpeedBlocksPerSecond : 0.75)
+                            + " projectile.slowdownSeconds=" + (config != null && config.lightBook != null ? config.lightBook.slowdownSeconds : 1.2)
+                            + " allow=" + decision.allow
+                            + " reason=" + decision.reason
+                    );
                 } else if (isFrostBookInSnapshot(castSnapshot) || FROST_BOOK_ITEM_ID.equals(serverItemInHand)) {
                     FrostDecision decision = tryCastFrostBook(
                         playerRef,
@@ -1116,58 +1386,6 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                                 : "")
                             + (decision.hitDistanceBlocks > 0 ? " ray.hit.distanceBlocks=" + String.format("%.2f", decision.hitDistanceBlocks) : "")
                             + (decision.destination != null ? " destination=" + Vector3d.formatShortString(decision.destination) : "")
-                            + " allow=" + decision.allow
-                            + " reason=" + decision.reason
-                    );
-                } else if (isMiningBookInSnapshot(castSnapshot) || MINING_BOOK_ITEM_ID.equals(serverItemInHand)) {
-                    MiningDecision decision = tryCastMiningBook(
-                        playerRef,
-                        store,
-                        playerEntityRef,
-                        stats,
-                        mana,
-                        nowNanos,
-                        castSnapshot,
-                        serverItemInHand
-                    );
-                    debug.traceFileOnly(
-                        playerRef,
-                        "SpellDecision itemId=" + MINING_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
-                            + " interactionType=" + castSnapshot.interactionType
-                            + " chainId=" + castSnapshot.chainId
-                            + " initial=" + castSnapshot.initial
-                            + " cancelled=false"
-                            + " usedItemSource=" + resolveItemSource(castSnapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
-                            + " mana.index=" + mana.index
-                            + " mana.current=" + mana.current
-                            + " mana.min=" + mana.min
-                            + " mana.max=" + mana.max
-                            + " cost.mana=" + config.miningBook.manaCost
-                            + " limit.maxDistanceBlocks=" + getEffectiveMiningMaxDistanceBlocks()
-                            + " mining.gridSize=" + config.miningBook.gridSize
-                            + " mining.maxBlocks=" + config.miningBook.maxBlocks
-                            + " ray.maxDistance=" + decision.rayMaxDistance
-                            + " ray.hit=" + decision.rayHit
-                            + (decision.rayHit != null
-                                ? " ray.hit.block=(" + decision.rayHit.x + "," + decision.rayHit.y + "," + decision.rayHit.z + ")"
-                                    + " ray.hit.point=" + Vector3d.formatShortString(decision.rayHit.collisionPoint)
-                                    + " ray.hit.normal=" + Vector3d.formatShortString(decision.rayHit.collisionNormal)
-                                : "")
-                            + (decision.hitDistanceBlocks > 0 ? " ray.hit.distanceBlocks=" + String.format("%.2f", decision.hitDistanceBlocks) : "")
-                            + (decision.faceAxis != null ? " mining.faceAxis=" + decision.faceAxis : "")
-                            + (decision.targetBlockTypeId != null ? " targetBlockTypeId=" + decision.targetBlockTypeId : "")
-                            + " mining.blocksConsidered=" + decision.blocksConsidered
-                            + " mining.blocksBroken=" + decision.blocksBroken
-                            + " mining.blocksSkipped.chunkNotLoaded=" + decision.blocksSkippedChunkNotLoaded
-                            + " mining.blocksSkipped.unbreakable=" + decision.blocksSkippedUnbreakable
-                            + " mining.blocksBreakFailed=" + decision.blocksBreakFailed
-                            + " mining.blocksBreakExceptions=" + decision.blocksBreakExceptions
-                            + " mining.dropEntitiesSpawned=" + decision.dropEntitiesSpawned
-                            + " mining.dropItemsTotal=" + decision.dropItemsTotal
-                            + " mining.dropsSkipped.noDropData=" + decision.dropsSkippedNoDropData
-                            + " mining.dropsSkipped.missingDropList=" + decision.dropsSkippedMissingDropList
-                            + " mining.dropSpawnExceptions=" + decision.dropSpawnExceptions
                             + " allow=" + decision.allow
                             + " reason=" + decision.reason
                     );
@@ -1302,11 +1520,21 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
     }
 
-    private @Nullable InteractionSnapshot selectCastSnapshot(@Nonnull List<InteractionSnapshot> snapshots) {
+    private @Nullable InteractionSnapshot selectCastSnapshot(
+        @Nonnull List<InteractionSnapshot> snapshots,
+        @Nullable String serverItemInHand,
+        @Nullable String serverUtilityItem,
+        @Nullable String serverToolsItem
+    ) {
         InteractionSnapshot secondary = null;
         InteractionSnapshot use = null;
         for (InteractionSnapshot snapshot : snapshots) {
             if (!snapshot.initial) {
+                continue;
+            }
+            boolean miningBookDetected = isMiningBookInSnapshot(snapshot)
+                || isMiningBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem);
+            if (miningBookDetected) {
                 continue;
             }
             if (snapshot.interactionType == InteractionType.Secondary) {
@@ -1340,6 +1568,59 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             }
         }
         return null;
+    }
+
+    private @Nullable InteractionSnapshot selectMiningChargeStartSnapshot(
+        @Nonnull List<InteractionSnapshot> snapshots,
+        @Nullable String serverItemInHand,
+        @Nullable String serverUtilityItem,
+        @Nullable String serverToolsItem
+    ) {
+        InteractionSnapshot selected = null;
+        for (InteractionSnapshot snapshot : snapshots) {
+            if (!snapshot.initial) {
+                continue;
+            }
+            boolean miningBookDetected = isMiningBookInSnapshot(snapshot)
+                || isMiningBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem);
+            if (!miningBookDetected) {
+                continue;
+            }
+            if (snapshot.interactionType == InteractionType.Secondary || snapshot.interactionType == InteractionType.Use) {
+                selected = snapshot;
+            }
+        }
+        return selected;
+    }
+
+    private @Nullable InteractionSnapshot selectMiningChargeTerminalSnapshot(
+        @Nonnull List<InteractionSnapshot> snapshots,
+        @Nullable String serverItemInHand,
+        @Nullable String serverUtilityItem,
+        @Nullable String serverToolsItem
+    ) {
+        InteractionSnapshot terminal = null;
+        for (InteractionSnapshot snapshot : snapshots) {
+            if (snapshot.initial) {
+                continue;
+            }
+            if (snapshot.state == null || snapshot.state == InteractionState.NotFinished) {
+                continue;
+            }
+            boolean miningBookDetected = isMiningBookInSnapshot(snapshot)
+                || isMiningBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem);
+            if (!miningBookDetected) {
+                continue;
+            }
+            if (snapshot.interactionType != InteractionType.Secondary && snapshot.interactionType != InteractionType.Use) {
+                continue;
+            }
+            if (snapshot.state == InteractionState.Finished) {
+                return snapshot;
+            }
+            terminal = snapshot;
+        }
+        return terminal;
     }
 
     private @Nonnull HealingProjectileDecision tryCastHealingBookPrimary(
@@ -2247,6 +2528,172 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         return new FlameDecision(true, "castApplied", FLAME_PROJECTILE_ASSET_ID, origin, direction, projectileUuid);
     }
 
+    private @Nonnull LightDecision tryCastLightBook(
+        @Nonnull PlayerRef playerRef,
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> playerEntityRef,
+        @Nullable EntityStatMap stats,
+        @Nonnull ManaSnapshot mana,
+        long nowNanos,
+        @Nonnull InteractionSnapshot snapshot,
+        @Nullable String serverItemInHand,
+        @Nullable String serverUtilityItem,
+        @Nullable String serverToolsItem
+    ) {
+        UUID uuid = playerRef.getUuid();
+        if (uuid == null) {
+            return new LightDecision(false, "noPlayerUuid", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+        }
+
+        if (snapshot.interactionType != InteractionType.Secondary && snapshot.interactionType != InteractionType.Use) {
+            return new LightDecision(false, "interactionTypeNotSupported", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+        }
+
+        if (snapshot.interactionType == InteractionType.Secondary) {
+            Integer lastChainId = lastProcessedLightSecondaryChainId.get(uuid);
+            if (lastChainId != null && lastChainId == snapshot.chainId) {
+                return new LightDecision(false, "dedupe.secondary.chainId", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+            }
+        } else {
+            Integer lastChainId = lastProcessedLightUseChainId.get(uuid);
+            if (lastChainId != null && lastChainId == snapshot.chainId) {
+                return new LightDecision(false, "dedupe.use.chainId", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+            }
+        }
+
+        boolean clientSaysBook = isLightBookInSnapshot(snapshot);
+        boolean serverSaysBook = LIGHT_BOOK_ITEM_ID.equals(serverItemInHand)
+            || LIGHT_BOOK_ITEM_ID.equals(serverUtilityItem)
+            || LIGHT_BOOK_ITEM_ID.equals(serverToolsItem);
+        if (!clientSaysBook && !serverSaysBook) {
+            return new LightDecision(false, "notHoldingBook", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+        }
+
+        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+        if (snapshot.interactionType == InteractionType.Secondary) {
+            lastProcessedLightSecondaryChainId.put(uuid, snapshot.chainId);
+        } else {
+            lastProcessedLightUseChainId.put(uuid, snapshot.chainId);
+        }
+
+        long castDebounceNanos = getSpellbookCastDebounceNanos();
+        if (castDebounceNanos > 0) {
+            DebounceDecision debounce = checkAndMarkDebounce(lastLightCastAttemptAtNanos, uuid, nowNanos, castDebounceNanos);
+            if (!debounce.allow) {
+                return new LightDecision(false, debounce.reason, LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+            }
+        }
+
+        if (!mana.present) {
+            return new LightDecision(false, "manaStatMissing", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+        }
+
+        int manaCost = getLightBookManaCost();
+        if (mana.current < manaCost - FLOAT_EPSILON) {
+            return new LightDecision(false, "manaTooLow", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+        }
+
+        if (stats == null) {
+            return new LightDecision(false, "entityStatMapMissing", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+        }
+
+        TimeResource time = store.getResource(TimeResource.getResourceType());
+        if (time == null) {
+            return new LightDecision(false, "timeResourceMissing", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+        }
+
+        Transform look = TargetUtil.getLook(playerEntityRef, store);
+        if (look == null) {
+            Transform fallback = playerRef.getTransform();
+            if (fallback == null) {
+                return new LightDecision(false, "lookTransformMissing", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
+            }
+            look = fallback;
+        }
+
+        Vector3d origin = look.getPosition();
+        if (origin == null || !origin.isFinite()) {
+            return new LightDecision(false, "originNotFinite", LIGHT_PROJECTILE_ASSET_ID, origin, null, null, false);
+        }
+
+        Vector3d direction = look.getDirection();
+        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+            return new LightDecision(false, "directionInvalid", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
+        }
+
+        Vector3f rotation = look.getRotation();
+        if (rotation == null || !rotation.isFinite()) {
+            rotation = Vector3f.ZERO;
+        }
+
+        Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, LIGHT_PROJECTILE_ASSET_ID, origin, rotation);
+        if (holder == null) {
+            return new LightDecision(false, "projectileAssembleFailed", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
+        }
+
+        ProjectileComponent projectile = holder.getComponent(ProjectileComponent.getComponentType());
+        if (projectile == null) {
+            return new LightDecision(false, "projectileComponentMissing", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
+        }
+
+        if (!projectile.initialize()) {
+            return new LightDecision(false, "projectileAssetNotFound", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
+        }
+
+        try {
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+        } catch (Throwable t) {
+            errors.report(playerRef, "LightBook: projectile.shoot failed (assetId=" + LIGHT_PROJECTILE_ASSET_ID + ").", t);
+            return new LightDecision(false, "projectileShootException", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
+        }
+
+        Ref<EntityStore> projectileRef;
+        try {
+            projectileRef = store.addEntity(holder, AddReason.SPAWN);
+        } catch (Throwable t) {
+            errors.report(playerRef, "LightBook: store.addEntity failed (assetId=" + LIGHT_PROJECTILE_ASSET_ID + ").", t);
+            return new LightDecision(false, "projectileSpawnException", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
+        }
+
+        UUID projectileUuid = null;
+        try {
+            UUIDComponent projectileUuidComponent = store.getComponent(projectileRef, UUIDComponent.getComponentType());
+            if (projectileUuidComponent != null) {
+                projectileUuid = projectileUuidComponent.getUuid();
+            }
+        } catch (Throwable ignored) {
+            // Best effort debug info.
+        }
+
+        boolean dynamicLightApplied = false;
+        try {
+            store.putComponent(projectileRef, DynamicLight.getComponentType(), LightBookProjectileSystem.createDynamicLight(config));
+            dynamicLightApplied = true;
+        } catch (Throwable t) {
+            errors.report(playerRef, "LightBook: failed to attach DynamicLight to projectile.", t);
+        }
+
+        if (projectileUuid != null) {
+            lightBookProjectileState.register(projectileUuid, origin, direction);
+            debug.traceFileOnly(
+                playerRef,
+                "LightBookProjectile event=spawn"
+                    + " projectile.uuid=" + projectileUuid
+                    + " dynamicLightApplied=" + dynamicLightApplied
+                    + " origin=" + Vector3d.formatShortString(origin)
+                    + " direction=" + Vector3d.formatShortString(direction)
+                    + " maxDistanceBlocks=" + (config != null && config.lightBook != null ? config.lightBook.maxDistanceBlocks : 100.0)
+                    + " lifetimeSeconds=120"
+            );
+        }
+
+        float newMana = Math.max(mana.min, mana.current - manaCost);
+        stats.setStatValue(mana.index, newMana);
+        stats.update();
+
+        return new LightDecision(true, "castApplied", LIGHT_PROJECTILE_ASSET_ID, origin, direction, projectileUuid, dynamicLightApplied);
+    }
+
     private @Nonnull FrostDecision tryCastFrostBook(
         @Nonnull PlayerRef playerRef,
         @Nonnull Store<EntityStore> store,
@@ -2588,6 +3035,16 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         @Nullable UUID projectileUuid
     ) {}
 
+    private record LightDecision(
+        boolean allow,
+        @Nonnull String reason,
+        @Nonnull String projectileAssetName,
+        @Nullable Vector3d origin,
+        @Nullable Vector3d direction,
+        @Nullable UUID projectileUuid,
+        boolean dynamicLightApplied
+    ) {}
+
     private record FrostDecision(
         boolean allow,
         @Nonnull String reason,
@@ -2641,6 +3098,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         @Nullable BlockCollisionData rayHit,
         double rayMaxDistance,
         double hitDistanceBlocks,
+        double chargeSeconds,
+        int requestedTunnelBlocks,
+        @Nonnull String miningShape,
+        int miningShapeBlocksPerDepth,
         @Nullable String faceAxis,
         @Nullable String targetBlockTypeId,
         int blocksConsidered,
@@ -2655,6 +3116,20 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         int dropsSkippedMissingDropList,
         int dropSpawnExceptions
     ) {}
+
+    private static final class MiningAccumulator {
+        private int blocksConsidered;
+        private int blocksBroken;
+        private int blocksSkippedChunkNotLoaded;
+        private int blocksSkippedUnbreakable;
+        private int blocksBreakFailed;
+        private int blocksBreakExceptions;
+        private int dropEntitiesSpawned;
+        private int dropItemsTotal;
+        private int dropsSkippedNoDropData;
+        private int dropsSkippedMissingDropList;
+        private int dropSpawnExceptions;
+    }
 
     private record ImmunityDecision(
         boolean allow,
@@ -2710,11 +3185,11 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private double getAncientSwordCastDelaySeconds() {
         AxoTalesServerConfig.AncientSword ancientSword = config != null ? config.ancientSword : null;
         if (ancientSword == null) {
-            return 0.34;
+            return 0.16;
         }
         double seconds = ancientSword.castDelaySeconds;
         if (!Double.isFinite(seconds)) {
-            return 0.34;
+            return 0.16;
         }
         return Math.max(0.0, seconds);
     }
@@ -2751,6 +3226,14 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return 20;
         }
         return Math.max(0, flameBook.manaCost);
+    }
+
+    private int getLightBookManaCost() {
+        AxoTalesServerConfig.LightBook lightBook = config != null ? config.lightBook : null;
+        if (lightBook == null) {
+            return 15;
+        }
+        return Math.max(0, lightBook.manaCost);
     }
 
     private int getMorphBookManaCost() {
@@ -3203,6 +3686,187 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         );
     }
 
+    private void trackMiningChargeStart(
+        @Nonnull PlayerRef playerRef,
+        @Nonnull InteractionSnapshot snapshot,
+        long nowNanos,
+        @Nullable String serverItemInHand,
+        @Nullable String serverUtilityItem,
+        @Nullable String serverToolsItem,
+        @Nonnull ManaSnapshot mana
+    ) {
+        UUID uuid = playerRef.getUuid();
+        if (uuid == null) {
+            return;
+        }
+
+        activeMiningCharges.put(uuid, new MiningChargeState(snapshot.chainId, snapshot.interactionType, nowNanos));
+        debug.traceFileOnly(
+            playerRef,
+            "MiningCharge event=start"
+                + " interactionType=" + snapshot.interactionType
+                + " chainId=" + snapshot.chainId
+                + " initial=" + snapshot.initial
+                + " state=" + snapshot.state
+                + " usedItemSource=" + resolveItemSource(snapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
+                + " mana.index=" + mana.index
+                + " mana.current=" + mana.current
+                + " mana.min=" + mana.min
+                + " mana.max=" + mana.max
+                + " minChargeBlocks=" + config.miningBook.minChargeBlocks
+                + " blocksPerChargeTier=" + config.miningBook.blocksPerChargeTier
+                + " chargeTierSeconds=" + config.miningBook.chargeTierSeconds
+                + " maxChargeSeconds=" + config.miningBook.maxChargeSeconds
+                + " maxTunnelBlocks=" + config.miningBook.maxTunnelBlocks
+                + " allow=true"
+                + " reason=tracked"
+        );
+    }
+
+    private @Nonnull MiningChargeResolution resolveMiningChargeRelease(
+        @Nonnull PlayerRef playerRef,
+        @Nonnull InteractionSnapshot snapshot,
+        long nowNanos,
+        @Nullable String serverItemInHand,
+        @Nullable String serverUtilityItem,
+        @Nullable String serverToolsItem,
+        @Nonnull ManaSnapshot mana
+    ) {
+        UUID uuid = playerRef.getUuid();
+        if (uuid == null) {
+            return new MiningChargeResolution(false, "noPlayerUuid", snapshot.state, 0.0, resolveRequestedMiningTunnelBlocks(0.0), true);
+        }
+
+        MiningChargeState activeCharge = activeMiningCharges.remove(uuid);
+        boolean usedFallbackStart = activeCharge == null
+            || activeCharge.chainId != snapshot.chainId
+            || activeCharge.interactionType != snapshot.interactionType;
+        long startedAtNanos = !usedFallbackStart ? activeCharge.startedAtNanos : nowNanos;
+        if (startedAtNanos > nowNanos) {
+            startedAtNanos = nowNanos;
+            usedFallbackStart = true;
+        }
+
+        double chargeSeconds = Math.max(0.0, (double) (nowNanos - startedAtNanos) / 1_000_000_000.0);
+        int requestedTunnelBlocks = resolveRequestedMiningTunnelBlocks(chargeSeconds);
+        boolean finished = snapshot.state == InteractionState.Finished;
+
+        debug.traceFileOnly(
+            playerRef,
+            "MiningCharge event=release"
+                + " interactionType=" + snapshot.interactionType
+                + " chainId=" + snapshot.chainId
+                + " initial=" + snapshot.initial
+                + " state=" + snapshot.state
+                + " usedItemSource=" + resolveItemSource(snapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
+                + " mana.index=" + mana.index
+                + " mana.current=" + mana.current
+                + " mana.min=" + mana.min
+                + " mana.max=" + mana.max
+                + " charge.seconds=" + String.format("%.3f", chargeSeconds)
+                + " charge.requestedTunnelBlocks=" + requestedTunnelBlocks
+                + " charge.usedFallbackStart=" + usedFallbackStart
+                + " allow=" + finished
+                + " reason=" + (finished ? "finished" : "terminalState." + snapshot.state)
+        );
+
+        if (!finished) {
+            return new MiningChargeResolution(
+                false,
+                "terminalState." + snapshot.state,
+                snapshot.state,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                usedFallbackStart
+            );
+        }
+
+        return new MiningChargeResolution(true, "finished", snapshot.state, chargeSeconds, requestedTunnelBlocks, usedFallbackStart);
+    }
+
+    private int resolveRequestedMiningTunnelBlocks(double chargeSeconds) {
+        int minChargeBlocks = Math.max(1, config.miningBook.minChargeBlocks);
+        int blocksPerChargeTier = Math.max(1, config.miningBook.blocksPerChargeTier);
+        double chargeTierSeconds = Double.isFinite(config.miningBook.chargeTierSeconds) && config.miningBook.chargeTierSeconds > 0
+            ? config.miningBook.chargeTierSeconds
+            : 1.0;
+        double maxChargeSeconds = Double.isFinite(config.miningBook.maxChargeSeconds)
+            ? Math.max(chargeTierSeconds, config.miningBook.maxChargeSeconds)
+            : 5.0;
+        int maxTunnelBlocks = Math.max(minChargeBlocks, config.miningBook.maxTunnelBlocks);
+
+        double effectiveChargeSeconds = Math.max(0.0, Math.min(chargeSeconds, maxChargeSeconds));
+        if (effectiveChargeSeconds + FLOAT_EPSILON < chargeTierSeconds) {
+            return Math.min(maxTunnelBlocks, minChargeBlocks);
+        }
+
+        int fullChargeTiers = (int) Math.floor((effectiveChargeSeconds + FLOAT_EPSILON) / chargeTierSeconds);
+        int requestedTunnelBlocks = Math.max(minChargeBlocks, fullChargeTiers * blocksPerChargeTier);
+        return Math.min(maxTunnelBlocks, requestedTunnelBlocks);
+    }
+
+    private @Nonnull MiningShape resolveMiningShape(@Nullable UUID uuid) {
+        if (uuid == null) {
+            return MiningShape.ONE_BY_ONE;
+        }
+        return miningShapeByPlayer.getOrDefault(uuid, MiningShape.ONE_BY_ONE);
+    }
+
+    private @Nonnull MiningShapeChangeDecision cycleMiningBookShape(
+        @Nonnull PlayerRef playerRef,
+        @Nonnull InteractionSnapshot snapshot,
+        long nowNanos,
+        @Nullable String serverItemInHand
+    ) {
+        UUID uuid = playerRef.getUuid();
+        MiningShape currentShape = resolveMiningShape(uuid);
+        if (uuid == null) {
+            return new MiningShapeChangeDecision(false, "noPlayerUuid", currentShape, currentShape);
+        }
+
+        if (snapshot.interactionType != InteractionType.Primary) {
+            return new MiningShapeChangeDecision(false, "interactionTypeNotSupported", currentShape, currentShape);
+        }
+
+        Integer lastChainId = lastProcessedMiningPrimaryChainId.get(uuid);
+        if (lastChainId != null && lastChainId == snapshot.chainId) {
+            return new MiningShapeChangeDecision(false, "dedupe.primary.chainId", currentShape, currentShape);
+        }
+
+        boolean clientSaysBook = MINING_BOOK_ITEM_ID.equals(snapshot.itemInHandId);
+        boolean serverSaysBook = MINING_BOOK_ITEM_ID.equals(serverItemInHand);
+        if (!clientSaysBook && !serverSaysBook) {
+            return new MiningShapeChangeDecision(false, "notHoldingBook", currentShape, currentShape);
+        }
+
+        lastProcessedMiningPrimaryChainId.put(uuid, snapshot.chainId);
+
+        DebounceDecision debounce = checkAndMarkDebounce(
+            lastMiningShapeToggleAtNanos,
+            uuid,
+            nowNanos,
+            MINING_SHAPE_TOGGLE_DEBOUNCE_NANOS
+        );
+        if (!debounce.allow) {
+            return new MiningShapeChangeDecision(false, debounce.reason, currentShape, currentShape);
+        }
+
+        MiningShape nextShape = currentShape.next();
+        miningShapeByPlayer.put(uuid, nextShape);
+        sendMiningShapeChangedMessage(playerRef, nextShape);
+        return new MiningShapeChangeDecision(true, "shapeChanged", currentShape, nextShape);
+    }
+
+    private void sendMiningShapeChangedMessage(@Nonnull PlayerRef playerRef, @Nonnull MiningShape nextShape) {
+        playerRef.sendMessage(
+            Message.join(
+                Message.raw("[AXO] ").color("#55E8FF").bold(true),
+                Message.raw("Mining shape changed to ").color("#F7E2A6"),
+                Message.raw(nextShape.displayName).color(nextShape.colorHex).bold(true)
+            )
+        );
+    }
+
     private @Nonnull MiningDecision tryCastMiningBook(
         @Nonnull PlayerRef playerRef,
         @Nonnull Store<EntityStore> store,
@@ -3211,33 +3875,151 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         @Nonnull ManaSnapshot mana,
         long nowNanos,
         @Nonnull InteractionSnapshot snapshot,
-        @Nullable String serverItemInHand
+        @Nullable String serverItemInHand,
+        double chargeSeconds,
+        int requestedTunnelBlocks
     ) {
         UUID uuid = playerRef.getUuid();
+        MiningShape miningShape = resolveMiningShape(uuid);
         if (uuid == null) {
-            return new MiningDecision(false, "noPlayerUuid", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "noPlayerUuid",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         if (snapshot.interactionType != InteractionType.Secondary && snapshot.interactionType != InteractionType.Use) {
-            return new MiningDecision(false, "interactionTypeNotSupported", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "interactionTypeNotSupported",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         if (snapshot.interactionType == InteractionType.Secondary) {
             Integer lastChainId = lastProcessedMiningSecondaryChainId.get(uuid);
             if (lastChainId != null && lastChainId == snapshot.chainId) {
-                return new MiningDecision(false, "dedupe.secondary.chainId", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return new MiningDecision(
+                    false,
+                    "dedupe.secondary.chainId",
+                    null,
+                    0,
+                    0,
+                    chargeSeconds,
+                    requestedTunnelBlocks,
+                    miningShape.displayName,
+                    miningShape.blocksPerDepth,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                );
             }
         } else {
             Integer lastChainId = lastProcessedMiningUseChainId.get(uuid);
             if (lastChainId != null && lastChainId == snapshot.chainId) {
-                return new MiningDecision(false, "dedupe.use.chainId", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return new MiningDecision(
+                    false,
+                    "dedupe.use.chainId",
+                    null,
+                    0,
+                    0,
+                    chargeSeconds,
+                    requestedTunnelBlocks,
+                    miningShape.displayName,
+                    miningShape.blocksPerDepth,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                );
             }
         }
 
         boolean clientSaysBook = isMiningBookInSnapshot(snapshot);
         boolean serverSaysBook = MINING_BOOK_ITEM_ID.equals(serverItemInHand);
         if (!clientSaysBook && !serverSaysBook) {
-            return new MiningDecision(false, "notHoldingBook", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "notHoldingBook",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         // De-dupe repeated initial chain updates even when the cast is denied (prevents chat spam / repeated gating logs).
@@ -3251,22 +4033,114 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         if (castDebounceNanos > 0) {
             DebounceDecision debounce = checkAndMarkDebounce(lastMiningCastAttemptAtNanos, uuid, nowNanos, castDebounceNanos);
             if (!debounce.allow) {
-                return new MiningDecision(false, debounce.reason, null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return new MiningDecision(
+                    false,
+                    debounce.reason,
+                    null,
+                    0,
+                    0,
+                    chargeSeconds,
+                    requestedTunnelBlocks,
+                    miningShape.displayName,
+                    miningShape.blocksPerDepth,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                );
             }
         }
 
         if (!mana.present) {
-            return new MiningDecision(false, "manaStatMissing", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "manaStatMissing",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         int manaCost = Math.max(0, config.miningBook.manaCost);
         if (mana.current < manaCost - FLOAT_EPSILON) {
-            return new MiningDecision(false, "manaTooLow", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "manaTooLow",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         var external = store.getExternalData();
         if (external == null || external.getWorld() == null) {
-            return new MiningDecision(false, "worldMissing", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "worldMissing",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
         World world = external.getWorld();
 
@@ -3274,19 +4148,88 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         if (look == null) {
             Transform fallback = playerRef.getTransform();
             if (fallback == null) {
-                return new MiningDecision(false, "lookTransformMissing", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return new MiningDecision(
+                    false,
+                    "lookTransformMissing",
+                    null,
+                    0,
+                    0,
+                    chargeSeconds,
+                    requestedTunnelBlocks,
+                    miningShape.displayName,
+                    miningShape.blocksPerDepth,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                );
             }
             look = fallback;
         }
 
         Vector3d origin = look.getPosition();
         if (origin == null || !origin.isFinite()) {
-            return new MiningDecision(false, "originNotFinite", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "originNotFinite",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         Vector3d direction = look.getDirection();
         if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
-            return new MiningDecision(false, "directionInvalid", null, 0, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "directionInvalid",
+                null,
+                0,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         double maxDistance = getEffectiveMiningMaxDistanceBlocks();
@@ -3298,19 +4241,81 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     double distance = distanceBlocks(origin, farHit);
                     if (distance > maxDistance + 1e-4) {
                         playerRef.sendMessage(Message.raw("Too far: mining is limited to " + (int) maxDistance + " blocks."));
-                        return new MiningDecision(false, "tooFar", farHit, maxDistance, distance, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                        return new MiningDecision(
+                            false,
+                            "tooFar",
+                            farHit,
+                            maxDistance,
+                            distance,
+                            chargeSeconds,
+                            requestedTunnelBlocks,
+                            miningShape.displayName,
+                            miningShape.blocksPerDepth,
+                            null,
+                            null,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        );
                     }
                 }
             }
-            return new MiningDecision(false, "noBlockHitInRange", null, maxDistance, 0, null, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new MiningDecision(
+                false,
+                "noBlockHitInRange",
+                null,
+                maxDistance,
+                0,
+                chargeSeconds,
+                requestedTunnelBlocks,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
+                null,
+                null,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            );
         }
 
         double hitDistance = distanceBlocks(origin, hit);
+        int stepX = hit.collisionNormal != null ? -signToInt(hit.collisionNormal.x) : 0;
+        int stepY = hit.collisionNormal != null ? -signToInt(hit.collisionNormal.y) : 0;
+        int stepZ = hit.collisionNormal != null ? -signToInt(hit.collisionNormal.z) : 0;
+        if (stepX == 0 && stepY == 0 && stepZ == 0) {
+            double ax = Math.abs(direction.x);
+            double ay = Math.abs(direction.y);
+            double az = Math.abs(direction.z);
+            if (ax >= ay && ax >= az) {
+                stepX = direction.x >= 0 ? 1 : -1;
+            } else if (ay >= az) {
+                stepY = direction.y >= 0 ? 1 : -1;
+            } else {
+                stepZ = direction.z >= 0 ? 1 : -1;
+            }
+        }
+        if (stepX == 0 && stepY == 0 && stepZ == 0) {
+            stepZ = 1;
+        }
+        String faceAxis = resolveMiningFaceAxis(hit, stepX, stepY, stepZ);
 
-        String faceAxis = resolveMiningFaceAxis(hit);
-        int gridSize = Math.max(1, config.miningBook.gridSize);
-        int maxBlocks = Math.max(1, config.miningBook.maxBlocks);
-        int radius = gridSize / 2;
+        int tunnelBlocksToAttempt = Math.max(1, Math.min(requestedTunnelBlocks, Math.max(1, config.miningBook.maxTunnelBlocks)));
 
         WorldChunk centerChunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(hit.x, hit.z));
         String targetBlockTypeId = null;
@@ -3319,118 +4324,49 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             targetBlockTypeId = type != null ? type.getId() : null;
         }
 
-        int blocksConsidered = 0;
-        int blocksBroken = 0;
-        int blocksSkippedChunkNotLoaded = 0;
-        int blocksSkippedUnbreakable = 0;
-        int blocksBreakFailed = 0;
-        int blocksBreakExceptions = 0;
-        int dropEntitiesSpawned = 0;
-        int dropItemsTotal = 0;
-        int dropsSkippedNoDropData = 0;
-        int dropsSkippedMissingDropList = 0;
-        int dropSpawnExceptions = 0;
+        MiningAccumulator mining = new MiningAccumulator();
 
-        outer:
-        for (int a = -radius; a <= radius; a++) {
-            for (int b = -radius; b <= radius; b++) {
-                if (blocksConsidered >= maxBlocks) {
-                    break outer;
-                }
-
-                int x = hit.x;
-                int y = hit.y;
-                int z = hit.z;
-                if ("X".equals(faceAxis)) {
-                    y += a;
-                    z += b;
-                } else if ("Y".equals(faceAxis)) {
-                    x += a;
-                    z += b;
-                } else {
-                    x += a;
-                    y += b;
-                }
-
-                blocksConsidered++;
-
-                if (y < 0) {
-                    blocksSkippedUnbreakable++;
-                    continue;
-                }
-
-                WorldChunk chunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(x, z));
-                if (chunk == null) {
-                    blocksSkippedChunkNotLoaded++;
-                    continue;
-                }
-
-                var blockType = chunk.getBlockType(x, y, z);
-                if (blockType == null || blockType.isUnknown()) {
-                    blocksSkippedUnbreakable++;
-                    continue;
-                }
-                if (blockType == com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType.EMPTY || blockType.getDrawType() == com.hypixel.hytale.protocol.DrawType.Empty) {
-                    blocksSkippedUnbreakable++;
-                    continue;
-                }
-
-                try {
-                    boolean broke = chunk.breakBlock(x, y, z);
-                    if (broke) {
-                        blocksBroken++;
-                        try {
-                            DropSpawnResult drops = spawnMiningBlockDrops(store, blockType, x, y, z);
-                            dropEntitiesSpawned += drops.entitiesSpawned;
-                            dropItemsTotal += drops.itemsTotal;
-                            dropsSkippedNoDropData += drops.skippedNoDropData;
-                            dropsSkippedMissingDropList += drops.skippedMissingDropList;
-                        } catch (Throwable t) {
-                            dropSpawnExceptions++;
-                            debug.traceFileOnly(
-                                playerRef,
-                                "MiningBookDrop event=spawnDrops"
-                                    + " block=(" + x + "," + y + "," + z + ")"
-                                    + " exception=" + t.getClass().getSimpleName()
-                                    + (t.getMessage() != null ? " message=\"" + t.getMessage() + "\"" : "")
-                            );
-                        }
-                    } else {
-                        blocksBreakFailed++;
-                    }
-                } catch (Throwable t) {
-                    blocksBreakExceptions++;
-                    debug.traceFileOnly(
-                        playerRef,
-                        "MiningBookBreak event=breakBlock"
-                            + " block=(" + x + "," + y + "," + z + ")"
-                            + " exception=" + t.getClass().getSimpleName()
-                            + (t.getMessage() != null ? " message=\"" + t.getMessage() + "\"" : "")
-                    );
-                }
-            }
+        for (int depth = 0; depth < tunnelBlocksToAttempt; depth++) {
+            int centerX = hit.x + (stepX * depth);
+            int centerY = hit.y + (stepY * depth);
+            int centerZ = hit.z + (stepZ * depth);
+            applyMiningShapeDepth(
+                playerRef,
+                store,
+                world,
+                miningShape,
+                faceAxis,
+                centerX,
+                centerY,
+                centerZ,
+                mining
+            );
         }
 
-        if (blocksBroken <= 0) {
+        if (mining.blocksBroken <= 0) {
             return new MiningDecision(
                 false,
                 "noBlocksBroken",
                 hit,
                 maxDistance,
                 hitDistance,
+                chargeSeconds,
+                tunnelBlocksToAttempt,
+                miningShape.displayName,
+                miningShape.blocksPerDepth,
                 faceAxis,
                 targetBlockTypeId,
-                blocksConsidered,
-                blocksBroken,
-                blocksSkippedChunkNotLoaded,
-                blocksSkippedUnbreakable,
-                blocksBreakFailed,
-                blocksBreakExceptions,
-                dropEntitiesSpawned,
-                dropItemsTotal,
-                dropsSkippedNoDropData,
-                dropsSkippedMissingDropList,
-                dropSpawnExceptions
+                mining.blocksConsidered,
+                mining.blocksBroken,
+                mining.blocksSkippedChunkNotLoaded,
+                mining.blocksSkippedUnbreakable,
+                mining.blocksBreakFailed,
+                mining.blocksBreakExceptions,
+                mining.dropEntitiesSpawned,
+                mining.dropItemsTotal,
+                mining.dropsSkippedNoDropData,
+                mining.dropsSkippedMissingDropList,
+                mining.dropSpawnExceptions
             );
         }
 
@@ -3447,20 +4383,164 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             hit,
             maxDistance,
             hitDistance,
+            chargeSeconds,
+            tunnelBlocksToAttempt,
+            miningShape.displayName,
+            miningShape.blocksPerDepth,
             faceAxis,
             targetBlockTypeId,
-            blocksConsidered,
-            blocksBroken,
-            blocksSkippedChunkNotLoaded,
-            blocksSkippedUnbreakable,
-            blocksBreakFailed,
-            blocksBreakExceptions,
-            dropEntitiesSpawned,
-            dropItemsTotal,
-            dropsSkippedNoDropData,
-            dropsSkippedMissingDropList,
-            dropSpawnExceptions
+            mining.blocksConsidered,
+            mining.blocksBroken,
+            mining.blocksSkippedChunkNotLoaded,
+            mining.blocksSkippedUnbreakable,
+            mining.blocksBreakFailed,
+            mining.blocksBreakExceptions,
+            mining.dropEntitiesSpawned,
+            mining.dropItemsTotal,
+            mining.dropsSkippedNoDropData,
+            mining.dropsSkippedMissingDropList,
+            mining.dropSpawnExceptions
         );
+    }
+
+    private void applyMiningShapeDepth(
+        @Nonnull PlayerRef playerRef,
+        @Nonnull Store<EntityStore> store,
+        @Nonnull World world,
+        @Nonnull MiningShape miningShape,
+        @Nonnull String faceAxis,
+        int centerX,
+        int centerY,
+        int centerZ,
+        @Nonnull MiningAccumulator mining
+    ) {
+        attemptMineMiningBlock(playerRef, store, world, centerX, centerY, centerZ, mining);
+        if (miningShape == MiningShape.ONE_BY_ONE) {
+            return;
+        }
+
+        if ("X".equals(faceAxis)) {
+            if (miningShape == MiningShape.THREE_BY_THREE) {
+                for (int dy = -1; dy <= 1; dy++) {
+                    for (int dz = -1; dz <= 1; dz++) {
+                        if (dy == 0 && dz == 0) {
+                            continue;
+                        }
+                        attemptMineMiningBlock(playerRef, store, world, centerX, centerY + dy, centerZ + dz, mining);
+                    }
+                }
+                return;
+            }
+            attemptMineMiningBlock(playerRef, store, world, centerX, centerY - 1, centerZ, mining);
+            attemptMineMiningBlock(playerRef, store, world, centerX, centerY + 1, centerZ, mining);
+            attemptMineMiningBlock(playerRef, store, world, centerX, centerY, centerZ - 1, mining);
+            attemptMineMiningBlock(playerRef, store, world, centerX, centerY, centerZ + 1, mining);
+            return;
+        }
+
+        if ("Z".equals(faceAxis)) {
+            if (miningShape == MiningShape.THREE_BY_THREE) {
+                for (int dx = -1; dx <= 1; dx++) {
+                    for (int dy = -1; dy <= 1; dy++) {
+                        if (dx == 0 && dy == 0) {
+                            continue;
+                        }
+                        attemptMineMiningBlock(playerRef, store, world, centerX + dx, centerY + dy, centerZ, mining);
+                    }
+                }
+                return;
+            }
+            attemptMineMiningBlock(playerRef, store, world, centerX - 1, centerY, centerZ, mining);
+            attemptMineMiningBlock(playerRef, store, world, centerX + 1, centerY, centerZ, mining);
+            attemptMineMiningBlock(playerRef, store, world, centerX, centerY - 1, centerZ, mining);
+            attemptMineMiningBlock(playerRef, store, world, centerX, centerY + 1, centerZ, mining);
+            return;
+        }
+
+        if (miningShape == MiningShape.THREE_BY_THREE) {
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    if (dx == 0 && dz == 0) {
+                        continue;
+                    }
+                    attemptMineMiningBlock(playerRef, store, world, centerX + dx, centerY, centerZ + dz, mining);
+                }
+            }
+            return;
+        }
+
+        attemptMineMiningBlock(playerRef, store, world, centerX - 1, centerY, centerZ, mining);
+        attemptMineMiningBlock(playerRef, store, world, centerX + 1, centerY, centerZ, mining);
+        attemptMineMiningBlock(playerRef, store, world, centerX, centerY, centerZ - 1, mining);
+        attemptMineMiningBlock(playerRef, store, world, centerX, centerY, centerZ + 1, mining);
+    }
+
+    private void attemptMineMiningBlock(
+        @Nonnull PlayerRef playerRef,
+        @Nonnull Store<EntityStore> store,
+        @Nonnull World world,
+        int x,
+        int y,
+        int z,
+        @Nonnull MiningAccumulator mining
+    ) {
+        mining.blocksConsidered++;
+
+        if (y < 0) {
+            mining.blocksSkippedUnbreakable++;
+            return;
+        }
+
+        WorldChunk chunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(x, z));
+        if (chunk == null) {
+            mining.blocksSkippedChunkNotLoaded++;
+            return;
+        }
+
+        var blockType = chunk.getBlockType(x, y, z);
+        if (blockType == null || blockType.isUnknown()) {
+            mining.blocksSkippedUnbreakable++;
+            return;
+        }
+        if (blockType == com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType.EMPTY
+            || blockType.getDrawType() == com.hypixel.hytale.protocol.DrawType.Empty) {
+            mining.blocksSkippedUnbreakable++;
+            return;
+        }
+
+        try {
+            boolean broke = chunk.breakBlock(x, y, z);
+            if (broke) {
+                mining.blocksBroken++;
+                try {
+                    DropSpawnResult drops = spawnMiningBlockDrops(store, blockType, x, y, z);
+                    mining.dropEntitiesSpawned += drops.entitiesSpawned;
+                    mining.dropItemsTotal += drops.itemsTotal;
+                    mining.dropsSkippedNoDropData += drops.skippedNoDropData;
+                    mining.dropsSkippedMissingDropList += drops.skippedMissingDropList;
+                } catch (Throwable t) {
+                    mining.dropSpawnExceptions++;
+                    debug.traceFileOnly(
+                        playerRef,
+                        "MiningBookDrop event=spawnDrops"
+                            + " block=(" + x + "," + y + "," + z + ")"
+                            + " exception=" + t.getClass().getSimpleName()
+                            + (t.getMessage() != null ? " message=\"" + t.getMessage() + "\"" : "")
+                    );
+                }
+            } else {
+                mining.blocksBreakFailed++;
+            }
+        } catch (Throwable t) {
+            mining.blocksBreakExceptions++;
+            debug.traceFileOnly(
+                playerRef,
+                "MiningBookBreak event=breakBlock"
+                    + " block=(" + x + "," + y + "," + z + ")"
+                    + " exception=" + t.getClass().getSimpleName()
+                    + (t.getMessage() != null ? " message=\"" + t.getMessage() + "\"" : "")
+            );
+        }
     }
 
     private record DropSpawnResult(
@@ -3824,7 +4904,17 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         return 0;
     }
 
-    private static @Nonnull String resolveMiningFaceAxis(@Nonnull BlockCollisionData hit) {
+    private static @Nonnull String resolveMiningFaceAxis(@Nonnull BlockCollisionData hit, int stepX, int stepY, int stepZ) {
+        if (stepY != 0) {
+            return "Y";
+        }
+        if (stepX != 0) {
+            return "X";
+        }
+        if (stepZ != 0) {
+            return "Z";
+        }
+
         if (hit.collisionNormal == null) {
             return "Y";
         }
@@ -3858,6 +4948,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || isHordeBookInSnapshot(snapshot)
             || isDoomBookInSnapshot(snapshot)
             || isFlameBookInSnapshot(snapshot)
+            || isLightBookInSnapshot(snapshot)
             || isFrostBookInSnapshot(snapshot)
             || isMorphBookInSnapshot(snapshot);
     }
@@ -3894,6 +4985,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(itemInHandId)
             || DOOM_BOOK_ITEM_ID.equals(itemInHandId)
             || FLAME_BOOK_ITEM_ID.equals(itemInHandId)
+            || LIGHT_BOOK_ITEM_ID.equals(itemInHandId)
             || FROST_BOOK_ITEM_ID.equals(itemInHandId)
             || MORPH_BOOK_ITEM_ID.equals(itemInHandId)
             || isHealingBook(utilityItemId)
@@ -3904,6 +4996,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(utilityItemId)
             || DOOM_BOOK_ITEM_ID.equals(utilityItemId)
             || FLAME_BOOK_ITEM_ID.equals(utilityItemId)
+            || LIGHT_BOOK_ITEM_ID.equals(utilityItemId)
             || FROST_BOOK_ITEM_ID.equals(utilityItemId)
             || MORPH_BOOK_ITEM_ID.equals(utilityItemId)
             || isHealingBook(toolsItemId)
@@ -3914,6 +5007,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(toolsItemId)
             || DOOM_BOOK_ITEM_ID.equals(toolsItemId)
             || FLAME_BOOK_ITEM_ID.equals(toolsItemId)
+            || LIGHT_BOOK_ITEM_ID.equals(toolsItemId)
             || FROST_BOOK_ITEM_ID.equals(toolsItemId)
             || MORPH_BOOK_ITEM_ID.equals(toolsItemId);
     }
@@ -3964,6 +5058,12 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || FLAME_BOOK_ITEM_ID.equals(snapshot.toolsItemId);
     }
 
+    private static boolean isLightBookInSnapshot(@Nonnull InteractionSnapshot snapshot) {
+        return LIGHT_BOOK_ITEM_ID.equals(snapshot.itemInHandId)
+            || LIGHT_BOOK_ITEM_ID.equals(snapshot.utilityItemId)
+            || LIGHT_BOOK_ITEM_ID.equals(snapshot.toolsItemId);
+    }
+
     private static boolean isFrostBookInSnapshot(@Nonnull InteractionSnapshot snapshot) {
         return FROST_BOOK_ITEM_ID.equals(snapshot.itemInHandId)
             || FROST_BOOK_ITEM_ID.equals(snapshot.utilityItemId)
@@ -4012,6 +5112,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         return FLAME_BOOK_ITEM_ID.equals(itemInHand) || FLAME_BOOK_ITEM_ID.equals(utilityItem) || FLAME_BOOK_ITEM_ID.equals(toolsItem);
     }
 
+    private static boolean isLightBookInServerSlots(@Nullable String itemInHand, @Nullable String utilityItem, @Nullable String toolsItem) {
+        return LIGHT_BOOK_ITEM_ID.equals(itemInHand) || LIGHT_BOOK_ITEM_ID.equals(utilityItem) || LIGHT_BOOK_ITEM_ID.equals(toolsItem);
+    }
+
     private static boolean isFrostBookInServerSlots(@Nullable String itemInHand, @Nullable String utilityItem, @Nullable String toolsItem) {
         return FROST_BOOK_ITEM_ID.equals(itemInHand) || FROST_BOOK_ITEM_ID.equals(utilityItem) || FROST_BOOK_ITEM_ID.equals(toolsItem);
     }
@@ -4029,6 +5133,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || isHordeBookInServerSlots(itemInHand, utilityItem, toolsItem)
             || isDoomBookInServerSlots(itemInHand, utilityItem, toolsItem)
             || isFlameBookInServerSlots(itemInHand, utilityItem, toolsItem)
+            || isLightBookInServerSlots(itemInHand, utilityItem, toolsItem)
             || isFrostBookInServerSlots(itemInHand, utilityItem, toolsItem)
             || isMorphBookInServerSlots(itemInHand, utilityItem, toolsItem);
     }
@@ -4089,6 +5194,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(serverItemInHand)
             || DOOM_BOOK_ITEM_ID.equals(serverItemInHand)
             || FLAME_BOOK_ITEM_ID.equals(serverItemInHand)
+            || LIGHT_BOOK_ITEM_ID.equals(serverItemInHand)
             || FROST_BOOK_ITEM_ID.equals(serverItemInHand)
             || MORPH_BOOK_ITEM_ID.equals(serverItemInHand)
             || ANCIENT_SWORD_ITEM_ID.equals(serverItemInHand)) {
@@ -4102,6 +5208,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(serverUtilityItem)
             || DOOM_BOOK_ITEM_ID.equals(serverUtilityItem)
             || FLAME_BOOK_ITEM_ID.equals(serverUtilityItem)
+            || LIGHT_BOOK_ITEM_ID.equals(serverUtilityItem)
             || FROST_BOOK_ITEM_ID.equals(serverUtilityItem)
             || MORPH_BOOK_ITEM_ID.equals(serverUtilityItem)
             || ANCIENT_SWORD_ITEM_ID.equals(serverUtilityItem)) {
@@ -4115,6 +5222,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(serverToolsItem)
             || DOOM_BOOK_ITEM_ID.equals(serverToolsItem)
             || FLAME_BOOK_ITEM_ID.equals(serverToolsItem)
+            || LIGHT_BOOK_ITEM_ID.equals(serverToolsItem)
             || FROST_BOOK_ITEM_ID.equals(serverToolsItem)
             || MORPH_BOOK_ITEM_ID.equals(serverToolsItem)
             || ANCIENT_SWORD_ITEM_ID.equals(serverToolsItem)) {
@@ -4190,6 +5298,15 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return "packet.utilityItemId";
         }
         if (FLAME_BOOK_ITEM_ID.equals(snapshot.toolsItemId)) {
+            return "packet.toolsItemId";
+        }
+        if (LIGHT_BOOK_ITEM_ID.equals(snapshot.itemInHandId)) {
+            return "packet.itemInHandId";
+        }
+        if (LIGHT_BOOK_ITEM_ID.equals(snapshot.utilityItemId)) {
+            return "packet.utilityItemId";
+        }
+        if (LIGHT_BOOK_ITEM_ID.equals(snapshot.toolsItemId)) {
             return "packet.toolsItemId";
         }
         if (FROST_BOOK_ITEM_ID.equals(snapshot.itemInHandId)) {

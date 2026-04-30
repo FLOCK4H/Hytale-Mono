@@ -1,47 +1,97 @@
 function initAxoTalesGuidebook() {
-  const revealTargets = document.querySelectorAll("[data-reveal]");
-  const tiltTargets = document.querySelectorAll(".tilt-card");
+  document.documentElement.classList.add("axotales-ready");
+  initCardRails();
+}
 
-  if (!window.__axotalesRevealObserver) {
-    window.__axotalesRevealObserver = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          window.__axotalesRevealObserver.unobserve(entry.target);
-        }
-      }
-    }, { threshold: 0.16 });
-  }
+function initCardRails() {
+  const railSelectors = [".card-grid", ".stat-strip", ".timeline-grid"];
+  const railTargets = document.querySelectorAll(railSelectors.join(", "));
 
-  revealTargets.forEach((target) => {
-    if (!target.classList.contains("is-visible")) {
-      window.__axotalesRevealObserver.observe(target);
-    }
-  });
-
-  tiltTargets.forEach((card) => {
-    if (card.dataset.tiltBound === "true") {
+  railTargets.forEach((grid) => {
+    if (grid.dataset.cardRailReady === "true") {
       return;
     }
 
-    card.dataset.tiltBound = "true";
+    const cards = Array.from(grid.children).filter((child) => child.nodeType === Node.ELEMENT_NODE);
+    if (cards.length <= 3) {
+      return;
+    }
 
-    card.addEventListener("pointermove", (event) => {
-      const bounds = card.getBoundingClientRect();
-      const x = (event.clientX - bounds.left) / bounds.width;
-      const y = (event.clientY - bounds.top) / bounds.height;
-      const rotateY = (x - 0.5) * 8;
-      const rotateX = (0.5 - y) * 8;
+    grid.dataset.cardRailReady = "true";
+    grid.classList.add("card-rail");
 
-      card.style.setProperty("--ry", `${rotateY}deg`);
-      card.style.setProperty("--rx", `${rotateX}deg`);
-    });
+    const shell = document.createElement("div");
+    shell.className = "card-rail-shell";
 
-    card.addEventListener("pointerleave", () => {
-      card.style.setProperty("--ry", "0deg");
-      card.style.setProperty("--rx", "0deg");
-    });
+    const controls = document.createElement("div");
+    controls.className = "card-rail__controls";
+
+    const previous = createRailButton("Previous cards", "←");
+    const next = createRailButton("Next cards", "→");
+
+    controls.append(previous, next);
+
+    grid.parentNode.insertBefore(shell, grid);
+    shell.append(grid, controls);
+
+    const scrollByPage = (direction) => {
+      const firstCard = grid.firstElementChild;
+      const computed = window.getComputedStyle(grid);
+      const gap = parseFloat(computed.columnGap || computed.gap || "16");
+      const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : grid.clientWidth;
+      const multiplier = window.matchMedia("(max-width: 760px)").matches
+        ? 1
+        : window.matchMedia("(max-width: 1100px)").matches
+          ? 2
+          : 3;
+      const amount = (cardWidth + gap) * multiplier;
+      grid.scrollBy({ left: direction * amount, behavior: "smooth" });
+    };
+
+    const syncLayout = () => {
+      const computed = window.getComputedStyle(grid);
+      const gap = parseFloat(computed.columnGap || computed.gap || "16");
+      const visible = window.matchMedia("(max-width: 760px)").matches
+        ? 1
+        : window.matchMedia("(max-width: 1100px)").matches
+          ? 2
+          : 3;
+      const viewportWidth = Math.max(0, shell.getBoundingClientRect().width);
+      const width = Math.max(220, (viewportWidth - (gap * (visible - 1))) / visible);
+      grid.style.setProperty("--ax-rail-card-width", `${width}px`);
+    };
+
+    const syncButtons = () => {
+      const maxScrollLeft = Math.max(0, grid.scrollWidth - grid.clientWidth - 2);
+      previous.disabled = grid.scrollLeft <= 2;
+      next.disabled = grid.scrollLeft >= maxScrollLeft;
+    };
+
+    const syncRail = () => {
+      syncLayout();
+      syncButtons();
+    };
+
+    previous.addEventListener("click", () => scrollByPage(-1));
+    next.addEventListener("click", () => scrollByPage(1));
+    grid.addEventListener("scroll", syncButtons, { passive: true });
+    window.addEventListener("resize", syncRail);
+    syncRail();
   });
+}
+
+function createRailButton(label, glyph) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "card-rail__button";
+  button.setAttribute("aria-label", label);
+
+  const icon = document.createElement("span");
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = glyph;
+  button.append(icon);
+
+  return button;
 }
 
 if (typeof document$ !== "undefined") {

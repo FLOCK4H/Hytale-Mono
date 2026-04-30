@@ -1,0 +1,20 @@
+{
+  "Appearance": "Light_Ball",
+  "Radius": 0.16,
+  "Height": 0.32,
+  "VerticalCenterShot": 0.16,
+  "HorizontalCenterShot": 0.16,
+  "DepthShot": 1,
+  "PitchAdjustShot": false,
+  "SticksVertically": false,
+  "MuzzleVelocity": 55,
+  "TerminalVelocity": 80,
+  "Gravity": 0,
+  "Bounciness": 0.15,
+  "ImpactSlowdown": 1,
+  "TimeToLive": 120,
+  "Damage": 1,
+  "DeadTimeMiss": 120,
+  "DeadTime": 120,
+  "DeathEffectsOnHit": false
+}

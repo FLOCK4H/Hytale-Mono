@@ -1,13 +1,8 @@
 # Crafting Flow
 
-<div class="page-header" data-reveal>
-  <div markdown="1">
-    <span class="hero-kicker">Progression routing</span>
-
-    # Axo Tales crafting is cleaner after the bench-tab rebuild
-
-    The current setup uses two dedicated Arcanist tabs instead of throwing everything into one generic bucket. That change matters more than it sounds: it makes the mod read like an actual progression tree instead of a dump of custom recipes.
-  </div>
+<div class="page-header">
+  <p class="eyebrow">Progression routing</p>
+  <p class="lead-text">Axo Tales recipes read much more cleanly now that the Arcanist's Workbench is split into Axo Tales lanes. Use this page if you want the fastest route from raw resources to a stable loadout.</p>
 </div>
 
 ## Bench map
@@ -15,7 +10,7 @@
 <div class="card-grid">
   <div class="card" data-reveal>
     <h3>Arcanist's Workbench - Armor</h3>
-    <p>Sa'r Boots, Sa'r Diadem, Sa'r Armor, Sa'r Warfists, and Kudu Boots all live here now.</p>
+    <p>Sa'r Boots, Sa'r Diadem, Sa'r Armor, Sa'r Warfists, and Kudu Boots live here.</p>
   </div>
   <div class="card" data-reveal>
     <h3>Arcanist's Workbench - Spellblades</h3>
@@ -35,13 +30,13 @@
 | Sa'r Diadem | 4 Arcane Crystal Shards, 2 Cobalt Bars, 8 Arcane Matter |
 | Sa'r Armor | 12 Cobalt Bars, 20 Arcane Matter, 10 Arcane Crystal Shards |
 | Sa'r Warfists | 2 Azure Kelp, 2 Arcane Matter, 2 Arcane Crystal Shards |
-| Kudu Boots | 2 Arcane Crystal Shards, 2 Arcane Matter, 10 Ice Essence |
+| Kudu Boots | 2 Arcane Crystal Shards, 2 Arcane Matter, 20 Ice Essence |
 
 ## Spellblades tab recipes
 
-<div class="card accent-card" data-reveal>
+<div class="accent-card" data-reveal>
   <h3>Shared spellbook backbone</h3>
-  <p>Every crafted spellbook starts with <strong>2 Arcane Crystal Shards</strong> and <strong>2 Arcane Matter</strong>, then adds one thematic ingredient.</p>
+  <p>Most Axo Tales spellbooks start from <strong>2 Arcane Crystal Shards</strong> and <strong>2 Arcane Matter</strong>, then add one themed ingredient.</p>
 </div>
 
 | Spellbook | Extra ingredient |
@@ -56,6 +51,7 @@
 | Taunt Book | 5 Fire Essence |
 | Flame Book | 20 Fire Essence |
 | Frost Book | 20 Ice Essence |
+| Light Book | 6 Cyan Crystal Shards |
 
 ### Ancient Sword
 
@@ -75,9 +71,9 @@
 | Invisibility Potion | Empty Bottle, 2 Arcane Crystal Shards, 1 Azure Kelp |
 | Curse Potion | Empty Bottle, 2 Arcane Crystal Shards, 5 Fire Essence |
 
-## The fastest live progression route
+## A practical first route
 
-1. Farm Arcane Matter ore and Arcane Crystals first.
-2. Use the Arcanist's Workbench to start mana scaling through Sa'r gear or your first spellbook.
-3. Add Kudu farming if you want Frost Book, Kudu Boots, or passive shard and Arcane Matter income.
-4. Move into Cloud and Bounce drops once you want traversal tech for builds or arenas.
+1. Farm Arcane Matter ore and Arcane Crystal Shards first.
+2. Pick one lane: mana gear for a stronger baseline, or a utility spellbook for immediate mobility or combat help.
+3. Add Kudu farming once you want Frost Book, Kudu Boots, or bonus movement-block drops.
+4. Layer in potions when you want short-duration mobility, stealth, or damage spikes without changing your core gear.

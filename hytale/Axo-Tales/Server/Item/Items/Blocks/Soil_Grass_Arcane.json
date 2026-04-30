@@ -41,8 +41,7 @@
       "Sand_White",
       "Gravel",
       "Grass"
-    ],
-    "TransitionToTag": "Fluid=Water"
+    ]
   },
   "Tags": {
     "Family": [

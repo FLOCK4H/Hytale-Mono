@@ -42,6 +42,7 @@ import java.util.UUID;
 public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStore> {
 
     private static final Box DOWN_RAY_POINT_BOX = new Box(0, 0, 0, 0.01, 0.01, 0.01);
+    private static final int GROUND_BREAK_SURFACE_SCAN_MAX_ABOVE_SOLID_BLOCKS = 8;
 
     private final PluginErrorReporter errors;
     private final PluginDebugReporter debug;
@@ -400,6 +401,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
         boolean brokeCenterBlock = false;
         String centerBlockTypeId = null;
         String centerBlockBreakReason = "notAttempted";
+        boolean centerBlockRecorded = false;
         Set<BlockPos> seen = new HashSet<>();
         double sampleOriginY = Math.max(landingPosition.y + 0.1, centerHit.y + 3.0);
         double sparingChance = resolveGroundBreakSparingChance();
@@ -425,6 +427,47 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
                 }
 
                 int columnDepthBlocks = computeGroundBreakColumnDepth(maxDepthBlocks, breakRadiusBlocks, offsetX, offsetZ);
+                int surfaceTopY = resolveSurfaceBreakStartY(world, landingPosition, sampleHit);
+                if (surfaceTopY > sampleHit.y) {
+                    for (int blockY = surfaceTopY; blockY > sampleHit.y; blockY--) {
+                        BlockPos blockPos = new BlockPos(sampleHit.x, blockY, sampleHit.z);
+                        if (!seen.add(blockPos)) {
+                            skippedDuplicate++;
+                            continue;
+                        }
+                        uniqueTargets++;
+
+                        SingleGroundBreakResult single = tryBreakGroundBlock(playerRef, world, sampleHit.x, blockY, sampleHit.z);
+                        if (offsetX == 0 && offsetZ == 0 && !centerBlockRecorded) {
+                            brokeCenterBlock = single.broke;
+                            centerBlockTypeId = single.blockTypeId;
+                            centerBlockBreakReason = single.reason;
+                            centerBlockRecorded = true;
+                        }
+
+                        if (single.broke) {
+                            blocksBroken++;
+                            continue;
+                        }
+
+                        switch (single.reason) {
+                            case "blockEmpty", "blockTypeMissingOrUnknown" -> {
+                                // Allow sparse foliage columns and keep scanning downward toward the solid anchor.
+                            }
+                            case "chunkNotLoaded" -> {
+                                skippedChunkNotLoaded++;
+                                blockY = sampleHit.y;
+                            }
+                            case "blockProtected.bedrock", "blockUnbreakable.drawTypeEmpty" -> skippedUnbreakable++;
+                            case "breakException" -> breakExceptions++;
+                            case "breakFailed" -> breakFailed++;
+                            default -> {
+                                // Keep the detailed center reason, but don't double-count every surface miss.
+                            }
+                        }
+                    }
+                }
+
                 for (int depth = 0; depth < columnDepthBlocks; depth++) {
                     int blockY = sampleHit.y - depth;
                     if (blockY < 0) {
@@ -457,10 +500,11 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
                     }
 
                     SingleGroundBreakResult single = tryBreakGroundBlock(playerRef, world, sampleHit.x, blockY, sampleHit.z);
-                    if (centerLayer) {
+                    if (centerLayer && !centerBlockRecorded) {
                         brokeCenterBlock = single.broke;
                         centerBlockTypeId = single.blockTypeId;
                         centerBlockBreakReason = single.reason;
+                        centerBlockRecorded = true;
                     }
 
                     if (single.broke) {
@@ -470,7 +514,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
 
                     switch (single.reason) {
                         case "chunkNotLoaded" -> skippedChunkNotLoaded++;
-                        case "blockUnbreakable.drawTypeEmpty", "blockTypeMissingOrUnknown" -> skippedUnbreakable++;
+                        case "blockProtected.bedrock", "blockUnbreakable.drawTypeEmpty", "blockTypeMissingOrUnknown", "blockEmpty" -> skippedUnbreakable++;
                         case "breakException" -> breakExceptions++;
                         case "breakFailed" -> breakFailed++;
                         default -> {
@@ -510,11 +554,9 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
     }
 
     private double resolveGroundBreakSparingChance() {
-        double sparingChance = config.tauntBook.groundBreakSparingChance;
-        if (!Double.isFinite(sparingChance)) {
-            return 0.18;
-        }
-        return Math.max(0.0, Math.min(0.85, sparingChance));
+        // Taunt now clears every breakable block in the crater footprint.
+        // The legacy sparing knob stays in config for compatibility, but the slam ignores it.
+        return 0.0;
     }
 
     private static int computeGroundBreakColumnDepth(int maxDepthBlocks, int breakRadiusBlocks, int offsetX, int offsetZ) {
@@ -591,9 +633,13 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
             return new SingleGroundBreakResult(false, blockTypeId, "blockTypeMissingOrUnknown");
         }
 
+        if (isProtectedGroundBlock(blockTypeId)) {
+            return new SingleGroundBreakResult(false, blockTypeId, "blockProtected.bedrock");
+        }
+
         if (blockType == com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType.EMPTY
             || blockType.getDrawType() == com.hypixel.hytale.protocol.DrawType.Empty) {
-            return new SingleGroundBreakResult(false, blockTypeId, "blockUnbreakable.drawTypeEmpty");
+            return new SingleGroundBreakResult(false, blockTypeId, "blockEmpty");
         }
 
         try {
@@ -607,6 +653,51 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
             );
             return new SingleGroundBreakResult(false, blockTypeId, "breakException");
         }
+    }
+
+    private int resolveSurfaceBreakStartY(
+        @Nonnull World world,
+        @Nonnull Vector3d landingPosition,
+        @Nonnull BlockCollisionData sampleHit
+    ) {
+        WorldChunk chunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(sampleHit.x, sampleHit.z));
+        if (chunk == null) {
+            return sampleHit.y;
+        }
+
+        int scanTopY = Math.max(
+            sampleHit.y,
+            Math.min(
+                sampleHit.y + GROUND_BREAK_SURFACE_SCAN_MAX_ABOVE_SOLID_BLOCKS,
+                (int) Math.floor(landingPosition.y + 1.5)
+            )
+        );
+
+        for (int scanY = scanTopY; scanY > sampleHit.y; scanY--) {
+            var blockType = chunk.getBlockType(sampleHit.x, scanY, sampleHit.z);
+            if (blockType == null || blockType.isUnknown()) {
+                continue;
+            }
+            if (blockType == com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType.EMPTY
+                || blockType.getDrawType() == com.hypixel.hytale.protocol.DrawType.Empty) {
+                continue;
+            }
+
+            String blockTypeId = blockType.getId();
+            if (isProtectedGroundBlock(blockTypeId)) {
+                continue;
+            }
+            return scanY;
+        }
+
+        return sampleHit.y;
+    }
+
+    private static boolean isProtectedGroundBlock(@Nullable String blockTypeId) {
+        if (blockTypeId == null || blockTypeId.isBlank()) {
+            return false;
+        }
+        return "Rock_Bedrock".equals(blockTypeId) || blockTypeId.endsWith("_Bedrock");
     }
 
     private static @Nullable BlockCollisionData raycastSolidBlockBelow(@Nonnull World world, @Nonnull Vector3d position) {

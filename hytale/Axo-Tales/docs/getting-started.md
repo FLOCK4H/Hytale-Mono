@@ -1,16 +1,11 @@
 # Start Here
 
-<div class="page-header" data-reveal>
-  <div markdown="1">
-    <span class="hero-kicker">Install and first boot</span>
-
-    # The current Axo Tales line targets Hytale `2026.03.26-89796e57b`
-
-    Keep that exact game release in mind when you update the mod. The build, the packaged manifest, and the docs are all aligned to that version.
-  </div>
+<div class="page-header">
+  <p class="eyebrow">Install and first boot</p>
+  <p class="lead-text">Use this page if you are setting up Axo Tales from scratch or moving a server onto the current build. The packaged jar, manifest, and guidebook all target Hytale <code>2026.03.26-89796e57b</code>.</p>
 </div>
 
-## Install / update path
+## Install or update
 
 <div class="card-grid card-grid--steps">
   <div class="card" data-reveal>
@@ -25,59 +20,59 @@
   </div>
   <div class="card" data-reveal>
     <span class="step-tag">3</span>
-    <h3>Keep only one Axo Tales jar</h3>
-    <p>Delete older <code>AxoTales-*.jar</code> builds so the client does not load the wrong version.</p>
+    <h3>Keep only one Axo Tales jar there</h3>
+    <p>Delete older <code>AxoTales-*.jar</code> files so the game does not load the wrong version.</p>
   </div>
   <div class="card" data-reveal>
     <span class="step-tag">4</span>
-    <h3>Restart the game or server</h3>
-    <p>If Windows says the old jar is in use, the world is still running. Close it first, then retry.</p>
+    <h3>Restart the world if the file is locked</h3>
+    <p>If Windows says the jar is in use, the game or server still has the old build open.</p>
   </div>
 </div>
 
-## What gets created on first run
+## First files worth knowing
 
 <div class="card-grid">
   <div class="card" data-reveal>
     <h3><code>server-config.json</code></h3>
-    <p>This is your live tuning surface for spell costs, worldgen density, Kudu spawn rates, loot, and movement-block behavior.</p>
+    <p>Your live tuning surface for spell costs, worldgen density, Kudu spawn rates, loot, and movement-block behavior.</p>
   </div>
   <div class="card" data-reveal>
     <h3><code>spellbooks-debug.log</code></h3>
-    <p>A persistent debug log under the plugin data directory. Use it when a cast, input path, stat gate, or movement block feels wrong.</p>
+    <p>A persistent debug log under the plugin data directory. Use it for casts, stat gates, input routing, and movement-block problems.</p>
   </div>
   <div class="card" data-reveal>
-    <h3>Your live config can differ from shipped defaults</h3>
-    <p>The repo also contains a packaged default config in <code>src/main/resources/server-config.json</code>. Existing worlds keep their own edited runtime values.</p>
+    <h3>Packaged defaults can differ from your live runtime file</h3>
+    <p>The guidebook documents <code>src/main/resources/server-config.json</code>. Existing worlds keep their own runtime copy once the mod has already been launched there.</p>
   </div>
 </div>
 
-## Crafting stations
+## Where crafting starts
 
 <div class="card-grid">
   <div class="card media-card" data-reveal>
     <div class="media-card__visual media-card__visual--single">
-      <img src="assets/images/items/ancient_sword.png" alt="Ancient Sword icon">
+      <img src="../assets/images/items/ancient_sword.png" alt="Ancient Sword icon">
     </div>
     <div class="media-card__copy">
       <h3>Arcanist's Workbench</h3>
-      <p>Axo Tales now appends two dedicated tabs: <strong>Spellblades</strong> for books and the sword, and <strong>Armor</strong> for the Sa'r set plus Kudu Boots.</p>
+      <p>Axo Tales uses two dedicated tabs here: <strong>Spellblades</strong> for books and the Ancient Sword, and <strong>Armor</strong> for the Sa'r set plus Kudu Boots.</p>
     </div>
   </div>
   <div class="card media-card" data-reveal>
     <div class="media-card__visual media-card__visual--single">
-      <img src="assets/images/potions/empty_bottle.png" alt="Empty potion bottle icon">
+      <img src="../assets/images/potions/empty_bottle.png" alt="Empty potion bottle icon">
     </div>
     <div class="media-card__copy">
       <h3>Alchemybench</h3>
-      <p>Every Axo Tales potion recipe starts from Axo's Empty Potion Bottle, then branches into movement, strength, invisibility, or throwable curse options.</p>
+      <p>Every Axo Tales potion starts from Axo's Empty Potion Bottle, then branches into mobility, stealth, strength, or curse routes.</p>
     </div>
   </div>
 </div>
 
-## Fast orientation for new players
+## Good first-session route
 
-- [What's New Since 0.1.147](whats-new.md) if you are returning to the mod after older releases.
-- [Crafting Flow](crafting.md) if you want the actual resource loop from ore to spellbooks.
-- [Blocks & Ores](blocks-ores.md) if you need to know where Arcane Matter, Crystals, Cloud Blocks, and Bounce Blocks enter progression.
-- [Troubleshooting](troubleshooting.md) if installs, configs, or spell timing feel off.
+- Mine or spawn enough Arcane Matter and Arcane Crystal Shards to unlock your first spellbook or armor piece.
+- Open the Arcanist's Workbench and choose a lane: mana gear first, or one utility spellbook first.
+- Read [Crafting Flow](crafting.md) if you want the cleanest progression order.
+- Read [Troubleshooting](troubleshooting.md) early if testers keep seeing the wrong jar or the wrong live config.

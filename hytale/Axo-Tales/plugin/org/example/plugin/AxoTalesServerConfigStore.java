@@ -66,6 +66,25 @@ public final class AxoTalesServerConfigStore {
     private static final double DEFAULT_BOUNCE_BLOCK_MAX_VERTICAL_SPEED = 48.0;
     private static final double DEFAULT_BOUNCE_BLOCK_COOLDOWN_SECONDS = 0.2;
     private static final double DEFAULT_BOUNCE_BLOCK_STREAK_RESET_SECONDS = 8.0;
+    private static final int OLD_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS = 24;
+    private static final int OLD_LIGHT_BOOK_DYNAMIC_LIGHT_RED = 255;
+    private static final int OLD_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN = 244;
+    private static final int OLD_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE = 190;
+    private static final int PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS = 8;
+    private static final int PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_RED = 170;
+    private static final int PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN = 150;
+    private static final int PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE = 100;
+    private static final double PREVIOUS_LIGHT_BOOK_PROJECTILE_DELAY_SECONDS = 0.34;
+    private static final double DEFAULT_LIGHT_BOOK_PROJECTILE_DELAY_SECONDS = 0.16;
+    private static final int LAST_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS = 2;
+    private static final int LAST_LIGHT_BOOK_DYNAMIC_LIGHT_RED = 95;
+    private static final int LAST_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN = 74;
+    private static final int LAST_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE = 48;
+    private static final int DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS = 1;
+    private static final int DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_RED = 32;
+    private static final int DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN = 24;
+    private static final int DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE = 16;
+    private static final int CURRENT_LIGHT_BOOK_DEFAULTS_VERSION = 4;
 
     private final PluginDebugReporter debug;
     private final PluginErrorReporter errors;
@@ -138,6 +157,7 @@ public final class AxoTalesServerConfigStore {
                 migrateArcaneCrystalConfig(user);
                 migrateKuduAdeptConfig(user);
                 migrateCloudBlockConfig(user);
+                migrateLightBookConfig(user);
                 deepMerge(merged, user);
             }
 
@@ -520,6 +540,74 @@ public final class AxoTalesServerConfigStore {
         }
     }
 
+    private void migrateLightBookConfig(@Nonnull JsonObject root) {
+        if (!root.has("lightBook") || !root.get("lightBook").isJsonObject()) {
+            return;
+        }
+
+        JsonObject lightBook = root.getAsJsonObject("lightBook");
+        int defaultsVersion = 0;
+        try {
+            if (lightBook.has("defaultsVersion")) {
+                var defaultsVersionValue = lightBook.getAsJsonPrimitive("defaultsVersion");
+                if (defaultsVersionValue != null && defaultsVersionValue.isNumber()) {
+                    defaultsVersion = defaultsVersionValue.getAsInt();
+                }
+            }
+        } catch (Throwable ignored) {
+            defaultsVersion = 0;
+        }
+
+        if (defaultsVersion >= CURRENT_LIGHT_BOOK_DEFAULTS_VERSION) {
+            return;
+        }
+
+        boolean firstPassBrightnessDefaults = jsonNumberEquals(lightBook, "dynamicLightRadius", OLD_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS)
+            && jsonNumberEquals(lightBook, "dynamicLightRed", OLD_LIGHT_BOOK_DYNAMIC_LIGHT_RED)
+            && jsonNumberEquals(lightBook, "dynamicLightGreen", OLD_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN)
+            && jsonNumberEquals(lightBook, "dynamicLightBlue", OLD_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE);
+        boolean previousBrightnessDefaults = jsonNumberEquals(lightBook, "dynamicLightRadius", PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS)
+            && jsonNumberEquals(lightBook, "dynamicLightRed", PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_RED)
+            && jsonNumberEquals(lightBook, "dynamicLightGreen", PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN)
+            && jsonNumberEquals(lightBook, "dynamicLightBlue", PREVIOUS_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE);
+        boolean lastBrightnessDefaults = jsonNumberEquals(lightBook, "dynamicLightRadius", LAST_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS)
+            && jsonNumberEquals(lightBook, "dynamicLightRed", LAST_LIGHT_BOOK_DYNAMIC_LIGHT_RED)
+            && jsonNumberEquals(lightBook, "dynamicLightGreen", LAST_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN)
+            && jsonNumberEquals(lightBook, "dynamicLightBlue", LAST_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE);
+        boolean delayDefault = !lightBook.has("projectileDelaySeconds")
+            || jsonNumberEquals(lightBook, "projectileDelaySeconds", PREVIOUS_LIGHT_BOOK_PROJECTILE_DELAY_SECONDS);
+
+        if (firstPassBrightnessDefaults || previousBrightnessDefaults || lastBrightnessDefaults) {
+            lightBook.addProperty("dynamicLightRadius", DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS);
+            lightBook.addProperty("dynamicLightRed", DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_RED);
+            lightBook.addProperty("dynamicLightGreen", DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN);
+            lightBook.addProperty("dynamicLightBlue", DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE);
+            debug.traceFileOnly(
+                null,
+                "Config migrate: Light Book dynamic light defaults now use extra-tight dim warm radius/intensity "
+                    + DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_RADIUS
+                    + "/"
+                    + DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_RED
+                    + ","
+                    + DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_GREEN
+                    + ","
+                    + DEFAULT_LIGHT_BOOK_DYNAMIC_LIGHT_BLUE
+                    + " instead of earlier too-wide values."
+            );
+        }
+        if (delayDefault) {
+            lightBook.addProperty("projectileDelaySeconds", DEFAULT_LIGHT_BOOK_PROJECTILE_DELAY_SECONDS);
+            debug.traceFileOnly(
+                null,
+                "Config migrate: Light Book projectile release delay now defaults to "
+                    + DEFAULT_LIGHT_BOOK_PROJECTILE_DELAY_SECONDS
+                    + "s so the projectile leaves during the cast push."
+            );
+        }
+
+        lightBook.addProperty("defaultsVersion", CURRENT_LIGHT_BOOK_DEFAULTS_VERSION);
+    }
+
     private static @Nonnull JsonObject ensureObject(@Nonnull JsonObject parent, @Nonnull String key) {
         if (parent.has(key) && parent.get(key).isJsonObject()) {
             return parent.getAsJsonObject(key);
@@ -617,6 +705,9 @@ public final class AxoTalesServerConfigStore {
         }
         if (config.flameBook == null) {
             config.flameBook = new AxoTalesServerConfig.FlameBook();
+        }
+        if (config.lightBook == null) {
+            config.lightBook = new AxoTalesServerConfig.LightBook();
         }
         if (config.teleportBook == null) {
             config.teleportBook = new AxoTalesServerConfig.TeleportBook();
@@ -1349,27 +1440,39 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: miningBook.manaCost < 0; clamping to 0.");
             config.miningBook.manaCost = 0;
         }
-        if (config.miningBook.gridSize < 1) {
-            debug.traceFileOnly(null, "Config sanitize: miningBook.gridSize < 1; clamping to 1.");
-            config.miningBook.gridSize = 1;
+        if (config.miningBook.minChargeBlocks < 1) {
+            debug.traceFileOnly(null, "Config sanitize: miningBook.minChargeBlocks < 1; clamping to 1.");
+            config.miningBook.minChargeBlocks = 1;
         }
-        if (config.miningBook.gridSize > 9) {
-            debug.traceFileOnly(null, "Config sanitize: miningBook.gridSize > 9; clamping to 9.");
-            config.miningBook.gridSize = 9;
+        if (config.miningBook.blocksPerChargeTier < 1) {
+            debug.traceFileOnly(null, "Config sanitize: miningBook.blocksPerChargeTier < 1; clamping to 1.");
+            config.miningBook.blocksPerChargeTier = 1;
         }
-        if (config.miningBook.gridSize % 2 == 0) {
-            int previous = config.miningBook.gridSize;
-            config.miningBook.gridSize = Math.max(1, config.miningBook.gridSize - 1);
-            debug.traceFileOnly(null, "Config sanitize: miningBook.gridSize must be odd; " + previous + " -> " + config.miningBook.gridSize + ".");
+        if (!Double.isFinite(config.miningBook.chargeTierSeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: miningBook.chargeTierSeconds is not finite; resetting to 1.0.");
+            config.miningBook.chargeTierSeconds = 1.0;
         }
-        int miningGridArea = config.miningBook.gridSize * config.miningBook.gridSize;
-        if (config.miningBook.maxBlocks < 1) {
-            debug.traceFileOnly(null, "Config sanitize: miningBook.maxBlocks < 1; clamping to 1.");
-            config.miningBook.maxBlocks = 1;
+        if (config.miningBook.chargeTierSeconds <= 0) {
+            debug.traceFileOnly(null, "Config sanitize: miningBook.chargeTierSeconds <= 0; resetting to 1.0.");
+            config.miningBook.chargeTierSeconds = 1.0;
         }
-        if (config.miningBook.maxBlocks > miningGridArea) {
-            debug.traceFileOnly(null, "Config sanitize: miningBook.maxBlocks > gridSize^2; clamping to " + miningGridArea + ".");
-            config.miningBook.maxBlocks = miningGridArea;
+        if (!Double.isFinite(config.miningBook.maxChargeSeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: miningBook.maxChargeSeconds is not finite; resetting to 5.0.");
+            config.miningBook.maxChargeSeconds = 5.0;
+        }
+        if (config.miningBook.maxChargeSeconds < config.miningBook.chargeTierSeconds) {
+            debug.traceFileOnly(
+                null,
+                "Config sanitize: miningBook.maxChargeSeconds < miningBook.chargeTierSeconds; clamping to chargeTierSeconds."
+            );
+            config.miningBook.maxChargeSeconds = config.miningBook.chargeTierSeconds;
+        }
+        if (config.miningBook.maxTunnelBlocks < config.miningBook.minChargeBlocks) {
+            debug.traceFileOnly(
+                null,
+                "Config sanitize: miningBook.maxTunnelBlocks < miningBook.minChargeBlocks; clamping to minChargeBlocks."
+            );
+            config.miningBook.maxTunnelBlocks = config.miningBook.minChargeBlocks;
         }
         if (!Double.isFinite(config.flameBook.projectileDelaySeconds)) {
             debug.traceFileOnly(null, "Config sanitize: flameBook.projectileDelaySeconds is not finite; resetting to 0.2.");
@@ -1383,6 +1486,78 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: flameBook.projectileDelaySeconds > 5; clamping to 5.");
             config.flameBook.projectileDelaySeconds = 5;
         }
+
+        if (config.lightBook.manaCost < 0) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.manaCost < 0; clamping to 0.");
+            config.lightBook.manaCost = 0;
+        }
+        if (config.lightBook.defaultsVersion < CURRENT_LIGHT_BOOK_DEFAULTS_VERSION) {
+            config.lightBook.defaultsVersion = CURRENT_LIGHT_BOOK_DEFAULTS_VERSION;
+        }
+        if (!Double.isFinite(config.lightBook.projectileDelaySeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.projectileDelaySeconds is not finite; resetting to 0.16.");
+            config.lightBook.projectileDelaySeconds = DEFAULT_LIGHT_BOOK_PROJECTILE_DELAY_SECONDS;
+        }
+        if (config.lightBook.projectileDelaySeconds < 0) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.projectileDelaySeconds < 0; clamping to 0.");
+            config.lightBook.projectileDelaySeconds = 0;
+        }
+        if (config.lightBook.projectileDelaySeconds > 5) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.projectileDelaySeconds > 5; clamping to 5.");
+            config.lightBook.projectileDelaySeconds = 5;
+        }
+        if (!Double.isFinite(config.lightBook.maxDistanceBlocks)) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.maxDistanceBlocks is not finite; resetting to 100.");
+            config.lightBook.maxDistanceBlocks = 100.0;
+        }
+        if (config.lightBook.maxDistanceBlocks < 1) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.maxDistanceBlocks < 1; clamping to 1.");
+            config.lightBook.maxDistanceBlocks = 1.0;
+        }
+        if (config.lightBook.maxDistanceBlocks > 512) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.maxDistanceBlocks > 512; clamping to 512.");
+            config.lightBook.maxDistanceBlocks = 512.0;
+        }
+        if (!Double.isFinite(config.lightBook.initialSpeedBlocksPerSecond)) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.initialSpeedBlocksPerSecond is not finite; resetting to 55.");
+            config.lightBook.initialSpeedBlocksPerSecond = 55.0;
+        }
+        if (config.lightBook.initialSpeedBlocksPerSecond < 0.1) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.initialSpeedBlocksPerSecond < 0.1; clamping to 0.1.");
+            config.lightBook.initialSpeedBlocksPerSecond = 0.1;
+        }
+        if (config.lightBook.initialSpeedBlocksPerSecond > 300) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.initialSpeedBlocksPerSecond > 300; clamping to 300.");
+            config.lightBook.initialSpeedBlocksPerSecond = 300.0;
+        }
+        if (!Double.isFinite(config.lightBook.cruiseSpeedBlocksPerSecond)) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.cruiseSpeedBlocksPerSecond is not finite; resetting to 0.75.");
+            config.lightBook.cruiseSpeedBlocksPerSecond = 0.75;
+        }
+        if (config.lightBook.cruiseSpeedBlocksPerSecond < 0.05) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.cruiseSpeedBlocksPerSecond < 0.05; clamping to 0.05.");
+            config.lightBook.cruiseSpeedBlocksPerSecond = 0.05;
+        }
+        if (config.lightBook.cruiseSpeedBlocksPerSecond > config.lightBook.initialSpeedBlocksPerSecond) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.cruiseSpeedBlocksPerSecond > initial speed; clamping to initial speed.");
+            config.lightBook.cruiseSpeedBlocksPerSecond = config.lightBook.initialSpeedBlocksPerSecond;
+        }
+        if (!Double.isFinite(config.lightBook.slowdownSeconds)) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.slowdownSeconds is not finite; resetting to 1.2.");
+            config.lightBook.slowdownSeconds = 1.2;
+        }
+        if (config.lightBook.slowdownSeconds < 0.05) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.slowdownSeconds < 0.05; clamping to 0.05.");
+            config.lightBook.slowdownSeconds = 0.05;
+        }
+        if (config.lightBook.slowdownSeconds > 10) {
+            debug.traceFileOnly(null, "Config sanitize: lightBook.slowdownSeconds > 10; clamping to 10.");
+            config.lightBook.slowdownSeconds = 10.0;
+        }
+        config.lightBook.dynamicLightRadius = clampInt(config.lightBook.dynamicLightRadius, 1, 32, "lightBook.dynamicLightRadius");
+        config.lightBook.dynamicLightRed = clampInt(config.lightBook.dynamicLightRed, 0, 255, "lightBook.dynamicLightRed");
+        config.lightBook.dynamicLightGreen = clampInt(config.lightBook.dynamicLightGreen, 0, 255, "lightBook.dynamicLightGreen");
+        config.lightBook.dynamicLightBlue = clampInt(config.lightBook.dynamicLightBlue, 0, 255, "lightBook.dynamicLightBlue");
         if (!config.healingBook.healAmount.full && config.healingBook.healAmount.value < 0) {
             debug.traceFileOnly(null, "Config sanitize: healingBook.healAmount < 0; clamping to 0.");
             config.healingBook.healAmount.value = 0;
@@ -1450,8 +1625,8 @@ public final class AxoTalesServerConfigStore {
             config.tauntBook.groundBreakDepthPerStack = 4;
         }
         if (!Double.isFinite(config.tauntBook.groundBreakSparingChance)) {
-            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakSparingChance is not finite; resetting to 0.18.");
-            config.tauntBook.groundBreakSparingChance = 0.18;
+            debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakSparingChance is not finite; resetting to 0.");
+            config.tauntBook.groundBreakSparingChance = 0;
         }
         if (config.tauntBook.groundBreakSparingChance < 0) {
             debug.traceFileOnly(null, "Config sanitize: tauntBook.groundBreakSparingChance < 0; clamping to 0.");
@@ -1503,6 +1678,18 @@ public final class AxoTalesServerConfigStore {
         } catch (Throwable t) {
             errors.report((com.hypixel.hytale.server.core.universe.PlayerRef) null, "Failed to persist " + CONFIG_FILE_NAME + " to " + configPath + ".", t);
         }
+    }
+
+    private int clampInt(int value, int min, int max, @Nonnull String path) {
+        if (value < min) {
+            debug.traceFileOnly(null, "Config sanitize: " + path + " < " + min + "; clamping to " + min + ".");
+            return min;
+        }
+        if (value > max) {
+            debug.traceFileOnly(null, "Config sanitize: " + path + " > " + max + "; clamping to " + max + ".");
+            return max;
+        }
+        return value;
     }
 
 }

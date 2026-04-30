@@ -8,13 +8,26 @@
       }
     },
     {
-      "Type": "Simple",
-      "RunTime": 0.25,
+      "Type": "Charging",
+      "AllowIndefiniteHold": true,
+      "DisplayProgress": true,
       "Effects": {
         "ItemAnimationId": "CastMining",
-        "WaitForAnimationToFinish": true,
-        "ClearAnimationOnFinish": true,
-        "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
+        "ClearAnimationOnFinish": true
+      },
+      "Next": {
+        "0": "AxoMiningBook_Cast",
+        "1": "AxoMiningBook_Cast",
+        "2": "AxoMiningBook_Cast",
+        "3": "AxoMiningBook_Cast",
+        "4": "AxoMiningBook_Cast",
+        "5": "AxoMiningBook_Cast"
+      },
+      "Failed": {
+        "Type": "Simple",
+        "Effects": {
+          "ClearAnimationOnFinish": true
+        }
       }
     }
   ]

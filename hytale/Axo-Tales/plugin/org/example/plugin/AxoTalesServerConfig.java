@@ -27,6 +27,7 @@ public final class AxoTalesServerConfig {
     public MorphBook morphBook = new MorphBook();
     public FrostBook frostBook = new FrostBook();
     public FlameBook flameBook = new FlameBook();
+    public LightBook lightBook = new LightBook();
     public TeleportBook teleportBook = new TeleportBook();
     public MiningBook miningBook = new MiningBook();
     public HealingBook healingBook = new HealingBook();
@@ -617,6 +618,51 @@ public final class AxoTalesServerConfig {
         public double projectileDelaySeconds = 0.2;
     }
 
+    public static final class LightBook {
+        /**
+         * Internal one-time migration marker for Light Book visual defaults.
+         */
+        public int defaultsVersion = 4;
+
+        /**
+         * Mana points consumed per cast.
+         */
+        public int manaCost = 15;
+
+        /**
+         * Delay (in seconds) before the light ball is spawned so it leaves on the forward push.
+         */
+        public double projectileDelaySeconds = 0.16;
+
+        /**
+         * Maximum travel distance before the light ball is removed.
+         */
+        public double maxDistanceBlocks = 100.0;
+
+        /**
+         * Starting speed before the projectile strongly slows down.
+         */
+        public double initialSpeedBlocksPerSecond = 55.0;
+
+        /**
+         * Constant cruise speed after the initial slowdown.
+         */
+        public double cruiseSpeedBlocksPerSecond = 0.75;
+
+        /**
+         * Seconds used to ease from the initial speed into the cruise speed.
+         */
+        public double slowdownSeconds = 1.2;
+
+        /**
+         * Dynamic light radius/intensity attached to the in-flight projectile.
+         */
+        public int dynamicLightRadius = 1;
+        public int dynamicLightRed = 32;
+        public int dynamicLightGreen = 24;
+        public int dynamicLightBlue = 16;
+    }
+
     public static final class TeleportBook {
         /**
          * Maximum allowed teleport distance (in blocks) from the player look origin.
@@ -646,14 +692,29 @@ public final class AxoTalesServerConfig {
         public int manaCost = 5;
 
         /**
-         * Grid size (NxN) to mine around the targeted block. This should be an odd number (e.g., 3, 5, 7).
+         * Minimum tunnel depth (in blocks) for a released charge below the first full charge threshold.
          */
-        public int gridSize = 3;
+        public int minChargeBlocks = 1;
 
         /**
-         * Maximum number of blocks that can be broken per cast (safety cap).
+         * Additional tunnel blocks awarded for each fully charged tier.
          */
-        public int maxBlocks = 9;
+        public int blocksPerChargeTier = 2;
+
+        /**
+         * Seconds required for each full charge tier.
+         */
+        public double chargeTierSeconds = 1.0;
+
+        /**
+         * Maximum time (in seconds) that contributes to tunnel depth.
+         */
+        public double maxChargeSeconds = 5.0;
+
+        /**
+         * Maximum tunnel depth (in blocks) at full charge.
+         */
+        public int maxTunnelBlocks = 10;
     }
 
     public static final class HealingBook {
@@ -727,9 +788,10 @@ public final class AxoTalesServerConfig {
         public int groundBreakDepthPerStack = 1;
 
         /**
-         * Chance (0..1) for non-core crater columns to remain intact for a rougher, more natural break pattern.
+         * Legacy crater sparing knob. Current shipped taunts clear every breakable block in the footprint, so
+         * compatibility config keeps this at zero.
          */
-        public double groundBreakSparingChance = 0.18;
+        public double groundBreakSparingChance = 0.0;
     }
 
     /**
