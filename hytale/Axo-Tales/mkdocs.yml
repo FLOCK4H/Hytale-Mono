@@ -1,5 +1,5 @@
 site_name: Axo Tales Guidebook
-site_description: Current player and server guide for Axo Tales on Hytale 2026.03.26-89796e57b.
+site_description: Player and server guide for AxoTales on Hytale 0.7.6.
 site_url: https://flock4h.github.io/Hytale-Mono/
 repo_url: https://github.com/FLOCK4H/Hytale-Mono
 repo_name: Axo Tales source
@@ -58,17 +58,25 @@ extra:
 
 nav:
   - Home: index.md
-  - Returning Players: whats-new.md
   - Start Here: getting-started.md
   - Arsenal:
       - Overview: items/index.md
+      - Complete Item Catalog: items/catalog.md
       - Gear & Spellblade: items/gear.md
       - Spellbooks: items/spellbooks.md
+      - Blood Magic: blood-magic.md
+      - Wand & Pouch: items/arcane-equipment.md
+      - Astral Satchel: items/astral-satchel.md
+      - Arrows & Spyglass: items/scout-gear.md
       - Potions: items/potions.md
   - World:
       - Blocks & Ores: blocks-ores.md
+      - New Metals: materials.md
       - NPCs & Encounters: npcs.md
+      - Helpful Souls: souls.md
+      - Runes & Skill Tree: skill-tree.md
       - Crafting Flow: crafting.md
   - Ops:
+      - Mod Compatibility: compatibility.md
       - Configuration: config.md
       - Troubleshooting: troubleshooting.md

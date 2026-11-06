@@ -17,8 +17,8 @@
     <p><code>chance = 0.33</code>, <code>placementsPerChunk = 1</code>, <code>densityRadius = 64</code>, <code>maxPlacementsPerRadius = 1</code>.</p>
   </div>
   <div class="card" data-reveal>
-    <h3>Kudu Adepts</h3>
-    <p><code>interval = 120s</code>, <code>maxAttempts = 3</code>, <code>cellSize = 256</code>, <code>cellChance = 33%</code>, and no timed despawn.</p>
+    <h3>Elder Mages</h3>
+    <p><code>interval = 50s</code>, <code>maxAttempts = 12</code>, <code>cellSize = 192</code>, <code>cellChance = 50%</code>, and no timed despawn.</p>
   </div>
   <div class="card" data-reveal>
     <h3>Movement blocks</h3>
@@ -41,9 +41,17 @@
 | Frost Book | `manaCost = 20` |
 | Flame Book | `manaCost = 20`, `projectileDelaySeconds = 0.2` |
 | Light Book | `manaCost = 15`, `projectileDelaySeconds = 0.16`, `dynamicLightRadius = 1` |
-| Ancient Sword | `manaCost = 20`, `cooldownSeconds = 1.25`, `castDelaySeconds = 0.34` |
+| Arcane Sword | `manaCost = 20`, `cooldownSeconds = 1.25`, `castDelaySeconds = 0.34` |
 
 ## World and NPC keys
+
+### Whisperion
+
+- `whisperion.enabled = true` toggles wild spawning; existing tamed horses remain usable
+- `whisperion.spawnWeight = 2` sets the relative native creature weight; `0` disables new wild spawns.
+- Wild spawns use soil in Zone 1 plains, forests, autumn woods and Azure areas throughout the day and night. Native population and terrain checks apply.
+- Older interval, lifetime and world-cap fields are compatibility data and do not control native ecology.
+- Native movement asset `AxoTales_Whisperion`: horizontal flight 10.5, vertical 5.5. Taming is fixed at one Azure Kelp with 100% success .
 
 ### Arcane Matter ore
 
@@ -61,17 +69,27 @@
 - `worldgen.arcaneCrystalProcessExistingChunks`
 - `worldgen.arcaneCrystalPruneLegacyClusters`
 
-### Rune Knight
+### Cursed Knight
 
 - `runeKnight.spawn.*`
 - `runeKnight.despawn.*`
 - `runeKnight.projectiles.*`
 - `runeKnight.loot.*`
 
-### Kudu Adept
+### Other encounters
 
-- `kuduAdept.spawn.*`
-- `kuduAdept.despawn.*`
+- `encounters.tomTomEnabled = true` enables native Tom Tom encounters.
+- `encounters.tomTomSpawnWeight = 2.5` sets Tom Tom's relative ecology weight; `0` disables new spawns.
+- Tom Tom uses the same native surface habitats as Whisperion, during day and night.
+- `encounters.grayCatIntervalSeconds = 600` controls the separate Gray Cat clock.
+- `runeKnight.spawn.intervalSeconds = 62.5` controls Cursed Knight night opportunities.
+
+Native ecology weights are relative choices within eligible local populations, not guaranteed spawn intervals. Whisperion and Tom Tom have no separate timer or plugin world cap. Their old population files do not limit new encounters. Taming, ownership and saved saddle data remain intact.
+
+### Elder Mage
+
+- Elder Mage spawn settings
+- Elder Mage population settings
 
 ### Movement blocks
 
@@ -84,3 +102,7 @@
 - Tune `teleportBook.castDelaySeconds`, `doomBook.projectileDelaySeconds`, `flameBook.projectileDelaySeconds`, and `lightBook.projectileDelaySeconds` independently. They are separate on purpose.
 - Keep `worldgen.arcaneCrystalMaxPlacementsPerRadius = 1` unless you intentionally want crystals to become much more common again.
 - Pair config review with `spellbooks-debug.log` whenever a spell or movement report sounds vague. A lot of "balance" bugs are actually state or routing bugs.
+
+### Arcane Grass
+
+`worldgen.arcaneGrass` controls scattered surface patches in new chunks. Defaults: `enabled: true`, `chancePerNewChunk: 0.75`, `patchesPerChunk: 2`, `radius: 3`. Placement uses the world seed and replaces only eligible exposed natural grass or stone. It does not regenerate existing terrain.

@@ -1,5 +1,7 @@
 # Arsenal
 
+Browse the [complete item catalog](catalog.md) for every item, its actual crafting cost and the relevant controls guide, including the new shortbows, Spoiled Heart and Arcane Oraculum.
+
 <div class="page-header">
   <p class="eyebrow">What you can build around</p>
   <p class="lead-text">Axo Tales splits cleanly into gear, spellbooks, potions, and world-fed utility. This section is the quickest way to understand what belongs in a loadout and what each lane is good at.</p>
@@ -16,7 +18,7 @@
     </div>
     <div class="media-card__copy">
       <h3>Gear and spellblade</h3>
-      <p>Mana scaling, movement perks, invisibility, Kudu water-walk, Warfists stun shots, and the Ancient Sword.</p>
+      <p>Mana scaling, movement perks, invisibility, Warfists stun shots, and both arcane swords.</p>
     </div>
   </a>
   <a class="card media-card" href="spellbooks/" data-reveal>
@@ -27,7 +29,7 @@
     </div>
     <div class="media-card__copy">
       <h3>Spellbooks</h3>
-      <p>Eleven books that cover healing, blink, mining, summoning, burst, terrain control, and utility light.</p>
+      <p>Twelve books that cover healing, blink, mining, summoning, burst, terrain control, and utility light.</p>
     </div>
   </a>
   <a class="card media-card" href="potions/" data-reveal>
@@ -49,7 +51,7 @@
     </div>
     <div class="media-card__copy">
       <h3>World resources and blocks</h3>
-      <p>Arcane Matter, deterministic crystals, Kudu-fed drops, and the Cloud/Bounce movement pair.</p>
+      <p>Arcane Matter, deterministic crystals, creature drops, and the Cloud/Bounce movement pair.</p>
     </div>
   </a>
 </div>
@@ -66,8 +68,8 @@
     <p>Axo Tales armor pieces add max mana and mana regeneration, so spellbooks feel much better once you have at least one real gear piece online.</p>
   </div>
   <div class="card" data-reveal>
-    <h3>Kudu content bridges into utility</h3>
-    <p>Rune Knights and Adepts are not side flavor anymore. They feed Frost Book, Kudu Boots, and the movement-block bonus pool.</p>
+    <h3>Encounters and equipment</h3>
+    <p>Cursed Knights supply Evil Cores for equipment. Elder Mages accept Arcane Crystals and assist in combat.</p>
   </div>
 </div>
 
@@ -76,3 +78,11 @@
 - [Gear and Spellblade](gear.md) if you want to choose a build anchor first.
 - [Spellbooks](spellbooks.md) if you want the click-by-click book reference.
 - [Crafting Flow](../crafting.md) if you want the fastest progression order.
+
+## One focus for your collection
+
+The [Arcane Wand and Spellbook Pouch](arcane-equipment.md) let you carry books in one container and select their spells with LMB. Direct book casting remains available.
+
+For expandable storage, see [Axo's Astral Satchel](astral-satchel.md): three-row search, view filters and draggable paging.
+
+For homing ammunition and a focused target readout, see [Ancient Arrows and Axo's Spyglass](scout-gear.md), including the complete configurable display-field list.

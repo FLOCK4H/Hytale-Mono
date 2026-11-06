@@ -1,29 +1,37 @@
-# Axo Tales (Hytale Mod)
+# Axo Tales
 
-Axo Tales is a magic-heavy Hytale mod built as a plugin plus asset pack. The current repo line is pinned to Hytale release `2026.03.26-89796e57b`.
+A magic and progression mod for **Hytale 0.7.6**, with spellbooks, equipment,
+creatures and companions. Current version: **0.1.295**. Requires Java 25.
 
-## Current feature set
+[Official guidebook](https://flock4h.github.io/Hytale-Mono/) ·
+[Getting started](docs/getting-started.md) · [Item and recipe catalog](docs/items/catalog.md)
 
-- 10 spellbooks with packet-driven server logic, custom cast timing, and distinct animation identity
-- Sa'r armor, Kudu Boots, Invisibility Cloak, and Axo's Ancient Sword with passive stat and movement perks
-- Kudu Rune Knights and bondable Kudu Adepts with progression drops
-- Arcane Matter ore, Arcane Crystals, Arcane Grass, Cloud Blocks, and Bounce Blocks
-- Configurable tuning in `server-config.json` for spell costs, worldgen, NPC spawning, loot, and movement blocks
+## Features
 
-## Install / update
+- Spellbooks and the Arcane Wand for combat, healing, travel and gathering.
+- Arcane Veil, Sa'r and Ancient equipment with set bonuses and backpack progression.
+- Blood magic, the Vitae Extractor, Blood Furnace and loyal companions.
+- Villa, Fossor and Cruor Souls for collection, mining and protection.
+- Whisperion, a tameable flying horse with saved ownership and removable saddle.
+- Cursed Knights, Elder Mages, Chiro, Dreadmaw and Tom Tom encounters.
+- Agretis, Revel and Aequalis resources, Arcane Crystals and magical movement blocks.
+- The Astral Satchel, skill tree, runes, bows, Scout Arrows and Spyglass.
 
-Recommended:
-- `powershell -ExecutionPolicy Bypass -File .\scripts\deploy-to-user-mods.ps1`
+## Installation
 
-Manual:
-1. Run `.\gradlew.bat build`
-2. Copy `build/libs/AxoTales-<version>.jar` to `C:\Users\<you>\AppData\Roaming\Hytale\UserData\Mods`
-3. Remove older `AxoTales-*.jar` files so only one build is present
-4. Restart the game or server
+Install exactly one current AxoTales JAR in the server's mods directory or
+`%APPDATA%/Hytale/UserData/Mods`, remove older AxoTales JARs and restart Hytale.
+The mod targets the exact server version `0.7.6`.
 
-## Guidebook
+[Configuration](docs/config.md) covers spell costs, world resources and encounters.
+Whisperion and Tom Tom use native creature spawning in Zone 1 plains, forests,
+autumn woods and Azure areas, during day and night. Their default relative
+weights are 2 and 2.5; the native horse weight is 5. Creature sightings depend on
+eligible terrain and native population space.
 
-- MkDocs config: `mkdocs.yml`
-- Guidebook pages and assets: `docs/`
-- GitHub Pages workflow: `.github/workflows/pages.yml`
-- Release delta page: `docs/whats-new.md`
+## Repository contents
+
+`plugin/` contains Java source, `Common/` and `Server/` contain runtime assets,
+and `docs/` with `mkdocs.yml` contains the official guidebook. Build plugin JARs
+from the full standalone development checkout. This source mirror does not
+include its Gradle build setup.

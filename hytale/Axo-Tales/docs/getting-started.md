@@ -2,7 +2,7 @@
 
 <div class="page-header">
   <p class="eyebrow">Install and first boot</p>
-  <p class="lead-text">Use this page if you are setting up Axo Tales from scratch or moving a server onto the current build. The packaged jar, manifest, and guidebook all target Hytale <code>2026.03.26-89796e57b</code>.</p>
+  <p class="lead-text">Use this page if you are setting up Axo Tales from scratch or moving a server onto the current build. The packaged jar, manifest, and guidebook all target Hytale <code>0.7.6</code>.</p>
 </div>
 
 ## Install or update
@@ -30,12 +30,16 @@
   </div>
 </div>
 
+## Your first visit
+
+A centered **Axo's Tale** page introduces the story and your Silver Book. Close it with **Close** or **Escape**. It appears once for each player in each save, across that save's dimensions. Existing Silver Book claims remain intact, so the tale never grants a duplicate. If your inventory is full, make one slot free; the book and tale wait for space.
+
 ## First files worth knowing
 
 <div class="card-grid">
   <div class="card" data-reveal>
     <h3><code>server-config.json</code></h3>
-    <p>Your live tuning surface for spell costs, worldgen density, Kudu spawn rates, loot, and movement-block behavior.</p>
+    <p>Your live tuning surface for spell costs, worldgen density, creature spawn rates, loot, and movement-block behavior.</p>
   </div>
   <div class="card" data-reveal>
     <h3><code>spellbooks-debug.log</code></h3>
@@ -47,6 +51,10 @@
   </div>
 </div>
 
+## Your starter book
+
+On your first spawn with this version, you receive **Axo's Silver Book**. Right-click to fire a gray bolt for 10 base damage without spending mana. Each player gets one copy per save/server, shared across dimensions. A full inventory leaves the reward pending until a slot is free.
+
 ## Where crafting starts
 
 <div class="card-grid">
@@ -56,7 +64,7 @@
     </div>
     <div class="media-card__copy">
       <h3>Arcanist's Workbench</h3>
-      <p>Axo Tales uses two dedicated tabs here: <strong>Spellblades</strong> for books and the Ancient Sword, and <strong>Armor</strong> for the Sa'r set plus Kudu Boots.</p>
+      <p>Axo Tales uses two dedicated tabs here: <strong>Spellblades</strong> for books, Arcane Sword and the Ancient Sword, and <strong>Armor</strong> for Sa'r and Ancient armor.</p>
     </div>
   </div>
   <div class="card media-card" data-reveal>
@@ -72,7 +80,9 @@
 
 ## Good first-session route
 
+- Try the Silver Book you received on spawn, then collect mana gear for advanced books.
 - Mine or spawn enough Arcane Matter and Arcane Crystal Shards to unlock your first spellbook or armor piece.
+- Craft the [Arcane Wand and Spellbook Pouch](items/arcane-equipment.md) when you want one focus for your collection.
 - Open the Arcanist's Workbench and choose a lane: mana gear first, or one utility spellbook first.
 - Read [Crafting Flow](crafting.md) if you want the cleanest progression order.
 - Read [Troubleshooting](troubleshooting.md) early if testers keep seeing the wrong jar or the wrong live config.

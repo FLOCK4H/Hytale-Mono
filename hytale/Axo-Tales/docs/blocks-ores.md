@@ -5,6 +5,16 @@
   <p class="lead-text">The world side of Axo Tales is more than one ore drop. Arcane Matter, Arcane Crystals, and movement-block bonuses all feed progression now, while Arcane Grass remains a decorative builder-facing block.</p>
 </div>
 
+## Grow Arcane Crystals
+
+For Agretis, winter Revel and fire-region Aequalis deposits, Furnace smelting and their new equipment costs, see [New Metals](materials.md).
+
+![Arcane Crystal Seed](assets/images/items/crystal_seed.png)
+
+Mine a wild Arcane Crystal for **one guaranteed seed (100%) plus 2–3 shards**. You can also craft **Arcane Crystal Seed** at Arcanist's Workbench → Spellblades: 2 Arcane Crystal Shards, 1 Arcane Matter, 2 Life Essence; 3 seconds. Plant on prepared soil. A pointed seed crystal grows to a medium cluster after 5 minutes and matures 10 minutes later.
+
+RMB-harvest mature growth for **2–3 Arcane Crystal Shards**; it restarts the growth cycle. Breaking any stage returns its seed, and mature growth also drops shards. Native farming data saves the stages/timers across world reloads. Growth does not require water or light modifiers.
+
 ## Core resource chain
 
 <div class="card-grid">
@@ -24,7 +34,7 @@
     </div>
     <div class="media-card__copy">
       <h3>Arcane Crystal</h3>
-      <p>Acts like a routeable resource node now, not random world clutter. Crystals also feed Kudu Adept bonding and several core recipes.</p>
+      <p>Acts like a routeable resource node now, not random world clutter. Crystals also feed Elder Mage bonding and several core recipes.</p>
       <p><strong>Shipped defaults</strong>: 64-block density radius, max 1 crystal in that radius, 33% chance per placement attempt.</p>
     </div>
   </div>
@@ -57,6 +67,7 @@
     </div>
     <div class="media-card__copy">
       <h3>Cloud Block</h3>
+      <p>A dimensional pearl-white cloud bank with broad lavender shading.</p>
       <p>Directional movement tech. It is pass-through, can be placed on floors, walls, or ceilings, and launches based on the direction you enter it.</p>
       <p><strong>Shipped defaults</strong>: 6-block target height, 1.0s rearm, 4.0s chain reset.</p>
     </div>
@@ -67,6 +78,7 @@
     </div>
     <div class="media-card__copy">
       <h3>Bounce Block</h3>
+      <p>An open forged spring altar with indigo plates, gold supports and a suspended amethyst.</p>
       <p>The more predictable vertical movement block. It launches upward only and grows stronger through chained bounces.</p>
       <p><strong>Shipped defaults</strong>: 4-block base target height, +2 blocks per chain, 18-block cap.</p>
     </div>
@@ -76,6 +88,16 @@
 ## How these blocks enter play
 
 - Arcane Matter ore is the main crafted-resource route.
-- Arcane Crystals and Shards feed both recipes and the Kudu companion lane.
+- Arcane Crystals and Shards feed both recipes and the Elder Mage companions.
 - Cloud and Bounce Blocks are bonus drops rather than normal bench crafts.
-- Kudu Rune Knights, Kudu Adepts, and Arcane Matter ore can all feed the movement-block pool.
+- Cursed Knights, Elder Mages, and Arcane Matter ore can all feed the movement-block pool.
+
+## Arcane Matter appearance
+
+Arcane Matter uses the original dark rock cluster with purple cracks, fitted broken caps and small purple particles. Stone and volcanic deposits contain the same modeled cluster in their native host rock. Existing blocks update after restart; gathering, drops and generation stay the same.
+
+![Arcane Matter](assets/images/items/arcane_matter.png)
+
+## Arcane Grass
+
+Small purple patches appear among exposed natural grass and stone as you explore new terrain. They are spread across eligible regions without covering the landscape. Water, ores, worked stone and existing chunks are left alone. Arcane Grass is decorative soil; breaking it gives ordinary Dirt.

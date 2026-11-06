@@ -1,51 +1,33 @@
 # Troubleshooting
 
-<div class="page-header">
-  <p class="eyebrow">Fast fixes</p>
-  <p class="lead-text">Most Axo Tales problems still collapse to a small set of root causes: the wrong jar, the wrong runtime config, a misunderstood workbench lane, or missing debug logs when someone says a spell "just feels off."</p>
-</div>
+## The world will not open
 
-## Multiple versions are loading
+Use Hytale **0.7.6** and the same AxoTales build on the server and client. Keep exactly one AxoTales JAR in `UserData/Mods`, close Hytale before replacing it, then restart. Avoid duplicate copies in individual save folders. Keep a world backup and preserve your saves and configuration.
 
-<div class="card" data-reveal>
-  <h3>Symptom</h3>
-  <p>The game behaves like an older build, or different testers swear they are on the same mod version but see different behavior.</p>
-  <h3>Fix</h3>
-  <p>Remove old <code>AxoTales-*.jar</code> files from <code>C:\Users\&lt;you&gt;\AppData\Roaming\Hytale\UserData\Mods</code>. If Windows refuses to delete one, the world is still running and holding the file open.</p>
-</div>
+If joining still fails, save the latest client and server logs and check the [mod compatibility guide](compatibility.md). Include the first asset or UI error when reporting the issue.
 
-## The live config does not match the guidebook
+## A wand or spellbook does nothing
 
-<div class="card" data-reveal>
-  <h3>Symptom</h3>
-  <p>Arcane Crystal density, Kudu spawn timing, or spell costs feel different from the docs.</p>
-  <h3>Fix</h3>
-  <p>The guidebook documents <code>src/main/resources/server-config.json</code>. Your live world may already own an older or hand-edited runtime <code>server-config.json</code>. Compare the two before changing code.</p>
-</div>
+Use **LMB** on the Arcane Wand to select a spell. Carry the matching book in your inventory or a carried Spellbook Pouch. **RMB** casts; **Crouch + RMB** uses the alternate action where available. Keep the item selected through its wind-up and check mana, cooldown and target range.
 
-## Spell behavior feels wrong or inconsistent
+Bloody Book requires a living target within eight blocks and uninterrupted aim for eight seconds. Book of Life needs DNA, some mana and safe space for every creature in the batch.
 
-<div class="card" data-reveal>
-  <h3>Symptom</h3>
-  <p>Teleport timing feels late, a spell refuses to cast, Light Book never settles, or mana gating looks wrong.</p>
-  <h3>Fix</h3>
-  <p>Grab the persistent <code>spellbooks-debug.log</code> from the plugin data directory. Axo Tales logs item detection, stat snapshots, event routing, and final allow-or-deny decisions there.</p>
-</div>
+## Extra jumps are unavailable
 
-## Bench or recipe confusion after updating
+Equip Sa'r Boots or Ancient Boots in the legs slot. Jump, release Jump, then press it again while airborne. Holding Jump does not request another jump. Landing restores the allowance. A complete Ancient set adds one more air jump.
 
-<div class="card" data-reveal>
-  <h3>Symptom</h3>
-  <p>Players think recipes vanished because they are looking in the old generic Arcane bench path.</p>
-  <h3>Fix</h3>
-  <p>Axo Tales recipes now live in the runtime-injected <strong>Spellblades</strong> and <strong>Armor</strong> tabs on the Arcanist's Workbench. Point players there first.</p>
-</div>
+## Concealment and invisibility
 
-## Invalid config edits
+The full **Arcane Veil set** limits native creature detection to five blocks; it does not hide you from other players. The **Invisibility Cloak** hides the character and equipment from players and prevents native creatures from selecting you as a target. Equipping a single robe piece does not grant the full Veil set bonus.
 
-<div class="card" data-reveal>
-  <h3>Symptom</h3>
-  <p>Manual edits leave weird negative numbers, impossible values, or malformed JSON.</p>
-  <h3>Fix</h3>
-  <p><code>server-config.json</code> must stay valid JSON. Axo Tales sanitizes some bad numeric values toward safe defaults, but malformed JSON still has to be corrected manually.</p>
-</div>
+## Resources or creatures are hard to find
+
+Explore new terrain for Arcane Grass patches. Arcane Crystals, ores and creature encounters have their own placement rules. Spawn intervals are opportunities rather than guaranteed sightings: daylight, terrain, nearby players and population limits affect eligibility. See [NPCs and encounters](npcs.md), [materials](materials.md) and [configuration](config.md).
+
+## The guide's numbers differ from my server
+
+Server owners can tune spell costs, encounter rates and world generation. Check the active server configuration and installed mod pack. Other mods can change native items or behavior; the [compatibility guide](compatibility.md) describes the shared systems.
+
+## Storage will not accept an item
+
+An Astral Satchel cannot hold another Astral Satchel. A filtered view changes what you see, not what can be stored. Use a free inventory slot when withdrawing. If storage reports corrupt or missing data, preserve the files and server logs and report the issue; do not replace the storage with an empty file.
