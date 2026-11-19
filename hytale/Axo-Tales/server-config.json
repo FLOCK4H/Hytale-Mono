@@ -15,8 +15,8 @@
     "arcaneMatterOres": {
       "enabled": true,
       "processExistingChunks": true,
-      "stoneOreBlockId": "Ore_Stone_Parent",
-      "volcanicOreBlockId": "Arcane_Matter_Volcanic",
+      "stoneOreBlockId": "Axo_Arcane_Matter_Ore_Stone",
+      "volcanicOreBlockId": "Axo_Arcane_Matter_Ore_Volcanic",
       "stone": {
         "enabled": true,
         "matchAnyRock": true,
@@ -46,6 +46,12 @@
           "Rock_Volcanic"
         ]
       }
+    },
+    "arcaneGrass": {
+      "enabled": true,
+      "chancePerNewChunk": 0.75,
+      "patchesPerChunk": 2,
+      "radius": 3
     }
   },
   "workarounds": {
@@ -71,11 +77,11 @@
   },
   "runeKnight": {
     "enabled": true,
-    "roleName": "Kudu_Rune_Knight",
+    "roleName": "Cursed_Knight",
     "spawn": {
-      "maxActivePerWorld": 4,
+      "maxActivePerWorld": 8,
       "spawnsPerInterval": 1,
-      "intervalSeconds": 300.0,
+      "intervalSeconds": 62.5,
       "maxAttemptsPerInterval": 12,
       "minDistanceFromPlayersBlocks": 16.0,
       "radiusMinBlocks": 24.0,
@@ -85,7 +91,7 @@
     },
     "despawn": {
       "onDay": true,
-      "afterSeconds": 300.0
+      "afterSeconds": 600
     },
     "aggro": {
       "radiusBlocks": 40.0
@@ -98,7 +104,6 @@
       "aimHeightBlocks": 1.25
     },
     "loot": {
-      "kuduBootsDropChancePercent": 5,
       "frostBookDropChancePercent": 5
     }
   },
@@ -109,13 +114,13 @@
     "spawn": {
       "maxActivePerWorld": 500,
       "spawnsPerInterval": 1,
-      "intervalSeconds": 120.0,
-      "maxAttemptsPerInterval": 3,
-      "densityCellSizeBlocks": 256.0,
-      "cellSpawnChancePercent": 33,
-      "minDistanceFromPlayersBlocks": 8.0,
-      "radiusMinBlocks": 8.0,
-      "radiusMaxBlocks": 280.0,
+      "intervalSeconds": 50,
+      "maxAttemptsPerInterval": 12,
+      "densityCellSizeBlocks": 192,
+      "cellSpawnChancePercent": 50,
+      "minDistanceFromPlayersBlocks": 16,
+      "radiusMinBlocks": 24,
+      "radiusMaxBlocks": 112,
       "allowInMemoryChunks": true,
       "daySunlightThreshold": 0.0
     },
@@ -197,5 +202,21 @@
     "manaCost": 20,
     "cooldownSeconds": 1.25,
     "castDelaySeconds": 0.34
+  },
+  "whisperion": {
+    "enabled": true,
+    "maxWildPerWorld": 3,
+    "wildLifetimeSeconds": 1200.0,
+    "intervalSeconds": 330,
+    "spawnWeight": 2
+  },
+  "encounterDefaultsVersion": 3,
+  "encounters": {
+    "tomTomIntervalSeconds": 100,
+    "grayCatIntervalSeconds": 600,
+    "tomTomEnabled": true,
+    "tomTomSpawnWeight": 2.5,
+    "grayCatEnabled": true,
+    "grayCatSpawnWeight": 8
   }
 }

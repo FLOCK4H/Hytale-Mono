@@ -25,22 +25,22 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Applies movement buffs that stack across armor and temporary effects.
- *
- * <p>Currently supports:</p>
- * <ul>
- *   <li>Sa'r Boots: +15% speed and +2 blocks jump height</li>
- *   <li>Sa'r Diadem: swim speed/jump and oxygen refill</li>
- *   <li>Swift Potion: +20% speed</li>
- *   <li>Rabbit Potion: +2 blocks jump height</li>
- * </ul>
- */
+
+
+
+
+
+
+
+
+
+
+
 public final class MovementBuffSystem extends TickingSystem<EntityStore> {
 
     public static final String SWIFT_EFFECT_ID = "AxoTales_Swift";
     public static final String RABBIT_EFFECT_ID = "AxoTales_Rabbit";
-    public static final String SAR_DIADEM_ITEM_ID = "Sar_Diadem";
+    public static final String SAR_DIADEM_ITEM_ID = "Axo_Sar_Diadem";
 
     private static final float SARS_SPEED_MULTIPLIER = 1.15f;
     private static final float SAR_DIADEM_SWIM_SPEED_MULTIPLIER = 1.25f;
@@ -59,6 +59,11 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
     private record BuffFlags(
         boolean wearingSarsBoots,
         boolean wearingSarDiadem,
+        boolean wearingRobeSet,
+        boolean wearingRelicSet,
+        boolean wearingAncientBoots,
+        boolean wearingAncientHelm,
+        boolean wearingAncientSet,
         boolean swiftActive,
         boolean rabbitActive,
         boolean aquaticBoostActive
@@ -72,7 +77,7 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
 
     private volatile int swiftEffectIndex = -1;
     private volatile int rabbitEffectIndex = -1;
-    private long nextSweepAtNanos = 0L;
+    private final Map<Store<EntityStore>,Long> nextSweepByStore = java.util.Collections.synchronizedMap(new java.util.WeakHashMap<>());
 
     public MovementBuffSystem(
         @Nonnull PluginErrorReporter errors,
@@ -86,10 +91,10 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
         try {
             long nowNanos = System.nanoTime();
-            if (nextSweepAtNanos > nowNanos) {
+            if (nextSweepByStore.getOrDefault(store,0L) > nowNanos) {
                 return;
             }
-            nextSweepAtNanos = nowNanos + SWEEP_INTERVAL_NANOS;
+            nextSweepByStore.put(store,nowNanos + SWEEP_INTERVAL_NANOS);
 
             int swiftIndex = resolveSwiftEffectIndex();
             int rabbitIndex = resolveRabbitEffectIndex();
@@ -153,9 +158,14 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
                         );
                         boolean swiftActive = swiftIndex >= 0 && effects.getActiveEffects().containsKey(swiftIndex);
                         boolean rabbitActive = rabbitIndex >= 0 && effects.getActiveEffects().containsKey(rabbitIndex);
-                        boolean aquaticBoostActive = wearingSarDiadem && (movementStates.swimming || movementStates.inFluid);
+                        boolean wearingAncientBoots=AncientArmor.worn(store,ref,ItemArmorSlot.Legs,AncientArmor.BOOTS);
+                        boolean wearingAncientHelm=AncientArmor.worn(store,ref,ItemArmorSlot.Head,AncientArmor.HEAD);
+                        boolean wearingAncientSet=ArcaneArmorSets.ancient(store,ref);
+                        boolean aquaticBoostActive = (wearingSarDiadem||wearingAncientHelm) && (movementStates.swimming || movementStates.inFluid);
 
-                        BuffFlags flags = new BuffFlags(wearingSarsBoots, wearingSarDiadem, swiftActive, rabbitActive, aquaticBoostActive);
+                        boolean wearingRobeSet=ArcaneArmorSets.robe(store,ref);
+                        boolean wearingRelicSet=ArcaneArmorSets.relic(store,ref);
+                        BuffFlags flags = new BuffFlags(wearingSarsBoots, wearingSarDiadem, wearingRobeSet, wearingRelicSet, wearingAncientBoots, wearingAncientHelm, wearingAncientSet, swiftActive, rabbitActive, aquaticBoostActive);
                         BuffFlags previousFlags = lastFlagsByPlayer.put(playerUuid, flags);
                         if (previousFlags == null || !previousFlags.equals(flags)) {
                             debug.traceFileOnly(
@@ -163,6 +173,7 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
                                 "MovementBuff event=buffFlagsChanged"
                                     + " boots.active=" + wearingSarsBoots
                                     + " diadem.active=" + wearingSarDiadem
+                                    + " robe.fullSet=" + wearingRobeSet + " relic.fullSet=" + wearingRelicSet
                                     + " swift.active=" + swiftActive
                                     + " rabbit.active=" + rabbitActive
                                     + " aquaticBoost.active=" + aquaticBoostActive
@@ -175,16 +186,17 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
                             );
                         }
 
-                        float speedMultiplier = (wearingSarsBoots ? SARS_SPEED_MULTIPLIER : 1f)
+                        int skillMask=SkillProgression.mask(store,ref);
+                        float speedMultiplier = (1+SkillCatalog.speed(skillMask))*armorSpeed(wearingAncientSet,wearingRelicSet,wearingRobeSet,wearingAncientBoots,wearingSarsBoots)
                             * (swiftActive ? SWIFT_SPEED_MULTIPLIER : 1f)
-                            * (aquaticBoostActive ? SAR_DIADEM_SWIM_SPEED_MULTIPLIER : 1f);
+                            * (aquaticBoostActive ? wearingAncientHelm?1.5f:SAR_DIADEM_SWIM_SPEED_MULTIPLIER : 1f);
 
-                        float bonusBlocks = (wearingSarsBoots ? JUMP_BONUS_BLOCKS : 0f)
-                            + (rabbitActive ? JUMP_BONUS_BLOCKS : 0f);
+                        float bonusBlocks = (wearingAncientBoots?3f:wearingSarsBoots ? JUMP_BONUS_BLOCKS : 0f)
+                            + (rabbitActive ? JUMP_BONUS_BLOCKS : 0f) + (SkillCatalog.has(skillMask,8)?1:0);
                         float jumpMultiplier = bonusBlocks > 0f
                             ? (float) Math.sqrt((BASE_JUMP_HEIGHT_BLOCKS + bonusBlocks) / BASE_JUMP_HEIGHT_BLOCKS)
                             : 1f;
-                        float swimJumpMultiplier = wearingSarDiadem ? SAR_DIADEM_SWIM_JUMP_MULTIPLIER : 1f;
+                        float swimJumpMultiplier = wearingAncientHelm?1.5f:wearingSarDiadem ? SAR_DIADEM_SWIM_JUMP_MULTIPLIER : 1f;
 
                         MovementDefaults defaults = resolveMovementDefaults(
                             movementManager,
@@ -219,7 +231,7 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
                         float oxygenCurrentBefore = Float.NaN;
                         float oxygenMaxBefore = Float.NaN;
                         boolean oxygenRefilled = false;
-                        if (wearingSarDiadem && oxygenIndex != Integer.MIN_VALUE && oxygenIndex >= 0) {
+                        if ((wearingSarDiadem||wearingAncientHelm) && oxygenIndex != Integer.MIN_VALUE && oxygenIndex >= 0) {
                             EntityStatValue oxygen = stats.get(oxygenIndex);
                             if (oxygen != null) {
                                 oxygenCurrentBefore = oxygen.get();
@@ -279,6 +291,7 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
                             playerRef,
                             "MovementBuff event=apply"
                                 + " boots.active=" + wearingSarsBoots
+                                + " robe.fullSet=" + wearingRobeSet + " relic.fullSet=" + wearingRelicSet
                                 + " diadem.active=" + wearingSarDiadem
                                 + " swift.active=" + swiftActive
                                 + " rabbit.active=" + rabbitActive
@@ -309,6 +322,10 @@ public final class MovementBuffSystem extends TickingSystem<EntityStore> {
         } catch (Throwable t) {
             errors.report((PlayerRef) null, "MovementBuffSystem: tick failed.", t);
         }
+    }
+
+    static float armorSpeed(boolean ancientSet,boolean relicSet,boolean robe,boolean ancientBoots,boolean sarBoots){
+        return (ancientSet?1.5f:relicSet?1.35f:robe?1.3f:1f)*(ancientBoots?1.3f:!relicSet&&!robe&&sarBoots?SARS_SPEED_MULTIPLIER:1f);
     }
 
     private int resolveSwiftEffectIndex() {

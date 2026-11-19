@@ -4,8 +4,8 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.protocol.GameMode;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
@@ -16,25 +16,25 @@ import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.role.Role;
 import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import java.util.UUID;
 
-/**
- * Debug helpers for the Rune Knight spawner.
- *
- * <p>Commands:</p>
- * <ul>
- *   <li>{@code /runeknight spawn} - spawns one Rune Knight near you</li>
- *   <li>{@code /runeknight clear} - despawns tracked Rune Knights in your world</li>
- * </ul>
- */
+
+
+
+
+
+
+
+
+
 public final class RuneKnightCommand extends AbstractCommandCollection {
 
     private final PluginErrorReporter errors;
@@ -48,12 +48,13 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
         @Nonnull AxoTalesServerConfig config,
         @Nonnull RuneKnightSpawnState spawnState
     ) {
-        super("runeknight", "Rune Knight debug helpers.");
+        super("runeknight", "Cursed Knight debug helpers.");
         this.errors = errors;
         this.debug = debug;
         this.config = config;
         this.spawnState = spawnState;
-        this.setPermissionGroup(GameMode.Creative);
+        this.requirePermission("flock4h.axotales.command.runeknight");
+        this.setPermissionGroups("hytale:WorldEditor");
         this.addSubCommand(new Spawn(errors, debug, config, spawnState));
         this.addSubCommand(new Clear(errors, debug, spawnState));
     }
@@ -73,12 +74,13 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
             @Nonnull AxoTalesServerConfig config,
             @Nonnull RuneKnightSpawnState spawnState
         ) {
-            super("spawn", "Spawns a Rune Knight near you (debug).");
+            super("spawn", "Spawns a Cursed Knight near you (debug).");
             this.errors = errors;
             this.debug = debug;
             this.config = config;
             this.spawnState = spawnState;
-            this.setPermissionGroup(GameMode.Creative);
+            this.requirePermission("flock4h.axotales.command.runeknight.spawn");
+            this.setPermissionGroups("hytale:WorldEditor");
         }
 
         @Override
@@ -137,7 +139,7 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
                             return;
                         }
 
-                        if (dir == null || !dir.isFinite() || dir.squaredLength() < 1e-9) {
+                        if (dir == null || !dir.isFinite() || dir.lengthSquared() < 1e-9) {
                             dir = new Vector3d(1, 0, 0);
                         }
 
@@ -145,10 +147,7 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
                         int z = (int) Math.floor(pos.z + dir.z * 6.0);
 
                         long chunkIndex = ChunkUtil.indexChunkFromBlock(x, z);
-                        WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
-                        if (chunk == null) {
-                            chunk = world.getChunkIfInMemory(chunkIndex);
-                        }
+                        WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
                         if (chunk == null) {
                             player.sendMessage(Message.raw("Chunk not loaded; move a bit and try again."));
                             return;
@@ -165,7 +164,7 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
                         }
 
                         Vector3d spawnPos = new Vector3d(x + 0.5, y, z + 0.5);
-                        it.unimi.dsi.fastutil.Pair<Ref<EntityStore>, ?> spawned = npcPlugin.spawnNPC(store, roleName, null, spawnPos, Vector3f.ZERO);
+                        it.unimi.dsi.fastutil.Pair<Ref<EntityStore>, ?> spawned = npcPlugin.spawnNPC(store, roleName, null, spawnPos, new Rotation3f());
                         Ref<EntityStore> npcRef = spawned != null ? spawned.left() : null;
                         if (npcRef == null || !npcRef.isValid()) {
                             player.sendMessage(Message.raw("Spawn failed."));
@@ -177,7 +176,7 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
                             try {
                                 store.removeEntity(npcRef, com.hypixel.hytale.component.RemoveReason.REMOVE);
                             } catch (Throwable ignored) {
-                                // Best effort.
+
                             }
                             player.sendMessage(Message.raw("Spawn failed (missing NPC component)."));
                             return;
@@ -189,7 +188,7 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
                             try {
                                 store.removeEntity(npcRef, com.hypixel.hytale.component.RemoveReason.REMOVE);
                             } catch (Throwable ignored) {
-                                // Best effort.
+
                             }
                             player.sendMessage(Message.raw("Spawn failed (missing UUID)."));
                             return;
@@ -202,9 +201,9 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
                         long lifetimeNanos = lifetimeSeconds > 0 ? (long) (lifetimeSeconds * 1_000_000_000L) : 0L;
                         long expiresAtNanos = lifetimeNanos > 0 ? nowNanos + lifetimeNanos : 0L;
                         spawnState.trackSpawn(world, uuid, nowNanos, expiresAtNanos);
-                        tryAggroOnSpawn(entityStore, npc, uuid, player.getUuid(), roleName, world);
+                        tryAggroOnSpawn(entityStore, npc, npcRef, uuid, player.getUuid(), roleName, world);
 
-                        player.sendMessage(Message.raw("Spawned Rune Knight (" + roleName + ") at x=" + x + " y=" + y + " z=" + z + "."));
+                        player.sendMessage(Message.raw("Spawned Cursed Knight (" + roleName + ") at x=" + x + " y=" + y + " z=" + z + "."));
                         debug.traceFileOnly(
                             player,
                             "RuneKnightCommand event=spawn"
@@ -227,33 +226,35 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
         private void tryAggroOnSpawn(
             @Nonnull EntityStore entityStore,
             @Nonnull NPCEntity npc,
+            @Nonnull Ref<EntityStore> npcRef,
             @Nonnull UUID knightUuid,
             @Nonnull UUID anchorPlayerUuid,
             @Nonnull String roleName,
             @Nonnull World world
         ) {
+            Store<EntityStore> store = entityStore.getStore();
             Ref<EntityStore> playerEntityRef = entityStore.getRefFromUUID(anchorPlayerUuid);
             if (playerEntityRef == null || !playerEntityRef.isValid()) {
                 return;
             }
 
             Role role = npc.getRole();
-            if (role == null || role.getMarkedEntitySupport() == null || role.getWorldSupport() == null) {
+            if (role == null || MarkedEntitySupport.get(npcRef, store) == null || WorldSupport.get(npcRef, store) == null) {
                 return;
             }
 
             try {
-                role.getWorldSupport().overrideAttitude(playerEntityRef, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
+                WorldSupport.get(npcRef, store).overrideAttitude(playerEntityRef, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
 
             try {
-                role.setMarkedTarget(MarkedEntitySupport.DEFAULT_TARGET_SLOT, playerEntityRef);
-                role.getWorldSupport().requestNewPath();
-                role.notifySensorMatch();
+                role.setMarkedTarget(npcRef, store, MarkedEntitySupport.DEFAULT_TARGET_SLOT, playerEntityRef);
+                WorldSupport.get(npcRef, store).requestNewPath();
+                role.acquireExecutionSupport(npcRef, store).notifySensorMatch();
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
 
             debug.traceFileOnly(
@@ -267,7 +268,7 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
             );
         }
 
-        private static int findAirColumn(@Nonnull WorldChunk chunk, int x, int y, int z) {
+        private static int findAirColumn(@Nonnull WorldBlocks.Column chunk, int x, int y, int z) {
             int base = clampY(y);
             for (int dy = 0; dy <= 4; dy++) {
                 int tryY = clampY(base + dy);
@@ -288,7 +289,7 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
             return -1;
         }
 
-        private static boolean isAir(@Nonnull WorldChunk chunk, int x, int y, int z) {
+        private static boolean isAir(@Nonnull WorldBlocks.Column chunk, int x, int y, int z) {
             try {
                 var type = chunk.getBlockType(x, y, z);
                 return type == null
@@ -312,11 +313,12 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
         private final RuneKnightSpawnState spawnState;
 
         private Clear(@Nonnull PluginErrorReporter errors, @Nonnull PluginDebugReporter debug, @Nonnull RuneKnightSpawnState spawnState) {
-            super("clear", "Despawns tracked Rune Knights in your world (debug).");
+            super("clear", "Despawns tracked Cursed Knights in your world (debug).");
             this.errors = errors;
             this.debug = debug;
             this.spawnState = spawnState;
-            this.setPermissionGroup(GameMode.Creative);
+            this.requirePermission("flock4h.axotales.command.runeknight.clear");
+            this.setPermissionGroups("hytale:WorldEditor");
         }
 
         @Override
@@ -368,13 +370,13 @@ public final class RuneKnightCommand extends AbstractCommandCollection {
                                 store.removeEntity(ref, com.hypixel.hytale.component.RemoveReason.REMOVE);
                                 removed++;
                             } catch (Throwable ignored) {
-                                // Best effort.
+
                             } finally {
                                 spawnState.remove(world, uuid);
                             }
                         }
 
-                        player.sendMessage(Message.raw("Removed " + removed + " tracked Rune Knights."));
+                        player.sendMessage(Message.raw("Removed " + removed + " tracked Cursed Knights."));
                         debug.traceFileOnly(player, "RuneKnightCommand event=clear removed=" + removed + " world=" + world.getName());
                     } catch (Throwable t2) {
                         errors.report(player, "Failed to run /runeknight clear.", t2);

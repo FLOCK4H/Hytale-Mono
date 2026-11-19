@@ -21,27 +21,27 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Makes invisible players hidden from other players using {@link PlayerRef#getHiddenPlayersManager()}.
- *
- * <p>This mirrors the built-in server {@code /hide} behavior: it does not hide a player from themself.</p>
- *
- * <p>Why this exists: model swapping (ModelChange) is not a safe way to hide player visuals in current builds and
- * can produce broken "spaghetti/shards" rendering because player skin/attachments expect the normal player rig.</p>
- *
- * <p>Debug traces are written to the persistent plugin debug log.</p>
- */
+
+
+
+
+
+
+
+
+
+
 public final class InvisibilityHiddenPlayersSystem extends TickingSystem<EntityStore> {
 
     private static final String INVISIBILITY_EFFECT_ID = InvisibilityPotionEffectDebugSystem.INVISIBILITY_EFFECT_ID;
-    private static final long SWEEP_INTERVAL_NANOS = 750_000_000L;
+    private static final long SWEEP_INTERVAL_NANOS = 100_000_000L;
 
     private final PluginErrorReporter errors;
     private final PluginDebugReporter debug;
-    private final Map<UUID, Boolean> lastActiveByPlayer = new ConcurrentHashMap<>();
 
     private volatile int effectIndex = -1;
-    private long nextSweepAtNanos = 0L;
+    private final SweepClock<Store<EntityStore>> clock=new SweepClock<>();
+    private final InvisibilityVisibility visibility=new InvisibilityVisibility();
 
     public InvisibilityHiddenPlayersSystem(
         @Nonnull PluginErrorReporter errors,
@@ -55,10 +55,7 @@ public final class InvisibilityHiddenPlayersSystem extends TickingSystem<EntityS
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
         try {
             long nowNanos = System.nanoTime();
-            if (nextSweepAtNanos > nowNanos) {
-                return;
-            }
-            nextSweepAtNanos = nowNanos + SWEEP_INTERVAL_NANOS;
+            if(!clock.due(store,nowNanos,SWEEP_INTERVAL_NANOS))return;
 
             int invisIndex = resolveEffectIndex();
             if (invisIndex < 0) {
@@ -76,67 +73,18 @@ public final class InvisibilityHiddenPlayersSystem extends TickingSystem<EntityS
                 return;
             }
 
-            store.forEachChunk(
-                Query.and(PlayerRef.getComponentType(), Player.getComponentType(), EffectControllerComponent.getComponentType()),
-                (@Nonnull ArchetypeChunk<EntityStore> chunk, @Nonnull CommandBuffer<EntityStore> commandBuffer) -> {
-                    for (int i = 0; i < chunk.size(); i++) {
-                        Ref<EntityStore> entityRef = chunk.getReferenceTo(i);
-                        if (entityRef == null || !entityRef.isValid()) {
-                            continue;
-                        }
-
-                        PlayerRef subjectRef = chunk.getComponent(i, PlayerRef.getComponentType());
-                        if (subjectRef == null || subjectRef.getUuid() == null) {
-                            continue;
-                        }
-
-                        EffectControllerComponent effects = chunk.getComponent(i, EffectControllerComponent.getComponentType());
-                        if (effects == null) {
-                            continue;
-                        }
-
-                        UUID subjectUuid = subjectRef.getUuid();
-                        boolean active = effects.getActiveEffects().containsKey(invisIndex);
-                        Boolean last = lastActiveByPlayer.put(subjectUuid, active);
-                        if (last != null && last == active) {
-                            continue;
-                        }
-
-                        int viewersConsidered = 0;
-                        int viewersChanged = 0;
-                        for (PlayerRef viewer : playerRefs) {
-                            if (viewer == null || viewer.getUuid() == null) {
-                                continue;
-                            }
-                            if (viewer.getUuid().equals(subjectUuid)) {
-                                continue; // matches /hide: don't hide from self
-                            }
-                            viewersConsidered++;
-                            try {
-                                if (active) {
-                                    viewer.getHiddenPlayersManager().hidePlayer(subjectUuid);
-                                } else {
-                                    viewer.getHiddenPlayersManager().showPlayer(subjectUuid);
-                                }
-                                viewersChanged++;
-                            } catch (Throwable ignored) {
-                                // best-effort
-                            }
-                        }
-
-                        debug.traceFileOnly(
-                            subjectRef,
-                            "InvisibilityHiddenPlayers event=visibilityChange"
-                                + " effectId=" + INVISIBILITY_EFFECT_ID
-                                + " effectIndex=" + invisIndex
-                                + " active=" + active
-                                + " viewers.considered=" + viewersConsidered
-                                + " viewers.changed=" + viewersChanged
-                                + " selfHidden=false"
-                        );
-                    }
+            var invisible=new java.util.HashSet<UUID>();
+            store.forEachChunk(Query.and(PlayerRef.getComponentType(),EffectControllerComponent.getComponentType()),(chunk,buffer)->{
+                for(int i=0;i<chunk.size();i++) {
+                    var subject=chunk.getComponent(i,PlayerRef.getComponentType());
+                    if(InvisibilityConcealment.hidden(buffer,chunk.getReferenceTo(i)))invisible.add(subject.getUuid());
                 }
-            );
+            });
+            for(var viewer:playerRefs) {
+                int changed=visibility.reconcile(viewer.getUuid(),invisible,viewer.getHiddenPlayersManager());
+                if(changed>0)debug.traceFileOnly(viewer,"InvisibilityHiddenPlayers event=visibilityReconcile effectId="+INVISIBILITY_EFFECT_ID
+                    +" effectIndex="+invisIndex+" invisibleSubjects="+invisible.size()+" changed="+changed+" selfHidden=false modelSwap=false");
+            }
         } catch (Throwable t) {
             errors.report((PlayerRef) null, "InvisibilityHiddenPlayersSystem: tick failed.", t);
         }
@@ -161,9 +109,9 @@ public final class InvisibilityHiddenPlayersSystem extends TickingSystem<EntityS
         }
 
         UUID subjectUuid = playerRef.getUuid();
-        lastActiveByPlayer.remove(subjectUuid);
+        visibility.forgetViewer(subjectUuid);
 
-        // Ensure this UUID is not left hidden for other players across worlds.
+
         try {
             Universe universe = Universe.get();
             if (universe == null || universe.getWorlds() == null) {
@@ -187,7 +135,7 @@ public final class InvisibilityHiddenPlayersSystem extends TickingSystem<EntityS
                             continue;
                         }
                         try {
-                            viewer.getHiddenPlayersManager().showPlayer(subjectUuid);
+                            visibility.releaseSubject(viewer.getUuid(),subjectUuid,viewer.getHiddenPlayersManager());
                         } catch (Throwable ignored) {
                         }
                     }

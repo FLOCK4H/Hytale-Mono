@@ -6,10 +6,7 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
-import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.protocol.ItemArmorSlot;
-import com.hypixel.hytale.server.core.asset.type.attitude.Attitude;
 import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffect;
 import com.hypixel.hytale.server.core.asset.type.entityeffect.config.OverlapBehavior;
 import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
@@ -17,32 +14,17 @@ import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.core.util.TargetUtil;
-import com.hypixel.hytale.server.npc.entities.NPCEntity;
-import com.hypixel.hytale.server.npc.role.Role;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Invisibility Cloak: while worn, keeps the wearer invisible and best-effort prevents nearby NPCs from attacking them.
- *
- * <p>Implementation notes:
- * <ul>
- *   <li>Uses the existing {@code AxoTales_Invisibility} EntityEffect (ModelOverride) to avoid stacking model overrides.</li>
- *   <li>Refreshes the effect only when missing or near expiry so it doesn't override long potion durations.</li>
- *   <li>For nearby NPCs, continuously applies a short-lived {@link Attitude#FRIENDLY} override.</li>
- * </ul>
- *
- * <p>Debug traces are written to the persistent plugin debug log.</p>
- */
+
 public final class InvisibilityCloakSystem extends TickingSystem<EntityStore> {
 
-    public static final String CLOAK_ITEM_ID = "Invisibility_Cloak";
+    public static final String CLOAK_ITEM_ID = "Axo_Invisibility_Cloak";
     public static final String INVISIBILITY_EFFECT_ID = InvisibilityPotionEffectDebugSystem.INVISIBILITY_EFFECT_ID;
     public static final String INVISIBILITY_AURA_EFFECT_ID = "AxoTales_Invisibility_Aura";
 
@@ -52,9 +34,6 @@ public final class InvisibilityCloakSystem extends TickingSystem<EntityStore> {
     private static final float AURA_REFRESH_WHEN_BELOW_SECONDS = 1.5f;
     private static final float AURA_REFRESH_DURATION_SECONDS = 2.5f;
 
-    private static final double AGGRO_RADIUS_BLOCKS = 24.0;
-    private static final double FRIENDLY_OVERRIDE_SECONDS = 1.25;
-    private static final int MAX_ENTITIES_CONSIDERED = 64;
     private static final long DEBUG_INTERVAL_NANOS = 30_000_000_000L;
 
     private final PluginErrorReporter errors;
@@ -65,7 +44,7 @@ public final class InvisibilityCloakSystem extends TickingSystem<EntityStore> {
 
     private volatile int invisEffectIndex = -1;
     private volatile int auraEffectIndex = -1;
-    private volatile long nextTickAtNanos;
+    private final SweepClock<Store<EntityStore>> clock=new SweepClock<>();
 
     public InvisibilityCloakSystem(
         @Nonnull PluginErrorReporter errors,
@@ -79,11 +58,7 @@ public final class InvisibilityCloakSystem extends TickingSystem<EntityStore> {
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
         try {
             long nowNanos = System.nanoTime();
-            long next = nextTickAtNanos;
-            if (next > 0 && nowNanos < next) {
-                return;
-            }
-            nextTickAtNanos = nowNanos + TICK_INTERVAL_NANOS;
+            if(!clock.due(store,nowNanos,TICK_INTERVAL_NANOS))return;
 
             int effectIndex = resolveInvisibilityEffectIndex();
             if (effectIndex < 0) {
@@ -158,7 +133,6 @@ public final class InvisibilityCloakSystem extends TickingSystem<EntityStore> {
                         if (auraIndex >= 0 && auraEffect != null) {
                             refreshAuraIfNeeded(store, entityRef, playerRef, effects, auraEffect, auraIndex, nowNanos, chestItemId);
                         }
-                        suppressNearbyNpcAggro(store, entityRef, playerRef, uuid, nowNanos);
                     }
                 }
             );
@@ -266,83 +240,6 @@ public final class InvisibilityCloakSystem extends TickingSystem<EntityStore> {
                 + " aura.remainingBefore=" + remaining
                 + " aura.refreshWhenBelow=" + AURA_REFRESH_WHEN_BELOW_SECONDS
                 + " aura.refreshDuration=" + AURA_REFRESH_DURATION_SECONDS
-        );
-    }
-
-    private void suppressNearbyNpcAggro(
-        @Nonnull Store<EntityStore> store,
-        @Nonnull Ref<EntityStore> playerEntityRef,
-        @Nonnull PlayerRef playerRef,
-        @Nonnull UUID playerUuid,
-        long nowNanos
-    ) {
-        Transform look = TargetUtil.getLook(playerEntityRef, store);
-        if (look == null || look.getPosition() == null || !look.getPosition().isFinite()) {
-            return;
-        }
-        Vector3d pos = look.getPosition();
-
-        List<Ref<EntityStore>> nearby = TargetUtil.getAllEntitiesInSphere(pos, AGGRO_RADIUS_BLOCKS, store);
-        if (nearby == null || nearby.isEmpty()) {
-            return;
-        }
-
-        int considered = 0;
-        int hostile = 0;
-        int unknownAttitude = 0;
-        int overridden = 0;
-        for (Ref<EntityStore> candidate : nearby) {
-            if (candidate == null || !candidate.isValid() || candidate.equals(playerEntityRef)) {
-                continue;
-            }
-
-            considered++;
-            if (considered > MAX_ENTITIES_CONSIDERED) {
-                break;
-            }
-
-            NPCEntity npc = store.getComponent(candidate, NPCEntity.getComponentType());
-            if (npc == null) {
-                continue;
-            }
-
-            Role role = npc.getRole();
-            if (role == null || role.getWorldSupport() == null) {
-                continue;
-            }
-
-            try {
-                Attitude current = role.getWorldSupport().getAttitude(candidate, playerEntityRef, store);
-                if (current == Attitude.HOSTILE) {
-                    hostile++;
-                    continue;
-                }
-                role.getWorldSupport().overrideAttitude(playerEntityRef, Attitude.FRIENDLY, FRIENDLY_OVERRIDE_SECONDS);
-                overridden++;
-            } catch (Throwable ignored) {
-                unknownAttitude++;
-            }
-        }
-
-        if (hostile <= 0 && unknownAttitude <= 0) {
-            return;
-        }
-
-        long nextDebugAt = nextDebugAtNanosByPlayer.getOrDefault(playerUuid, 0L);
-        if (nextDebugAt > nowNanos) {
-            return;
-        }
-        nextDebugAtNanosByPlayer.put(playerUuid, nowNanos + DEBUG_INTERVAL_NANOS);
-
-        debug.traceFileOnly(
-            playerRef,
-            "InvisibilityCloak event=aggroSuppress"
-                + " radiusBlocks=" + AGGRO_RADIUS_BLOCKS
-                + " friendlyOverrideSeconds=" + FRIENDLY_OVERRIDE_SECONDS
-                + " entities.considered=" + considered
-                + " npcs.hostile=" + hostile
-                + " npcs.unknownAttitude=" + unknownAttitude
-                + " npcs.overridden=" + overridden
         );
     }
 

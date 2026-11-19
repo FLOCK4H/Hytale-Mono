@@ -1,0 +1,2616 @@
+{
+  "nodes": [
+    {
+      "id": "310001",
+      "name": "VineLeaves0_0",
+      "children": [],
+      "position": {
+        "x": 0.0,
+        "y": -0.8000000000000007,
+        "z": -1.8
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.05,
+          "y": 1.05,
+          "z": 0.08
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom",
+        "textureLayout": {}
+      }
+    },
+    {
+      "id": "310002",
+      "name": "VineLeaves0_1",
+      "children": [
+        {
+          "id": "310003",
+          "name": "VineLeaves0_2",
+          "children": [],
+          "position": {
+            "x": 4.46492865,
+            "y": -13.576874600000004,
+            "z": -1.3154092800000001
+          },
+          "orientation": {
+            "x": 0.616807,
+            "y": 0.247811,
+            "z": 0.166125,
+            "w": 0.728383
+          },
+          "shape": {
+            "offset": {
+              "x": 0.0,
+              "y": 6.300000000000001,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.9231705000000001,
+              "y": 0.89421045,
+              "z": -0.008
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "type": "quad",
+            "settings": {
+              "size": {
+                "x": 57,
+                "y": 63
+              },
+              "normal": "+Z"
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "310004",
+          "name": "VineLeaves0_3",
+          "children": [],
+          "position": {
+            "x": -7.40351955,
+            "y": -17.003371100000003,
+            "z": -0.90052696
+          },
+          "orientation": {
+            "x": 0.512058,
+            "y": -0.380823,
+            "z": 0.302787,
+            "w": 0.707878
+          },
+          "shape": {
+            "offset": {
+              "x": -3.0567894,
+              "y": 1.90923495,
+              "z": 0.25419552
+            },
+            "stretch": {
+              "x": 1.05,
+              "y": 1.05,
+              "z": -0.008
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "type": "quad",
+            "settings": {
+              "size": {
+                "x": 57,
+                "y": 63
+              },
+              "normal": "+Z"
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "310005",
+          "name": "VineLeaves0_4",
+          "children": [],
+          "position": {
+            "x": -19.00515435,
+            "y": 0.7644622000000005,
+            "z": -0.9302119999999999
+          },
+          "orientation": {
+            "x": -0.075179,
+            "y": 0.489637,
+            "z": 0.206794,
+            "w": 0.843706
+          },
+          "shape": {
+            "offset": {
+              "x": 7.8729283500000005,
+              "y": -3.2782806,
+              "z": -0.38460928000000005
+            },
+            "stretch": {
+              "x": -1.05,
+              "y": 1.05,
+              "z": 0.008
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "type": "quad",
+            "settings": {
+              "size": {
+                "x": 57,
+                "y": 63
+              },
+              "normal": "+Z"
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          }
+        }
+      ],
+      "position": {
+        "x": 5.25,
+        "y": 14.425,
+        "z": -1.96
+      },
+      "orientation": {
+        "x": -0.298191,
+        "y": -0.093193,
+        "z": -0.072204,
+        "w": 0.947198
+      },
+      "shape": {
+        "offset": {
+          "x": 0.0,
+          "y": 6.300000000000001,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.05,
+          "y": 1.05,
+          "z": 0.008
+        },
+        "textureLayout": {
+          "front": {
+            "offset": {
+              "x": 2,
+              "y": 2
+            },
+            "mirror": {
+              "x": false,
+              "y": false
+            },
+            "angle": 0
+          }
+        },
+        "type": "quad",
+        "settings": {
+          "size": {
+            "x": 57,
+            "y": 63
+          },
+          "normal": "+Z"
+        },
+        "unwrapMode": "custom",
+        "visible": true,
+        "doubleSided": true,
+        "shadingMode": "flat"
+      }
+    },
+    {
+      "id": "310006",
+      "name": "VineLeaves1_0",
+      "children": [],
+      "position": {
+        "x": 0.0,
+        "y": 0.5199999999999996,
+        "z": 1.8
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.03,
+          "y": 1.03,
+          "z": 0.08
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom",
+        "textureLayout": {}
+      }
+    },
+    {
+      "id": "310007",
+      "name": "VineLeaves1_1",
+      "children": [
+        {
+          "id": "310008",
+          "name": "VineLeaves1_2",
+          "children": [],
+          "position": {
+            "x": 4.37988239,
+            "y": -12.013505560000002,
+            "z": 2.28459072
+          },
+          "orientation": {
+            "x": 0.616807,
+            "y": 0.247811,
+            "z": 0.166125,
+            "w": 0.728383
+          },
+          "shape": {
+            "offset": {
+              "x": 0.0,
+              "y": 6.18,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.9055863000000001,
+              "y": 0.87717787,
+              "z": -0.008
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "type": "quad",
+            "settings": {
+              "size": {
+                "x": 57,
+                "y": 63
+              },
+              "normal": "+Z"
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "310009",
+          "name": "VineLeaves1_3",
+          "children": [],
+          "position": {
+            "x": -7.26250013,
+            "y": -15.374735459999997,
+            "z": 2.69947304
+          },
+          "orientation": {
+            "x": 0.512058,
+            "y": -0.380823,
+            "z": 0.302787,
+            "w": 0.707878
+          },
+          "shape": {
+            "offset": {
+              "x": -2.99856484,
+              "y": 1.87286857,
+              "z": 0.25419552
+            },
+            "stretch": {
+              "x": 1.03,
+              "y": 1.03,
+              "z": -0.008
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "type": "quad",
+            "settings": {
+              "size": {
+                "x": 57,
+                "y": 63
+              },
+              "normal": "+Z"
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          }
+        },
+        {
+          "id": "310010",
+          "name": "VineLeaves1_4",
+          "children": [],
+          "position": {
+            "x": -18.64315141,
+            "y": 2.05466292,
+            "z": 2.669788
+          },
+          "orientation": {
+            "x": -0.075179,
+            "y": 0.489637,
+            "z": 0.206794,
+            "w": 0.843706
+          },
+          "shape": {
+            "offset": {
+              "x": 7.722967810000001,
+              "y": -3.21583716,
+              "z": -0.38460928000000005
+            },
+            "stretch": {
+              "x": -1.03,
+              "y": 1.03,
+              "z": 0.008
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "type": "quad",
+            "settings": {
+              "size": {
+                "x": 57,
+                "y": 63
+              },
+              "normal": "+Z"
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          }
+        }
+      ],
+      "position": {
+        "x": 5.15,
+        "y": 15.455,
+        "z": 1.6400000000000001
+      },
+      "orientation": {
+        "x": -0.298191,
+        "y": -0.093193,
+        "z": -0.072204,
+        "w": 0.947198
+      },
+      "shape": {
+        "offset": {
+          "x": 0.0,
+          "y": 6.18,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.03,
+          "y": 1.03,
+          "z": 0.008
+        },
+        "textureLayout": {
+          "front": {
+            "offset": {
+              "x": 2,
+              "y": 2
+            },
+            "mirror": {
+              "x": false,
+              "y": false
+            },
+            "angle": 0
+          }
+        },
+        "type": "quad",
+        "settings": {
+          "size": {
+            "x": 57,
+            "y": 63
+          },
+          "normal": "+Z"
+        },
+        "unwrapMode": "custom",
+        "visible": true,
+        "doubleSided": true,
+        "shadingMode": "flat"
+      }
+    },
+    {
+      "id": "310028",
+      "name": "TwistingStem",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "310011",
+          "name": "TwistingStemSurface0",
+          "position": {
+            "x": -0.9675564907853325,
+            "y": -0.0010138596629583625,
+            "z": -0.09989959760073719
+          },
+          "orientation": {
+            "x": -0.12151090097342661,
+            "y": -0.6965881860501411,
+            "z": 0.7000436669198078,
+            "w": -0.09969385339863894
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.41846486716986764,
+              "y": 0.4974796734531106,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 5,
+                "y": 4
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 133,
+                  "y": 27
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310012",
+          "name": "TwistingStemSurface1",
+          "position": {
+            "x": -0.05019076035900766,
+            "y": 32.001568461261215,
+            "z": 0.0364835230970913
+          },
+          "orientation": {
+            "x": -0.31113987879212673,
+            "y": 0.6349739961803323,
+            "z": 0.6249458001146082,
+            "w": 0.33082132174198203
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.309093367795925,
+              "y": 0.29396526158592895,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 4
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 79,
+                  "y": 69
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310013",
+          "name": "TwistingStemSurface2",
+          "position": {
+            "x": 1.1446446558180035,
+            "y": 4.979854854505686,
+            "z": -0.5230810839623344
+          },
+          "orientation": {
+            "x": 0.05930913453384851,
+            "y": 0.8857084125873017,
+            "z": -0.09627999157764115,
+            "w": 0.45025903395127703
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.46397697876165056,
+              "y": 0.4902550462695434,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 6,
+                "y": 21
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 149,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310014",
+          "name": "TwistingStemSurface3",
+          "position": {
+            "x": 0.2019692127565113,
+            "y": 5.009313462101361,
+            "z": -0.775033734001058
+          },
+          "orientation": {
+            "x": 0.02276088556945188,
+            "y": 0.9863618222215109,
+            "z": 0.048852760444189756,
+            "w": -0.1555175409686555
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.46995962982469225,
+              "y": 0.48255182010507547,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 21
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 137,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310015",
+          "name": "TwistingStemSurface4",
+          "position": {
+            "x": -0.3288378120283677,
+            "y": 5.025901181625887,
+            "z": 1.4354849557315247e-16
+          },
+          "orientation": {
+            "x": -0.10659676317946978,
+            "y": -0.699025843642179,
+            "z": -0.1065967631794698,
+            "w": 0.6990258436421789
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.3232818887608603,
+              "y": 0.498675520435958,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 21
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 169,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310016",
+          "name": "TwistingStemSurface5",
+          "position": {
+            "x": 0.20196921275651136,
+            "y": 5.00931346210136,
+            "z": 0.775033734001058
+          },
+          "orientation": {
+            "x": -0.048852760444189826,
+            "y": -0.15551754096865572,
+            "z": -0.022760885569451904,
+            "w": 0.9863618222215109
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.46995962982469225,
+              "y": 0.4825518201050754,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 21
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 125,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310017",
+          "name": "TwistingStemSurface6",
+          "position": {
+            "x": 1.144644655818004,
+            "y": 4.979854854505689,
+            "z": 0.5230810839623344
+          },
+          "orientation": {
+            "x": 0.09627999157764112,
+            "y": 0.450259033951277,
+            "z": -0.05930913453384851,
+            "w": 0.8857084125873018
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4639769787616507,
+              "y": 0.4902550462695436,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 6,
+                "y": 21
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 159,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310018",
+          "name": "TwistingStemSurface7",
+          "position": {
+            "x": 0.6060363786187668,
+            "y": 16.481061363168166,
+            "z": -0.4041990194254401
+          },
+          "orientation": {
+            "x": -0.048645302554665315,
+            "y": 0.8834073293478865,
+            "z": 0.11550203184595258,
+            "w": 0.4515356083779622
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4558348167326926,
+              "y": 0.49535823782385235,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 27
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 71,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310019",
+          "name": "TwistingStemSurface8",
+          "position": {
+            "x": -0.1969530052888096,
+            "y": 16.506154781415276,
+            "z": -0.7015605774644992
+          },
+          "orientation": {
+            "x": 0.00765746143998298,
+            "y": 0.9864757837130892,
+            "z": -0.046494781285682234,
+            "w": -0.15698766430881858
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4769601398752518,
+              "y": 0.49739321208952547,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 11,
+                "y": 26
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 95,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310020",
+          "name": "TwistingStemSurface9",
+          "position": {
+            "x": -0.7277600300736895,
+            "y": 16.522742500939803,
+            "z": -1.1102230246251565e-16
+          },
+          "orientation": {
+            "x": 0.1031722187877096,
+            "y": -0.6995394865698583,
+            "z": 0.1031722187877096,
+            "w": 0.6995394865698583
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.2791979948389247,
+              "y": 0.4848389522249959,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 28
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 63,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310021",
+          "name": "TwistingStemSurface10",
+          "position": {
+            "x": -0.19695300528880982,
+            "y": 16.506154781415276,
+            "z": 0.7015605774644991
+          },
+          "orientation": {
+            "x": 0.046494781285682296,
+            "y": -0.1569876643088188,
+            "z": -0.0076574614399829675,
+            "w": 0.9864757837130891
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4769601398752518,
+              "y": 0.49739321208952547,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 11,
+                "y": 26
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 110,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310022",
+          "name": "TwistingStemSurface11",
+          "position": {
+            "x": 0.6060363786187666,
+            "y": 16.481061363168166,
+            "z": 0.40419901942544034
+          },
+          "orientation": {
+            "x": -0.11550203184595255,
+            "y": 0.4515356083779621,
+            "z": 0.04864530255466528,
+            "w": 0.8834073293478866
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.45583481673269277,
+              "y": 0.49535823782385235,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 27
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 83,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310023",
+          "name": "TwistingStemSurface12",
+          "position": {
+            "x": -0.5438904327942947,
+            "y": 27.485746576024823,
+            "z": -0.40419901942544045
+          },
+          "orientation": {
+            "x": 0.04444601385188427,
+            "y": 0.8883991403829402,
+            "z": -0.06705368202389358,
+            "w": 0.45196827648250887
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4728602132008601,
+              "y": 0.4811021627069669,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 197,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310024",
+          "name": "TwistingStemSurface13",
+          "position": {
+            "x": -1.2432829379278934,
+            "y": 27.507602591810247,
+            "z": -0.5589021000202259
+          },
+          "orientation": {
+            "x": 0.021383193383737602,
+            "y": 0.9867556624815067,
+            "z": 0.0401185630330873,
+            "w": -0.1557129490490652
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4192514485903476,
+              "y": 0.4781328190630189,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 6,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 177,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310025",
+          "name": "TwistingStemSurface14",
+          "position": {
+            "x": -1.6064666917280745,
+            "y": 27.518952084116503,
+            "z": -1.1102230246251565e-16
+          },
+          "orientation": {
+            "x": -0.08319374756457291,
+            "y": -0.7021956994785442,
+            "z": -0.08319374756457291,
+            "w": 0.7021956994785443
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.24980873222430106,
+              "y": 0.4868978862514368,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 213,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310026",
+          "name": "TwistingStemSurface15",
+          "position": {
+            "x": -1.2432829379278936,
+            "y": 27.507602591810247,
+            "z": 0.5589021000202259
+          },
+          "orientation": {
+            "x": -0.040118563033087314,
+            "y": -0.15571294904906538,
+            "z": -0.021383193383737613,
+            "w": 0.9867556624815067
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4192514485903475,
+              "y": 0.4781328190630189,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 6,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 187,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310027",
+          "name": "TwistingStemSurface16",
+          "position": {
+            "x": -0.5438904327942946,
+            "y": 27.485746576024823,
+            "z": 0.4041990194254405
+          },
+          "orientation": {
+            "x": 0.0670536820238936,
+            "y": 0.4519682764825087,
+            "z": -0.04444601385188427,
+            "w": 0.8883991403829403
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.47286021320086025,
+              "y": 0.4811021627069669,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 221,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "310039",
+      "name": "LeftTendril",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "310029",
+          "name": "LeftTendrilSurface0",
+          "position": {
+            "x": -1.0,
+            "y": 15.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": -0.14217504174603068,
+            "y": 0.6926660504922371,
+            "z": -0.38925592526666575,
+            "w": 0.5903217975348631
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.2828427124746194,
+              "y": 0.2828427124746192,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 4
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 142,
+                  "y": 27
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310030",
+          "name": "LeftTendrilSurface1",
+          "position": {
+            "x": -16.0,
+            "y": 21.0,
+            "z": 2.7755575615628914e-17
+          },
+          "orientation": {
+            "x": -0.5903217975348632,
+            "y": 0.38925592526666564,
+            "z": 0.6926660504922371,
+            "w": -0.14217504174603132
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.08838834764831882,
+              "y": 0.08838834764831867,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 4
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 71,
+                  "y": 72
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310031",
+          "name": "LeftTendrilSurface2",
+          "position": {
+            "x": -4.379298030184915,
+            "y": 16.80175492453771,
+            "z": -0.39999999999999986
+          },
+          "orientation": {
+            "x": -0.5174274976287497,
+            "y": 0.7653889419220428,
+            "z": 0.21327494096395463,
+            "w": 0.3177457345707848
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.2891528163950545,
+              "y": 0.47584691899008424,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 16
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 111,
+                  "y": 32
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310032",
+          "name": "LeftTendrilSurface3",
+          "position": {
+            "x": -4.648556270541642,
+            "y": 16.128609323645897,
+            "z": -0.32500000000000007
+          },
+          "orientation": {
+            "x": -0.51295245981263,
+            "y": 0.7682847473701323,
+            "z": -0.20259560661113715,
+            "w": -0.3249205150686082
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.2891528163950546,
+              "y": 0.4760755213585153,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 16
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 63,
+                  "y": 34
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310033",
+          "name": "LeftTendrilSurface4",
+          "position": {
+            "x": -4.648556270541642,
+            "y": 16.128609323645897,
+            "z": 0.32500000000000007
+          },
+          "orientation": {
+            "x": 0.2025956066111372,
+            "y": -0.32492051506860825,
+            "z": 0.51295245981263,
+            "w": 0.7682847473701322
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.2891528163950547,
+              "y": 0.4760755213585152,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 16
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 71,
+                  "y": 33
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310034",
+          "name": "LeftTendrilSurface5",
+          "position": {
+            "x": -4.3792980301849145,
+            "y": 16.801754924537708,
+            "z": 0.4000000000000003
+          },
+          "orientation": {
+            "x": -0.21327494096395463,
+            "y": 0.31774573457078487,
+            "z": 0.5174274976287497,
+            "w": 0.7653889419220428
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.28915281639505447,
+              "y": 0.4758469189900842,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 16
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 79,
+                  "y": 33
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310035",
+          "name": "LeftTendrilSurface6",
+          "position": {
+            "x": -11.899195718509983,
+            "y": 19.752010703725045,
+            "z": -0.17857616545573723
+          },
+          "orientation": {
+            "x": -0.5254767530874958,
+            "y": 0.7596135570427285,
+            "z": 0.23301003587102442,
+            "w": 0.30424948497064125
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.22980970388562802,
+              "y": 0.4751121919355512,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 18
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 103,
+                  "y": 32
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310036",
+          "name": "LeftTendrilSurface7",
+          "position": {
+            "x": -12.066321522869327,
+            "y": 19.33419619282668,
+            "z": -0.2714238345442631
+          },
+          "orientation": {
+            "x": -0.5151226223361387,
+            "y": 0.7669070697551787,
+            "z": -0.20774979956488018,
+            "w": -0.3214688960036681
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.22980970388562796,
+              "y": 0.4746294216733296,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 18
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 95,
+                  "y": 32
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310037",
+          "name": "LeftTendrilSurface8",
+          "position": {
+            "x": -12.06632152286933,
+            "y": 19.334196192826678,
+            "z": 0.27142383454426317
+          },
+          "orientation": {
+            "x": 0.20774979956488024,
+            "y": -0.3214688960036681,
+            "z": 0.5151226223361388,
+            "w": 0.7669070697551787
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.22980970388562802,
+              "y": 0.4746294216733297,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 18
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 177,
+                  "y": 25
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310038",
+          "name": "LeftTendrilSurface9",
+          "position": {
+            "x": -11.899195718509983,
+            "y": 19.75201070372505,
+            "z": 0.17857616545573704
+          },
+          "orientation": {
+            "x": -0.23301003587102442,
+            "y": 0.3042494849706412,
+            "z": 0.5254767530874958,
+            "w": 0.7596135570427285
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.22980970388562802,
+              "y": 0.4751121919355511,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 18
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 125,
+                  "y": 27
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "310050",
+      "name": "RightTendril",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "310040",
+          "name": "RightTendrilSurface0",
+          "position": {
+            "x": 1.0,
+            "y": 9.000000000000002,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": -0.5791681670911102,
+            "y": -0.40566517502532046,
+            "z": 0.6963823345491392,
+            "w": 0.12268514224587558
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.24748737341529164,
+              "y": 0.2474873734152916,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 4
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 79,
+                  "y": 61
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310041",
+          "name": "RightTendrilSurface1",
+          "position": {
+            "x": 15.999999999999998,
+            "y": 16.0,
+            "z": 6.245004513516506e-16
+          },
+          "orientation": {
+            "x": 0.12268514224587507,
+            "y": 0.6963823345491393,
+            "z": 0.4056651750253228,
+            "w": 0.5791681670911086
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.070710678118655,
+              "y": 0.07071067811865499,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 4
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 79,
+                  "y": 53
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310042",
+          "name": "RightTendrilSurface2",
+          "position": {
+            "x": 5.148009912865894,
+            "y": 11.182835901001658,
+            "z": -0.25
+          },
+          "orientation": {
+            "x": 0.4792840597110995,
+            "y": 0.7886843547552786,
+            "z": -0.1657998150321136,
+            "w": 0.3475258263876426
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.41504197806369486,
+              "y": 0.4953825776696881,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 205,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310043",
+          "name": "RightTendrilSurface3",
+          "position": {
+            "x": 4.894278633667218,
+            "y": 11.726545784998816,
+            "z": -0.3500000000000001
+          },
+          "orientation": {
+            "x": 0.4844391305866821,
+            "y": 0.7861106578912533,
+            "z": 0.1776024314310311,
+            "w": -0.340303010060132
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.41504197806369475,
+              "y": 0.4940972194545383,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 237,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310044",
+          "name": "RightTendrilSurface4",
+          "position": {
+            "x": 4.89427863366722,
+            "y": 11.726545784998816,
+            "z": 0.35
+          },
+          "orientation": {
+            "x": -0.17760243143103122,
+            "y": -0.3403030100601321,
+            "z": -0.4844391305866821,
+            "w": 0.7861106578912533
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.4150419780636947,
+              "y": 0.4940972194545384,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 245,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310045",
+          "name": "RightTendrilSurface5",
+          "position": {
+            "x": 5.148009912865894,
+            "y": 11.182835901001658,
+            "z": 0.25
+          },
+          "orientation": {
+            "x": 0.16579981503211366,
+            "y": 0.3475258263876427,
+            "z": -0.47928405971109955,
+            "w": 0.7886843547552785
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.41504197806369486,
+              "y": 0.4953825776696881,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 19
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 229,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310046",
+          "name": "RightTendrilSurface6",
+          "position": {
+            "x": 12.542288546533113,
+            "y": 14.909381686000474,
+            "z": -0.2500000000000001
+          },
+          "orientation": {
+            "x": 0.5092796262540218,
+            "y": 0.7700420052901338,
+            "z": -0.23779802393876784,
+            "w": 0.30186366489216726
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.3266536304153774,
+              "y": 0.4809337736007328,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 15
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 87,
+                  "y": 52
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310047",
+          "name": "RightTendrilSurface7",
+          "position": {
+            "x": 12.394278633667218,
+            "y": 15.226545784998816,
+            "z": -0.10000000000000003
+          },
+          "orientation": {
+            "x": 0.5178551345109867,
+            "y": 0.7627896706175794,
+            "z": 0.26012402522557965,
+            "w": -0.28690324076276047
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.326653630415377,
+              "y": 0.48410554620115004,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 15
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 71,
+                  "y": 53
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310048",
+          "name": "RightTendrilSurface8",
+          "position": {
+            "x": 12.39427863366722,
+            "y": 15.226545784998816,
+            "z": 0.09999999999999981
+          },
+          "orientation": {
+            "x": -0.26012402522557976,
+            "y": -0.2869032407627606,
+            "z": -0.5178551345109869,
+            "w": 0.7627896706175793
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.32665363041537704,
+              "y": 0.48410554620115004,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 15
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 87,
+                  "y": 33
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "310049",
+          "name": "RightTendrilSurface9",
+          "position": {
+            "x": 12.542288546533113,
+            "y": 14.909381686000474,
+            "z": 0.24999999999999983
+          },
+          "orientation": {
+            "x": 0.23779802393876778,
+            "y": 0.30186366489216726,
+            "z": -0.5092796262540218,
+            "w": 0.7700420052901338
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.3266536304153774,
+              "y": 0.48093377360073286,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 4,
+                "y": 15
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 63,
+                  "y": 54
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

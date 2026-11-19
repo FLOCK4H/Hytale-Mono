@@ -1,0 +1,20 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Ore_Revel.name",
+    "Description": "server.items.flock4h.AxoTales_Ore_Revel.description"
+  },
+  "Model": "Resources/AxoTales/Ores/Revel/Ore.blockymodel",
+  "Texture": "Resources/AxoTales/Ores/Revel/Ore_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Ore_Revel.png",
+  "Categories": [
+    "Blocks.Ores"
+  ],
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 100,
+  "Tags": {
+    "Type": [
+      "Ore"
+    ]
+  }
+}

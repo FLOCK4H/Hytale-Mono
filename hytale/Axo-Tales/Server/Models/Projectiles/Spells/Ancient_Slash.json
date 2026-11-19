@@ -1,6 +1,6 @@
 {
-  "Model": "Items/Projectiles/Tornado.blockymodel",
-  "Texture": "Items/Projectiles/Tornado_Texture.png",
+  "Model": "Items/AxoTales/DarkArcana/Ancient_Slash.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Ancient_Relic_Atlas.png",
   "HitBox": {
     "Max": {
       "X": 0.15,
@@ -17,31 +17,22 @@
   "MaxScale": 1.25,
   "Particles": [
     {
-      "PositionOffset": {
-        "X": 0,
-        "Y": 0,
-        "Z": 0
-      },
-      "SystemId": "Particle_Longsword",
-      "TargetNodeName": ""
-    },
-    {
-      "PositionOffset": {
-        "X": 0,
-        "Y": 0,
-        "Z": 0
-      },
       "SystemId": "AxoTales_Ancient_Slash",
-      "TargetNodeName": ""
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "TargetNodeName": "Base"
     }
   ],
   "Trails": [
     {
       "TargetNodeName": "Base",
-      "TrailId": "Longsword_Trail"
+      "TrailId": "AxoTales_Ancient_Trail"
     }
   ],
   "Light": {
-    "Color": "#87ceeb"
+    "Color": "#b79ad9"
   }
 }

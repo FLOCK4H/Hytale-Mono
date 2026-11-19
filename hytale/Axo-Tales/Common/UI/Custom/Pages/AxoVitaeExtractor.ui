@@ -1,0 +1,132 @@
+$C = "../Common.ui";
+@Slot = ButtonStyle(Default: (Background: #24374a), Hovered: (Background: #405b70), Pressed: (Background: #567386), Disabled: (Background: #1b2a3b));
+@ControlLabel = LabelStyle(FontName: "Secondary", FontSize: 12, RenderBold: true, TextColor: #e1e9ec, HorizontalAlignment: Center, VerticalAlignment: Center);
+@Control = TextButtonStyle(Default: (Background: #293e54, LabelStyle: @ControlLabel), Hovered: (Background: #405a70, LabelStyle: @ControlLabel), Pressed: (Background: #587286, LabelStyle: @ControlLabel), Disabled: (Background: #1c2c3d, LabelStyle: (...@ControlLabel, TextColor: #91a5b2)), Sounds: $C.@ButtonSounds);
+@Tooltip = TextTooltipStyle(Background: (TexturePath: "../Common/TooltipDefaultBackground.png", Border: 24), MaxWidth: 300, LabelStyle: (Wrap: true, FontSize: 14), Padding: 16);
+Group { Background: #070d16(0.45); }
+$C.@Container #Extractor { @CloseButton = false; Anchor: (Width: 600, Height: 808);
+  #Title { Anchor: (Top: 0, Height: 44); Padding: (Full: 0); Label { Anchor: (Left: 28, Top: 0, Width: 420, Height: 44); Text: "VITAE EXTRACTOR"; Style: (...$C.@TitleStyle, FontSize: 18, HorizontalAlignment: Start); } TextButton #Close { Anchor: (Right: 24, Top: 8, Width: 64, Height: 28); Text: "Close"; Style: @Control; } }
+  #Content { Anchor: (Top: 44); LayoutMode: Full; Padding: (Full: 0); Group #Body { Anchor: (Full: 0); LayoutMode: Full;
+    TextField #PageKeyboard { Anchor: (Left: 0, Top: 0, Width: 1, Height: 1); AutoFocus: true; HitTestVisible: false; MaxLength: 1; Background: #070d16(0); Style: (FontSize: 1, TextColor: #d4e1e8(0)); Value: ""; }
+    Label #Species { Anchor: (Left: 36, Top: 26, Width: 184, Height: 46); Text: "Species-bound DNA"; Style: (FontSize: 18, TextColor: #d9e4ea, RenderBold: true, HorizontalAlignment: Start, VerticalAlignment: Center, Wrap: true); }
+    Label #WorkState { Anchor: (Left: 36, Top: 80, Width: 184, Height: 46); Text: "Add a blood sample"; Style: (FontSize: 13, TextColor: #c9d6df, RenderBold: false, HorizontalAlignment: Start, VerticalAlignment: Center, Wrap: true); }
+    Label  { Anchor: (Left: 382, Top: 22, Width: 142, Height: 18); Text: "EXTRACTION"; Style: (FontSize: 11, TextColor: #c9b68e, RenderBold: true, HorizontalAlignment: Start, VerticalAlignment: Center, Wrap: false); }
+    Group { Anchor: (Left: 382, Top: 48, Width: 132, Height: 8); Background: #0d1926; Group #ProgressFill { Anchor: (Left: 0, Top: 0, Width: 0, Height: 8); Background: #b9d67e; } }
+    Label #ProgressText { Anchor: (Left: 382, Top: 66, Width: 150, Height: 34); Text: "1 blood + 1 essence"; Style: (FontSize: 12, TextColor: #d9e4ea, RenderBold: false, HorizontalAlignment: Start, VerticalAlignment: Center, Wrap: true); }
+    Label  { Anchor: (Left: 218, Top: 92, Width: 164, Height: 22); Text: "Essence of Life"; Style: (FontSize: 12, TextColor: #d9e4ea, RenderBold: false, HorizontalAlignment: Center, VerticalAlignment: Center, Wrap: false); }
+    Group { Anchor: (Left: 298, Top: 120, Width: 4, Height: 24); Background: #758b99; }
+    Group { Anchor: (Left: 190, Top: 140, Width: 220, Height: 4); Background: #758b99; }
+    Group { Anchor: (Left: 190, Top: 144, Width: 4, Height: 20); Background: #758b99; }
+    Group { Anchor: (Left: 298, Top: 144, Width: 4, Height: 20); Background: #758b99; }
+    Group { Anchor: (Left: 406, Top: 144, Width: 4, Height: 20); Background: #758b99; }
+    Button #Machine0 { Anchor: (Left: 268, Top: 20, Width: 64, Height: 64); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem0 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken0 { Visible: false; Value: ""; }
+    Group #ActiveBottle1 { Anchor: (Left: 157, Top: 163, Width: 70, Height: 70); Background: #bca575; Visible: false; }
+    Button #Machine1 { Anchor: (Left: 160, Top: 166, Width: 64, Height: 64); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem1 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken1 { Visible: false; Value: ""; }
+    Label #BottleLabel1 { Anchor: (Left: 146, Top: 242, Width: 92, Height: 24); Text: "Blood sample"; Style: (FontSize: 12, TextColor: #d9e4ea, RenderBold: false, HorizontalAlignment: Center, VerticalAlignment: Center, Wrap: false); }
+    Group #ActiveBottle2 { Anchor: (Left: 265, Top: 163, Width: 70, Height: 70); Background: #bca575; Visible: false; }
+    Button #Machine2 { Anchor: (Left: 268, Top: 166, Width: 64, Height: 64); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem2 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken2 { Visible: false; Value: ""; }
+    Label #BottleLabel2 { Anchor: (Left: 254, Top: 242, Width: 92, Height: 24); Text: "Blood sample"; Style: (FontSize: 12, TextColor: #d9e4ea, RenderBold: false, HorizontalAlignment: Center, VerticalAlignment: Center, Wrap: false); }
+    Group #ActiveBottle3 { Anchor: (Left: 373, Top: 163, Width: 70, Height: 70); Background: #bca575; Visible: false; }
+    Button #Machine3 { Anchor: (Left: 376, Top: 166, Width: 64, Height: 64); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem3 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken3 { Visible: false; Value: ""; }
+    Label #BottleLabel3 { Anchor: (Left: 362, Top: 242, Width: 92, Height: 24); Text: "Blood sample"; Style: (FontSize: 12, TextColor: #d9e4ea, RenderBold: false, HorizontalAlignment: Center, VerticalAlignment: Center, Wrap: false); }
+    Label  { Anchor: (Left: 66, Top: 278, Width: 468, Height: 22); Text: "Automatic extraction: 1 blood + 1 essence makes 1 DNA"; Style: (FontSize: 12, TextColor: #c4d3dc, RenderBold: false, HorizontalAlignment: Center, VerticalAlignment: Center, Wrap: false); }
+    Label  { Anchor: (Left: 66, Top: 310, Width: 468, Height: 20); Text: "RESERVE"; Style: (FontSize: 11, TextColor: #afc1ce, RenderBold: true, HorizontalAlignment: Start, VerticalAlignment: Center, Wrap: false); }
+    Button #Machine4 { Anchor: (Left: 170, Top: 336, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem4 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken4 { Visible: false; Value: ""; }
+    Button #Machine5 { Anchor: (Left: 222, Top: 336, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem5 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken5 { Visible: false; Value: ""; }
+    Button #Machine6 { Anchor: (Left: 274, Top: 336, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem6 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken6 { Visible: false; Value: ""; }
+    Button #Machine7 { Anchor: (Left: 326, Top: 336, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem7 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken7 { Visible: false; Value: ""; }
+    Button #Machine8 { Anchor: (Left: 378, Top: 336, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #MachineItem8 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #MachineToken8 { Visible: false; Value: ""; }
+    Group { Anchor: (Left: 66, Top: 404, Width: 468, Height: 1); Background: #405568; }
+    Label #InventoryLabel { Anchor: (Left: 66, Top: 416, Width: 308, Height: 24); Text: "Storage"; Style: (FontSize: 14, TextColor: #d9e4ea, RenderBold: true, HorizontalAlignment: Start, VerticalAlignment: Center, Wrap: false); }
+    TextButton #Storage { Anchor: (Left: 66, Top: 446, Width: 100, Height: 26); Text: "Storage"; Style: @Control; }
+    Group #ActiveStorage { Anchor: (Left: 66, Top: 474, Width: 100, Height: 2); Background: #c6af7c; Visible: false; }
+    TextButton #Backpack { Anchor: (Left: 172, Top: 446, Width: 100, Height: 26); Text: "Backpack"; Style: @Control; }
+    Group #ActiveBackpack { Anchor: (Left: 172, Top: 474, Width: 100, Height: 2); Background: #c6af7c; Visible: false; }
+    TextButton #Hotbar { Anchor: (Left: 278, Top: 446, Width: 100, Height: 26); Text: "Hotbar"; Style: @Control; }
+    Group #ActiveHotbar { Anchor: (Left: 278, Top: 474, Width: 100, Height: 2); Background: #c6af7c; Visible: false; }
+    Button #Inventory0 { Anchor: (Left: 66, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem0 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken0 { Visible: false; Value: ""; }
+    Button #Inventory1 { Anchor: (Left: 118, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem1 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken1 { Visible: false; Value: ""; }
+    Button #Inventory2 { Anchor: (Left: 170, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem2 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken2 { Visible: false; Value: ""; }
+    Button #Inventory3 { Anchor: (Left: 222, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem3 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken3 { Visible: false; Value: ""; }
+    Button #Inventory4 { Anchor: (Left: 274, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem4 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken4 { Visible: false; Value: ""; }
+    Button #Inventory5 { Anchor: (Left: 326, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem5 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken5 { Visible: false; Value: ""; }
+    Button #Inventory6 { Anchor: (Left: 378, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem6 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken6 { Visible: false; Value: ""; }
+    Button #Inventory7 { Anchor: (Left: 430, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem7 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken7 { Visible: false; Value: ""; }
+    Button #Inventory8 { Anchor: (Left: 482, Top: 490, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem8 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken8 { Visible: false; Value: ""; }
+    Button #Inventory9 { Anchor: (Left: 66, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem9 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken9 { Visible: false; Value: ""; }
+    Button #Inventory10 { Anchor: (Left: 118, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem10 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken10 { Visible: false; Value: ""; }
+    Button #Inventory11 { Anchor: (Left: 170, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem11 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken11 { Visible: false; Value: ""; }
+    Button #Inventory12 { Anchor: (Left: 222, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem12 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken12 { Visible: false; Value: ""; }
+    Button #Inventory13 { Anchor: (Left: 274, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem13 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken13 { Visible: false; Value: ""; }
+    Button #Inventory14 { Anchor: (Left: 326, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem14 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken14 { Visible: false; Value: ""; }
+    Button #Inventory15 { Anchor: (Left: 378, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem15 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken15 { Visible: false; Value: ""; }
+    Button #Inventory16 { Anchor: (Left: 430, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem16 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken16 { Visible: false; Value: ""; }
+    Button #Inventory17 { Anchor: (Left: 482, Top: 542, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem17 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken17 { Visible: false; Value: ""; }
+    Button #Inventory18 { Anchor: (Left: 66, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem18 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken18 { Visible: false; Value: ""; }
+    Button #Inventory19 { Anchor: (Left: 118, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem19 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken19 { Visible: false; Value: ""; }
+    Button #Inventory20 { Anchor: (Left: 170, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem20 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken20 { Visible: false; Value: ""; }
+    Button #Inventory21 { Anchor: (Left: 222, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem21 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken21 { Visible: false; Value: ""; }
+    Button #Inventory22 { Anchor: (Left: 274, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem22 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken22 { Visible: false; Value: ""; }
+    Button #Inventory23 { Anchor: (Left: 326, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem23 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken23 { Visible: false; Value: ""; }
+    Button #Inventory24 { Anchor: (Left: 378, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem24 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken24 { Visible: false; Value: ""; }
+    Button #Inventory25 { Anchor: (Left: 430, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem25 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken25 { Visible: false; Value: ""; }
+    Button #Inventory26 { Anchor: (Left: 482, Top: 594, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem26 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken26 { Visible: false; Value: ""; }
+    Button #Inventory27 { Anchor: (Left: 66, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem27 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken27 { Visible: false; Value: ""; }
+    Button #Inventory28 { Anchor: (Left: 118, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem28 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken28 { Visible: false; Value: ""; }
+    Button #Inventory29 { Anchor: (Left: 170, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem29 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken29 { Visible: false; Value: ""; }
+    Button #Inventory30 { Anchor: (Left: 222, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem30 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken30 { Visible: false; Value: ""; }
+    Button #Inventory31 { Anchor: (Left: 274, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem31 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken31 { Visible: false; Value: ""; }
+    Button #Inventory32 { Anchor: (Left: 326, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem32 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken32 { Visible: false; Value: ""; }
+    Button #Inventory33 { Anchor: (Left: 378, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem33 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken33 { Visible: false; Value: ""; }
+    Button #Inventory34 { Anchor: (Left: 430, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem34 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken34 { Visible: false; Value: ""; }
+    Button #Inventory35 { Anchor: (Left: 482, Top: 646, Width: 50, Height: 50); Style: @Slot; TextTooltipStyle: @Tooltip; ItemSlot #InventoryItem35 { Anchor: (Full: 0); HitTestVisible: false; ShowQualityBackground: true; ShowQuantity: true; ShowDurabilityBar: false; } }
+    TextField #InventoryToken35 { Visible: false; Value: ""; }
+    TextButton #Previous { Anchor: (Left: 370, Top: 708, Width: 80, Height: 26); Text: "Previous"; Style: @Control; }
+    TextButton #Next { Anchor: (Left: 454, Top: 708, Width: 80, Height: 26); Text: "Next"; Style: @Control; }
+    Label #Status { Anchor: (Left: 66, Top: 708, Width: 294, Height: 42); Text: "LMB: transfer stack   RMB: transfer one"; Style: (FontSize: 12, TextColor: #bdceda, RenderBold: false, HorizontalAlignment: Start, VerticalAlignment: Center, Wrap: true); }
+  } }
+}

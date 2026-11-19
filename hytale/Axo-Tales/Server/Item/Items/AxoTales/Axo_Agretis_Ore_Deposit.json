@@ -1,0 +1,76 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Agretis_Ore.name"
+  },
+  "Categories": [
+    "Blocks.Ores"
+  ],
+  "SubCategory": "Ore",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Agretis_Ore.png",
+  "PlayerAnimationsId": "Block",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "CubeWithModel",
+    "CustomModel": "Resources/AxoTales/Ores/Agretis/Veins.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/AxoTales/Ores/Agretis/Veins_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "Group": "Stone",
+    "Flags": {},
+    "RandomRotation": "YawStep90",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OreIron",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Axo_Agretis_Ore"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Stone_Cobble"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "BlockParticleSetId": "Ore",
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Stone.png"
+      }
+    ],
+    "ParticleColor": "#bc9a56",
+    "BlockSoundSetId": "Ore",
+    "PhysicalMaterialId": "Stone",
+    "TextureComputedColor": "#7D827C",
+    "Particles": [
+      {
+        "SystemId": "AxoTales_Agretis_Ore_Motes",
+        "Scale": 0.35
+      }
+    ]
+  },
+  "MaxStack": 100,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Tags": {
+    "Type": [
+      "Ore"
+    ],
+    "Family": [
+      "Agretis"
+    ]
+  }
+}

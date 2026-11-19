@@ -1,0 +1,302 @@
+{
+  "Parent": "Template_Weapon_Daggers",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.starfang_daggers.name",
+    "Description": "server.items.flock4h.starfang_daggers.description"
+  },
+  "Model": "Items/AxoTales/Legendary/Starfang_Daggers.blockymodel",
+  "Texture": "Items/AxoTales/Legendary/Bloodfang_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Starfang_Daggers.png",
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 45,
+  "InteractionVars": {
+    "Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Primary_Swing_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 4.5,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 0.8,
+              "Duration": 0.15,
+              "VelocityType": "Set"
+            }
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Swing_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Primary_Swing_Right_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 4.5,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 0.8,
+              "Duration": 0.15,
+              "VelocityType": "Set"
+            }
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Stab_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Primary_Stab_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 4.5,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 0.8,
+              "Duration": 0.15,
+              "VelocityType": "Set"
+            }
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Stab_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Primary_Stab_Right_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 4.5,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 0.8,
+              "Duration": 0.15,
+              "VelocityType": "Set"
+            }
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Pounce_Sweep_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Primary_Pounce_Sweep_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "EntityStatsOnHit": [
+            {
+              "EntityStatId": "SignatureEnergy",
+              "Amount": 1
+            }
+          ],
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 4.5,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 0.8,
+              "Duration": 0.15,
+              "VelocityType": "Set"
+            }
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Pounce_Stab_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Primary_Pounce_Stab_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "EntityStatsOnHit": [
+            {
+              "EntityStatId": "SignatureEnergy",
+              "Amount": 6
+            }
+          ],
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Stab_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 4.5,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 0.8,
+              "Duration": 0.15,
+              "VelocityType": "Set"
+            }
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Razorstrike_Slash_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Signature_Razorstrike_Slash_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Slash_Impact"
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Razorstrike_Sweep_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Signature_Razorstrike_Sweep_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 30
+            },
+            "RandomPercentageModifier": 0
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Slash_Impact"
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Razorstrike_Lunge_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Signature_Razorstrike_Lunge_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 40
+            },
+            "RandomPercentageModifier": 0
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Daggers_T2_Slash_Impact",
+            "LocalSoundEventId": "SFX_Daggers_T2_Slash_Impact"
+          },
+          "AngledDamage": []
+        }
+      ]
+    },
+    "Guard_Wield": {
+      "Interactions": [
+        {
+          "Parent": "Weapon_Daggers_Secondary_Guard_Wield",
+          "StaminaCost": {
+            "Value": 15.56,
+            "CostType": "Damage"
+          }
+        }
+      ]
+    },
+    "Pounce_StaminaCondition": {
+      "Interactions": [
+        "AxoTempoDaggers_Weapon_Daggers_Primary_Chain"
+      ]
+    }
+  },
+  "MaxDurability": 500,
+  "DurabilityLossOnHit": 0.06,
+  "MaxStack": 1,
+  "PlayerAnimationsId": "AxoTales_Bloodfang305",
+  "Interactions": {
+    "Primary": "AxoBloodfang_Primary",
+    "Secondary": "Root_Weapon_Daggers_Secondary_Guard",
+    "Ability1": "AxoTempoDaggers_Root_Weapon_Daggers_Signature_Razorstrike"
+  },
+  "Light": {
+    "Radius": 1,
+    "Color": "#8b78b9"
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Ancient_Runes",
+      "TargetNodeName": "GarnetSeal",
+      "TargetEntityPart": "PrimaryItem",
+      "Scale": 0.28
+    }
+  ],
+  "IconProperties": {
+    "Scale": 0.45,
+    "Rotation": [
+      20,
+      45,
+      0
+    ],
+    "Translation": [
+      0,
+      -15
+    ]
+  },
+  "Categories": [],
+  "$AxoLegacyItem": "Axo_Bloodfang_Daggers"
+}

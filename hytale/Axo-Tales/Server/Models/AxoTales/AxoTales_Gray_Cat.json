@@ -1,0 +1,374 @@
+{
+  "Model": "NPC/AxoTales/Gray_Cat/Model.blockymodel",
+  "Texture": "NPC/AxoTales/Gray_Cat/Atlas.png",
+  "EyeHeight": 0.52,
+  "MinScale": 1,
+  "MaxScale": 1,
+  "HitBox": {
+    "Min": {
+      "X": -0.18,
+      "Y": 0,
+      "Z": -0.3
+    },
+    "Max": {
+      "X": 0.18,
+      "Y": 0.78,
+      "Z": 0.48
+    }
+  },
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Min": -20,
+        "Max": 25
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Min": -45,
+        "Max": 45
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SitEnter": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/SitEnter.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Sit": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Sit.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SitExit": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/SitExit.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Groom": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Groom.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Eat": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Eat.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Alerted.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Jump.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Fall.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Swim.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Hurt.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Death.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Swim.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Swim.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimJump": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Jump.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimFloat": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimSink": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Fall.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimDive": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Swim.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimDiveFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Swim.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "SwimDiveBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Swim.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "FluidIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "FluidWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "FluidRun": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/SitEnter.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Sit.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/SitExit.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Greet": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Gray_Cat/Animations/Alerted.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "Parent": "Template_Seeds",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.crystal_seed.name",
+    "Description": "server.items.flock4h.crystal_seed.description"
+  },
+  "Quality": "Uncommon",
+  "ItemLevel": 10,
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Crystal_Seed.png",
+  "Model": "Resources/Crystals/AxoTales_Arcane_Small.blockymodel",
+  "Texture": "Resources/Crystals/Crystal_Big_Textures/Arcane_Crystal_Texture.png",
+  "InteractionVars": {
+    "SeedId": {
+      "Interactions": [
+        {
+          "Parent": "Seed_Place",
+          "BlockTypeToPlace": "Axo_Arcane_Crystal_Crop"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Items"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "IconProperties": {
+    "Scale": 0.77,
+    "Translation": [
+      2.5,
+      -11
+    ],
+    "Rotation": [
+      0,
+      30,
+      15
+    ]
+  }
+}

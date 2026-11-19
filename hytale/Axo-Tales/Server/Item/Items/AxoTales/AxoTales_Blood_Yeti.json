@@ -1,0 +1,10 @@
+{
+  "Parent": "Axo_Blood_Droplet",
+  "Quality": "AxoTales_Internal",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Blood_Yeti.name",
+    "Description": "server.items.flock4h.AxoTales_Blood_Yeti.description"
+  },
+  "Categories": [],
+  "$AxoLegacyItem": "Axo_Yeti_Blood_Sample"
+}

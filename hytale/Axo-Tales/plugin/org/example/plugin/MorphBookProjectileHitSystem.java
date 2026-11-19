@@ -23,12 +23,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Morph Book projectile effect: on hit, morph the caster into the hit entity's model.
- *
- * <p>Implemented via direct {@link ModelComponent} replacement on the caster. The projectile's damage is cancelled so
- * the Morph Book is non-lethal.</p>
- */
+
+
+
+
+
+
 public final class MorphBookProjectileHitSystem extends DamageEventSystem {
 
     public static final String MORPH_PROJECTILE_ID = "Morph_Vortex";
@@ -126,6 +126,7 @@ public final class MorphBookProjectileHitSystem extends DamageEventSystem {
 
             PlayerSkinComponent shooterSkinComponent = store.getComponent(shooterRef, PlayerSkinComponent.getComponentType());
             PlayerSkin shooterSkin = shooterSkinComponent != null ? shooterSkinComponent.getPlayerSkin() : null;
+            morphBookModelState.observe(shooterUuid,shooterModel,shooterSkin);
             morphBookModelState.captureBaselineSkinIfAbsent(shooterUuid, shooterSkin);
             PlayerSkin baselineSkin = morphBookModelState.getBaselineSkin(shooterUuid);
 
@@ -142,6 +143,7 @@ public final class MorphBookProjectileHitSystem extends DamageEventSystem {
             } else {
                 try {
                     store.putComponent(shooterRef, ModelComponent.getComponentType(), new ModelComponent(new Model(targetModel)));
+                    morphBookModelState.transformed(shooterUuid,true);
                     morphed = true;
                     morphReason = "applied";
                 } catch (Throwable t) {

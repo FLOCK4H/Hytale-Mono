@@ -1,0 +1,121 @@
+{
+  "RenderMode": "BlendAdd",
+  "Shape": "Cube",
+  "EmitOffset": {
+    "X": {
+      "Min": -0.14,
+      "Max": 0.14
+    },
+    "Y": {
+      "Min": -0.09,
+      "Max": 0.09
+    },
+    "Z": {
+      "Min": -0.1,
+      "Max": 0.1
+    }
+  },
+  "ParticleRotationInfluence": "Billboard",
+  "LinearFiltering": true,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": false,
+  "TrailSpawnerPositionMultiplier": 0,
+  "TrailSpawnerRotationMultiplier": 0,
+  "MaxConcurrentParticles": 4,
+  "ParticleLifeSpan": {
+    "Min": 0.15,
+    "Max": 0.24
+  },
+  "SpawnRate": {
+    "Min": 4,
+    "Max": 5
+  },
+  "TotalParticles": {
+    "Min": -1,
+    "Max": -1
+  },
+  "SpawnBurst": false,
+  "InitialVelocity": {
+    "Speed": {
+      "Min": 0,
+      "Max": 0
+    },
+    "Yaw": {
+      "Min": 0,
+      "Max": 360
+    },
+    "Pitch": {
+      "Min": 0,
+      "Max": 0
+    }
+  },
+  "Attractors": [],
+  "Particle": {
+    "Texture": "Particles/Textures/Shapes/Lightning.png",
+    "FrameSize": {
+      "Width": 64,
+      "Height": 128
+    },
+    "ScaleRatioConstraint": "None",
+    "UVOption": "RandomFlipU",
+    "Animation": {
+      "0": {
+        "Color": "#b3c7ff",
+        "Opacity": 1,
+        "Scale": {
+          "X": {
+            "Min": 0.14,
+            "Max": 0.24
+          },
+          "Y": {
+            "Min": 0.24,
+            "Max": 0.42
+          }
+        },
+        "FrameIndex": {
+          "Min": 0,
+          "Max": 0
+        }
+      },
+      "100": {
+        "Opacity": 0,
+        "Color": "#b3c7ff"
+      },
+      "35": {
+        "FrameIndex": {
+          "Min": 1,
+          "Max": 1
+        },
+        "Color": "#b3c7ff"
+      },
+      "70": {
+        "FrameIndex": {
+          "Min": 2,
+          "Max": 2
+        },
+        "Color": "#b3c7ff"
+      }
+    },
+    "InitialAnimationFrame": {
+      "Scale": {
+        "X": {
+          "Min": 0.08,
+          "Max": 0.16
+        },
+        "Y": {
+          "Min": 0.12,
+          "Max": 0.22
+        }
+      },
+      "Opacity": 1,
+      "Color": "#c5dfff",
+      "FrameIndex": {
+        "Min": 0,
+        "Max": 0
+      }
+    },
+    "UseSpriteBlending": false,
+    "SoftParticlesFadeFactor": 1.02,
+    "SoftParticles": "Disable"
+  }
+}

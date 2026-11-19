@@ -1,0 +1,10 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Skill_Airwave"
+    }
+  ],
+  "BoundingRadius": 4,
+  "CullDistance": 96,
+  "IsImportant": true
+}

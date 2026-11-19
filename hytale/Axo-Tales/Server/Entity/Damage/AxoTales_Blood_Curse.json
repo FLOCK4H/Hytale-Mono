@@ -1,0 +1,7 @@
+{
+  "Inherits": "Environment",
+  "DurabilityLoss": false,
+  "StaminaLoss": false,
+  "BypassResistances": true,
+  "DeathMessageKey": "server.general.deathCause.environment"
+}

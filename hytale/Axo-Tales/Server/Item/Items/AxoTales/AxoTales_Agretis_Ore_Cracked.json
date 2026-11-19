@@ -1,0 +1,42 @@
+{
+  "Parent": "Axo_Agretis_Ore_Deposit",
+  "Quality": "AxoTales_Internal",
+  "HideFromSearch": true,
+  "Categories": [],
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Agretis_Ore.name"
+  },
+  "BlockType": {
+    "DrawType": "Cube",
+    "Particles": [],
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks",
+        "ItemId": "Rock_Basalt_Cobble",
+        "Quality": 1,
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Weight": 0,
+                "$Comment": "In this case 'Weight' is interpreted as a percentage chance to spawn, so 20% chance",
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Axo_Agretis_Ore"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Basalt_Cobble"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$AxoLegacyItem": "Axo_Agretis_Ore_Deposit_Cracked"
+}

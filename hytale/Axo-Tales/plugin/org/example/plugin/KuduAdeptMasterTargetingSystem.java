@@ -21,18 +21,18 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Records the bonded owner's current commanded target.
- *
- * <p>Command sources:
- * <ul>
- *   <li>the owner damages a non-player entity, or</li>
- *   <li>the owner / one of the owner's bonded adepts is damaged by a non-player attacker.</li>
- * </ul>
- *
- * <p>Bonded adepts consume this target from {@link KuduAdeptBondSystem}; they do not independently scan nearby
- * entities for aggression.</p>
- */
+
+
+
+
+
+
+
+
+
+
+
+
 public final class KuduAdeptMasterTargetingSystem extends DamageEventSystem {
 
     private final PluginErrorReporter errors;
@@ -55,7 +55,7 @@ public final class KuduAdeptMasterTargetingSystem extends DamageEventSystem {
     @Nullable
     @Override
     public SystemGroup<EntityStore> getGroup() {
-        return DamageModule.get().getFilterDamageGroup();
+        return DamageModule.get().getInspectDamageGroup();
     }
 
     @Nonnull
@@ -204,7 +204,7 @@ public final class KuduAdeptMasterTargetingSystem extends DamageEventSystem {
         @Nullable String targetRoleName,
         @Nonnull String adeptRoleName
     ) {
-        if (store.getComponent(targetRef, PlayerRef.getComponentType()) != null) {
+        if (!CompanionLoyalty.wildTarget(store,targetRef)) {
             return false;
         }
         if (store.getComponent(targetRef, ItemComponent.getComponentType()) != null) {
@@ -226,7 +226,7 @@ public final class KuduAdeptMasterTargetingSystem extends DamageEventSystem {
         @Nullable String attackerRoleName,
         @Nonnull String adeptRoleName
     ) {
-        if (store.getComponent(attackerRef, PlayerRef.getComponentType()) != null) {
+        if (!CompanionLoyalty.wildTarget(store,attackerRef)) {
             return false;
         }
         if (store.getComponent(attackerRef, ItemComponent.getComponentType()) != null) {
@@ -260,7 +260,7 @@ public final class KuduAdeptMasterTargetingSystem extends DamageEventSystem {
                 return uuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         try {
             UUIDComponent uuidComponent = store.getComponent(targetRef, UUIDComponent.getComponentType());
@@ -268,7 +268,7 @@ public final class KuduAdeptMasterTargetingSystem extends DamageEventSystem {
                 return uuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return null;
     }

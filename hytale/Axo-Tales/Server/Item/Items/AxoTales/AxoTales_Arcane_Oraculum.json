@@ -1,0 +1,73 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.oraculum.name",
+    "Description": "server.items.flock4h.oraculum.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "Categories": [],
+  "Model": "Items/AxoTales/ArcaneRelics/Oraculum.blockymodel",
+  "Texture": "Items/AxoTales/ArcaneRelics/Oraculum_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Oraculum.png",
+  "PlayerAnimationsId": "Block",
+  "MaxStack": 1,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Items/AxoTales/ArcaneRelics/Oraculum.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/ArcaneRelics/Oraculum_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "CustomModelAnimation": "Items/AxoTales/ArcaneRelics/Oraculum_Idle.blockyanim",
+    "HitboxType": "AxoTales_Oraculum",
+    "RandomRotation": "YawStep90",
+    "Flags": {
+      "IsStackable": false
+    },
+    "BlockParticleSetId": "Stone",
+    "BlockSoundSetId": "Stone",
+    "Interactions": {
+      "Use": "AxoOraculum_Use"
+    },
+    "InteractionHint": "server.interactionHints.axoOraculum",
+    "BlockEntity": {
+      "Components": {
+        "AxoTales_OraculumState": {}
+      }
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks",
+        "DropList": "Axo_Arcane_Oraculum"
+      }
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "State": {
+      "Definitions": {
+        "Armed": {
+          "CustomModelAnimation": "Items/AxoTales/ArcaneRelics/Oraculum_Charge.blockyanim",
+          "Interactions": {
+            "Use": "AxoOraculum_Use"
+          },
+          "Looping": false
+        }
+      }
+    },
+    "Looping": true
+  },
+  "$AxoLegacyItem": "Axo_Arcane_Oraculum"
+}

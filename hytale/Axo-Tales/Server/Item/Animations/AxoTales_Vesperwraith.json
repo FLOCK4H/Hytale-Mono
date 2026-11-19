@@ -1,0 +1,16 @@
+{
+  "WiggleWeights": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0,
+    "Pitch": 0,
+    "Roll": 0
+  },
+  "Animations": {
+    "Cry": {
+      "ThirdPerson": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Cry.blockyanim",
+      "Speed": 1,
+      "Looping": false
+    }
+  }
+}

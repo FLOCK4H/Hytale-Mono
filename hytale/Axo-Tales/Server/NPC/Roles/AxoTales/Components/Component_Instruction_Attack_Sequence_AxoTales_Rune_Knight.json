@@ -14,19 +14,26 @@
   "Content": {
     "Sensor": {
       "Type": "Target",
-      "Range": { "Compute": "AttackDistance" }
+      "Range": {
+        "Compute": "AttackDistance"
+      }
     },
     "ActionsBlocking": true,
     "Actions": [
       {
         "Type": "Attack",
-        "Attack": "Root_NPC_Attack_Melee",
-        "AttackPauseRange": [ 1, 2 ]
+        "Attack": "AxoCursedKnight305_Wait",
+        "AttackPauseRange": [
+          1,
+          2
+        ]
       }
     ],
     "HeadMotion": {
       "Type": "Aim",
-      "RelativeTurnSpeed": { "Compute": "CombatRelativeTurnSpeed" }
+      "RelativeTurnSpeed": {
+        "Compute": "CombatRelativeTurnSpeed"
+      }
     }
   },
   "Type": "Component"

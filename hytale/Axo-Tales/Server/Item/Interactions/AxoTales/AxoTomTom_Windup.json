@@ -1,0 +1,10 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.4,
+  "Effects": {
+    "ItemPlayerAnimationsId": "AxoTales_TomTom",
+    "ItemAnimationId": "Throw",
+    "WorldSoundEventId": "SFX_Goblin_Lobber_VO_Attack"
+  },
+  "Next": "AxoTomTom_Projectile"
+}

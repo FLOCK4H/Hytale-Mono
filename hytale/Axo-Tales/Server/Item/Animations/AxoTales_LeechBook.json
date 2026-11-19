@@ -1,0 +1,14 @@
+{
+  "Parent": "AxoTales_Spellbook",
+  "Animations": {
+    "CastLeech": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Leech/Book_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/Leech/Book_ThirdPersonMoving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Leech/Book_FirstPerson.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1,
+      "BlendingDuration": 0.15,
+      "Looping": true
+    }
+  }
+}

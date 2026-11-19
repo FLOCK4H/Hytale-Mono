@@ -1,0 +1,36 @@
+Group { HitTestVisible: false;
+  Group #Readout { Anchor: (Left: 56, Top: 64, Width: 352, Height: 206); Background: #0b1322(0.94);
+    Group { Anchor: (Left: 0, Top: 0, Width: 3, Bottom: 0); Background: #bda56f; }
+    Label { Anchor: (Left: 24, Top: 18, Width: 304, Height: 16); Text: "SPYGLASS  /  6×"; Style: (FontSize: 11, RenderBold: true, TextColor: #bcab82); }
+    Label #TargetName { Anchor: (Left: 24, Top: 40, Width: 304, Height: 44); Text: "No target"; Style: (FontSize: 20, RenderBold: true, TextColor: #e9eff4, Wrap: true); }
+    Group { Anchor: (Left: 24, Top: 88, Width: 304, Height: 1); Background: #53657b(0.55); }
+    Group #Field0 { Anchor: (Left: 24, Top: 102, Width: 304, Height: 26); Visible: false;
+      Label #Label0 { Anchor: (Left: 0, Top: 0, Width: 112, Height: 24); Style: (FontSize: 11, RenderBold: true, TextColor: #aabacc, VerticalAlignment: Center); }
+      Label #Value0 { Anchor: (Left: 116, Top: 0, Width: 188, Height: 24); Style: (FontSize: 14, TextColor: #f0e4bd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    }
+    Group #Field1 { Anchor: (Left: 24, Top: 136, Width: 304, Height: 26); Visible: false;
+      Label #Label1 { Anchor: (Left: 0, Top: 0, Width: 112, Height: 24); Style: (FontSize: 11, RenderBold: true, TextColor: #aabacc, VerticalAlignment: Center); }
+      Label #Value1 { Anchor: (Left: 116, Top: 0, Width: 188, Height: 24); Style: (FontSize: 14, TextColor: #f0e4bd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    }
+    Group #Field2 { Anchor: (Left: 24, Top: 170, Width: 304, Height: 26); Visible: false;
+      Label #Label2 { Anchor: (Left: 0, Top: 0, Width: 112, Height: 24); Style: (FontSize: 11, RenderBold: true, TextColor: #aabacc, VerticalAlignment: Center); }
+      Label #Value2 { Anchor: (Left: 116, Top: 0, Width: 188, Height: 24); Style: (FontSize: 14, TextColor: #f0e4bd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    }
+    Group #Field3 { Anchor: (Left: 24, Top: 204, Width: 304, Height: 26); Visible: false;
+      Label #Label3 { Anchor: (Left: 0, Top: 0, Width: 112, Height: 24); Style: (FontSize: 11, RenderBold: true, TextColor: #aabacc, VerticalAlignment: Center); }
+      Label #Value3 { Anchor: (Left: 116, Top: 0, Width: 188, Height: 24); Style: (FontSize: 14, TextColor: #f0e4bd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    }
+    Group #Field4 { Anchor: (Left: 24, Top: 238, Width: 304, Height: 26); Visible: false;
+      Label #Label4 { Anchor: (Left: 0, Top: 0, Width: 112, Height: 24); Style: (FontSize: 11, RenderBold: true, TextColor: #aabacc, VerticalAlignment: Center); }
+      Label #Value4 { Anchor: (Left: 116, Top: 0, Width: 188, Height: 24); Style: (FontSize: 14, TextColor: #f0e4bd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    }
+    Group #Field5 { Anchor: (Left: 24, Top: 272, Width: 304, Height: 26); Visible: false;
+      Label #Label5 { Anchor: (Left: 0, Top: 0, Width: 112, Height: 24); Style: (FontSize: 11, RenderBold: true, TextColor: #aabacc, VerticalAlignment: Center); }
+      Label #Value5 { Anchor: (Left: 116, Top: 0, Width: 188, Height: 24); Style: (FontSize: 14, TextColor: #f0e4bd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    }
+    Group #Field6 { Anchor: (Left: 24, Top: 306, Width: 304, Height: 26); Visible: false;
+      Label #Label6 { Anchor: (Left: 0, Top: 0, Width: 112, Height: 24); Style: (FontSize: 11, RenderBold: true, TextColor: #aabacc, VerticalAlignment: Center); }
+      Label #Value6 { Anchor: (Left: 116, Top: 0, Width: 188, Height: 24); Style: (FontSize: 14, TextColor: #f0e4bd, HorizontalAlignment: End, VerticalAlignment: Center); }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "Type": "AxoTales_TomTom",
+  "Detonate": true,
+  "Next": "AxoTomTom_RemoveBomb"
+}

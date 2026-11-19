@@ -1,0 +1,29 @@
+{
+  "Model": "AxoTales_Rune_Soul",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 0,
+    "RotationMode": "None",
+    "SticksVertically": false
+  },
+  "LaunchForce": 0,
+  "SpawnOffset": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "Interactions": {
+    "ProjectileSpawn": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 3,
+          "Next": {
+            "Type": "RemoveEntity",
+            "Entity": "User"
+          }
+        }
+      ]
+    }
+  }
+}

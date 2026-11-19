@@ -1,24 +1,27 @@
 site_name: Axo Tales Guidebook
-site_description: Player and server guide for AxoTales on Hytale 0.7.6.
+site_description: Player and server guide for AxoTales on Hytale 0.7.7.
 site_url: https://flock4h.github.io/Hytale-Mono/
 repo_url: https://github.com/FLOCK4H/Hytale-Mono
 repo_name: Axo Tales source
 
 theme:
   name: material
+  custom_dir: docs/theme
   font: false
   logo: assets/images/brand/axotales.png
   favicon: assets/images/brand/axotales.png
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: teal
-      accent: deep orange
+      accent: teal
       toggle:
         icon: material/weather-night
         name: Switch to night mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: teal
-      accent: amber
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: Switch to day mode
@@ -29,9 +32,10 @@ theme:
     - navigation.expand
     - navigation.tracking
     - navigation.top
+    - navigation.footer
+    - toc.follow
     - search.highlight
     - search.suggest
-    - header.autohide
     - content.code.copy
     - content.tabs.link
 
@@ -55,6 +59,9 @@ extra_javascript:
 
 extra:
   generator: false
+
+exclude_docs: |
+  /theme/
 
 nav:
   - Home: index.md

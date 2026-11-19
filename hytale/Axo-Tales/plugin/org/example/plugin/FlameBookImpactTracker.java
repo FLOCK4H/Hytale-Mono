@@ -5,9 +5,9 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Shared state for Flame Book projectile impact handling.
- */
+
+
+
 public final class FlameBookImpactTracker {
 
     private final Set<UUID> entityHitProjectiles = ConcurrentHashMap.newKeySet();

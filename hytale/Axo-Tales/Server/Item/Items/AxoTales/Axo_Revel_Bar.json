@@ -1,0 +1,43 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Bar_Revel.name",
+    "Description": "server.items.flock4h.AxoTales_Bar_Revel.description"
+  },
+  "Model": "Resources/AxoTales/Ores/Revel/Ingot.blockymodel",
+  "Texture": "Resources/AxoTales/Ores/Revel/Ingot_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Bar_Revel.png",
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Ingots",
+  "MaxStack": 100,
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Axo_Revel_Ore",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Processing",
+        "Id": "Furnace"
+      },
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Items"
+        ]
+      }
+    ],
+    "OutputQuantity": 1,
+    "TimeSeconds": 14
+  }
+}

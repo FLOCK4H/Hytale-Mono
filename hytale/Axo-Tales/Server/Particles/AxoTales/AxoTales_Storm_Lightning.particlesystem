@@ -1,0 +1,23 @@
+{
+  "CullDistance": 96,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Storm_Bolt",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "FixedRotation": false
+    },
+    {
+      "SpawnerId": "AxoTales_Storm_Sparks",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "FixedRotation": false
+    }
+  ]
+}

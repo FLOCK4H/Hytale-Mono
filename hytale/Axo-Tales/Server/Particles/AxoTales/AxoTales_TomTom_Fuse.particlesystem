@@ -1,0 +1,9 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_TomTom_Fuse"
+    }
+  ],
+  "CullDistance": 32,
+  "BoundingRadius": 1
+}

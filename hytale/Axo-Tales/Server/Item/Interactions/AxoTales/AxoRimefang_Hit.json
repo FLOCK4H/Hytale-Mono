@@ -1,0 +1,43 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "Serial",
+      "Interactions": [
+        {
+          "Type": "ApplyEffect",
+          "EffectId": "Red_Flash",
+          "Entity": "Target"
+        },
+        {
+          "Type": "ClearEntityEffect",
+          "Entity": "Target",
+          "EntityEffectId": "Potion_Health_Lesser_Regen"
+        },
+        {
+          "Type": "ClearEntityEffect",
+          "Entity": "Target",
+          "EntityEffectId": "Potion_Health_Greater_Regen"
+        },
+        {
+          "Type": "ClearEntityEffect",
+          "Entity": "Target",
+          "EntityEffectId": "Potion_Stamina_Regen"
+        }
+      ]
+    },
+    {
+      "Type": "Interrupt",
+      "Entity": "Target",
+      "ExcludedTag": "Uninterruptable"
+    },
+    {
+      "Type": "ApplyEffect",
+      "Entity": "Target",
+      "EffectId": "AxoTales_Rimefang_Freeze"
+    },
+    {
+      "Type": "AxoTales_Input"
+    }
+  ]
+}

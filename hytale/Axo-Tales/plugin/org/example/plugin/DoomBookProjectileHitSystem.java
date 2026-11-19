@@ -19,9 +19,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Applies Doom Book projectile explosion damage while preventing direct-hit double damage.
- */
+
+
+
 public final class DoomBookProjectileHitSystem extends DamageEventSystem {
 
     public static final String DOOM_PROJECTILE_ID = "Doom_Ball";

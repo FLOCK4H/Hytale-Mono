@@ -1,0 +1,60 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_matter_ore_volcanic.name",
+    "Description": "server.items.flock4h.arcane_matter_ore_volcanic.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Arcane_Matter_Volcanic.png",
+  "Parent": "Axo_Arcane_Matter_Ore_Stone",
+  "BlockType": {
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OreIron",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Axo_Arcane_Matter"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Volcanic_Cobble"
+                }
+              },
+              {
+                "Type": "Droplist",
+                "Weight": 25,
+                "DroplistId": "Drop_AxoTales_Cloud_Or_Bounce"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Volcanic.png"
+      }
+    ],
+    "ParticleColor": "#9c4cca",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/Astral/Matter_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "CustomModel": "Items/AxoTales/Astral/Matter_Veins.blockymodel",
+    "Particles": [
+      {
+        "SystemId": "AxoTales_Arcane_Matter",
+        "Scale": 0.22
+      }
+    ],
+    "DrawType": "CubeWithModel"
+  }
+}

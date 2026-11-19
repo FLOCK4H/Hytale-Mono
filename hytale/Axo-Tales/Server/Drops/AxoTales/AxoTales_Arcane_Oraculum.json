@@ -1,0 +1,10 @@
+{
+  "Container": {
+    "Type": "Single",
+    "Item": {
+      "ItemId": "Axo_Arcane_Oraculum",
+      "QuantityMin": 1,
+      "QuantityMax": 1
+    }
+  }
+}

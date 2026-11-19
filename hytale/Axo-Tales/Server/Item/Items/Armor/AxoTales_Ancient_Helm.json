@@ -1,0 +1,120 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.ancient_armor_helm.name",
+    "Description": "server.items.flock4h.ancient_armor_helm.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 40,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "Categories": [],
+  "Icon": "Icons/ItemsGenerated/AxoTales_Ancient_Helm.png",
+  "Model": "Items/AxoTales/AncientArmor/Ancient_Head.blockymodel",
+  "Texture": "Items/AxoTales/AncientArmor/Ancient_Head_Atlas.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Head",
+    "BaseDamageResistance": 0,
+    "DamageResistance": {},
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 40,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Mana": [
+        {
+          "Amount": 35,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Stamina": [
+        {
+          "Amount": 25,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "Regenerating": {
+      "Stamina": [
+        {
+          "$Comment": "Adds 30% of normal positive stamina regeneration.",
+          "Interval": 0.1,
+          "Amount": 0.09,
+          "RegenType": "Additive",
+          "Conditions": [
+            {
+              "Id": "Stat",
+              "Stat": "StaminaRegenDelay",
+              "Amount": 0
+            },
+            {
+              "Id": "Stat",
+              "Stat": "Stamina",
+              "Amount": 0,
+              "Comparison": "Gte"
+            },
+            {
+              "Id": "Wielding",
+              "Inverse": true,
+              "UseIgnoreFlag": true
+            },
+            {
+              "Id": "Sprinting",
+              "Inverse": true
+            },
+            {
+              "Id": "Gliding",
+              "Inverse": true
+            }
+          ]
+        }
+      ]
+    },
+    "CosmeticsToHide": [
+      "Haircut",
+      "HeadAccessory",
+      "Ear",
+      "EarAccessory"
+    ]
+  },
+  "MaxDurability": 900,
+  "DurabilityLossOnHit": 0.5,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Iron"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.654,
+    "Rotation": [
+      15,
+      35,
+      0
+    ],
+    "Translation": [
+      0,
+      0
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Ancient_Helm"
+}

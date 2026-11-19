@@ -4,36 +4,9 @@
     "Name": "server.items.flock4h.rabbit_potion.name",
     "Description": "server.items.flock4h.rabbit_potion.description"
   },
-  "Quality": "Rare",
+  "Quality": "AxoTales_Internal",
   "ItemLevel": 1,
   "Icon": "Icons/ItemsGenerated/Jump_Potion.png",
-  "Recipe": {
-    "Input": [
-      {
-        "ItemId": "Empty_Potion_Bottle",
-        "Quantity": 1
-      },
-      {
-        "ItemId": "Ingredient_Crystal_Arcane",
-        "Quantity": 2
-      },
-      {
-        "ItemId": "Ingredient_Feathers_Dark",
-        "Quantity": 1
-      }
-    ],
-    "BenchRequirement": [
-      {
-        "Id": "Alchemybench",
-        "Type": "Crafting",
-        "Categories": [
-          "Alchemy_Potions_Misc"
-        ]
-      }
-    ],
-    "KnowledgeRequired": false,
-    "TimeSeconds": 1
-  },
   "Interactions": {
     "Secondary": "Root_Secondary_Consume_Potion"
   },
@@ -82,5 +55,7 @@
   },
   "MaxStack": 10,
   "Consumable": true,
-  "DropOnDeath": true
+  "DropOnDeath": true,
+  "Categories": [],
+  "$AxoLegacyItem": "Axo_Rabbit_Potion"
 }

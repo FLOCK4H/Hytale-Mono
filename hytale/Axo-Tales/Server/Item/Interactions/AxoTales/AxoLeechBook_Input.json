@@ -1,0 +1,10 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "AxoTales_Input",
+      "ServerAuthority": true
+    },
+    "AxoLeech_Channel"
+  ]
+}

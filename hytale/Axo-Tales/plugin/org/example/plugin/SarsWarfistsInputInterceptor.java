@@ -5,8 +5,8 @@ import com.hypixel.hytale.component.Holder;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.protocol.Packet;
@@ -36,17 +36,17 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Packet-level input handling for Sa'r Warfists.
- *
- * <p>The armor itself is worn in the hands slot, so it cannot rely on held-item interactions. We therefore listen to
- * {@link SyncInteractionChains} and, when the player is wearing Sa'r Warfists and is unarmed, turn the initial
- * {@link InteractionType#Primary} into a short-cooldown projectile cast. Every processed input writes a
- * player-reproducible debug trace to the persistent plugin log.</p>
- */
+
+
+
+
+
+
+
+
 public final class SarsWarfistsInputInterceptor implements PlayerPacketWatcher {
 
-    public static final String WARFISTS_ITEM_ID = "Sar_Warfists";
+    public static final String WARFISTS_ITEM_ID = "Axo_Sar_Warfists";
     public static final String WARFISTS_PROJECTILE_ASSET_ID = "Sar_Warfist_Bolt";
 
     private static final long CAST_COOLDOWN_NANOS = 500_000_000L;
@@ -310,13 +310,13 @@ public final class SarsWarfistsInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new CastDecision(false, "directionInvalid", origin, direction, null);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, WARFISTS_PROJECTILE_ASSET_ID, origin, rotation);
@@ -334,7 +334,7 @@ public final class SarsWarfistsInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "SarsWarfists: projectile.shoot failed (assetId=" + WARFISTS_PROJECTILE_ASSET_ID + ").", t);
             return new CastDecision(false, "projectileShootException", origin, direction, null);
@@ -355,7 +355,7 @@ public final class SarsWarfistsInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best-effort debug info.
+
         }
 
         return new CastDecision(true, "castApplied", origin, direction, projectileUuid);

@@ -1,0 +1,9 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Villa_Soul_Motes"
+    }
+  ],
+  "BoundingRadius": 2,
+  "CullDistance": 48
+}

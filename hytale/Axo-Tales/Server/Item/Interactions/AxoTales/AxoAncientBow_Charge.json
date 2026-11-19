@@ -1,0 +1,19 @@
+{
+  "Type": "Charging",
+  "AllowIndefiniteHold": true,
+  "DisplayProgress": true,
+  "HorizontalSpeedMultiplier": 0.5,
+  "Effects": {
+    "ItemAnimationId": "ShootCharging",
+    "ClearAnimationOnFinish": true,
+    "WorldSoundEventId": "SFX_Bow_T2_Draw",
+    "LocalSoundEventId": "SFX_Bow_T2_Draw_Local"
+  },
+  "Next": {
+    "0": {
+      "Type": "Simple",
+      "RunTime": 0
+    },
+    "0.35": "AxoAncientBow_Fire"
+  }
+}

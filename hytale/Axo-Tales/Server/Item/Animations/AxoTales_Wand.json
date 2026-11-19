@@ -1,0 +1,158 @@
+{
+  "Parent": "Wand",
+  "Animations": {
+    "CastHurlCharged": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1,
+      "BlendingDuration": 0.12
+    },
+    "CastHeal": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 2.0,
+      "BlendingDuration": 0.12
+    },
+    "CastTeleport": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.0,
+      "BlendingDuration": 0.12
+    },
+    "CastMining": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charging.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charging_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charging_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.0,
+      "Looping": true,
+      "BlendingDuration": 0.12
+    },
+    "CastImmunity": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.74,
+      "BlendingDuration": 0.12
+    },
+    "CastTaunt": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.0,
+      "BlendingDuration": 0.12
+    },
+    "CastHorde": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.76,
+      "BlendingDuration": 0.12
+    },
+    "CastDoom": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.62,
+      "BlendingDuration": 0.12
+    },
+    "CastMorph": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 2.0,
+      "BlendingDuration": 0.12
+    },
+    "CastMorphReset": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.88,
+      "BlendingDuration": 0.12
+    },
+    "CastFrost": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.82,
+      "BlendingDuration": 0.12
+    },
+    "CastFlame": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.26,
+      "BlendingDuration": 0.12
+    },
+    "CastLight": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.92,
+      "BlendingDuration": 0.12
+    },
+    "CastSilver": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.26,
+      "BlendingDuration": 0.12
+    },
+    "CastBloody": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charging.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charging_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charging_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.0,
+      "Looping": true,
+      "BlendingDuration": 0.12
+    },
+    "CastLife": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.5,
+      "BlendingDuration": 0.12
+    },
+    "CastLightning": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.330667,
+      "BlendingDuration": 0.12
+    },
+    "CastMeteorain": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 0.330667,
+      "BlendingDuration": 0.12
+    },
+    "CastMiningRelease": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charged.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charged_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left_Charged/Cast_Left_Charged_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "Speed": 1
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.6,
+  "Effects": {
+    "ItemAnimationId": "CastLightning",
+    "ClearAnimationOnFinish": true,
+    "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
+  }
+}

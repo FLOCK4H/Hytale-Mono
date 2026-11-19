@@ -1,0 +1,10 @@
+{
+  "Duration": 0.5,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Duration",
+  "Infinite": false,
+  "Debuff": false,
+  "ApplicationEffects": {
+    "ModelVFXId": "AxoTales_Invisible"
+  }
+}

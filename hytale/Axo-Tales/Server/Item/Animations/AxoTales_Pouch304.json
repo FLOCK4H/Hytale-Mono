@@ -1,0 +1,62 @@
+{
+  "Parent": "Item",
+  "Animations": {
+    "Idle": {
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/Idle_FPS.blockyanim",
+      "Speed": 0.5,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/Idle.blockyanim",
+      "Looping": true
+    },
+    "Walk": {
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/Walk_FPS.blockyanim",
+      "Speed": 1.0,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/Walk.blockyanim",
+      "Looping": true
+    },
+    "WalkBackward": {
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/WalkBackward_FPS.blockyanim",
+      "Speed": 1.0,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/WalkBackward.blockyanim",
+      "Looping": true
+    },
+    "Run": {
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/Run_FPS.blockyanim",
+      "Speed": 0.9,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/Run.blockyanim",
+      "Looping": true
+    },
+    "RunBackward": {
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/RunBackward_FPS.blockyanim",
+      "Speed": 0.9,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/RunBackward.blockyanim",
+      "Looping": true
+    },
+    "Sprint": {
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/Sprint_FPS.blockyanim",
+      "Speed": 1.1,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/Sprint.blockyanim",
+      "Looping": true
+    },
+    "Crouch": {
+      "BlendingDuration": 0.1,
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/Crouch_FPS.blockyanim",
+      "Speed": 0.5,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/Crouch.blockyanim",
+      "Looping": true
+    },
+    "CrouchWalk": {
+      "BlendingDuration": 0.1,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/CrouchWalk.blockyanim",
+      "Speed": 0.8,
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/CrouchWalk_FPS.blockyanim",
+      "Looping": true
+    },
+    "CrouchWalkBackward": {
+      "BlendingDuration": 0.1,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Pouch304/CrouchWalkBackward.blockyanim",
+      "Speed": 0.8,
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Pouch304/CrouchWalkBackward_FPS.blockyanim",
+      "Looping": true
+    }
+  }
+}

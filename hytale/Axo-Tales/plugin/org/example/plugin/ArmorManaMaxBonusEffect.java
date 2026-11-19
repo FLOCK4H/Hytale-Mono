@@ -29,38 +29,36 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Applies max-mana bonuses for Axo Tales items.
- *
- * <p>Armor bonuses apply while worn, and inventory bonuses apply while the item is present anywhere in the player's
- * inventory. We use per-item modifier keys so bonuses stack. Debug traces log: detected items, mana stat snapshot,
- * and the final apply/remove decisions.</p>
- */
+
+
+
+
+
+
+
 public final class ArmorManaMaxBonusEffect {
 
     private static final float FLOAT_EPSILON = 0.0001f;
     private static final String BASELINE_MANA_MAX_MODIFIER_KEY = "axotales:mana_max_baseline_neg";
 
-    // ItemId -> max mana additive bonus (applied while worn in armor slots)
+
     private static final Map<String, Float> ARMOR_MANA_MAX_BONUSES_BY_ITEM_ID = Map.of(
-        "Sars_Legs", 25f,
-        "Sar_Diadem", 25f,
-        "Sar_Chest", 25f,
-        "Sar_Warfists", 25f,
-        "Invisibility_Cloak", 25f,
-        "Kudu_Boots", 25f
+        "Axo_Sar_Boots", 25f,
+        "Axo_Sar_Diadem", 25f,
+        "Axo_Sar_Armor", 25f,
+        "Axo_Sar_Warfists", 25f,
+        "Axo_Invisibility_Cloak", 25f
     );
 
-    // ItemId -> max mana additive bonus (applied while present anywhere in the player's inventory)
+
     private static final Map<String, Float> INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID = Map.of(
-        "Axo_Ancient_Sword", 30f
+        "Axo_Arcane_Sword", 30f
     );
 
     private final PluginErrorReporter errors;
     private final PluginDebugReporter debug;
     private final Map<UUID, List<Registration>> itemChangeRegistrationsByPlayer = new ConcurrentHashMap<>();
     private final Map<UUID, Long> nextDebugAtNanosByPlayer = new ConcurrentHashMap<>();
-    private final Map<UUID, Float> baselineManaMaxByPlayer = new ConcurrentHashMap<>();
 
     public ArmorManaMaxBonusEffect(@Nonnull PluginErrorReporter errors, @Nonnull PluginDebugReporter debug) {
         this.errors = errors;
@@ -169,7 +167,6 @@ public final class ArmorManaMaxBonusEffect {
             }
         }
         nextDebugAtNanosByPlayer.remove(playerUuid);
-        baselineManaMaxByPlayer.remove(playerUuid);
     }
 
     public void shutdown() {
@@ -183,12 +180,11 @@ public final class ArmorManaMaxBonusEffect {
                     }
                 }
             } catch (Throwable ignored) {
-                // Best-effort cleanup on shutdown.
+
             }
         }
         itemChangeRegistrationsByPlayer.clear();
         nextDebugAtNanosByPlayer.clear();
-        baselineManaMaxByPlayer.clear();
     }
 
     private void refresh(@Nonnull UUID playerUuid) {
@@ -257,9 +253,13 @@ public final class ArmorManaMaxBonusEffect {
             }
 
             EntityStatValue manaBefore = stats.get(manaIndex);
-            float manaCurrentBefore = manaBefore != null ? manaBefore.get() : Float.NaN;
-            float manaMinBefore = manaBefore != null ? manaBefore.getMin() : Float.NaN;
-            float manaMaxBefore = manaBefore != null ? manaBefore.getMax() : Float.NaN;
+            if (manaBefore == null) {
+                maybeDebug(playerRef, playerUuid, "manaMaxSkip", "manaStatMissing", null, null, manaIndex, null, null, null, null);
+                return;
+            }
+            float manaCurrentBefore = manaBefore.get();
+            float manaMinBefore = manaBefore.getMin();
+            float manaMaxBefore = manaBefore.getMax();
 
             List<String> equippedArmorItemIds = readArmorItemIds(armor);
             List<String> inventoryBonusItemIds = readInventoryBonusItemIds(store, playerEntityRef);
@@ -280,74 +280,18 @@ public final class ArmorManaMaxBonusEffect {
             List<String> applied = new ArrayList<>();
             List<String> removed = new ArrayList<>();
 
-            float baselineMax = baselineManaMaxByPlayer.getOrDefault(playerUuid, Float.NaN);
-            boolean baselineComputed = false;
-            if (!Float.isFinite(baselineMax) || baselineMax < 0f) {
-                boolean removedAnyKnown = false;
-                removedAnyKnown |= stats.removeModifier(manaIndex, BASELINE_MANA_MAX_MODIFIER_KEY) != null;
-                for (String itemId : ARMOR_MANA_MAX_BONUSES_BY_ITEM_ID.keySet()) {
-                    String modifierKey = "axotales:mana_max_" + itemId;
-                    removedAnyKnown |= stats.removeModifier(manaIndex, modifierKey) != null;
-                }
-                for (String itemId : INVENTORY_MANA_MAX_BONUSES_BY_ITEM_ID.keySet()) {
-                    String modifierKey = "axotales:mana_max_" + itemId;
-                    removedAnyKnown |= stats.removeModifier(manaIndex, modifierKey) != null;
-                }
 
-                if (removedAnyKnown) {
-                    anyChange = true;
-                    stats.update();
-                }
 
-                EntityStatValue manaNoAxoModifiers = stats.get(manaIndex);
-                if (manaNoAxoModifiers == null) {
-                    maybeDebug(
-                        playerRef,
-                        playerUuid,
-                        "manaMaxSkip",
-                        "manaStatMissingForBaseline",
-                        equippedArmorItemIds,
-                        inventoryBonusItemIds,
-                        manaIndex,
-                        manaCurrentBefore,
-                        manaMinBefore,
-                        manaMaxBefore,
-                        null
-                    );
-                    return;
-                }
-
-                baselineMax = manaNoAxoModifiers.getMax();
-                baselineManaMaxByPlayer.put(playerUuid, baselineMax);
-                baselineComputed = true;
-            }
-
-            if (Float.isFinite(baselineMax) && baselineMax > FLOAT_EPSILON) {
-                float baselineNeg = -baselineMax;
-                Modifier existing = stats.getModifier(manaIndex, BASELINE_MANA_MAX_MODIFIER_KEY);
-                if (!(existing instanceof StaticModifier staticModifier
-                    && staticModifier.getTarget() == Modifier.ModifierTarget.MAX
-                    && staticModifier.getCalculationType() == StaticModifier.CalculationType.ADDITIVE
-                    && Math.abs(staticModifier.getAmount() - baselineNeg) < FLOAT_EPSILON)) {
-                    stats.putModifier(
-                        manaIndex,
-                        BASELINE_MANA_MAX_MODIFIER_KEY,
-                        new StaticModifier(Modifier.ModifierTarget.MAX, StaticModifier.CalculationType.ADDITIVE, baselineNeg)
-                    );
-                    anyChange = true;
-                }
-            } else {
-                Modifier removedBaseline = stats.removeModifier(manaIndex, BASELINE_MANA_MAX_MODIFIER_KEY);
-                if (removedBaseline != null) {
-                    anyChange = true;
-                }
+            if (stats.removeModifier(manaIndex, BASELINE_MANA_MAX_MODIFIER_KEY) != null) {
+                anyChange = true;
+                removed.add(BASELINE_MANA_MAX_MODIFIER_KEY);
             }
 
             for (var entry : ARMOR_MANA_MAX_BONUSES_BY_ITEM_ID.entrySet()) {
                 String itemId = entry.getKey();
                 float bonus = entry.getValue();
                 boolean wearing = equippedArmorItemIds.contains(itemId);
-                String modifierKey = "axotales:mana_max_" + itemId;
+                String modifierKey = "axotales:mana_max_" + AxoItems.modifierId(itemId);
 
                 boolean changed = applyOrRemoveManaMaxModifier(stats, manaIndex, modifierKey, bonus, wearing);
                 if (changed) {
@@ -364,7 +308,7 @@ public final class ArmorManaMaxBonusEffect {
                 String itemId = entry.getKey();
                 float bonus = entry.getValue();
                 boolean present = inventoryBonusItemIdSet.contains(itemId);
-                String modifierKey = "axotales:mana_max_" + itemId;
+                String modifierKey = "axotales:mana_max_" + AxoItems.modifierId(itemId);
 
                 boolean changed = applyOrRemoveManaMaxModifier(stats, manaIndex, modifierKey, bonus, present);
                 if (changed) {
@@ -405,14 +349,6 @@ public final class ArmorManaMaxBonusEffect {
                 manaCurrentAfter = manaMaxAfter;
             }
 
-            if (desiredBonusTotal <= FLOAT_EPSILON) {
-                if (Float.isFinite(manaCurrentAfter) && manaCurrentAfter > FLOAT_EPSILON) {
-                    stats.setStatValue(manaIndex, 0f);
-                    stats.update();
-                    manaCurrentAfter = 0f;
-                }
-            }
-
             debug.traceFileOnly(
                 playerRef,
                 "ArmorManaMax event=manaMaxApply"
@@ -420,8 +356,6 @@ public final class ArmorManaMaxBonusEffect {
                     + " removed=" + removed
                     + " armorItemIds=" + equippedArmorItemIds
                     + " inventoryBonusItemIds=" + inventoryBonusItemIds
-                    + " baselineMax=" + (Float.isFinite(baselineMax) ? baselineMax : "unknown")
-                    + " baselineComputed=" + baselineComputed
                     + " desiredBonusTotal=" + desiredBonusTotal
                     + " mana.index=" + manaIndex
                     + (Float.isFinite(manaCurrentBefore) ? " mana.currentBefore=" + manaCurrentBefore : "")

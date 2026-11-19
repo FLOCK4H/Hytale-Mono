@@ -21,12 +21,12 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Lightweight mana regeneration based on wearing Axo Tales armor pieces.
- *
- * <p>Rule: for each configured Axo Tales armor piece currently worn, add
- * {@value #MANA_PER_ITEM_PER_INTERVAL} mana every {@value #INTERVAL_SECONDS} seconds.</p>
- */
+
+
+
+
+
+
 public final class ArmorManaRegenerationSystem extends TickingSystem<EntityStore> {
 
     private static final long INTERVAL_SECONDS = 2L;
@@ -34,10 +34,10 @@ public final class ArmorManaRegenerationSystem extends TickingSystem<EntityStore
     private static final float MANA_PER_ITEM_PER_INTERVAL = 2f;
     private static final float FLOAT_EPSILON = 0.0001f;
     private static final Set<String> MANA_REGEN_ARMOR_ITEM_IDS = Set.of(
-        "Sars_Legs",
-        "Sar_Diadem",
-        "Sar_Chest",
-        "Sar_Warfists"
+        "Axo_Sar_Boots",
+        "Axo_Sar_Diadem",
+        "Axo_Sar_Armor",
+        "Axo_Sar_Warfists"
     );
 
     private final PluginErrorReporter errors;
@@ -83,6 +83,11 @@ public final class ArmorManaRegenerationSystem extends TickingSystem<EntityStore
                             Ref<EntityStore> playerEntityRef = chunk.getReferenceTo(index);
                             if (playerEntityRef == null || !playerEntityRef.isValid()) {
                                 continue;
+                            }
+
+                            if (ArcaneArmorSets.robe(store,playerEntityRef)
+                                    && store.getComponent(playerEntityRef,com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent.getComponentType())==null) {
+                                applyVeilRegeneration(chunk.getComponent(index,EntityStatMap.getComponentType()),manaIndex,delta);
                             }
 
                             RegenArmorSnapshot snapshot = countWornRegenArmor(store, playerEntityRef);
@@ -152,7 +157,7 @@ public final class ArmorManaRegenerationSystem extends TickingSystem<EntityStore
                             stats.setStatValue(manaIndex, updated);
                             stats.update();
                         } catch (Throwable ignoredPerEntity) {
-                            // Best-effort regen; isolate per-entity issues.
+
                         }
                     }
                 }
@@ -160,6 +165,12 @@ public final class ArmorManaRegenerationSystem extends TickingSystem<EntityStore
         } catch (Throwable t) {
             errors.report((PlayerRef) null, "ArmorManaRegenerationSystem: tick failed.", t);
         }
+    }
+
+    static void applyVeilRegeneration(EntityStatMap stats,int index,float delta){
+        var mana=stats==null||index<0?null:stats.get(index);if(mana==null||!Float.isFinite(delta)||delta<=0)return;
+        float next=Math.min(mana.getMax(),mana.get()+5f*Math.min(delta,.25f));
+        if(next>mana.get()){stats.setStatValue(index,next);stats.update();}
     }
 
     private void maybeDebug(

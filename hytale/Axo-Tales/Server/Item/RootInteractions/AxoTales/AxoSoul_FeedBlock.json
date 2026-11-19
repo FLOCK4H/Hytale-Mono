@@ -1,0 +1,9 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    {
+      "Type": "UseEntity",
+      "Failed": "Block_Secondary"
+    }
+  ]
+}

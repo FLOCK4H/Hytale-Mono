@@ -1,0 +1,12 @@
+Group { HitTestVisible: false;
+  Group #FlightHud { Anchor: (Right: 32, Bottom: 208, Width: 302, Height: 92); Background: #101c2b(0.94);
+    Group { Anchor: (Left: 0, Top: 0, Width: 302, Height: 2); Background: #b9a16a; }
+    Label #FlightLabel { Anchor: (Left: 18, Top: 12, Width: 196, Height: 22); Text: "ANCIENT FLIGHT"; Style: (FontName: "Secondary", FontSize: 13, RenderBold: true, TextColor: #d4e1e8, VerticalAlignment: Center); }
+    Label #FuelText { Anchor: (Right: 18, Top: 12, Width: 64, Height: 22); Text: "10.0 s"; Style: (FontName: "Secondary", FontSize: 15, RenderBold: true, TextColor: #bde6ff, HorizontalAlignment: End, VerticalAlignment: Center); }
+    Group #FuelTrack { Anchor: (Left: 18, Top: 39, Width: 266, Height: 8); Background: #080e18;
+      Group #FuelFill { Anchor: (Left: 0, Top: 0, Width: 266, Height: 8); Background: #67b4f1; }
+    }
+    Label #StateText { Anchor: (Left: 18, Top: 53, Width: 266, Height: 16); Text: "Ready"; Style: (FontSize: 12, RenderBold: true, TextColor: #d4e1e8, VerticalAlignment: Center); }
+    Label #Hint { Anchor: (Left: 18, Top: 72, Width: 266, Height: 14); Text: "Crouch + Jump  /  Refills on landing"; Style: (FontSize: 10, TextColor: #b9cedd, VerticalAlignment: Center); }
+  }
+}

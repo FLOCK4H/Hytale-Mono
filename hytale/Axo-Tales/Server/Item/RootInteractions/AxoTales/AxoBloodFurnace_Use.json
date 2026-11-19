@@ -1,0 +1,9 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    {
+      "Type": "AxoTales_BloodIndustry",
+      "Mode": "furnace"
+    }
+  ]
+}

@@ -15,9 +15,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
 
-/**
- * Loads {@code server-config.json} from the plugin data directory and creates a default if missing.
- */
+
+
+
 public final class AxoTalesServerConfigStore {
 
     private static final String CONFIG_FILE_NAME = "server-config.json";
@@ -158,6 +158,7 @@ public final class AxoTalesServerConfigStore {
                 migrateKuduAdeptConfig(user);
                 migrateCloudBlockConfig(user);
                 migrateLightBookConfig(user);
+                EncounterTuning.migrate(user);
                 deepMerge(merged, user);
             }
 
@@ -172,7 +173,7 @@ public final class AxoTalesServerConfigStore {
     private @Nullable JsonObject loadBundledDefaultsAsJsonObject() {
         String defaultJson = readBundledDefault();
         if (defaultJson == null || defaultJson.isBlank()) {
-            // Best-effort fallback: use the Java defaults if the resource isn't present for some reason.
+
             defaultJson = gson.toJson(new AxoTalesServerConfig());
         }
         return parseObjectBestEffort(defaultJson);
@@ -256,7 +257,7 @@ public final class AxoTalesServerConfigStore {
             loot.addProperty("frostBookDropChancePercent", 5);
             changed = true;
 
-            // Previous default was 85%. If the user never customized it, align the new defaults.
+
             try {
                 if (loot.has("kuduBootsDropChancePercent")
                     && loot.get("kuduBootsDropChancePercent").isJsonPrimitive()
@@ -265,7 +266,7 @@ public final class AxoTalesServerConfigStore {
                     loot.addProperty("kuduBootsDropChancePercent", 5);
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
         }
 
@@ -329,7 +330,7 @@ public final class AxoTalesServerConfigStore {
                     changed = true;
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
         }
         if (defaultsVersion < CURRENT_ARCANE_CRYSTAL_DEFAULTS_VERSION) {
@@ -341,7 +342,7 @@ public final class AxoTalesServerConfigStore {
                     changed = true;
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
             try {
                 var processExisting = worldgen.getAsJsonPrimitive("arcaneCrystalProcessExistingChunks");
@@ -350,7 +351,7 @@ public final class AxoTalesServerConfigStore {
                     changed = true;
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
             worldgen.addProperty("arcaneCrystalDefaultsVersion", CURRENT_ARCANE_CRYSTAL_DEFAULTS_VERSION);
             changed = true;
@@ -367,7 +368,7 @@ public final class AxoTalesServerConfigStore {
                     }
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
         }
         if (!hadMaxPerRadiusKey && worldgen.has("arcaneCrystalPlacementsPerChunk")) {
@@ -379,7 +380,7 @@ public final class AxoTalesServerConfigStore {
                     changed = true;
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
         }
 
@@ -640,6 +641,14 @@ public final class AxoTalesServerConfigStore {
     }
 
     private void sanitize(@Nonnull AxoTalesServerConfig config) {
+        if(config.encounters==null)config.encounters=new AxoTalesServerConfig.Encounters();
+        config.encounters.tomTomIntervalSeconds=EncounterTuning.interval(config.encounters.tomTomIntervalSeconds,100);
+        config.encounters.grayCatIntervalSeconds=EncounterTuning.interval(config.encounters.grayCatIntervalSeconds,600);
+        if(config.whisperion==null)config.whisperion=new AxoTalesServerConfig.Whisperion();
+        config.whisperion.intervalSeconds=EncounterTuning.interval(config.whisperion.intervalSeconds,330);
+        config.whisperion.maxWildPerWorld=Math.max(0,Math.min(1000,config.whisperion.maxWildPerWorld));
+        if(!Double.isFinite(config.whisperion.wildLifetimeSeconds))config.whisperion.wildLifetimeSeconds=1200;
+        config.whisperion.wildLifetimeSeconds=Math.max(0,Math.min(86400,config.whisperion.wildLifetimeSeconds));
         if (config.spellbooks == null) {
             config.spellbooks = new AxoTalesServerConfig.Spellbooks();
         }
@@ -959,16 +968,18 @@ public final class AxoTalesServerConfigStore {
             config.worldgen.arcaneCrystalMaxPlacementsPerRadius = 128;
         }
 
-        // Arcane Matter ore worldgen.
+
         var arcaneMatter = config.worldgen.arcaneMatterOres;
         if (arcaneMatter.stoneOreBlockId == null || arcaneMatter.stoneOreBlockId.isBlank()) {
             debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneMatterOres.stoneOreBlockId is blank; resetting to Ore_Stone_Parent.");
-            arcaneMatter.stoneOreBlockId = "Ore_Stone_Parent";
+            arcaneMatter.stoneOreBlockId = "Axo_Arcane_Matter_Ore_Stone";
         }
         if (arcaneMatter.volcanicOreBlockId == null || arcaneMatter.volcanicOreBlockId.isBlank()) {
             debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneMatterOres.volcanicOreBlockId is blank; resetting to Arcane_Matter_Volcanic.");
-            arcaneMatter.volcanicOreBlockId = "Arcane_Matter_Volcanic";
+            arcaneMatter.volcanicOreBlockId = "Axo_Arcane_Matter_Ore_Volcanic";
         }
+        arcaneMatter.stoneOreBlockId=AxoItems.canonical(arcaneMatter.stoneOreBlockId);
+        arcaneMatter.volcanicOreBlockId=AxoItems.canonical(arcaneMatter.volcanicOreBlockId);
 
         if (!Double.isFinite(arcaneMatter.stone.chancePerNewChunk)) {
             debug.traceFileOnly(null, "Config sanitize: worldgen.arcaneMatterOres.stone.chancePerNewChunk is not finite; resetting to 0.5.");
@@ -1069,8 +1080,8 @@ public final class AxoTalesServerConfigStore {
         }
 
         if (!Double.isFinite(config.runeKnight.spawn.intervalSeconds)) {
-            debug.traceFileOnly(null, "Config sanitize: runeKnight.spawn.intervalSeconds is not finite; resetting to 60.");
-            config.runeKnight.spawn.intervalSeconds = 60.0;
+            debug.traceFileOnly(null, "Config sanitize: runeKnight.spawn.intervalSeconds is not finite; resetting to 62.5.");
+            config.runeKnight.spawn.intervalSeconds = 62.5;
         }
         if (config.runeKnight.spawn.intervalSeconds < 0) {
             debug.traceFileOnly(null, "Config sanitize: runeKnight.spawn.intervalSeconds < 0; clamping to 0.");
@@ -1212,14 +1223,6 @@ public final class AxoTalesServerConfigStore {
             debug.traceFileOnly(null, "Config sanitize: runeKnight.projectiles.projectileId is blank; resetting to RuneKnight_Bolt.");
             config.runeKnight.projectiles.projectileId = "RuneKnight_Bolt";
         }
-        if (config.runeKnight.loot.kuduBootsDropChancePercent < 0) {
-            debug.traceFileOnly(null, "Config sanitize: runeKnight.loot.kuduBootsDropChancePercent < 0; clamping to 0.");
-            config.runeKnight.loot.kuduBootsDropChancePercent = 0;
-        }
-        if (config.runeKnight.loot.kuduBootsDropChancePercent > 100) {
-            debug.traceFileOnly(null, "Config sanitize: runeKnight.loot.kuduBootsDropChancePercent > 100; clamping to 100.");
-            config.runeKnight.loot.kuduBootsDropChancePercent = 100;
-        }
         if (config.runeKnight.loot.frostBookDropChancePercent < 0) {
             debug.traceFileOnly(null, "Config sanitize: runeKnight.loot.frostBookDropChancePercent < 0; clamping to 0.");
             config.runeKnight.loot.frostBookDropChancePercent = 0;
@@ -1230,8 +1233,8 @@ public final class AxoTalesServerConfigStore {
         }
 
         if (!Double.isFinite(config.kuduAdept.spawn.intervalSeconds)) {
-            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.intervalSeconds is not finite; resetting to 120.");
-            config.kuduAdept.spawn.intervalSeconds = DEFAULT_KUDU_ADEPT_INTERVAL_SECONDS;
+            debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.intervalSeconds is not finite; resetting to 50.");
+            config.kuduAdept.spawn.intervalSeconds = 50;
         }
         if (config.kuduAdept.spawn.intervalSeconds < 0) {
             debug.traceFileOnly(null, "Config sanitize: kuduAdept.spawn.intervalSeconds < 0; clamping to 0.");

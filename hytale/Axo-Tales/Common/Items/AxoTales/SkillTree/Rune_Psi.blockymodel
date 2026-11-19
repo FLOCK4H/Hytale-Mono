@@ -1,0 +1,111 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "260045",
+      "name": "Glyph0",
+      "position": {
+        "x": 0.0,
+        "y": 12.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "quad",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 0.24,
+          "y": 0.24,
+          "z": 1.0
+        },
+        "settings": {
+          "size": {
+            "x": 64,
+            "y": 64
+          },
+          "normal": "+Z"
+        },
+        "textureLayout": {
+          "front": {
+            "offset": {
+              "x": 0,
+              "y": 0
+            },
+            "mirror": {
+              "x": false,
+              "y": false
+            },
+            "angle": 0
+          }
+        },
+        "visible": true,
+        "doubleSided": true,
+        "shadingMode": "fullbright",
+        "unwrapMode": "custom"
+      },
+      "children": []
+    },
+    {
+      "id": "260046",
+      "name": "Glyph1",
+      "position": {
+        "x": 0.0,
+        "y": 12.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.7071067811865476,
+        "z": 0.0,
+        "w": 0.7071067811865476
+      },
+      "shape": {
+        "type": "quad",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 0.24,
+          "y": 0.24,
+          "z": 1.0
+        },
+        "settings": {
+          "size": {
+            "x": 64,
+            "y": 64
+          },
+          "normal": "+Z"
+        },
+        "textureLayout": {
+          "front": {
+            "offset": {
+              "x": 0,
+              "y": 0
+            },
+            "mirror": {
+              "x": false,
+              "y": false
+            },
+            "angle": 0
+          }
+        },
+        "visible": true,
+        "doubleSided": true,
+        "shadingMode": "fullbright",
+        "unwrapMode": "custom"
+      },
+      "children": []
+    }
+  ]
+}

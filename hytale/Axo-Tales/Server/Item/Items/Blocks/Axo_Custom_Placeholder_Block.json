@@ -1,0 +1,51 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.custom_placeholder_block.name",
+    "Description": "server.items.flock4h.custom_placeholder_block.description"
+  },
+  "ItemLevel": 1,
+  "Icon": "Icons/ItemsGenerated/Soil_Dirt.png",
+  "Categories": [
+    "Blocks.Soils"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Set": "Soil",
+  "ResourceTypes": [
+    {
+      "Id": "Soils"
+    }
+  ],
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Group": "Dirt",
+    "Flags": {},
+    "Opacity": "Solid",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Soils"
+      }
+    },
+    "BlockParticleSetId": "Dirt",
+    "Textures": [
+      {
+        "All": "BlockTextures/AxoTales_CustomPlaceholder.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#98743b",
+    "BlockSoundSetId": "Dirt",
+    "TransitionTexture": "BlockTextures/Transition_Soil_Dirt.png",
+    "TransitionToGroups": [
+      "Stone",
+      "Dirt"
+    ],
+    "BlockBreakingDecalId": "Breaking_Decals_Soil"
+  },
+  "Tags": {
+    "Type": [
+      "Soil"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Soft"
+}

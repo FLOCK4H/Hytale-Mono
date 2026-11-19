@@ -1,0 +1,92 @@
+{
+  "Model": "Characters/AxoTales/Whisperion_Rider.blockymodel",
+  "Texture": "Characters/Player_Textures/Player_Greyscale.png",
+  "EyeHeight": 3.0,
+  "HitBox": {
+    "Min": {
+      "X": -0.46,
+      "Y": 0,
+      "Z": -0.85
+    },
+    "Max": {
+      "X": 0.46,
+      "Y": 3.15,
+      "Z": 1.1
+    }
+  },
+  "AnimationSets": {
+    "Ride_Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Ride_Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Ride_Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Ride_Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_Swim.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Ride_Flight": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_Flight.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Ride_Glide": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_Glide.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Ride_TakeOff": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_TakeOff.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    },
+    "Ride_Land": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Whisperion/Ridden/Ride_Land.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.15
+        }
+      ]
+    }
+  },
+  "RandomAttachmentSets": {}
+}

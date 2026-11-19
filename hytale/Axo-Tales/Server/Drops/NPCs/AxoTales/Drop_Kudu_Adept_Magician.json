@@ -5,7 +5,7 @@
       {
         "Type": "Single",
         "Item": {
-          "ItemId": "Ingredient_Crystal_Arcane",
+          "ItemId": "Axo_Arcane_Crystal_Shards",
           "QuantityMin": 1,
           "QuantityMax": 1
         }
@@ -13,7 +13,7 @@
       {
         "Type": "Single",
         "Item": {
-          "ItemId": "Arcane_Matter",
+          "ItemId": "Axo_Arcane_Matter",
           "QuantityMin": 1,
           "QuantityMax": 1
         }

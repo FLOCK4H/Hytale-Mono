@@ -1,0 +1,18 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Spyglass.name",
+    "Description": "server.items.flock4h.AxoTales_Spyglass.description"
+  },
+  "Model": "Items/AxoTales/Scout/Spyglass.blockymodel",
+  "Texture": "Items/AxoTales/Remaster292/Items_AxoTales_Scout_Spyglass.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Spyglass.png",
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 1,
+  "Categories": [],
+  "PlayerAnimationsId": "Axo_Spyglass",
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "Interactions": {
+    "Secondary": "AxoSpyglass_Use"
+  },
+  "$AxoLegacyItem": "Axo_Spyglass"
+}

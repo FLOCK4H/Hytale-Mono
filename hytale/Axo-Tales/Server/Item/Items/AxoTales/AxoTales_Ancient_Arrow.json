@@ -1,0 +1,35 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Ancient_Arrow.name",
+    "Description": "server.items.flock4h.AxoTales_Ancient_Arrow.description"
+  },
+  "Model": "Items/AxoTales/Scout/Ancient_Arrow.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Ancient_Relic_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Ancient_Arrow.png",
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 64,
+  "Categories": [],
+  "PlayerAnimationsId": "Dagger",
+  "ItemSoundSetId": "ISS_Weapons_Arrows",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Arrow"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      45.0,
+      90.0,
+      0.0
+    ],
+    "Translation": [
+      -25.0,
+      -25.0
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Ancient_Arrow"
+}

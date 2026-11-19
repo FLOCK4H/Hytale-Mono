@@ -1,0 +1,27 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Animal_Neutral",
+  "Modify": {
+    "Appearance": "Whisperion",
+    "AttitudeGroup": "PreyBig",
+    "FlockArray": [],
+    "DropList": "Empty",
+    "MaxHealth": 160,
+    "MaxSpeed": 9,
+    "ViewRange": 18,
+    "AttackWhenStartled": false,
+    "IsMemory": true,
+    "IsTameable": false,
+    "ProduceItem": "",
+    "LeashDistance": 24,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Whisperion.name",
+      "Description": "Whisperion name"
+    }
+  }
+}

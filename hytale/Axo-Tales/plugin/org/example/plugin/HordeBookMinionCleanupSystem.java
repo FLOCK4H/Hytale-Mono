@@ -8,9 +8,9 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import javax.annotation.Nonnull;
 
-/**
- * Removes expired Horde Book summoned minions and cleans up orphaned state.
- */
+
+
+
 public final class HordeBookMinionCleanupSystem extends TickingSystem<EntityStore> {
 
     private static final long CLEANUP_INTERVAL_NANOS = 1_000_000_000L;
@@ -72,7 +72,7 @@ public final class HordeBookMinionCleanupSystem extends TickingSystem<EntityStor
                             store.removeEntity(minionRef, RemoveReason.REMOVE);
                             removedCount++;
                         } catch (Throwable ignored) {
-                            // Best effort: continue removing others.
+
                         }
                     }
                 }

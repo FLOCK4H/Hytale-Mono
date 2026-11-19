@@ -1,0 +1,12 @@
+{
+  "Type": "AxoTales_PickaxeHold",
+  "AllowIndefiniteHold": true,
+  "Effects": {
+    "ItemAnimationId": "MineLoop",
+    "ClearAnimationOnFinish": true
+  },
+  "Next": {
+    "0": "AxoPickaxe303_Stop"
+  },
+  "Failed": "AxoPickaxe303_Stop"
+}

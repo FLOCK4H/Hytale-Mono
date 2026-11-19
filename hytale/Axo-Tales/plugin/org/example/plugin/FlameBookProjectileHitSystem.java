@@ -7,7 +7,7 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.SystemGroup;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.math.util.ChunkUtil;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.asset.type.entityeffect.config.EntityEffect;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
@@ -20,19 +20,18 @@ import com.hypixel.hytale.server.core.modules.entity.damage.DamageEventSystem;
 import com.hypixel.hytale.server.core.modules.entity.damage.DamageModule;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Flame Book projectile effects:
- * - Applies {@code Burn} status to hit entities.
- * - Converts impacted terrain blocks (best effort) to Volcanic Rock.
- * - Marks projectiles that hit an entity so the block-impact system doesn't also convert terrain for the same shot.
- */
+
+
+
+
+
+
 public final class FlameBookProjectileHitSystem extends DamageEventSystem {
 
     public static final String FLAME_PROJECTILE_ID = "Flame_Bolt";
@@ -186,7 +185,7 @@ public final class FlameBookProjectileHitSystem extends DamageEventSystem {
                         boolean placed = false;
                         String attempt = "none";
 
-                        // Entity hit positions are often in-air; walk down a few blocks to find terrain to convert.
+
                         for (int dy = 0; dy <= 8; dy++) {
                             int candidateY = y - dy;
                             if (convertBlockAt(world, x, candidateY, z)) {
@@ -257,10 +256,7 @@ public final class FlameBookProjectileHitSystem extends DamageEventSystem {
         }
 
         long chunkIndex = ChunkUtil.indexChunkFromBlock(x, z);
-        WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
-        if (chunk == null) {
-            chunk = world.getChunkIfInMemory(chunkIndex);
-        }
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
         if (chunk == null) {
             return false;
         }
@@ -271,7 +267,7 @@ public final class FlameBookProjectileHitSystem extends DamageEventSystem {
         } catch (Throwable ignored) {
             return false;
         }
-        if (blockType == null || blockType.isUnknown()) {
+        if (SpellTerrainProtection.protectedAt(world, x, y, z, blockType)) {
             return false;
         }
         if (blockType == BlockType.EMPTY || blockType.getDrawType() == com.hypixel.hytale.protocol.DrawType.Empty) {

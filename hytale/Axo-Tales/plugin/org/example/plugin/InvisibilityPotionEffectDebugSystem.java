@@ -19,11 +19,11 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Logs when the custom Invisibility potion effect becomes active/ends on players.
- *
- * <p>This is intentionally best-effort and exists to make issues reproducible from the persistent debug log.</p>
- */
+
+
+
+
+
 public final class InvisibilityPotionEffectDebugSystem extends TickingSystem<EntityStore> {
 
     public static final String INVISIBILITY_EFFECT_ID = "AxoTales_Invisibility";

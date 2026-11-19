@@ -4,7 +4,6 @@ import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.protocol.DrawType;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.events.ChunkPreLoadProcessEvent;
 
 import javax.annotation.Nonnull;
@@ -14,13 +13,13 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Chunk-time worldgen for Arcane Matter ore blocks.
- *
- * <p>Runs during {@link ChunkPreLoadProcessEvent} and replaces existing host rock blocks with the configured ore
- * blocks. By default, it can also process already-generated chunks (configurable) because worlds often have many
- * chunks generated before the plugin finishes loading.</p>
- */
+
+
+
+
+
+
+
 public final class ArcaneMatterOreWorldgen {
 
     private static final int LOCAL_MIN = 1;
@@ -49,7 +48,7 @@ public final class ArcaneMatterOreWorldgen {
     }
 
     public void onChunkPreLoad(@Nonnull ChunkPreLoadProcessEvent event) {
-        WorldChunk chunk = event.getChunk();
+        WorldBlocks.Column chunk = WorldBlocks.preLoad(event);
         if (chunk == null) {
             return;
         }
@@ -88,13 +87,10 @@ public final class ArcaneMatterOreWorldgen {
 
         Runnable work = () -> {
             try {
-                WorldChunk current = chunk;
+                WorldBlocks.Column current = chunk;
                 String chunkRef = "event";
 
-                WorldChunk resolved = world.getChunkIfLoaded(chunkIndex);
-                if (resolved == null) {
-                    resolved = world.getChunkIfInMemory(chunkIndex);
-                }
+                WorldBlocks.Column resolved = WorldBlocks.loaded(world, chunkIndex);
                 if (resolved != null) {
                     current = resolved;
                     chunkRef = "world";
@@ -139,7 +135,7 @@ public final class ArcaneMatterOreWorldgen {
 
     private @Nonnull PlacementAttempt attemptStoneOres(
         @Nonnull World world,
-        @Nonnull WorldChunk chunk,
+        @Nonnull WorldBlocks.Column chunk,
         @Nonnull AxoTalesServerConfig.Worldgen.ArcaneMatterOres config
     ) {
         AxoTalesServerConfig.Worldgen.ArcaneMatterOres.Stone stone = config.stone;
@@ -264,7 +260,7 @@ public final class ArcaneMatterOreWorldgen {
 
     private @Nonnull PlacementAttempt attemptVolcanicOres(
         @Nonnull World world,
-        @Nonnull WorldChunk chunk,
+        @Nonnull WorldBlocks.Column chunk,
         @Nonnull AxoTalesServerConfig.Worldgen.ArcaneMatterOres config
     ) {
         AxoTalesServerConfig.Worldgen.ArcaneMatterOres.Volcanic volcanic = config.volcanic;
@@ -445,7 +441,7 @@ public final class ArcaneMatterOreWorldgen {
             .putIfAbsent(chunkIndex, Boolean.TRUE) == null;
     }
 
-    private static boolean hasAdjacentAir(@Nonnull WorldChunk chunk, int localX, int y, int localZ) {
+    private static boolean hasAdjacentAir(@Nonnull WorldBlocks.Column chunk, int localX, int y, int localZ) {
         int safeX = clampLocal(localX);
         int safeZ = clampLocal(localZ);
         int safeY = clampY(y);
@@ -468,7 +464,7 @@ public final class ArcaneMatterOreWorldgen {
         return safeY < WORLD_MAX_Y && isAir(chunk, safeX, safeY + 1, safeZ);
     }
 
-    private static boolean isAir(@Nonnull WorldChunk chunk, int localX, int y, int localZ) {
+    private static boolean isAir(@Nonnull WorldBlocks.Column chunk, int localX, int y, int localZ) {
         try {
             BlockType type = chunk.getBlockType(localX, y, localZ);
             return type == null
@@ -500,7 +496,7 @@ public final class ArcaneMatterOreWorldgen {
         return Math.max(LOCAL_MIN, Math.min(LOCAL_MAX, local));
     }
 
-    private static long seedFor(@Nonnull World world, @Nonnull WorldChunk chunk) {
+    private static long seedFor(@Nonnull World world, @Nonnull WorldBlocks.Column chunk) {
         long seed = SEED_SALT;
 
         UUID worldUuid = worldUuid(world);

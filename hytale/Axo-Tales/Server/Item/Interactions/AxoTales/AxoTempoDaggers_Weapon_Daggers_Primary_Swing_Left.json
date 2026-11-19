@@ -1,0 +1,23 @@
+{
+  "Type": "Simple",
+  "Rules": {
+    "InterruptedBy": [
+      "Secondary"
+    ]
+  },
+  "HorizontalSpeedMultiplier": 0.85,
+  "Effects": {
+    "ItemAnimationId": "SwingLeft"
+  },
+  "RunTime": 0.04125,
+  "Next": {
+    "Type": "Replace",
+    "Var": "Swing_Left_Selector",
+    "DefaultOk": true,
+    "DefaultValue": {
+      "Interactions": [
+        "AxoTempoDaggers_Weapon_Daggers_Primary_Swing_Left_Selector"
+      ]
+    }
+  }
+}

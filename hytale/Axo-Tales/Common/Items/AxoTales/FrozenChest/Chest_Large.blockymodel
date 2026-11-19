@@ -1,0 +1,3278 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "45",
+      "name": "R-Attachment",
+      "children": [
+        {
+          "id": "0",
+          "name": "Base",
+          "children": [
+            {
+              "id": "31",
+              "name": "Lid",
+              "children": [
+                {
+                  "id": "32",
+                  "name": "FrostNative3",
+                  "children": [],
+                  "position": {
+                    "x": 0,
+                    "y": -6.240464,
+                    "z": -2.621509
+                  },
+                  "orientation": {
+                    "x": -0.34202,
+                    "y": 0,
+                    "z": 0,
+                    "w": 0.939693
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": -8,
+                      "z": 2
+                    },
+                    "stretch": {
+                      "x": 0.989128,
+                      "y": 1,
+                      "z": -1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 48,
+                        "y": 14,
+                        "z": 4
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 54,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 119,
+                          "y": 74
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 123,
+                          "y": 74
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 158,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "21",
+                  "name": "FrostNative4",
+                  "children": [],
+                  "position": {
+                    "x": 0,
+                    "y": 8.92309,
+                    "z": 3.326374
+                  },
+                  "orientation": {
+                    "x": -0.34202,
+                    "y": 0,
+                    "z": 0,
+                    "w": 0.939693
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1.003754,
+                      "y": 0.997013,
+                      "z": 1.062787
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 48,
+                        "y": 4,
+                        "z": 10
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 106,
+                          "y": 16
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "back": {
+                        "offset": {
+                          "x": 106,
+                          "y": 16
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 123,
+                          "y": 50
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 90
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 106,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 123,
+                          "y": 50
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 90
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 106,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "40",
+                  "name": "FrostNative5",
+                  "children": [],
+                  "position": {
+                    "x": -23.963405,
+                    "y": 4.055034,
+                    "z": 7.411158
+                  },
+                  "orientation": {
+                    "x": -0.241845,
+                    "y": 0.664463,
+                    "z": -0.241845,
+                    "w": 0.664463
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": -1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 23,
+                        "y": 10
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 173,
+                          "y": 38
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "19",
+                  "name": "FrostNative6",
+                  "children": [
+                    {
+                      "id": "22",
+                      "name": "FrostNative7",
+                      "children": [],
+                      "position": {
+                        "x": 0,
+                        "y": -6.240464,
+                        "z": 2.621509
+                      },
+                      "orientation": {
+                        "x": 0.34202,
+                        "y": 0,
+                        "z": 0,
+                        "w": 0.939693
+                      },
+                      "shape": {
+                        "type": "box",
+                        "offset": {
+                          "x": 0,
+                          "y": -8,
+                          "z": -2
+                        },
+                        "stretch": {
+                          "x": 0.989128,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 48,
+                            "y": 14,
+                            "z": 4
+                          }
+                        },
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 54,
+                              "y": 2
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "right": {
+                            "offset": {
+                              "x": 119,
+                              "y": 74
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "left": {
+                            "offset": {
+                              "x": 123,
+                              "y": 74
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "top": {
+                            "offset": {
+                              "x": 158,
+                              "y": 2
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "position": {
+                    "x": 0,
+                    "y": 10.649451,
+                    "z": 12.691521
+                  },
+                  "orientation": {
+                    "x": -0.642788,
+                    "y": 0,
+                    "z": 0,
+                    "w": 0.766044
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 48,
+                        "y": 14,
+                        "z": 4
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 2,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "back": {
+                        "offset": {
+                          "x": 2,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 139,
+                          "y": 64
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 158,
+                          "y": 10
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 139,
+                          "y": 64
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 158,
+                          "y": 10
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "39",
+                  "name": "FrostNative8",
+                  "children": [],
+                  "position": {
+                    "x": 23.963405,
+                    "y": 4.055034,
+                    "z": 7.411158
+                  },
+                  "orientation": {
+                    "x": -0.241845,
+                    "y": -0.664463,
+                    "z": 0.241845,
+                    "w": 0.664463
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 23,
+                        "y": 10
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 173,
+                          "y": 38
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "41",
+                  "name": "FrostNative9",
+                  "children": [
+                    {
+                      "id": "42",
+                      "name": "FrostNative10",
+                      "children": [],
+                      "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0.707107,
+                        "z": 0,
+                        "w": 0.707107
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 7,
+                            "y": 22
+                          },
+                          "normal": "+Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 66,
+                              "y": 66
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "position": {
+                    "x": -23.345681,
+                    "y": 7.39085,
+                    "z": 24.27321
+                  },
+                  "orientation": {
+                    "x": -0.349011,
+                    "y": 0.447895,
+                    "z": -0.536735,
+                    "w": 0.624096
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 7,
+                        "y": 22
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 66,
+                          "y": 66
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "43",
+                  "name": "FrostNative11",
+                  "children": [
+                    {
+                      "id": "44",
+                      "name": "FrostNative12",
+                      "children": [],
+                      "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": -0.030844,
+                        "y": 0.706434,
+                        "z": 0.030844,
+                        "w": -0.706434
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": -1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 7,
+                            "y": 22
+                          },
+                          "normal": "+Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 66,
+                              "y": 66
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "position": {
+                    "x": 26.285031,
+                    "y": 6.94055,
+                    "z": 26.312193
+                  },
+                  "orientation": {
+                    "x": -0.349011,
+                    "y": -0.447895,
+                    "z": 0.536735,
+                    "w": 0.624096
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": -1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 7,
+                        "y": 22
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 66,
+                          "y": 66
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "x": 0,
+                "y": 8.118158,
+                "z": -10.608439
+              },
+              "orientation": {
+                "x": 0.34202,
+                "y": 0,
+                "z": 0,
+                "w": 0.939693
+              },
+              "shape": {
+                "type": "box",
+                "offset": {
+                  "x": 0,
+                  "y": 6,
+                  "z": -2
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": -1
+                },
+                "settings": {
+                  "size": {
+                    "x": 48,
+                    "y": 14,
+                    "z": 4
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "back": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "right": {
+                    "offset": {
+                      "x": 139,
+                      "y": 64
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {
+                      "x": 158,
+                      "y": 10
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "left": {
+                    "offset": {
+                      "x": 143,
+                      "y": 64
+                    },
+                    "mirror": {
+                      "x": true,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "top": {
+                    "offset": {
+                      "x": 158,
+                      "y": 10
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              }
+            },
+            {
+              "id": "23",
+              "name": "FrostNative13",
+              "children": [
+                {
+                  "id": "24",
+                  "name": "FrostNative14",
+                  "children": [
+                    {
+                      "id": "25",
+                      "name": "FrostNative15",
+                      "children": [],
+                      "position": {
+                        "x": -3,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": -0.5,
+                        "z": 0,
+                        "w": -0.866025
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": 3,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": -1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 6,
+                            "y": 16
+                          },
+                          "normal": "+Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 49,
+                              "y": 89
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "position": {
+                    "x": 0.310323,
+                    "y": -8.405264,
+                    "z": -1.38798
+                  },
+                  "orientation": {
+                    "x": 0.492419,
+                    "y": -0.819124,
+                    "z": -0.152509,
+                    "w": -0.251597
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": -1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 6,
+                        "y": 16
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 49,
+                          "y": 89
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "x": 23.756543,
+                "y": 0,
+                "z": 13.715712
+              },
+              "orientation": {
+                "x": 0,
+                "y": -0.382683,
+                "z": 0,
+                "w": 0.92388
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": -1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "size": {
+                    "x": 8,
+                    "y": 16
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 246,
+                      "y": 78
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              }
+            },
+            {
+              "id": "26",
+              "name": "FrostNative16",
+              "children": [
+                {
+                  "id": "27",
+                  "name": "FrostNative17",
+                  "children": [
+                    {
+                      "id": "28",
+                      "name": "FrostNative18",
+                      "children": [],
+                      "position": {
+                        "x": 3,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0.5,
+                        "z": 0,
+                        "w": -0.866025
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": -3,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 6,
+                            "y": 16
+                          },
+                          "normal": "+Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "standard",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 49,
+                              "y": 89
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "position": {
+                    "x": -0.310323,
+                    "y": -8.405264,
+                    "z": -1.38798
+                  },
+                  "orientation": {
+                    "x": 0.492419,
+                    "y": 0.819124,
+                    "z": 0.152509,
+                    "w": -0.251597
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 6,
+                        "y": 16
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 49,
+                          "y": 89
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "x": -23.756543,
+                "y": 0,
+                "z": 13.715712
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0.382683,
+                "z": 0,
+                "w": 0.92388
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "size": {
+                    "x": 8,
+                    "y": 16
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 246,
+                      "y": 78
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              }
+            },
+            {
+              "id": "33",
+              "name": "FrostNative19",
+              "children": [
+                {
+                  "id": "34",
+                  "name": "FrostNative20",
+                  "children": [
+                    {
+                      "id": "35",
+                      "name": "FrostNative21",
+                      "children": [],
+                      "position": {
+                        "x": -3,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": 0.5,
+                        "z": 0,
+                        "w": -0.866025
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": 3,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": -1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 6,
+                            "y": 16
+                          },
+                          "normal": "-Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 55,
+                              "y": 89
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "position": {
+                    "x": 0.310323,
+                    "y": -8.405264,
+                    "z": 1.38798
+                  },
+                  "orientation": {
+                    "x": -0.492419,
+                    "y": 0.819124,
+                    "z": -0.152509,
+                    "w": -0.251597
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": -1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 6,
+                        "y": 16
+                      },
+                      "normal": "-Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 55,
+                          "y": 89
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "x": 23.756543,
+                "y": 0,
+                "z": -13.715712
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0.382683,
+                "z": 0,
+                "w": 0.92388
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": -1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "size": {
+                    "x": 8,
+                    "y": 16
+                  },
+                  "normal": "-Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 254,
+                      "y": 78
+                    },
+                    "mirror": {
+                      "x": true,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              }
+            },
+            {
+              "id": "36",
+              "name": "FrostNative22",
+              "children": [
+                {
+                  "id": "37",
+                  "name": "FrostNative23",
+                  "children": [
+                    {
+                      "id": "38",
+                      "name": "FrostNative24",
+                      "children": [],
+                      "position": {
+                        "x": 3,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0,
+                        "y": -0.5,
+                        "z": 0,
+                        "w": -0.866025
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": -3,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 6,
+                            "y": 16
+                          },
+                          "normal": "-Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 55,
+                              "y": 89
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "position": {
+                    "x": -0.310323,
+                    "y": -8.405264,
+                    "z": 1.38798
+                  },
+                  "orientation": {
+                    "x": -0.492419,
+                    "y": -0.819124,
+                    "z": 0.152509,
+                    "w": -0.251597
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 6,
+                        "y": 16
+                      },
+                      "normal": "-Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 55,
+                          "y": 89
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  }
+                }
+              ],
+              "position": {
+                "x": -23.756543,
+                "y": 0,
+                "z": -13.715712
+              },
+              "orientation": {
+                "x": 0,
+                "y": -0.382683,
+                "z": 0,
+                "w": 0.92388
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "size": {
+                    "x": 8,
+                    "y": 16
+                  },
+                  "normal": "-Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 254,
+                      "y": 78
+                    },
+                    "mirror": {
+                      "x": true,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              }
+            },
+            {
+              "id": "940025",
+              "name": "LeftFrontStrap",
+              "position": {
+                "x": -20.0,
+                "y": 0.0,
+                "z": 11.15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 1.0,
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "940019",
+                  "name": "LeftFrontStrapSurface0",
+                  "position": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.65
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 1.0,
+                    "w": 0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24615384615384617,
+                      "y": 0.25,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 13,
+                        "y": 44
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 19,
+                          "y": 20
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940020",
+                  "name": "LeftFrontStrapSurface1",
+                  "position": {
+                    "x": 2.220446049250313e-16,
+                    "y": 0.0,
+                    "z": -0.65
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 1.0,
+                    "z": 0.0,
+                    "w": 0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24615384615384617,
+                      "y": 0.25,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 13,
+                        "y": 44
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 2,
+                          "y": 20
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940021",
+                  "name": "LeftFrontStrapSurface2",
+                  "position": {
+                    "x": 0.0,
+                    "y": 5.5,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.7071067811865476,
+                    "z": 0.7071067811865475,
+                    "w": 0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24615384615384617,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 13,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 147,
+                          "y": 64
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940022",
+                  "name": "LeftFrontStrapSurface3",
+                  "position": {
+                    "x": -1.4,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.5090038354735509,
+                    "y": -0.4908310253775878,
+                    "z": -0.49083102537758777,
+                    "w": 0.509003835473551
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.2446060072145247,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 45,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 207,
+                          "y": 18
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940023",
+                  "name": "LeftFrontStrapSurface4",
+                  "position": {
+                    "x": 0.0,
+                    "y": -5.5,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.7071067811865475,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 0.7071067811865476
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 10,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 147,
+                          "y": 74
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940024",
+                  "name": "LeftFrontStrapSurface5",
+                  "position": {
+                    "x": 1.4000000000000001,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.5090038354735509,
+                    "y": 0.4908310253775878,
+                    "z": 0.49083102537758777,
+                    "w": 0.509003835473551
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.2446060072145247,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 45,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 158,
+                          "y": 18
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "940050",
+              "name": "RightFrontStrap",
+              "position": {
+                "x": 20.0,
+                "y": 0.0,
+                "z": 11.15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 1.0,
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "940044",
+                  "name": "RightFrontStrapSurface0",
+                  "position": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.65
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 1.0,
+                    "w": 0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24615384615384617,
+                      "y": 0.25,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 13,
+                        "y": 44
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 19,
+                          "y": 20
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940045",
+                  "name": "RightFrontStrapSurface1",
+                  "position": {
+                    "x": 2.220446049250313e-16,
+                    "y": 0.0,
+                    "z": -0.65
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 1.0,
+                    "z": 0.0,
+                    "w": 0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24615384615384617,
+                      "y": 0.25,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 13,
+                        "y": 44
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 2,
+                          "y": 20
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940046",
+                  "name": "RightFrontStrapSurface2",
+                  "position": {
+                    "x": 0.0,
+                    "y": 5.5,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.7071067811865476,
+                    "z": 0.7071067811865475,
+                    "w": 0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24615384615384617,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 13,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 147,
+                          "y": 64
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940047",
+                  "name": "RightFrontStrapSurface3",
+                  "position": {
+                    "x": -1.4,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.5090038354735509,
+                    "y": -0.4908310253775878,
+                    "z": -0.49083102537758777,
+                    "w": 0.509003835473551
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.2446060072145247,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 45,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 207,
+                          "y": 18
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940048",
+                  "name": "RightFrontStrapSurface4",
+                  "position": {
+                    "x": 0.0,
+                    "y": -5.5,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.7071067811865475,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 0.7071067811865476
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 10,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 147,
+                          "y": 74
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940049",
+                  "name": "RightFrontStrapSurface5",
+                  "position": {
+                    "x": 1.4000000000000001,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.5090038354735509,
+                    "y": 0.4908310253775878,
+                    "z": 0.49083102537758777,
+                    "w": 0.509003835473551
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.2446060072145247,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 45,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 158,
+                          "y": 18
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "940059",
+              "name": "SpecimenSeal",
+              "position": {
+                "x": 0.0,
+                "y": 0.6,
+                "z": 11.55
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 1.0,
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "940051",
+                  "name": "SpecimenSealSurface0",
+                  "position": {
+                    "x": 0.07614730878186915,
+                    "y": -0.4481869688385278,
+                    "z": 0.65
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.9192593033450464,
+                    "w": -0.3936525539274199
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.2489473542623082,
+                      "y": 0.24374501250144867,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 33,
+                        "y": 33
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 82,
+                          "y": 50
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940052",
+                  "name": "SpecimenSealSurface1",
+                  "position": {
+                    "x": -0.18203450327186266,
+                    "y": 0.19095776323616864,
+                    "z": -0.65
+                  },
+                  "orientation": {
+                    "x": -0.6246950475544244,
+                    "y": 0.7808688094430303,
+                    "z": 0.0,
+                    "w": -0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24509220701963122,
+                      "y": 0.25,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 41,
+                        "y": 32
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 128,
+                          "y": 28
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940053",
+                  "name": "SpecimenSealSurface2",
+                  "position": {
+                    "x": -2.0500000000000003,
+                    "y": 3.15,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": -0.27835439031348175,
+                    "y": 0.6500144870641037,
+                    "z": 0.6500144870641038,
+                    "w": -0.27835439031348175
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24755751295854914,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 24,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 210,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940054",
+                  "name": "SpecimenSealSurface3",
+                  "position": {
+                    "x": -3.65,
+                    "y": -1.0000000000000004,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.5521576303742326,
+                    "y": -0.4417261042993862,
+                    "z": -0.44172610429938625,
+                    "w": 0.5521576303742327
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24117647058823533,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 17,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 225,
+                          "y": 78
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940055",
+                  "name": "SpecimenSealSurface4",
+                  "position": {
+                    "x": -1.6000000000000003,
+                    "y": -4.0,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.6797055068198815,
+                    "y": -0.19493697442693625,
+                    "z": -0.19493697442693625,
+                    "w": 0.6797055068198815
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.2358495283014151,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 16,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 238,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940056",
+                  "name": "SpecimenSealSurface5",
+                  "position": {
+                    "x": 1.5999999999999999,
+                    "y": -4.0,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.6797055068198815,
+                    "y": 0.19493697442693625,
+                    "z": 0.19493697442693625,
+                    "w": 0.6797055068198815
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.2358495283014151,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 16,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 119,
+                          "y": 64
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940057",
+                  "name": "SpecimenSealSurface6",
+                  "position": {
+                    "x": 3.65,
+                    "y": -0.9999999999999996,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.5521576303742326,
+                    "y": 0.4417261042993862,
+                    "z": 0.44172610429938625,
+                    "w": 0.5521576303742327
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24117647058823533,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 17,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 2,
+                          "y": 103
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940058",
+                  "name": "SpecimenSealSurface7",
+                  "position": {
+                    "x": 2.0499999999999994,
+                    "y": 3.15,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.27835439031348175,
+                    "y": 0.6500144870641037,
+                    "z": 0.6500144870641038,
+                    "w": 0.27835439031348175
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24755751295854914,
+                      "y": 0.21666666666666667,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 24,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 173,
+                          "y": 28
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "940068",
+              "name": "BloodCrystal",
+              "position": {
+                "x": 0.0,
+                "y": 0.6,
+                "z": 12.45
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 1.0,
+                  "y": 1.0,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "940060",
+                  "name": "BloodCrystalSurface0",
+                  "position": {
+                    "x": 0.3535014836795254,
+                    "y": -0.08178041543026726,
+                    "z": 0.675
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.8832636547781785,
+                    "w": -0.46887665344725243
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24795543096324318,
+                      "y": 0.24797215495193198,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 23,
+                        "y": 19
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 201,
+                          "y": 28
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940061",
+                  "name": "BloodCrystalSurface1",
+                  "position": {
+                    "x": 0.017599999999999394,
+                    "y": 0.2967999999999999,
+                    "z": -0.675
+                  },
+                  "orientation": {
+                    "x": -0.6407474392457675,
+                    "y": 0.767751730118527,
+                    "z": 0.0,
+                    "w": -0.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24975159256382268,
+                      "y": 0.23820008349787236,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 26,
+                        "y": 19
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 36,
+                          "y": 66
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940062",
+                  "name": "BloodCrystalSurface2",
+                  "position": {
+                    "x": -1.1500000000000001,
+                    "y": 1.9,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": -0.331545861192607,
+                    "y": 0.6245617198692637,
+                    "z": 0.6245617198692637,
+                    "w": -0.331545861192607
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24146324413851522,
+                      "y": 0.225,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 17,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 225,
+                          "y": 88
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940063",
+                  "name": "BloodCrystalSurface3",
+                  "position": {
+                    "x": -2.0999999999999996,
+                    "y": -0.9000000000000001,
+                    "z": 2.220446049250313e-16
+                  },
+                  "orientation": {
+                    "x": 0.5428824546345147,
+                    "y": -0.4530768593185976,
+                    "z": -0.4530768593185976,
+                    "w": 0.5428824546345146
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24845199749997665,
+                      "y": 0.22500000000000006,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 9,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 127,
+                          "y": 82
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940064",
+                  "name": "BloodCrystalSurface4",
+                  "position": {
+                    "x": -0.9499999999999997,
+                    "y": -2.5,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.6864616198998278,
+                    "y": -0.1696185261240776,
+                    "z": -0.16961852612407763,
+                    "w": 0.6864616198998278
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.23856567281759877,
+                      "y": 0.225,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 9,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 174,
+                          "y": 76
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940065",
+                  "name": "BloodCrystalSurface5",
+                  "position": {
+                    "x": 0.9500000000000002,
+                    "y": -2.5,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.6864616198998278,
+                    "y": 0.1696185261240776,
+                    "z": 0.16961852612407763,
+                    "w": 0.6864616198998278
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.23856567281759877,
+                      "y": 0.225,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 9,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 161,
+                          "y": 76
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940066",
+                  "name": "BloodCrystalSurface6",
+                  "position": {
+                    "x": 2.0999999999999996,
+                    "y": -0.8999999999999999,
+                    "z": 2.220446049250313e-16
+                  },
+                  "orientation": {
+                    "x": 0.5428824546345147,
+                    "y": 0.4530768593185976,
+                    "z": 0.4530768593185976,
+                    "w": 0.5428824546345146
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24845199749997665,
+                      "y": 0.22500000000000006,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 9,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 140,
+                          "y": 84
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "940067",
+                  "name": "BloodCrystalSurface7",
+                  "position": {
+                    "x": 1.1499999999999997,
+                    "y": 1.9000000000000001,
+                    "z": 0.0
+                  },
+                  "orientation": {
+                    "x": 0.331545861192607,
+                    "y": 0.6245617198692637,
+                    "z": 0.6245617198692637,
+                    "w": 0.331545861192607
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "z": 0.0
+                    },
+                    "stretch": {
+                      "x": 0.24146324413851522,
+                      "y": 0.225,
+                      "z": 1.0
+                    },
+                    "settings": {
+                      "isPiece": false,
+                      "normal": "+Z",
+                      "size": {
+                        "x": 17,
+                        "y": 6
+                      }
+                    },
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 2,
+                          "y": 93
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "standard",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "position": {
+            "x": 1,
+            "y": 8,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "shape": {
+            "type": "box",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "stretch": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            },
+            "settings": {
+              "size": {
+                "x": 42,
+                "y": 16,
+                "z": 22
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom",
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 36,
+                  "y": 46
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              },
+              "back": {
+                "offset": {
+                  "x": 36,
+                  "y": 46
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              },
+              "right": {
+                "offset": {
+                  "x": 200,
+                  "y": 51
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              },
+              "bottom": {
+                "offset": {
+                  "x": 82,
+                  "y": 24
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              },
+              "left": {
+                "offset": {
+                  "x": 222,
+                  "y": 51
+                },
+                "mirror": {
+                  "x": true,
+                  "y": false
+                },
+                "angle": 0
+              },
+              "top": {
+                "offset": {
+                  "x": 36,
+                  "y": 20
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            }
+          }
+        }
+      ],
+      "position": {
+        "x": -9,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": -7,
+          "y": 0,
+          "z": 0
+        },
+        "stretch": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "standard",
+        "unwrapMode": "custom",
+        "textureLayout": {}
+      }
+    }
+  ]
+}

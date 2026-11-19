@@ -1,0 +1,55 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.fossor_soul.name",
+    "Description": "server.items.flock4h.fossor_soul.description"
+  },
+  "Quality": "Epic",
+  "MaxStack": 1,
+  "Categories": [
+    "Items.Tools"
+  ],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "Model": "NPC/AxoTales/Souls/Fossor/Soul.blockymodel",
+  "Texture": "NPC/AxoTales/Souls/Fossor/Soul_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Fossor_Soul.png",
+  "Scale": 0.35,
+  "Interactions": {
+    "Secondary": "AxoSoul_Summon"
+  },
+  "Tags": {
+    "Type": [
+      "Utility"
+    ],
+    "Family": [
+      "AxoTalesSoul"
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Plant_Crop_Mana3",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Tool_Pickaxe_Iron",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Items"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 5
+  }
+}

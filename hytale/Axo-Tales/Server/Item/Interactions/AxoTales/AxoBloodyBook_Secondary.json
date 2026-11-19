@@ -1,0 +1,10 @@
+{
+  "Type": "Simple",
+  "RunTime": 8,
+  "Effects": {
+    "ItemAnimationId": "CastBloody",
+    "WaitForAnimationToFinish": false,
+    "ClearAnimationOnFinish": true,
+    "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
+  }
+}

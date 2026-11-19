@@ -1,0 +1,9 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Agretis_Ore_Motes"
+    }
+  ],
+  "BoundingRadius": 2,
+  "CullDistance": 32
+}

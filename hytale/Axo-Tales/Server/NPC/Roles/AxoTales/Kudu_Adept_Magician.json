@@ -1,43 +1,165 @@
 {
-  "Type": "Variant",
-  "Reference": "Template_Trork_Mage",
-  "Modify": {
-    "Appearance": "Kudu_Adept_Magician",
-    "DropList": "Drop_Kudu_Adept_Magician",
-    "Weapons": [
-      "Weapon_Spellbook_Fire",
-      "Weapon_Spellbook_Fire"
-    ],
-    "RangedAttack": "Kudu_Adept_Spellbook_Firebolt",
-    "RangedAttackSequence": "Component_Instruction_Attack_Sequence_Kudu_Adept_Ranged",
-    "ViewSector": 270,
-    "HearingRange": 12,
-    "AlertedRange": 48,
-    "TooCloseDistance": 0.1,
-    "CloseRange": 4,
-    "CombatRelativeTurnSpeed": 1.4,
-    "DesiredRangedAttackDistanceRange": [
-      3,
-      8
-    ],
-    "TargetGroups": [
-      "Trork"
-    ],
-    "DisableDamageGroups": [
-      "Self",
-      "Trork"
-    ],
-    "AttitudeGroup": "Trork",
-    "MaxSpeed": 6.0,
-    "MaxHealth": 120,
-    "NameTranslationKey": {
-      "Compute": "NameTranslationKey"
+  "Type": "Abstract",
+  "Appearance": "Kudu_Adept_Magician",
+  "StartState": "Roam",
+  "DefaultPlayerAttitude": "Friendly",
+  "DefaultNPCAttitude": "Neutral",
+  "AttitudeGroup": "Kweebec",
+  "ApplySeparation": true,
+  "SeparationDistance": 2,
+  "MaxHealth": 120,
+  "DropList": "Drop_Kudu_Adept_Magician",
+  "NameTranslationKey": "server.npcRoles.Kudu_Adept_Magician.name",
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": 5.5,
+      "RunThreshold": 0.6,
+      "Gravity": 10,
+      "MaxFallSpeed": 15,
+      "MaxRotationSpeed": 240,
+      "Acceleration": 10,
+      "MinJumpHeight": 0.8
     }
-  },
-  "Parameters": {
-    "NameTranslationKey": {
-      "Value": "server.npcRoles.Kudu_Adept_Magician.name",
-      "Description": "Translation key for NPC name display"
+  ],
+  "Instructions": [
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Roam"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Roam"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Idle"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Idle"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Combat.Attack"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Combat.Attack"
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Roam"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Leash",
+            "Range": 12
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "StopDistance": 6,
+            "SlowDownDistance": 9,
+            "RelativeSpeed": 0.5
+          }
+        },
+        {
+          "Sensor": {
+            "Type": "Any"
+          },
+          "BodyMotion": {
+            "Type": "Sequence",
+            "Looped": true,
+            "Motions": [
+              {
+                "Type": "Timer",
+                "Time": [
+                  2,
+                  4
+                ],
+                "Motion": {
+                  "Type": "Nothing"
+                }
+              },
+              {
+                "Type": "Timer",
+                "Time": [
+                  3,
+                  6
+                ],
+                "Motion": {
+                  "Type": "Wander",
+                  "MaxHeadingChange": 1,
+                  "RelativeSpeed": 0.4,
+                  "MinWalkTime": 1,
+                  "RelaxedMoveConstraints": false
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Idle"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 64
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "SlowDownDistance": 6,
+            "StopDistance": 4
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Combat.Attack"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 48
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "SlowDownDistance": 12,
+            "StopDistance": 10
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
     }
-  }
+  ]
 }

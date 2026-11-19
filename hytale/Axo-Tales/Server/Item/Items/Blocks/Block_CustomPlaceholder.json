@@ -5,9 +5,7 @@
   },
   "ItemLevel": 1,
   "Icon": "Icons/ItemsGenerated/Soil_Dirt.png",
-  "Categories": [
-    "Blocks.Soils"
-  ],
+  "Categories": [],
   "PlayerAnimationsId": "Block",
   "Set": "Soil",
   "ResourceTypes": [
@@ -47,5 +45,7 @@
       "Soil"
     ]
   },
-  "ItemSoundSetId": "ISS_Blocks_Soft"
+  "ItemSoundSetId": "ISS_Blocks_Soft",
+  "Quality": "AxoTales_Internal",
+  "$AxoLegacyItem": "Axo_Custom_Placeholder_Block"
 }

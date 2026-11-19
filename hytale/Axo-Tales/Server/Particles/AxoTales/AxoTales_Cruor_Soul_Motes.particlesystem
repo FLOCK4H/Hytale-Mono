@@ -1,0 +1,9 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Cruor_Soul_Motes"
+    }
+  ],
+  "BoundingRadius": 2,
+  "CullDistance": 48
+}

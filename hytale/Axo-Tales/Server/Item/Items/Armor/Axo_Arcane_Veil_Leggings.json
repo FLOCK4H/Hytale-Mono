@@ -1,0 +1,99 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_legs.name",
+    "Description": "server.items.flock4h.arcane_robe.description"
+  },
+  "Quality": "Rare",
+  "ItemLevel": 20,
+  "MaxStack": 1,
+  "Categories": [
+    "Items.Armors"
+  ],
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
+  "Model": "Items/AxoTales/DarkArcana/Robe_Legs.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Robe_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Leggings.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "BaseDamageResistance": 0,
+    "StatModifiers": {
+      "Stamina": [
+        {
+          "Amount": 3,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes",
+      "Overpants"
+    ]
+  },
+  "MaxDurability": 350,
+  "DurabilityLossOnHit": 0.35,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "AxoTalesArcaneRobe"
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 12
+      },
+      {
+        "ItemId": "Ingredient_Leather_Medium",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Axo_Agretis_Bar",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Armory"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 6
+  }
+}

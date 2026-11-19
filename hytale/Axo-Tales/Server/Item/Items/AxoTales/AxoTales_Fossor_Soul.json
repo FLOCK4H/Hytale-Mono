@@ -1,0 +1,27 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.fossor_soul.name",
+    "Description": "server.items.flock4h.fossor_soul.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 1,
+  "Categories": [],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "Model": "NPC/AxoTales/Souls/Fossor/Soul.blockymodel",
+  "Texture": "NPC/AxoTales/Souls/Fossor/Soul_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Fossor_Soul.png",
+  "Scale": 0.35,
+  "Interactions": {
+    "Secondary": "AxoSoul_Summon"
+  },
+  "Tags": {
+    "Type": [
+      "Utility"
+    ],
+    "Family": [
+      "AxoTalesSoul"
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Fossor_Soul"
+}

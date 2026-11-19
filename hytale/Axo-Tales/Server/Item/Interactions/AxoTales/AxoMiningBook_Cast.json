@@ -1,7 +1,16 @@
 {
-  "Type": "Simple",
-  "RunTime": 0.1,
-  "Effects": {
-    "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
-  }
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "AxoTales_Input",
+      "Release": true
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.1,
+      "Effects": {
+        "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
+      }
+    }
+  ]
 }

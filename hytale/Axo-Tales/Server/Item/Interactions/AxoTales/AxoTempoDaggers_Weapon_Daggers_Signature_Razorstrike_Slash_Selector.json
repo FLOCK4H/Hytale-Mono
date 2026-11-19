@@ -1,0 +1,93 @@
+{
+  "Type": "AxoTales_SkillSelector",
+  "$Comment": "Length of Combat",
+  "RunTime": 0.054375,
+  "Selector": {
+    "Id": "AxoTales_MeleeStab",
+    "TestLineOfSight": true,
+    "ExtendTop": 0.75,
+    "ExtendBottom": 0.75,
+    "ExtendLeft": 0.75,
+    "ExtendRight": 0.75,
+    "StartDistance": 0.1,
+    "EndDistance": 2.25
+  },
+  "Effects": {
+    "ItemAnimationId": "RazorstrikeSlash",
+    "Particles": [
+      {
+        "TargetNodeName": "Origin_Projectile",
+        "SystemId": "Daggers_Signature_Slash",
+        "TargetEntityPart": "PrimaryItem",
+        "Scale": 1.0,
+        "PositionOffset": {
+          "Z": 1.0,
+          "X": 0.5,
+          "Y": 0.7
+        },
+        "DetachedFromModel": true,
+        "RotationOffset": {
+          "Yaw": -20.0
+        }
+      },
+      {
+        "TargetNodeName": "Origin_Projectile",
+        "SystemId": "Daggers_Signature_Slash",
+        "TargetEntityPart": "SecondaryItem",
+        "Scale": 1.0,
+        "PositionOffset": {
+          "Z": 1.0,
+          "X": -0.5,
+          "Y": 0.7
+        },
+        "DetachedFromModel": true,
+        "RotationOffset": {
+          "Yaw": 20.0
+        }
+      }
+    ],
+    "Trails": [
+      {
+        "TargetEntityPart": "PrimaryItem",
+        "TargetNodeName": "Blade",
+        "TrailId": "Daggers_Signature",
+        "RotationOffset": {
+          "Roll": 90.0
+        }
+      },
+      {
+        "TargetEntityPart": "SecondaryItem",
+        "TargetNodeName": "Blade",
+        "TrailId": "Daggers_Signature",
+        "RotationOffset": {
+          "Roll": 90.0
+        }
+      }
+    ],
+    "CameraEffect": "Daggers_Slash"
+  },
+  "Next": {
+    "Type": "Simple",
+    "$Comment": "Pad the interaction length",
+    "RunTime": 0.026875
+  },
+  "HitBlock": {
+    "Interactions": [
+      "Block_Break_Adventure"
+    ]
+  },
+  "HitEntity": {
+    "Interactions": [
+      {
+        "Type": "Replace",
+        "Var": "Razorstrike_Slash_Damage",
+        "DefaultOk": true,
+        "DefaultValue": {
+          "Interactions": [
+            "AxoTempoDaggers_Weapon_Daggers_Signature_Razorstrike_Slash_Damage"
+          ]
+        }
+      }
+    ]
+  }
+}

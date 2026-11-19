@@ -1,0 +1,2937 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "640057",
+      "name": "Head",
+      "position": {
+        "x": 0.0,
+        "y": -9.307437035092335,
+        "z": -2.25
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "640011",
+          "name": "SweptBrow",
+          "position": {
+            "x": 0.0,
+            "y": 8.3,
+            "z": 16.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640001",
+              "name": "SweptBrowSurface0",
+              "position": {
+                "x": 0.04057757941717455,
+                "y": 1.0217059595694407,
+                "z": 1.9
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": -0.0,
+                "z": -0.23327760758215502,
+                "w": 0.9724101798113521
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12458809831840471,
+                  "y": 0.12493258153956163,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 204,
+                    "y": 105
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 72
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640002",
+              "name": "SweptBrowSurface1",
+              "position": {
+                "x": -0.08910891089108905,
+                "y": 0.10891089108910901,
+                "z": -1.9
+              },
+              "orientation": {
+                "x": 0.998758526924799,
+                "y": -0.04981370188015976,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12488321010732657,
+                  "y": 0.12362583272305927,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 247,
+                    "y": 66
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640003",
+              "name": "SweptBrowSurface2",
+              "position": {
+                "x": -12.350000000000001,
+                "y": -0.3169999999999995,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.6401520282603943,
+                "y": -0.15357010523112732,
+                "z": -0.17559802099839938,
+                "w": 0.7319746843401412
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12380597740752339,
+                  "y": 0.12368348493993107,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 55,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 183,
+                      "y": 233
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640004",
+              "name": "SweptBrowSurface3",
+              "position": {
+                "x": -4.964116749332316,
+                "y": -2.736894315146891,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6714850478282665,
+                "y": -0.07299060445430883,
+                "z": -0.07968775507472685,
+                "w": 0.7330962173518669
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12486756815775808,
+                  "y": 0.12305326667579075,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 82,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 158,
+                      "y": 404
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640005",
+              "name": "SweptBrowSurface4",
+              "position": {
+                "x": 4.964116749332316,
+                "y": -2.7368943151468907,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6714850478282665,
+                "y": 0.07299060445430883,
+                "z": 0.07968775507472683,
+                "w": 0.7330962173518669
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12486756815775808,
+                  "y": 0.12305326667579075,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 82,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 158,
+                      "y": 268
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640006",
+              "name": "SweptBrowSurface5",
+              "position": {
+                "x": 12.350000000000001,
+                "y": -0.3170000000000006,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6401520282603945,
+                "y": 0.15357010523112735,
+                "z": 0.17559802099839938,
+                "w": 0.7319746843401411
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12380597740752342,
+                  "y": 0.12368348493993107,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 55,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 158,
+                      "y": 439
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640007",
+              "name": "SweptBrowSurface6",
+              "position": {
+                "x": 13.27,
+                "y": 1.891,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.16509517387380626,
+                "y": 0.6216765154718586,
+                "z": 0.7400269462479035,
+                "w": 0.19652483940038745
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12196112825710169,
+                  "y": 0.12444667935530235,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 105,
+                      "y": 539
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640008",
+              "name": "SweptBrowSurface7",
+              "position": {
+                "x": 5.999999999999999,
+                "y": 2.339,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": -0.03465670587711084,
+                "y": 0.6948626422738416,
+                "z": 0.7174151542009757,
+                "w": -0.035781526417312935
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12445350720686217,
+                  "y": 0.12264317858973026,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 97,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 103,
+                      "y": 504
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640009",
+              "name": "SweptBrowSurface8",
+              "position": {
+                "x": -6.0,
+                "y": 2.339,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.03465670587711084,
+                "y": 0.6948626422738416,
+                "z": 0.7174151542009757,
+                "w": 0.035781526417312935
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12445350720686216,
+                  "y": 0.12264317858973026,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 97,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 504
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640010",
+              "name": "SweptBrowSurface9",
+              "position": {
+                "x": -13.27,
+                "y": 1.8909999999999996,
+                "z": 1.1102230246251565e-15
+              },
+              "orientation": {
+                "x": -0.16509517387380632,
+                "y": 0.6216765154718589,
+                "z": 0.7400269462479034,
+                "w": -0.19652483940038745
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12196112825710169,
+                  "y": 0.12444667935530238,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 148,
+                      "y": 539
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640022",
+          "name": "RearCirclet",
+          "position": {
+            "x": 0.0,
+            "y": 7.0,
+            "z": -15.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640012",
+              "name": "RearCircletSurface0",
+              "position": {
+                "x": -1.7763568394002505e-15,
+                "y": 0.0,
+                "z": 1.5
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1248868778280543,
+                  "y": 0.12384615384615386,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 221,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 374
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640013",
+              "name": "RearCircletSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -1.5
+              },
+              "orientation": {
+                "x": 0.7071067811865476,
+                "y": 0.7071067811865475,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 28,
+                    "y": 240
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 72
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640014",
+              "name": "RearCircletSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -1.6800000000000002,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6904288758811279,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7234002815520063
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12461538461538461,
+                  "y": 0.120130595603285,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 234,
+                    "y": 25
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 316
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640015",
+              "name": "RearCircletSurface3",
+              "position": {
+                "x": 14.206800000000001,
+                "y": -1.4700000000000002,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.548800818880954,
+                "y": 0.22732074222195164,
+                "z": 0.3078504337537748,
+                "w": 0.743216692350803
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11997673603696107,
+                  "y": 0.12073088857297995,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 242,
+                      "y": 102
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640016",
+              "name": "RearCircletSurface4",
+              "position": {
+                "x": 14.4,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.39642443278823536,
+                "y": 0.39642443278823536,
+                "z": 0.5855319539431866,
+                "w": 0.5855319539431865
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12090909090909091,
+                  "y": 0.12427303401079624,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 230,
+                      "y": 181
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640017",
+              "name": "RearCircletSurface5",
+              "position": {
+                "x": 14.206800000000001,
+                "y": 1.4700000000000002,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.22732074222195164,
+                "y": 0.548800818880954,
+                "z": 0.743216692350803,
+                "w": 0.3078504337537748
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11997673603696107,
+                  "y": 0.12073088857297995,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 242,
+                      "y": 72
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640018",
+              "name": "RearCircletSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 1.6800000000000002,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6904288758811279,
+                "z": 0.7234002815520063,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12461538461538461,
+                  "y": 0.120130595603285,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 234,
+                    "y": 25
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 345
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640019",
+              "name": "RearCircletSurface7",
+              "position": {
+                "x": -14.206800000000001,
+                "y": 1.4700000000000002,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": -0.22732074222195164,
+                "y": 0.548800818880954,
+                "z": 0.743216692350803,
+                "w": -0.3078504337537748
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11997673603696107,
+                  "y": 0.12073088857297995,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 242,
+                      "y": 211
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640020",
+              "name": "RearCircletSurface8",
+              "position": {
+                "x": -14.4,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.39642443278823536,
+                "y": -0.39642443278823536,
+                "z": -0.5855319539431866,
+                "w": 0.5855319539431865
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12090909090909091,
+                  "y": 0.12427303401079624,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 231,
+                      "y": 583
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640021",
+              "name": "RearCircletSurface9",
+              "position": {
+                "x": -14.206800000000001,
+                "y": -1.4700000000000002,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.548800818880954,
+                "y": -0.22732074222195164,
+                "z": -0.3078504337537748,
+                "w": 0.743216692350803
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11997673603696107,
+                  "y": 0.12073088857297995,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 242,
+                      "y": 132
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640031",
+          "name": "TempleSweep-1",
+          "position": {
+            "x": -15.5,
+            "y": 8.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": -0.7071067811865476,
+            "z": 0.0,
+            "w": 0.7071067811865476
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640023",
+              "name": "TempleSweep-1Surface0",
+              "position": {
+                "x": 0.05200000000000049,
+                "y": -0.7493333333333334,
+                "z": 1.9
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": -0.0,
+                "z": -0.2297529205473612,
+                "w": 0.9732489894677302
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12451368001025144,
+                  "y": 0.12428811174936331,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 152,
+                    "y": 96
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 404
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640024",
+              "name": "TempleSweep-1Surface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -1.9
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 192,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 181
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640025",
+              "name": "TempleSweep-1Surface2",
+              "position": {
+                "x": -10.620000000000001,
+                "y": -2.3866666666666667,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6376969949835857,
+                "y": -0.1505398398634686,
+                "z": -0.17356313293416686,
+                "w": 0.7352252294969635
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12236800989911892,
+                  "y": 0.1238240651944754,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 231,
+                      "y": 548
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640026",
+              "name": "TempleSweep-1Surface3",
+              "position": {
+                "x": -1.0051076923076923,
+                "y": -2.4080615384615385,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6895146747080083,
+                "y": 0.019138429478835622,
+                "z": 0.020088402484454197,
+                "w": 0.7237400707194647
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432935432634445,
+                  "y": 0.12272451267520423,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 145,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 233
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640027",
+              "name": "TempleSweep-1Surface4",
+              "position": {
+                "x": 9.66,
+                "y": -0.9266666666666667,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6478486457745298,
+                "y": 0.15293631953397094,
+                "z": 0.1714552030923681,
+                "w": 0.7262958953953035
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12231110042779338,
+                  "y": 0.12338224977009635,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 574
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640028",
+              "name": "TempleSweep-1Surface5",
+              "position": {
+                "x": 9.200000000000001,
+                "y": 1.373333333333333,
+                "z": -6.661338147750939e-16
+              },
+              "orientation": {
+                "x": 0.17533538493603268,
+                "y": 0.6330163732354511,
+                "z": 0.7266613613452335,
+                "w": 0.20127354504022915
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12430217451129039,
+                  "y": 0.12374910549373276,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 204,
+                      "y": 474
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640029",
+              "name": "TempleSweep-1Surface6",
+              "position": {
+                "x": -0.5,
+                "y": 2.8733333333333335,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.683184085542186,
+                "z": 0.7302461949657026,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12285274459745602,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 120,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 268
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640030",
+              "name": "TempleSweep-1Surface7",
+              "position": {
+                "x": -9.700000000000001,
+                "y": 0.37333333333333274,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": -0.2802797189341569,
+                "y": 0.5831569474609589,
+                "z": 0.68722303396003,
+                "w": -0.3302964658862972
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12415322957685414,
+                  "y": 0.12423690011906793,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 53,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 539
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640040",
+          "name": "TempleSweep1",
+          "position": {
+            "x": 15.5,
+            "y": 8.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.7071067811865476,
+            "z": 0.0,
+            "w": 0.7071067811865476
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640032",
+              "name": "TempleSweep1Surface0",
+              "position": {
+                "x": 0.05200000000000049,
+                "y": -0.7493333333333334,
+                "z": 1.9
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": -0.0,
+                "z": -0.2297529205473612,
+                "w": 0.9732489894677302
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12451368001025144,
+                  "y": 0.12428811174936331,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 152,
+                    "y": 96
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 404
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640033",
+              "name": "TempleSweep1Surface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -1.9
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 192,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 181
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640034",
+              "name": "TempleSweep1Surface2",
+              "position": {
+                "x": -10.620000000000001,
+                "y": -2.3866666666666667,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6376969949835857,
+                "y": -0.1505398398634686,
+                "z": -0.17356313293416686,
+                "w": 0.7352252294969635
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12236800989911892,
+                  "y": 0.1238240651944754,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 231,
+                      "y": 548
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640035",
+              "name": "TempleSweep1Surface3",
+              "position": {
+                "x": -1.0051076923076923,
+                "y": -2.4080615384615385,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6895146747080083,
+                "y": 0.019138429478835622,
+                "z": 0.020088402484454197,
+                "w": 0.7237400707194647
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432935432634445,
+                  "y": 0.12272451267520423,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 145,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 233
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640036",
+              "name": "TempleSweep1Surface4",
+              "position": {
+                "x": 9.66,
+                "y": -0.9266666666666667,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6478486457745298,
+                "y": 0.15293631953397094,
+                "z": 0.1714552030923681,
+                "w": 0.7262958953953035
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12231110042779338,
+                  "y": 0.12338224977009635,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 574
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640037",
+              "name": "TempleSweep1Surface5",
+              "position": {
+                "x": 9.200000000000001,
+                "y": 1.373333333333333,
+                "z": -6.661338147750939e-16
+              },
+              "orientation": {
+                "x": 0.17533538493603268,
+                "y": 0.6330163732354511,
+                "z": 0.7266613613452335,
+                "w": 0.20127354504022915
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12430217451129039,
+                  "y": 0.12374910549373276,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 204,
+                      "y": 474
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640038",
+              "name": "TempleSweep1Surface6",
+              "position": {
+                "x": -0.5,
+                "y": 2.8733333333333335,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.683184085542186,
+                "z": 0.7302461949657026,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12285274459745602,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 120,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 268
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640039",
+              "name": "TempleSweep1Surface7",
+              "position": {
+                "x": -9.700000000000001,
+                "y": 0.37333333333333274,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": -0.2802797189341569,
+                "y": 0.5831569474609589,
+                "z": 0.68722303396003,
+                "w": -0.3302964658862972
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12415322957685414,
+                  "y": 0.12423690011906793,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 53,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 539
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640047",
+          "name": "CrownFocusSetting",
+          "position": {
+            "x": 0.0,
+            "y": 10.8,
+            "z": 18.5
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640041",
+              "name": "CrownFocusSettingSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 6.661338147750939e-16,
+                "z": 1.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.4457156081622064,
+                "w": 0.895174617960426
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1249799010715881,
+                  "y": 0.12388741941886444,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 32
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 59,
+                      "y": 539
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640042",
+              "name": "CrownFocusSettingSurface1",
+              "position": {
+                "x": 1.1102230246251565e-15,
+                "y": -2.220446049250313e-16,
+                "z": -1.0
+              },
+              "orientation": {
+                "x": 0.895174617960426,
+                "y": 0.44571560816220646,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12403487346424154,
+                  "y": 0.12311793234172864,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 46,
+                    "y": 35
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 204,
+                      "y": 509
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640043",
+              "name": "CrownFocusSettingSurface2",
+              "position": {
+                "x": 1.2812274779684247,
+                "y": -1.735559913430697,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6051988645291403,
+                "y": 0.30133403533857517,
+                "z": 0.3284207705154713,
+                "w": 0.6595998264199543
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444514198713238,
+                  "y": 0.11808315833372666,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 36,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 191,
+                      "y": 548
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640044",
+              "name": "CrownFocusSettingSurface3",
+              "position": {
+                "x": 1.2812274779684234,
+                "y": 1.735559913430699,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.30133403533857517,
+                "y": 0.6051988645291403,
+                "z": 0.6595998264199543,
+                "w": 0.3284207705154713
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444514198713238,
+                  "y": 0.11808315833372666,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 36,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 105,
+                      "y": 574
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640045",
+              "name": "CrownFocusSettingSurface4",
+              "position": {
+                "x": -1.2812274779684247,
+                "y": 1.735559913430697,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": -0.30133403533857517,
+                "y": 0.6051988645291403,
+                "z": 0.6595998264199543,
+                "w": -0.3284207705154713
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444514198713238,
+                  "y": 0.11808315833372666,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 36,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 158,
+                      "y": 474
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640046",
+              "name": "CrownFocusSettingSurface5",
+              "position": {
+                "x": -1.2812274779684234,
+                "y": -1.735559913430699,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.6051988645291403,
+                "y": -0.30133403533857517,
+                "z": -0.3284207705154713,
+                "w": 0.6595998264199543
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444514198713238,
+                  "y": 0.11808315833372666,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 36,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 191,
+                      "y": 569
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640054",
+          "name": "CrownFocus",
+          "position": {
+            "x": 0.0,
+            "y": 10.8,
+            "z": 19.65
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640048",
+              "name": "CrownFocusSurface0",
+              "position": {
+                "x": -2.220446049250313e-16,
+                "y": -2.220446049250313e-16,
+                "z": 1.35
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.47557377204047535,
+                "w": 0.8796758421982463
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1245208728083727,
+                  "y": 0.12048501843276538,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 34,
+                    "y": 23
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 145,
+                      "y": 574
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640049",
+              "name": "CrownFocusSurface1",
+              "position": {
+                "x": 2.220446049250313e-16,
+                "y": 1.1102230246251565e-16,
+                "z": -1.35
+              },
+              "orientation": {
+                "x": 0.8796758421982463,
+                "y": 0.47557377204047535,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12437454980859788,
+                  "y": 0.12048501843276536,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 37,
+                    "y": 25
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 217,
+                      "y": 439
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640050",
+              "name": "CrownFocusSurface2",
+              "position": {
+                "x": 0.8495950011571397,
+                "y": -1.3420076371210365,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6080018434781752,
+                "y": 0.32870031918566067,
+                "z": 0.3436953779439736,
+                "w": 0.6357384255134612
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12173021058922072,
+                  "y": 0.12284940589289423,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 27,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 227,
+                      "y": 374
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640051",
+              "name": "CrownFocusSurface3",
+              "position": {
+                "x": 0.8495950011571395,
+                "y": 1.342007637121037,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.32870031918566067,
+                "y": 0.6080018434781752,
+                "z": 0.6357384255134612,
+                "w": 0.3436953779439736
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12173021058922072,
+                  "y": 0.12284940589289423,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 27,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 78,
+                      "y": 595
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640052",
+              "name": "CrownFocusSurface4",
+              "position": {
+                "x": -0.8495950011571397,
+                "y": 1.3420076371210365,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.32870031918566067,
+                "y": 0.6080018434781752,
+                "z": 0.6357384255134612,
+                "w": -0.3436953779439736
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12173021058922072,
+                  "y": 0.12284940589289423,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 27,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 47,
+                      "y": 575
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640053",
+              "name": "CrownFocusSurface5",
+              "position": {
+                "x": -0.8495950011571395,
+                "y": -1.342007637121037,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6080018434781752,
+                "y": -0.32870031918566067,
+                "z": -0.3436953779439736,
+                "w": 0.6357384255134612
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12173021058922072,
+                  "y": 0.12284940589289423,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 27,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 47,
+                      "y": 601
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640055",
+          "name": "CowlBack",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -15.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "640056",
+          "name": "CowlTop",
+          "position": {
+            "x": 0.0,
+            "y": 16.0,
+            "z": -1.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

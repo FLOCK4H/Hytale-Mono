@@ -1,0 +1,20 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Bar_Aequalis.name",
+    "Description": "server.items.flock4h.AxoTales_Bar_Aequalis.description"
+  },
+  "Model": "Resources/AxoTales/Ores/Aequalis/Ingot.blockymodel",
+  "Texture": "Resources/AxoTales/Ores/Aequalis/Ingot_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Bar_Aequalis.png",
+  "Categories": [],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Ingots",
+  "MaxStack": 100,
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "Quality": "AxoTales_Internal",
+  "$AxoLegacyItem": "Axo_Aequalis_Bar"
+}

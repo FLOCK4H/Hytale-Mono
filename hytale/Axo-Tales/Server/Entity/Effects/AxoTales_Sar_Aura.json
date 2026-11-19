@@ -1,0 +1,21 @@
+{
+  "Duration": 1.1,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Duration",
+  "Debuff": false,
+  "ApplicationEffects": {
+    "Particles": [
+      {
+        "SystemId": "AxoTales_Sar_Runes",
+        "TargetNodeName": "Chest",
+        "TargetEntityPart": "Entity",
+        "PositionOffset": {
+          "X": 0,
+          "Y": 0.25,
+          "Z": 0.25
+        },
+        "Scale": 0.5
+      }
+    ]
+  }
+}

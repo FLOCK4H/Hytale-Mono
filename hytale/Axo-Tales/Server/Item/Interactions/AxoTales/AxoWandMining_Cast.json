@@ -1,0 +1,18 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "AxoTales_Input",
+      "Release": true
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.1,
+      "Effects": {
+        "ItemAnimationId": "CastMiningRelease",
+        "ClearAnimationOnFinish": true,
+        "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
+      }
+    }
+  ]
+}

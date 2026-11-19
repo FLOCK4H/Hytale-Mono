@@ -1,0 +1,68 @@
+{
+  "Model": "AxoTales_Ancient_Blue_Fireball",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 0,
+    "TerminalVelocityAir": 100,
+    "TerminalVelocityWater": 30,
+    "RotationMode": "Velocity",
+    "Bounciness": 0,
+    "SticksVertically": false
+  },
+  "LaunchForce": 32,
+  "SpawnOffset": {
+    "X": 0,
+    "Y": -0.15,
+    "Z": 1.1
+  },
+  "Interactions": {
+    "ProjectileSpawn": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 5,
+          "Effects": {
+            "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Launch"
+          }
+        },
+        "AxoAncient_Projectile_Remove"
+      ]
+    },
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0,
+          "Effects": {
+            "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
+          }
+        },
+        {
+          "Type": "AxoTales_AncientGear",
+          "Mode": "impact"
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0,
+          "Effects": {
+            "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
+          }
+        },
+        {
+          "Type": "AxoTales_AncientGear",
+          "Mode": "impact"
+        }
+      ]
+    }
+  }
+}

@@ -19,9 +19,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Prevents Horde Book summoned minions from damaging their owner.
- */
+
+
+
 public final class HordeBookFriendlyFireSystem extends DamageEventSystem {
 
     private final PluginErrorReporter errors;

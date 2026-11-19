@@ -1,0 +1,105 @@
+{
+  "RenderMode": "BlendLinear",
+  "Shape": "Cube",
+  "EmitOffset": {
+    "X": {
+      "Min": 0,
+      "Max": 0
+    },
+    "Y": {
+      "Min": 60,
+      "Max": 60
+    },
+    "Z": {
+      "Min": 0,
+      "Max": 0
+    }
+  },
+  "ParticleRotationInfluence": "Billboard",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": false,
+  "TrailSpawnerPositionMultiplier": 0,
+  "TrailSpawnerRotationMultiplier": 0,
+  "MaxConcurrentParticles": 1,
+  "ParticleLifeSpan": {
+    "Min": 1.27,
+    "Max": 1.27
+  },
+  "SpawnRate": {
+    "Min": 8,
+    "Max": 8
+  },
+  "TotalParticles": {
+    "Min": 1,
+    "Max": 1
+  },
+  "SpawnBurst": true,
+  "InitialVelocity": {
+    "Speed": {
+      "Min": 48,
+      "Max": 48
+    },
+    "Yaw": {
+      "Min": 0,
+      "Max": 360
+    },
+    "Pitch": {
+      "Min": -90,
+      "Max": -90
+    }
+  },
+  "Attractors": [],
+  "Particle": {
+    "Texture": "Particles/AxoTales/Meteor.png",
+    "FrameSize": {
+      "Width": 64,
+      "Height": 64
+    },
+    "ScaleRatioConstraint": "None",
+    "UVOption": "RandomFlipU",
+    "Animation": {
+      "0": {
+        "Color": "#ffffff",
+        "Opacity": 1,
+        "Scale": {
+          "X": {
+            "Min": 1.5,
+            "Max": 1.5
+          },
+          "Y": {
+            "Min": 1.5,
+            "Max": 1.5
+          }
+        }
+      },
+      "100": {
+        "Opacity": 0
+      },
+      "90": {
+        "Opacity": 1
+      }
+    },
+    "InitialAnimationFrame": {
+      "Scale": {
+        "X": {
+          "Min": 0.7,
+          "Max": 1.15
+        },
+        "Y": {
+          "Min": 0.7,
+          "Max": 1.15
+        }
+      },
+      "Opacity": 1,
+      "Color": "#ffffff",
+      "FrameIndex": {
+        "Min": 0,
+        "Max": 0
+      }
+    },
+    "UseSpriteBlending": false,
+    "SoftParticlesFadeFactor": 1.02,
+    "SoftParticles": "Disable"
+  }
+}

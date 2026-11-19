@@ -1,0 +1,57 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Leech_Strand_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Leech_Strand_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 90
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Leech_Veil_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Leech_Veil_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 90
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Leech_Accent_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 0
+      },
+      "PositionOffset": {
+        "X": 0.04,
+        "Y": 0,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Leech_Accent_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 90
+      },
+      "PositionOffset": {
+        "X": 0.04,
+        "Y": 0,
+        "Z": 0
+      }
+    }
+  ],
+  "CullDistance": 48
+}

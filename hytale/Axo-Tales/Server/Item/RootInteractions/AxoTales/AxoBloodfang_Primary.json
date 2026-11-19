@@ -1,0 +1,85 @@
+{
+  "RequireNewClick": true,
+  "ClickQueuingTimeout": 0.09375,
+  "Cooldown": {
+    "Cooldown": 0.106875
+  },
+  "Interactions": [
+    {
+      "Type": "AxoTales_AncientGear",
+      "Mode": "daggerDraw",
+      "Next": {
+        "Type": "Charging",
+        "DisplayProgress": true,
+        "AllowIndefiniteHold": true,
+        "Effects": {
+          "ItemAnimationId": "PairedAim",
+          "ClearAnimationOnFinish": true
+        },
+        "Rules": {
+          "InterruptedBy": [
+            "Secondary",
+            "Use"
+          ]
+        },
+        "Next": {
+          "0": {
+            "Type": "AxoTales_AncientGear",
+            "Mode": "bloodfang",
+            "Next": {
+              "Type": "ApplyForce",
+              "Duration": 0.12,
+              "WaitForGround": false,
+              "ChangeVelocityType": "Set",
+              "VelocityConfig": {
+                "AirResistance": 0.85,
+                "AirResistanceMax": 0.85,
+                "GroundResistance": 0.85,
+                "GroundResistanceMax": 0.85,
+                "Threshold": 0,
+                "Style": "Linear"
+              },
+              "Forces": [
+                {
+                  "Direction": {
+                    "Z": -1
+                  },
+                  "Force": 5.5,
+                  "AdjustVertical": false
+                }
+              ],
+              "Next": "AxoTempoDaggers_Weapon_Daggers_Primary_Chain"
+            },
+            "Failed": "AxoTempoDaggers_Weapon_Daggers_Primary_Chain"
+          },
+          "0.8": {
+            "Type": "AxoTales_AncientGear",
+            "Mode": "daggerStart",
+            "Next": {
+              "Type": "Simple",
+              "RunTime": 0.23333333333333334,
+              "Effects": {
+                "ItemAnimationId": "PairedThrow",
+                "ClearAnimationOnFinish": true,
+                "WaitForAnimationToFinish": false
+              },
+              "Next": {
+                "Type": "AxoTales_AncientGear",
+                "Mode": "daggerRelease",
+                "Next": {
+                  "Type": "Simple",
+                  "RunTime": 0.26666666666666666,
+                  "Effects": {
+                    "ItemAnimationId": "PairedRecover",
+                    "ClearAnimationOnFinish": true,
+                    "WaitForAnimationToFinish": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_chest.name",
+    "Description": "server.items.flock4h.arcane_robe.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 20,
+  "MaxStack": 1,
+  "Categories": [],
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Cloth",
+  "Model": "Items/AxoTales/DarkArcana/Robe_Chest.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Robe_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Robe.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Chest",
+    "BaseDamageResistance": 0,
+    "StatModifiers": {
+      "Stamina": [
+        {
+          "Amount": 3,
+          "CalculationType": "Additive"
+        }
+      ]
+    }
+  },
+  "MaxDurability": 350,
+  "DurabilityLossOnHit": 0.35,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "AxoTalesArcaneRobe"
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Arcane_Veil_Robe"
+}

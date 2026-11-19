@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "duration": 16875,
+  "holdLastKeyframe": true,
+  "nodeAnimations": {
+    "FuelFlaskBlood": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": -0.234375,
+            "z": 0.0
+          },
+          "interpolationType": "linear"
+        },
+        {
+          "time": 16875,
+          "delta": {
+            "x": 0.0,
+            "y": -3.75,
+            "z": 0.0
+          },
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeStretch": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 1.0,
+            "y": 0.9375,
+            "z": 1.0
+          },
+          "interpolationType": "linear"
+        },
+        {
+          "time": 16875,
+          "delta": {
+            "x": 1.0,
+            "y": 0.001,
+            "z": 1.0
+          },
+          "interpolationType": "linear"
+        }
+      ],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": true,
+          "interpolationType": "linear"
+        },
+        {
+          "time": 16875,
+          "delta": false,
+          "interpolationType": "linear"
+        }
+      ],
+      "orientation": [],
+      "shapeUvOffset": []
+    }
+  }
+}

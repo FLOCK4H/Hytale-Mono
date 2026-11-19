@@ -1,0 +1,735 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.blood_furnace.name",
+    "Description": "server.items.flock4h.blood_furnace.description"
+  },
+  "Icon": "Icons/ItemsGenerated/AxoTales_Blood_Furnace.png",
+  "Categories": [
+    "Furniture.Benches"
+  ],
+  "Quality": "Epic",
+  "MaxStack": 1,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Items/AxoTales/BloodIndustry/Blood_Furnace.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/BloodIndustry/Blood_Furnace_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "VariantRotation": "NESW",
+    "HitboxType": "Axo_Blood_Furnace",
+    "BlockEntity": {
+      "Components": {
+        "ItemContainerBlock": {
+          "Capacity": 9
+        },
+        "AxoTales_BloodFurnace": {}
+      }
+    },
+    "State": {
+      "Definitions": {
+        "Fuel0": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel0.blockyanim",
+          "Looping": false
+        },
+        "Processing0": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing0.blockyanim",
+          "Looping": false
+        },
+        "Fuel1": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel1.blockyanim",
+          "Looping": false
+        },
+        "Processing1": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing1.blockyanim",
+          "Looping": false
+        },
+        "Fuel2": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel2.blockyanim",
+          "Looping": false
+        },
+        "Processing2": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing2.blockyanim",
+          "Looping": false
+        },
+        "Fuel3": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel3.blockyanim",
+          "Looping": false
+        },
+        "Processing3": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing3.blockyanim",
+          "Looping": false
+        },
+        "Fuel4": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel4.blockyanim",
+          "Looping": false
+        },
+        "Processing4": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing4.blockyanim",
+          "Looping": false
+        },
+        "Fuel5": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel5.blockyanim",
+          "Looping": false
+        },
+        "Processing5": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing5.blockyanim",
+          "Looping": false
+        },
+        "Fuel6": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel6.blockyanim",
+          "Looping": false
+        },
+        "Processing6": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing6.blockyanim",
+          "Looping": false
+        },
+        "Fuel7": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel7.blockyanim",
+          "Looping": false
+        },
+        "Processing7": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing7.blockyanim",
+          "Looping": false
+        },
+        "Fuel8": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel8.blockyanim",
+          "Looping": false
+        },
+        "Processing8": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing8.blockyanim",
+          "Looping": false
+        },
+        "Fuel9": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel9.blockyanim",
+          "Looping": false
+        },
+        "Processing9": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing9.blockyanim",
+          "Looping": false
+        },
+        "Fuel10": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel10.blockyanim",
+          "Looping": false
+        },
+        "Processing10": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing10.blockyanim",
+          "Looping": false
+        },
+        "Fuel11": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel11.blockyanim",
+          "Looping": false
+        },
+        "Processing11": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing11.blockyanim",
+          "Looping": false
+        },
+        "Fuel12": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel12.blockyanim",
+          "Looping": false
+        },
+        "Processing12": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing12.blockyanim",
+          "Looping": false
+        },
+        "Fuel13": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel13.blockyanim",
+          "Looping": false
+        },
+        "Processing13": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing13.blockyanim",
+          "Looping": false
+        },
+        "Fuel14": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel14.blockyanim",
+          "Looping": false
+        },
+        "Processing14": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing14.blockyanim",
+          "Looping": false
+        },
+        "Fuel15": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel15.blockyanim",
+          "Looping": false
+        },
+        "Processing15": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing15.blockyanim",
+          "Looping": false
+        },
+        "Fuel16": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel16.blockyanim",
+          "Looping": false
+        },
+        "Processing16": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing16.blockyanim",
+          "Looping": false
+        },
+        "Fuel17": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel17.blockyanim",
+          "Looping": false
+        },
+        "Processing17": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing17.blockyanim",
+          "Looping": false
+        },
+        "Fuel18": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel18.blockyanim",
+          "Looping": false
+        },
+        "Processing18": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing18.blockyanim",
+          "Looping": false
+        },
+        "Fuel19": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel19.blockyanim",
+          "Looping": false
+        },
+        "Processing19": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing19.blockyanim",
+          "Looping": false
+        },
+        "Fuel20": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel20.blockyanim",
+          "Looping": false
+        },
+        "Processing20": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing20.blockyanim",
+          "Looping": false
+        },
+        "Fuel21": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel21.blockyanim",
+          "Looping": false
+        },
+        "Processing21": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing21.blockyanim",
+          "Looping": false
+        },
+        "Fuel22": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel22.blockyanim",
+          "Looping": false
+        },
+        "Processing22": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing22.blockyanim",
+          "Looping": false
+        },
+        "Fuel23": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel23.blockyanim",
+          "Looping": false
+        },
+        "Processing23": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing23.blockyanim",
+          "Looping": false
+        },
+        "Fuel24": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel24.blockyanim",
+          "Looping": false
+        },
+        "Processing24": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing24.blockyanim",
+          "Looping": false
+        },
+        "Fuel25": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel25.blockyanim",
+          "Looping": false
+        },
+        "Processing25": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing25.blockyanim",
+          "Looping": false
+        },
+        "Fuel26": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel26.blockyanim",
+          "Looping": false
+        },
+        "Processing26": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing26.blockyanim",
+          "Looping": false
+        },
+        "Fuel27": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel27.blockyanim",
+          "Looping": false
+        },
+        "Processing27": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing27.blockyanim",
+          "Looping": false
+        },
+        "Fuel28": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel28.blockyanim",
+          "Looping": false
+        },
+        "Processing28": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing28.blockyanim",
+          "Looping": false
+        },
+        "Fuel29": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel29.blockyanim",
+          "Looping": false
+        },
+        "Processing29": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing29.blockyanim",
+          "Looping": false
+        },
+        "Fuel30": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel30.blockyanim",
+          "Looping": false
+        },
+        "Processing30": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing30.blockyanim",
+          "Looping": false
+        },
+        "Fuel31": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel31.blockyanim",
+          "Looping": false
+        },
+        "Processing31": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing31.blockyanim",
+          "Looping": false
+        },
+        "Fuel32": {
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel32.blockyanim",
+          "Looping": false
+        },
+        "Processing32": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing32.blockyanim",
+          "Looping": false
+        },
+        "Processing": {
+          "Light": {
+            "Color": "#a34"
+          },
+          "Particles": [
+            {
+              "SystemId": "Fire_Furnace_On",
+              "TargetNodeName": "Fire",
+              "Scale": 0.95
+            }
+          ],
+          "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Processing32.blockyanim",
+          "Looping": false
+        }
+      }
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches",
+        "DropList": {
+          "Container": {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Axo_Blood_Furnace",
+              "QuantityMin": 1,
+              "QuantityMax": 1
+            }
+          }
+        }
+      }
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockSoundSetId": "Stone",
+    "PhysicalMaterialId": "Stone",
+    "Interactions": {
+      "Use": "AxoBloodFurnace_Use"
+    },
+    "CustomModelAnimation": "Items/AxoTales/BloodIndustry/FuelFlask/Fuel0.blockyanim"
+  },
+  "Recipe": {
+    "TimeSeconds": 12,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 12
+      },
+      {
+        "ItemId": "Ingredient_Bar_Copper",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Axo_Revel_Bar",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Axo_Aequalis_Bar",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Rock_Stone",
+        "Quantity": 16
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Blood_Magic"
+        ]
+      }
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.24,
+    "Rotation": [
+      22.5,
+      45,
+      0
+    ],
+    "Translation": [
+      0,
+      -24
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Bench"
+    ]
+  }
+}

@@ -20,12 +20,12 @@ import javax.annotation.Nullable;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * Applies custom potion splash effects by intercepting the explosion-damage pass emitted by legacy projectile explosions.
- *
- * <p>We intentionally cancel direct-hit (PROJECTILE) damage for these potion projectiles so they behave like splash
- * potions and don't double-hit (direct hit + explosion).</p>
- */
+
+
+
+
+
+
 public final class PotionSplashEffectSystem extends DamageEventSystem {
 
     public static final String POTION_EMPTY_PROJECTILE_ID = "Potion_Empty_Projectile";
@@ -114,7 +114,7 @@ public final class PotionSplashEffectSystem extends DamageEventSystem {
 
             boolean isProjectileDamage = causeId != null && causeId.equalsIgnoreCase("PROJECTILE");
             if (isProjectileDamage) {
-                // Splash potions: prevent direct-hit damage so we don't double-hit (direct + explosion).
+
                 float amountBefore = damage.getAmount();
                 damage.setAmount(0f);
                 damage.setCancelled(true);
@@ -145,7 +145,7 @@ public final class PotionSplashEffectSystem extends DamageEventSystem {
                 amountAfter = CURSE_POTION_DAMAGE;
                 damage.setAmount(amountAfter);
             } else if (POTION_EMPTY_PROJECTILE_ID.equals(projectileAssetName)) {
-                // Defensive: empty bottle shouldn't meaningfully affect entities.
+
                 amountAfter = 0f;
                 cancelled = true;
                 damage.setAmount(0f);

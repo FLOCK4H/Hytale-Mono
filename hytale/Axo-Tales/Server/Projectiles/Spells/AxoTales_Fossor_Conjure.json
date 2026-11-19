@@ -1,0 +1,20 @@
+{
+  "Appearance": "AxoTales_Fossor_Conjure",
+  "Radius": 0.1,
+  "Height": 0.2,
+  "VerticalCenterShot": 0.1,
+  "HorizontalCenterShot": 0.1,
+  "DepthShot": 1,
+  "PitchAdjustShot": false,
+  "SticksVertically": true,
+  "MuzzleVelocity": 8,
+  "TerminalVelocity": 80,
+  "Gravity": 0,
+  "Bounciness": 0,
+  "ImpactSlowdown": 0,
+  "TimeToLive": 0.3,
+  "Damage": 0,
+  "DeadTimeMiss": 0,
+  "DeadTime": 0,
+  "DeathEffectsOnHit": false
+}

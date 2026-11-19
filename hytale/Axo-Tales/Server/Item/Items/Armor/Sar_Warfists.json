@@ -3,43 +3,14 @@
     "Name": "server.items.flock4h.sar_warfists.name",
     "Description": "server.items.flock4h.sar_warfists.description"
   },
-  "Quality": "Epic",
+  "Quality": "AxoTales_Internal",
   "ItemLevel": 20,
   "PlayerAnimationsId": "Block",
   "ItemSoundSetId": "ISS_Armor_Heavy",
-  "Categories": [
-    "Items.Armors"
-  ],
-  "Icon": "Icons/ItemsGenerated/Sar_Hands.png",
-  "Model": "Items/Armors/Sar/Hands.blockymodel",
-  "Texture": "Items/Armors/Sar_Warfists.png",
-  "Recipe": {
-    "Input": [
-      {
-        "ItemId": "Plant_Crop_Mana3",
-        "Quantity": 2
-      },
-      {
-        "ItemId": "Arcane_Matter",
-        "Quantity": 2
-      },
-      {
-        "ItemId": "Ingredient_Crystal_Arcane",
-        "Quantity": 2
-      }
-    ],
-    "BenchRequirement": [
-      {
-        "Id": "Arcanebench",
-        "Type": "Crafting",
-        "Categories": [
-          "Arcane_AxoTales_Armor"
-        ]
-      }
-    ],
-    "KnowledgeRequired": false,
-    "TimeSeconds": 3
-  },
+  "Categories": [],
+  "Icon": "Icons/ItemsGenerated/Sar_Warfists.png",
+  "Model": "Items/AxoTales/DarkArcana/Sar_Hands.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Sar_Hands_Atlas.png",
   "Interactions": {
     "Primary": {
       "Interactions": [
@@ -62,14 +33,14 @@
     "DamageResistance": {
       "Physical": [
         {
-          "Amount": 0.16,
-          "CalculationType": "Multiplicative"
+          "Amount": 0.08,
+          "CalculationType": "Percent"
         }
       ],
       "Projectile": [
         {
-          "Amount": 0.16,
-          "CalculationType": "Multiplicative"
+          "Amount": 0.08,
+          "CalculationType": "Percent"
         }
       ]
     },
@@ -134,15 +105,24 @@
     ]
   },
   "IconProperties": {
-    "Scale": 0.5,
+    "Scale": 0.498,
     "Rotation": [
-      22.5,
-      45,
-      22.5
+      15,
+      35,
+      0
     ],
     "Translation": [
       0,
-      -25.8
+      0
     ]
-  }
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Sar_Runes",
+      "TargetNodeName": "RBracerFocus",
+      "TargetEntityPart": "Entity",
+      "Scale": 0.4
+    }
+  ],
+  "$AxoLegacyItem": "Axo_Sar_Warfists"
 }

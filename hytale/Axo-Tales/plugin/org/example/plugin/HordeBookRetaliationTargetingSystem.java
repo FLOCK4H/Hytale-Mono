@@ -17,14 +17,15 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.role.Role;
 import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * When a Horde Book owner is damaged by an entity, retarget the active minion towards the attacker.
- */
+
+
+
 public final class HordeBookRetaliationTargetingSystem extends DamageEventSystem {
 
     private final PluginErrorReporter errors;
@@ -135,7 +136,7 @@ public final class HordeBookRetaliationTargetingSystem extends DamageEventSystem
                 }
 
                 Role role = minionNpc.getRole();
-                MarkedEntitySupport marked = role != null ? role.getMarkedEntitySupport() : null;
+                MarkedEntitySupport marked = role != null ? MarkedEntitySupport.get(minionRef, store) : null;
                 if (marked == null) {
                     continue;
                 }
@@ -146,16 +147,16 @@ public final class HordeBookRetaliationTargetingSystem extends DamageEventSystem
                 }
 
                 try {
-                    if (role != null && role.getWorldSupport() != null) {
-                        role.getWorldSupport().overrideAttitude(attackerRef, com.hypixel.hytale.server.core.asset.type.attitude.Attitude.HOSTILE, 3.0);
+                    if (role != null && WorldSupport.get(minionRef, store) != null) {
+                        WorldSupport.get(minionRef, store).overrideAttitude(attackerRef, com.hypixel.hytale.server.core.asset.type.attitude.Attitude.HOSTILE, 3.0);
                     }
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
 
                 marked.setMarkedEntity(MarkedEntitySupport.DEFAULT_TARGET_SLOT, attackerRef);
-                if (role != null && role.getWorldSupport() != null) {
-                    role.getWorldSupport().requestNewPath();
+                if (role != null && WorldSupport.get(minionRef, store) != null) {
+                    WorldSupport.get(minionRef, store).requestNewPath();
                 }
                 anyMinionTargetChanged = true;
             }
@@ -165,15 +166,15 @@ public final class HordeBookRetaliationTargetingSystem extends DamageEventSystem
             NPCEntity attackerNpc = store.getComponent(attackerRef, NPCEntity.getComponentType());
             if (attackerNpc != null) {
                 Role attackerRole = attackerNpc.getRole();
-                MarkedEntitySupport attackerMarked = attackerRole != null ? attackerRole.getMarkedEntitySupport() : null;
+                MarkedEntitySupport attackerMarked = attackerRole != null ? MarkedEntitySupport.get(attackerRef, store) : null;
                 if (attackerMarked != null) {
                     Ref<EntityStore> preferredMinionRef = minionRefs.get(0);
                     Ref<EntityStore> previousAttackerTarget = attackerMarked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
                     if (!(previousAttackerTarget != null && previousAttackerTarget.isValid() && previousAttackerTarget.equals(preferredMinionRef))) {
                         attackerMarked.setMarkedEntity(MarkedEntitySupport.DEFAULT_TARGET_SLOT, preferredMinionRef);
-                        attackerMarked.flockSetTarget(MarkedEntitySupport.DEFAULT_TARGET_SLOT, preferredMinionRef, store);
-                        if (attackerRole != null && attackerRole.getWorldSupport() != null) {
-                            attackerRole.getWorldSupport().requestNewPath();
+                        attackerMarked.flockSetTarget(attackerRef, MarkedEntitySupport.DEFAULT_TARGET_SLOT, preferredMinionRef, store);
+                        if (attackerRole != null && WorldSupport.get(attackerRef, store) != null) {
+                            WorldSupport.get(attackerRef, store).requestNewPath();
                         }
                         attackerTargetedToMinion = true;
                         attackerTargetReason = "ok";

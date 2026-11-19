@@ -1,0 +1,53 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Flying_Aggressive",
+  "Modify": {
+    "Appearance": "Vesperwraith",
+    "DropList": "Drop_AxoTales_Vesperwraith",
+    "MaxHealth": 60,
+    "IsMemory": true,
+    "MemoriesCategory": "Undead",
+    "MotionFlyMinHeightAboveGround": 1,
+    "MotionFlyMaxHeightAboveGround": 6,
+    "MotionFlyMaxHorizontalSpeed": 6,
+    "ViewRange": 20,
+    "ViewSector": 270,
+    "HearingRange": 12,
+    "AlertedRange": 25,
+    "AlertedTime": [
+      0.5,
+      1
+    ],
+    "MotionDesiredAltitudeCombat": [
+      1.5,
+      3
+    ],
+    "MotionDesiredAltitudeSearch": [
+      2,
+      5
+    ],
+    "CombatRelativeSpeedChase": 0.85,
+    "CombatSeekStopDistance": 4,
+    "CombatSeekSlowdownDistance": 7,
+    "RangedAttack": "AxoVesperwraith_Cry",
+    "RangedAttackDistance": 12,
+    "RangedAttackAimingRange": [
+      0.4,
+      0.7
+    ],
+    "RangedAttackPauseRange": [
+      2,
+      3
+    ],
+    "DeathAnimationTime": 1.5,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Chiro.name",
+      "Description": "Displayed creature name"
+    }
+  }
+}

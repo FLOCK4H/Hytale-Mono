@@ -1,0 +1,9 @@
+{
+  "Type": "AxoTales_Scout",
+  "Mode": "fire",
+  "RunTime": 0.15,
+  "Effects": {
+    "ItemAnimationId": "Shoot",
+    "ClearAnimationOnFinish": true
+  }
+}

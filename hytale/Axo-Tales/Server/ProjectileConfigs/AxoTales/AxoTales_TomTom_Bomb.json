@@ -1,0 +1,83 @@
+{
+  "Model": "AxoTales_TomTom_Bomb",
+  "SpawnRotationOffset": {
+    "Pitch": 0.0,
+    "Yaw": 1,
+    "Roll": 0
+  },
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 22,
+    "TerminalVelocityAir": 20,
+    "TerminalVelocityWater": 15,
+    "RotationMode": "None",
+    "BounceLimit": 0.2,
+    "Bounciness": 0.75,
+    "BounceCount": 2,
+    "AllowRolling": false,
+    "RollingFrictionFactor": 1.5,
+    "SticksVertically": false
+  },
+  "LaunchForce": 12,
+  "SpawnOffset": {
+    "X": 0,
+    "Y": 0.05,
+    "Z": 0.6
+  },
+  "Interactions": {
+    "ProjectileSpawn": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 1.2
+        },
+        "AxoTomTom_Explode"
+      ]
+    },
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0,
+          "Effects": {
+            "WorldSoundEventId": "SFX_Goblin_Lobber_Bomb_Bounce"
+          }
+        }
+      ]
+    },
+    "ProjectileBounce": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0,
+          "Effects": {
+            "WorldSoundEventId": "SFX_Goblin_Lobber_Bomb_Bounce"
+          }
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 0,
+          "Effects": {
+            "WorldSoundEventId": "SFX_Goblin_Lobber_Bomb_Bounce"
+          }
+        }
+      ]
+    }
+  }
+}

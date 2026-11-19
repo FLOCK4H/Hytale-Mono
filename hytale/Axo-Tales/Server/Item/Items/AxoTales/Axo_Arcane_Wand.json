@@ -1,0 +1,54 @@
+{
+  "Parent": "Axo_Arcane_Wand_Template",
+  "Quality": "Epic",
+  "Interactions": {
+    "Primary": "AxoWand_Select",
+    "Secondary": "AxoWand_Silver_Use"
+  },
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_wand.name",
+    "Description": "server.items.flock4h.arcane_wand_silver.description"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Wood_Oak_Trunk",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Axo_Agretis_Bar",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Library"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 5
+  }
+}

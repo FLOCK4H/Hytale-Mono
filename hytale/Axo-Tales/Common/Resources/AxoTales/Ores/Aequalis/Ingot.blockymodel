@@ -1,0 +1,1447 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "832327",
+      "name": "CastIngot",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "832301",
+          "name": "CastIngotSurface0",
+          "position": {
+            "x": -8.881784197001252e-16,
+            "y": 0.25,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.7071067811865475,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.7071067811865476
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12432432432432432,
+              "y": 0.12475247524752475,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 74,
+                "y": 202
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832302",
+          "name": "CastIngotSurface1",
+          "position": {
+            "x": 0.0,
+            "y": 6.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.5,
+            "w": -0.5
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12486486486486487,
+              "y": 0.12459016393442622,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 185,
+                "y": 61
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 102
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832303",
+          "name": "CastIngotSurface2",
+          "position": {
+            "x": 0.0,
+            "y": 0.625,
+            "z": -12.8
+          },
+          "orientation": {
+            "x": 0.9701425001453318,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.24253562503633316
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12428571428571428,
+              "y": 0.12142857142857146,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 70,
+                "y": 7
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 191
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832304",
+          "name": "CastIngotSurface3",
+          "position": {
+            "x": 4.5,
+            "y": 0.6249999999999999,
+            "z": -12.5
+          },
+          "orientation": {
+            "x": 0.8848582109329732,
+            "y": -0.11004317246533508,
+            "z": 0.3665202717456304,
+            "w": 0.2656677194123735
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11490485194281402,
+              "y": 0.11232625472257148,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 334,
+                  "y": 26
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832305",
+          "name": "CastIngotSurface4",
+          "position": {
+            "x": 4.8,
+            "y": 0.625,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.6859943405700353,
+            "y": -0.17149858514250899,
+            "z": 0.6859943405700353,
+            "w": 0.17149858514250899
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12474747474747475,
+              "y": 0.12142857142857144,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 198,
+                "y": 7
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 91
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832306",
+          "name": "CastIngotSurface5",
+          "position": {
+            "x": 4.5,
+            "y": 0.625,
+            "z": 12.499999999999998
+          },
+          "orientation": {
+            "x": 0.36652027174563034,
+            "y": -0.26566771941237377,
+            "z": 0.8848582109329731,
+            "w": 0.11004317246533521
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11490485194281402,
+              "y": 0.11232625472257148,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 334,
+                  "y": 38
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832307",
+          "name": "CastIngotSurface6",
+          "position": {
+            "x": 0.0,
+            "y": 0.625,
+            "z": 12.8
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": -0.24253562503633316,
+            "z": 0.9701425001453318,
+            "w": 0.0
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12428571428571428,
+              "y": 0.12142857142857146,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 70,
+                "y": 7
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 268,
+                  "y": 182
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832308",
+          "name": "CastIngotSurface7",
+          "position": {
+            "x": -4.5,
+            "y": 0.6249999999999999,
+            "z": 12.5
+          },
+          "orientation": {
+            "x": -0.3665202717456304,
+            "y": -0.2656677194123735,
+            "z": 0.8848582109329732,
+            "w": -0.11004317246533508
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11490485194281402,
+              "y": 0.11232625472257148,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 342,
+                  "y": 182
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832309",
+          "name": "CastIngotSurface8",
+          "position": {
+            "x": -4.8,
+            "y": 0.625,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.6859943405700353,
+            "y": 0.17149858514250899,
+            "z": -0.6859943405700353,
+            "w": 0.17149858514250899
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12474747474747475,
+              "y": 0.12142857142857144,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 198,
+                "y": 7
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 80
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832310",
+          "name": "CastIngotSurface9",
+          "position": {
+            "x": -4.5,
+            "y": 0.625,
+            "z": -12.499999999999998
+          },
+          "orientation": {
+            "x": 0.8848582109329731,
+            "y": 0.11004317246533521,
+            "z": -0.36652027174563034,
+            "w": 0.26566771941237377
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11490485194281402,
+              "y": 0.11232625472257148,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 8,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 334,
+                  "y": 50
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832311",
+          "name": "CastIngotSurface10",
+          "position": {
+            "x": 4.440892098500626e-16,
+            "y": 3.1500000000000004,
+            "z": -12.549999999999999
+          },
+          "orientation": {
+            "x": 0.9946835238539112,
+            "y": 0.0,
+            "z": 0.0,
+            "w": -0.10297906279222821
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12428571428571428,
+              "y": 0.12203268131382664,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 70,
+                "y": 36
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 269,
+                  "y": 102
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832312",
+          "name": "CastIngotSurface11",
+          "position": {
+            "x": 4.35,
+            "y": 3.15,
+            "z": -12.25
+          },
+          "orientation": {
+            "x": 0.9171335760295157,
+            "y": 0.046160927104221525,
+            "z": 0.3798891656991613,
+            "w": -0.11144233626672746
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11785113019775789,
+              "y": 0.12302451326543637,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 9,
+                "y": 36
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 295,
+                  "y": 26
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832313",
+          "name": "CastIngotSurface12",
+          "position": {
+            "x": 4.675,
+            "y": 3.15,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.7051182612167468,
+            "y": 0.0529928079900614,
+            "z": 0.7051182612167469,
+            "w": -0.0529928079900614
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12474747474747476,
+              "y": 0.12425286922322591,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 198,
+                "y": 35
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 41
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832314",
+          "name": "CastIngotSurface13",
+          "position": {
+            "x": 4.35,
+            "y": 3.15,
+            "z": 12.25
+          },
+          "orientation": {
+            "x": 0.37988916569916126,
+            "y": 0.11144233626672743,
+            "z": 0.9171335760295158,
+            "w": -0.04616092710422151
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11785113019775789,
+              "y": 0.12302451326543637,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 9,
+                "y": 36
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 282,
+                  "y": 26
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832315",
+          "name": "CastIngotSurface14",
+          "position": {
+            "x": -4.440892098500626e-16,
+            "y": 3.1500000000000004,
+            "z": 12.549999999999999
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.10297906279222821,
+            "z": 0.9946835238539112,
+            "w": 0.0
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12428571428571428,
+              "y": 0.12203268131382664,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 70,
+                "y": 36
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 269,
+                  "y": 142
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832316",
+          "name": "CastIngotSurface15",
+          "position": {
+            "x": -4.35,
+            "y": 3.15,
+            "z": 12.25
+          },
+          "orientation": {
+            "x": -0.37988916569916126,
+            "y": 0.11144233626672745,
+            "z": 0.9171335760295158,
+            "w": 0.04616092710422152
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11785113019775789,
+              "y": 0.12302451326543637,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 9,
+                "y": 36
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 321,
+                  "y": 26
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832317",
+          "name": "CastIngotSurface16",
+          "position": {
+            "x": -4.675,
+            "y": 3.15,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.7051182612167468,
+            "y": -0.0529928079900614,
+            "z": -0.7051182612167469,
+            "w": -0.0529928079900614
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12474747474747476,
+              "y": 0.12425286922322591,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 198,
+                "y": 35
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832318",
+          "name": "CastIngotSurface17",
+          "position": {
+            "x": -4.35,
+            "y": 3.15,
+            "z": -12.25
+          },
+          "orientation": {
+            "x": 0.9171335760295157,
+            "y": -0.04616092710422152,
+            "z": -0.3798891656991613,
+            "w": -0.11144233626672745
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.11785113019775789,
+              "y": 0.12302451326543637,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 9,
+                "y": 36
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 308,
+                  "y": 26
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832319",
+          "name": "CastIngotSurface18",
+          "position": {
+            "x": 0.0,
+            "y": 5.65,
+            "z": -11.825
+          },
+          "orientation": {
+            "x": 0.9450709864402841,
+            "y": 0.0,
+            "z": 0.0,
+            "w": -0.32686515658416143
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12499999999999997,
+              "y": 0.11127808634228027,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 60,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 282,
+                  "y": 2
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832320",
+          "name": "CastIngotSurface19",
+          "position": {
+            "x": 3.8,
+            "y": 5.65,
+            "z": -11.55
+          },
+          "orientation": {
+            "x": 0.8526578431632303,
+            "y": 0.14733896827986043,
+            "z": 0.3531824427020014,
+            "w": -0.3557077354872983
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12121830534626524,
+              "y": 0.12437342963832744,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 7,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 343,
+                  "y": 86
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832321",
+          "name": "CastIngotSurface20",
+          "position": {
+            "x": 4.074999999999999,
+            "y": 5.65,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.6682661032145845,
+            "y": 0.23112856875426346,
+            "z": 0.6682661032145845,
+            "w": -0.23112856875426346
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.125,
+              "y": 0.11127808634228034,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 184,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 167
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832322",
+          "name": "CastIngotSurface21",
+          "position": {
+            "x": 3.8,
+            "y": 5.65,
+            "z": 11.55
+          },
+          "orientation": {
+            "x": 0.3531824427020014,
+            "y": 0.3557077354872984,
+            "z": 0.8526578431632303,
+            "w": -0.14733896827986045
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12121830534626525,
+              "y": 0.12437342963832745,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 7,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 343,
+                  "y": 98
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832323",
+          "name": "CastIngotSurface22",
+          "position": {
+            "x": 0.0,
+            "y": 5.65,
+            "z": 11.825
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.32686515658416143,
+            "z": 0.9450709864402841,
+            "w": 0.0
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12499999999999997,
+              "y": 0.11127808634228027,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 60,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 282,
+                  "y": 14
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832324",
+          "name": "CastIngotSurface23",
+          "position": {
+            "x": -3.8,
+            "y": 5.65,
+            "z": 11.55
+          },
+          "orientation": {
+            "x": -0.3531824427020014,
+            "y": 0.3557077354872983,
+            "z": 0.8526578431632303,
+            "w": 0.14733896827986043
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12121830534626524,
+              "y": 0.12437342963832744,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 7,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 343,
+                  "y": 74
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832325",
+          "name": "CastIngotSurface24",
+          "position": {
+            "x": -4.074999999999999,
+            "y": 5.65,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.6682661032145845,
+            "y": -0.23112856875426346,
+            "z": -0.6682661032145845,
+            "w": -0.23112856875426346
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.125,
+              "y": 0.11127808634228034,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 184,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 80,
+                  "y": 179
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        },
+        {
+          "id": "832326",
+          "name": "CastIngotSurface25",
+          "position": {
+            "x": -3.8,
+            "y": 5.65,
+            "z": -11.55
+          },
+          "orientation": {
+            "x": 0.8526578431632303,
+            "y": -0.14733896827986045,
+            "z": -0.3531824427020014,
+            "w": -0.3557077354872984
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12121830534626525,
+              "y": 0.12437342963832745,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false,
+              "normal": "+Z",
+              "size": {
+                "x": 7,
+                "y": 8
+              }
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 343,
+                  "y": 62
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "standard",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

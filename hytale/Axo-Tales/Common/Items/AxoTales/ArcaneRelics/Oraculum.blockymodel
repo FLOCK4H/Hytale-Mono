@@ -1,0 +1,5061 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "813096",
+      "name": "Origin",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "813019",
+          "name": "GroundedPlinth",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "813001",
+              "name": "GroundedPlinthSurface0",
+              "position": {
+                "x": 1.7763568394002505e-15,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.3928474791935511,
+                "y": 0.5879378012096793,
+                "z": -0.5879378012096793,
+                "w": -0.3928474791935511
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1247237368890237,
+                  "y": 0.1247237368890237,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 200,
+                    "y": 200
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 302,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813002",
+              "name": "GroundedPlinthSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 6.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.13794968964147147,
+                "y": 0.6935199226610738,
+                "z": 0.6935199226610737,
+                "w": 0.13794968964147147
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12448061069625761,
+                  "y": 0.1244806106962576,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 190,
+                    "y": 190
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 205,
+                      "y": 714
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813003",
+              "name": "GroundedPlinthSurface2",
+              "position": {
+                "x": 12.111448777340012,
+                "y": 1.3469131974015098,
+                "z": 5.303300858899106
+              },
+              "orientation": {
+                "x": 0.5018949829095708,
+                "y": 0.2841681105762398,
+                "z": 0.40249299027159063,
+                "w": 0.7108792470201707
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771286,
+                  "y": 0.12368990268355926,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 446,
+                      "y": 1021
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813004",
+              "name": "GroundedPlinthSurface3",
+              "position": {
+                "x": 4.814087560450643,
+                "y": 1.34691319740151,
+                "z": 12.314087560450643
+              },
+              "orientation": {
+                "x": 0.3096631031602333,
+                "y": -0.009504609092997432,
+                "z": 0.5639219304378397,
+                "w": 0.7655132143329888
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771289,
+                  "y": 0.12368990268355926,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 218,
+                      "y": 1126
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813005",
+              "name": "GroundedPlinthSurface4",
+              "position": {
+                "x": -5.303300858899103,
+                "y": 1.3469131974015098,
+                "z": 12.111448777340012
+              },
+              "orientation": {
+                "x": 0.07028782305777104,
+                "y": -0.30173033818732176,
+                "z": 0.6394988686599565,
+                "w": 0.7036047341581774
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771289,
+                  "y": 0.12368990268355924,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 363,
+                      "y": 1069
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813006",
+              "name": "GroundedPlinthSurface5",
+              "position": {
+                "x": -12.314087560450643,
+                "y": 1.3469131974015105,
+                "z": 4.814087560450642
+              },
+              "orientation": {
+                "x": -0.17978814094453452,
+                "y": -0.5480203584849532,
+                "z": 0.6177179012002756,
+                "w": 0.5345788114005815
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771286,
+                  "y": 0.12368990268355927,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 319,
+                      "y": 1069
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813007",
+              "name": "GroundedPlinthSurface6",
+              "position": {
+                "x": -12.111448777340016,
+                "y": 1.3469131974015098,
+                "z": -5.303300858899104
+              },
+              "orientation": {
+                "x": 0.40249299027159047,
+                "y": 0.7108792470201707,
+                "z": -0.5018949829095708,
+                "w": -0.28416811057623986
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771283,
+                  "y": 0.12368990268355926,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 123,
+                      "y": 722
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813008",
+              "name": "GroundedPlinthSurface7",
+              "position": {
+                "x": -4.814087560450644,
+                "y": 1.3469131974015103,
+                "z": -12.314087560450643
+              },
+              "orientation": {
+                "x": 0.5639219304378397,
+                "y": 0.7655132143329888,
+                "z": -0.3096631031602334,
+                "w": 0.009504609092997376
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771289,
+                  "y": 0.12368990268355927,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 490,
+                      "y": 1021
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813009",
+              "name": "GroundedPlinthSurface8",
+              "position": {
+                "x": 5.303300858899104,
+                "y": 1.3469131974015103,
+                "z": -12.111448777340014
+              },
+              "orientation": {
+                "x": 0.6394988686599566,
+                "y": 0.7036047341581774,
+                "z": -0.07028782305777112,
+                "w": 0.3017303381873217
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771289,
+                  "y": 0.12368990268355926,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 496,
+                      "y": 366
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813010",
+              "name": "GroundedPlinthSurface9",
+              "position": {
+                "x": 12.314087560450641,
+                "y": 1.34691319740151,
+                "z": -4.814087560450645
+              },
+              "orientation": {
+                "x": 0.6177179012002754,
+                "y": 0.5345788114005815,
+                "z": 0.17978814094453444,
+                "w": 0.5480203584849531
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374555596771289,
+                  "y": 0.1236899026835593,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 91
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 496,
+                      "y": 271
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813011",
+              "name": "GroundedPlinthSurface10",
+              "position": {
+                "x": 11.794545065860069,
+                "y": 4.104838761653016,
+                "z": 5.303300858899105
+              },
+              "orientation": {
+                "x": 0.27973667834710464,
+                "y": 0.5062438883801491,
+                "z": 0.7140048305767405,
+                "w": 0.39453975487668624
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539962,
+                  "y": 0.12488785594885916,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 104,
+                      "y": 1130
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813012",
+              "name": "GroundedPlinthSurface11",
+              "position": {
+                "x": 4.590002797079988,
+                "y": 4.104838761653018,
+                "z": 12.09000279707999
+              },
+              "orientation": {
+                "x": -0.014794827672778246,
+                "y": 0.31672453933265665,
+                "z": 0.7667050413123185,
+                "w": 0.5582383531117555
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539963,
+                  "y": 0.12488785594885918,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1168
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813013",
+              "name": "GroundedPlinthSurface12",
+              "position": {
+                "x": -5.303300858899104,
+                "y": 4.104838761653016,
+                "z": 11.794545065860069
+              },
+              "orientation": {
+                "x": -0.3070739552949274,
+                "y": 0.07898675028686601,
+                "z": 0.7026813597066028,
+                "w": 0.6369502225288323
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539962,
+                  "y": 0.12488785594885916,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 158,
+                      "y": 1130
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813014",
+              "name": "GroundedPlinthSurface13",
+              "position": {
+                "x": -12.090002797079988,
+                "y": 4.104838761653018,
+                "z": 4.59000279707999
+              },
+              "orientation": {
+                "x": -0.5526038568557602,
+                "y": -0.17077605547342575,
+                "z": 0.5316808109079446,
+                "w": 0.6186921945340398
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539962,
+                  "y": 0.12488785594885916,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 461,
+                      "y": 1116
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813015",
+              "name": "GroundedPlinthSurface14",
+              "position": {
+                "x": -11.794545065860069,
+                "y": 4.104838761653016,
+                "z": -5.303300858899102
+              },
+              "orientation": {
+                "x": -0.7140048305767404,
+                "y": -0.39453975487668624,
+                "z": 0.2797366783471046,
+                "w": 0.5062438883801492
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539963,
+                  "y": 0.12488785594885915,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 262,
+                      "y": 1126
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813016",
+              "name": "GroundedPlinthSurface15",
+              "position": {
+                "x": -4.590002797079991,
+                "y": 4.104838761653017,
+                "z": -12.090002797079988
+              },
+              "orientation": {
+                "x": 0.7667050413123186,
+                "y": 0.5582383531117553,
+                "z": 0.01479482767277814,
+                "w": -0.3167245393326568
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539969,
+                  "y": 0.12488785594885916,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 407,
+                      "y": 1116
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813017",
+              "name": "GroundedPlinthSurface16",
+              "position": {
+                "x": 5.303300858899102,
+                "y": 4.104838761653016,
+                "z": -11.794545065860069
+              },
+              "orientation": {
+                "x": 0.702681359706603,
+                "y": 0.6369502225288322,
+                "z": 0.3070739552949274,
+                "w": -0.0789867502868661
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539963,
+                  "y": 0.12488785594885916,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 262,
+                      "y": 1220
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813018",
+              "name": "GroundedPlinthSurface17",
+              "position": {
+                "x": 12.090002797079986,
+                "y": 4.104838761653016,
+                "z": -4.590002797079989
+              },
+              "orientation": {
+                "x": 0.5316808109079447,
+                "y": 0.6186921945340397,
+                "z": 0.5526038568557603,
+                "w": 0.17077605547342564
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12258268226539969,
+                  "y": 0.1248878559488592,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 90
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 316,
+                      "y": 1164
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "813030",
+          "name": "SilverPlinthCrown",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "813020",
+              "name": "SilverPlinthCrownSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 4.5,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": -0.3928474791935511,
+                "y": 0.5879378012096793,
+                "z": -0.5879378012096793,
+                "w": -0.3928474791935511
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12479629287325235,
+                  "y": 0.12479629287325235,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 191,
+                    "y": 191
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 205,
+                      "y": 519
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813021",
+              "name": "SilverPlinthCrownSurface1",
+              "position": {
+                "x": 2.6645352591003757e-15,
+                "y": 6.8,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.13794968964147142,
+                "y": 0.6935199226610738,
+                "z": 0.6935199226610737,
+                "w": 0.13794968964147142
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1244219671924748,
+                  "y": 0.1244219671924748,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 199,
+                    "y": 199
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 519
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813022",
+              "name": "SilverPlinthCrownSurface2",
+              "position": {
+                "x": 11.19091973470363,
+                "y": 5.665199783467305,
+                "z": 4.737615433949871
+              },
+              "orientation": {
+                "x": 0.43518299279777445,
+                "y": 0.35074244227820994,
+                "z": 0.5203507634463457,
+                "w": 0.6456241824351796
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12139800649429705,
+                  "y": 0.12465818514109574,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 153,
+                      "y": 817
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813023",
+              "name": "SilverPlinthCrownSurface3",
+              "position": {
+                "x": 4.563175232123296,
+                "y": 5.665199783467305,
+                "z": 11.263175232123297
+              },
+              "orientation": {
+                "x": 0.20292704375342785,
+                "y": 0.07697408545166012,
+                "z": 0.6472787414654656,
+                "w": 0.7307022895333352
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12139800649429702,
+                  "y": 0.12465818514109574,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 515,
+                      "y": 1116
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813024",
+              "name": "SilverPlinthCrownSurface4",
+              "position": {
+                "x": -4.737615433949869,
+                "y": 5.665199783467305,
+                "z": 11.19091973470363
+              },
+              "orientation": {
+                "x": -0.06022270816414538,
+                "y": -0.20851287811308278,
+                "z": 0.6756643986928709,
+                "w": 0.7045375968827896
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12139800649429705,
+                  "y": 0.12465818514109572,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 515,
+                      "y": 1202
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813025",
+              "name": "SilverPlinthCrownSurface5",
+              "position": {
+                "x": -11.263175232123297,
+                "y": 5.665199783467305,
+                "z": 4.563175232123296
+              },
+              "orientation": {
+                "x": -0.31420409868393684,
+                "y": -0.4622556461590557,
+                "z": 0.601186276132313,
+                "w": 0.5711134417560589
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.121398006494297,
+                  "y": 0.12465818514109574,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 370,
+                      "y": 1164
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813026",
+              "name": "SilverPlinthCrownSurface6",
+              "position": {
+                "x": -11.19091973470363,
+                "y": 5.665199783467305,
+                "z": -4.737615433949869
+              },
+              "orientation": {
+                "x": 0.5203507634463457,
+                "y": 0.6456241824351796,
+                "z": -0.43518299279777445,
+                "w": -0.35074244227820994
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12139800649429705,
+                  "y": 0.12465818514109574,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 123,
+                      "y": 817
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813027",
+              "name": "SilverPlinthCrownSurface7",
+              "position": {
+                "x": -4.563175232123296,
+                "y": 5.665199783467305,
+                "z": -11.263175232123297
+              },
+              "orientation": {
+                "x": 0.6472787414654654,
+                "y": 0.7307022895333354,
+                "z": -0.20292704375342802,
+                "w": -0.07697408545166019
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12139800649429724,
+                  "y": 0.12465818514109574,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 506,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813028",
+              "name": "SilverPlinthCrownSurface8",
+              "position": {
+                "x": 4.737615433949867,
+                "y": 5.665199783467305,
+                "z": -11.19091973470363
+              },
+              "orientation": {
+                "x": 0.6756643986928708,
+                "y": 0.7045375968827897,
+                "z": 0.06022270816414538,
+                "w": 0.20851287811308275
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12139800649429706,
+                  "y": 0.12465818514109572,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 506,
+                      "y": 88
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813029",
+              "name": "SilverPlinthCrownSurface9",
+              "position": {
+                "x": 11.263175232123295,
+                "y": 5.665199783467305,
+                "z": -4.563175232123297
+              },
+              "orientation": {
+                "x": 0.6011862761323127,
+                "y": 0.5711134417560592,
+                "z": 0.31420409868393645,
+                "w": 0.46225564615905584
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12139800649429727,
+                  "y": 0.12465818514109576,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 82
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 167,
+                      "y": 722
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "813045",
+          "name": "RitualStem",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "813031",
+              "name": "RitualStemSurface0",
+              "position": {
+                "x": -1.7763568394002505e-15,
+                "y": 5.0,
+                "z": -8.881784197001252e-16
+              },
+              "orientation": {
+                "x": -0.35355339059327384,
+                "y": 0.6123724356957945,
+                "z": -0.6123724356957946,
+                "w": -0.35355339059327384
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12371134020618559,
+                  "y": 0.12371791482634842,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 97,
+                    "y": 84
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 218,
+                      "y": 1038
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813032",
+              "name": "RitualStemSurface1",
+              "position": {
+                "x": 7.691850745534251e-16,
+                "y": 25.0,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 4.1869132231567304e-17,
+                "y": 0.7071067811865476,
+                "z": 0.7071067811865475,
+                "w": -4.1869132231567304e-17
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12499999999999999,
+                  "y": 0.12490751016121712,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 120,
+                    "y": 104
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 399,
+                      "y": 831
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813033",
+              "name": "RitualStemSurface2",
+              "position": {
+                "x": 3.5076923076923077,
+                "y": 12.93846153846154,
+                "z": 2.598076211353317
+              },
+              "orientation": {
+                "x": 0.33186088946123404,
+                "y": 0.3759261146096646,
+                "z": 0.6486115352420783,
+                "w": 0.572582730049898
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12498156462424058,
+                  "y": 0.12475938379999257,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 131,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 400,
+                      "y": 571
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813034",
+              "name": "RitualStemSurface3",
+              "position": {
+                "x": -0.49615384615384617,
+                "y": 12.938461538461542,
+                "z": 4.336788752797458
+              },
+              "orientation": {
+                "x": -0.03690580682511097,
+                "y": 0.03927020017300087,
+                "z": 0.7276445114378826,
+                "w": 0.6838342472962914
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12498156462424061,
+                  "y": 0.12475938379999257,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 131,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 399,
+                      "y": 779
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813035",
+              "name": "RitualStemSurface4",
+              "position": {
+                "x": -4.003846153846153,
+                "y": 12.93846153846154,
+                "z": 1.7387125414441416
+              },
+              "orientation": {
+                "x": -0.3957836219766484,
+                "y": -0.30790813268662687,
+                "z": 0.6117057284169674,
+                "w": 0.6118529302228989
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12498156462424058,
+                  "y": 0.12475938379999257,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 131,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 399,
+                      "y": 727
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813036",
+              "name": "RitualStemSurface5",
+              "position": {
+                "x": -3.5076923076923086,
+                "y": 12.93846153846154,
+                "z": -2.598076211353317
+              },
+              "orientation": {
+                "x": 0.6486115352420782,
+                "y": 0.572582730049898,
+                "z": -0.3318608894612341,
+                "w": -0.37592611460966474
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12498156462424058,
+                  "y": 0.12475938379999257,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 131,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 400,
+                      "y": 519
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813037",
+              "name": "RitualStemSurface6",
+              "position": {
+                "x": 0.49615384615384617,
+                "y": 12.938461538461542,
+                "z": -4.336788752797458
+              },
+              "orientation": {
+                "x": 0.7276445114378823,
+                "y": 0.6838342472962915,
+                "z": 0.036905806825110916,
+                "w": -0.0392702001730009
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12498156462424061,
+                  "y": 0.12475938379999263,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 131,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 400,
+                      "y": 623
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813038",
+              "name": "RitualStemSurface7",
+              "position": {
+                "x": 4.003846153846155,
+                "y": 12.93846153846154,
+                "z": -1.7387125414441411
+              },
+              "orientation": {
+                "x": 0.6117057284169671,
+                "y": 0.6118529302228989,
+                "z": 0.3957836219766485,
+                "w": 0.307908132686627
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12498156462424058,
+                  "y": 0.12475938379999257,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 131,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 400,
+                      "y": 675
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813039",
+              "name": "RitualStemSurface8",
+              "position": {
+                "x": 4.254424778761062,
+                "y": 23.43362831858407,
+                "z": 3.2475952641916446
+              },
+              "orientation": {
+                "x": 0.49939378622745667,
+                "y": 0.22660903274741306,
+                "z": 0.34553732409541926,
+                "w": 0.761484175943049
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1228163355945252,
+                  "y": 0.12424236603749089,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 476,
+                      "y": 1329
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813040",
+              "name": "RitualStemSurface9",
+              "position": {
+                "x": -0.6852876106194676,
+                "y": 23.433628318584073,
+                "z": 5.308237568992892
+              },
+              "orientation": {
+                "x": 0.2597190433173632,
+                "y": -0.18449290888524492,
+                "z": 0.5489409937360583,
+                "w": 0.7727691573202461
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1228163355945252,
+                  "y": 0.12424236603749089,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 60,
+                      "y": 1305
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813041",
+              "name": "RitualStemSurface10",
+              "position": {
+                "x": -4.93971238938053,
+                "y": 23.43362831858407,
+                "z": 2.0606423048012483
+              },
+              "orientation": {
+                "x": -0.049547207508601636,
+                "y": -0.5461601245728329,
+                "z": 0.6052563674127824,
+                "w": 0.576991267057804
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12281633559452519,
+                  "y": 0.12424236603749093,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1305
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813042",
+              "name": "RitualStemSurface11",
+              "position": {
+                "x": -4.254424778761064,
+                "y": 23.43362831858407,
+                "z": -3.2475952641916455
+              },
+              "orientation": {
+                "x": 0.3455373240954193,
+                "y": 0.7614841759430488,
+                "z": -0.4993937862274569,
+                "w": -0.22660903274741317
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12281633559452519,
+                  "y": 0.1242423660374909,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 118,
+                      "y": 1305
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813043",
+              "name": "RitualStemSurface12",
+              "position": {
+                "x": 0.6852876106194672,
+                "y": 23.433628318584073,
+                "z": -5.308237568992892
+              },
+              "orientation": {
+                "x": 0.5489409937360581,
+                "y": 0.7727691573202462,
+                "z": -0.2597190433173632,
+                "w": 0.18449290888524486
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12281633559452523,
+                  "y": 0.12424236603749096,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 176,
+                      "y": 1305
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813044",
+              "name": "RitualStemSurface13",
+              "position": {
+                "x": 4.939712389380531,
+                "y": 23.43362831858407,
+                "z": -2.060642304801247
+              },
+              "orientation": {
+                "x": 0.6052563674127824,
+                "y": 0.5769912670578038,
+                "z": 0.0495472075086017,
+                "w": 0.546160124572833
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1228163355945252,
+                  "y": 0.1242423660374909,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 234,
+                      "y": 1314
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "813058",
+          "name": "LeftCrescent",
+          "position": {
+            "x": 0.0,
+            "y": 8.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "813046",
+              "name": "LeftCrescentSurface0",
+              "position": {
+                "x": -3.608108108108109,
+                "y": 18.648648648648646,
+                "z": 2.25
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.8891676427196101,
+                "w": -0.4575815808579404
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12485857494706516,
+                  "y": 0.12466375738590575,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 243,
+                    "y": 221
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 249,
+                      "y": 294
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813047",
+              "name": "LeftCrescentSurface1",
+              "position": {
+                "x": -4.652941176470589,
+                "y": 19.81176470588235,
+                "z": -2.25
+              },
+              "orientation": {
+                "x": -0.6257273935913881,
+                "y": 0.7800418122827315,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12458843861206606,
+                  "y": 0.12450586135366536,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 296,
+                    "y": 142
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813048",
+              "name": "LeftCrescentSurface2",
+              "position": {
+                "x": -8.5,
+                "y": 35.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.3235590387707102,
+                "y": 0.6287364697786936,
+                "z": 0.6287364697786937,
+                "w": -0.3235590387707102
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1246713806817772,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 80,
+                      "y": 1265
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813049",
+              "name": "LeftCrescentSurface3",
+              "position": {
+                "x": -12.0,
+                "y": 26.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.45705607224241174,
+                "y": 0.539536603787305,
+                "z": 0.5395366037873051,
+                "w": -0.4570560722424117
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12413801082241266,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 98,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1128
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813050",
+              "name": "LeftCrescentSurface4",
+              "position": {
+                "x": -11.5,
+                "y": 14.5,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.5619424805511924,
+                "y": -0.4292093295257838,
+                "z": -0.4292093295257838,
+                "w": 0.5619424805511923
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12393211142381935,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 446,
+                      "y": 980
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813051",
+              "name": "LeftCrescentSurface5",
+              "position": {
+                "x": -7.5,
+                "y": 4.999999999999999,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.6184656296034526,
+                "y": -0.3427831165609021,
+                "z": -0.3427831165609021,
+                "w": 0.6184656296034526
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12413133068495533,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 76,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 316,
+                      "y": 1290
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813052",
+              "name": "LeftCrescentSurface6",
+              "position": {
+                "x": -2.4999999999999996,
+                "y": 0.4999999999999999,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.7036655234717203,
+                "y": -0.06967661786618205,
+                "z": -0.06967661786618205,
+                "w": 0.7036655234717203
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12436632959982404,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 496,
+                      "y": 461
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813053",
+              "name": "LeftCrescentSurface7",
+              "position": {
+                "x": -0.5,
+                "y": 3.0000000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.45705607224241174,
+                "y": 0.539536603787305,
+                "z": 0.5395366037873051,
+                "w": 0.4570560722424117
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12413801082241266,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 49,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 111,
+                      "y": 1366
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813054",
+              "name": "LeftCrescentSurface8",
+              "position": {
+                "x": -3.0000000000000004,
+                "y": 8.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.30631068886245866,
+                "y": 0.6373176302979591,
+                "z": 0.6373176302979592,
+                "w": 0.30631068886245866
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12313700456601634,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 52,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1366
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813055",
+              "name": "LeftCrescentSurface9",
+              "position": {
+                "x": -6.5,
+                "y": 15.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.4134526073152648,
+                "y": 0.5736348503222319,
+                "z": 0.573634850322232,
+                "w": 0.41345260731526484
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12482674974348866,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 76,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 56,
+                      "y": 1224
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813056",
+              "name": "LeftCrescentSurface10",
+              "position": {
+                "x": -8.0,
+                "y": 25.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5,
+                "w": 0.5
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 80,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 400,
+                      "y": 1210
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813057",
+              "name": "LeftCrescentSurface11",
+              "position": {
+                "x": -7.0,
+                "y": 34.5,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.5515728550741634,
+                "y": 0.44245608318265434,
+                "z": 0.44245608318265434,
+                "w": 0.5515728550741634
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12458843861206605,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 74,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 136,
+                      "y": 1224
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "813071",
+          "name": "RightCrescent",
+          "position": {
+            "x": 0.0,
+            "y": 8.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "813059",
+              "name": "RightCrescentSurface0",
+              "position": {
+                "x": 4.652941176470589,
+                "y": 19.81176470588235,
+                "z": 2.25
+              },
+              "orientation": {
+                "x": -0.0,
+                "y": 0.0,
+                "z": -0.6257273935913881,
+                "w": 0.7800418122827315
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12458843861206606,
+                  "y": 0.12450586135366536,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 296,
+                    "y": 142
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 148
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813060",
+              "name": "RightCrescentSurface1",
+              "position": {
+                "x": 3.608108108108109,
+                "y": 18.648648648648646,
+                "z": -2.25
+              },
+              "orientation": {
+                "x": 0.8891676427196101,
+                "y": -0.4575815808579404,
+                "z": 0.0,
+                "w": -0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12485857494706516,
+                  "y": 0.12466375738590575,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 243,
+                    "y": 221
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 294
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813061",
+              "name": "RightCrescentSurface2",
+              "position": {
+                "x": 7.0,
+                "y": 34.5,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.5515728550741634,
+                "y": -0.44245608318265434,
+                "z": -0.44245608318265434,
+                "w": 0.5515728550741634
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12458843861206605,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 74,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1264
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813062",
+              "name": "RightCrescentSurface3",
+              "position": {
+                "x": 8.0,
+                "y": 25.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.5,
+                "y": -0.5,
+                "z": -0.5,
+                "w": 0.5
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 80,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 370,
+                      "y": 1250
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813063",
+              "name": "RightCrescentSurface4",
+              "position": {
+                "x": 6.5,
+                "y": 15.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.4134526073152648,
+                "y": 0.5736348503222319,
+                "z": 0.573634850322232,
+                "w": -0.41345260731526484
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12482674974348866,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 76,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 396,
+                      "y": 1329
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813064",
+              "name": "RightCrescentSurface5",
+              "position": {
+                "x": 2.9999999999999996,
+                "y": 8.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.30631068886245866,
+                "y": 0.6373176302979591,
+                "z": 0.6373176302979592,
+                "w": -0.30631068886245866
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12313700456601634,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 52,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 462,
+                      "y": 1390
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813065",
+              "name": "RightCrescentSurface6",
+              "position": {
+                "x": 0.5,
+                "y": 2.9999999999999996,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.45705607224241174,
+                "y": 0.539536603787305,
+                "z": 0.5395366037873051,
+                "w": -0.4570560722424117
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12413801082241266,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 49,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 58,
+                      "y": 1366
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813066",
+              "name": "RightCrescentSurface7",
+              "position": {
+                "x": 2.5000000000000004,
+                "y": 0.5000000000000001,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.7036655234717203,
+                "y": 0.06967661786618205,
+                "z": 0.06967661786618205,
+                "w": 0.7036655234717203
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12436632959982404,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 56,
+                      "y": 1168
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813067",
+              "name": "RightCrescentSurface8",
+              "position": {
+                "x": 7.5,
+                "y": 5.000000000000001,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.6184656296034526,
+                "y": 0.3427831165609021,
+                "z": 0.3427831165609021,
+                "w": 0.6184656296034526
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12413133068495533,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 76,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 454,
+                      "y": 1288
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813068",
+              "name": "RightCrescentSurface9",
+              "position": {
+                "x": 11.5,
+                "y": 14.5,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.5619424805511924,
+                "y": 0.4292093295257838,
+                "z": 0.4292093295257838,
+                "w": 0.5619424805511923
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12393211142381935,
+                  "y": 0.12162162162162164,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 446,
+                      "y": 939
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813069",
+              "name": "RightCrescentSurface10",
+              "position": {
+                "x": 12.0,
+                "y": 26.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.45705607224241174,
+                "y": 0.539536603787305,
+                "z": 0.5395366037873051,
+                "w": 0.4570560722424117
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12413801082241266,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 98,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1088
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813070",
+              "name": "RightCrescentSurface11",
+              "position": {
+                "x": 8.5,
+                "y": 35.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.3235590387707102,
+                "y": 0.6287364697786936,
+                "z": 0.6287364697786937,
+                "w": 0.3235590387707102
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1246713806817772,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 36
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 153,
+                      "y": 1265
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "813086",
+          "name": "FocusCrystal",
+          "position": {
+            "x": 0.0,
+            "y": 34.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "813072",
+              "name": "FocusCrystalSurface0",
+              "position": {
+                "x": 0.0,
+                "y": -11.0,
+                "z": -5.551115123125783e-17
+              },
+              "orientation": {
+                "x": -0.35355339059327384,
+                "y": 0.6123724356957945,
+                "z": -0.6123724356957946,
+                "w": -0.35355339059327384
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12307692307692308,
+                  "y": 0.11547005383792518,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 13,
+                    "y": 12
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 496,
+                      "y": 502
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813073",
+              "name": "FocusCrystalSurface1",
+              "position": {
+                "x": 4.0636983087920314e-17,
+                "y": 11.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 4.906538933386794e-17,
+                "y": 0.7071067811865476,
+                "z": 0.7071067811865475,
+                "w": -4.906538933386794e-17
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12307692307692308,
+                  "y": 0.11547005383792515,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 13,
+                    "y": 12
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 292,
+                      "y": 1314
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813074",
+              "name": "FocusCrystalSurface2",
+              "position": {
+                "x": 2.854411764705882,
+                "y": -4.707352941176471,
+                "z": 3.37749907475931
+              },
+              "orientation": {
+                "x": 0.46472383512412724,
+                "y": 0.25510824013850264,
+                "z": 0.4080221068972323,
+                "w": 0.7432829226910185
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502244,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 335,
+                      "y": 939
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813075",
+              "name": "FocusCrystalSurface3",
+              "position": {
+                "x": -1.4977941176470577,
+                "y": -4.707352941176471,
+                "z": 4.16074263847612
+              },
+              "orientation": {
+                "x": 0.19845159351300917,
+                "y": -0.15071124467082497,
+                "z": 0.5857194274407166,
+                "w": 0.7712560133188183
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502245,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 113,
+                      "y": 973
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813076",
+              "name": "FocusCrystalSurface4",
+              "position": {
+                "x": -4.352205882352941,
+                "y": -4.70735294117647,
+                "z": 0.783243563716808
+              },
+              "orientation": {
+                "x": -0.12099559231658934,
+                "y": -0.5161477731803156,
+                "z": 0.6064737004102414,
+                "w": 0.5925716780201936
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502248,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 302,
+                      "y": 206
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813077",
+              "name": "FocusCrystalSurface5",
+              "position": {
+                "x": -2.854411764705883,
+                "y": -4.707352941176472,
+                "z": -3.3774990747593097
+              },
+              "orientation": {
+                "x": 0.40802210689723223,
+                "y": 0.7432829226910185,
+                "z": -0.4647238351241273,
+                "w": -0.2551082401385027
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502242,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 893
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813078",
+              "name": "FocusCrystalSurface6",
+              "position": {
+                "x": 1.497794117647059,
+                "y": -4.7073529411764685,
+                "z": -4.16074263847612
+              },
+              "orientation": {
+                "x": 0.5857194274407166,
+                "y": 0.7712560133188183,
+                "z": -0.19845159351300917,
+                "w": 0.15071124467082495
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12386126175030432,
+                  "y": 0.12317568636502252,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 224,
+                      "y": 908
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813079",
+              "name": "FocusCrystalSurface7",
+              "position": {
+                "x": 4.352205882352941,
+                "y": -4.707352941176471,
+                "z": -0.7832435637168094
+              },
+              "orientation": {
+                "x": 0.6064737004102415,
+                "y": 0.5925716780201935,
+                "z": 0.1209955923165894,
+                "w": 0.5161477731803157
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502244,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 828
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813080",
+              "name": "FocusCrystalSurface8",
+              "position": {
+                "x": 2.8544117647058838,
+                "y": 4.70735294117647,
+                "z": 3.37749907475931
+              },
+              "orientation": {
+                "x": 0.25510824013850264,
+                "y": 0.46472383512412724,
+                "z": 0.7432829226910185,
+                "w": 0.4080221068972323
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502244,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 113,
+                      "y": 908
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813081",
+              "name": "FocusCrystalSurface9",
+              "position": {
+                "x": -1.4977941176470577,
+                "y": 4.70735294117647,
+                "z": 4.16074263847612
+              },
+              "orientation": {
+                "x": -0.150711244670825,
+                "y": 0.19845159351300912,
+                "z": 0.7712560133188183,
+                "w": 0.5857194274407166
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502245,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1023
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813082",
+              "name": "FocusCrystalSurface10",
+              "position": {
+                "x": -4.352205882352941,
+                "y": 4.70735294117647,
+                "z": 0.7832435637168094
+              },
+              "orientation": {
+                "x": -0.5161477731803156,
+                "y": -0.1209955923165893,
+                "z": 0.5925716780201935,
+                "w": 0.6064737004102414
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12386126175030432,
+                  "y": 0.12317568636502246,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 224,
+                      "y": 973
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813083",
+              "name": "FocusCrystalSurface11",
+              "position": {
+                "x": -2.854411764705884,
+                "y": 4.70735294117647,
+                "z": -3.3774990747593097
+              },
+              "orientation": {
+                "x": 0.7432829226910185,
+                "y": 0.40802210689723223,
+                "z": -0.25510824013850275,
+                "w": -0.4647238351241274
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502242,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 335,
+                      "y": 1004
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813084",
+              "name": "FocusCrystalSurface12",
+              "position": {
+                "x": 1.4977941176470577,
+                "y": 4.70735294117647,
+                "z": -4.16074263847612
+              },
+              "orientation": {
+                "x": 0.7712560133188183,
+                "y": 0.5857194274407166,
+                "z": 0.15071124467082495,
+                "w": -0.19845159351300912
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12386126175030432,
+                  "y": 0.1231756863650225,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 958
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813085",
+              "name": "FocusCrystalSurface13",
+              "position": {
+                "x": 4.352205882352941,
+                "y": 4.70735294117647,
+                "z": -0.7832435637168094
+              },
+              "orientation": {
+                "x": 0.5925716780201934,
+                "y": 0.6064737004102414,
+                "z": 0.5161477731803158,
+                "w": 0.12099559231658936
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1238612617503043,
+                  "y": 0.12317568636502244,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 61
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 413,
+                      "y": 206
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "813095",
+          "name": "FocusCradle",
+          "position": {
+            "x": 0.0,
+            "y": 24.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "813087",
+              "name": "FocusCradleSurface0",
+              "position": {
+                "x": -8.881784197001252e-16,
+                "y": 0.0,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": -0.35355339059327384,
+                "y": 0.6123724356957945,
+                "z": -0.6123724356957946,
+                "w": -0.35355339059327384
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12475247524752475,
+                  "y": 0.1239990919054992,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 101,
+                    "y": 88
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 113,
+                      "y": 1038
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813088",
+              "name": "FocusCradleSurface1",
+              "position": {
+                "x": 3.250958647033623e-16,
+                "y": 2.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 4.3016231744760927e-17,
+                "y": 0.7071067811865476,
+                "z": 0.7071067811865475,
+                "w": -4.3016231744760927e-17
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12478632478632479,
+                  "y": 0.1239604989730667,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 117,
+                    "y": 102
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 722
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813089",
+              "name": "FocusCradleSurface2",
+              "position": {
+                "x": 5.025000000000001,
+                "y": 1.0999999999999999,
+                "z": 3.1609927238132003
+              },
+              "orientation": {
+                "x": 0.4424891121094968,
+                "y": 0.27347331093543176,
+                "z": 0.4490050672943833,
+                "w": 0.726505460003246
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12149302677748856,
+                  "y": 0.12482736617036039,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 428,
+                      "y": 1369
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813090",
+              "name": "FocusCradleSurface3",
+              "position": {
+                "x": -0.22499999999999787,
+                "y": 1.0999999999999999,
+                "z": 5.932274015923404
+              },
+              "orientation": {
+                "x": 0.15870427833765313,
+                "y": -0.12641789547449828,
+                "z": 0.6100943507596258,
+                "w": 0.7659088398186263
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12149302677748854,
+                  "y": 0.12482736617036039,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 226,
+                      "y": 1221
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813091",
+              "name": "FocusCradleSurface4",
+              "position": {
+                "x": -5.249999999999998,
+                "y": 1.0999999999999996,
+                "z": 2.771281292110204
+              },
+              "orientation": {
+                "x": -0.16760523865012888,
+                "y": -0.4924355288831945,
+                "z": 0.6077093456320365,
+                "w": 0.6000875645287477
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12149302677748854,
+                  "y": 0.12482736617036042,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 394,
+                      "y": 1369
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813092",
+              "name": "FocusCradleSurface5",
+              "position": {
+                "x": -5.025000000000002,
+                "y": 1.0999999999999999,
+                "z": -3.1609927238131994
+              },
+              "orientation": {
+                "x": 0.4490050672943833,
+                "y": 0.726505460003246,
+                "z": -0.44248911210949693,
+                "w": -0.27347331093543176
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12149302677748854,
+                  "y": 0.12482736617036037,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 326,
+                      "y": 1331
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813093",
+              "name": "FocusCradleSurface6",
+              "position": {
+                "x": 0.22499999999999964,
+                "y": 1.1,
+                "z": -5.9322740159234035
+              },
+              "orientation": {
+                "x": 0.6100943507596257,
+                "y": 0.7659088398186265,
+                "z": -0.15870427833765308,
+                "w": 0.12641789547449828
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1214930267774886,
+                  "y": 0.12482736617036048,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 292,
+                      "y": 1331
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "813094",
+              "name": "FocusCradleSurface7",
+              "position": {
+                "x": 5.25,
+                "y": 1.0999999999999994,
+                "z": -2.771281292110204
+              },
+              "orientation": {
+                "x": 0.6077093456320364,
+                "y": 0.6000875645287476,
+                "z": 0.167605238650129,
+                "w": 0.4924355288831946
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12149302677748854,
+                  "y": 0.12482736617036037,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 57
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 360,
+                      "y": 1331
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

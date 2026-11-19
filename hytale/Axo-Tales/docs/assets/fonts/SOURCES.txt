@@ -1,0 +1,12 @@
+Geist Sans and Geist Mono
+Source: https://github.com/vercel/geist-font
+License: SIL Open Font License 1.1, included as OFL.txt.
+Retrieved: 2026-11-18. Original WOFF2 files, self-hosted without modification.
+
+Geist-Variable.woff2
+https://raw.githubusercontent.com/vercel/geist-font/main/packages/next/dist/fonts/geist-sans/Geist-Variable.woff2
+SHA-256: 2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1
+
+GeistMono-Variable.woff2
+https://raw.githubusercontent.com/vercel/geist-font/main/packages/next/dist/fonts/geist-mono/GeistMono-Variable.woff2
+SHA-256: afaacc4c5fbba89d2ebf7a02dc4070208540874592a5504d57175782fe893101

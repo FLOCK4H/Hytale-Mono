@@ -1,0 +1,188 @@
+{
+  "Type": "Generic",
+  "Appearance": "AxoTales_Gray_Cat",
+  "StartState": "Roam",
+  "MaxHealth": 40,
+  "DefaultPlayerAttitude": "Friendly",
+  "DefaultNPCAttitude": "Neutral",
+  "DropList": "Empty",
+  "ApplySeparation": true,
+  "SeparationDistance": 0.7,
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": 6.5,
+      "RunThreshold": 0.5,
+      "Gravity": 15,
+      "MaxFallSpeed": 20,
+      "MaxRotationSpeed": 300,
+      "Acceleration": 15,
+      "MinJumpHeight": 0.8
+    }
+  ],
+  "NameTranslationKey": "server.npcRoles.AxoTales_Gray_Cat.name",
+  "Instructions": [
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Roam"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Roam"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Follow"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Follow"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Food"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Food"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Rest"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Rest"
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Rest"
+      },
+      "BodyMotion": {
+        "Type": "Nothing"
+      }
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Food"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 20
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "SlowDownDistance": 3,
+            "StopDistance": 1,
+            "RelativeSpeed": 0.7
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Follow"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 160
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "SlowDownDistance": 6,
+            "StopDistance": 3,
+            "RelativeSpeed": 1
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Roam"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Leash",
+            "Range": 12
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "StopDistance": 6,
+            "SlowDownDistance": 9,
+            "RelativeSpeed": 0.5
+          }
+        },
+        {
+          "Sensor": {
+            "Type": "Any"
+          },
+          "BodyMotion": {
+            "Type": "Sequence",
+            "Looped": true,
+            "Motions": [
+              {
+                "Type": "Timer",
+                "Time": [
+                  2,
+                  5
+                ],
+                "Motion": {
+                  "Type": "Nothing"
+                }
+              },
+              {
+                "Type": "Timer",
+                "Time": [
+                  3,
+                  6
+                ],
+                "Motion": {
+                  "Type": "Wander",
+                  "MaxHeadingChange": 1,
+                  "RelativeSpeed": 0.35,
+                  "MinWalkTime": 1,
+                  "RelaxedMoveConstraints": false
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

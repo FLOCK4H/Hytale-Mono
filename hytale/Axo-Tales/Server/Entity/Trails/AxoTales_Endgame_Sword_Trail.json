@@ -1,0 +1,16 @@
+{
+  "TexturePath": "Trails/Longsword.png",
+  "LifeSpan": 6,
+  "Roll": 0,
+  "Start": {
+    "Color": "rgba(#b7eaff, 0.800)",
+    "Width": 1.0
+  },
+  "End": {
+    "Color": "rgba(#6279dc, 0.000)",
+    "Width": 0
+  },
+  "LightInfluence": 0,
+  "Smooth": true,
+  "RenderMode": "BlendAdd"
+}

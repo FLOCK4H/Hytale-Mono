@@ -1,0 +1,10 @@
+{
+  "Interactions": [
+    {
+      "Type": "AxoTales_SkillTree",
+      "Mode": "wave"
+    },
+    "AxoTempoSword_Longsword_Attack"
+  ],
+  "$SkillTreeWave": true
+}

@@ -1,0 +1,63 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Predator",
+  "Modify": {
+    "Appearance": "Tom_Tom",
+    "DropList": "Drop_AxoTales_Tom_Tom",
+    "MaxHealth": 80,
+    "MaxSpeed": 7,
+    "RunThreshold": 0.3,
+    "ChaseRelativeSpeed": 1,
+    "FlockArray": [],
+    "AttitudeGroup": "PredatorsBig",
+    "IsMemory": true,
+    "MemoriesCategory": "Goblin",
+    "ViewRange": 24,
+    "ViewSector": 270,
+    "HearingRange": 18,
+    "AbsoluteDetectionRange": 3,
+    "AlertedRange": 28,
+    "AlertedTime": [
+      0.3,
+      0.5
+    ],
+    "ThreatenAnimation": "Alerted",
+    "ThreatenDelayRange": [
+      0.1,
+      0.2
+    ],
+    "Attack": "AxoTomTom_Throw",
+    "AttackDistance": 3.2,
+    "AttackPauseRange": [
+      5,
+      5
+    ],
+    "CombatAttackPreDelay": [
+      0,
+      0
+    ],
+    "CombatAttackPostDelay": [
+      0,
+      0
+    ],
+    "CombatBackOffAfterAttack": false,
+    "CombatDirectWeight": 10,
+    "CombatStrafeWeight": 0,
+    "AlwaysSleepAtNight": false,
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": false,
+    "HardLeashDistance": 72,
+    "DropDeathItemsInstantly": true,
+    "DeathAnimationTime": 1.35,
+    "DisableDamageGroups": [],
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Tom_Tom.name",
+      "Description": "Displayed NPC name"
+    }
+  }
+}

@@ -8,8 +8,8 @@ import com.hypixel.hytale.component.RemoveReason;
 import com.hypixel.hytale.math.shape.Box;
 import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.protocol.ChangeVelocityType;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
@@ -23,9 +23,7 @@ import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 import com.hypixel.hytale.server.core.entity.entities.ProjectileComponent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.entity.entities.player.movement.MovementManager;
-import com.hypixel.hytale.server.core.io.adapter.PacketAdapters;
-import com.hypixel.hytale.server.core.io.adapter.PacketFilter;
-import com.hypixel.hytale.server.core.io.adapter.PlayerPacketWatcher;
+import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockGathering;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockBreakingDropType;
@@ -53,10 +51,10 @@ import com.hypixel.hytale.server.core.modules.time.TimeResource;
 import com.hypixel.hytale.server.core.util.TargetUtil;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -71,26 +69,27 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Packet-level interception for spellbook input handling.
- *
- * <p>Uses inbound {@link SyncInteractionChains} (id 290) updates and logs both client-reported item ids and the
- * authoritative server inventory snapshot for debugging.</p>
- */
-public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
-    public static final String HEALING_BOOK_ITEM_ID = "Book_Heal_Texture";
-    public static final String IMMUNITY_BOOK_ITEM_ID = "Book_Immunity_Texture";
-    public static final String TELEPORT_BOOK_ITEM_ID = "Book_Teleport_Texture";
-    public static final String MINING_BOOK_ITEM_ID = "Book_Mining_Texture";
-    public static final String TAUNT_BOOK_ITEM_ID = "Book_Taunt_Texture";
-    public static final String HORDE_BOOK_ITEM_ID = "Book_Horde_Texture";
-    public static final String DOOM_BOOK_ITEM_ID = "Book_Doom_Texture";
-    public static final String MORPH_BOOK_ITEM_ID = "Book_Morph_Texture";
-    public static final String FROST_BOOK_ITEM_ID = "Book_Frost_Texture";
-    public static final String FLAME_BOOK_ITEM_ID = "Book_Flame_Texture";
-    public static final String LIGHT_BOOK_ITEM_ID = "Book_Light_Texture";
-    public static final String ANCIENT_SWORD_ITEM_ID = "Axo_Ancient_Sword";
+
+
+
+
+
+public final class SpellbookInputInterceptor {
+
+    public static final String HEALING_BOOK_ITEM_ID = "Axo_Healing_Book";
+    public static final String IMMUNITY_BOOK_ITEM_ID = "Axo_Immunity_Book";
+    public static final String TELEPORT_BOOK_ITEM_ID = "Axo_Teleport_Book";
+    public static final String MINING_BOOK_ITEM_ID = "Axo_Mining_Book";
+    public static final String TAUNT_BOOK_ITEM_ID = "Axo_Taunt_Book";
+    public static final String HORDE_BOOK_ITEM_ID = "Axo_Horde_Book";
+    public static final String DOOM_BOOK_ITEM_ID = "Axo_Book_Of_Doom";
+    public static final String MORPH_BOOK_ITEM_ID = "Axo_Morph_Book";
+    public static final String FROST_BOOK_ITEM_ID = "Axo_Frost_Book";
+    public static final String FLAME_BOOK_ITEM_ID = "Axo_Flame_Book";
+    public static final String SILVER_BOOK_ITEM_ID = "Axo_Silver_Book";
+    public static final String LIGHT_BOOK_ITEM_ID = "Axo_Light_Book";
+    public static final String ANCIENT_SWORD_ITEM_ID = "Axo_Arcane_Sword";
     private static final float FLOAT_EPSILON = 0.0001f;
     private static final double MINING_HARD_MAX_DISTANCE = 256.0;
     private static final double TELEPORT_HARD_MAX_DISTANCE = 2048.0;
@@ -100,6 +99,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private static final String MORPH_PROJECTILE_ASSET_ID = "Morph_Vortex";
     private static final String FROST_PROJECTILE_ASSET_ID = "Frost_Shard";
     private static final String FLAME_PROJECTILE_ASSET_ID = "Flame_Bolt";
+    private static final String SILVER_PROJECTILE_ASSET_ID = "AxoTales_Silver_Bolt";
     private static final String LIGHT_PROJECTILE_ASSET_ID = LightBookProjectileSystem.LIGHT_PROJECTILE_ID;
     private static final String HEALING_PROJECTILE_ASSET_ID = "Healing_Bolt";
     private static final String ANCIENT_SWORD_PROJECTILE_DEFAULT_ASSET_ID = "Ancient_Slash";
@@ -120,7 +120,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         int activeHotbarSlot,
         int activeUtilitySlot,
         int activeToolsSlot,
-        int chainId
+        int chainId,
+        @Nullable String wandItemId,
+        boolean wandAlternate
     ) {}
 
     private record Decision(boolean allow, @Nonnull String reason) {}
@@ -175,6 +177,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
     private final PluginErrorReporter errors;
     private final PluginDebugReporter debug;
+    private final SpellbookPouchService pouches;
+    private BloodMagicSystem bloodMagic;
+    private LeechSystem leech;
+    private LegendaryStormSystem legendaryStorms;
     private final AxoTalesServerConfig config;
     private final TauntBookEffectState tauntState;
     private final ImmunityBookEffectState immunityState;
@@ -203,7 +209,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private final Map<UUID, Integer> lastProcessedFrostSecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedFrostUseChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedFlameSecondaryChainId = new ConcurrentHashMap<>();
+    private final Map<UUID, Integer> lastProcessedSilverSecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedFlameUseChainId = new ConcurrentHashMap<>();
+    private final Map<UUID, Integer> lastProcessedSilverUseChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedLightSecondaryChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedLightUseChainId = new ConcurrentHashMap<>();
     private final Map<UUID, Integer> lastProcessedAncientSwordSecondaryChainId = new ConcurrentHashMap<>();
@@ -218,6 +226,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     private final Map<UUID, Long> lastMorphCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastFrostCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastFlameCastAttemptAtNanos = new ConcurrentHashMap<>();
+    private final Map<UUID, Long> lastSilverCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastLightCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, Long> lastAncientSwordCastAttemptAtNanos = new ConcurrentHashMap<>();
     private final Map<UUID, MiningChargeState> activeMiningCharges = new ConcurrentHashMap<>();
@@ -235,11 +244,11 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     });
 
     private volatile int immuneEffectIndex = -1;
-    private volatile PacketFilter inboundWatcher;
 
     public SpellbookInputInterceptor(
         @Nonnull PluginErrorReporter errors,
         @Nonnull PluginDebugReporter debug,
+        @Nonnull SpellbookPouchService pouches,
         @Nonnull AxoTalesServerConfig config,
         @Nonnull TauntBookEffectState tauntState,
         @Nonnull ImmunityBookEffectState immunityState,
@@ -249,6 +258,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     ) {
         this.errors = errors;
         this.debug = debug;
+        this.pouches = pouches;
         this.config = config;
         this.tauntState = tauntState;
         this.immunityState = immunityState;
@@ -257,24 +267,15 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         this.lightBookProjectileState = lightBookProjectileState;
     }
 
-    public void register() {
-        if (inboundWatcher != null) {
-            return;
-        }
-        inboundWatcher = PacketAdapters.registerInbound(this);
-    }
+    void setLeech(LeechSystem leech){this.leech=leech;}
+    void setBloodMagic(BloodMagicSystem bloodMagic) { this.bloodMagic = bloodMagic; }
+    void setLegendaryStorms(LegendaryStormSystem storms) { this.legendaryStorms = storms; }
 
     public void deregister() {
-        PacketFilter watcher = inboundWatcher;
-        inboundWatcher = null;
-        if (watcher != null) {
-            PacketAdapters.deregisterInbound(watcher);
-        }
-
         try {
             delayedCastExecutor.shutdownNow();
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 
@@ -303,7 +304,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             lastProcessedFrostSecondaryChainId.remove(uuid);
             lastProcessedFrostUseChainId.remove(uuid);
             lastProcessedFlameSecondaryChainId.remove(uuid);
+            lastProcessedSilverSecondaryChainId.remove(uuid);
             lastProcessedFlameUseChainId.remove(uuid);
+            lastProcessedSilverUseChainId.remove(uuid);
             lastProcessedLightSecondaryChainId.remove(uuid);
             lastProcessedLightUseChainId.remove(uuid);
             lastProcessedAncientSwordSecondaryChainId.remove(uuid);
@@ -318,6 +321,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             lastMorphCastAttemptAtNanos.remove(uuid);
             lastFrostCastAttemptAtNanos.remove(uuid);
             lastFlameCastAttemptAtNanos.remove(uuid);
+            lastSilverCastAttemptAtNanos.remove(uuid);
             lastLightCastAttemptAtNanos.remove(uuid);
             lastAncientSwordCastAttemptAtNanos.remove(uuid);
             activeMiningCharges.remove(uuid);
@@ -390,7 +394,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                                 store.removeEntity(minionRef, RemoveReason.REMOVE);
                                 removedCount++;
                             } catch (Throwable ignored) {
-                                // Best effort: continue removing others.
+
                             }
                         }
                     }
@@ -405,16 +409,66 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " cast.interactionType=" + castInteractionType
                     );
                 } catch (Throwable ignored) {
-                    // Best effort cleanup.
+
                 }
             });
         } catch (Throwable ignored) {
-            // Best effort cleanup.
+
         }
     }
 
-    @Override
-    public void accept(@Nonnull PlayerRef playerRef, @Nonnull Packet packet) {
+
+    public void onNativeInteraction(InteractionType type, InteractionContext context, boolean release, boolean alternate) {
+        PlayerRef playerRef = null;
+        try {
+            var ref = context.getEntity();
+            var buffer = context.getCommandBuffer();
+            playerRef = buffer.getComponent(ref, PlayerRef.getComponentType());
+            if (playerRef == null) {
+                debug.traceFileOnly(null, "NativeSpellInput event=firstRun cancelled=false itemSource=serverInteractionContext"
+                    + " itemId=" + itemIdOrNull(context.getHeldItem()) + " interactionType=" + type
+                    + " release=" + release + " alternate=" + alternate
+                    + " allow=false reason=missingPlayerRef");
+                return;
+            }
+            if ("Axo_Rimefang".equals(itemIdOrNull(context.getHeldItem()))) {
+                debug.traceFileOnly(playerRef, "RimefangHit event=DamageEntity.Next cancelled=false blocked=false"
+                    + " itemSource=serverInteractionContext itemId=AxoTales_Rimefang interactionType=" + type
+                    + " effect=AxoTales_Rimefang_Freeze durationSeconds=2 manaGate=none"
+                    + " allow=true reason=nativeSuccessfulUnblockedHit");
+                return;
+            }
+            if(leech!=null&&type==InteractionType.Secondary&&LeechSystem.physical(itemIdOrNull(context.getHeldItem()))) {
+
+
+                ManaSnapshot mana=snapshotMana(buffer.getComponent(ref,EntityStatMap.getComponentType()));
+                debug.traceFileOnly(playerRef,"Leech event=holdGate cancelled=false itemSource=serverInteractionContext itemId="
+                    +itemIdOrNull(context.getHeldItem())+" interactionType="+type+" slot="+InventoryComponentAccess.activeHotbarSlot(buffer,ref)
+                    +" chain="+context.getChain().getChainId()+" release="+release+" mana.index="+mana.index
+                    +" mana.current="+mana.current+" mana.min="+mana.min+" mana.max="+mana.max
+                    +" allow=true reason="+(release?"nativeHoldRelease":"awaitSynchronizedNativeHold"));
+                if(release)leech.input(type,context,true,false);
+                return;
+            }
+            SyncInteractionChain chain = new SyncInteractionChain();
+            chain.interactionType = alternate ? InteractionType.Primary : type;
+            chain.initial = !release;
+            chain.state = release ? InteractionState.Finished : InteractionState.NotFinished;
+            chain.chainId = context.getChain().getChainId();
+            chain.itemInHandId = itemIdOrNull(context.getHeldItem());
+            chain.activeHotbarSlot = InventoryComponentAccess.activeHotbarSlot(buffer, ref);
+            chain.activeUtilitySlot = -1;
+            chain.activeToolsSlot = -1;
+            debug.traceFileOnly(playerRef, "NativeSpellInput event=firstRun cancelled=false itemSource=serverInteractionContext"
+                + " itemId=" + chain.itemInHandId + " interactionType=" + type + " chainId=" + chain.chainId
+                + " release=" + release + " alternate=" + alternate + " allow=true reason=dispatchToHeldItemAndManaValidation");
+            accept(playerRef, new SyncInteractionChains(new SyncInteractionChain[] {chain}), alternate);
+        } catch (Throwable failure) {
+            errors.report(playerRef, "Native spell interaction dispatch failed.", failure);
+        }
+    }
+
+    private void accept(@Nonnull PlayerRef playerRef, @Nonnull Packet packet, boolean alternate) {
         if (!(packet instanceof SyncInteractionChains chains)) {
             return;
         }
@@ -449,7 +503,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 chain.activeHotbarSlot,
                 chain.activeUtilitySlot,
                 chain.activeToolsSlot,
-                chain.chainId
+                chain.chainId,
+                null,
+                alternate
             ));
         }
 
@@ -513,6 +569,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
         if (isDoomBookInSnapshot(snapshot) || isDoomBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem)) {
             return getDoomBookProjectileDelayNanos();
+        }
+        if (isSilverBookInSnapshot(snapshot) || isSilverBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem)) {
+            return 200_000_000L;
         }
         if (isFlameBookInSnapshot(snapshot) || isFlameBookInServerSlots(serverItemInHand, serverUtilityItem, serverToolsItem)) {
             return getFlameBookProjectileDelayNanos();
@@ -650,7 +709,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             debug.traceFileOnly(
                 playerRef,
                 delayEventName + " event=dedupe"
-                    + " event=SyncInteractionChains(id=290)"
+                    + " event=NativeSpellInteraction"
                     + " interactionType=" + snapshot.interactionType
                     + " chainId=" + snapshot.chainId
                     + " allow=false"
@@ -673,7 +732,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         debug.traceFileOnly(
             playerRef,
             delayEventName + " event=schedule"
-                + " event=SyncInteractionChains(id=290)"
+                + " event=NativeSpellInteraction"
                 + " interactionType=" + snapshot.interactionType
                 + " chainId=" + snapshot.chainId
                 + " initial=" + snapshot.initial
@@ -720,7 +779,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             debug.traceFileOnly(
                                 playerRef,
                                 delayEventName + " event=execute"
-                                    + " event=SyncInteractionChains(id=290)"
+                                    + " event=NativeSpellInteraction"
                                     + " interactionType=" + snapshot.interactionType
                                     + " chainId=" + snapshot.chainId
                                     + " delaySeconds=" + String.format("%.3f", delaySeconds)
@@ -784,15 +843,80 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 return;
             }
 
+            String physicalItem = itemIdOrNull(InventoryComponentAccess.itemInHand(store, playerEntityRef));
+            if (SpellbookCatalog.POUCH_ID.equals(physicalItem)) {
+                if (allowCastDelay && snapshots.stream().anyMatch(s -> s.initial && s.interactionType != InteractionType.Primary)) {
+                    pouches.openPouch(store, playerEntityRef, playerRef);
+                }
+                return;
+            }
+            SpellbookCatalog wandSpell = SpellbookCatalog.fromWand(physicalItem);
+            if (wandSpell != null) {
+                if (allowCastDelay && snapshots.stream().anyMatch(s -> s.initial && s.interactionType == InteractionType.Primary && !s.wandAlternate)) {
+                    for (var snapshot : snapshots) pouches.suppressMenuChain(playerRef, snapshot.chainId);
+                    pouches.openSelection(store, playerEntityRef, playerRef);
+                    return;
+                }
+                if (playerComponent.getPageManager().getCustomPage() instanceof WandSpellSelectionPage) return;
+                if (!pouches.owns(store, playerEntityRef, wandSpell)) {
+                    pouches.trace(playerRef, "wandDeniedMissingBook", false, wandSpell.itemId());
+                    if (allowCastDelay && snapshots.stream().anyMatch(s -> s.initial && s.interactionType != InteractionType.Primary)) {
+                        for (var snapshot : snapshots) pouches.suppressMenuChain(playerRef, snapshot.chainId);
+                        pouches.openSelection(store, playerEntityRef, playerRef);
+                    }
+                    return;
+                }
+                List<InteractionSnapshot> normalized = new ArrayList<>();
+                for (var snapshot : snapshots) {
+                    if (pouches.isMenuChain(playerRef, snapshot.chainId)) continue;
+                    boolean valid = snapshot.wandItemId != null
+                        ? physicalItem.equals(snapshot.wandItemId) && snapshot.activeHotbarSlot == InventoryComponentAccess.activeHotbarSlot(store, playerEntityRef)
+                        : physicalItem.equals(snapshot.itemInHandId);
+                    if (!valid) {
+                        pouches.trace(playerRef, "wandDeniedItemChanged", false, physicalItem);
+                        continue;
+                    }
+                    normalized.add(new InteractionSnapshot(snapshot.interactionType, snapshot.initial, snapshot.desync,
+                        snapshot.state, wandSpell.itemId(), null, null,
+                        InventoryComponentAccess.activeHotbarSlot(store, playerEntityRef), snapshot.activeUtilitySlot,
+                        snapshot.activeToolsSlot, snapshot.chainId, physicalItem, snapshot.wandAlternate));
+                }
+                if (normalized.isEmpty()) return;
+                snapshots = normalized;
+            } else if (snapshots.stream().anyMatch(s -> s.wandItemId != null || SpellbookCatalog.fromWand(s.itemInHandId) != null)) {
+                pouches.trace(playerRef, "wandDeniedNotHeld", false, physicalItem);
+                return;
+            }
             EntityStatMap stats = store.getComponent(playerEntityRef, EntityStatMap.getComponentType());
 
-            String serverItemInHand = itemIdOrNull(InventoryComponentAccess.itemInHand(store, playerEntityRef));
+            String serverItemInHand = wandSpell != null ? wandSpell.itemId() : physicalItem;
             String serverActiveHotbarItem = itemIdOrNull(InventoryComponentAccess.activeHotbarItem(store, playerEntityRef));
-            String serverUtilityItem = itemIdOrNull(InventoryComponentAccess.utilityItem(store, playerEntityRef));
-            String serverToolsItem = itemIdOrNull(InventoryComponentAccess.toolsItem(store, playerEntityRef));
+            String serverUtilityItem = wandSpell != null ? null : itemIdOrNull(InventoryComponentAccess.utilityItem(store, playerEntityRef));
+            String serverToolsItem = wandSpell != null ? null : itemIdOrNull(InventoryComponentAccess.toolsItem(store, playerEntityRef));
             String serverActiveToolItem = itemIdOrNull(InventoryComponentAccess.toolsItem(store, playerEntityRef));
 
             ManaSnapshot mana = snapshotMana(stats);
+            if (LegendaryStormSystem.book(serverItemInHand)) {
+                if (legendaryStorms != null && allowCastDelay) for (var snapshot : snapshots) {
+                    if (snapshot.initial && !snapshot.desync && snapshot.interactionType == InteractionType.Secondary)
+                        legendaryStorms.cast(store, playerEntityRef, serverItemInHand, physicalItem, snapshot.chainId);
+                }
+                return;
+            }
+            if (BloodMagicSystem.book(serverItemInHand)) {
+                if (bloodMagic != null && allowCastDelay) for (var snapshot : snapshots) {
+                    if (snapshot.initial && !snapshot.desync && snapshot.interactionType != InteractionType.Primary)
+                        bloodMagic.cast(store, playerEntityRef, serverItemInHand, physicalItem, snapshot.chainId);
+                }
+                return;
+            }
+            if (wandSpell != null && allowCastDelay) {
+                debug.traceFileOnly(playerRef, "WandDispatch event=NativeSpellInteraction cancelled=false"
+                    + " itemSource=server.itemInHand+carriedBooks physicalItem=" + physicalItem
+                    + " selectedBook=" + wandSpell.itemId() + " mana.index=" + mana.index
+                    + " mana.current=" + mana.current + " mana.min=" + mana.min + " mana.max=" + mana.max
+                    + " allow=true reason=heldWandAndBookVerified");
+            }
             StatSnapshot health = snapshotStat(stats, DefaultEntityStatTypes.getHealth());
 
             UUID uuid = playerRef.getUuid();
@@ -864,7 +988,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                         debug.traceFileOnly(
                             playerRef,
                             "SpellDecision itemId=" + HEALING_BOOK_ITEM_ID
-                                + " event=SyncInteractionChains(id=290)"
+                                + " event=NativeSpellInteraction"
                                 + " interactionType=" + primarySnapshot.interactionType
                                 + " chainId=" + primarySnapshot.chainId
                                 + " initial=" + primarySnapshot.initial
@@ -878,8 +1002,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                                 + " projectile.delaySeconds=" + config.healingBook.projectileDelaySeconds
                                 + " projectile.assetId=" + decision.projectileAssetName
                                 + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
-                                + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
-                                + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                                + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                                + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
                                 + " allow=" + decision.allow
                                 + " reason=" + decision.reason
                         );
@@ -894,7 +1018,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + MINING_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + primarySnapshot.interactionType
                             + " chainId=" + primarySnapshot.chainId
                             + " initial=" + primarySnapshot.initial
@@ -923,7 +1047,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + MORPH_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + primarySnapshot.interactionType
                             + " chainId=" + primarySnapshot.chainId
                             + " initial=" + primarySnapshot.initial
@@ -995,7 +1119,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + MINING_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + miningChargeTerminalSnapshot.interactionType
                             + " chainId=" + miningChargeTerminalSnapshot.chainId
                             + " initial=" + miningChargeTerminalSnapshot.initial
@@ -1021,8 +1145,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " ray.hit=" + decision.rayHit
                             + (decision.rayHit != null
                                 ? " ray.hit.block=(" + decision.rayHit.x + "," + decision.rayHit.y + "," + decision.rayHit.z + ")"
-                                    + " ray.hit.point=" + Vector3d.formatShortString(decision.rayHit.collisionPoint)
-                                    + " ray.hit.normal=" + Vector3d.formatShortString(decision.rayHit.collisionNormal)
+                                    + " ray.hit.point=" + VectorFormats.shortString(decision.rayHit.collisionPoint)
+                                    + " ray.hit.normal=" + VectorFormats.shortString(decision.rayHit.collisionNormal)
                                 : "")
                             + (decision.hitDistanceBlocks > 0 ? " ray.hit.distanceBlocks=" + String.format("%.2f", decision.hitDistanceBlocks) : "")
                             + (decision.faceAxis != null ? " mining.faceAxis=" + decision.faceAxis : "")
@@ -1107,7 +1231,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                      debug.traceFileOnly(
                          playerRef,
                          "SpellDecision itemId=" + TAUNT_BOOK_ITEM_ID
-                             + " event=SyncInteractionChains(id=290)"
+                             + " event=NativeSpellInteraction"
                              + " interactionType=" + castSnapshot.interactionType
                              + " chainId=" + castSnapshot.chainId
                              + " initial=" + castSnapshot.initial
@@ -1129,7 +1253,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                              + " slam.radiusBlocks=" + decision.damageRadiusBlocks
                              + " slam.breakRadiusBlocks=" + decision.groundBreakRadiusBlocks
                              + " slam.breakBlockBelow=" + config.tauntBook.breakBlockBelow
-                             + (decision.launchVelocity != null ? " launch.velocity=" + Vector3d.formatShortString(decision.launchVelocity) : "")
+                             + (decision.launchVelocity != null ? " launch.velocity=" + VectorFormats.shortString(decision.launchVelocity) : "")
                              + (decision.fallImmunityExpiresAtNanos > 0 ? " fallImmunity.expiresAtNanos=" + decision.fallImmunityExpiresAtNanos : "")
                              + " allow=" + decision.allow
                              + " reason=" + decision.reason
@@ -1151,7 +1275,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + HORDE_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1164,7 +1288,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " cost.mana=" + config.hordeBook.manaCost
                             + " summon.roleName=" + decision.roleName
                             + " summon.spawnDistanceBlocks=" + String.format("%.2f", decision.spawnDistanceBlocks)
-                            + (decision.spawnPosition != null ? " summon.spawnPosition=" + Vector3d.formatShortString(decision.spawnPosition) : "")
+                            + (decision.spawnPosition != null ? " summon.spawnPosition=" + VectorFormats.shortString(decision.spawnPosition) : "")
                             + " summon.count=" + (decision.minionUuids != null ? decision.minionUuids.size() : 0)
                             + (decision.minionUuids != null && !decision.minionUuids.isEmpty() ? " summon.minionUuids=" + decision.minionUuids : "")
                             + " attitude.ownerFriendlySeconds=" + config.hordeBook.ownerFriendlySeconds
@@ -1188,7 +1312,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + DOOM_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1201,8 +1325,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " cost.mana=" + getDoomBookManaCost()
                             + " projectile.delaySeconds=" + (config != null && config.doomBook != null ? config.doomBook.projectileDelaySeconds : 0.24)
                             + " projectile.assetId=" + decision.projectileAssetName
-                            + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
-                            + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                            + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                            + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
                             + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
                             + " allow=" + decision.allow
                             + " reason=" + decision.reason
@@ -1223,7 +1347,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + FLAME_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1236,8 +1360,43 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " cost.mana=" + getFlameBookManaCost()
                             + " projectile.delaySeconds=" + (config != null && config.flameBook != null ? config.flameBook.projectileDelaySeconds : 0.2)
                             + " projectile.assetId=" + decision.projectileAssetName
-                            + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
-                            + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                            + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                            + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
+                            + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
+                            + " allow=" + decision.allow
+                            + " reason=" + decision.reason
+                    );
+                } else if (isSilverBookInSnapshot(castSnapshot) || SILVER_BOOK_ITEM_ID.equals(serverItemInHand)) {
+                    SilverDecision decision = tryCastSilverBook(
+                        playerRef,
+                        store,
+                        playerEntityRef,
+                        stats,
+                        mana,
+                        nowNanos,
+                        castSnapshot,
+                        serverItemInHand,
+                        serverUtilityItem,
+                        serverToolsItem
+                    );
+                    debug.traceFileOnly(
+                        playerRef,
+                        "SpellDecision itemId=" + SILVER_BOOK_ITEM_ID
+                            + " event=NativeSpellInteraction"
+                            + " interactionType=" + castSnapshot.interactionType
+                            + " chainId=" + castSnapshot.chainId
+                            + " initial=" + castSnapshot.initial
+                            + " cancelled=false"
+                            + " usedItemSource=" + resolveItemSource(castSnapshot, serverItemInHand, serverUtilityItem, serverToolsItem)
+                            + " mana.index=" + mana.index
+                            + " mana.current=" + mana.current
+                            + " mana.min=" + mana.min
+                            + " mana.max=" + mana.max
+                            + " cost.mana=" + 0
+                            + " projectile.delaySeconds=" + 0.2
+                            + " projectile.assetId=" + decision.projectileAssetName
+                            + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                            + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
                             + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
                             + " allow=" + decision.allow
                             + " reason=" + decision.reason
@@ -1258,7 +1417,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + LIGHT_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1271,8 +1430,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " cost.mana=" + getLightBookManaCost()
                             + " projectile.delaySeconds=" + (config != null && config.lightBook != null ? config.lightBook.projectileDelaySeconds : 0.16)
                             + " projectile.assetId=" + decision.projectileAssetName
-                            + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
-                            + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                            + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                            + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
                             + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
                             + " projectile.dynamicLightApplied=" + decision.dynamicLightApplied
                             + " projectile.maxDistanceBlocks=" + (config != null && config.lightBook != null ? config.lightBook.maxDistanceBlocks : 100.0)
@@ -1298,7 +1457,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + FROST_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1310,8 +1469,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " mana.max=" + mana.max
                             + " cost.mana=" + getFrostBookManaCost()
                             + " projectile.assetId=" + decision.projectileAssetName
-                            + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
-                            + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                            + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                            + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
                             + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
                             + " allow=" + decision.allow
                             + " reason=" + decision.reason
@@ -1332,7 +1491,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + MORPH_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1344,8 +1503,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " mana.max=" + mana.max
                             + " cost.mana=" + getMorphBookManaCost()
                             + " projectile.assetId=" + decision.projectileAssetName
-                            + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
-                            + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                            + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                            + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
                             + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
                             + " allow=" + decision.allow
                             + " reason=" + decision.reason
@@ -1365,7 +1524,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + TELEPORT_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1381,11 +1540,11 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                             + " ray.hit=" + decision.rayHit
                             + (decision.rayHit != null
                                 ? " ray.hit.block=(" + decision.rayHit.x + "," + decision.rayHit.y + "," + decision.rayHit.z + ")"
-                                    + " ray.hit.point=" + Vector3d.formatShortString(decision.rayHit.collisionPoint)
-                                    + " ray.hit.normal=" + Vector3d.formatShortString(decision.rayHit.collisionNormal)
+                                    + " ray.hit.point=" + VectorFormats.shortString(decision.rayHit.collisionPoint)
+                                    + " ray.hit.normal=" + VectorFormats.shortString(decision.rayHit.collisionNormal)
                                 : "")
                             + (decision.hitDistanceBlocks > 0 ? " ray.hit.distanceBlocks=" + String.format("%.2f", decision.hitDistanceBlocks) : "")
-                            + (decision.destination != null ? " destination=" + Vector3d.formatShortString(decision.destination) : "")
+                            + (decision.destination != null ? " destination=" + VectorFormats.shortString(decision.destination) : "")
                             + " allow=" + decision.allow
                             + " reason=" + decision.reason
                     );
@@ -1405,7 +1564,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + IMMUNITY_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1430,7 +1589,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     debug.traceFileOnly(
                         playerRef,
                         "SpellDecision itemId=" + HEALING_BOOK_ITEM_ID
-                            + " event=SyncInteractionChains(id=290)"
+                            + " event=NativeSpellInteraction"
                             + " interactionType=" + castSnapshot.interactionType
                             + " chainId=" + castSnapshot.chainId
                             + " initial=" + castSnapshot.initial
@@ -1492,7 +1651,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                         debug.traceFileOnly(
                             playerRef,
                             "SpellDecision itemId=" + ANCIENT_SWORD_ITEM_ID
-                                + " event=SyncInteractionChains(id=290)"
+                                + " event=NativeSpellInteraction"
                                 + " interactionType=" + ancientSwordSnapshot.interactionType
                                 + " chainId=" + ancientSwordSnapshot.chainId
                                 + " initial=" + ancientSwordSnapshot.initial
@@ -1507,8 +1666,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                                 + " cast.delaySeconds=" + String.format("%.3f", getAncientSwordCastDelaySeconds())
                                 + " projectile.assetId=" + decision.projectileAssetName
                                 + (decision.projectileUuid != null ? " projectile.uuid=" + decision.projectileUuid : "")
-                                + (decision.origin != null ? " projectile.origin=" + Vector3d.formatShortString(decision.origin) : "")
-                                + (decision.direction != null ? " projectile.direction=" + Vector3d.formatShortString(decision.direction) : "")
+                                + (decision.origin != null ? " projectile.origin=" + VectorFormats.shortString(decision.origin) : "")
+                                + (decision.direction != null ? " projectile.direction=" + VectorFormats.shortString(decision.direction) : "")
                                 + " allow=" + decision.allow
                                 + " reason=" + decision.reason
                         );
@@ -1657,7 +1816,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new HealingProjectileDecision(false, "notHoldingBook", HEALING_PROJECTILE_ASSET_ID, null, null, null);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+
         lastProcessedHealingPrimaryChainId.put(uuid, snapshot.chainId);
 
         long castDebounceNanos = getSpellbookCastDebounceNanos();
@@ -1717,13 +1876,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new HealingProjectileDecision(false, "directionInvalid", HEALING_PROJECTILE_ASSET_ID, origin, direction, null);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, HEALING_PROJECTILE_ASSET_ID, origin, rotation);
@@ -1741,7 +1900,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "HealingBook: projectile.shoot failed (assetId=" + HEALING_PROJECTILE_ASSET_ID + ").", t);
             return new HealingProjectileDecision(false, "projectileShootException", HEALING_PROJECTILE_ASSET_ID, origin, direction, null);
@@ -1762,7 +1921,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort debug info.
+
         }
 
         float newMana;
@@ -1813,7 +1972,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new MorphResetDecision(false, "notHoldingBook", null, null, false, false, false, "skip");
         }
 
-        // De-dupe repeated initial chain updates even when the reset is denied (prevents repeated gating logs).
+
         lastProcessedMorphPrimaryChainId.put(uuid, snapshot.chainId);
 
         ModelComponent currentModelComponent = store.getComponent(playerEntityRef, ModelComponent.getComponentType());
@@ -1886,6 +2045,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             }
         }
 
+        morphBookModelState.transformed(uuid,false);
         return new MorphResetDecision(true, reason, baselineModelAssetId, currentModelAssetId, applied, baselineSkinPresent, skinApplied, skinReason);
     }
 
@@ -1922,7 +2082,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new Decision(false, "notHoldingBook");
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents chat spam / repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -1977,7 +2137,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             newMana = Math.max(mana.min, mana.current - cost);
         }
 
-        // Apply the spell effect by mutating stats on the world thread (we are already on it).
+
         Ref<EntityStore> playerEntityRef = playerRef.getReference();
         if (playerEntityRef == null || !playerEntityRef.isValid()) {
             return new Decision(false, "playerEntityRefInvalid");
@@ -2014,6 +2174,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         stats.setStatValue(mana.index, newMana);
         stats.update();
 
+        int cleansed=HealingEffects.cleanse(playerEntityRef,store);
+        debug.traceFileOnly(playerRef,"HealingBook event=selfHeal cancelled=false itemSource=serverHeldBookOrWand item="+HEALING_BOOK_ITEM_ID
+            +" allow=true cleansed="+cleansed+" mana.index="+mana.index+" mana.current="+newMana+" mana.min="+mana.min+" mana.max="+mana.max
+            +" health.index="+healthIndex+" health.current="+(stats.get(healthIndex)==null?"missing":stats.get(healthIndex).get())+" health.min="+health.min+" health.max="+health.max);
         return new Decision(true, "castApplied");
     }
 
@@ -2059,7 +2223,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new HordeDecision(false, "notHoldingBook", "Outlander_Brute", config.hordeBook.spawnDistanceBlocks, null, java.util.List.of(), 0);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedHordeSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -2117,7 +2281,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new HordeDecision(false, "directionInvalid", roleName, config.hordeBook.spawnDistanceBlocks, null, java.util.List.of(), 0);
         }
 
@@ -2128,15 +2292,15 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
         Vector3d dir = new Vector3d(direction).normalize();
         Vector3d right = new Vector3d(-dir.z, 0.0, dir.x);
-        if (right.squaredLength() > 1e-9) {
+        if (right.lengthSquared() > 1e-9) {
             right.normalize();
         } else {
             right = new Vector3d(1.0, 0.0, 0.0);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         final int minionCount = 3;
@@ -2147,7 +2311,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
         for (int i = 0; i < minionCount; i++) {
             double offset = (i - 1) * lateralSpacing;
-            Vector3d spawnPosition = new Vector3d(origin).addScaled(dir, spawnDistance).addScaled(right, offset);
+            Vector3d spawnPosition = new Vector3d(origin).fma(spawnDistance, dir).fma(offset, right);
             if (!spawnPosition.isFinite()) {
                 cleanupSpawnedMinionsBestEffort(store, minionRefs);
                 return new HordeDecision(false, "spawnPositionNotFinite", roleName, spawnDistance, null, java.util.List.of(), 0);
@@ -2176,7 +2340,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 try {
                     store.removeEntity(minionRef, RemoveReason.REMOVE);
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 cleanupSpawnedMinionsBestEffort(store, minionRefs);
                 return new HordeDecision(false, "minionNpcMissing", roleName, spawnDistance, firstSpawnPosition, java.util.List.of(), 0);
@@ -2188,7 +2352,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 try {
                     store.removeEntity(minionRef, RemoveReason.REMOVE);
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 cleanupSpawnedMinionsBestEffort(store, minionRefs);
                 return new HordeDecision(false, "minionUuidMissing", roleName, spawnDistance, firstSpawnPosition, java.util.List.of(), 0);
@@ -2199,21 +2363,21 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
             try {
                 var role = minionNpc.getRole();
-                if (role != null && role.getWorldSupport() != null) {
-                    role.getWorldSupport().overrideAttitude(playerEntityRef, Attitude.FRIENDLY, (double) Math.max(0, config.hordeBook.ownerFriendlySeconds));
+                if (role != null && WorldSupport.get(minionRef, store) != null) {
+                    WorldSupport.get(minionRef, store).overrideAttitude(playerEntityRef, Attitude.FRIENDLY, (double) Math.max(0, config.hordeBook.ownerFriendlySeconds));
                 }
             } catch (Throwable t) {
                 errors.report(playerRef, "HordeBook: failed to override minion attitude.", t);
             }
         }
 
-        // Ensure the summoned brutes don't immediately turn on each other.
+
         for (Ref<EntityStore> a : minionRefs) {
             if (a == null || !a.isValid()) {
                 continue;
             }
             NPCEntity npcA = store.getComponent(a, NPCEntity.getComponentType());
-            if (npcA == null || npcA.getRole() == null || npcA.getRole().getWorldSupport() == null) {
+            if (npcA == null || npcA.getRole() == null || WorldSupport.get(a, store) == null) {
                 continue;
             }
             for (Ref<EntityStore> b : minionRefs) {
@@ -2221,9 +2385,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     continue;
                 }
                 try {
-                    npcA.getRole().getWorldSupport().overrideAttitude(b, Attitude.FRIENDLY, (double) Math.max(0, config.hordeBook.ownerFriendlySeconds));
+                    WorldSupport.get(a, store).overrideAttitude(b, Attitude.FRIENDLY, (double) Math.max(0, config.hordeBook.ownerFriendlySeconds));
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
             }
         }
@@ -2281,7 +2445,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new DoomDecision(false, "notHoldingBook", DOOM_PROJECTILE_ASSET_ID, null, null, null);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedDoomSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -2329,13 +2493,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new DoomDecision(false, "directionInvalid", DOOM_PROJECTILE_ASSET_ID, origin, direction, null);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, DOOM_PROJECTILE_ASSET_ID, origin, rotation);
@@ -2353,7 +2517,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "DoomBook: projectile.shoot failed (assetId=" + DOOM_PROJECTILE_ASSET_ID + ").", t);
             return new DoomDecision(false, "projectileShootException", DOOM_PROJECTILE_ASSET_ID, origin, direction, null);
@@ -2374,7 +2538,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort debug info.
+
         }
 
         float newMana = Math.max(mana.min, mana.current - manaCost);
@@ -2425,7 +2589,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new FlameDecision(false, "notHoldingBook", FLAME_PROJECTILE_ASSET_ID, null, null, null);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedFlameSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -2473,13 +2637,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new FlameDecision(false, "directionInvalid", FLAME_PROJECTILE_ASSET_ID, origin, direction, null);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, FLAME_PROJECTILE_ASSET_ID, origin, rotation);
@@ -2497,7 +2661,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "FlameBook: projectile.shoot failed (assetId=" + FLAME_PROJECTILE_ASSET_ID + ").", t);
             return new FlameDecision(false, "projectileShootException", FLAME_PROJECTILE_ASSET_ID, origin, direction, null);
@@ -2518,7 +2682,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort debug info.
+
         }
 
         float newMana = Math.max(mana.min, mana.current - manaCost);
@@ -2526,6 +2690,133 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         stats.update();
 
         return new FlameDecision(true, "castApplied", FLAME_PROJECTILE_ASSET_ID, origin, direction, projectileUuid);
+    }
+
+    private @Nonnull SilverDecision tryCastSilverBook(
+        @Nonnull PlayerRef playerRef,
+        @Nonnull Store<EntityStore> store,
+        @Nonnull Ref<EntityStore> playerEntityRef,
+        @Nullable EntityStatMap stats,
+        @Nonnull ManaSnapshot mana,
+        long nowNanos,
+        @Nonnull InteractionSnapshot snapshot,
+        @Nullable String serverItemInHand,
+        @Nullable String serverUtilityItem,
+        @Nullable String serverToolsItem
+    ) {
+        UUID uuid = playerRef.getUuid();
+        if (uuid == null) {
+            return new SilverDecision(false, "noPlayerUuid", SILVER_PROJECTILE_ASSET_ID, null, null, null);
+        }
+
+        if (snapshot.interactionType != InteractionType.Secondary && snapshot.interactionType != InteractionType.Use) {
+            return new SilverDecision(false, "interactionTypeNotSupported", SILVER_PROJECTILE_ASSET_ID, null, null, null);
+        }
+
+        if (snapshot.interactionType == InteractionType.Secondary) {
+            Integer lastChainId = lastProcessedSilverSecondaryChainId.get(uuid);
+            if (lastChainId != null && lastChainId == snapshot.chainId) {
+                return new SilverDecision(false, "dedupe.secondary.chainId", SILVER_PROJECTILE_ASSET_ID, null, null, null);
+            }
+        } else {
+            Integer lastChainId = lastProcessedSilverUseChainId.get(uuid);
+            if (lastChainId != null && lastChainId == snapshot.chainId) {
+                return new SilverDecision(false, "dedupe.use.chainId", SILVER_PROJECTILE_ASSET_ID, null, null, null);
+            }
+        }
+
+        boolean serverSaysBook = SILVER_BOOK_ITEM_ID.equals(serverItemInHand)
+            || SILVER_BOOK_ITEM_ID.equals(serverUtilityItem)
+            || SILVER_BOOK_ITEM_ID.equals(serverToolsItem);
+        if (!serverSaysBook) {
+            return new SilverDecision(false, "notHoldingBook", SILVER_PROJECTILE_ASSET_ID, null, null, null);
+        }
+
+
+        if (snapshot.interactionType == InteractionType.Secondary) {
+            lastProcessedSilverSecondaryChainId.put(uuid, snapshot.chainId);
+        } else {
+            lastProcessedSilverUseChainId.put(uuid, snapshot.chainId);
+        }
+
+        long castDebounceNanos = getSpellbookCastDebounceNanos();
+        if (castDebounceNanos > 0) {
+            DebounceDecision debounce = checkAndMarkDebounce(lastSilverCastAttemptAtNanos, uuid, nowNanos, castDebounceNanos);
+            if (!debounce.allow) {
+                return new SilverDecision(false, debounce.reason, SILVER_PROJECTILE_ASSET_ID, null, null, null);
+            }
+        }
+
+
+        TimeResource time = store.getResource(TimeResource.getResourceType());
+        if (time == null) {
+            return new SilverDecision(false, "timeResourceMissing", SILVER_PROJECTILE_ASSET_ID, null, null, null);
+        }
+
+        Transform look = TargetUtil.getLook(playerEntityRef, store);
+        if (look == null) {
+            Transform fallback = playerRef.getTransform();
+            if (fallback == null) {
+                return new SilverDecision(false, "lookTransformMissing", SILVER_PROJECTILE_ASSET_ID, null, null, null);
+            }
+            look = fallback;
+        }
+
+        Vector3d origin = look.getPosition();
+        if (origin == null || !origin.isFinite()) {
+            return new SilverDecision(false, "originNotFinite", SILVER_PROJECTILE_ASSET_ID, origin, null, null);
+        }
+
+        Vector3d direction = look.getDirection();
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
+            return new SilverDecision(false, "directionInvalid", SILVER_PROJECTILE_ASSET_ID, origin, direction, null);
+        }
+
+        Rotation3f rotation = look.getRotation();
+        if (rotation == null || !rotation.isFinite()) {
+            rotation = new Rotation3f();
+        }
+
+        Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, SILVER_PROJECTILE_ASSET_ID, origin, rotation);
+        if (holder == null) {
+            return new SilverDecision(false, "projectileAssembleFailed", SILVER_PROJECTILE_ASSET_ID, origin, direction, null);
+        }
+
+        ProjectileComponent projectile = holder.getComponent(ProjectileComponent.getComponentType());
+        if (projectile == null) {
+            return new SilverDecision(false, "projectileComponentMissing", SILVER_PROJECTILE_ASSET_ID, origin, direction, null);
+        }
+
+        if (!projectile.initialize()) {
+            return new SilverDecision(false, "projectileAssetNotFound", SILVER_PROJECTILE_ASSET_ID, origin, direction, null);
+        }
+
+        try {
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
+        } catch (Throwable t) {
+            errors.report(playerRef, "SilverBook: projectile.shoot failed (assetId=" + SILVER_PROJECTILE_ASSET_ID + ").", t);
+            return new SilverDecision(false, "projectileShootException", SILVER_PROJECTILE_ASSET_ID, origin, direction, null);
+        }
+
+        Ref<EntityStore> projectileRef;
+        try {
+            projectileRef = store.addEntity(holder, AddReason.SPAWN);
+        } catch (Throwable t) {
+            errors.report(playerRef, "SilverBook: store.addEntity failed (assetId=" + SILVER_PROJECTILE_ASSET_ID + ").", t);
+            return new SilverDecision(false, "projectileSpawnException", SILVER_PROJECTILE_ASSET_ID, origin, direction, null);
+        }
+
+        UUID projectileUuid = null;
+        try {
+            UUIDComponent projectileUuidComponent = store.getComponent(projectileRef, UUIDComponent.getComponentType());
+            if (projectileUuidComponent != null) {
+                projectileUuid = projectileUuidComponent.getUuid();
+            }
+        } catch (Throwable ignored) {
+
+        }
+
+        return new SilverDecision(true, "castApplied", SILVER_PROJECTILE_ASSET_ID, origin, direction, projectileUuid);
     }
 
     private @Nonnull LightDecision tryCastLightBook(
@@ -2569,7 +2860,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new LightDecision(false, "notHoldingBook", LIGHT_PROJECTILE_ASSET_ID, null, null, null, false);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedLightSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -2617,13 +2908,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new LightDecision(false, "directionInvalid", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, LIGHT_PROJECTILE_ASSET_ID, origin, rotation);
@@ -2641,7 +2932,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "LightBook: projectile.shoot failed (assetId=" + LIGHT_PROJECTILE_ASSET_ID + ").", t);
             return new LightDecision(false, "projectileShootException", LIGHT_PROJECTILE_ASSET_ID, origin, direction, null, false);
@@ -2662,7 +2953,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort debug info.
+
         }
 
         boolean dynamicLightApplied = false;
@@ -2680,8 +2971,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 "LightBookProjectile event=spawn"
                     + " projectile.uuid=" + projectileUuid
                     + " dynamicLightApplied=" + dynamicLightApplied
-                    + " origin=" + Vector3d.formatShortString(origin)
-                    + " direction=" + Vector3d.formatShortString(direction)
+                    + " origin=" + VectorFormats.shortString(origin)
+                    + " direction=" + VectorFormats.shortString(direction)
                     + " maxDistanceBlocks=" + (config != null && config.lightBook != null ? config.lightBook.maxDistanceBlocks : 100.0)
                     + " lifetimeSeconds=120"
             );
@@ -2735,7 +3026,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new FrostDecision(false, "notHoldingBook", FROST_PROJECTILE_ASSET_ID, null, null, null);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedFrostSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -2783,13 +3074,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new FrostDecision(false, "directionInvalid", FROST_PROJECTILE_ASSET_ID, origin, direction, null);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, FROST_PROJECTILE_ASSET_ID, origin, rotation);
@@ -2807,7 +3098,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "FrostBook: projectile.shoot failed (assetId=" + FROST_PROJECTILE_ASSET_ID + ").", t);
             return new FrostDecision(false, "projectileShootException", FROST_PROJECTILE_ASSET_ID, origin, direction, null);
@@ -2828,7 +3119,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort debug info.
+
         }
 
         float newMana = Math.max(mana.min, mana.current - manaCost);
@@ -2879,7 +3170,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new MorphDecision(false, "notHoldingBook", MORPH_PROJECTILE_ASSET_ID, null, null, null);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedMorphSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -2927,13 +3218,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new MorphDecision(false, "directionInvalid", MORPH_PROJECTILE_ASSET_ID, origin, direction, null);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, MORPH_PROJECTILE_ASSET_ID, origin, rotation);
@@ -2951,7 +3242,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "MorphBook: projectile.shoot failed (assetId=" + MORPH_PROJECTILE_ASSET_ID + ").", t);
             return new MorphDecision(false, "projectileShootException", MORPH_PROJECTILE_ASSET_ID, origin, direction, null);
@@ -2972,7 +3263,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort debug info.
+
         }
 
         float newMana = Math.max(mana.min, mana.current - manaCost);
@@ -2993,7 +3284,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             try {
                 store.removeEntity(ref, RemoveReason.REMOVE);
             } catch (Throwable ignored) {
-                // Best effort cleanup.
+
             }
         }
     }
@@ -3027,6 +3318,15 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     ) {}
 
     private record FlameDecision(
+        boolean allow,
+        @Nonnull String reason,
+        @Nonnull String projectileAssetName,
+        @Nullable Vector3d origin,
+        @Nullable Vector3d direction,
+        @Nullable UUID projectileUuid
+    ) {}
+
+    private record SilverDecision(
         boolean allow,
         @Nonnull String reason,
         @Nonnull String projectileAssetName,
@@ -3316,7 +3616,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new ImmunityDecision(false, "notHoldingBook", 0L, effectIndex, effectApplied, effectReason);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents spam / repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedImmunitySecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -3344,7 +3644,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         long durationNanos = (long) immunitySeconds * 1_000_000_000L;
         immunityState.activate(uuid, snapshot.interactionType, snapshot.chainId, nowNanos, durationNanos);
 
-        // Consume mana on successful cast.
+
         if (stats != null) {
             float newMana = Math.max(mana.min, mana.current - manaCost);
             stats.setStatValue(mana.index, newMana);
@@ -3427,7 +3727,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new AncientSwordDecision(false, "notHoldingSword", projectileAssetId, null, null, null);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents spam / repeated gating logs).
+
         lastProcessedAncientSwordSecondaryChainId.put(uuid, snapshot.chainId);
 
         long cooldownNanos = getAncientSwordCooldownNanos();
@@ -3467,13 +3767,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new AncientSwordDecision(false, "directionInvalid", projectileAssetId, origin, direction, null);
         }
 
-        Vector3f rotation = look.getRotation();
+        Rotation3f rotation = look.getRotation();
         if (rotation == null || !rotation.isFinite()) {
-            rotation = Vector3f.ZERO;
+            rotation = new Rotation3f();
         }
 
         Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, projectileAssetId, origin, rotation);
@@ -3491,7 +3791,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.getYaw(), rotation.getPitch());
+            projectile.shoot(holder, uuid, origin.x, origin.y, origin.z, rotation.yaw(), rotation.pitch());
         } catch (Throwable t) {
             errors.report(playerRef, "AncientSword: projectile.shoot failed (assetId=" + projectileAssetId + ").", t);
             return new AncientSwordDecision(false, "projectileShootException", projectileAssetId, origin, direction, null);
@@ -3512,10 +3812,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 projectileUuid = projectileUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort debug info.
+
         }
 
-        // Consume mana on successful cast.
+
         if (stats != null) {
             float newMana = Math.max(mana.min, mana.current - manaCost);
             stats.setStatValue(mana.index, newMana);
@@ -3565,7 +3865,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new TauntDecision(false, "notHoldingBook", null, 0.0, "none", 0L, 0, 0, 0, 0);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents spam / repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedTauntSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -3614,14 +3914,14 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
         double launchVelocityY;
         String launchSource;
-        // Approximate launch height by scaling from the player's configured jumpForce (assumes ~2-block base jump height).
+
         if (Float.isFinite(jumpForce) && jumpForce > 0f) {
             double baseJumpHeightBlocks = 2.0;
             double heightMultiplier = Math.sqrt(Math.max(0.0, (double) launchHeightBlocks) / baseJumpHeightBlocks);
             launchVelocityY = (double) jumpForce * heightMultiplier;
             launchSource = "scaledFromJumpForce";
         } else {
-            // Fallback: treat launchHeightBlocks as a direct vertical velocity value.
+
             launchVelocityY = (double) launchHeightBlocks;
             launchSource = "fallbackHeightAsVelocity";
         }
@@ -3638,7 +3938,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         velocity.addInstruction(launchVelocity, null, ChangeVelocityType.Set);
         playerComponent.setCurrentFallDistance(0.0);
 
-        // Consume mana on successful cast.
+
         if (stats != null) {
             float newMana = Math.max(mana.min, mana.current - manaCost);
             stats.setStatValue(mana.index, newMana);
@@ -3669,7 +3969,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                 + " launch.source=" + launchSource
                 + " launch.jumpForce=" + jumpForce
                 + " launch.velocityY=" + String.format("%.3f", launchVelocityY)
-                + " launch.velocity=" + Vector3d.formatShortString(launchVelocity)
+                + " launch.velocity=" + VectorFormats.shortString(launchVelocity)
         );
 
         return new TauntDecision(
@@ -4022,7 +4322,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             );
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents chat spam / repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedMiningSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -4205,7 +4505,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new MiningDecision(
                 false,
                 "directionInvalid",
@@ -4317,7 +4617,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
         int tunnelBlocksToAttempt = Math.max(1, Math.min(requestedTunnelBlocks, Math.max(1, config.miningBook.maxTunnelBlocks)));
 
-        WorldChunk centerChunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(hit.x, hit.z));
+        WorldBlocks.Column centerChunk = WorldBlocks.loaded(world, ChunkUtil.indexChunkFromBlock(hit.x, hit.z));
         String targetBlockTypeId = null;
         if (centerChunk != null) {
             var type = centerChunk.getBlockType(hit.x, hit.y, hit.z);
@@ -4370,7 +4670,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             );
         }
 
-        // Consume mana on successful cast.
+
         if (stats != null) {
             float newMana = Math.max(mana.min, mana.current - manaCost);
             stats.setStatValue(mana.index, newMana);
@@ -4491,14 +4791,19 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return;
         }
 
-        WorldChunk chunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(x, z));
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, ChunkUtil.indexChunkFromBlock(x, z));
         if (chunk == null) {
             mining.blocksSkippedChunkNotLoaded++;
             return;
         }
 
         var blockType = chunk.getBlockType(x, y, z);
+        String blockTypeId = blockType != null ? blockType.getId() : null;
         if (blockType == null || blockType.isUnknown()) {
+            mining.blocksSkippedUnbreakable++;
+            return;
+        }
+        if (isProtectedMiningBlock(blockTypeId) || SpellTerrainProtection.protectedAt(world, x, y, z, blockType)) {
             mining.blocksSkippedUnbreakable++;
             return;
         }
@@ -4509,7 +4814,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         try {
-            boolean broke = chunk.breakBlock(x, y, z);
+            boolean broke = chunk.clearBlock(x, y, z);
             if (broke) {
                 mining.blocksBroken++;
                 try {
@@ -4541,6 +4846,13 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
                     + (t.getMessage() != null ? " message=\"" + t.getMessage() + "\"" : "")
             );
         }
+    }
+
+    private static boolean isProtectedMiningBlock(@Nullable String blockTypeId) {
+        if (blockTypeId == null || blockTypeId.isBlank()) {
+            return false;
+        }
+        return "Rock_Bedrock".equals(blockTypeId) || blockTypeId.endsWith("_Bedrock");
     }
 
     private record DropSpawnResult(
@@ -4577,7 +4889,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         String breakingDropListId = breaking != null ? breaking.getDropListId() : null;
         int breakingQuantity = breaking != null ? Math.max(0, breaking.getQuantity()) : 0;
 
-        // Prefer "harvest" drops when present (closer to typical survival mining behavior).
+
         boolean hasHarvestItem = harvestItemId != null && !harvestItemId.isBlank();
         boolean hasHarvestDropList = harvestDropListId != null && !harvestDropListId.isBlank();
         boolean hasBreakingItem = breakingItemId != null && !breakingItemId.isBlank() && breakingQuantity > 0;
@@ -4693,7 +5005,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             store,
             stack,
             position,
-            Vector3f.ZERO,
+            new Rotation3f(),
             vx,
             MINING_DROP_VELOCITY_Y,
             vz
@@ -4749,7 +5061,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             return new TeleportDecision(false, "notHoldingBook", null, null, 0, 0);
         }
 
-        // De-dupe repeated initial chain updates even when the cast is denied (prevents chat spam / repeated gating logs).
+
         if (snapshot.interactionType == InteractionType.Secondary) {
             lastProcessedTeleportSecondaryChainId.put(uuid, snapshot.chainId);
         } else {
@@ -4794,14 +5106,14 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Vector3d direction = look.getDirection();
-        if (direction == null || !direction.isFinite() || direction.squaredLength() < 1e-9) {
+        if (direction == null || !direction.isFinite() || direction.lengthSquared() < 1e-9) {
             return new TeleportDecision(false, "directionInvalid", null, null, 0, 0);
         }
 
         double maxDistance = getEffectiveTeleportMaxDistanceBlocks();
         BlockCollisionData hit = raycastSolidBlock(world, origin, direction, maxDistance);
         if (hit == null) {
-            // Disambiguate "no block in range" vs "too far": do a second raycast at a hard max for messaging only.
+
             if (maxDistance + 1e-6 < TELEPORT_HARD_MAX_DISTANCE) {
                 BlockCollisionData farHit = raycastSolidBlock(world, origin, direction, TELEPORT_HARD_MAX_DISTANCE);
                 if (farHit != null) {
@@ -4823,8 +5135,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         }
 
         Transform currentTransform = playerRef.getTransform();
-        Vector3f rotation = currentTransform != null && currentTransform.getRotation() != null ? currentTransform.getRotation() : Vector3f.NaN;
-        Vector3f headRotation = playerRef.getHeadRotation();
+        Rotation3f rotation = currentTransform != null && currentTransform.getRotation() != null ? currentTransform.getRotation() : new Rotation3f(Rotation3f.NaN);
+        Rotation3f headRotation = playerRef.getHeadRotation();
 
         Teleport teleport = Teleport.createForPlayer(world, destination, rotation);
         if (headRotation != null) {
@@ -4834,7 +5146,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         store.addComponent(playerEntityRef, Teleport.getComponentType(), teleport);
         playerComponent.setCurrentFallDistance(0.0);
 
-        // Consume mana on successful teleport.
+
         if (stats != null) {
             float newMana = Math.max(mana.min, mana.current - manaCost);
             stats.setStatValue(mana.index, newMana);
@@ -4866,7 +5178,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         @Nonnull Vector3d direction,
         double maxDistance
     ) {
-        Vector3d ray = new Vector3d(direction).normalize().scale(maxDistance);
+        Vector3d ray = new Vector3d(direction).normalize().mul(maxDistance);
         CollisionResult result = new CollisionResult(false, false);
         result.setCollisionByMaterial(CollisionMaterial.MATERIAL_SOLID);
         CollisionModule.findBlockCollisionsIterative(world, TELEPORT_RAY_POINT_BOX, origin, ray, true, result);
@@ -4875,7 +5187,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
 
     private static double distanceBlocks(@Nonnull Vector3d origin, @Nonnull BlockCollisionData hit) {
         Vector3d point = hit.collisionPoint != null ? hit.collisionPoint : new Vector3d(hit.x + 0.5, hit.y + 0.5, hit.z + 0.5);
-        return new Vector3d(point).subtract(origin).length();
+        return new Vector3d(point).sub(origin).length();
     }
 
     private static @Nonnull Vector3d computeTeleportDestination(@Nonnull BlockCollisionData hit) {
@@ -4977,39 +5289,9 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     }
 
     private boolean clientReportsAnySpellbook(@Nullable String itemInHandId, @Nullable String utilityItemId, @Nullable String toolsItemId) {
-        return isHealingBook(itemInHandId)
-            || TELEPORT_BOOK_ITEM_ID.equals(itemInHandId)
-            || MINING_BOOK_ITEM_ID.equals(itemInHandId)
-            || IMMUNITY_BOOK_ITEM_ID.equals(itemInHandId)
-            || TAUNT_BOOK_ITEM_ID.equals(itemInHandId)
-            || HORDE_BOOK_ITEM_ID.equals(itemInHandId)
-            || DOOM_BOOK_ITEM_ID.equals(itemInHandId)
-            || FLAME_BOOK_ITEM_ID.equals(itemInHandId)
-            || LIGHT_BOOK_ITEM_ID.equals(itemInHandId)
-            || FROST_BOOK_ITEM_ID.equals(itemInHandId)
-            || MORPH_BOOK_ITEM_ID.equals(itemInHandId)
-            || isHealingBook(utilityItemId)
-            || TELEPORT_BOOK_ITEM_ID.equals(utilityItemId)
-            || MINING_BOOK_ITEM_ID.equals(utilityItemId)
-            || IMMUNITY_BOOK_ITEM_ID.equals(utilityItemId)
-            || TAUNT_BOOK_ITEM_ID.equals(utilityItemId)
-            || HORDE_BOOK_ITEM_ID.equals(utilityItemId)
-            || DOOM_BOOK_ITEM_ID.equals(utilityItemId)
-            || FLAME_BOOK_ITEM_ID.equals(utilityItemId)
-            || LIGHT_BOOK_ITEM_ID.equals(utilityItemId)
-            || FROST_BOOK_ITEM_ID.equals(utilityItemId)
-            || MORPH_BOOK_ITEM_ID.equals(utilityItemId)
-            || isHealingBook(toolsItemId)
-            || TELEPORT_BOOK_ITEM_ID.equals(toolsItemId)
-            || MINING_BOOK_ITEM_ID.equals(toolsItemId)
-            || IMMUNITY_BOOK_ITEM_ID.equals(toolsItemId)
-            || TAUNT_BOOK_ITEM_ID.equals(toolsItemId)
-            || HORDE_BOOK_ITEM_ID.equals(toolsItemId)
-            || DOOM_BOOK_ITEM_ID.equals(toolsItemId)
-            || FLAME_BOOK_ITEM_ID.equals(toolsItemId)
-            || LIGHT_BOOK_ITEM_ID.equals(toolsItemId)
-            || FROST_BOOK_ITEM_ID.equals(toolsItemId)
-            || MORPH_BOOK_ITEM_ID.equals(toolsItemId);
+        return SpellbookCatalog.fromBook(itemInHandId) != null || SpellbookCatalog.fromBook(utilityItemId) != null
+            || SpellbookCatalog.fromBook(toolsItemId) != null || SpellbookCatalog.fromWand(itemInHandId) != null
+            || SpellbookCatalog.POUCH_ID.equals(itemInHandId);
     }
 
     private static boolean isHealingBookInSnapshot(@Nonnull InteractionSnapshot snapshot) {
@@ -5056,6 +5338,12 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         return FLAME_BOOK_ITEM_ID.equals(snapshot.itemInHandId)
             || FLAME_BOOK_ITEM_ID.equals(snapshot.utilityItemId)
             || FLAME_BOOK_ITEM_ID.equals(snapshot.toolsItemId);
+    }
+
+    private static boolean isSilverBookInSnapshot(@Nonnull InteractionSnapshot snapshot) {
+        return SILVER_BOOK_ITEM_ID.equals(snapshot.itemInHandId)
+            || SILVER_BOOK_ITEM_ID.equals(snapshot.utilityItemId)
+            || SILVER_BOOK_ITEM_ID.equals(snapshot.toolsItemId);
     }
 
     private static boolean isLightBookInSnapshot(@Nonnull InteractionSnapshot snapshot) {
@@ -5112,6 +5400,10 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         return FLAME_BOOK_ITEM_ID.equals(itemInHand) || FLAME_BOOK_ITEM_ID.equals(utilityItem) || FLAME_BOOK_ITEM_ID.equals(toolsItem);
     }
 
+    private static boolean isSilverBookInServerSlots(@Nullable String itemInHand, @Nullable String utilityItem, @Nullable String toolsItem) {
+        return SILVER_BOOK_ITEM_ID.equals(itemInHand) || SILVER_BOOK_ITEM_ID.equals(utilityItem) || SILVER_BOOK_ITEM_ID.equals(toolsItem);
+    }
+
     private static boolean isLightBookInServerSlots(@Nullable String itemInHand, @Nullable String utilityItem, @Nullable String toolsItem) {
         return LIGHT_BOOK_ITEM_ID.equals(itemInHand) || LIGHT_BOOK_ITEM_ID.equals(utilityItem) || LIGHT_BOOK_ITEM_ID.equals(toolsItem);
     }
@@ -5125,17 +5417,8 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
     }
 
     private static boolean isSpellbookInServerSlots(@Nullable String itemInHand, @Nullable String utilityItem, @Nullable String toolsItem) {
-        return isHealingBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isTeleportBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isMiningBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isImmunityBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isTauntBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isHordeBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isDoomBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isFlameBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isLightBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isFrostBookInServerSlots(itemInHand, utilityItem, toolsItem)
-            || isMorphBookInServerSlots(itemInHand, utilityItem, toolsItem);
+        return SpellbookCatalog.fromBook(itemInHand) != null || SpellbookCatalog.fromBook(utilityItem) != null
+            || SpellbookCatalog.fromBook(toolsItem) != null;
     }
 
     private static boolean isHealingBook(@Nullable String itemId) {
@@ -5194,6 +5477,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(serverItemInHand)
             || DOOM_BOOK_ITEM_ID.equals(serverItemInHand)
             || FLAME_BOOK_ITEM_ID.equals(serverItemInHand)
+            || SILVER_BOOK_ITEM_ID.equals(serverItemInHand)
             || LIGHT_BOOK_ITEM_ID.equals(serverItemInHand)
             || FROST_BOOK_ITEM_ID.equals(serverItemInHand)
             || MORPH_BOOK_ITEM_ID.equals(serverItemInHand)
@@ -5208,6 +5492,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(serverUtilityItem)
             || DOOM_BOOK_ITEM_ID.equals(serverUtilityItem)
             || FLAME_BOOK_ITEM_ID.equals(serverUtilityItem)
+            || SILVER_BOOK_ITEM_ID.equals(serverUtilityItem)
             || LIGHT_BOOK_ITEM_ID.equals(serverUtilityItem)
             || FROST_BOOK_ITEM_ID.equals(serverUtilityItem)
             || MORPH_BOOK_ITEM_ID.equals(serverUtilityItem)
@@ -5222,6 +5507,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
             || HORDE_BOOK_ITEM_ID.equals(serverToolsItem)
             || DOOM_BOOK_ITEM_ID.equals(serverToolsItem)
             || FLAME_BOOK_ITEM_ID.equals(serverToolsItem)
+            || SILVER_BOOK_ITEM_ID.equals(serverToolsItem)
             || LIGHT_BOOK_ITEM_ID.equals(serverToolsItem)
             || FROST_BOOK_ITEM_ID.equals(serverToolsItem)
             || MORPH_BOOK_ITEM_ID.equals(serverToolsItem)
@@ -5300,6 +5586,15 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         if (FLAME_BOOK_ITEM_ID.equals(snapshot.toolsItemId)) {
             return "packet.toolsItemId";
         }
+        if (SILVER_BOOK_ITEM_ID.equals(snapshot.itemInHandId)) {
+            return "packet.itemInHandId";
+        }
+        if (SILVER_BOOK_ITEM_ID.equals(snapshot.utilityItemId)) {
+            return "packet.utilityItemId";
+        }
+        if (SILVER_BOOK_ITEM_ID.equals(snapshot.toolsItemId)) {
+            return "packet.toolsItemId";
+        }
         if (LIGHT_BOOK_ITEM_ID.equals(snapshot.itemInHandId)) {
             return "packet.itemInHandId";
         }
@@ -5351,7 +5646,7 @@ public final class SpellbookInputInterceptor implements PlayerPacketWatcher {
         boolean holdingBookNow,
         boolean allow
     ) {
-        return "Packet=SyncInteractionChains(id=290)"
+        return "Event=NativeSpellInteraction"
             + " cancelled=" + cancelled
             + " allow=" + allow
             + " holdingSpellbook=" + holdingBookNow

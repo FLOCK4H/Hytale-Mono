@@ -8,8 +8,8 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.protocol.AnimationSlot;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.asset.type.item.config.ItemDrop;
@@ -35,16 +35,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Drops configurable loot from Kudu Rune Knights on death.
- */
+
+
+
 public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
 
     private static final String DEFAULT_ROLE_NAME = RuneKnightSpawnerSystem.DEFAULT_ROLE_NAME;
-    private static final String KUDU_BOOTS_ITEM_ID = "Kudu_Boots";
-    private static final String FROST_BOOK_ITEM_ID = "Book_Frost_Texture";
-    private static final String ARCANE_CRYSTAL_ITEM_ID = "Ingredient_Crystal_Arcane";
-    private static final String ARCANE_MATTER_ITEM_ID = "Arcane_Matter";
+    private static final String FROST_BOOK_ITEM_ID = "Axo_Frost_Book";
+    private static final String ARCANE_CRYSTAL_ITEM_ID = "Axo_Arcane_Crystal_Shards";
+    private static final String ARCANE_MATTER_ITEM_ID = "Axo_Arcane_Matter";
     private static final String CLOUD_OR_BOUNCE_DROP_LIST_ID = "Drop_AxoTales_Cloud_Or_Bounce";
     private static final int ARCANE_CRYSTAL_DROP_MIN = 1;
     private static final int ARCANE_CRYSTAL_DROP_MAX = 2;
@@ -111,14 +110,6 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                 ? config.runeKnight.roleName
                 : DEFAULT_ROLE_NAME;
 
-            int kuduChancePercentRaw = config != null
-                && config.runeKnight != null
-                && config.runeKnight.loot != null
-                ? config.runeKnight.loot.kuduBootsDropChancePercent
-                : 0;
-            final int kuduChancePercent = Math.max(0, Math.min(100, kuduChancePercentRaw));
-            final double kuduChance = kuduChancePercent / 100.0;
-
             int frostChancePercentRaw = config != null
                 && config.runeKnight != null
                 && config.runeKnight.loot != null
@@ -159,7 +150,7 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                         } catch (Throwable ignored) {
                             continue;
                         }
-                        if (npcRoleName == null || !npcRoleName.equals(roleName)) {
+                        if (!EncounterTuning.knightRole(npcRoleName, roleName)) {
                             continue;
                         }
 
@@ -173,7 +164,7 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                         try {
                             death = store.getComponent(npcRef, DeathComponent.getComponentType());
                         } catch (Throwable ignored) {
-                            // Best effort.
+
                         }
 
                         EntityStatMap stats = chunk.getComponent(i, EntityStatMap.getComponentType());
@@ -205,9 +196,6 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                                     + " health.current=" + healthCurrent
                                     + " health.max=" + healthMax
                                     + " health.min=" + healthMin
-                                    + " kudu.itemId=" + KUDU_BOOTS_ITEM_ID
-                                    + " kudu.chancePercent=" + kuduChancePercent
-                                    + " kudu.drop=false"
                                     + " frost.itemId=" + FROST_BOOK_ITEM_ID
                                     + " frost.chancePercent=" + frostChancePercent
                                     + " frost.drop=false"
@@ -226,8 +214,6 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                             continue;
                         }
 
-                        double kuduRoll = ThreadLocalRandom.current().nextDouble();
-                        boolean kuduDrop = kuduRoll < kuduChance;
                         double frostRoll = ThreadLocalRandom.current().nextDouble();
                         boolean frostDrop = frostRoll < frostChance;
                         double platformBlockRoll = ThreadLocalRandom.current().nextDouble();
@@ -242,8 +228,6 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                                 healthCurrent,
                                 healthMax,
                                 healthMin,
-                                kuduRoll,
-                                kuduDrop,
                                 frostRoll,
                                 frostDrop,
                                 platformBlockRoll,
@@ -270,11 +254,6 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                     drop.position
                 );
 
-                int kuduSpawned = 0;
-                if (drop.kuduDrop) {
-                    kuduSpawned = spawnItemDrop(store, new ItemStack(KUDU_BOOTS_ITEM_ID, 1), drop.position);
-                }
-
                 int frostSpawned = 0;
                 if (drop.frostDrop) {
                     frostSpawned = spawnItemDrop(store, new ItemStack(FROST_BOOK_ITEM_ID, 1), drop.position);
@@ -297,11 +276,6 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                         + " health.current=" + drop.healthCurrent
                         + " health.max=" + drop.healthMax
                         + " health.min=" + drop.healthMin
-                        + " kudu.itemId=" + KUDU_BOOTS_ITEM_ID
-                        + " kudu.chancePercent=" + kuduChancePercent
-                        + " kudu.roll=" + String.format(java.util.Locale.ROOT, "%.4f", drop.kuduRoll)
-                        + " kudu.drop=" + drop.kuduDrop
-                        + " kudu.spawned=" + kuduSpawned
                         + " frost.itemId=" + FROST_BOOK_ITEM_ID
                         + " frost.chancePercent=" + frostChancePercent
                         + " frost.roll=" + String.format(java.util.Locale.ROOT, "%.4f", drop.frostRoll)
@@ -352,17 +326,28 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
                 continue;
             }
 
-            removeAtNanosByUuid.remove(uuid);
-
             Ref<EntityStore> ref = external.getRefFromUUID(uuid);
             if (ref == null || !ref.isValid()) {
+                removeAtNanosByUuid.remove(uuid);
                 continue;
             }
 
             try {
+
+
+
+                var npc=store.getComponent(ref,NPCEntity.getComponentType());
+                var role=npc!=null?npc.getRole():null;
+                if(role!=null && !role.hasDroppedDeathItems()) {
+                    debug.traceFileOnly((PlayerRef)null,"RuneKnightLoot event=corpseCleanup decision=defer reason=nativeLootPending npc.uuid="
+                        +uuid+" native.dropListId="+role.getDropListId()+" native.deathItemsDropped=false world="+world.getName());
+                    removeAtNanosByUuid.put(uuid,nowNanos+500_000_000L);
+                    continue;
+                }
+                removeAtNanosByUuid.remove(uuid);
                 store.removeEntity(ref, com.hypixel.hytale.component.RemoveReason.REMOVE);
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
         }
     }
@@ -458,7 +443,7 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
             store,
             stack,
             position,
-            Vector3f.ZERO,
+            new Rotation3f(),
             vx,
             DROP_VELOCITY_Y,
             vz
@@ -484,8 +469,6 @@ public final class RuneKnightLootSystem extends TickingSystem<EntityStore> {
         float healthCurrent,
         float healthMax,
         float healthMin,
-        double kuduRoll,
-        boolean kuduDrop,
         double frostRoll,
         boolean frostDrop,
         double platformBlockRoll,

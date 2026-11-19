@@ -1,0 +1,23 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.Book_Life_Texture.name",
+    "Description": "server.items.flock4h.Book_Life_Texture.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 1,
+  "Model": "Items/Books/Axo/Demon.blockymodel",
+  "Texture": "Items/Books/Book_Life_Texture.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Life_Book.png",
+  "PlayerAnimationsId": "AxoTales_Spellbook",
+  "ItemSoundSetId": "ISS_Weapons_Books",
+  "Tags": {
+    "Family": [
+      "AxoTalesSpellbook"
+    ]
+  },
+  "Interactions": {
+    "Secondary": "AxoLifeBook_Secondary"
+  },
+  "$AxoLegacyItem": "Axo_Book_Of_Life"
+}

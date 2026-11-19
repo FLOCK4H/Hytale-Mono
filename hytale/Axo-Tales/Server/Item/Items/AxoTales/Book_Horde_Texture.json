@@ -3,45 +3,22 @@
     "Name": "server.items.flock4h.axos_horde_book.name",
     "Description": "server.items.flock4h.axos_horde_book.description"
   },
-  "Categories": [
-    "Items.Recipes"
-  ],
-  "Quality": "Epic",
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
   "ItemLevel": 1,
   "Icon": "Icons/ItemsGenerated/Horde_Spellbook.png",
   "Model": "Items/Books/Axo/Demon.blockymodel",
   "Texture": "Items/Books/Book_Horde_Texture.png",
-  "Recipe": {
-    "Input": [
-      {
-        "ItemId": "Ingredient_Crystal_Arcane",
-        "Quantity": 2
-      },
-      {
-        "ItemId": "Arcane_Matter",
-        "Quantity": 2
-      },
-      {
-        "ItemId": "Furniture_Feran_Candle",
-        "Quantity": 3
-      }
-    ],
-    "BenchRequirement": [
-      {
-        "Id": "Arcanebench",
-        "Type": "Crafting",
-        "Categories": [
-          "Arcane_AxoTales_Spellblades"
-        ]
-      }
-    ],
-    "KnowledgeRequired": false,
-    "TimeSeconds": 3
-  },
   "Interactions": {
     "Secondary": "AxoHordeBook_Secondary"
   },
   "PlayerAnimationsId": "AxoTales_Spellbook",
   "ItemSoundSetId": "ISS_Weapons_Books",
-  "MaxStack": 1
+  "MaxStack": 1,
+  "Tags": {
+    "Family": [
+      "AxoTalesSpellbook"
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Horde_Book"
 }

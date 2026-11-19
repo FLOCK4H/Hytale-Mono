@@ -2,7 +2,7 @@
 
 ## The world will not open
 
-Use Hytale **0.7.6** and the same AxoTales build on the server and client. Keep exactly one AxoTales JAR in `UserData/Mods`, close Hytale before replacing it, then restart. Avoid duplicate copies in individual save folders. Keep a world backup and preserve your saves and configuration.
+Use Hytale **0.7.7** and the same AxoTales build on the server and client. Keep exactly one AxoTales JAR in `UserData/Mods`, close Hytale before replacing it, then restart. Avoid duplicate copies in individual save folders. Keep a world backup and preserve your saves and configuration.
 
 If joining still fails, save the latest client and server logs and check the [mod compatibility guide](compatibility.md). Include the first asset or UI error when reporting the issue.
 
@@ -14,11 +14,11 @@ Bloody Book requires a living target within eight blocks and uninterrupted aim f
 
 ## Extra jumps are unavailable
 
-Equip Sa'r Boots or Ancient Boots in the legs slot. Jump, release Jump, then press it again while airborne. Holding Jump does not request another jump. Landing restores the allowance. A complete Ancient set adds one more air jump.
+Equip Sa'r Boots or Ancient Boots in the legs slot. Jump, release Jump, then press it again while airborne. Holding Jump down will not trigger an extra jump. Landing restores your air jumps. A complete Ancient set adds one more air jump.
 
 ## Concealment and invisibility
 
-The full **Arcane Veil set** limits native creature detection to five blocks; it does not hide you from other players. The **Invisibility Cloak** hides the character and equipment from players and prevents native creatures from selecting you as a target. Equipping a single robe piece does not grant the full Veil set bonus.
+The full **Arcane Veil set** limits native creature detection to five blocks; it does not hide you from other players. The **Invisibility Cloak** hides the character and equipment from players and prevents native creatures from selecting you as a target. Equipping a single robe piece does not grant the full Veil set bonus. The Evanesco superskill hides you while both hands are empty; carrying an item in either hand reveals you.
 
 ## Resources or creatures are hard to find
 

@@ -1,0 +1,16 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Blood_Droplet.name",
+    "Description": "server.items.flock4h.AxoTales_Blood_Droplet.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Quality": "Uncommon",
+  "MaxStack": 1,
+  "Model": "Items/AxoTales/BloodMagic/Blood.blockymodel",
+  "Texture": "Items/AxoTales/BloodMagic/Assay_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Blood_Droplet.png",
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Gems"
+}

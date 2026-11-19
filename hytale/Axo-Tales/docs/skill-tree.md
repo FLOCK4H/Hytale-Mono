@@ -1,18 +1,18 @@
 # Runes and the Skill Tree
 
-Craft a **Skill Tree Seed** at the **Arcanebench**, in **Spellblades**, using
+Craft a **Skill Tree Seed** at **Axo's Workbench**, in **Items**, using
 **2 Life Essence and 1 Purple Orchid**. Plant it in open ground with room for a
-large tree. It passes through five growth stages and matures after **15 real
+large tree with blue leaves and a twisted wooden trunk. The seed is a brown pod with a purple crystal. It passes through five growth stages and matures after **15 real
 minutes**. Its saved growth clock continues while the area is unloaded.
 
 Interact with the fully grown trunk to open **Arbor Arcanum**. Select a skill to
-see its gifts and prerequisite, then choose **Learn skill**. Close or Escape
-returns to the world. Breaking the tree returns its seed; planting it again
+see its effects and prerequisite, then choose **Learn skill**. Use **Close**, **F**, **Tab** or **Escape** to return to the world. Breaking the tree returns its seed; planting it again
 starts a new growth cycle. Your learned skills remain yours.
 
-The lower-left bonus summary shows every skill category with an icon, its total
-percentage or amount, and the appropriate units. Locked special gifts are marked
-until learned. Health, stamina, regeneration and reach bonuses add together.
+The panel at the bottom shows your total bonus in each skill category, with an
+icon and its percentage or amount. Special skills stay marked as locked until
+you learn them. Health, stamina, regeneration and reach bonuses add together.
+Learned paths turn gold. Select a skill to see its effects, prerequisite and rune cost.
 
 ## Collecting runes
 
@@ -34,9 +34,9 @@ saves, reconnects, death and travel between dimensions of the same save.
 
 Every value below is an **additional bonus**. For example, Vis and Acies together
 give **+7.5% attack damage**. You must learn the preceding skill on a branch;
-having enough currency alone cannot skip it. The whole tree costs **220 runes**.
+having enough currency alone cannot skip it. The ordinary branches cost **220 runes** in total.
 
-| Skill | Cost | Requires | Added gifts |
+| Skill | Cost | Requires | Bonuses |
 | --- | ---: | --- | --- |
 | First steps | Free | Automatically learned | +2 mana every 5 seconds |
 | Vis | 5 | First steps | +2.5% attack damage |
@@ -61,6 +61,26 @@ Full attack, defense and health branches each add **37.5%**. Full movement adds
 branch adds **25 flat health** and regenerates **4 health every 2 seconds**.
 Projectile resistance totals **35%** and applies in addition to ordinary defense.
 Equipment and other native bonuses continue to compose with learned skills.
+
+## Superskills
+
+Open the **Superskills** tab to inspect **Ferox**. It costs **100 runes** and can
+be learned without completing the ordinary branches.
+
+* **Twice the natural creature population** in the world you are in, including
+  worlds you enter later. Native spawning fills the higher population over time.
+* **50% more damage dealt**, on top of your other damage bonuses.
+* **Another 25% maximum health**, including health from your equipment and skills.
+
+The population increase is shared by the world and does not multiply again when
+another player with Ferox joins. It follows you when you travel; a world returns
+to its normal spawning target when no Ferox owner remains there. Learning it
+does not refill your current health.
+
+**Evanesco** is the second superskill, also costing **100 runes**. While both
+hands are empty, your character and armor become invisible to other players
+and creatures cannot target you. Holding an item in either hand reveals you.
+The third superskill is not available yet.
 
 ## Lazarus status
 

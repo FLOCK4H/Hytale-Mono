@@ -1,0 +1,62 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemAnimationId": "Drill"
+  },
+  "RunTime": 0.1,
+  "Next": {
+    "Type": "Parallel",
+    "Interactions": [
+      {
+        "Interactions": [
+          {
+            "Type": "ApplyEffect",
+            "EffectId": "Drill_Spin_Source"
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "Simple",
+            "$Comment": "Block break delay",
+            "RunTime": 0.05,
+            "Next": "Drill_Block_Break"
+          }
+        ]
+      },
+      {
+        "Interactions": [
+          {
+            "Type": "AxoTales_SkillSelector",
+            "$Comment": "Length of Combat",
+            "RunTime": 0.05,
+            "Selector": {
+              "Id": "AxoTales_MeleeStab",
+              "TestLineOfSight": true,
+              "ExtendTop": 0.5,
+              "ExtendLeft": 0.5,
+              "ExtendRight": 0.5,
+              "ExtendBottom": 0.5,
+              "StartDistance": 0.5,
+              "EndDistance": 2.5
+            },
+            "HitEntity": {
+              "Interactions": [
+                {
+                  "Type": "Replace",
+                  "DefaultValue": {
+                    "Interactions": [
+                      "Drill_Mine_Damage"
+                    ]
+                  },
+                  "Var": "Drill_Mine_Damage"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

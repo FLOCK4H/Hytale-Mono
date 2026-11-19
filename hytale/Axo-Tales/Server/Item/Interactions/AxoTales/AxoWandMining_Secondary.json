@@ -1,0 +1,34 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "ResetCooldown",
+      "Cooldown": {
+        "Cooldown": 0.6
+      }
+    },
+    {
+      "Type": "Charging",
+      "AllowIndefiniteHold": true,
+      "DisplayProgress": true,
+      "Effects": {
+        "ItemAnimationId": "CastMining",
+        "ClearAnimationOnFinish": true
+      },
+      "Next": {
+        "0": "AxoWandMining_Cast",
+        "1": "AxoWandMining_Cast",
+        "2": "AxoWandMining_Cast",
+        "3": "AxoWandMining_Cast",
+        "4": "AxoWandMining_Cast",
+        "5": "AxoWandMining_Cast"
+      },
+      "Failed": {
+        "Type": "Simple",
+        "Effects": {
+          "ClearAnimationOnFinish": true
+        }
+      }
+    }
+  ]
+}

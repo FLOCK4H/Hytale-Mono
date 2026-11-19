@@ -1,0 +1,23 @@
+{
+  "Model": "NPC/AxoTales/Bestiary/Vesperwraith/Echo.blockymodel",
+  "Texture": "NPC/AxoTales/Bestiary/Vesperwraith/Atlas.png",
+  "HitBox": {
+    "Min": {
+      "X": -0.08,
+      "Y": -0.08,
+      "Z": -0.08
+    },
+    "Max": {
+      "X": 0.08,
+      "Y": 0.08,
+      "Z": 0.08
+    }
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Vesperwraith_Echo",
+      "Scale": 0.18,
+      "TargetNodeName": "ScreamCore"
+    }
+  ]
+}

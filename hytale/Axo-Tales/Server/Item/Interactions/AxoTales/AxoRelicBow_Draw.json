@@ -1,0 +1,32 @@
+{
+  "Type": "DurabilityCondition",
+  "Threshold": 0,
+  "Operator": "GreaterThan",
+  "Next": {
+    "Type": "StatsCondition",
+    "Costs": {
+      "SignatureCharges": 1
+    },
+    "Next": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": -10
+      },
+      "Next": {
+        "Type": "Replace",
+        "Var": "Signature_Volley_Charge",
+        "DefaultValue": {
+          "Interactions": [
+            "Weapon_Shortbow_Signature_Volley_Charge"
+          ]
+        }
+      }
+    },
+    "Failed": {
+      "Type": "AxoTales_Relic",
+      "Mode": "draw",
+      "Next": "AxoRelicBow_Charge"
+    }
+  }
+}

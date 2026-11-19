@@ -1,0 +1,27 @@
+{
+  "Model": "Items/AxoTales/AncientEndgame/Blue_Fireball.blockymodel",
+  "Texture": "Items/AxoTales/AncientEndgame/Atlas.png",
+  "HitBox": {
+    "Min": {
+      "X": -0.4,
+      "Y": -0.4,
+      "Z": -0.4
+    },
+    "Max": {
+      "X": 0.4,
+      "Y": 0.4,
+      "Z": 0.4
+    }
+  },
+  "MinScale": 1.2,
+  "MaxScale": 1.2,
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Ancient_Fireball_Trail",
+      "TargetNodeName": "AncientFireball"
+    }
+  ],
+  "Light": {
+    "Color": "#8bdcff"
+  }
+}

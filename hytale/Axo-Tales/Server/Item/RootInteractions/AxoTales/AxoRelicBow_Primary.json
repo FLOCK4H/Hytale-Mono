@@ -1,0 +1,11 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    "AxoRelicBow_Draw"
+  ],
+  "Tags": {
+    "Attack": [
+      "Ranged"
+    ]
+  }
+}

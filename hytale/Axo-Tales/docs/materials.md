@@ -1,6 +1,6 @@
 # Agretis, Revel and Aequalis
 
-The three ores have thick, broken mineral clusters on all six faces of their native stone, slate and basalt hosts, with matching loose clusters and small colored particles. Agretis is sapphire blue, Revel is violet and Aequalis is amber gold. Loose ore uses the same hand pose as native Iron and Gold. Mine their deposits, then smelt **one raw ore into one bar** at a **Furnace** in 14 seconds.
+Agretis is blue, Revel is violet and Aequalis is amber gold. Their mineral clusters appear in stone, slate and basalt, with matching loose ore and particles. Mine their deposits, then smelt **one raw ore into one bar** at a **Furnace** in 14 seconds.
 
 | Ore | Where to find it | Rarity |
 | --- | --- | --- |
@@ -12,9 +12,9 @@ These veins use the native ores' density, size and height rules, with separate p
 
 ![Agretis, Revel and Aequalis ore models](assets/images/blocks/frontier-ores.png)
 
-## New equipment costs
+## Equipment costs {#new-equipment-costs}
 
-These bar costs are included in each item's recipe. Ordinary crafted armor, weapons and spellbooks require **one Evil Core** per piece; Ancient endgame equipment requires the larger Core quantities in [the complete recipes](crafting.md#ancient-armor).
+These bar costs are included in each item's recipe. Most crafted armor, weapons and spellbooks require **one Evil Core** per piece; Ancient endgame equipment requires the larger Core quantities in [the complete recipes](crafting.md#ancient-armor).
 
 | Item | Bar ingredients |
 | --- | --- |
@@ -41,14 +41,14 @@ These bar costs are included in each item's recipe. Ordinary crafted armor, weap
 | Bloodfang | 16 Revel + 12 Aequalis |
 | Doom Book | 4 Aequalis |
 
-Agretis supports general equipment, Revel supports frost magic, and Aequalis supports advanced arcane equipment. Souls retain their existing Evil Core, Azure Kelp and special-item recipes. Current items and their saved upgrades remain usable.
+Agretis is used in general equipment, Revel in frost magic and Aequalis in advanced equipment. Soul recipes still use Evil Cores, Azure Kelp and a special ingredient. Existing items and saved upgrades remain usable.
 
 ## Ores and bars
 
-Bars have smooth cast-metal faces and sharp bevels. Loose ores and deposits have matching fracture shapes and distinct colors. Their surrounding host rock uses the native stone material.
+Bars are smooth and bevelled. Loose ores match the shape and color of the minerals in their deposits.
 
 ## Spoiled Heart
 
-**Legendary**, guaranteed **one per Dreadmaw kill**. Three, together with 55 Arcane Matter, 12 Arcane Crystal Shards and 12 Revel Bars, craft a single-use [Arcane Oraculum](items/scout-gear.md#arcane-oraculum) at Arcanist's Workbench → Spellblades. It has no crafting recipe.
+**Legendary**, guaranteed **one per Dreadmaw kill**. Three, together with 55 Arcane Matter, 12 Arcane Crystal Shards and 12 Revel Bars, craft a single-use [Arcane Oraculum](items/scout-gear.md#arcane-oraculum) at Axo's Workbench → Armory. It has no crafting recipe.
 
 ![Loose raw ore clusters](assets/images/blocks/frontier-raw-ores.png)

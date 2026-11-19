@@ -1,0 +1,10 @@
+{
+  "RequireNewClick": true,
+  "ClickQueuingTimeout": 0.09375,
+  "Cooldown": {
+    "Cooldown": 0.106875
+  },
+  "Interactions": [
+    "AxoTempoDaggers_Weapon_Daggers_Primary"
+  ]
+}

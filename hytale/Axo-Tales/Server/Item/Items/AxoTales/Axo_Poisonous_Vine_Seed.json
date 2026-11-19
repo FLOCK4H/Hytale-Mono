@@ -1,0 +1,60 @@
+{
+  "Parent": "Template_Seeds",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.poisonous_vine_seed.name",
+    "Description": "server.items.flock4h.poisonous_vine_seed.description"
+  },
+  "Quality": "Rare",
+  "Model": "Items/AxoTales/Workshop/Vine_Seed.blockymodel",
+  "Texture": "Items/AxoTales/Workshop/Vine_Seed_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/Axo_Poisonous_Vine_Seed.png",
+  "InteractionVars": {
+    "SeedId": {
+      "Interactions": [
+        {
+          "Parent": "Seed_Place",
+          "BlockTypeToPlace": "Axo_Poisonous_Vine"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Sac_Venom",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Plant_Flower_Orchid_Purple",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Items"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "IconProperties": {
+    "Scale": 0.77,
+    "Translation": [
+      2.5,
+      -11
+    ],
+    "Rotation": [
+      0,
+      30,
+      15
+    ]
+  }
+}

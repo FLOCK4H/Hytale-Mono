@@ -1,0 +1,25 @@
+package org.example.plugin;
+
+import com.hypixel.hytale.codec.*;
+import com.hypixel.hytale.codec.builder.BuilderCodec;
+import com.hypixel.hytale.protocol.*;
+import com.hypixel.hytale.server.core.entity.InteractionContext;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
+import java.util.function.BiPredicate;
+
+
+public final class AncientGearInteraction extends SimpleInstantInteraction {
+    static final String TYPE="AxoTales_AncientGear";
+    private String mode="gauntlets";
+    private final BiPredicate<String,InteractionContext> handler;
+    private AncientGearInteraction(BiPredicate<String,InteractionContext> handler){this.handler=handler;}
+    static BuilderCodec<AncientGearInteraction> codec(BiPredicate<String,InteractionContext> handler){
+        return BuilderCodec.builder(AncientGearInteraction.class,()->new AncientGearInteraction(handler),SimpleInstantInteraction.CODEC)
+            .append(new KeyedCodec<>("Mode",Codec.STRING),(v,x)->v.mode=x,v->v.mode).add().build();
+    }
+    @Override public WaitForDataFrom getWaitForDataFrom(){return WaitForDataFrom.Server;}
+    @Override public boolean needsRemoteSync(){return true;}
+    @Override protected void firstRun(InteractionType type,InteractionContext context,CooldownHandler cooldown){if(!handler.test(mode,context))context.getState().state=InteractionState.Failed;}
+    @Override protected void simulateFirstRun(InteractionType type,InteractionContext context,CooldownHandler cooldown){}
+}

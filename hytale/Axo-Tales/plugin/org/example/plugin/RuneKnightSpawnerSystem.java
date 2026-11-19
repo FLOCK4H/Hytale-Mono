@@ -7,20 +7,20 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.util.ChunkUtil;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.modules.time.WorldTimeResource;
 import com.hypixel.hytale.server.core.asset.type.attitude.Attitude;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.NPCPlugin;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.role.Role;
 import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,15 +30,15 @@ import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BiConsumer;
 
-/**
- * Night-time spawning and lifecycle management for the Kudu Rune Knight NPC role.
- *
- * <p>This is intentionally plugin-driven so it can be tuned via {@code server-config.json} without editing worldgen
- * graphs, and to keep behavior reproducible via the persistent debug log.</p>
- */
+
+
+
+
+
+
 public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
 
-    public static final String DEFAULT_ROLE_NAME = "Kudu_Rune_Knight";
+    public static final String DEFAULT_ROLE_NAME = "Cursed_Knight";
 
     private static final int CHUNK_WIDTH_BLOCKS = ChunkUtil.SIZE;
     private static final int MAX_Y = ChunkUtil.HEIGHT_MINUS_1;
@@ -52,7 +52,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
     private final AxoTalesServerConfig config;
     private final RuneKnightSpawnState spawnState;
 
-    private volatile long nextSpawnAtNanos = 0L;
+    private final java.util.Map<Store<EntityStore>, Long> nextSpawnAtNanos = java.util.Collections.synchronizedMap(new java.util.WeakHashMap<>());
     private volatile long nextSummaryDebugAtNanos = 0L;
 
     public RuneKnightSpawnerSystem(
@@ -128,10 +128,10 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
                 config.runeKnight.spawn != null ? config.runeKnight.spawn.intervalSeconds : 60.0,
                 10.0
             );
-            if (nowNanos < nextSpawnAtNanos) {
+            if (nowNanos < nextSpawnAtNanos.getOrDefault(store, 0L)) {
                 return;
             }
-            nextSpawnAtNanos = nowNanos + intervalNanos;
+            nextSpawnAtNanos.put(store, nowNanos + intervalNanos);
 
             List<PlayerCandidate> players = snapshotPlayers(store);
             if (players.isEmpty()) {
@@ -271,7 +271,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
             }
         }
 
-        WorldChunk chunk = getChunkForSpawn(world, x, z);
+        WorldBlocks.Column chunk = getChunkForSpawn(world, x, z);
         if (chunk == null) {
             return SpawnAttemptResult.fail("chunkNotLoaded");
         }
@@ -288,7 +288,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
         }
 
         Vector3d spawnPosition = new Vector3d(x + 0.5, y, z + 0.5);
-        Vector3f rotation = Vector3f.ZERO;
+        Rotation3f rotation = new Rotation3f();
 
         it.unimi.dsi.fastutil.Pair<Ref<EntityStore>, ?> spawned;
         try {
@@ -316,7 +316,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
             try {
                 store.removeEntity(npcRef, com.hypixel.hytale.component.RemoveReason.REMOVE);
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
             return SpawnAttemptResult.fail("npcComponentMissing");
         }
@@ -327,7 +327,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
             try {
                 store.removeEntity(npcRef, com.hypixel.hytale.component.RemoveReason.REMOVE);
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
             return SpawnAttemptResult.fail("uuidMissing");
         }
@@ -338,7 +338,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
         );
         long expiresAtNanos = lifetimeNanos > 0 ? nowNanos + lifetimeNanos : 0L;
         spawnState.trackSpawn(world, uuid, nowNanos, expiresAtNanos);
-        tryAggroOnSpawn(store, npc, uuid, anchor.playerUuid, roleName, world);
+        tryAggroOnSpawn(store, npc, npcRef, uuid, anchor.playerUuid, roleName, world);
 
         debug.traceFileOnly(
             null,
@@ -361,6 +361,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
     private void tryAggroOnSpawn(
         @Nonnull Store<EntityStore> store,
         @Nonnull NPCEntity npc,
+        @Nonnull Ref<EntityStore> npcRef,
         @Nonnull UUID knightUuid,
         @Nonnull UUID anchorPlayerUuid,
         @Nonnull String roleName,
@@ -376,22 +377,22 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
         }
 
         Role role = npc.getRole();
-        if (role == null || role.getMarkedEntitySupport() == null || role.getWorldSupport() == null) {
+        if (role == null || MarkedEntitySupport.get(npcRef, store) == null || WorldSupport.get(npcRef, store) == null) {
             return;
         }
 
         try {
-            role.getWorldSupport().overrideAttitude(playerEntityRef, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
+            WorldSupport.get(npcRef, store).overrideAttitude(playerEntityRef, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         try {
-            role.setMarkedTarget(MarkedEntitySupport.DEFAULT_TARGET_SLOT, playerEntityRef);
-            role.getWorldSupport().requestNewPath();
-            role.notifySensorMatch();
+            role.setMarkedTarget(npcRef, store, MarkedEntitySupport.DEFAULT_TARGET_SLOT, playerEntityRef);
+            WorldSupport.get(npcRef, store).requestNewPath();
+            role.acquireExecutionSupport(npcRef, store).notifySensorMatch();
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         debug.traceFileOnly(
@@ -429,16 +430,16 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
         return out;
     }
 
-    private @Nullable WorldChunk getChunkForSpawn(@Nonnull World world, int x, int z) {
+    private @Nullable WorldBlocks.Column getChunkForSpawn(@Nonnull World world, int x, int z) {
         long chunkIndex = ChunkUtil.indexChunkFromBlock(x, z);
-        WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
         if (chunk == null && config.runeKnight.spawn != null && config.runeKnight.spawn.allowInMemoryChunks) {
-            chunk = world.getChunkIfInMemory(chunkIndex);
+            chunk = WorldBlocks.loaded(world, chunkIndex);
         }
         return chunk;
     }
 
-    private static int findAirColumn(@Nonnull WorldChunk chunk, int x, int y, int z) {
+    private static int findAirColumn(@Nonnull WorldBlocks.Column chunk, int x, int y, int z) {
         int base = clampY(y);
         for (int dy = 0; dy <= 4; dy++) {
             int tryY = clampY(base + dy);
@@ -459,7 +460,7 @@ public final class RuneKnightSpawnerSystem extends TickingSystem<EntityStore> {
         return -1;
     }
 
-    private static boolean isAir(@Nonnull WorldChunk chunk, int x, int y, int z) {
+    private static boolean isAir(@Nonnull WorldBlocks.Column chunk, int x, int y, int z) {
         try {
             var type = chunk.getBlockType(x, y, z);
             return type == null

@@ -18,13 +18,13 @@
   "DeadTime": 0.2,
   "DeathEffectsOnHit": true,
   "HitParticles": {
-    "SystemId": "Impact_Ice"
+    "SystemId": "AxoTales_Ancient_Impact"
   },
   "MissParticles": {
-    "SystemId": "Impact_Ice"
+    "SystemId": "AxoTales_Ancient_Impact"
   },
   "DeathParticles": {
-    "SystemId": "Impact_Ice"
+    "SystemId": "AxoTales_Ancient_Impact"
   },
   "HitSoundEventId": "SFX_Longsword_Special_Impact",
   "MissSoundEventId": "SFX_Arrow_Frost_Miss",

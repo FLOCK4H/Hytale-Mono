@@ -1,0 +1,10 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.3333333333333333,
+  "Effects": {
+    "ItemPlayerAnimationsId": "AxoTales_Vesperwraith",
+    "ItemAnimationId": "Cry",
+    "WorldSoundEventId": "SFX_Bat_Alerted"
+  },
+  "Next": "AxoVesperwraith_Cry_Projectile"
+}

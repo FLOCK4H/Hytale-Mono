@@ -1,0 +1,23 @@
+{
+  "Model": "NPC/AxoTales/Tom_Tom/Bomb.blockymodel",
+  "Texture": "NPC/AxoTales/Tom_Tom/Atlas.png",
+  "HitBox": {
+    "Min": {
+      "X": -0.16,
+      "Y": -0.16,
+      "Z": -0.16
+    },
+    "Max": {
+      "X": 0.16,
+      "Y": 0.16,
+      "Z": 0.16
+    }
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_TomTom_Fuse",
+      "TargetNodeName": "BombSpark",
+      "Scale": 0.5
+    }
+  ]
+}

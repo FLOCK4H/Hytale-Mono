@@ -1,0 +1,36 @@
+{
+  "Parent": "Template_Seeds",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.crystal_seed.name",
+    "Description": "server.items.flock4h.crystal_seed.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 10,
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Crystal_Seed.png",
+  "Model": "Resources/Crystals/AxoTales_Arcane_Small.blockymodel",
+  "Texture": "Resources/Crystals/Crystal_Big_Textures/Arcane_Crystal_Texture.png",
+  "InteractionVars": {
+    "SeedId": {
+      "Interactions": [
+        {
+          "Parent": "Seed_Place",
+          "BlockTypeToPlace": "Axo_Arcane_Crystal_Crop"
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.77,
+    "Translation": [
+      2.5,
+      -11
+    ],
+    "Rotation": [
+      0,
+      30,
+      15
+    ]
+  },
+  "Categories": [],
+  "$AxoLegacyItem": "Axo_Arcane_Crystal_Seed"
+}

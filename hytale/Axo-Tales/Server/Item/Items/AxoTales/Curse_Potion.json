@@ -3,39 +3,10 @@
     "Name": "server.items.flock4h.curse_potion.name",
     "Description": "server.items.flock4h.curse_potion.description"
   },
-  "Categories": [
-    "Items.Weapons"
-  ],
-  "Quality": "Rare",
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
   "ItemLevel": 1,
   "PlayerAnimationsId": "Item",
-  "Recipe": {
-    "Input": [
-      {
-        "ItemId": "Empty_Potion_Bottle",
-        "Quantity": 1
-      },
-      {
-        "ItemId": "Ingredient_Crystal_Arcane",
-        "Quantity": 2
-      },
-      {
-        "ItemId": "Ingredient_Fire_Essence",
-        "Quantity": 5
-      }
-    ],
-    "BenchRequirement": [
-      {
-        "Id": "Alchemybench",
-        "Type": "Crafting",
-        "Categories": [
-          "Alchemy_Bombs"
-        ]
-      }
-    ],
-    "KnowledgeRequired": false,
-    "TimeSeconds": 1
-  },
   "Interactions": {
     "Secondary": "Item_Throw"
   },
@@ -65,5 +36,6 @@
   "Light": {
     "Radius": 1,
     "Color": "#f22"
-  }
+  },
+  "$AxoLegacyItem": "Axo_Curse_Potion"
 }

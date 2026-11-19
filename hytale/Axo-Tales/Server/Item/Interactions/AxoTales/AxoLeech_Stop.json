@@ -1,0 +1,17 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "AxoTales_Input",
+      "Release": true,
+      "ServerAuthority": true
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0,
+      "Effects": {
+        "ClearAnimationOnFinish": true
+      }
+    }
+  ]
+}

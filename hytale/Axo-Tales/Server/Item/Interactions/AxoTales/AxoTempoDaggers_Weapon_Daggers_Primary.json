@@ -1,0 +1,22 @@
+{
+  "Type": "Charging",
+  "Rules": {
+    "InterruptedBy": [
+      "Secondary"
+    ]
+  },
+  "DisplayProgress": false,
+  "Next": {
+    "0": "AxoTempoDaggers_Weapon_Daggers_Primary_Chain",
+    "0.125": {
+      "Type": "Replace",
+      "Var": "Pounce_StaminaCondition",
+      "DefaultOk": true,
+      "DefaultValue": {
+        "Interactions": [
+          "AxoTempoDaggers_Weapon_Daggers_Primary_Pounce_StaminaCondition"
+        ]
+      }
+    }
+  }
+}

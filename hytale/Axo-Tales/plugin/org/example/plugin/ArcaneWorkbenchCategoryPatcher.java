@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Appends Axo Tales categories onto the currently loaded vanilla/current Arcane bench
- * instead of shipping a full Bench_Arcane override.
- */
+
+
+
+
 public final class ArcaneWorkbenchCategoryPatcher {
 
     private static final String ARCANE_BENCH_BLOCK_ID = "Bench_Arcane";

@@ -1,0 +1,11 @@
+{
+  "Duration": 1.1,
+  "OverlapBehavior": "Overwrite",
+  "RemovalBehavior": "Duration",
+  "Debuff": true,
+  "StatusEffectIcon": "Icons/ItemsGenerated/AxoTales_Bloody_Book.png",
+  "RawStatModifiers": {},
+  "StatModifiers": {},
+  "DamageResistance": {},
+  "OutgoingDamage": {}
+}

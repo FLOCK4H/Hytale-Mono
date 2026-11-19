@@ -1,0 +1,5 @@
+{
+  "Parent": "Poison_T1",
+  "Duration": 10,
+  "OverlapBehavior": "Overwrite"
+}

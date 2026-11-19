@@ -10,8 +10,8 @@ import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.protocol.AnimationSlot;
 import com.hypixel.hytale.protocol.ChangeVelocityType;
 import com.hypixel.hytale.server.core.asset.type.attitude.Attitude;
@@ -30,13 +30,13 @@ import com.hypixel.hytale.server.core.modules.physics.component.Velocity;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.ParticleUtil;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.util.TargetUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.role.Role;
 import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
 import com.hypixel.hytale.server.npc.role.support.StateSupport;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -52,18 +52,19 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BiConsumer;
 
-/**
- * Drives Kudu Adept behavior:
- * <ul>
- *   <li>Unbonded adepts are pacified and forced-friendly to players (no targeting).</li>
- *   <li>When an Arcane Crystal item drop is nearby, an adept can "pick it up" and become bonded to a player.</li>
- *   <li>Bonded adepts wander freely until their owner enters combat, then follow and fight the owner's target.</li>
- * </ul>
- */
+
+
+
+
+
+
+
+
+@SuppressWarnings("deprecation")
 public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
 
-    private static final String ARCANE_CRYSTAL_SHARD_ITEM_ID = "Ingredient_Crystal_Arcane";
-    private static final String ARCANE_CRYSTAL_BLOCK_ITEM_ID = "Rock_Crystal_Arcane_Large";
+    private static final String ARCANE_CRYSTAL_SHARD_ITEM_ID = "Axo_Arcane_Crystal_Shards";
+    private static final String ARCANE_CRYSTAL_BLOCK_ITEM_ID = "Axo_Arcane_Crystal";
     private static final String ADEPT_HELD_ITEM_ID = "Weapon_Spellbook_Fire";
     private static final String BOND_PARTICLE_SYSTEM_ID = "AxoTales_Kudu_Bond";
     private static final String BOND_FALLBACK_PARTICLE_SYSTEM_ID = "Hearts";
@@ -110,7 +111,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
 
     private final ConcurrentMap<UUID, Long> nextDebugAtNanosByAdept = new ConcurrentHashMap<>();
 
-    private volatile long nextTickAtNanos = 0L;
+    private final java.util.Map<Store<EntityStore>,Long> nextTickByStore=java.util.Collections.synchronizedMap(new java.util.WeakHashMap<>());
     private volatile long nextPickupSkipDebugAtNanos = 0L;
 
     public KuduAdeptBondSystem(
@@ -131,11 +132,11 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
         try {
             long nowNanos = System.nanoTime();
-            long next = nextTickAtNanos;
+            long next = nextTickByStore.getOrDefault(store,0L);
             if (next > 0 && nowNanos < next) {
                 return;
             }
-            nextTickAtNanos = nowNanos + TICK_INTERVAL_NANOS;
+            nextTickByStore.put(store,nowNanos + TICK_INTERVAL_NANOS);
 
             if (config == null || config.kuduAdept == null || !config.kuduAdept.enabled) {
                 return;
@@ -169,7 +170,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 return;
             }
 
-            // Cleanup: remove bonds for adepts that no longer exist (despawned/removed) so state doesn't grow forever.
+
             HashSet<UUID> aliveAdepts = new HashSet<>(adepts.size());
             for (AdeptSnapshot adept : adepts) {
                 if (adept != null && adept.uuid != null) {
@@ -181,18 +182,21 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                     continue;
                 }
                 UUID adeptUuid = bonded.adeptUuid();
-                if (adeptUuid != null && !aliveAdepts.contains(adeptUuid)) {
+                if (adeptUuid != null && !aliveAdepts.contains(adeptUuid) && external.getRefFromUUID(adeptUuid)!=null) {
                     bondState.removeAdept(adeptUuid);
                     nextDebugAtNanosByAdept.remove(adeptUuid);
                 }
             }
 
-            // Keep the adept's held book consistent for visuals (best effort).
+
             for (AdeptSnapshot adept : adepts) {
                 if (adept == null || adept.uuid == null || adept.ref == null || !adept.ref.isValid()) {
                     continue;
                 }
-                ensureAdeptHeldItem(store, nowNanos, roleName, adept);
+
+                var oldHotbar=InventoryComponentAccess.hotbar(store,adept.ref);
+                if(oldHotbar!=null && oldHotbar.getCapacity()>0){var oldBook=oldHotbar.getItemStack((short)0);if(!ItemStack.isEmpty(oldBook) && ADEPT_HELD_ITEM_ID.equals(oldBook.getItemId()))oldHotbar.setItemStackForSlot((short)0,ItemStack.EMPTY);}
+                updateRecruitmentNameplate(store,adept.ref,bondState.getByAdept(adept.uuid)!=null);
             }
 
             ArrayList<ItemDropSnapshot> crystalDrops = snapshotArcaneCrystalDrops(store);
@@ -200,7 +204,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 handleCrystalPickups(store, nowNanos, roleName, players, playersByUuid, adepts, crystalDrops);
             }
 
-            // Build owner -> bonded adepts mapping for this tick.
+
             HashMap<UUID, ArrayList<AdeptSnapshot>> bondedByOwner = new HashMap<>();
             for (AdeptSnapshot adept : adepts) {
                 if (adept == null || adept.uuid == null || adept.ref == null || !adept.ref.isValid()) {
@@ -213,7 +217,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 bondedByOwner.computeIfAbsent(bonded.ownerUuid(), ignored -> new ArrayList<>()).add(adept);
             }
 
-            // Pacify all unbonded adepts (never target players).
+
             for (AdeptSnapshot adept : adepts) {
                 if (adept == null || adept.uuid == null || adept.ref == null || !adept.ref.isValid()) {
                     continue;
@@ -224,7 +228,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 pacifyAdept(store, nowNanos, roleName, adept, players);
             }
 
-            // Drive bonded adepts to follow + fight for their owner.
+
             for (var entry : bondedByOwner.entrySet()) {
                 UUID ownerUuid = entry.getKey();
                 ArrayList<AdeptSnapshot> ownerAdepts = entry.getValue();
@@ -234,7 +238,6 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
 
                 PlayerSnapshot owner = playersByUuid.get(ownerUuid);
                 if (owner == null || owner.ref == null || !owner.ref.isValid() || owner.position == null || !owner.position.isFinite()) {
-                    bondState.clearOwnerTarget(ownerUuid);
                     for (AdeptSnapshot adept : ownerAdepts) {
                         if (adept == null || adept.uuid == null || adept.ref == null || !adept.ref.isValid()) {
                             continue;
@@ -247,10 +250,21 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 driveBondedAdepts(store, nowNanos, roleName, owner, ownerAdepts);
             }
 
-            suppressInheritedMageSummons(store, nowNanos, roleName, adepts);
+
         } catch (Throwable t) {
             errors.report((PlayerRef) null, "KuduAdeptBondSystem: tick failed.", t);
         }
+    }
+
+    static void updateRecruitmentNameplate(Store<EntityStore> store,Ref<EntityStore> ref,boolean bonded){
+        var type=com.hypixel.hytale.server.core.entity.nameplate.Nameplate.getComponentType();
+        var current=store.getComponent(ref,type);
+        String text=recruitmentNameplate(current==null?null:current.getText(),bonded);
+        if(current==null)store.putComponent(ref,type,new com.hypixel.hytale.server.core.entity.nameplate.Nameplate(text));
+        else if(!text.equals(current.getText()))current.setText(text);
+    }
+    static String recruitmentNameplate(String current,boolean bonded){
+        return "Elder Mage";
     }
 
     private void handleCrystalPickups(
@@ -289,32 +303,13 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 continue;
             }
 
-            KuduAdeptBondState.CrystalDropOwner dropOwner = bondState.consumeCrystalDropOwner(
-                itemId,
-                drop.position.x,
-                drop.position.y,
-                drop.position.z,
-                nowNanos,
-                CRYSTAL_DROP_OWNER_TIMEOUT_NANOS,
-                CRYSTAL_DROP_OWNER_MATCH_RADIUS_BLOCKS * CRYSTAL_DROP_OWNER_MATCH_RADIUS_BLOCKS
-            );
-            PlayerSnapshot owner = null;
-            String ownerSource = "nearestPlayerFallback";
-            if (dropOwner != null && dropOwner.ownerUuid() != null) {
-                owner = playersByUuid.get(dropOwner.ownerUuid());
-                ownerSource = owner != null ? "dropEvent" : "dropEventOwnerMissing";
+            var offer=MageCrystalOffer.offer(store,drop.ref);
+            PlayerSnapshot owner=offer==null?null:playersByUuid.get(offer.owner);
+            if(offer==null || owner==null || !offer.world.equals(owner.playerRef.getWorldUuid()) || System.currentTimeMillis()>offer.expires) {
+                debugPickupSkippedMaybe(nowNanos,null,roleName,"missingExactDropper",drop.position,nearest.uuid);continue;
             }
-            if (owner == null || owner.uuid == null) {
-                PlayerSnapshot nearestOwner = findNearestPlayer(players, drop.position, ownerRadiusSq);
-                if (nearestOwner == null || nearestOwner.uuid == null) {
-                    debugPickupSkippedMaybe(nowNanos, null, roleName, "missingOwner", drop.position, nearest.uuid);
-                    continue;
-                }
-                owner = nearestOwner;
-                if ("dropEventOwnerMissing".equals(ownerSource)) {
-                    ownerSource = "nearestPlayerAfterDropEventOwnerMissing";
-                }
-            }
+            String ownerSource="nativeDropNonce";
+            KuduAdeptBondState.CrystalDropOwner dropOwner=null;
 
             int quantityBefore = stack.getQuantity();
             int quantityAfter = Math.max(0, quantityBefore - 1);
@@ -324,13 +319,13 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                     store.removeEntity(drop.ref, RemoveReason.REMOVE);
                     removedEntity = true;
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
             } else {
                 try {
-                    itemComponent.setItemStack(stack.withQuantity(quantityAfter));
+                    itemComponent.setItemStack(stack.withQuantity(quantityAfter));itemComponent.setMergeRadius(0);
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
             }
 
@@ -395,7 +390,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             try {
                 persisted = store.getComponent(adept.ref, bondPersistedComponentType);
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
 
             KuduAdeptBondState.BondedAdept current = bondState.getByAdept(adept.uuid);
@@ -447,14 +442,16 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             existing = store.getComponent(adept.ref, bondPersistedComponentType);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         long persistedBondedAtEpochMillis = bondedAtEpochMillis > 0 ? bondedAtEpochMillis : nowEpochMillis();
+        if(existing!=null && existing.hasOwnerUuid() && !ownerUuid.equals(existing.getOwnerUuid()))return;
         if (existing != null && ownerUuid.equals(existing.getOwnerUuid())) {
             if (existing.getBondedAtEpochMillis() <= 0 && persistedBondedAtEpochMillis > 0) {
                 existing.setBondedAtEpochMillis(persistedBondedAtEpochMillis);
                 store.putComponent(adept.ref, bondPersistedComponentType, existing);
+                SoulSystem.dirty(store,adept.ref);
             }
             return;
         }
@@ -464,6 +461,8 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             bondPersistedComponentType,
             new KuduAdeptBondPersistedComponent(ownerUuid, persistedBondedAtEpochMillis)
         );
+        SoulSystem.dirty(store,adept.ref);
+        CompanionLoyalty.retain(store,adept.ref);
 
         long nextDebugAt = nextDebugAtNanosByAdept.getOrDefault(adept.uuid, 0L);
         if (nextDebugAt > nowNanos) {
@@ -566,80 +565,46 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             ParticleUtil.spawnParticleEffect(BOND_PARTICLE_SYSTEM_ID, position, store);
             spawned++;
         } catch (Throwable ignored) {
-            // Fall through to the vanilla fallback below.
+
         }
         try {
             ParticleUtil.spawnParticleEffect(BOND_FALLBACK_PARTICLE_SYSTEM_ID, position, store);
             spawned++;
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return spawned;
     }
 
-    private void pacifyAdept(
-        @Nonnull Store<EntityStore> store,
-        long nowNanos,
-        @Nonnull String roleName,
-        @Nonnull AdeptSnapshot adept,
-        @Nonnull List<PlayerSnapshot> players
-    ) {
-        NPCEntity npc = store.getComponent(adept.ref, NPCEntity.getComponentType());
-        if (npc == null) {
-            return;
-        }
-        Role role = npc.getRole();
-        if (role == null || role.getMarkedEntitySupport() == null || role.getWorldSupport() == null) {
-            return;
-        }
 
-        // Force-friendly to players so the template doesn't treat them as enemies.
-        try {
-            for (PlayerSnapshot player : players) {
-                if (player == null || player.ref == null || !player.ref.isValid() || player.position == null || !player.position.isFinite()) {
-                    continue;
-                }
-                if (adept.position != null && adept.position.isFinite()) {
-                    double d2 = distSq(adept.position, player.position);
-                    if (d2 > (FOLLOW_RADIUS_BLOCKS * FOLLOW_RADIUS_BLOCKS)) {
-                        continue;
-                    }
-                }
-                role.getWorldSupport().overrideAttitude(player.ref, Attitude.FRIENDLY, PACIFY_FRIENDLY_SECONDS);
+    private void pacifyAdept(Store<EntityStore> store,long now,String roleName,AdeptSnapshot adept,List<PlayerSnapshot> players) {
+        var target=nearestWild(store,adept.ref,adept.position,18);
+        setNativeTask(store,adept.ref,target,target==null?"Roam":"Combat.Attack");
+    }
+
+    static void setNativeTask(Store<EntityStore> store,Ref<EntityStore> ref,Ref<EntityStore> target,String desired) {
+        var npc=store.getComponent(ref,NPCEntity.getComponentType());if(npc==null || npc.getRole()==null)return;
+        var marked=MarkedEntitySupport.get(ref,store);var machine=StateSupport.get(ref,store);var world=WorldSupport.get(ref,store);
+        if(marked==null || machine==null || world==null)return;
+        boolean changed=!java.util.Objects.equals(marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT),target);
+        if(changed){if(target==null)marked.clearMarkedEntity(resolveDefaultTargetSlotIndex(marked));else marked.setMarkedEntity(MarkedEntitySupport.DEFAULT_TARGET_SLOT,target);}
+        String current=machine.getStateName();boolean same=desired.equals(current) || current!=null && current.startsWith(desired+".");
+        if(!same){int dot=desired.indexOf('.');machine.setState(ref,dot<0?desired:desired.substring(0,dot),dot<0?null:desired.substring(dot+1),store);changed=true;}
+        if(changed){npc.getRole().clearOnce(ref,store);world.requestNewPath();npc.getRole().acquireExecutionSupport(ref,store).notifySensorMatch();}
+    }
+
+    private Ref<EntityStore> nearestWild(Store<EntityStore> store,Ref<EntityStore> self,Vector3d centre,double range) {
+        var marked=MarkedEntitySupport.get(self,store);var previous=marked==null?null:marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
+        var before=previous!=null && previous.isValid()?store.getComponent(previous,TransformComponent.getComponentType()):null;
+        if(CompanionLoyalty.wildTarget(store,previous) && before!=null && before.getPosition().distanceSquared(centre)<=24*24)return previous;
+        var best=new java.util.concurrent.atomic.AtomicReference<Ref<EntityStore>>();double[] distance={range*range};
+        store.forEachChunk(Query.and(NPCEntity.getComponentType(),TransformComponent.getComponentType()),(chunk,buffer)->{
+            for(int i=0;i<chunk.size();i++){
+                var ref=chunk.getReferenceTo(i);if(ref.equals(self) || !CompanionLoyalty.wildTarget(buffer,ref))continue;
+                double d=chunk.getComponent(i,TransformComponent.getComponentType()).getPosition().distanceSquared(centre);
+                if(d<distance[0]){best.set(ref);distance[0]=d;}
             }
-        } catch (Throwable ignored) {
-            // Best effort.
-        }
-
-        MarkedEntitySupport marked = role.getMarkedEntitySupport();
-        int slot = resolveDefaultTargetSlotIndex(marked);
-        boolean cleared = false;
-        try {
-            if (marked.hasMarkedEntityInSlot(slot)) {
-                marked.clearMarkedEntity(slot);
-                role.getWorldSupport().requestNewPath();
-                cleared = true;
-            }
-        } catch (Throwable ignored) {
-            // Best effort.
-        }
-
-        if (!cleared) {
-            return;
-        }
-
-        long nextDebugAt = nextDebugAtNanosByAdept.getOrDefault(adept.uuid, 0L);
-        if (nextDebugAt > nowNanos) {
-            return;
-        }
-        nextDebugAtNanosByAdept.put(adept.uuid, nowNanos + DEBUG_INTERVAL_NANOS);
-
-        debug.traceFileOnly(
-            null,
-            "KuduAdeptPacify event=clearTarget"
-                + " roleName=" + roleName
-                + " adeptUuid=" + adept.uuid
-        );
+        });return best.get();
     }
 
     private void driveBondedAdepts(
@@ -650,6 +615,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         @Nonnull ArrayList<AdeptSnapshot> ownerAdepts
     ) {
         Ref<EntityStore> targetRef = resolveCommandedTarget(store, nowNanos, roleName, owner);
+        if(targetRef==null)targetRef=nearestHostile(store,owner);
         if (targetRef == null || !targetRef.isValid()) {
             for (AdeptSnapshot adept : ownerAdepts) {
                 if (adept == null || adept.uuid == null || adept.ref == null || !adept.ref.isValid()) {
@@ -676,8 +642,15 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         @Nonnull AdeptSnapshot adept,
         @Nonnull PlayerSnapshot owner
     ) {
-        clearDefaultTarget(store, nowNanos, roleName, adept, owner.playerRef, owner.uuid, "ownerNotInCombat");
-        forceIdleWanderState(store, nowNanos, roleName, adept, owner.playerRef, owner.uuid);
+        if(teleportNearOwnerIfFar(store,nowNanos,roleName,adept,owner))return;
+        NPCEntity npc=store.getComponent(adept.ref,NPCEntity.getComponentType());
+        if(npc==null || npc.getRole()==null)return;
+        npc.setLeashPoint(new Vector3d(owner.position));
+        var marked=MarkedEntitySupport.get(adept.ref,store);
+        var previous=marked==null?null:marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
+        double distance=adept.position.distanceSquared(owner.position);
+        boolean follow=distance>12*12 || owner.ref.equals(previous) && distance>6*6;
+        setNativeTask(store,adept.ref,follow?owner.ref:null,follow?"Idle":"Roam");
     }
 
     private void driveBondedAdeptWithoutOwner(
@@ -688,7 +661,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         @Nonnull UUID ownerUuid
     ) {
         clearDefaultTarget(store, nowNanos, roleName, adept, null, ownerUuid, "ownerOffline");
-        forceIdleWanderState(store, nowNanos, roleName, adept, null, ownerUuid);
+        setNativeTask(store,adept.ref,null,"Roam");
     }
 
     private void clearDefaultTarget(
@@ -702,8 +675,8 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
     ) {
         NPCEntity npc = store.getComponent(adept.ref, NPCEntity.getComponentType());
         Role role = npc != null ? npc.getRole() : null;
-        MarkedEntitySupport marked = role != null ? role.getMarkedEntitySupport() : null;
-        if (role == null || marked == null || role.getWorldSupport() == null) {
+        MarkedEntitySupport marked = role != null ? MarkedEntitySupport.get(adept.ref, store) : null;
+        if (role == null || marked == null || WorldSupport.get(adept.ref, store) == null) {
             return;
         }
 
@@ -712,12 +685,12 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             if (marked.hasMarkedEntityInSlot(slot)) {
                 marked.clearMarkedEntity(slot);
-                role.getWorldSupport().requestNewPath();
-                role.notifySensorMatch();
+                WorldSupport.get(adept.ref, store).requestNewPath();
+                role.acquireExecutionSupport(adept.ref, store).notifySensorMatch();
                 cleared = true;
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         if (!cleared) {
             return;
@@ -747,8 +720,8 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
     ) {
         NPCEntity npc = store.getComponent(adept.ref, NPCEntity.getComponentType());
         Role role = npc != null ? npc.getRole() : null;
-        StateSupport stateSupport = role != null ? role.getStateSupport() : null;
-        if (role == null || stateSupport == null || role.getWorldSupport() == null) {
+        StateSupport stateSupport = role != null ? StateSupport.get(adept.ref, store) : null;
+        if (role == null || stateSupport == null || WorldSupport.get(adept.ref, store) == null) {
             return false;
         }
 
@@ -756,7 +729,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             before = stateSupport.getStateName();
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         if (before != null && before.startsWith("Idle.")) {
@@ -772,9 +745,9 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
 
         try {
             stateSupport.setState(adept.ref, desiredParentState, desiredSubState, store);
-            role.clearOnce();
-            role.getWorldSupport().requestNewPath();
-            role.notifySensorMatch();
+            role.clearOnce(adept.ref, store);
+            WorldSupport.get(adept.ref, store).requestNewPath();
+            role.acquireExecutionSupport(adept.ref, store).notifySensorMatch();
         } catch (Throwable ignored) {
             debug.traceFileOnly(
                 ownerPlayerRef,
@@ -793,7 +766,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             after = stateSupport.getStateName();
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         long nextDebugAt = nextDebugAtNanosByAdept.getOrDefault(adept.uuid, 0L);
@@ -809,7 +782,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                     + " state.desired=" + desiredStateName
                     + (before != null ? " state.before=" + before : "")
                     + (after != null ? " state.after=" + after : "")
-                    + " behavior=freeWander"
+                    + " behavior=nativeOwnerFollow"
             );
         }
         return true;
@@ -837,6 +810,9 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         if (targetRef == null || !targetRef.isValid()) {
             clearCommandedTarget(owner, targetUuid, roleName, "invalidRef");
             return null;
+        }
+        if (!CompanionLoyalty.wildTarget(store,targetRef)) {
+            clearCommandedTarget(owner,targetUuid,roleName,"playerOrPet");return null;
         }
         if (targetRef.equals(owner.ref)) {
             clearCommandedTarget(owner, targetUuid, roleName, "owner");
@@ -868,6 +844,13 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             return null;
         }
         return targetRef;
+    }
+
+
+    private @Nullable Ref<EntityStore> nearestHostile(Store<EntityStore> store,PlayerSnapshot owner) {
+        var ref=nearestWild(store,owner.ref,owner.position,18);
+        if(ref!=null){var id=store.getComponent(ref,UUIDComponent.getComponentType());if(id!=null)bondState.recordOwnerTarget(owner.uuid,id.getUuid(),System.nanoTime());}
+        return ref;
     }
 
     private void clearCommandedTarget(
@@ -902,25 +885,13 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         }
 
         Role role = npc.getRole();
-        if (role == null || role.getMarkedEntitySupport() == null || role.getWorldSupport() == null) {
+        if (role == null || MarkedEntitySupport.get(adept.ref, store) == null || WorldSupport.get(adept.ref, store) == null) {
             return;
-        }
-
-        try {
-            role.getWorldSupport().overrideAttitude(owner.ref, Attitude.FRIENDLY, BONDED_FRIENDLY_SECONDS);
-            for (AdeptSnapshot other : ownerAdepts) {
-                if (other == null || other.ref == null || !other.ref.isValid() || other.ref.equals(adept.ref)) {
-                    continue;
-                }
-                role.getWorldSupport().overrideAttitude(other.ref, Attitude.FRIENDLY, BONDED_FRIENDLY_SECONDS);
-            }
-        } catch (Throwable ignored) {
-            // Best effort.
         }
 
         trySetCombatTarget(store, nowNanos, roleName, adept, owner, targetRef);
         boolean forcedCombatAttack = forceCombatAttackState(store, nowNanos, roleName, adept, owner.playerRef);
-        boolean combatFollowApplied = applyCombatFollowVelocity(store, nowNanos, roleName, adept, owner, targetRef);
+        boolean combatFollowApplied = false;
 
         long nextDebugAt = nextDebugAtNanosByAdept.getOrDefault(adept.uuid, 0L);
         if (nextDebugAt > nowNanos) {
@@ -935,7 +906,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 targetUuid = uuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         debug.traceFileOnly(
@@ -948,8 +919,8 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 + " targetSource=masterDamage"
                 + " targetTimeoutSeconds=" + (MASTER_TARGET_TIMEOUT_NANOS / 1_000_000_000.0)
                 + " attackMode=mageRanged"
-                + " idleBehavior=freeWander"
-                + " combatFollow=velocityTowardOwner"
+                + " idleBehavior=nativeOwnerFollow"
+                + " combatFollow=nativeEnemyStandoff"
                 + " combatFollowApplied=" + combatFollowApplied
                 + " combatFollowStartDistanceBlocks=" + COMBAT_FOLLOW_START_DISTANCE_BLOCKS
                 + " combatFollowStopDistanceBlocks=" + COMBAT_FOLLOW_STOP_DISTANCE_BLOCKS
@@ -1035,7 +1006,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
     ) {
         NPCEntity npc = store.getComponent(adept.ref, NPCEntity.getComponentType());
         Role role = npc != null ? npc.getRole() : null;
-        StateSupport stateSupport = role != null ? role.getStateSupport() : null;
+        StateSupport stateSupport = role != null ? StateSupport.get(adept.ref, store) : null;
         if (role == null || stateSupport == null) {
             return false;
         }
@@ -1044,20 +1015,20 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             before = stateSupport.getStateName();
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
-        if (before == null || !isInheritedSummonState(before)) {
+        if ("Combat.Attack".equals(before)) {
             return false;
         }
 
         try {
             stateSupport.setState(adept.ref, "Combat", "Attack", store);
-            role.clearOnce();
-            role.notifySensorMatch();
+            role.clearOnce(adept.ref, store);
+            role.acquireExecutionSupport(adept.ref, store).notifySensorMatch();
         } catch (Throwable ignored) {
             debug.traceFileOnly(
                 ownerPlayerRef,
-                "KuduAdeptSummonSuppression event=forceCombatAttackState"
+                "KuduAdeptMode event=state"
                     + " decision=failed"
                     + " roleName=" + roleName
                     + " adeptUuid=" + adept.uuid
@@ -1070,7 +1041,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             after = stateSupport.getStateName();
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         long nextDebugAt = nextDebugAtNanosByAdept.getOrDefault(adept.uuid, 0L);
@@ -1078,7 +1049,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             nextDebugAtNanosByAdept.put(adept.uuid, nowNanos + DEBUG_INTERVAL_NANOS);
             debug.traceFileOnly(
                 ownerPlayerRef,
-                "KuduAdeptSummonSuppression event=forceCombatAttackState"
+                "KuduAdeptMode event=state"
                     + " decision=forced"
                     + " roleName=" + roleName
                     + " adeptUuid=" + adept.uuid
@@ -1137,7 +1108,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
 
         try {
             TransformComponent transform = store.getComponent(adept.ref, TransformComponent.getComponentType());
-            Vector3f rotation = transform != null && transform.getRotation() != null ? transform.getRotation() : Vector3f.ZERO;
+            Rotation3f rotation = transform != null && transform.getRotation() != null ? transform.getRotation() : new Rotation3f();
             store.addComponent(adept.ref, Teleport.getComponentType(), Teleport.createExact(destination, rotation));
             debug.traceFileOnly(
                 owner.playerRef,
@@ -1151,29 +1122,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             );
             return true;
         } catch (Throwable t) {
-            try {
-                TransformComponent transform = store.getComponent(adept.ref, TransformComponent.getComponentType());
-                if (transform != null) {
-                    transform.teleportPosition(destination);
-                    transform.markChunkDirty(store);
-                    debug.traceFileOnly(
-                        owner.playerRef,
-                        "KuduAdeptFollow event=teleportToOwner"
-                            + " method=transformFallback"
-                            + " roleName=" + roleName
-                            + " adeptUuid=" + adept.uuid
-                            + " ownerUuid=" + owner.uuid
-                            + " distanceBlocks=" + Math.sqrt(distanceSq)
-                            + " thresholdBlocks=" + OWNER_TELEPORT_DISTANCE_BLOCKS
-                            + " destination=" + destination.x + "," + destination.y + "," + destination.z
-                    );
-                    return true;
-                }
-            } catch (Throwable ignored) {
-                // Report the original Teleport failure below.
-            }
-            errors.report(owner.playerRef, "KuduAdeptBondSystem: failed to teleport bonded adept near owner.", t);
-            return false;
+            errors.report(owner.playerRef,"Elder Mage safe catch-up failed; original retained",t);return false;
         }
     }
 
@@ -1184,7 +1133,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             int x = (int) Math.floor(ownerPosition.x + Math.cos(angle) * radius);
             int z = (int) Math.floor(ownerPosition.z + Math.sin(angle) * radius);
 
-            WorldChunk chunk = getChunkForPosition(world, x, z);
+            WorldBlocks.Column chunk = getChunkForPosition(world, x, z);
             if (chunk == null) {
                 continue;
             }
@@ -1200,12 +1149,9 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         return null;
     }
 
-    private @Nullable WorldChunk getChunkForPosition(@Nonnull World world, int x, int z) {
+    private @Nullable WorldBlocks.Column getChunkForPosition(@Nonnull World world, int x, int z) {
         long chunkIndex = ChunkUtil.indexChunkFromBlock(x, z);
-        WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
-        if (chunk == null) {
-            chunk = world.getChunkIfInMemory(chunkIndex);
-        }
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
         return chunk;
     }
 
@@ -1266,7 +1212,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 store.removeEntity(summon.ref, RemoveReason.REMOVE);
                 removed = true;
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
 
             debug.traceFileOnly(
@@ -1297,21 +1243,11 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             return;
         }
         Role role = npc.getRole();
-        MarkedEntitySupport marked = role != null ? role.getMarkedEntitySupport() : null;
-        if (role == null || marked == null || role.getWorldSupport() == null) {
+        MarkedEntitySupport marked = role != null ? MarkedEntitySupport.get(adept.ref, store) : null;
+        if (role == null || marked == null || WorldSupport.get(adept.ref, store) == null) {
             return;
         }
 
-        try {
-            role.getWorldSupport().overrideAttitude(owner.ref, Attitude.FRIENDLY, BONDED_FRIENDLY_SECONDS);
-        } catch (Throwable ignored) {
-            // Best effort.
-        }
-        try {
-            role.getWorldSupport().overrideAttitude(targetRef, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
-        } catch (Throwable ignored) {
-            // Best effort.
-        }
 
         Ref<EntityStore> currentTarget = marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
         boolean alreadyTargeting = currentTarget != null && currentTarget.isValid() && currentTarget.equals(targetRef);
@@ -1319,19 +1255,19 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             marked.setMarkedEntity(MarkedEntitySupport.DEFAULT_TARGET_SLOT, targetRef);
         }
         try {
-            marked.flockSetTarget(MarkedEntitySupport.DEFAULT_TARGET_SLOT, targetRef, store);
+            marked.flockSetTarget(adept.ref, MarkedEntitySupport.DEFAULT_TARGET_SLOT, targetRef, store);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         if (alreadyTargeting) {
             return;
         }
 
-        role.getWorldSupport().requestNewPath();
+        WorldSupport.get(adept.ref, store).requestNewPath();
         try {
-            role.notifySensorMatch();
+            role.acquireExecutionSupport(adept.ref, store).notifySensorMatch();
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         long nextDebugAt = nextDebugAtNanosByAdept.getOrDefault(adept.uuid, 0L);
@@ -1385,7 +1321,6 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
             }
             InventoryComponentAccess.setActiveHotbarSlot(store, adept.ref, (byte) ADEPT_HELD_HOTBAR_SLOT);
             hotbarComponent.markDirty();
-            npc.invalidateEquipmentNetwork();
         } catch (Throwable ignored) {
             return;
         }
@@ -1430,9 +1365,9 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 try {
                     npcRoleName = npc.getRoleName();
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
-                if (npcRoleName == null || !npcRoleName.equals(roleName)) {
+                if (!CompanionLoyalty.mage(npcRoleName,roleName)) {
                     continue;
                 }
                 if (isDeadOrDying(store, ref)) {
@@ -1449,7 +1384,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                     Transform look = TargetUtil.getLook(ref, store);
                     pos = look != null ? look.getPosition() : null;
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 if (pos == null || !pos.isFinite()) {
                     TransformComponent transform = chunk.getComponent(i, TransformComponent.getComponentType());
@@ -1462,7 +1397,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             store.forEachChunk(query, visitor);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return out;
     }
@@ -1492,7 +1427,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             store.forEachChunk(query, visitor);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return out;
     }
@@ -1518,7 +1453,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 try {
                     stack = item.getItemStack();
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 if (stack == null || !stack.isValid() || stack.isEmpty()) {
                     continue;
@@ -1539,7 +1474,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             store.forEachChunk(query, visitor);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return out;
     }
@@ -1562,7 +1497,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 try {
                     roleName = npc != null ? npc.getRoleName() : null;
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 if (roleName == null || !SUPPRESSED_VANILLA_SUMMON_ROLE_IDS.contains(roleName)) {
                     continue;
@@ -1583,7 +1518,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         try {
             store.forEachChunk(query, visitor);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return out;
     }
@@ -1649,7 +1584,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                     return i;
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
         }
         return 0;
@@ -1662,7 +1597,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 return true;
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         try {
@@ -1675,7 +1610,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 return Float.isFinite(current) && Float.isFinite(min) && current <= min;
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         return false;
@@ -1691,12 +1626,12 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 }
             }
         } catch (Throwable ignored) {
-            // Treat health as unknown if stat assets are unavailable.
+
         }
         return -1;
     }
 
-    private static int findAirColumn(@Nonnull WorldChunk chunk, int x, int y, int z) {
+    private static int findAirColumn(@Nonnull WorldBlocks.Column chunk, int x, int y, int z) {
         int base = clampY(y);
         for (int dy = 0; dy <= 4; dy++) {
             int tryY = clampY(base + dy);
@@ -1717,7 +1652,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
         return -1;
     }
 
-    private static boolean isAir(@Nonnull WorldChunk chunk, int x, int y, int z) {
+    private static boolean isAir(@Nonnull WorldBlocks.Column chunk, int x, int y, int z) {
         try {
             var type = chunk.getBlockType(x, y, z);
             return type == null
@@ -1745,7 +1680,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 return pos;
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         try {
@@ -1755,7 +1690,7 @@ public final class KuduAdeptBondSystem extends TickingSystem<EntityStore> {
                 return pos;
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         return null;

@@ -1,0 +1,179 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.everflame.name",
+    "Description": "server.items.flock4h.everflame.description"
+  },
+  "Quality": "Epic",
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Model": "Items/AxoTales/ArcaneRelics/Everflame.blockymodel",
+  "Texture": "Items/AxoTales/ArcaneRelics/Everflame_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/Weapon_Shortbow_AxoTales_Everflame.png",
+  "PlayerAnimationsId": "AxoTales_RelicShortbow",
+  "MaxStack": 1,
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "Parent": "Weapon_Shortbow_Cobalt",
+  "MaxDurability": 800,
+  "Interactions": {
+    "Primary": "AxoRelicBow_Primary"
+  },
+  "ItemAppearanceConditions": {
+    "SignatureCharges": [
+      {
+        "Condition": [
+          1,
+          100
+        ],
+        "ConditionValueType": "Percent",
+        "Model": "Items/AxoTales/ArcaneRelics/Everflame.blockymodel",
+        "Texture": "Items/AxoTales/ArcaneRelics/Everflame_Atlas.png",
+        "LocalSoundEventId": "SFX_Bow_T2_Signature_Loop_Local",
+        "WorldSoundEventId": "SFX_Bow_T2_Signature_Loop",
+        "Particles": [
+          {
+            "SystemId": "Bow_Signature_Charge",
+            "TargetNodeName": "ARROW-PLACEHOLDER",
+            "PositionOffset": {
+              "X": 0.5,
+              "Y": 0.25,
+              "Z": 0
+            },
+            "Scale": 0.5,
+            "TargetEntityPart": "PrimaryItem"
+          },
+          {
+            "SystemId": "Bow_Signature_Charge",
+            "TargetNodeName": "ARROW-PLACEHOLDER",
+            "PositionOffset": {
+              "X": 0.5,
+              "Y": 0,
+              "Z": 0
+            },
+            "Scale": 0.5,
+            "TargetEntityPart": "PrimaryItem"
+          },
+          {
+            "SystemId": "Bow_Signature_Charge",
+            "TargetNodeName": "ARROW-PLACEHOLDER",
+            "PositionOffset": {
+              "X": 0.5,
+              "Y": -0.25,
+              "Z": 0
+            },
+            "Scale": 0.5,
+            "TargetEntityPart": "PrimaryItem"
+          }
+        ],
+        "ModelVFXId": "Bow_Signature_Status"
+      }
+    ],
+    "SignatureEnergy": [
+      {
+        "Condition": [
+          100,
+          100
+        ],
+        "ConditionValueType": "Percent",
+        "Particles": [
+          {
+            "SystemId": "Sword_Signature_Ready",
+            "TargetNodeName": "Handle",
+            "PositionOffset": {
+              "X": 0.8
+            },
+            "TargetEntityPart": "PrimaryItem"
+          },
+          {
+            "SystemId": "Sword_Signature_Status_Spawn",
+            "TargetEntityPart": "PrimaryItem"
+          },
+          {
+            "SystemId": "Bow_Signature_Status",
+            "TargetNodeName": "Bow-Top",
+            "PositionOffset": {
+              "X": 0.55
+            },
+            "TargetEntityPart": "PrimaryItem",
+            "Scale": 1.3
+          },
+          {
+            "SystemId": "Bow_Signature_Status",
+            "TargetNodeName": "Bow-Bot",
+            "TargetEntityPart": "PrimaryItem",
+            "Scale": 1.3
+          }
+        ],
+        "FirstPersonParticles": [
+          {
+            "SystemId": "Sword_Signature_Ready",
+            "TargetNodeName": "Handle",
+            "PositionOffset": {
+              "X": 0.8
+            },
+            "TargetEntityPart": "PrimaryItem"
+          },
+          {
+            "SystemId": "Sword_Signature_Status_Spawn",
+            "TargetNodeName": "Handle",
+            "TargetEntityPart": "PrimaryItem",
+            "PositionOffset": {
+              "Y": 0
+            }
+          },
+          {
+            "SystemId": "Bow_Signature_Status_FP",
+            "TargetNodeName": "Bow-Top",
+            "PositionOffset": {
+              "X": 0.5
+            },
+            "TargetEntityPart": "PrimaryItem"
+          }
+        ]
+      }
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 24
+      },
+      {
+        "ItemId": "Ingredient_Fire_Essence",
+        "Quantity": 24
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 32
+      },
+      {
+        "ItemId": "Ingredient_Voidheart",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Ingredient_Leather_Heavy",
+        "Quantity": 12
+      },
+      {
+        "ItemId": "Axo_Aequalis_Bar",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Armory"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 12
+  }
+}

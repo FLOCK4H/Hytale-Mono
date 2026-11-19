@@ -11,9 +11,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Persistent owner binding stored directly on bonded Kudu Adept entities.
- */
+
+
+
 public final class KuduAdeptBondPersistedComponent implements Component<EntityStore> {
 
     public static final BuilderCodec<KuduAdeptBondPersistedComponent> CODEC = BuilderCodec

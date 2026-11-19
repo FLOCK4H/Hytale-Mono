@@ -1,0 +1,10 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.55,
+  "Effects": {
+    "ItemPlayerAnimationsId": "AxoTales_Dreadmaw",
+    "ItemAnimationId": "Gore",
+    "WorldSoundEventId": "SFX_Warthog_Alerted"
+  },
+  "Next": "AxoDreadmaw_Gore_Hit"
+}

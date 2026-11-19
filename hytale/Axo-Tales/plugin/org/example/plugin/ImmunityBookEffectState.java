@@ -8,12 +8,12 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Tracks short-lived Immunity Book effects (incoming damage immunity window).
- *
- * <p>State is keyed by player UUID and is safe to access from multiple threads, but intended to be
- * mutated on the world thread.</p>
- */
+
+
+
+
+
+
 public final class ImmunityBookEffectState {
 
     public static final class ActiveImmunity {

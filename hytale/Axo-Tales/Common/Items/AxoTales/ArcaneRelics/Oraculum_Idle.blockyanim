@@ -1,0 +1,67 @@
+{
+  "formatVersion": 1,
+  "duration": 240,
+  "holdLastKeyframe": false,
+  "nodeAnimations": {
+    "FocusCrystal": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "time": 120,
+          "delta": {
+            "x": 0.0,
+            "y": 1.6,
+            "z": 0.0
+          }
+        },
+        {
+          "time": 240,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        {
+          "time": 120,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0,
+            "w": 6.123233995736766e-17
+          }
+        },
+        {
+          "time": 240,
+          "delta": {
+            "x": -0.0,
+            "y": 1.2246467991473532e-16,
+            "z": -0.0,
+            "w": -1.0
+          }
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    }
+  }
+}

@@ -6,13 +6,11 @@
   "ItemLevel": 1,
   "MaxStack": 100,
   "Icon": "Icons/ItemsGenerated/AxoTales_Cloud_Block.png",
-  "Categories": [
-    "Blocks.Deco"
-  ],
+  "Categories": [],
   "PlayerAnimationsId": "Block",
   "BlockType": {
     "Material": "Empty",
-    "DrawType": "Cube",
+    "DrawType": "Model",
     "Opacity": "Transparent",
     "RequiresAlphaBlending": true,
     "Group": "AxoTales_Cloud",
@@ -29,19 +27,19 @@
       }
     },
     "BlockParticleSetId": "Snow",
-    "Textures": [
-      {
-        "All": "BlockTextures/AxoTales_Cloud_Block.png",
-        "Weight": 1
-      }
-    ],
     "ParticleColor": "#bdefff",
     "BlockSoundSetId": "Snow",
-    "CubeShadingMode": "Flat",
     "Light": {
       "Color": "#9bdcff",
       "Radius": 0
-    }
+    },
+    "CustomModel": "Items/AxoTales/MovementBlocks/Cloud.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/MovementBlocks/Cloud_Atlas.png",
+        "Weight": 1
+      }
+    ]
   },
   "Tags": {
     "Type": [
@@ -63,5 +61,7 @@
       0.0,
       -13.5
     ]
-  }
+  },
+  "Quality": "AxoTales_Internal",
+  "$AxoLegacyItem": "Axo_Cloud_Block"
 }

@@ -5,12 +5,19 @@
       {
         "Type": "Single",
         "Item": {
-          "ItemId": "Ingredient_Crystal_Arcane",
+          "ItemId": "Axo_Arcane_Crystal_Shards",
           "QuantityMin": 2,
           "QuantityMax": 3
+        }
+      },
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Axo_Arcane_Crystal_Seed",
+          "QuantityMin": 1,
+          "QuantityMax": 1
         }
       }
     ]
   }
 }
-

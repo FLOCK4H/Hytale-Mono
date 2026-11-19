@@ -1,0 +1,11 @@
+{
+  "Parent": "Poison_T1",
+  "Duration": 6,
+  "DamageCalculatorCooldown": 1,
+  "DamageCalculator": {
+    "BaseDamage": {
+      "Poison": 4
+    }
+  },
+  "OverlapBehavior": "Overwrite"
+}

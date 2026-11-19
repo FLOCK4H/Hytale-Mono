@@ -1,0 +1,145 @@
+{
+  "Model": "NPC/AxoTales/Souls/Fossor/Soul.blockymodel",
+  "Texture": "NPC/AxoTales/Souls/Fossor/Soul_Atlas.png",
+  "MinScale": 1,
+  "MaxScale": 1,
+  "EyeHeight": 1.15,
+  "HitBox": {
+    "Min": {
+      "X": -0.4,
+      "Y": 0,
+      "Z": -0.3
+    },
+    "Max": {
+      "X": 0.4,
+      "Y": 1.55,
+      "Z": 0.3
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Travel": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Travel.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Carry": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Carry.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Mine": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Mine.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Cast": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Cast.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Travel.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Travel.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Travel.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Souls/Fossor/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.16
+        }
+      ]
+    }
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Fossor_Soul_Motes",
+      "TargetNodeName": "Heart",
+      "Scale": 0.5
+    }
+  ]
+}

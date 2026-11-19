@@ -1,88 +1,53 @@
 # Start Here
 
-<div class="page-header">
-  <p class="eyebrow">Install and first boot</p>
-  <p class="lead-text">Use this page if you are setting up Axo Tales from scratch or moving a server onto the current build. The packaged jar, manifest, and guidebook all target Hytale <code>0.7.6</code>.</p>
-</div>
+Install Axo Tales for **Hytale 0.7.7**. This guide covers **AxoTales 0.1.3+**, which requires **Java 25**.
 
 ## Install or update
 
-<div class="card-grid card-grid--steps">
-  <div class="card" data-reveal>
-    <span class="step-tag">1</span>
-    <h3>Build or download the jar</h3>
-    <p>Use the latest <code>AxoTales-&lt;version&gt;.jar</code> from this repo line.</p>
-  </div>
-  <div class="card" data-reveal>
-    <span class="step-tag">2</span>
-    <h3>Install to the shared mods folder</h3>
-    <p>Copy it to <code>C:\Users\&lt;you&gt;\AppData\Roaming\Hytale\UserData\Mods</code>.</p>
-  </div>
-  <div class="card" data-reveal>
-    <span class="step-tag">3</span>
-    <h3>Keep only one Axo Tales jar there</h3>
-    <p>Delete older <code>AxoTales-*.jar</code> files so the game does not load the wrong version.</p>
-  </div>
-  <div class="card" data-reveal>
-    <span class="step-tag">4</span>
-    <h3>Restart the world if the file is locked</h3>
-    <p>If Windows says the jar is in use, the game or server still has the old build open.</p>
-  </div>
-</div>
+1. Obtain the current `AxoTales-<version>.jar`. To build from source, use the full development checkout; the public source mirror does not include Gradle build files.
+2. Close the game or server. Keep a backup of your world and plugin data before updating.
+3. Put the JAR in your server's mods folder or `%APPDATA%/Hytale/UserData/Mods` for local play. Keep exactly one AxoTales JAR. Avoid duplicate copies in individual save folders.
+4. Restart the game or server. Preserve the existing configuration and storage files.
 
 ## Your first visit
 
 A centered **Axo's Tale** page introduces the story and your Silver Book. Close it with **Close** or **Escape**. It appears once for each player in each save, across that save's dimensions. Existing Silver Book claims remain intact, so the tale never grants a duplicate. If your inventory is full, make one slot free; the book and tale wait for space.
 
-## First files worth knowing
+## Files and backups {#first-files-worth-knowing}
 
-<div class="card-grid">
-  <div class="card" data-reveal>
-    <h3><code>server-config.json</code></h3>
-    <p>Your live tuning surface for spell costs, worldgen density, creature spawn rates, loot, and movement-block behavior.</p>
-  </div>
-  <div class="card" data-reveal>
-    <h3><code>spellbooks-debug.log</code></h3>
-    <p>A persistent debug log under the plugin data directory. Use it for casts, stat gates, input routing, and movement-block problems.</p>
-  </div>
-  <div class="card" data-reveal>
-    <h3>Packaged defaults can differ from your live runtime file</h3>
-    <p>The guidebook documents <code>src/main/resources/server-config.json</code>. Existing worlds keep their own runtime copy once the mod has already been launched there.</p>
-  </div>
-</div>
+| File or folder | Purpose |
+| --- | --- |
+| `server-config.json` | Spell costs, encounter rates, world resources and movement-block settings. Existing worlds keep their own runtime copy. |
+| `spyglass-display.json` | The ordered fields shown by the Spyglass. |
+| `AstralSatchels/` | Saved contents for physical satchels. Include this folder in backups. |
+| `spellbooks-debug.log` and `plugin.log` | Cast, input and plugin diagnostics. Preserve both when reporting a problem. |
+
+The [Configuration](config.md) page describes the packaged `server-config.json`. Your runtime file can have different values.
 
 ## Your starter book
 
-On your first spawn with this version, you receive **Axo's Silver Book**. Right-click to fire a gray bolt for 10 base damage without spending mana. Each player gets one copy per save/server, shared across dimensions. A full inventory leaves the reward pending until a slot is free.
+On your first spawn, you receive **Axo's Silver Book**. Right-click to fire a gray bolt for **10 base damage** without spending mana. Each player gets one copy per save/server, shared across dimensions. A full inventory leaves the reward pending until a slot is free.
 
-## Where crafting starts
+## Axo's Workbench {#where-crafting-starts}
 
-<div class="card-grid">
-  <div class="card media-card" data-reveal>
-    <div class="media-card__visual media-card__visual--single">
-      <img src="../assets/images/items/ancient_sword.png" alt="Ancient Sword icon">
-    </div>
-    <div class="media-card__copy">
-      <h3>Arcanist's Workbench</h3>
-      <p>Axo Tales uses two dedicated tabs here: <strong>Spellblades</strong> for books, Arcane Sword and the Ancient Sword, and <strong>Armor</strong> for Sa'r and Ancient armor.</p>
-    </div>
-  </div>
-  <div class="card media-card" data-reveal>
-    <div class="media-card__visual media-card__visual--single">
-      <img src="../assets/images/potions/empty_bottle.png" alt="Empty potion bottle icon">
-    </div>
-    <div class="media-card__copy">
-      <h3>Alchemybench</h3>
-      <p>Every Axo Tales potion starts from Axo's Empty Potion Bottle, then branches into mobility, stealth, strength, or curse routes.</p>
-    </div>
-  </div>
-</div>
+At a **tier-two Workbench**, open **Crafting** and build **Axo's Workbench** with **8 Thorium Ingots, 12 Arcane Crystal Shards and 20 logs**. Place it and interact to use its five tabs:
 
-## Good first-session route
+| Tab | What you make |
+| --- | --- |
+| Items | Seeds, souls, bags, pickaxes, bars and utility equipment |
+| Armory | Weapons, armor, Ancient Arrows and Arcane Oraculum |
+| Library | Spellbooks, Arcane Wand and Spellbook Pouch |
+| Blood Magic | Vitae Extractor, Blood Furnace and Frozen Chest |
+| Alchemy | Axo's Empty Potion Bottle and potions |
 
-- Try the Silver Book you received on spawn, then collect mana gear for advanced books.
-- Mine or spawn enough Arcane Matter and Arcane Crystal Shards to unlock your first spellbook or armor piece.
-- Craft the [Arcane Wand and Spellbook Pouch](items/arcane-equipment.md) when you want one focus for your collection.
-- Open the Arcanist's Workbench and choose a lane: mana gear first, or one utility spellbook first.
-- Read [Crafting Flow](crafting.md) if you want the cleanest progression order.
-- Read [Troubleshooting](troubleshooting.md) early if testers keep seeing the wrong jar or the wrong live config.
+The normal crafting screen supports search, previews, ingredient counts and queued crafts. Carried Astral Satchels can supply ingredients directly. See [Crafting Flow](crafting.md) for full costs.
+
+## Getting started with magic {#good-first-session-route}
+
+1. Try the free Silver Book and gather Arcane Crystal Shards and Arcane Matter.
+2. Build Axo's Workbench, then defeat Cursed Knights for Evil Cores used by most crafted equipment and books.
+3. Craft a spellbook or a piece of mana gear. Plant Crystal Seeds for renewable shards.
+4. Craft the [Arcane Wand and Spellbook Pouch](items/arcane-equipment.md) to cast your carried spells from the wand.
+5. Follow [Crafting Flow](crafting.md), [Helpful Souls](souls.md) or [Runes & Skill Tree](skill-tree.md) for more crafting recipes and abilities.
+
+If an item does not respond, start with [Troubleshooting](troubleshooting.md).

@@ -1,0 +1,19 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Leech_Anchor_Core_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "AxoTales_Leech_Anchor_Glow_Spawner",
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Roll": 0
+      }
+    }
+  ],
+  "CullDistance": 48
+}

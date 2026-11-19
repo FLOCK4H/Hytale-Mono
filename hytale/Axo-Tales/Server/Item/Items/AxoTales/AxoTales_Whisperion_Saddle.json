@@ -1,0 +1,27 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.whisperion_saddle.name",
+    "Description": "server.items.flock4h.whisperion_saddle.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 1,
+  "MaxStack": 1,
+  "Categories": [],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Default",
+  "Model": "Items/AxoTales/Whisperion_Saddle.blockymodel",
+  "Texture": "NPC/AxoTales/Whisperion/Whisperion_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Whisperion_Saddle.png",
+  "Interactions": {
+    "Secondary": "AxoWhisperion_Saddle"
+  },
+  "Tags": {
+    "Type": [
+      "Utility"
+    ],
+    "Family": [
+      "AxoTalesMountTack"
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Whisperion_Saddle"
+}

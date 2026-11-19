@@ -1,0 +1,29 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.spellbook_pouch.name",
+    "Description": "server.items.flock4h.spellbook_pouch.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 1,
+  "MaxStack": 1,
+  "PlayerAnimationsId": "AxoTales_Pouch304",
+  "Model": "Items/AxoTales/Spellbook_Pouch.blockymodel",
+  "Texture": "Items/AxoTales/Pouch303/Pouch_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Spellbook_Pouch.png",
+  "ItemSoundSetId": "ISS_Default",
+  "Container": {
+    "Capacity": 18,
+    "ItemTag": "Family=AxoTalesSpellbook"
+  },
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "AxoTales_Input"
+        }
+      ]
+    }
+  },
+  "$AxoLegacyItem": "Axo_Spellbook_Pouch"
+}

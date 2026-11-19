@@ -1,0 +1,12 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    {
+      "Type": "RemoveEntity",
+      "Entity": "User"
+    }
+  ],
+  "Cooldown": {
+    "Cooldown": 0
+  }
+}

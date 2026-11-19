@@ -1,0 +1,15 @@
+{
+  "Type": "Generic",
+  "Appearance": "Fossor_Soul",
+  "MotionControllerList": [
+    {
+      "Type": "Walk"
+    }
+  ],
+  "MaxHealth": 100,
+  "Invulnerable": false,
+  "Instructions": [
+    {}
+  ],
+  "NameTranslationKey": "server.npcRoles.Fossor_Soul.name"
+}

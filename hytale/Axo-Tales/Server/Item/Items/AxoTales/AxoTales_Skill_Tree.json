@@ -1,0 +1,124 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.skill_tree.name",
+    "Description": "server.items.flock4h.skill_tree.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "Categories": [],
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "BlockType": {
+    "CustomModel": "Items/AxoTales/SkillTree/Sprout.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/SkillTree/Tree_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "AxoTales_SkillTree_0",
+    "Light": {
+      "Color": "#112"
+    },
+    "Interactions": {},
+    "InteractionHint": "server.interactionHints.axotales_skill_tree_growing",
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "RandomRotation": "YawStep90",
+    "Flags": {
+      "IsStackable": false
+    },
+    "BlockParticleSetId": "Wood",
+    "BlockSoundSetId": "Wood",
+    "BlockEntity": {
+      "Components": {
+        "AxoTales_SkillGrowth": {}
+      }
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Woods",
+        "DropList": "AxoTales_SkillTree_Seed"
+      }
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "State": {
+      "Definitions": {
+        "Sapling": {
+          "CustomModel": "Items/AxoTales/SkillTree/Sapling.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Items/AxoTales/SkillTree/Tree_Atlas.png",
+              "Weight": 1
+            }
+          ],
+          "HitboxType": "AxoTales_SkillTree_1",
+          "Light": {
+            "Color": "#213"
+          },
+          "Interactions": {},
+          "InteractionHint": "server.interactionHints.axotales_skill_tree_growing"
+        },
+        "Young": {
+          "CustomModel": "Items/AxoTales/SkillTree/Young.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Items/AxoTales/SkillTree/Tree_Atlas.png",
+              "Weight": 1
+            }
+          ],
+          "HitboxType": "AxoTales_SkillTree_2",
+          "Light": {
+            "Color": "#324"
+          },
+          "Interactions": {},
+          "InteractionHint": "server.interactionHints.axotales_skill_tree_growing"
+        },
+        "Awakening": {
+          "CustomModel": "Items/AxoTales/SkillTree/Awakening.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Items/AxoTales/SkillTree/Tree_Atlas.png",
+              "Weight": 1
+            }
+          ],
+          "HitboxType": "AxoTales_SkillTree_3",
+          "Light": {
+            "Color": "#435"
+          },
+          "Interactions": {},
+          "InteractionHint": "server.interactionHints.axotales_skill_tree_growing"
+        },
+        "Mature": {
+          "CustomModel": "Items/AxoTales/SkillTree/Mature.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Items/AxoTales/SkillTree/Tree_Atlas.png",
+              "Weight": 1
+            }
+          ],
+          "HitboxType": "AxoTales_SkillTree_4",
+          "Light": {
+            "Color": "#546"
+          },
+          "Interactions": {
+            "Use": "AxoSkillTree_Use"
+          },
+          "InteractionHint": "server.interactionHints.axotales_skill_tree"
+        }
+      }
+    }
+  },
+  "Icon": "Icons/ItemsGenerated/AxoTales_Skill_Tree.png",
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Foliage",
+  "$AxoLegacyItem": "Axo_Skill_Tree"
+}

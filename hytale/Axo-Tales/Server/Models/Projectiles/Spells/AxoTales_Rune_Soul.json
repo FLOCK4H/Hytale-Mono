@@ -1,0 +1,21 @@
+{
+  "Model": "Items/AxoTales/SkillTree/Rune_Soul.blockymodel",
+  "Texture": "Items/AxoTales/SkillTree/Rune_Alfa.png",
+  "MinScale": 0.8,
+  "MaxScale": 0.8,
+  "HitBox": {
+    "Min": {
+      "X": -0.12,
+      "Y": -0.12,
+      "Z": -0.12
+    },
+    "Max": {
+      "X": 0.12,
+      "Y": 0.12,
+      "Z": 0.12
+    }
+  },
+  "Light": {
+    "Color": "#b8f"
+  }
+}

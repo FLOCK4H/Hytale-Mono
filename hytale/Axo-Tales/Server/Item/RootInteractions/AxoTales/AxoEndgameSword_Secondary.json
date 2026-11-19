@@ -1,0 +1,20 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    {
+      "Type": "AxoTales_AncientGear",
+      "Mode": "swordStart"
+    },
+    {
+      "Type": "Simple",
+      "RunTime": 0.34
+    },
+    {
+      "Type": "AxoTales_AncientGear",
+      "Mode": "sword"
+    }
+  ],
+  "Cooldown": {
+    "Cooldown": 1.25
+  }
+}

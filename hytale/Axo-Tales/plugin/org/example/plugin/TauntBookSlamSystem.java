@@ -18,11 +18,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Cancels fall damage while the Taunt Book immunity window is active.
- *
- * <p>Landing slam damage is handled by {@link TauntBookLandingSystem} (onGround transition).</p>
- */
+
+
+
+
+
 public final class TauntBookSlamSystem extends DamageEventSystem {
 
     private final PluginErrorReporter errors;

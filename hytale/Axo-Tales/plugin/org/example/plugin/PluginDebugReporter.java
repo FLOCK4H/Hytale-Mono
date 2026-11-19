@@ -12,9 +12,9 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.time.Instant;
 
-/**
- * Minimal persistent debug logger for player-reproducible issues.
- */
+
+
+
 public final class PluginDebugReporter {
 
     private static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
@@ -48,9 +48,9 @@ public final class PluginDebugReporter {
         appendToFile(withPlayer);
     }
 
-    /**
-     * Writes a debug line to the persistent debug log without spamming the server console.
-     */
+
+
+
     public void traceFileOnly(@Nullable PlayerRef player, @Nonnull String message) {
         String prefix = "[" + Instant.now() + "] ";
         String withPlayer = player != null && player.getUuid() != null
@@ -87,7 +87,7 @@ public final class PluginDebugReporter {
                 StandardOpenOption.APPEND
             );
         } catch (Throwable ignored) {
-            // Best-effort: console logging already happened.
+
         }
     }
 }

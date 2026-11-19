@@ -1,0 +1,22 @@
+$C = "../Common.ui";
+@Story = LabelStyle(FontSize: 17, TextColor: #d4e1e8, Wrap: true, VerticalAlignment: Start);
+@CloseLabel = LabelStyle(FontName: "Secondary", FontSize: 14, RenderBold: true, TextColor: #e1e9ec, HorizontalAlignment: Center, VerticalAlignment: Center);
+@Close = TextButtonStyle(Default: (Background: #293e54, LabelStyle: @CloseLabel), Hovered: (Background: #405a70, LabelStyle: @CloseLabel), Pressed: (Background: #587286, LabelStyle: @CloseLabel), Sounds: $C.@ButtonSounds);
+Group { Background: #070d16(0.65); }
+$C.@Container #OpeningTale { @CloseButton = false; Anchor: (Width: 800, Height: 480);
+  #Title { Anchor: (Top: 0, Height: 52); Padding: (Full: 0);
+    Label { Anchor: (Left: 42, Top: 0, Width: 716, Height: 52); Text: "AXO'S TALE"; Style: (...$C.@TitleStyle, FontSize: 20, HorizontalAlignment: Start); }
+  }
+  #Content { Anchor: (Top: 52); LayoutMode: Full; Padding: (Full: 0);
+    Label #Origins { Anchor: (Left: 42, Top: 24, Width: 716, Height: 82); Style: @Story;
+      Text: "Axo was a witcher long before there were schools of magic. He learned his craft by listening to the voices in his head. Some say he was the first mage."; }
+    Label #Burial { Anchor: (Left: 42, Top: 114, Width: 716, Height: 82); Style: @Story;
+      Text: "Then something changed. He turned to blood magic, and his power grew until the king feared him. The king ordered a pit dug a thousand feet into the earth and had Axo buried alive."; }
+    Label #Chosen { Anchor: (Left: 42, Top: 204, Width: 716, Height: 58); Style: @Story;
+      Text: "Rumour says he still lives below, sharing his strength with young mages. No one knows why he chooses them. Now he has chosen you."; }
+    Label #SilverBook { Anchor: (Left: 42, Top: 284, Width: 716, Height: 30); Text: "Take this Silver Book. You're going to need it."; Style: (...@Story, RenderBold: true, TextColor: #e6d4a4); }
+    Label #WorkbenchHint { Anchor: (Left: 42, Top: 326, Width: 716, Height: 28); Text: "Craft an Axo Workbench to start."; Style: @Story; }
+    Label { Anchor: (Left: 42, Bottom: 38, Width: 400, Height: 24); Text: "Escape to close"; Style: (FontSize: 12, TextColor: #b9cedd, VerticalAlignment: Center); }
+    TextButton #Continue { Anchor: (Right: 42, Bottom: 28, Width: 144, Height: 42); Text: "Close"; Style: @Close; }
+  }
+}

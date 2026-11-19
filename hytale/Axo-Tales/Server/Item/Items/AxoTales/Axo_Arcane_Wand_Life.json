@@ -1,0 +1,12 @@
+{
+  "Parent": "Axo_Arcane_Wand_Template",
+  "Quality": "AxoTales_Internal_Epic",
+  "Interactions": {
+    "Primary": "AxoWand_Select",
+    "Secondary": "AxoWand_Life_Use"
+  },
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_wand.name",
+    "Description": "server.items.flock4h.arcane_wand_life.description"
+  }
+}

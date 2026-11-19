@@ -1,0 +1,5 @@
+{
+  "Parent": "Burn",
+  "Duration": 4,
+  "OverlapBehavior": "Overwrite"
+}

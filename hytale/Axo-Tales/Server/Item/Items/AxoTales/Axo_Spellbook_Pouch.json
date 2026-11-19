@@ -1,0 +1,69 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.spellbook_pouch.name",
+    "Description": "server.items.flock4h.spellbook_pouch.description"
+  },
+  "Categories": [
+    "Items.Tools"
+  ],
+  "Quality": "Rare",
+  "ItemLevel": 1,
+  "MaxStack": 1,
+  "PlayerAnimationsId": "AxoTales_Pouch304",
+  "Model": "Items/AxoTales/Spellbook_Pouch.blockymodel",
+  "Texture": "Items/AxoTales/Pouch303/Pouch_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Spellbook_Pouch.png",
+  "ItemSoundSetId": "ISS_Default",
+  "Container": {
+    "Capacity": 18,
+    "ItemTag": "Family=AxoTalesSpellbook"
+  },
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "AxoTales_Input"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Medium",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Axo_Agretis_Bar",
+        "Quantity": 4
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Library"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 5
+  }
+}

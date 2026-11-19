@@ -1,0 +1,9 @@
+{
+  "Type": "Serial",
+  "Interactions": [
+    {
+      "Type": "AxoTales_Input"
+    },
+    "AxoMeteorainBook_Secondary"
+  ]
+}

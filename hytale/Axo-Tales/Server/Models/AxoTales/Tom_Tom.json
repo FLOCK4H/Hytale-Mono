@@ -1,0 +1,237 @@
+{
+  "Model": "NPC/AxoTales/Tom_Tom/Model.blockymodel",
+  "Texture": "NPC/AxoTales/Tom_Tom/Atlas.png",
+  "EyeHeight": 1.14,
+  "MinScale": 1,
+  "MaxScale": 1,
+  "HitBox": {
+    "Min": {
+      "X": -0.43,
+      "Y": 0,
+      "Z": -0.4
+    },
+    "Max": {
+      "X": 0.43,
+      "Y": 1.65,
+      "Z": 0.75
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Throw": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Throw.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Alerted.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Hurt.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Death.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Attack": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Throw.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Greet": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Alerted.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Flee": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Tom_Tom/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    }
+  }
+}

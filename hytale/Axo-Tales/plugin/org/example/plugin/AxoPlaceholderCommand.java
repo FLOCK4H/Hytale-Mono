@@ -11,14 +11,13 @@ import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import javax.annotation.Nonnull;
 
-/**
- * Debug helper: force-place a visible crystal marker at the player's current column.
- */
+
+
+
 public final class AxoPlaceholderCommand extends CommandBase {
 
     private final PluginErrorReporter errors;
@@ -34,7 +33,8 @@ public final class AxoPlaceholderCommand extends CommandBase {
         this.errors = errors;
         this.debug = debug;
         this.worldgen = worldgen;
-        this.setPermissionGroup(GameMode.Creative);
+        this.requirePermission("flock4h.axotales.command.axoplaceholder");
+        this.setPermissionGroups("hytale:WorldEditor");
     }
 
     @Override
@@ -91,14 +91,11 @@ public final class AxoPlaceholderCommand extends CommandBase {
                     }
 
                     var pos = transform.getPosition();
-                    int blockX = (int) Math.floor(pos.getX());
-                    int blockZ = (int) Math.floor(pos.getZ());
+                    int blockX = (int) Math.floor(pos.x());
+                    int blockZ = (int) Math.floor(pos.z());
 
                     long chunkIndex = ChunkUtil.indexChunkFromBlock(blockX, blockZ);
-                    WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
-                    if (chunk == null) {
-                        chunk = world.getChunkIfInMemory(chunkIndex);
-                    }
+                    WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
                     if (chunk == null) {
                         player.sendMessage(Message.raw("Your chunk is not loaded; move a bit and try again."));
                         return;

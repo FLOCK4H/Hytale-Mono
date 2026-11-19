@@ -22,11 +22,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Healing Book projectile effect: on hit, fully heal the target.
- *
- * <p>The projectile's damage is cancelled so the Healing Book is non-lethal.</p>
- */
+
+
+
+
+
 public final class HealingBookProjectileHitSystem extends DamageEventSystem {
 
     public static final String HEALING_PROJECTILE_ID = "Healing_Bolt";
@@ -111,6 +111,7 @@ public final class HealingBookProjectileHitSystem extends DamageEventSystem {
 
             int healthIndex = DefaultEntityStatTypes.getHealth();
             boolean healed = false;
+            int cleansed = 0;
             String healReason = "skip";
             float healthBefore = Float.NaN;
             float healthMin = Float.NaN;
@@ -134,6 +135,7 @@ public final class HealingBookProjectileHitSystem extends DamageEventSystem {
                     try {
                         targetStats.setStatValue(healthIndex, healthAfter);
                         targetStats.update();
+                        cleansed=HealingEffects.cleanse(targetRef,commandBuffer);
                         healed = true;
                         healReason = "applied";
                     } catch (Throwable ignored) {
@@ -150,11 +152,13 @@ public final class HealingBookProjectileHitSystem extends DamageEventSystem {
             debug.traceFileOnly(
                 shooterPlayerRef,
                 "HealingBook event=Damage"
+                    + " item=Book_Heal_Texture itemSource=nativeHealingBolt mana=paidByShooterAtCast allow=" + healed
                     + " projectileId=" + projectileAssetName
                     + (causeId != null ? " causeId=" + causeId : "")
                     + " cancelled=true"
                     + (shooterUuid != null ? " shooter.uuid=" + shooterUuid : "")
                     + " heal.applied=" + healed
+                    + " effects.cleansed=" + cleansed
                     + " heal.reason=" + healReason
                     + " health.index=" + healthIndex
                     + (Float.isFinite(healthBefore) ? " health.before=" + healthBefore : "")

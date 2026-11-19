@@ -1,0 +1,5910 @@
+{
+  "duration": 16,
+  "holdLastKeyframe": false,
+  "nodeAnimations": {
+    "R-Arm": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 9.515288274008444,
+            "y": 2.719222328888119,
+            "z": 14.422253041430041
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 8.067126246678958,
+            "y": 1.4507683268385034,
+            "z": 12.372662259503974
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 6.671105192804606,
+            "y": 0.4064492904946703,
+            "z": 10.413487044851973
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 5.364382629735187,
+            "y": -0.4085684169876731,
+            "z": 8.58382034012665
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 4.19888906183952,
+            "y": -1.0015498985946023,
+            "z": 6.946827675539995
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 3.2319326035541147,
+            "y": -1.4074020571403636,
+            "z": 5.583613914824651
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 2.838243170517796,
+            "y": -1.5627029923918763,
+            "z": 5.031228778776274
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 1.907514447489761,
+            "y": -1.2009170744965854,
+            "z": 3.493240498766105
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.21822057159338162,
+            "y": -0.1873197395495906,
+            "z": 0.4394428627659094
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.6396741884775481,
+            "y": -0.627132236813213,
+            "z": 0.35499459729718186,
+            "w": -0.26739657072419276
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.6427970940373999,
+            "y": -0.6293382204261628,
+            "z": 0.3092157446931206,
+            "w": -0.3084330128922379
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.642072354708067,
+            "y": -0.6271764896517527,
+            "z": 0.2597606623408899,
+            "w": -0.35625431990077716
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.6360833590949359,
+            "y": -0.6191082809506162,
+            "z": 0.2073078272947976,
+            "w": -0.4112497556025852
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.6232936735074622,
+            "y": -0.6034880978429067,
+            "z": 0.15342061186510145,
+            "w": -0.47304252259438706
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": -0.6024750663934164,
+            "y": 0.5790378573517467,
+            "z": -0.10079870540182964,
+            "w": 0.5399801617810249
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": -0.58890826990526,
+            "y": 0.5633678735497178,
+            "z": -0.07605203801410841,
+            "w": 0.5744734773713779
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": -0.5796938271281477,
+            "y": 0.552624969691589,
+            "z": -0.0657492408805021,
+            "w": 0.5951787521295845
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": -0.5550696709885443,
+            "y": 0.5240474128166701,
+            "z": -0.045608024166155815,
+            "w": 0.6443538450265376
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.4445367684701364,
+            "y": 0.39462830524998543,
+            "z": -0.08584174217283755,
+            "w": 0.7995540991542628
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Forearm": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.015054792069113707,
+            "y": 0.019005502249768717,
+            "z": -0.12339611896009718,
+            "w": 0.9920612591698031
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": -0.020299015115838134,
+            "y": 0.059419122450538715,
+            "z": -0.11829423846619089,
+            "w": 0.9909913173273713
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": -0.026825039358910046,
+            "y": 0.09797960622707218,
+            "z": -0.11117217107399917,
+            "w": 0.9885955504682763
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": -0.034507684803184877,
+            "y": 0.1323807171783512,
+            "z": -0.10132048870688022,
+            "w": 0.9854028232033174
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": -0.042890281535428926,
+            "y": 0.1591121435013479,
+            "z": -0.08788722535120178,
+            "w": 0.9824050005778092
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": -0.050967696534589546,
+            "y": 0.17338117173975218,
+            "z": -0.07003740363252746,
+            "w": 0.9810382384436006
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": -0.054388938829218234,
+            "y": 0.1741243749898565,
+            "z": -0.05927356259594509,
+            "w": 0.9814322137287974
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": -0.05617663337960549,
+            "y": 0.16629708429828036,
+            "z": -0.052317968852569785,
+            "w": 0.9830830563849453
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": -0.05897006296771274,
+            "y": 0.14042371997094227,
+            "z": -0.034449204918965894,
+            "w": 0.9877332447698404
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.35529756988674105,
+            "y": 0.30125734848490776,
+            "z": 0.001782867583548493,
+            "w": 0.8848753969907847
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Hand": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.9812955259659113,
+            "y": 0.0392782757729036,
+            "z": -0.008444927518499559,
+            "w": 0.18826840141351558
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.9827267156491868,
+            "y": -0.054913941444591344,
+            "z": -0.06653010463931236,
+            "w": 0.16372662141834068
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.9684555602027562,
+            "y": -0.15496875688198966,
+            "z": -0.14614462542144646,
+            "w": 0.12930684731769343
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.9312309861939777,
+            "y": -0.2568439303236138,
+            "z": -0.24484425245995484,
+            "w": 0.08301408221161066
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.8640022354622291,
+            "y": -0.35614599889589954,
+            "z": -0.35498527458878143,
+            "w": 0.025409041930782746
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.762497652066365,
+            "y": -0.44979045115771454,
+            "z": -0.46342635004686755,
+            "w": -0.039011520386400586
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.6990652472238206,
+            "y": -0.49420340290203274,
+            "z": -0.5118537693405935,
+            "w": -0.07124952979337006
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.6317261527263154,
+            "y": -0.5368826408553499,
+            "z": -0.5449774730211162,
+            "w": -0.12521442332779437
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": -0.47865501693539364,
+            "y": 0.6200443363541132,
+            "z": 0.5725996957594046,
+            "w": 0.24199996721901196
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.3672575958667614,
+            "y": 0.5362448637859141,
+            "z": 0.5900594439751573,
+            "w": 0.478950056808767
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Belly": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.030281971455394015,
+            "y": -0.17296426053912684,
+            "z": -0.03363118950044403,
+            "w": 0.9838878543176113
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.051324003899931574,
+            "y": -0.17083301298100326,
+            "z": -0.025221001916455734,
+            "w": 0.9836390747432934
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Chest": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.014834481531548606,
+            "y": -0.10148742270421722,
+            "z": -0.04704081250562686,
+            "w": 0.9936133066486964
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.014460006231757928,
+            "y": -0.1588590684627132,
+            "z": -0.07111703064895772,
+            "w": 0.9846304243413423
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Arm": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.30604991084671984,
+            "y": 0.013667856266892073,
+            "z": 0.6713417200019555,
+            "w": 0.6748680884147645
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": -0.21541585060531274,
+            "y": 0.09826941776213619,
+            "z": 0.636227932811425,
+            "w": 0.7342704885470893
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": -0.13202292232103882,
+            "y": 0.17373394748976426,
+            "z": 0.5921468205596772,
+            "w": 0.7757245686276169
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": -0.04515512243577423,
+            "y": 0.24781850813727224,
+            "z": 0.5384501009998063,
+            "w": 0.8041259171769838
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.05078407277432727,
+            "y": 0.3228219715832008,
+            "z": 0.4759009456324534,
+            "w": 0.816532450403365
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.15597697164511845,
+            "y": 0.39621906376657634,
+            "z": 0.41421469413671685,
+            "w": 0.8044301243648088
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.20870419101180981,
+            "y": 0.4295913905859725,
+            "z": 0.39195897740364166,
+            "w": 0.7862963549586173
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.27500132321536885,
+            "y": 0.46776518460657673,
+            "z": 0.36977498180877155,
+            "w": 0.7542124814189262
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.4105212965949253,
+            "y": 0.5317171456789987,
+            "z": 0.39104832827457753,
+            "w": 0.629150496293739
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.20884591527143492,
+            "y": 0.39477771750295493,
+            "z": 0.7316910552691989,
+            "w": 0.5149389644187355
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Forearm": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.37258766722840264,
+            "y": 0.16903251270500427,
+            "z": 0.021020520476991298,
+            "w": 0.9122305506815731
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": -0.555520110519945,
+            "y": 0.1443627293685434,
+            "z": 0.015021349570450699,
+            "w": 0.81873754539184
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": -0.6748792680633616,
+            "y": 0.1104844571931918,
+            "z": 0.011278517614528931,
+            "w": 0.7295230999066484
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": -0.7573292393873049,
+            "y": 0.07249129009066381,
+            "z": 0.008757350845153063,
+            "w": 0.648938167190228
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": -0.8106761842075384,
+            "y": 0.03220927625341435,
+            "z": 0.0017263608151857988,
+            "w": 0.584605599152345
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": -0.8362457088119712,
+            "y": -0.011674434127580029,
+            "z": -0.026357710599589836,
+            "w": 0.5475966519011166
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": -0.8372271139680569,
+            "y": -0.03734439440631893,
+            "z": -0.05776053684783746,
+            "w": 0.5425125585884563
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": -0.8564896007678342,
+            "y": -0.05125869488608423,
+            "z": -0.08604444304820787,
+            "w": 0.5063540893442601
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.8425703681322326,
+            "y": 0.11263318034695834,
+            "z": 0.25296196096593604,
+            "w": -0.46195149933159835
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.319801262776439,
+            "y": 0.3119354487593986,
+            "z": 0.8182732454353566,
+            "w": -0.36173515717795013
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Hand": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.9809440486479054,
+            "y": -0.0494507870857662,
+            "z": -0.14168684969705053,
+            "w": -0.12340271351060074
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.9796948852713993,
+            "y": 0.03806951851382603,
+            "z": -0.14333270355329716,
+            "w": -0.13492360662718716
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.9785517737889451,
+            "y": 0.11195572817146045,
+            "z": -0.14027055985236322,
+            "w": -0.10112621313394349
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.9744430961450274,
+            "y": 0.17556519518958774,
+            "z": -0.13682316232044364,
+            "w": -0.0302809654068049
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.9594232684481616,
+            "y": 0.23316461583589893,
+            "z": -0.13664796370997218,
+            "w": 0.08042753195431554
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.916680500458684,
+            "y": 0.29415271092159356,
+            "z": -0.1371732570355575,
+            "w": 0.23314060197775718
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.877433324338754,
+            "y": 0.32982349782756937,
+            "z": -0.1332354338884603,
+            "w": 0.3218315409918425
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.8306351693364408,
+            "y": 0.3643964979655895,
+            "z": -0.12834378193905718,
+            "w": 0.40098414104477503
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.6423764463334235,
+            "y": 0.46055047751270395,
+            "z": -0.08660733258515599,
+            "w": 0.6064197628716816
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.04061595876129718,
+            "y": 0.6098019065011232,
+            "z": 0.2312014528391095,
+            "w": 0.756992646547231
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Head": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.04829799842794848,
+            "y": 0.38229298755674573,
+            "z": 0.07938599741606521,
+            "w": 0.9193569700758504
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.04829799842794848,
+            "y": 0.38229298755674573,
+            "z": 0.07938599741606521,
+            "w": 0.9193569700758504
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Cape1": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0930564952791584,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9956608301456676
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.02337599401685666,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9997267441174733
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Cape2": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.2588189595935754,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9659258492011169
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.065402995543113,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9978589320009053
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Cape3": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.19271229503505702,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9812553038543645
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.2588189595935754,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9659258492011169
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.1305259853353411,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9914448886106773
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Attachment": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.7071132170383762,
+            "y": -8.257130461319264e-09,
+            "z": 9.338161859491184e-08,
+            "w": 0.7071003452761352
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": -0.7071132133187431,
+            "y": 7.494207247627177e-08,
+            "z": 7.936225858181357e-08,
+            "w": 0.7071003489958336
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": -0.7071131966984865,
+            "y": 1.361430945772895e-07,
+            "z": 8.12919816813919e-08,
+            "w": 0.7071003656163831
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": -0.7071131771464615,
+            "y": 1.4569628516254227e-07,
+            "z": 9.548220556402092e-08,
+            "w": 0.7071003851687585
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": -0.7071131905185375,
+            "y": 6.466309700467591e-08,
+            "z": 8.366543715690789e-08,
+            "w": 0.7071003717964538
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": -0.7071132802988873,
+            "y": -1.0043842489076315e-07,
+            "z": 9.058305440390096e-08,
+            "w": 0.7071002820144598
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": -0.7071133755322243,
+            "y": -2.1277250346597823e-07,
+            "z": 9.340161373231782e-08,
+            "w": 0.7071001867793344
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": -0.7071135801398056,
+            "y": -4.206464063552952e-07,
+            "z": 9.83201558036304e-08,
+            "w": 0.7070999821677837
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": -0.7071095741683086,
+            "y": -1.6703945590262777e-06,
+            "z": 6.113040266524752e-08,
+            "w": 0.7071039881917789
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.7071150893990634,
+            "y": -3.0831509324528847e-06,
+            "z": -1.8669677884469973e-07,
+            "w": 0.707098472869666
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Thigh": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.07484697099178962,
+            "y": 0.026044989905823355,
+            "z": -0.039809984570966704,
+            "w": 0.9960596139602385
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.07484697099178962,
+            "y": 0.026044989905823355,
+            "z": -0.039809984570966704,
+            "w": 0.9960596139602385
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Thigh": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.24652608024055428,
+            "y": 0.11081203606766143,
+            "z": 0.053737017490595985,
+            "w": 0.9612793128820482
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.24652608024055428,
+            "y": 0.11081203606766143,
+            "z": 0.053737017490595985,
+            "w": 0.9612793128820482
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Foot": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.003957002000257103,
+            "y": 0.0014730007445991186,
+            "z": -0.026135013211200247,
+            "w": 0.9996495053209534
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.003957002000257103,
+            "y": 0.0014730007445991186,
+            "z": -0.026135013211200247,
+            "w": 0.9996495053209534
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Foot": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.14782994337434235,
+            "y": 0.001557999403214675,
+            "z": 0.03455798676270394,
+            "w": 0.9884076213944868
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.14782994337434235,
+            "y": 0.001557999403214675,
+            "z": 0.03455798676270394,
+            "w": 0.9884076213944868
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Calf": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.22003309206703575,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9754924081690329
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.22003309206703575,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9754924081690329
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Calf": {
+      "position": [],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.2597401471059519,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9656785469199254
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.2597401471059519,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9656785469199254
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "Pelvis": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.5,
+            "y": -4,
+            "z": 0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.5,
+            "y": -4,
+            "z": 0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": -0.1305259853353411,
+            "z": 0.0,
+            "w": 0.9914448886106773
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": -0.1305259853353411,
+            "z": 0.0,
+            "w": 0.9914448886106773
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "L-Attachment": {
+      "position": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.7071132682888164,
+            "y": -9.356883970333748e-08,
+            "z": -5.88894834189237e-08,
+            "w": 0.7071002940247557
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 2,
+          "delta": {
+            "x": -0.7071132719782561,
+            "y": -5.4751595633080445e-08,
+            "z": -1.0607820990897186e-07,
+            "w": 0.7071002903352468
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 4,
+          "delta": {
+            "x": -0.7071132725482218,
+            "y": -9.688421502665908e-09,
+            "z": -1.098670303636189e-07,
+            "w": 0.7071002897652721
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 6,
+          "delta": {
+            "x": -0.7071132638010719,
+            "y": 1.2073134122917662e-08,
+            "z": -5.6390011552014274e-08,
+            "w": 0.707100298512589
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 8,
+          "delta": {
+            "x": -0.7071132336355259,
+            "y": -7.295196261654551e-09,
+            "z": 7.347273094048707e-08,
+            "w": 0.707100328678685
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 10,
+          "delta": {
+            "x": -0.7071131591897195,
+            "y": -9.838215553694837e-08,
+            "z": 3.262780884152003e-07,
+            "w": 0.7071004031257642
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 11,
+          "delta": {
+            "x": -0.7071130914763252,
+            "y": -2.0021213558176968e-07,
+            "z": 5.279225959592341e-07,
+            "w": 0.7071004708402304
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": -0.7071130046588979,
+            "y": -3.404447083438177e-07,
+            "z": 7.707194065575384e-07,
+            "w": 0.7071005576589199
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 14,
+          "delta": {
+            "x": -0.7071192777087631,
+            "y": -1.5176920459516245e-06,
+            "z": 2.2897045152194415e-06,
+            "w": 0.7070942844381443
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 16,
+          "delta": {
+            "x": -0.7071135085117524,
+            "y": -2.0113303061175272e-06,
+            "z": 8.906742615034661e-07,
+            "w": 0.7071000537939174
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "OxbloodWrappedGrip_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule0_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule1_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule2_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule3_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule4_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule5_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GoldGripFerrule6_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "IronFerrule_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GarnetSeal_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GarnetSeal_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GarnetSeal_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GarnetSeal_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GarnetSeal_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GarnetSeal_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Reverse": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge8": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge9": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge10": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge11": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge12": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge13": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge14": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge15": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge16": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge17": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge18": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge19": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge20": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge21": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge22": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge23": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge24": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge25": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge26": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge27": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge28": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge29": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge30": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge31": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge32": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge33": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge34": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge35": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge36": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge37": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge38": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge39": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge40": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge41": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge42": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge43": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge44": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge45": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge46": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge47": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge48": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge49": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge50": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge51": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge52": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge53": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge54": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge55": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge56": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge57": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge58": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge59": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge60": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge61": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge62": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge63": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge64": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "BloodfangForgedBlade_Edge65": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Reverse": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge8": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge9": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "GiltSweptGuard_Edge10": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Rear": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel5": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel6": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelCollar_Bevel7": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelFang_Face": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelFang_Reverse": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelFang_Edge0": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelFang_Edge1": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelFang_Edge2": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelFang_Edge3": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    },
+    "PommelFang_Edge4": {
+      "position": [],
+      "orientation": [],
+      "shapeStretch": [],
+      "shapeVisible": [
+        {
+          "time": 0,
+          "delta": false
+        },
+        {
+          "time": 12,
+          "delta": true
+        },
+        {
+          "time": 16,
+          "delta": true
+        }
+      ],
+      "shapeUvOffset": []
+    }
+  },
+  "formatVersion": 1
+}

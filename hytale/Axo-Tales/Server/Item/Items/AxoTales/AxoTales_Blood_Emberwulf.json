@@ -1,0 +1,10 @@
+{
+  "Parent": "Axo_Blood_Droplet",
+  "Quality": "AxoTales_Internal",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Blood_Emberwulf.name",
+    "Description": "server.items.flock4h.AxoTales_Blood_Emberwulf.description"
+  },
+  "Categories": [],
+  "$AxoLegacyItem": "Axo_Emberwulf_Blood_Sample"
+}

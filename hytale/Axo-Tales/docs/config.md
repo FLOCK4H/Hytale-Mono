@@ -1,26 +1,25 @@
 # Configuration
 
 <div class="page-header">
-  <p class="eyebrow">Server tuning</p>
-  <p class="lead-text">The values below describe the <strong>packaged defaults</strong> from <code>src/main/resources/server-config.json</code>. A live world can diverge once it has already written its own runtime <code>server-config.json</code>.</p>
+  <p class="lead-text">These are the <strong>default settings</strong> in <code>src/main/resources/server-config.json</code>. Your server keeps its own <code>server-config.json</code>, which may have different values.</p>
 </div>
 
-## High-impact defaults
+## Main settings {#high-impact-defaults}
 
 <div class="card-grid">
-  <div class="card" data-reveal>
+  <div class="card">
     <h3>Global spell timing</h3>
     <p><code>spellbooks.inputDebounceSeconds = 0.6</code>, <code>spellbooks.castDebounceSeconds = 0.6</code>, and <code>spellbooks.secondaryUseDelaySeconds = 0.3</code>.</p>
   </div>
-  <div class="card" data-reveal>
+  <div class="card">
     <h3>Arcane Crystals</h3>
     <p><code>chance = 0.33</code>, <code>placementsPerChunk = 1</code>, <code>densityRadius = 64</code>, <code>maxPlacementsPerRadius = 1</code>.</p>
   </div>
-  <div class="card" data-reveal>
+  <div class="card">
     <h3>Elder Mages</h3>
     <p><code>interval = 50s</code>, <code>maxAttempts = 12</code>, <code>cellSize = 192</code>, <code>cellChance = 50%</code>, and no timed despawn.</p>
   </div>
-  <div class="card" data-reveal>
+  <div class="card">
     <h3>Movement blocks</h3>
     <p>Cloud defaults to a 6-block target height. Bounce starts at 4 blocks, gains 2 per chain, and caps at 18.</p>
   </div>
@@ -28,7 +27,7 @@
 
 ## Spell and weapon keys
 
-| System | Defaults that matter most |
+| System | Default settings |
 | --- | --- |
 | Healing Book | `manaCost = 25`, `healAmount = "full"`, `projectileDelaySeconds = 0.15` |
 | Teleport Book | `maxDistanceBlocks = 100`, `manaCost = 10`, `castDelaySeconds = 0.5` |
@@ -51,7 +50,7 @@
 - `whisperion.spawnWeight = 2` sets the relative native creature weight; `0` disables new wild spawns.
 - Wild spawns use soil in Zone 1 plains, forests, autumn woods and Azure areas throughout the day and night. Native population and terrain checks apply.
 - Older interval, lifetime and world-cap fields are compatibility data and do not control native ecology.
-- Native movement asset `AxoTales_Whisperion`: horizontal flight 10.5, vertical 5.5. Taming is fixed at one Azure Kelp with 100% success .
+- Native movement asset `AxoTales_Whisperion`: horizontal flight 10.5, vertical 5.5. Taming is fixed at one Azure Kelp with 100% success.
 
 ### Arcane Matter ore
 
@@ -81,15 +80,17 @@
 - `encounters.tomTomEnabled = true` enables native Tom Tom encounters.
 - `encounters.tomTomSpawnWeight = 2.5` sets Tom Tom's relative ecology weight; `0` disables new spawns.
 - Tom Tom uses the same native surface habitats as Whisperion, during day and night.
-- `encounters.grayCatIntervalSeconds = 600` controls the separate Gray Cat clock.
+- `encounters.grayCatSpawnWeight = 8` controls relative native Gray Cat selection; there is no separate spawn clock.
 - `runeKnight.spawn.intervalSeconds = 62.5` controls Cursed Knight night opportunities.
 
 Native ecology weights are relative choices within eligible local populations, not guaranteed spawn intervals. Whisperion and Tom Tom have no separate timer or plugin world cap. Their old population files do not limit new encounters. Taming, ownership and saved saddle data remain intact.
 
 ### Elder Mage
 
-- Elder Mage spawn settings
-- Elder Mage population settings
+- `kuduAdept.enabled = true` enables Elder Mages. The key retains its saved configuration name.
+- `kuduAdept.spawn.intervalSeconds = 50`, `maxAttemptsPerInterval = 12`, `densityCellSizeBlocks = 192`, `cellSpawnChancePercent = 50`.
+- `kuduAdept.spawn.radiusMinBlocks = 24`, `radiusMaxBlocks = 112`, `minDistanceFromPlayersBlocks = 16`.
+- `kuduAdept.despawn.onNight = false`, `afterSeconds = 0` keeps nighttime and timed despawning disabled.
 
 ### Movement blocks
 
@@ -98,11 +99,18 @@ Native ecology weights are relative choices within eligible local populations, n
 
 ## Practical tuning advice
 
-- Compare the live runtime config with the packaged defaults before assuming the guidebook is out of date.
-- Tune `teleportBook.castDelaySeconds`, `doomBook.projectileDelaySeconds`, `flameBook.projectileDelaySeconds`, and `lightBook.projectileDelaySeconds` independently. They are separate on purpose.
-- Keep `worldgen.arcaneCrystalMaxPlacementsPerRadius = 1` unless you intentionally want crystals to become much more common again.
-- Pair config review with `spellbooks-debug.log` whenever a spell or movement report sounds vague. A lot of "balance" bugs are actually state or routing bugs.
+- Check your server's active configuration if its behavior differs from this guide.
+- Tune `teleportBook.castDelaySeconds`, `doomBook.projectileDelaySeconds`, `flameBook.projectileDelaySeconds`, and `lightBook.projectileDelaySeconds` independently. Each setting controls that spell's delay.
+- Keep `worldgen.arcaneCrystalMaxPlacementsPerRadius = 1` unless you want more frequent crystals.
+- When investigating a spell or movement problem, check `spellbooks-debug.log` along with the configuration. The log records cast and input checks that can explain a failed action.
 
-### Arcane Grass
+## Arcane Grass
 
 `worldgen.arcaneGrass` controls scattered surface patches in new chunks. Defaults: `enabled: true`, `chancePerNewChunk: 0.75`, `patchesPerChunk: 2`, `radius: 3`. Placement uses the world seed and replaces only eligible exposed natural grass or stone. It does not regenerate existing terrain.
+
+## Gray Cat
+
+- `encounters.grayCatEnabled = true` enables native Gray Cat spawning.
+- `encounters.grayCatSpawnWeight = 8` sets its selection weight in all native biomes, day and night. `0` disables new spawns.
+- Native local population and safe-ground checks apply. Soil, sand, snow and rock are eligible.
+- The old `grayCatIntervalSeconds` value is retained only for configuration compatibility; it no longer controls spawning.

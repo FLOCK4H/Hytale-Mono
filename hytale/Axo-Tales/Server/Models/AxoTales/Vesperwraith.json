@@ -1,0 +1,262 @@
+{
+  "Model": "NPC/AxoTales/Bestiary/Vesperwraith/Model.blockymodel",
+  "Texture": "NPC/AxoTales/Bestiary/Vesperwraith/Atlas.png",
+  "EyeHeight": 0.7,
+  "MinScale": 0.85,
+  "MaxScale": 0.85,
+  "HitBox": {
+    "Min": {
+      "X": -0.38,
+      "Y": 0,
+      "Z": -0.32
+    },
+    "Max": {
+      "X": 0.38,
+      "Y": 1.05,
+      "Z": 0.32
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Fly": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Fly.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "FlyFast": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/FlyFast.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Cry": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Cry.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Alerted.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Hurt.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Death.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Fly.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/FlyFast.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "FlyIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "FlyBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Fly.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "HurtFly": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Hurt.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "DeathFly": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Death.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "DeathFlyImpact": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Death.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Attack": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Cry.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Fly.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/FlyFast.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/FlyFast.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Fly.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Fly.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Fly.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Vesperwraith/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.12
+        }
+      ]
+    }
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Vesperwraith_Motes",
+      "Scale": 0.25,
+      "TargetNodeName": "ChestWisp"
+    }
+  ]
+}

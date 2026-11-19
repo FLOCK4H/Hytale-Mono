@@ -1,0 +1,91 @@
+{
+  "duration": 12,
+  "holdLastKeyframe": true,
+  "nodeAnimations": {
+    "R-Arm": {
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.7841112585431415,
+            "y": -0.04791611553341954,
+            "z": 0.29212111224716886,
+            "w": 0.545471205360609
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": -0.135752050321869,
+            "y": 0.02110400782303556,
+            "z": -0.02927401085157046,
+            "w": 0.9900853670143177
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "position": [],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Forearm": {
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": 0.06138048865664065,
+            "y": 0.1495775634728161,
+            "z": -0.027848759273349025,
+            "w": 0.9864499149600766
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": -0.2588189595935754,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.9659258492011169
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "position": [],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    },
+    "R-Hand": {
+      "orientation": [
+        {
+          "time": 0,
+          "delta": {
+            "x": -0.5633377697021744,
+            "y": 0.21216893064609668,
+            "z": 0.13183065346217257,
+            "w": 0.7875630647149524
+          },
+          "interpolationType": "smooth"
+        },
+        {
+          "time": 12,
+          "delta": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0436190103929938,
+            "w": 0.9990482380407545
+          },
+          "interpolationType": "smooth"
+        }
+      ],
+      "position": [],
+      "shapeStretch": [],
+      "shapeVisible": [],
+      "shapeUvOffset": []
+    }
+  },
+  "formatVersion": 1
+}

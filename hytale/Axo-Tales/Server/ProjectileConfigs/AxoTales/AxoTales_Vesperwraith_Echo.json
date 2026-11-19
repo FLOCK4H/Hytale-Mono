@@ -1,0 +1,49 @@
+{
+  "Model": "AxoTales_Vesperwraith_Echo",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 0,
+    "TerminalVelocityAir": 100,
+    "TerminalVelocityWater": 15,
+    "RotationMode": "Velocity",
+    "Bounciness": 0.0,
+    "SticksVertically": false
+  },
+  "LaunchForce": 18,
+  "SpawnOffset": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0.6
+  },
+  "Interactions": {
+    "ProjectileSpawn": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 4
+        },
+        "AxoVesperwraith_Echo_Remove"
+      ]
+    },
+    "ProjectileHit": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        "AxoVesperwraith_Echo_Damage",
+        "AxoVesperwraith_Echo_Remove"
+      ]
+    },
+    "ProjectileMiss": {
+      "Cooldown": {
+        "Cooldown": 0
+      },
+      "Interactions": [
+        "AxoVesperwraith_Echo_Remove"
+      ]
+    }
+  }
+}

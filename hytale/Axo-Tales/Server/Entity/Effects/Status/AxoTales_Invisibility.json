@@ -6,7 +6,6 @@
   "Debuff": false,
   "StatusEffectIcon": "Icons/ItemsGenerated/Invisibility_Potion.png",
   "ApplicationEffects": {
-    "EntityBottomTint": "#eaf4f6",
-    "EntityTopTint": "#eaf4f6"
+    "ModelVFXId": "AxoTales_Invisible"
   }
 }

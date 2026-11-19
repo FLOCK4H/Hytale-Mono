@@ -1,0 +1,7 @@
+Group { HitTestVisible: false;
+ Group #Lazarus { Anchor: (Right: 32, Bottom: 128, Width: 160, Height: 64); Background: #151c2b(0.94);
+  Group { Anchor: (Left: 10, Top: 12, Width: 38, Height: 38); Background: (TexturePath: "../Textures/SkillTree/Rune_Rho.png"); }
+  Label { Anchor: (Left: 58, Top: 10, Width: 94, Height: 20); Text: "LAZARUS"; Style: (FontName: "Secondary", FontSize: 13, RenderBold: true, TextColor: #e4d6f2); }
+  Label #LazarusState { Anchor: (Left: 58, Top: 33, Width: 94, Height: 20); Text: "Ready"; Style: (FontSize: 13, TextColor: #e6d4a4); }
+ }
+}

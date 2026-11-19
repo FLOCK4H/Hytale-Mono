@@ -1,0 +1,24 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.evil_core.name",
+    "Description": "server.items.flock4h.evil_core.description"
+  },
+  "Quality": "Rare",
+  "MaxStack": 64,
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Model": "Items/AxoTales/DarkArcana/Evil_Core.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Evil_Core_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Evil_Core.png",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ],
+    "Family": [
+      "AxoTalesCore"
+    ]
+  }
+}

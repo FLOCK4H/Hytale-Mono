@@ -104,6 +104,47 @@
       "ThirdPersonFace": "Characters/Animations/Expressions/Cheerful.blockyanim",
       "Speed": 0.92,
       "BlendingDuration": 0.18
+    },
+    "CastSilver": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/Wand/Attacks/Cast_Left/Cast_Left_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "Speed": 1.26,
+      "BlendingDuration": 0.12
+    },
+    "CastBloody": {
+      "ThirdPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Push_Charged/Cast_Push_Charging.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Push_Charged/Cast_Push_Charging_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Push_Charged/Cast_Push_Charging_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1.0,
+      "BlendingDuration": 0.14,
+      "Looping": true
+    },
+    "CastLife": {
+      "ThirdPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/AxoTales/Cast_Hurl_Smooth.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/AxoTales/Cast_Hurl_Smooth_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/AxoTales/Cast_Hurl_Smooth_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "Speed": 1.5,
+      "BlendingDuration": 0.32
+    },
+    "CastLightning": {
+      "ThirdPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Hurl_Charged/Cast_Hurl_Charged.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Hurl_Charged/Cast_Hurl_Charged_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Hurl_Charged/Cast_Hurl_Charged_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "Speed": 0.330667,
+      "BlendingDuration": 0.14
+    },
+    "CastMeteorain": {
+      "ThirdPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Hurl_Charged/Cast_Hurl_Charged.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Hurl_Charged/Cast_Hurl_Charged_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Dual_Handed/Spellbook/Attacks/Cast_Hurl_Charged/Cast_Hurl_Charged_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "Speed": 0.330667,
+      "BlendingDuration": 0.14
     }
   }
 }

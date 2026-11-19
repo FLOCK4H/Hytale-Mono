@@ -18,9 +18,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Cancels incoming damage while the Immunity Book window is active.
- */
+
+
+
 public final class ImmunityBookDamageImmunitySystem extends DamageEventSystem {
 
     private final PluginErrorReporter errors;

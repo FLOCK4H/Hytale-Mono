@@ -18,9 +18,9 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import javax.annotation.Nonnull;
 import java.util.UUID;
 
-/**
- * Example command that toggles a player-centered dynamic light (torch-like local light).
- */
+
+
+
 public class ExampleCommand extends CommandBase {
 
     private static final float MIN_SCALE = 0.1f;
@@ -32,13 +32,14 @@ public class ExampleCommand extends CommandBase {
     private static final int MAX_LIGHT_INTENSITY = 220;
     private final PluginErrorReporter errors;
 
-    /**
-     * Creates the example command and registers the value variant.
-     */
+
+
+
     public ExampleCommand(@Nonnull PluginErrorReporter errors) {
         super("example", "Toggles a torch-like light around your player (template command).");
         this.errors = errors;
-        this.setPermissionGroup(GameMode.Adventure);
+        this.requirePermission("flock4h.axotales.command.example");
+        this.setPermissionGroups("hytale:Adventurer");
         this.addUsageVariant(new ExampleValueCommand(errors));
     }
 
@@ -169,7 +170,8 @@ public class ExampleCommand extends CommandBase {
 
         private ExampleValueCommand(@Nonnull PluginErrorReporter errors) {
             super("Sets a torch-like light around your player (template command).");
-            this.setPermissionGroup(GameMode.Adventure);
+            this.requirePermission("flock4h.axotales.command.example");
+            this.setPermissionGroups("hytale:Adventurer");
             this.errors = errors;
             this.valueArg = this.withRequiredArg(
                 "value",

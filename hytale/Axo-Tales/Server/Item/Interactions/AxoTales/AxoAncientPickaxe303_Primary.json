@@ -1,0 +1,34 @@
+{
+  "Type": "AxoTales_BloodIndustry",
+  "Mode": "pickaxePrimary",
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 0.1,
+    "Effects": {
+      "ItemAnimationId": "Mine",
+      "ClearAnimationOnFinish": true,
+      "WorldSoundEventId": "SFX_Tool_T1_Swing"
+    },
+    "Next": {
+      "Type": "Selector",
+      "RunTime": 0.35,
+      "Selector": {
+        "Id": "Horizontal",
+        "Direction": "ToLeft",
+        "TestLineOfSight": true,
+        "ExtendTop": 0.5,
+        "ExtendBottom": 0.5,
+        "StartDistance": 0.1,
+        "EndDistance": 2.5,
+        "Length": 30,
+        "RollOffset": 60,
+        "YawStartOffset": -15
+      },
+      "HitEntity": {
+        "Interactions": [
+          "AxoAncientPickaxe303_Damage"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_wand.name",
+    "Description": "server.items.flock4h.arcane_wand.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 1,
+  "MaxStack": 1,
+  "Interactions": {
+    "Primary": "AxoWand_Select",
+    "Secondary": "AxoWand_Silver_Use"
+  },
+  "Model": "Items/AxoTales/Arcane_Wand.blockymodel",
+  "Texture": "Items/AxoTales/Arcane_Equipment_Texture.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Wand.png",
+  "PlayerAnimationsId": "AxoTales_Wand",
+  "ItemSoundSetId": "ISS_Weapons_Wand",
+  "Weapon": {},
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Wand"
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "$AxoLegacyItem": "Axo_Arcane_Wand_Template"
+}

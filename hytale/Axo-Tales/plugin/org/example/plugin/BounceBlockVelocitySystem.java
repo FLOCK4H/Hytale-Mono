@@ -7,7 +7,7 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.util.ChunkUtil;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 import com.hypixel.hytale.protocol.ChangeVelocityType;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.entity.entities.Player;
@@ -17,7 +17,6 @@ import com.hypixel.hytale.server.core.modules.entity.component.TransformComponen
 import com.hypixel.hytale.server.core.modules.physics.component.Velocity;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import javax.annotation.Nonnull;
@@ -27,12 +26,12 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Applies upward-only stacked launches when players touch the Axo Tales bounce block.
- */
+
+
+
 public final class BounceBlockVelocitySystem extends TickingSystem<EntityStore> {
 
-    public static final String BOUNCE_BLOCK_ITEM_ID = "AxoTales_Bounce_Block";
+    public static final String BOUNCE_BLOCK_ITEM_ID = "Axo_Bounce_Block";
 
     private static final int CHUNK_WIDTH_BLOCKS = ChunkUtil.SIZE;
     private static final double PLAYER_HORIZONTAL_RADIUS_BLOCKS = 0.42;
@@ -147,7 +146,7 @@ public final class BounceBlockVelocitySystem extends TickingSystem<EntityStore> 
                                 nowNanos
                             );
                         } catch (Throwable ignoredPerPlayer) {
-                            // Keep one malformed entity from breaking bounce handling for every player.
+
                         }
                     }
                 }
@@ -206,7 +205,7 @@ public final class BounceBlockVelocitySystem extends TickingSystem<EntityStore> 
                     + " targetHeightBlocks=" + format(step.targetHeightBlocks)
                     + " launch.source=" + launchVelocityY.source
                     + " launch.jumpForce=" + format(launchVelocityY.jumpForce)
-                    + " velocity.before=" + Vector3d.formatShortString(currentVelocity)
+                    + " velocity.before=" + VectorFormats.shortString(currentVelocity)
             );
             return;
         }
@@ -235,8 +234,8 @@ public final class BounceBlockVelocitySystem extends TickingSystem<EntityStore> 
                 + " launch.unclampedVelocityY=" + format(launchVelocityY.velocityY)
                 + " maxVerticalSpeed=" + format(runtime.maxVerticalSpeed)
                 + " rearmSeconds=" + format(runtime.cooldownSeconds)
-                + " velocity.before=" + Vector3d.formatShortString(currentVelocity)
-                + " velocity.after=" + Vector3d.formatShortString(targetVelocity)
+                + " velocity.before=" + VectorFormats.shortString(currentVelocity)
+                + " velocity.after=" + VectorFormats.shortString(targetVelocity)
         );
     }
 
@@ -329,10 +328,7 @@ public final class BounceBlockVelocitySystem extends TickingSystem<EntityStore> 
         @Nonnull String source
     ) {
         long chunkIndex = ChunkUtil.indexChunkFromBlock(blockX, blockZ);
-        WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
-        if (chunk == null) {
-            chunk = world.getChunkIfInMemory(chunkIndex);
-        }
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
         if (chunk == null) {
             return null;
         }
@@ -457,7 +453,7 @@ public final class BounceBlockVelocitySystem extends TickingSystem<EntityStore> 
             + " blockTypeId=" + contact.blockTypeId
             + " block=[" + contact.x + "," + contact.y + "," + contact.z + "]"
             + " detectedFrom=" + contact.source
-            + " player.position=" + Vector3d.formatShortString(position)
+            + " player.position=" + VectorFormats.shortString(position)
             + " positionData.insideBlockTypeId=" + insideId
             + " positionData.standingOnBlockTypeId=" + standingId;
     }

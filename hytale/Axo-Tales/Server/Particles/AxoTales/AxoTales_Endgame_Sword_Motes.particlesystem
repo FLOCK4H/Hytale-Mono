@@ -1,0 +1,9 @@
+{
+  "BoundingRadius": 3,
+  "CullDistance": 96,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Endgame_Sword_Motes"
+    }
+  ]
+}

@@ -12,8 +12,6 @@ import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.inventory.container.ItemContainer;
 import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
-import com.hypixel.hytale.server.core.modules.entitystats.modifier.Modifier;
-import com.hypixel.hytale.server.core.modules.entitystats.modifier.StaticModifier;
 import com.hypixel.hytale.server.core.universe.Universe;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
@@ -30,17 +28,16 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Applies passive side-effects when a player is wearing the Sa'r Boots item.
- *
- * <p>Note: movement buffs are applied by {@link MovementBuffSystem} so they can stack cleanly with other effects.</p>
- */
+
+
+
+
+
 public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
 
-    private static final float STAMINA_MAX_MULTIPLIER = 2f;
     private static final String MESSAGE = "you suddenly feel light now...";
     private static final String STAMINA_MAX_MODIFIER_KEY = "axotales:sars_boots_stamina_max";
-    private static final String SAR_BOOTS_ITEM_ID = "Sars_Legs";
+    private static final String SAR_BOOTS_ITEM_ID = "Axo_Sar_Boots";
 
     private final PluginErrorReporter errors;
     private final Path feltLightPlayersFile;
@@ -55,7 +52,7 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
 
     @Override
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
-        // Intentionally unused: Sa'r Boots currently only apply persistent movement settings.
+
     }
 
     public void onPlayerReady(@Nonnull PlayerReadyEvent event) {
@@ -140,7 +137,7 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
                     registration.unregister();
                 }
             } catch (Throwable ignored) {
-                // Best-effort cleanup on shutdown.
+
             }
         }
         armorChangeRegistrations.clear();
@@ -202,18 +199,7 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
 
             EntityStatMap stats = store.getComponent(playerEntityRef, EntityStatMap.getComponentType());
             if (stats != null) {
-                int staminaIndex = DefaultEntityStatTypes.getStamina();
-                float staminaPercentageBefore = staminaIndex == Integer.MIN_VALUE || staminaIndex < 0 ? 0f : readStatPercentage(stats, staminaIndex);
-
-                boolean staminaUpdated = applyOrRemoveStaminaMaxModifier(stats, wearing);
-                boolean statsUpdated = staminaUpdated;
-                if (statsUpdated) {
-                    stats.update();
-                    if (staminaUpdated && staminaIndex != Integer.MIN_VALUE && staminaIndex >= 0) {
-                        restoreStatPercentage(stats, staminaIndex, staminaPercentageBefore);
-                        stats.update();
-                    }
-                }
+                if(clearLegacyStaminaModifier(stats,DefaultEntityStatTypes.getStamina()))stats.update();
             }
         } catch (Throwable t) {
             errors.report((PlayerRef) null, "Failed to apply Sa'r Boots passive effect.", t);
@@ -239,7 +225,7 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
                 try {
                     feltLightPlayers.add(UUID.fromString(trimmed));
                 } catch (IllegalArgumentException ignored) {
-                    // Ignore invalid entries.
+
                 }
             }
         } catch (Throwable t) {
@@ -295,61 +281,12 @@ public final class SarsBootsPassiveEffect extends TickingSystem<EntityStore> {
         return SAR_BOOTS_ITEM_ID.equals(stack.getItemId());
     }
 
-    private static boolean applyOrRemoveStaminaMaxModifier(@Nonnull EntityStatMap stats, boolean wearing) {
-        int staminaIndex = DefaultEntityStatTypes.getStamina();
+    static boolean clearLegacyStaminaModifier(@Nonnull EntityStatMap stats,int staminaIndex) {
         if (staminaIndex == Integer.MIN_VALUE || staminaIndex < 0) {
             return false;
         }
 
-        if (wearing) {
-            Modifier existing = stats.getModifier(staminaIndex, STAMINA_MAX_MODIFIER_KEY);
-            if (existing instanceof StaticModifier staticModifier
-                && staticModifier.getTarget() == Modifier.ModifierTarget.MAX
-                && staticModifier.getCalculationType() == StaticModifier.CalculationType.MULTIPLICATIVE
-                && Math.abs(staticModifier.getAmount() - STAMINA_MAX_MULTIPLIER) < 0.0001f) {
-                return false;
-            }
-
-            stats.putModifier(
-                staminaIndex,
-                STAMINA_MAX_MODIFIER_KEY,
-                new StaticModifier(Modifier.ModifierTarget.MAX, StaticModifier.CalculationType.MULTIPLICATIVE, STAMINA_MAX_MULTIPLIER)
-            );
-            return true;
-        }
 
         return stats.removeModifier(staminaIndex, STAMINA_MAX_MODIFIER_KEY) != null;
-    }
-
-    private static float readStatPercentage(@Nonnull EntityStatMap stats, int statIndex) {
-        var stat = stats.get(statIndex);
-        if (stat == null) {
-            return 0f;
-        }
-
-        float max = stat.getMax();
-        if (max <= 0.0001f) {
-            return 0f;
-        }
-
-        return stat.get() / max;
-    }
-
-    private static void restoreStatPercentage(@Nonnull EntityStatMap stats, int statIndex, float percentage) {
-        if (percentage <= 0f) {
-            return;
-        }
-
-        var stat = stats.get(statIndex);
-        if (stat == null) {
-            return;
-        }
-
-        float max = stat.getMax();
-        if (max <= 0.0001f) {
-            return;
-        }
-
-        stats.setStatValue(statIndex, Math.min(max, max * percentage));
     }
 }

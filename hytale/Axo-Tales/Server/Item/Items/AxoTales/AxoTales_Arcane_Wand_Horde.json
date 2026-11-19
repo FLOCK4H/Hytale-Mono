@@ -1,0 +1,14 @@
+{
+  "Parent": "Axo_Arcane_Wand_Template",
+  "Quality": "AxoTales_Internal",
+  "Interactions": {
+    "Primary": "AxoWand_Select",
+    "Secondary": "AxoWand_Horde_Use"
+  },
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_wand.name",
+    "Description": "server.items.flock4h.arcane_wand_horde.description"
+  },
+  "Categories": [],
+  "$AxoLegacyItem": "Axo_Arcane_Wand_Horde"
+}

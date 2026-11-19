@@ -1,0 +1,13 @@
+{
+  "CullDistance": 64,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Ancient_Impact",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      }
+    }
+  ]
+}

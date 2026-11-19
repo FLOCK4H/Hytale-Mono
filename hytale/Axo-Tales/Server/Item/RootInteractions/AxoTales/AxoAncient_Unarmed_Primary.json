@@ -1,0 +1,39 @@
+{
+  "Settings": {
+    "Adventure": {
+      "Cooldown": {
+        "Id": "BlockInteraction",
+        "Cooldown": 0.35
+      }
+    },
+    "Creative": {
+      "AllowSkipChainOnClick": true,
+      "Cooldown": {
+        "Id": "BlockInteraction_Creative",
+        "Cooldown": 0.35,
+        "ClickBypass": true
+      }
+    }
+  },
+  "Interactions": [
+    {
+      "Type": "AxoTales_AncientGear",
+      "Mode": "gauntletStart",
+      "Next": {
+        "Type": "Simple",
+        "RunTime": 0.32,
+        "Next": {
+          "Type": "AxoTales_AncientGear",
+          "Mode": "gauntlets"
+        }
+      },
+      "Failed": {
+        "Type": "Simple",
+        "Next": {
+          "Type": "UseBlock",
+          "Failed": "Unarmed_Attack"
+        }
+      }
+    }
+  ]
+}

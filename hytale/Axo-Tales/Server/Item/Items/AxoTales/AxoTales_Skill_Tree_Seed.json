@@ -1,0 +1,36 @@
+{
+  "Parent": "Template_Seeds",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.skill_tree_seed.name",
+    "Description": "server.items.flock4h.skill_tree_seed.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 10,
+  "Model": "Items/AxoTales/SkillTree/Seed.blockymodel",
+  "Texture": "Items/AxoTales/SkillTree/Seed_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Skill_Tree_Seed.png",
+  "IconProperties": {
+    "Scale": 1.33,
+    "Rotation": [
+      20,
+      35,
+      0
+    ],
+    "Translation": [
+      0,
+      -4
+    ]
+  },
+  "InteractionVars": {
+    "SeedId": {
+      "Interactions": [
+        {
+          "Parent": "Seed_Place",
+          "BlockTypeToPlace": "Axo_Skill_Tree"
+        }
+      ]
+    }
+  },
+  "Categories": [],
+  "$AxoLegacyItem": "Axo_Skill_Tree_Seed"
+}

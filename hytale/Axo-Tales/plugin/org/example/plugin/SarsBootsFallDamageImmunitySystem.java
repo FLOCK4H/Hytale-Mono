@@ -16,9 +16,9 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * Cancels fall damage for players wearing Sa'r Boots.
- */
+
+
+
 public final class SarsBootsFallDamageImmunitySystem extends DamageEventSystem {
 
     @Nullable
@@ -62,7 +62,8 @@ public final class SarsBootsFallDamageImmunitySystem extends DamageEventSystem {
             return;
         }
 
-        if (!SarsBootsPassiveEffect.isWearingSarsBoots(store, playerEntityRef)) {
+        if (!SarsBootsPassiveEffect.isWearingSarsBoots(store, playerEntityRef)
+                && !AncientArmor.worn(store,playerEntityRef,com.hypixel.hytale.protocol.ItemArmorSlot.Legs,AncientArmor.BOOTS)) {
             return;
         }
 

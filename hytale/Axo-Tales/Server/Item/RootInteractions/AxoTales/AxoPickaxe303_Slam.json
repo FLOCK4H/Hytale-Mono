@@ -1,0 +1,12 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    {
+      "Type": "UseBlock",
+      "Failed": {
+        "Type": "UseEntity",
+        "Failed": "AxoPickaxe303_Slam"
+      }
+    }
+  ]
+}

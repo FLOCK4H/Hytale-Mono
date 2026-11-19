@@ -1,0 +1,12 @@
+{
+  "RequireNewClick": true,
+  "Interactions": [
+    {
+      "Type": "AxoTales_AncientGear",
+      "Mode": "impact"
+    }
+  ],
+  "Cooldown": {
+    "Cooldown": 0
+  }
+}

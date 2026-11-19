@@ -1,51 +1,71 @@
-# Crafting Flow
+# Crafting
 
-Craft **Bloody Book** and **Book of Life** at **Arcanist's Workbench → Spellblades**. Craft the **Vitae Extractor** at a **tier-two normal Workbench → Crafting**. The full **Arcane Veil set** supplies close-range creature stealth. The extractor turns **one Blood Droplet + one Essence of Life into one DNA Sample**. See [Blood Magic](blood-magic.md#crafting) for recipes and the complete summoning workflow.
+Build **Axo's Workbench** at a **tier-two Workbench → Crafting** with
+**8 Thorium Ingots, 12 Arcane Crystal Shards and 20 logs**. Place it and interact
+as with any other workbench. It uses the normal crafting screen, including
+search, recipe previews, ingredient counts, queued crafts, X10 and All.
+Carried Astral Satchels can supply ingredients directly.
 
-Whisperion's saddle is available early at **Workbench → Tools**: 8 Light Leather, 4 Linen Scraps, 2 Iron Bars, 4 Agretis Bars, 4 seconds. It needs no Evil Core. Tame the horse with one Azure Kelp using RMB, then fit the saddle with RMB.
+![Axo's Workbench](assets/images/catalog/Axo_Arcane_Workbench.png)
 
-<div class="page-header">
-  <p class="eyebrow">Progression routing</p>
-  <p class="lead-text">Axo Tales recipes read much more cleanly now that the Arcanist's Workbench is split into Axo Tales lanes. Use this page if you want the fastest route from raw resources to a stable loadout.</p>
-</div>
+Look for the purple cloth, crystal cradle and open book. The workbench also has
+a blood flask, inkpot, quill and research scroll on its counter.
+
+| Tab | Recipes |
+| --- | --- |
+| **Items** | Seeds, Astral Satchel, Arcane and Ancient Pickaxes, souls, saddle, Spyglass, bars and other utility items |
+| **Armory** | Weapons, armor, Ancient Arrows and Arcane Oraculum |
+| **Library** | Spellbooks, Arcane Wand and Spellbook Pouch |
+| **Blood Magic** | Blood Furnace, Vitae Extractor and Frozen Chest |
+| **Alchemy** | Potions and Axo's Empty Potion Bottle |
+
+Agretis, Revel and Aequalis Bars can also be smelted in an ordinary Furnace or
+Blood Furnace. Drop-only items still come from their creatures or world sources.
+
+## Astral Satchel
+
+**Items**, 8 seconds: **12 Heavy Leather, 8 Spider Silk, 22 Arcane Matter,
+22 Aequalis Bars and 7 Evil Cores**. See [storage and controls](items/astral-satchel.md).
+
+## Arcane Pickaxe
+
+**Items**, 12 seconds: **12 Revel Bars, 8 Aequalis Bars, 8 Arcane Matter,
+16 Arcane Crystal Shards, 4 Heavy Leather and 2 Evil Cores**.
+
+## Frozen Chest
+
+**Blood Magic**, 5 seconds: **6 Iron Ingots, 4 Copper Ingots, 8 Ice, 2 Arcane Crystal Shards and 2 Ice Essence**. See [specimen storage](blood-magic.md#frozen-chest).
+
+## Ancient Pickaxe
+
+**Items**, 24 seconds. Upgrade one Arcane Pickaxe with Ancient-tier materials and **2 Mithril Ore** from Fossor Souls. See [cost, controls and ground strike](items/gear.md#ancient-pickaxe).
+
+## Seeds and companions
+
+Crystal Seeds, Skill Tree Seeds and [Poisonous Vine Seeds](blocks-ores.md#poisonous-vine)
+are in **Items**, alongside all three souls and Whisperion's saddle.
 
 ## Evil Core progression
 
-Kill a Cursed Knight for **one guaranteed Evil Core**. Ordinary crafted armor, weapons, wands and spellbooks require **one Core** per piece. **Ancient armor and the new Ancient Sword require multiple Cores**, as listed in their complete recipes. The free Silver starter needs no crafting, while pouches, potions, resources and crystal seeds retain their listed recipes.
+Cursed Knights drop one guaranteed Evil Core. Most crafted armor, weapons, wands
+and spellbooks use one per item. Ancient equipment, the pickaxe and satchel have
+their own higher costs. Leech Book uses its four distinct blood samples. See the
+[complete catalog](items/catalog.md) for every full recipe and output quantity.
 
-Arcane Veil Hood, Robe and Leggings use the Armor tab; their complete medium-tier recipes are in [Gear and Spellblade](items/gear.md#arcane-veil-robe). Mining a wild Arcane Crystal guarantees **one crystal seed plus 2–3 shards**. You can also craft a seed: 2 Arcane Shards + 1 Arcane Matter + 2 Life Essence, Spellblades tab, 3 seconds. Plant it on prepared soil for renewable shard harvests.
+## Armory recipes
 
-## Bench map
-
-<div class="card-grid">
-  <div class="card" data-reveal>
-    <h3>Arcanist's Workbench - Armor</h3>
-    <p>The four Sa'r pieces and four Ancient pieces live here.</p>
-  </div>
-  <div class="card" data-reveal>
-    <h3>Arcanist's Workbench - Spellblades</h3>
-    <p>All spellbooks plus Arcane Sword live in this tab.</p>
-  </div>
-  <div class="card" data-reveal>
-    <h3>Alchemybench</h3>
-    <p>Axo's Empty Potion Bottle and every Axo Tales potion recipe stay on the vanilla alchemy bench.</p>
-  </div>
-</div>
-
-See [New Metals](materials.md) for Agretis, Revel and Aequalis locations, smelting and equipment costs. The tables below include these bars; add the Evil Core required for each crafted gear piece.
-
-## Armor tab recipes
+Sa'r pieces take **three seconds** each.
 
 | Item | Recipe |
 | --- | --- |
-| Sa'r Boots | 4 Dark Feathers, 4 Cobalt Bars, 6 Arcane Crystal Shards, 12 Arcane Matter, 8 Aequalis Bars |
-| Sa'r Diadem | 4 Arcane Crystal Shards, 2 Cobalt Bars, 8 Arcane Matter, 6 Aequalis Bars |
-| Sa'r Armor | 12 Cobalt Bars, 20 Arcane Matter, 10 Arcane Crystal Shards, 10 Aequalis Bars |
-| Sa'r Warfists | 2 Azure Kelp, 2 Arcane Matter, 2 Arcane Crystal Shards, 6 Aequalis Bars |
+| Sa'r Boots | 4 Dark Feathers, 4 Cobalt Ingot, 6 Arcane Crystal Shards, 12 Arcane Matter, 8 Aequalis Bar, 1 Evil Core. |
+| Sa'r Diadem | 4 Arcane Crystal Shards, 2 Cobalt Ingot, 8 Arcane Matter, 6 Aequalis Bar, 1 Evil Core. |
+| Sa'r Armor | 12 Cobalt Ingot, 20 Arcane Matter, 10 Arcane Crystal Shards, 10 Aequalis Bar, 1 Evil Core. |
+| Sa'r Warfists | 2 Azure Kelp, 2 Arcane Matter, 2 Arcane Crystal Shards, 6 Aequalis Bar, 1 Evil Core. |
 
 ### Ancient armor
 
-Arcanist's Workbench → Axo Tales Armor, **20 seconds** per piece. These are complete endgame recipes:
+Axo's Workbench → Armory, **20 seconds** per piece. These are complete endgame recipes:
 
 | Piece | Adamantite Bars | Aequalis Bars | Arcane Matter | Arcane Crystal Shards | Voidhearts | Evil Cores |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -54,11 +74,11 @@ Arcanist's Workbench → Axo Tales Armor, **20 seconds** per piece. These are co
 | Ancient Gauntlets | 24 | 32 | 64 | 48 | 8 | 4 |
 | Ancient Boots | 32 | 48 | 96 | 64 | 12 | 6 |
 
-## Spellblades tab recipes
+## Library recipes
 
-<div class="accent-card" data-reveal>
+<div class="accent-card">
   <h3>Shared spellbook backbone</h3>
-  <p>Most Axo Tales spellbooks start from <strong>2 Arcane Crystal Shards</strong> and <strong>2 Arcane Matter</strong>, then add one themed ingredient.</p>
+  <p>Most spellbook recipes use <strong>2 Arcane Crystal Shards</strong> and <strong>2 Arcane Matter</strong> and <strong>1 Evil Core</strong>, plus the ingredients below. These recipes take three seconds in Library. Silver Book is a first-spawn reward; the blood and storm books have separate full recipes in the catalog.</p>
 </div>
 
 | Spellbook | Extra ingredient |
@@ -68,7 +88,7 @@ Arcanist's Workbench → Axo Tales Armor, **20 seconds** per piece. These are co
 | Mining Book | 10 Volcanic Cobble |
 | Immunity Book | 1 Cobalt Shield |
 | Horde Book | 3 Feran Candles |
-| Book of Doom | 4 Voidhearts |
+| Book of Doom | 4 Voidhearts, 4 Aequalis Bars |
 | Morph Book | 2 Dark Feathers |
 | Taunt Book | 5 Fire Essence |
 | Flame Book | 20 Fire Essence |
@@ -85,11 +105,11 @@ Arcanist's Workbench → Axo Tales Armor, **20 seconds** per piece. These are co
 - 24 Aequalis Bars
 - 1 Evil Core
 
-Craft time: 12 seconds. Primary attack cadence is 20% faster.
+Craft at Axo's Workbench → Armory in 12 seconds. Primary attack cadence is 20% faster.
 
 ### Ancient Sword
 
-This is a separate Legendary weapon. **24 seconds**, Arcanist's Workbench → Axo Tales Spellblades:
+This is a separate Legendary weapon. **24 seconds**, Axo's Workbench → Armory:
 
 - 1 Arcane Sword
 - 64 Adamantite Bars
@@ -101,11 +121,11 @@ This is a separate Legendary weapon. **24 seconds**, Arcanist's Workbench → Ax
 
 ### Ancient Arrows
 
-Craft **four** in **12 seconds**: **8 Adamantite Bars, 8 Aequalis Bars, 8 Revel Bars, 12 Arcane Matter, 16 Arcane Crystal Shards, 8 Light Feathers and 1 Evil Core**. Their existing ammunition behavior is retained.
+Craft **four** in **12 seconds**: **8 Adamantite Bars, 8 Aequalis Bars, 8 Revel Bars, 12 Arcane Matter, 16 Arcane Crystal Shards, 8 Light Feathers and 1 Evil Core**. See [Ancient Arrow controls](items/scout-gear.md#ancient-arrows) for targeting and ammunition rules.
 
 ### Legendary books and Bloodfang
 
-Arcanist's Workbench → Axo Tales Spellblades, 12 seconds each. These are complete recipes, including the Core:
+Lightning and Meteorain Books use **Library**; Bloodfang uses **Armory**. Each takes 12 seconds. These are complete recipes, including the Core:
 
 | Item | Recipe |
 | --- | --- |
@@ -113,45 +133,45 @@ Arcanist's Workbench → Axo Tales Spellblades, 12 seconds each. These are compl
 | Axo's Meteorain Book | 40 Arcane Matter, 32 Arcane Shards, 40 Fire Essence, 12 Voidhearts, 20 Aequalis Bars, 1 Evil Core |
 | Bloodfang | 24 Arcane Matter, 16 Arcane Shards, 10 Heavy Leather, 16 Revel Bars, 12 Aequalis Bars, 1 Evil Core |
 
-## Alchemybench recipes
+## Alchemy recipes
 
 | Item | Recipe |
 | --- | --- |
-| Axo's Empty Potion Bottle | 1 Empty Potion Bottle, 1 Arcane Crystal Shard |
-| Swift Potion | Empty Bottle, 2 Arcane Crystal Shards, 2 Cyan Hibiscus |
-| Strength Potion | Empty Bottle, 2 Arcane Crystal Shards, 10 Adamantite Ingots |
-| Rabbit Potion | Empty Bottle, 2 Arcane Crystal Shards, 1 Dark Feather |
-| Invisibility Potion | Empty Bottle, 2 Arcane Crystal Shards, 1 Azure Kelp |
-| Curse Potion | Empty Bottle, 2 Arcane Crystal Shards, 5 Fire Essence |
+| Axo's Empty Potion Bottle | 1 Empty Potion Bottle, 1 Arcane Crystal Shards, 1 Evil Core. |
+| Swift Potion | 1 Axo's Empty Potion Bottle, 2 Arcane Crystal Shards, 2 Cyan Hibiscus. |
+| Strength Potion | 1 Axo's Empty Potion Bottle, 2 Arcane Crystal Shards, 10 Adamantite Ingot. |
+| Rabbit Potion | 1 Axo's Empty Potion Bottle, 2 Arcane Crystal Shards, 1 Dark Feathers. |
+| Invisibility Potion | 1 Axo's Empty Potion Bottle, 2 Arcane Crystal Shards, 1 Azure Kelp. |
+| Curse Potion | 1 Axo's Empty Potion Bottle, 2 Arcane Crystal Shards, 5 Essence of Fire, 1 Evil Core. |
 
 ## A practical first route
 
 1. Farm Arcane Matter ore and Arcane Crystal Shards first.
-2. Pick one lane: mana gear for a stronger baseline, or a utility spellbook for immediate mobility or combat help.
-3. Defeat Cursed Knights for the Evil Cores that bind crafted gear, plus Frost Book and movement-block drops.
-4. Layer in potions when you want short-duration mobility, stealth, or damage spikes without changing your core gear.
+2. Craft mana gear to increase your mana, or a utility spellbook for movement or combat.
+3. Defeat Cursed Knights for Evil Cores used in crafting. They can also drop Frost Books and movement blocks.
+4. Use potions for temporary movement, invisibility or damage bonuses without changing your equipment.
 
 ## Medium-tier arcane equipment
 
-Both recipes use the Arcanist's Workbench Spellblades tab and take 5 seconds.
+Both recipes use Axo's Workbench Library tab and take 5 seconds.
 
 | Item | Ingredients |
 | --- | --- |
-| Arcane Wand | 6 Oak Trunks, 4 Cobalt Bars, 8 Arcane Matter, 4 Arcane Crystal Shards, 6 Agretis Bars |
+| Arcane Wand | 6 Oak Trunks, 4 Cobalt Bars, 8 Arcane Matter, 4 Arcane Crystal Shards, 6 Agretis Bars, 1 Evil Core |
 | Spellbook Pouch | 8 Medium Leather, 8 Linen Scraps, 2 Cobalt Bars, 4 Arcane Matter, 2 Arcane Crystal Shards, 4 Agretis Bars |
 
 See [Wand and Pouch](items/arcane-equipment.md) for storage and casting controls.
 
-Rimefang uses the same Spellblades tab: 8 Cobalt Bars, 6 Ice Essence, 4 Arcane Matter, 3 Medium Leather and 10 Revel Bars; 6 seconds. See [Gear and Spellblade](items/gear.md#rimefang).
+Rimefang uses Axo's Workbench Armory tab: 8 Cobalt Bars, 6 Ice Essence, 4 Arcane Matter, 3 Medium Leather, 10 Revel Bars and 1 Evil Core; 6 seconds. See [Gear and Spellblade](items/gear.md#rimefang).
 
 ## Arcane shortbows and Oraculum
 
-At **Arcanist's Workbench → Spellblades**, craft **Everflame** (medium-hard) or **Mirethorn** (medium), 12 seconds each. The **Arcane Oraculum** costs **3 Spoiled Hearts, 55 Arcane Matter, 12 Arcane Crystal Shards and 12 Revel Bars**, 16 seconds; each Dreadmaw kill guarantees one heart. See [recipes, ammunition and activation](items/scout-gear.md#everflame-and-mirethorn-shortbows).
+At **Axo's Workbench → Armory**, craft **Everflame** (medium-hard) or **Mirethorn** (medium), 12 seconds each. The **Arcane Oraculum** costs **3 Spoiled Hearts, 55 Arcane Matter, 12 Arcane Crystal Shards and 12 Revel Bars**, 16 seconds; each Dreadmaw kill guarantees one heart. See [recipes, ammunition and activation](items/scout-gear.md#everflame-and-mirethorn-shortbows).
 
 ## Helpful Souls
 
-Workbench → Tools, five seconds each: **one Evil Core + three Azure Kelps**, plus **one Gold Bar for Villa**, **one Iron Pickaxe for Fossor**, or **one Ruby for Cruor**. See [Helpful Souls](souls.md) for summoning, recall and their behavior.
+Axo's Workbench → Items, five seconds each: **one Evil Core + three Azure Kelps**, plus **one Gold Bar for Villa**, **one Iron Pickaxe for Fossor**, or **one Ruby for Cruor**. See [Helpful Souls](souls.md) for summoning, recall and their behavior.
 
 ## Skill Tree Seed
 
-At the Arcanebench, under Spellblades, combine **2 Life Essence and 1 Purple Orchid** to craft a Skill Tree Seed. Plant it in open ground; it matures in **15 real minutes**. See [runes and the Skill Tree](skill-tree.md) for all permanent gifts and rune costs.
+At Axo's Workbench, under Items, combine **2 Life Essence and 1 Purple Orchid** to craft a Skill Tree Seed. Plant it in open ground; it matures in **15 real minutes**. See [runes and the Skill Tree](skill-tree.md) for skill effects and rune costs.

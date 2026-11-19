@@ -1,31 +1,30 @@
 items.flock4h.sar_boots.name = Sa'r Boots
-items.flock4h.sar_boots.description = While worn, grants +25 max mana, +2 mana every 2s, +10 max stamina, +25% stamina regen, +16% defense, faster movement, higher jumps, doubled stamina, and fall damage immunity.
+items.flock4h.sar_boots.description = While worn, grants +25 max mana, +2 mana every 2s, +10 max stamina, +25% stamina regen, +8% defense, faster movement, higher jumps, one extra mid-air jump, and fall damage immunity.\n<color is="#d8b86a"><b>Full Sa'r set</b></color>: +35% movement speed, +30% maximum health and mana, 12.5% damage absorption and +100% crafting speed, in addition to each piece's perks. Permanently unlocks 18 bonus backpack slots.
 items.flock4h.sar_diadem.name = Sa'r Diadem
-items.flock4h.sar_diadem.description = While worn, grants +25 health, +25 max mana, +10 max stamina, +25% stamina regen, +16% defense, underwater breathing, and faster swimming.
+items.flock4h.sar_diadem.description = While worn, grants +25 health, +25 max mana, +10 max stamina, +25% stamina regen, +8% defense, underwater breathing, and faster swimming.\n<color is="#d8b86a"><b>Full Sa'r set</b></color>: +35% movement speed, +30% maximum health and mana, 12.5% damage absorption and +100% crafting speed, in addition to each piece's perks. Permanently unlocks 18 bonus backpack slots.
 items.flock4h.sar_chest.name = Sa'r Armor
-items.flock4h.sar_chest.description = While worn, grants +75 health, +25 max mana, +10 max stamina, +25% stamina regen, +16% defense, and +25% physical/projectile damage dealt.
+items.flock4h.sar_chest.description = While worn, grants +75 health, +25 max mana, +10 max stamina, +25% stamina regen, +8% defense, and +25% physical/projectile damage dealt.\n<color is="#d8b86a"><b>Full Sa'r set</b></color>: +35% movement speed, +30% maximum health and mana, 12.5% damage absorption and +100% crafting speed, in addition to each piece's perks. Permanently unlocks 18 bonus backpack slots.
 items.flock4h.sar_warfists.name = Sa'r Warfists
-items.flock4h.sar_warfists.description = While worn, grants +25 health, +25 max mana, +10 max stamina, +25% stamina regen, +16% defense, and fires a 25-damage 2s-stun bolt on unarmed primary attacks.
+items.flock4h.sar_warfists.description = While worn, grants +25 health, +25 max mana, +10 max stamina, +25% stamina regen, +8% defense, and fires a 25-damage 2s-stun bolt on unarmed primary attacks.\n<color is="#d8b86a"><b>Full Sa'r set</b></color>: +35% movement speed, +30% maximum health and mana, 12.5% damage absorption and +100% crafting speed, in addition to each piece's perks. Permanently unlocks 18 bonus backpack slots.
 items.flock4h.invisibility_cloak.name = Invisibility Cloak
-items.flock4h.invisibility_cloak.description = While worn, keeps you invisible and dulls nearby NPC aggression. Also increases max mana.
+items.flock4h.invisibility_cloak.description = While worn, hides your character and equipment from players and conceals you from creatures.
 items.flock4h.custom_placeholder_block.name = Custom Placeholder Block
 items.flock4h.custom_placeholder_block.description = A debug marker block used for testing Axo Tales worldgen.
 items.flock4h.cloud_block.name = Cloud Block
-items.flock4h.cloud_block.description = A light-blue cloud block that boosts your vertical motion in the direction you enter it.
+items.flock4h.cloud_block.description = A cloud bank that boosts your motion in the direction you enter it.
 items.flock4h.bounce_block.name = Bounce Block
-items.flock4h.bounce_block.description = An orange bouncy block that launches you upward higher with each chained bounce.
+items.flock4h.bounce_block.description = A forged spring block that launches you higher with each chained bounce.
 items.flock4h.arcane_matter_ore_stone.name = Arcane Matter Ore (Stone)
 items.flock4h.arcane_matter_ore_stone.description = A strange ore formation threaded through stone.
 items.flock4h.arcane_matter_ore_volcanic.name = Arcane Matter Ore (Volcanic)
 items.flock4h.arcane_matter_ore_volcanic.description = A strange ore formation fused into volcanic rock.
 items.flock4h.arcane_matter.name = Arcane Matter
-items.flock4h.arcane_matter.description = A dense mote of arcane energy.
 items.flock4h.arcane_grass.name = Arcane Grass
 items.flock4h.arcane_grass.description = Grass steeped in arcane energy.
 items.Rock_Crystal_Arcane_Large.name = Arcane Crystal
 items.Ingredient_Crystal_Arcane.name = Arcane Crystal Shards
 items.flock4h.axos_healing_book.name = Axo's Healing Book
-items.flock4h.axos_healing_book.description = LMB fires a Healing Bolt that fully heals what it hits. RMB heals you at a mana cost.
+items.flock4h.axos_healing_book.description = LMB: fully heal and cleanse the target. RMB: heal and cleanse yourself. Removes poison, fire and other harmful effects; keeps beneficial buffs.
 items.flock4h.axos_immunity_book.name = Axo's Immunity Book
 items.flock4h.axos_immunity_book.description = RMB grants brief damage immunity at a mana cost.
 items.flock4h.axos_horde_book.name = Axo's Horde Book
@@ -46,8 +45,7 @@ items.flock4h.axos_flame_book.name = Axo's Flame Book
 items.flock4h.axos_flame_book.description = RMB launches a Flame Bolt that burns foes and turns terrain to volcanic rock at a mana cost.
 items.flock4h.axos_light_book.name = Axo's Light Book
 items.flock4h.axos_light_book.description = RMB launches a harmless living light ball that slows into a glowing cruise, lasts up to 2 minutes, and stops at 100 blocks or on contact.
-items.flock4h.axos_ancient_sword.name = Axo's Ancient Sword
-items.flock4h.axos_ancient_sword.description = A mana-fed blade with a sky-blue trail. RMB casts an Ancient Slash at a mana cost; carrying it increases max mana.
+items.flock4h.axos_ancient_sword.name = Arcane Sword
 items.flock4h.empty_potion_bottle.name = Axo's Empty Potion Bottle
 items.flock4h.empty_potion_bottle.description = A throwable empty bottle used as the base for brewing Axo Tales potions.
 items.flock4h.curse_potion.name = Curse Potion
@@ -60,9 +58,187 @@ items.flock4h.rabbit_potion.name = Rabbit Potion
 items.flock4h.rabbit_potion.description = Drink to leap higher for a short time.
 items.flock4h.swift_potion.name = Swift Potion
 items.flock4h.swift_potion.description = Drink to move faster for a short time.
-items.flock4h.kudu_boots.name = Kudu Boots
-items.flock4h.kudu_boots.description = While worn, turns water beneath you into snow brick so you can walk across. Also increases max mana.
 benchCategories.axoTalesSpellblades = Axo Tales Spellblades
 benchCategories.axoTalesArmor = Axo Tales Armor
-npcRoles.Kudu_Rune_Knight.name = Kudu Rune Knight
-npcRoles.Kudu_Adept_Magician.name = Kudu Adept Magician
+npcRoles.Kudu_Rune_Knight.name = Cursed Knight
+npcRoles.Kudu_Adept_Magician.name = Elder Mage
+
+items.flock4h.axos_silver_book.name = Axo's Silver Book
+items.flock4h.axos_silver_book.description = Your first spellbook. Right-click to fire a silver-gray bolt for 10 damage. No mana required. Granted once per player in each world/server.
+items.flock4h.rimefang.name = Rimefang
+items.flock4h.rimefang.description = <color is="#95deef"><b>Winter's Quiet</b></color>\n<i>A shard of deep winter, bound in cold silver.</i>\nSuccessful, unblocked hits freeze enemies for 2 seconds. Repeated hits refresh the freeze.\nCobalt-strength sword. RMB: guard. Uses the native sword combo and signature.
+items.flock4h.crystal_seed.name = Arcane Crystal Seed
+items.flock4h.crystal_crop.name = Growing Arcane Crystal
+items.flock4h.crystal_seed.description = Mine a wild Arcane Crystal for one guaranteed seed. Plant on prepared soil. Grows from small to medium to mature in 15 minutes. Harvest for 2-3 Arcane Crystal Shards; the crystal regrows. Breaking returns its seed.
+items.flock4h.evil_core.name = Evil Core
+items.flock4h.evil_core.description = <color is="#bd78e8"><b>Heart of the Rune Knight</b></color>\nA guaranteed Rune Knight drop. One core binds every crafted Axo armor or weapon piece.
+items.flock4h.arcane_head.name = Arcane Veil Hood
+items.flock4h.arcane_chest.name = Arcane Veil Robe
+items.flock4h.arcane_legs.name = Arcane Veil Leggings
+items.flock4h.arcane_robe.description = <color is="#8dded1"><b>The Quiet Path</b></color>\nFull set: +30% movement speed, +25% maximum health, +25% maximum mana, 20% damage absorption, +5 mana per second, +25% maximum stamina and +50% crafting speed. Enemies detect you within 5 blocks. Permanently unlocks 9 bonus backpack slots the first time the full set is worn. Open Backpack from Inventory. Light cloth, minimal armor.
+npcRoles.Whisperion.name = Whisperion
+items.flock4h.whisperion_saddle.name = Whisperion Saddle
+items.flock4h.whisperion_saddle.description = <color is="#afc9db"><b>A Seat Among the Stars</b></color>\nRMB on your tamed Whisperion to fit the saddle. Tame him with one Azure Kelp using RMB. Interact to ride; Space rises, Crouch descends, Interact dismounts. Empty hand + Crouch + Interact retrieves the saddle.
+interactionHints.axoWhisperion = Whisperion: Azure Kelp to tame / saddle to ride
+npcRoles.Villa_Soul.name = Villa Soul
+items.flock4h.villa_soul.name = Villa Soul
+items.flock4h.villa_soul.description = An immortal courier. Collects dropped stacks within 50 blocks of its station and delivers them to the nearest chest with space. If chests fill, carried items stay safe.\nRMB to summon. Interact for status. LMB with an empty hand returns your soul as a dropped item with cargo, progress and upgrades. Only the player who summoned it can collect it. Empty hand + Crouch + Interact also recalls it.
+npcRoles.Fossor_Soul.name = Fossor Soul
+items.flock4h.fossor_soul.name = Fossor Soul
+items.flock4h.fossor_soul.description = An immortal miner. Conjures a private block and harvests one resource every two minutes. RMB with an Arcane Crystal or shard: +0.1 percentage points per premium ore, up to 200 feeds. Crouch + RMB feeds the held stack up to the cap.\nRMB to summon. Interact for status. LMB with an empty hand returns your soul as a dropped item with cargo, progress and upgrades. Only the player who summoned it can collect it. Empty hand + Crouch + Interact also recalls it.
+npcRoles.Cruor_Soul.name = Cruor Soul
+items.flock4h.cruor_soul.name = Cruor Soul
+items.flock4h.cruor_soul.description = An immortal guardian. Stays behind you at a distance and retaliates against targets involved in your fights with a 10-damage bolt every 1.5 seconds. Crouch out of combat to make it wait while you approach.\nRMB to summon. Interact for status. LMB with an empty hand returns your soul as a dropped item with cargo, progress and upgrades. Only the player who summoned it can collect it. Empty hand + Crouch + Interact also recalls it.
+interactionHints.axoSoul = Soul: Interact for status / Summoner: empty-hand LMB to collect
+items.flock4h.AxoTales_Ore_Agretis.name=Agretis Ore
+items.flock4h.AxoTales_Ore_Agretis.description=A foundational metal found with Iron rarity throughout the world. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Bar_Agretis.name=Agretis Bar
+items.flock4h.AxoTales_Bar_Agretis.description=A foundational metal found with Iron rarity throughout the world. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Agretis_Ore.name=Agretis Ore Deposit
+items.flock4h.AxoTales_Agretis_Ore.description=A foundational metal found with Iron rarity throughout the world. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Ore_Revel.name=Revel Ore
+items.flock4h.AxoTales_Ore_Revel.description=A frost-touched metal found only in winter regions, with Cobalt rarity. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Bar_Revel.name=Revel Bar
+items.flock4h.AxoTales_Bar_Revel.description=A frost-touched metal found only in winter regions, with Cobalt rarity. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Revel_Ore.name=Revel Ore Deposit
+items.flock4h.AxoTales_Revel_Ore.description=A frost-touched metal found only in winter regions, with Cobalt rarity. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Ore_Aequalis.name=Aequalis Ore
+items.flock4h.AxoTales_Ore_Aequalis.description=A balanced arcane metal found only in fire regions, with Adamantite rarity. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Bar_Aequalis.name=Aequalis Bar
+items.flock4h.AxoTales_Bar_Aequalis.description=A balanced arcane metal found only in fire regions, with Adamantite rarity. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+items.flock4h.AxoTales_Aequalis_Ore.name=Aequalis Ore Deposit
+items.flock4h.AxoTales_Aequalis_Ore.description=A balanced arcane metal found only in fire regions, with Adamantite rarity. Smelt ore in a Furnace; use bars in Axo equipment recipes.
+npcRoles.Dreadmaw.name = Dreadmaw
+npcRoles.Vesperwraith.name = Chiro
+items.flock4h.AxoTales_Blood_Droplet.name = Blood Droplet
+items.flock4h.AxoTales_Blood_Droplet.description = A sealed blood specimen. Extract from a living creature with the Bloody Book. Its species is saved in this item.
+items.flock4h.AxoTales_DNA_Sample.name = DNA Sample
+items.flock4h.AxoTales_DNA_Sample.description = A preserved bloodline. Convert a Blood Droplet with one Essence of Life in the Vitae Extractor. A properly bound sample names its source species.
+items.flock4h.AxoTales_Vitae_Extractor.name = Vitae Extractor
+interactionHints.axoVitae = Extract DNA: blood + Essence of Life
+items.flock4h.Book_Bloody_Texture.name = Bloody Book
+items.flock4h.Book_Bloody_Texture.description = RMB: begin an eight-second extraction. Keep aiming at a living creature within eight blocks. Taking damage, losing sight or changing items interrupts it. Each individual can give blood only once. No mana cost. Carrying this book drains 8 HP every 5 seconds.
+items.flock4h.Book_Life_Texture.name = Book of Life
+items.flock4h.Book_Life_Texture.description = RMB: consume every DNA sample in carried inventory to awaken loyal companions. Uses ALL currently available mana. Needs some mana and safe space for every sample. Companions fight for you and survive saves/restarts.
+npcRoles.AxoTales_Bloodbound.name = Bloodbound Companion
+items.flock4h.lightning_book.name = Axo's Lightning Book
+items.flock4h.lightning_book.description = RMB: call a lightning storm at visible terrain within 40 blocks. Sky aim centers it on you.\n40-block radius. 50 damage per second for 8 seconds. Caster is spared.\n80 mana; 24-second shared storm cooldown; 0.45-second invocation.\nIndependent 10% drop chance from Dreadmaw.
+items.flock4h.meteorain_book.name = Axo's Meteorain Book
+items.flock4h.meteorain_book.description = RMB: call a meteor rain at visible terrain within 40 blocks. Sky aim centers it on you.\n40-block radius. 50 damage per second for 8 seconds. Caster is spared.\n80 mana; 24-second shared storm cooldown; 0.45-second invocation.\nIndependent 10% drop chance from Dreadmaw.
+items.flock4h.starfang_daggers.name = Bloodfang Daggers
+items.flock4h.starfang_daggers.description = Recurved silver blades. Grounded LMB attacks add a short dash and light knockback. 30 base damage per hit; 60% faster attack cadence. Hold LMB for 0.8s, then release to throw both blades: 125 base damage each, 250 together. Five-second throw cooldown.
+items.flock4h.arcane_wand.name = Axo's Arcane Wand
+items.flock4h.arcane_wand.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nCast spellbooks in your inventory or carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.spellbook_pouch.name = Axo's Spellbook Pouch
+items.flock4h.spellbook_pouch.description = Holds 18 spellbooks and collects newly picked-up books automatically. RMB to open. Carry it to access its spells with an Arcane Wand.
+items.flock4h.arcane_wand_silver.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Silver Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_heal.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Heal Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_teleport.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Teleport Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_mining.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Mining Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_immunity.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Immunity Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_light.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Light Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_frost.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Frost Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_flame.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Flame Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_horde.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Horde Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_morph.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Morph Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_taunt.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Taunt Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_doom.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Doom Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_bloody.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Bloody Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_life.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Life Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_lightning.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Lightning Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.arcane_wand_meteorain.description = <color is="#d8b86a"><b>Voice of the Elder Grove</b></color>\n<i>Old roots remember every spell.</i>\nSelected: Meteorain Book. Uses the original spell cost and cooldown. Keep its book in your inventory or a carried Spellbook Pouch. RMB: cast. LMB: choose a spell. Crouch+RMB: alternate action.
+items.flock4h.astral_satchel.name = Axo's Astral Satchel
+items.flock4h.astral_satchel.description = RMB: open storage. Search, filter and browse pages. LMB: stack; RMB: one. Toolbar: take/store visible items or Quickstack matching stored types. Workbenches use carried contents. Cannot contain another Astral Satchel. Contents follow its identity on this server.
+items.flock4h.arcane_matter.description = Used to craft spellbooks and arcane equipment.
+items.flock4h.axos_ancient_sword.description = LMB: longsword combo and charged stab. RMB: Arcane Slash.\n83 base damage; 105 charged damage. Primary attacks are 20% faster than a native longsword.\nCarrying it adds 30 maximum mana.
+npcRoles.Tom_Tom.name = Tom Tom
+npcRoles.AxoTales_Gray_Cat.name = Gray Cat
+items.flock4h.AxoTales_Ancient_Arrow.name = Ancient Arrow
+items.flock4h.AxoTales_Ancient_Arrow.description = Carry these arrows in your hotbar, inventory or Backpack. Use a standard shortbow. Hold LMB for at least 0.35 seconds, then release at a living target.\nLocks onto the visible target within 96 blocks and follows it through terrain. 180 impact damage; 60 splash damage within 4 blocks. No block damage.\nNo target: no ammunition is consumed. Native bow signatures keep their normal ammunition behavior.
+items.flock4h.AxoTales_Spyglass.name = Axo's Spyglass
+items.flock4h.AxoTales_Spyglass.description = Hold RMB to raise the spyglass and focus at 6× magnification. Release to lower it.\nShows name, HP, mana when available and distance for the visible target. Outer lens is darkened.\nDisplay fields can be changed in spyglass-display.json.
+items.flock4h.blood_furnace.name = Blood Furnace
+items.flock4h.blood_furnace.description = Smelts ores and cooks food at twice normal speed. One blood droplet fuels five minutes of active processing. Four input and four output slots.
+items.flock4h.arcane_pickaxe.name = Arcane Pickaxe
+items.flock4h.arcane_pickaxe.description = LMB mines a 3x3x3 volume for 10 mana. Hold RMB to keep mining. F raises the pickaxe, strikes a small crater and launches you 25 blocks. Space cancels during the animation. Bedrock, containers and protected blocks are preserved.
+items.flock4h.ancient_endgame_sword.name = Ancient Sword
+items.flock4h.ancient_endgame_sword.description = A Legendary greatsword. 160 base melee damage; 200 on a charged stab. RMB releases a 100-damage slash for 30 mana.\nNeed Mithril for the Ancient Pickaxe? Feed Arcane Crystals to a Fossor Soul.
+
+npcRoles.Cursed_Knight.name = Cursed Knight
+npcRoles.Chiro.name = Chiro
+
+items.flock4h.AxoTales_Vitae_Extractor.description = Converts 1 blood sample and 1 Essence of Life into 1 DNA sample in five seconds.\nPlace and Interact to open. LMB transfers a stack; RMB transfers one.
+
+items.flock4h.skill_tree.name = Skill Tree
+items.flock4h.skill_tree.description = Interact with the fully grown tree to spend runes and learn permanent skills.
+items.flock4h.skill_tree_seed.name = Skill Tree Seed
+items.flock4h.skill_tree_seed.description = Plant in open ground. Grows into a Skill Tree in 15 real minutes.
+items.flock4h.rune.description = Break to absorb one rune. Spend runes at a fully grown Skill Tree.
+interactionHints.axotales_skill_tree = Open Skill Tree
+interactionHints.axotales_skill_tree_growing = Growing Skill Tree
+items.flock4h.rune_alfa.name = Alfa Rune
+items.flock4h.rune_beta.name = Beta Rune
+items.flock4h.rune_gamma.name = Gamma Rune
+items.flock4h.rune_delta.name = Delta Rune
+items.flock4h.rune_epsilon.name = Epsilon Rune
+items.flock4h.rune_zeta.name = Zeta Rune
+items.flock4h.rune_eta.name = Eta Rune
+items.flock4h.rune_theta.name = Theta Rune
+items.flock4h.rune_iota.name = Iota Rune
+items.flock4h.rune_kappa.name = Kappa Rune
+items.flock4h.rune_lambda.name = Lambda Rune
+items.flock4h.rune_mu.name = Mu Rune
+items.flock4h.rune_nu.name = Nu Rune
+items.flock4h.rune_xi.name = Xi Rune
+items.flock4h.rune_omicron.name = Omicron Rune
+items.flock4h.rune_pi.name = Pi Rune
+items.flock4h.rune_rho.name = Rho Rune
+items.flock4h.rune_sigma.name = Sigma Rune
+items.flock4h.rune_tau.name = Tau Rune
+items.flock4h.rune_upsilon.name = Upsilon Rune
+items.flock4h.rune_phi.name = Phi Rune
+items.flock4h.rune_chi.name = Chi Rune
+items.flock4h.rune_psi.name = Psi Rune
+items.flock4h.rune_omega.name = Omega Rune
+items.flock4h.ancient_armor_helm.name = Ancient Helm
+items.flock4h.ancient_armor_helm.description = +40 health, +35 mana, +25 stamina and +30% stamina regeneration. Breathe underwater and swim 50% faster. Restores 10 mana every 4 seconds. Reflects projectiles toward their attacker for 1.3x damage.\n<color is="#bde6ff"><b>Full Ancient set</b></color>: +400 health, +100 stamina and +50% speed.\n+15% attack damage, +40% elemental resistance and +50% defense.\n+50% maximum mana, 10 mana every 2 seconds and +50% stamina regeneration.\n+300% crafting speed. One extra air jump. Permanently unlocks 27 bonus Backpack slots.
+items.flock4h.ancient_armor_chestplate.name = Ancient Chestplate
+items.flock4h.ancient_armor_chestplate.description = +150 health, +20% maximum health, +25 stamina, +50% defense, +30% stamina regeneration and +30% melee/projectile damage. Enemies detect you only within 4 blocks. Crouch + jump toggles 10 seconds of flight; land to refill.\n<color is="#bde6ff"><b>Full Ancient set</b></color>: +400 health, +100 stamina and +50% speed.\n+15% attack damage, +40% elemental resistance and +50% defense.\n+50% maximum mana, 10 mana every 2 seconds and +50% stamina regeneration.\n+300% crafting speed. One extra air jump. Permanently unlocks 27 bonus Backpack slots.
+items.flock4h.ancient_armor_gauntlets.name = Ancient Gauntlets
+items.flock4h.ancient_armor_gauntlets.description = +40 health, +35 mana, +25 stamina, +20% defense and +30% stamina regeneration. LMB with an empty hand casts an exploding blue fireball for 71-110 base damage.\n<color is="#bde6ff"><b>Full Ancient set</b></color>: +400 health, +100 stamina and +50% speed.\n+15% attack damage, +40% elemental resistance and +50% defense.\n+50% maximum mana, 10 mana every 2 seconds and +50% stamina regeneration.\n+300% crafting speed. One extra air jump. Permanently unlocks 27 bonus Backpack slots.
+items.flock4h.ancient_armor_boots.name = Ancient Boots
+items.flock4h.ancient_armor_boots.description = +40 health, +35 mana, +25 stamina and +20% defense. Move 30% faster, jump 3 blocks higher, gain one extra air jump and take no fall damage.\n<color is="#bde6ff"><b>Full Ancient set</b></color>: +400 health, +100 stamina and +50% speed.\n+15% attack damage, +40% elemental resistance and +50% defense.\n+50% maximum mana, 10 mana every 2 seconds and +50% stamina regeneration.\n+300% crafting speed. One extra air jump. Permanently unlocks 27 bonus Backpack slots.
+items.flock4h.everflame.name = Everflame Shortbow
+items.flock4h.everflame.description = A shortbow with endless arrows. Hits ignite the target for 4 seconds. Native draw and release controls.
+items.flock4h.mirethorn.name = Mirethorn Shortbow
+items.flock4h.mirethorn.description = Poisons targets and slows movement by 25% for 6 seconds. Its effects apply to every arrow type.
+items.flock4h.spoiled_heart.name = Spoiled Heart
+items.flock4h.spoiled_heart.description = A Legendary heart guaranteed from Dreadmaw. Three craft an Arcane Oraculum.
+items.flock4h.oraculum.name = Arcane Oraculum
+items.flock4h.oraculum.description = Single-use. Place, then RMB to arm a 5-second blast. Spends all current mana. 4000 base damage to living entities within 250 blocks, including you; preserves terrain.
+interactionHints.axoOraculum = Arm Oraculum (all mana, 5 seconds)
+items.flock4h.Book_Leech_Texture.name = Leech Book
+items.flock4h.Book_Leech_Texture.description = Hold RMB to drain a living target within 16 blocks. Deals 30 damage and restores 20 health each second for 10 mana. Release, blocked sight or leaving range ends the drain.
+items.flock4h.arcane_wand_leech.description = Selected: Leech Book. Hold RMB to drain a living target within 16 blocks: 30 damage, 20 health restored and 10 mana spent each second. Carry its book or a Spellbook Pouch containing it. LMB: choose a spell.
+items.flock4h.AxoTales_Blood_Rex.name = Rex Blood Sample
+items.flock4h.AxoTales_Blood_Rex.description = Extract from a living Rex with the Bloody Book. One of four distinct samples needed to craft the Leech Book. Also usable in the Vitae Extractor.
+items.flock4h.AxoTales_Blood_Dreadmaw.name = Dreadmaw Blood Sample
+items.flock4h.AxoTales_Blood_Dreadmaw.description = Extract from a living Dreadmaw with the Bloody Book. One of four distinct samples needed to craft the Leech Book. Also usable in the Vitae Extractor.
+items.flock4h.AxoTales_Blood_Yeti.name = Yeti Blood Sample
+items.flock4h.AxoTales_Blood_Yeti.description = Extract from a living Yeti with the Bloody Book. One of four distinct samples needed to craft the Leech Book. Also usable in the Vitae Extractor.
+items.flock4h.AxoTales_Blood_Emberwulf.name = Emberwulf Blood Sample
+items.flock4h.AxoTales_Blood_Emberwulf.description = Extract from a living Emberwulf with the Bloody Book. One of four distinct samples needed to craft the Leech Book. Also usable in the Vitae Extractor.
+items.flock4h.workbench.name = Axo's Workbench
+items.flock4h.workbench.description = Craft Axo Tales items, equipment, spellbooks, blood machines and potions.
+items.flock4h.poisonous_vine.name = Poisonous Vine
+items.flock4h.poisonous_vine_seed.name = Poisonous Vine Seed
+items.flock4h.poisonous_vine_seed.description = Plant a dark-purple screen that grows up and sideways. Walk through its leaves at the cost of 10 seconds of poison.
+benchCategories.axoItems = Items
+benchCategories.axoArmory = Armory
+benchCategories.axoLibrary = Library
+benchCategories.axoBlood_Magic = Blood Magic
+benchCategories.axoAlchemy = Alchemy
+items.flock4h.frozen_chest.name = Frozen Chest
+items.flock4h.frozen_chest.description = Blood Droplets and DNA only. Place two beside each other for eight rows; one chest has four rows.
+items.flock4h.ancient_pickaxe.name = Ancient Pickaxe
+items.flock4h.ancient_pickaxe.description = Unbreakable. Ores drop three times their normal loot. Strong knockback, with a 1.1-2 block kickback on use. Hold RMB for 3x3 mining. F: raise, smash and leap 25 blocks. Space cancels during the animation.

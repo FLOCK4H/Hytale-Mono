@@ -1,0 +1,3965 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "650076",
+      "name": "Head",
+      "position": {
+        "x": 0.6139336870026515,
+        "y": -6.431034482758619,
+        "z": -1.5500000000000007
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "650009",
+          "name": "SalletCrown",
+          "position": {
+            "x": 0.0,
+            "y": 15.5,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650001",
+              "name": "SalletCrownSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 1.54,
+                "z": 16.5
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1248062015503876,
+                  "y": 0.12358208955223882,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 258,
+                    "y": 67
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 264,
+                      "y": 1132
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650002",
+              "name": "SalletCrownSurface1",
+              "position": {
+                "x": -0.8620689655172438,
+                "y": -0.9051724137931032,
+                "z": -16.5
+              },
+              "orientation": {
+                "x": 0.9795777228015288,
+                "y": 0.20106587226819736,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12494468708163521,
+                  "y": 0.1246071250607571,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 258,
+                    "y": 147
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1080
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650003",
+              "name": "SalletCrownSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -2.8000000000000003,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.7028085365972194,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7113790556982085
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12453744963541911,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 280,
+                    "y": 265
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 262,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650004",
+              "name": "SalletCrownSurface3",
+              "position": {
+                "x": 15.650000000000002,
+                "y": -0.03999999999999987,
+                "z": 3.552713678800501e-15
+              },
+              "orientation": {
+                "x": 0.38541120436502413,
+                "y": 0.578116806547536,
+                "z": 0.5984050887943476,
+                "w": 0.3989367258628986
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1229945054945055,
+                  "y": 0.124602384749043,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 56,
+                    "y": 265
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 332,
+                      "y": 863
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650005",
+              "name": "SalletCrownSurface4",
+              "position": {
+                "x": 11.180000000000001,
+                "y": 4.34,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.14099361320749704,
+                "y": 0.6869102200055712,
+                "z": 0.6983744444500577,
+                "w": 0.14334673357166453
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12427648845430969,
+                  "y": 0.124545360318983,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 65,
+                    "y": 265
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 134,
+                      "y": 811
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650006",
+              "name": "SalletCrownSurface5",
+              "position": {
+                "x": 0.0,
+                "y": 5.84,
+                "z": 3.552713678800501e-15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7036701948284553,
+                "z": 0.7105267460905915,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12453415652332271,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 128,
+                    "y": 265
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 811
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650007",
+              "name": "SalletCrownSurface6",
+              "position": {
+                "x": -11.18,
+                "y": 4.340000000000001,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.14099361320749704,
+                "y": 0.6869102200055711,
+                "z": 0.6983744444500578,
+                "w": -0.14334673357166453
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12427648845430969,
+                  "y": 0.124545360318983,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 65,
+                    "y": 265
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 203,
+                      "y": 811
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650008",
+              "name": "SalletCrownSurface7",
+              "position": {
+                "x": -15.650000000000002,
+                "y": -0.03999999999999998,
+                "z": 3.552713678800501e-15
+              },
+              "orientation": {
+                "x": -0.38541120436502413,
+                "y": 0.578116806547536,
+                "z": 0.5984050887943476,
+                "w": -0.3989367258628986
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1229945054945055,
+                  "y": 0.124602384749043,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 56,
+                    "y": 265
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 272,
+                      "y": 863
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "650020",
+          "name": "SalletNape",
+          "position": {
+            "x": 0.0,
+            "y": 0.5,
+            "z": -15.5
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650010",
+              "name": "SalletNapeSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 2.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12498113207547172,
+                  "y": 0.12474576271186441,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 265,
+                    "y": 236
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 278,
+                      "y": 623
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650011",
+              "name": "SalletNapeSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -2.0
+              },
+              "orientation": {
+                "x": 0.7071067811865476,
+                "y": 0.7071067811865475,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 256,
+                    "y": 288
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650012",
+              "name": "SalletNapeSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -15.36,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.5895864113496072,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.8077053073689016
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12352380939676882,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 272,
+                    "y": 34
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 278,
+                      "y": 547
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650013",
+              "name": "SalletNapeSurface3",
+              "position": {
+                "x": 16.78,
+                "y": -11.68,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.4264550939834819,
+                "y": 0.3764669739732789,
+                "z": 0.5442933494107733,
+                "w": 0.616565827880644
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12345950103749041,
+                  "y": 0.12214028530163003,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 35
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 476,
+                      "y": 1458
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650014",
+              "name": "SalletNapeSurface4",
+              "position": {
+                "x": 17.28,
+                "y": 0.0,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.40659578567886645,
+                "y": 0.40659578567886645,
+                "z": 0.5785152263062617,
+                "w": 0.5785152263062618
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12146587662250444,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 128,
+                    "y": 35
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 466
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650015",
+              "name": "SalletNapeSurface5",
+              "position": {
+                "x": 16.78,
+                "y": 11.680000000000001,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.37646697397327905,
+                "y": 0.426455093983482,
+                "z": 0.616565827880644,
+                "w": 0.5442933494107733
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1234595010374904,
+                  "y": 0.12214028530163003,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 35
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 330,
+                      "y": 1458
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650016",
+              "name": "SalletNapeSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 15.36,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.5895864113496072,
+                "z": 0.8077053073689016,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12352380939676882,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 272,
+                    "y": 34
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 278,
+                      "y": 585
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650017",
+              "name": "SalletNapeSurface7",
+              "position": {
+                "x": -16.78,
+                "y": 11.68,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.37646697397327894,
+                "y": -0.4264550939834819,
+                "z": -0.6165658278806438,
+                "w": 0.5442933494107735
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12345950103749041,
+                  "y": 0.12214028530163003,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 35
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 134,
+                      "y": 508
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650018",
+              "name": "SalletNapeSurface8",
+              "position": {
+                "x": -17.28,
+                "y": 0.0,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.40659578567886645,
+                "y": -0.40659578567886645,
+                "z": -0.5785152263062617,
+                "w": 0.5785152263062618
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12146587662250444,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 128,
+                    "y": 35
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 505
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650019",
+              "name": "SalletNapeSurface9",
+              "position": {
+                "x": -16.78,
+                "y": -11.680000000000001,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.4264550939834821,
+                "y": -0.376466973973279,
+                "z": -0.5442933494107735,
+                "w": 0.6165658278806438
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1234595010374904,
+                  "y": 0.12214028530163003,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 35
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 403,
+                      "y": 1458
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "650032",
+          "name": "SalletBrow",
+          "position": {
+            "x": 0.0,
+            "y": 9.5,
+            "z": 15.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650021",
+              "name": "SalletBrowSurface0",
+              "position": {
+                "x": -8.881784197001252e-16,
+                "y": 1.8533333333333335,
+                "z": 2.35
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": -0.0,
+                "z": -0.35538055751288666,
+                "w": 0.9347217015464174
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465563607519284,
+                  "y": 0.12465563607519284,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 171,
+                    "y": 152
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 392,
+                      "y": 863
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650022",
+              "name": "SalletBrowSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.25,
+                "z": -2.35
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 248,
+                    "y": 44
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 376
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650023",
+              "name": "SalletBrowSurface2",
+              "position": {
+                "x": -12.810000000000002,
+                "y": 0.08666666666666695,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.6092811878346035,
+                "y": -0.23164829473473258,
+                "z": -0.26950771455500233,
+                "w": 0.7088590081904048
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12383700171900466,
+                  "y": 0.12189623033587545,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 53,
+                    "y": 39
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 508,
+                      "y": 1203
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650024",
+              "name": "SalletBrowSurface3",
+              "position": {
+                "x": -7.8,
+                "y": -1.4533333333333334,
+                "z": -8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.7027227623016049,
+                "y": 0.0581591139062352,
+                "z": 0.058485515758773046,
+                "w": 0.7066665983752691
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12485892317909443,
+                  "y": 0.12368614749852798,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 52,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 198,
+                      "y": 424
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650025",
+              "name": "SalletBrowSurface4",
+              "position": {
+                "x": -2.470642201834863,
+                "y": -1.6521406727828745,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.6842493230198046,
+                "y": -0.10042647688108583,
+                "z": -0.10488746412549516,
+                "w": 0.7146439718891602
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12428936320131606,
+                  "y": 0.12380104591716579,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 400
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650026",
+              "name": "SalletBrowSurface5",
+              "position": {
+                "x": 2.470642201834862,
+                "y": -1.652140672782875,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.6842493230198046,
+                "y": 0.10042647688108583,
+                "z": 0.10488746412549517,
+                "w": 0.7146439718891602
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12428936320131606,
+                  "y": 0.12380104591716579,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 316
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650027",
+              "name": "SalletBrowSurface6",
+              "position": {
+                "x": 7.800000000000001,
+                "y": -1.4533333333333336,
+                "z": -8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.7027227623016049,
+                "y": -0.0581591139062352,
+                "z": -0.058485515758773046,
+                "w": 0.7066665983752691
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12485892317909443,
+                  "y": 0.12368614749852798,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 52,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 508,
+                      "y": 1289
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650028",
+              "name": "SalletBrowSurface7",
+              "position": {
+                "x": 12.81,
+                "y": 0.08666666666666689,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.6092811878346035,
+                "y": 0.23164829473473258,
+                "z": 0.26950771455500233,
+                "w": 0.7088590081904048
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12383700171900469,
+                  "y": 0.12189623033587545,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 53,
+                    "y": 39
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 508,
+                      "y": 1246
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650029",
+              "name": "SalletBrowSurface8",
+              "position": {
+                "x": 13.270000000000001,
+                "y": 2.3866666666666667,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.09294271756879738,
+                "y": 0.6636161101453948,
+                "z": 0.7351024637259128,
+                "w": 0.10295473486205083
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12164453546086602,
+                  "y": 0.12433204753862126,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 37,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 207,
+                      "y": 466
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650030",
+              "name": "SalletBrowSurface9",
+              "position": {
+                "x": 0.0,
+                "y": 2.8866666666666667,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.68986557968111,
+                "z": 0.7239374848502087,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12382796175353317,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 192,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 424
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650031",
+              "name": "SalletBrowSurface10",
+              "position": {
+                "x": -13.270000000000001,
+                "y": 2.3866666666666667,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": -0.09294271756879738,
+                "y": 0.6636161101453948,
+                "z": 0.7351024637259128,
+                "w": -0.10295473486205083
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12164453546086602,
+                  "y": 0.12433204753862123,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 37,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 508,
+                      "y": 1331
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "650043",
+          "name": "SalletTemple-1",
+          "position": {
+            "x": -15.7,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": -0.7071067811865476,
+            "z": 0.0,
+            "w": 0.7071067811865476
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650033",
+              "name": "SalletTemple-1Surface0",
+              "position": {
+                "x": -1.7763568394002505e-15,
+                "y": -0.3200000000000003,
+                "z": 2.2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1246215139442231,
+                  "y": 0.12458333333333334,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 251,
+                    "y": 240
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1231
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650034",
+              "name": "SalletTemple-1Surface1",
+              "position": {
+                "x": 0.0,
+                "y": -0.25,
+                "z": -2.2
+              },
+              "orientation": {
+                "x": 0.7071067811865476,
+                "y": 0.7071067811865475,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 260,
+                    "y": 272
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 262,
+                      "y": 271
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650035",
+              "name": "SalletTemple-1Surface2",
+              "position": {
+                "x": 0.0,
+                "y": -15.885000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6044733391615524,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.796625371327629
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12347802435321781,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 256,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 294
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650036",
+              "name": "SalletTemple-1Surface3",
+              "position": {
+                "x": 15.82,
+                "y": -13.815,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.45288856508962905,
+                "y": 0.3632943477626845,
+                "z": 0.5094624500140885,
+                "w": 0.6351040674727134
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12295308448507404,
+                  "y": 0.12247250475403344,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 442
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650037",
+              "name": "SalletTemple-1Surface4",
+              "position": {
+                "x": 16.32,
+                "y": -2.0,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.4197301898692598,
+                "y": 0.4197301898692598,
+                "z": 0.5690576137020882,
+                "w": 0.5690576137020883
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.1244699499643179,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 160,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 392,
+                      "y": 1019
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650038",
+              "name": "SalletTemple-1Surface5",
+              "position": {
+                "x": 15.82,
+                "y": 11.635000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.38842581582774044,
+                "y": 0.4400018573905158,
+                "z": 0.6069725964057197,
+                "w": 0.5358246152463976
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1248975849167856,
+                  "y": 0.12183308087355299,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 257,
+                      "y": 1458
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650039",
+              "name": "SalletTemple-1Surface6",
+              "position": {
+                "x": 0.0,
+                "y": 15.315000000000001,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.5927535847670006,
+                "z": 0.8053838760155745,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12455003013771053,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 256,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 335
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650040",
+              "name": "SalletTemple-1Surface7",
+              "position": {
+                "x": -15.82,
+                "y": 11.635,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.38842581582774044,
+                "y": -0.4400018573905158,
+                "z": -0.6069725964057197,
+                "w": 0.5358246152463976
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12489758491678557,
+                  "y": 0.12183308087355299,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 134,
+                      "y": 466
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650041",
+              "name": "SalletTemple-1Surface8",
+              "position": {
+                "x": -16.32,
+                "y": -2.0,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.4197301898692598,
+                "y": -0.4197301898692598,
+                "z": -0.5690576137020882,
+                "w": 0.5690576137020883
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.1244699499643179,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 160,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 392,
+                      "y": 1060
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650042",
+              "name": "SalletTemple-1Surface9",
+              "position": {
+                "x": -15.82,
+                "y": -13.815,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.45288856508962894,
+                "y": -0.36329434776268443,
+                "z": -0.5094624500140884,
+                "w": 0.6351040674727135
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12295308448507404,
+                  "y": 0.12247250475403344,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 358
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "650054",
+          "name": "SalletTemple1",
+          "position": {
+            "x": 15.7,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.7071067811865476,
+            "z": 0.0,
+            "w": 0.7071067811865476
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650044",
+              "name": "SalletTemple1Surface0",
+              "position": {
+                "x": 0.0,
+                "y": -0.3200000000000003,
+                "z": 2.2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.7071067811865475,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12458333333333334,
+                  "y": 0.1246215139442231,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 240,
+                    "y": 251
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 264,
+                      "y": 1203
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650045",
+              "name": "SalletTemple1Surface1",
+              "position": {
+                "x": 0.0,
+                "y": -0.25,
+                "z": -2.2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 272,
+                    "y": 260
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 547
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650046",
+              "name": "SalletTemple1Surface2",
+              "position": {
+                "x": 16.32,
+                "y": -2.0,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.4197301898692598,
+                "y": 0.4197301898692598,
+                "z": 0.5690576137020882,
+                "w": 0.5690576137020883
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.1244699499643179,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 160,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 392,
+                      "y": 1019
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650047",
+              "name": "SalletTemple1Surface3",
+              "position": {
+                "x": 15.82,
+                "y": 11.635000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.38842581582774044,
+                "y": 0.4400018573905158,
+                "z": 0.6069725964057197,
+                "w": 0.5358246152463976
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1248975849167856,
+                  "y": 0.12183308087355299,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 257,
+                      "y": 1458
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650048",
+              "name": "SalletTemple1Surface4",
+              "position": {
+                "x": 0.0,
+                "y": 15.315000000000001,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.5927535847670006,
+                "z": 0.8053838760155745,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12455003013771053,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 256,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 335
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650049",
+              "name": "SalletTemple1Surface5",
+              "position": {
+                "x": -15.82,
+                "y": 11.635,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.38842581582774044,
+                "y": -0.4400018573905158,
+                "z": -0.6069725964057197,
+                "w": 0.5358246152463976
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12489758491678557,
+                  "y": 0.12183308087355299,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 134,
+                      "y": 466
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650050",
+              "name": "SalletTemple1Surface6",
+              "position": {
+                "x": -16.32,
+                "y": -2.0,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.4197301898692598,
+                "y": -0.4197301898692598,
+                "z": -0.5690576137020882,
+                "w": 0.5690576137020883
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.1244699499643179,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 160,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 392,
+                      "y": 1060
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650051",
+              "name": "SalletTemple1Surface7",
+              "position": {
+                "x": -15.82,
+                "y": -13.815,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.45288856508962894,
+                "y": -0.36329434776268443,
+                "z": -0.5094624500140884,
+                "w": 0.6351040674727135
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12295308448507404,
+                  "y": 0.12247250475403344,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 358
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650052",
+              "name": "SalletTemple1Surface8",
+              "position": {
+                "x": 0.0,
+                "y": -15.885000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6044733391615524,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.796625371327629
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12347802435321781,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 256,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 294
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650053",
+              "name": "SalletTemple1Surface9",
+              "position": {
+                "x": 15.82,
+                "y": -13.815,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.45288856508962905,
+                "y": 0.3632943477626845,
+                "z": 0.5094624500140885,
+                "w": 0.6351040674727134
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12295308448507404,
+                  "y": 0.12247250475403344,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 442
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "650061",
+          "name": "SalletRidge",
+          "position": {
+            "x": 0.0,
+            "y": 21.0,
+            "z": -1.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650055",
+              "name": "SalletRidgeSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 9.5
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12000000000000001,
+                  "y": 0.12447058823529412,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 294
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650056",
+              "name": "SalletRidgeSurface1",
+              "position": {
+                "x": -1.1102230246251565e-16,
+                "y": 0.0,
+                "z": -9.5
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12105263157894736,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 24,
+                    "y": 19
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 271
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650057",
+              "name": "SalletRidgeSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -1.104,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.7053927811864124,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7088166365500306
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.1241844623237683,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 24,
+                    "y": 153
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 547,
+                      "y": 623
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650058",
+              "name": "SalletRidgeSurface3",
+              "position": {
+                "x": 1.1078996539792387,
+                "y": -0.012813148788927104,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.41998656416580893,
+                "y": 0.5668290332670727,
+                "z": 0.5694608458330247,
+                "w": 0.42193658057680994
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12020815280171308,
+                  "y": 0.12418433890989194,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 153
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 554,
+                      "y": 159
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650059",
+              "name": "SalletRidgeSurface4",
+              "position": {
+                "x": 0.0,
+                "y": 1.104,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7053927811864124,
+                "z": 0.7088166365500306,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12307692307692308,
+                  "y": 0.1241844623237683,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 13,
+                    "y": 153
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 556,
+                      "y": 1019
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650060",
+              "name": "SalletRidgeSurface5",
+              "position": {
+                "x": -1.107899653979239,
+                "y": -0.012813148788927546,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": -0.41998656416580893,
+                "y": 0.5668290332670727,
+                "z": 0.5694608458330247,
+                "w": -0.42193658057680994
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12020815280171308,
+                  "y": 0.12418433890989194,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 153
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 554,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "650068",
+          "name": "BrowAmethystSetting",
+          "position": {
+            "x": 0.0,
+            "y": 12.0,
+            "z": 18.1
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650062",
+              "name": "BrowAmethystSettingSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.4417517623905464,
+                "w": 0.8971373252879663
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12298096747707264,
+                  "y": 0.12069750123744533,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 37,
+                    "y": 29
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 207,
+                      "y": 508
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650063",
+              "name": "BrowAmethystSettingSurface1",
+              "position": {
+                "x": -2.220446049250313e-16,
+                "y": 0.0,
+                "z": -1.0
+              },
+              "orientation": {
+                "x": 0.8971373252879663,
+                "y": 0.4417517623905464,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12364934230031761,
+                  "y": 0.12272887573232517,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 484
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650064",
+              "name": "BrowAmethystSettingSurface2",
+              "position": {
+                "x": 1.1396877323420072,
+                "y": -1.5136059479553907,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.609831507240323,
+                "y": 0.3002819473576411,
+                "z": 0.3239990303477106,
+                "w": 0.6579976544045139
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12300914600142543,
+                  "y": 0.11798715417118118,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 464,
+                      "y": 1101
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650065",
+              "name": "BrowAmethystSettingSurface3",
+              "position": {
+                "x": 1.1396877323420076,
+                "y": 1.5136059479553903,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.30028194735764113,
+                "y": 0.6098315072403231,
+                "z": 0.6579976544045137,
+                "w": 0.3239990303477106
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12300914600142543,
+                  "y": 0.11798715417118118,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 392,
+                      "y": 1101
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650066",
+              "name": "BrowAmethystSettingSurface4",
+              "position": {
+                "x": -1.1396877323420072,
+                "y": 1.5136059479553907,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": -0.3002819473576411,
+                "y": 0.609831507240323,
+                "z": 0.6579976544045139,
+                "w": -0.3239990303477106
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12300914600142543,
+                  "y": 0.11798715417118118,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 519
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650067",
+              "name": "BrowAmethystSettingSurface5",
+              "position": {
+                "x": -1.1396877323420076,
+                "y": -1.5136059479553903,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.609831507240323,
+                "y": -0.3002819473576411,
+                "z": -0.32399903034771055,
+                "w": 0.6579976544045139
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12300914600142543,
+                  "y": 0.11798715417118118,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 17
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 428,
+                      "y": 1101
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "650075",
+          "name": "BrowAmethyst",
+          "position": {
+            "x": 0.0,
+            "y": 12.0,
+            "z": 19.25
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "650069",
+              "name": "BrowAmethystSurface0",
+              "position": {
+                "x": -1.1102230246251565e-16,
+                "y": 3.3306690738754696e-16,
+                "z": 1.35
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.4847685323929452,
+                "w": 0.8746424812468179
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12482535034954896,
+                  "y": 0.12318291152916017,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 19
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 500,
+                      "y": 1101
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650070",
+              "name": "BrowAmethystSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -1.35
+              },
+              "orientation": {
+                "x": 0.8746424812468178,
+                "y": 0.4847685323929452,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12334520785528552,
+                  "y": 0.1211426148578697,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 33,
+                    "y": 21
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 526,
+                      "y": 1176
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650071",
+              "name": "BrowAmethystSurface2",
+              "position": {
+                "x": 0.7068539325842697,
+                "y": -1.1730337078651687,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6067075090005105,
+                "y": 0.3362662059481657,
+                "z": 0.3491784196304746,
+                "w": 0.6300043400834517
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12305192780943396,
+                  "y": 0.12281440556892123,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 549,
+                      "y": 1357
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650072",
+              "name": "BrowAmethystSurface3",
+              "position": {
+                "x": 0.7068539325842698,
+                "y": 1.1730337078651683,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.3362662059481657,
+                "y": 0.6067075090005105,
+                "z": 0.6300043400834517,
+                "w": 0.3491784196304746
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12305192780943396,
+                  "y": 0.12281440556892123,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 549,
+                      "y": 1409
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650073",
+              "name": "BrowAmethystSurface4",
+              "position": {
+                "x": -0.7068539325842697,
+                "y": 1.1730337078651687,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.3362662059481657,
+                "y": 0.6067075090005105,
+                "z": 0.6300043400834517,
+                "w": -0.3491784196304746
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12305192780943396,
+                  "y": 0.12281440556892123,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 549,
+                      "y": 1331
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "650074",
+              "name": "BrowAmethystSurface5",
+              "position": {
+                "x": -0.7068539325842698,
+                "y": -1.1730337078651683,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6067075090005105,
+                "y": -0.3362662059481657,
+                "z": -0.3491784196304746,
+                "w": 0.6300043400834517
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12305192780943396,
+                  "y": 0.12281440556892123,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 22
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 549,
+                      "y": 1383
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

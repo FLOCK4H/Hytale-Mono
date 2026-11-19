@@ -1,0 +1,3955 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "1131",
+      "name": "Root",
+      "position": {
+        "x": 0,
+        "y": 9,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "stretch": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "1082",
+          "name": "Body",
+          "position": {
+            "x": 0,
+            "y": 28,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "stretch": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "1080",
+              "name": "SpectralFur",
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "1081",
+              "name": "ChestWisp",
+              "position": {
+                "x": 0,
+                "y": -2,
+                "z": 8
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "1100",
+              "name": "WingL",
+              "position": {
+                "x": -9,
+                "y": 7,
+                "z": 0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "1098",
+                  "name": "LeadingBoneL",
+                  "position": {
+                    "x": -13,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1099",
+                  "name": "ElbowVeilL",
+                  "position": {
+                    "x": -24,
+                    "y": 0,
+                    "z": -8
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1097",
+                  "name": "WingTipL",
+                  "position": {
+                    "x": -25,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": [
+                    {
+                      "id": "1094",
+                      "name": "OuterFingerL",
+                      "position": {
+                        "x": -10,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1095",
+                      "name": "OuterMembraneL",
+                      "position": {
+                        "x": -10,
+                        "y": 0,
+                        "z": -7
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1096",
+                      "name": "WingHookL",
+                      "position": {
+                        "x": -21,
+                        "y": -1,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "950178",
+                      "name": "NativeVesper_R-Wing2",
+                      "position": {
+                        "x": -11.0015,
+                        "y": 2.216055,
+                        "z": -14.0
+                      },
+                      "orientation": {
+                        "x": 0.7064337844915878,
+                        "y": -0.03084328336758586,
+                        "z": -0.03084328336758586,
+                        "w": 0.7064337844915876
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": -0.4294315503958015,
+                          "y": 0.475,
+                          "z": 0.2577684136280079
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 56,
+                            "y": 80
+                          },
+                          "normal": "+Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 134,
+                              "y": 2
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "1101",
+                  "name": "MembraneL0",
+                  "position": {
+                    "x": -6,
+                    "y": 0,
+                    "z": -14.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1102",
+                  "name": "WingFingerL0",
+                  "position": {
+                    "x": -6,
+                    "y": -0.2,
+                    "z": -14.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0697564737441253,
+                    "z": 0.0,
+                    "w": 0.9975640502598242
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1103",
+                  "name": "MembraneL1",
+                  "position": {
+                    "x": -17,
+                    "y": 0,
+                    "z": -11.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1104",
+                  "name": "WingFingerL1",
+                  "position": {
+                    "x": -17,
+                    "y": -0.2,
+                    "z": -11.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0697564737441253,
+                    "z": 0.0,
+                    "w": 0.9975640502598242
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950176",
+                  "name": "NativeVesper_R-Arm",
+                  "position": {
+                    "x": -13.892524,
+                    "y": -0.724746,
+                    "z": 2.15
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": -0.737277067859173,
+                    "w": 0.6755905011240017
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.2577684136280079,
+                      "y": 0.5153178604749618,
+                      "z": 0.475
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 12,
+                        "y": 44,
+                        "z": 12
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 200,
+                          "y": 216
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "back": {
+                        "offset": {
+                          "x": 200,
+                          "y": 220
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 200,
+                          "y": 204
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 84,
+                          "y": 340
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 200,
+                          "y": 204
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 34,
+                          "y": 358
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950177",
+                  "name": "NativeVesper_R-Wing",
+                  "position": {
+                    "x": -11.9985,
+                    "y": 0.699368,
+                    "z": -16.85
+                  },
+                  "orientation": {
+                    "x": 0.7064337844915878,
+                    "y": -0.03084328336758586,
+                    "z": -0.03084328336758586,
+                    "w": 0.7064337844915876
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": -0.4294315503958015,
+                      "y": 0.475,
+                      "z": 0.2577684136280079
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 56,
+                        "y": 68
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 194,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "1105",
+              "name": "ClawL",
+              "position": {
+                "x": -4,
+                "y": -16,
+                "z": 4
+              },
+              "orientation": {
+                "x": 0.17364817766693033,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.984807753012208
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "1119",
+              "name": "WingR",
+              "position": {
+                "x": 9,
+                "y": 7,
+                "z": 0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "1117",
+                  "name": "LeadingBoneR",
+                  "position": {
+                    "x": 13,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1118",
+                  "name": "ElbowVeilR",
+                  "position": {
+                    "x": 24,
+                    "y": 0,
+                    "z": -8
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1116",
+                  "name": "WingTipR",
+                  "position": {
+                    "x": 25,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": [
+                    {
+                      "id": "1113",
+                      "name": "OuterFingerR",
+                      "position": {
+                        "x": 10,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1114",
+                      "name": "OuterMembraneR",
+                      "position": {
+                        "x": 10,
+                        "y": 0,
+                        "z": -7
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1115",
+                      "name": "WingHookR",
+                      "position": {
+                        "x": 21,
+                        "y": -1,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "950185",
+                      "name": "NativeVesper_L-Wing2",
+                      "position": {
+                        "x": 11.0015,
+                        "y": 2.216055,
+                        "z": -14.0
+                      },
+                      "orientation": {
+                        "x": 0.7064337844915878,
+                        "y": 0.03084328336758586,
+                        "z": 0.03084328336758586,
+                        "w": 0.7064337844915876
+                      },
+                      "shape": {
+                        "type": "quad",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 0.4294315503958015,
+                          "y": 0.475,
+                          "z": 0.2577684136280079
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 56,
+                            "y": 80
+                          },
+                          "normal": "+Z"
+                        },
+                        "visible": true,
+                        "doubleSided": true,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 134,
+                              "y": 2
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "1120",
+                  "name": "MembraneR0",
+                  "position": {
+                    "x": 6,
+                    "y": 0,
+                    "z": -14.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1121",
+                  "name": "WingFingerR0",
+                  "position": {
+                    "x": 6,
+                    "y": -0.2,
+                    "z": -14.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": -0.0697564737441253,
+                    "z": 0.0,
+                    "w": 0.9975640502598242
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1122",
+                  "name": "MembraneR1",
+                  "position": {
+                    "x": 17,
+                    "y": 0,
+                    "z": -11.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1123",
+                  "name": "WingFingerR1",
+                  "position": {
+                    "x": 17,
+                    "y": -0.2,
+                    "z": -11.5
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": -0.0697564737441253,
+                    "z": 0.0,
+                    "w": 0.9975640502598242
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950183",
+                  "name": "NativeVesper_L-Arm",
+                  "position": {
+                    "x": 13.892524,
+                    "y": -0.724746,
+                    "z": 2.15
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.737277067859173,
+                    "w": 0.6755905011240017
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": -0.2577684136280079,
+                      "y": 0.5153178604749618,
+                      "z": 0.475
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 12,
+                        "y": 44,
+                        "z": 12
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 200,
+                          "y": 216
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "back": {
+                        "offset": {
+                          "x": 200,
+                          "y": 220
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 200,
+                          "y": 204
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 84,
+                          "y": 340
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 200,
+                          "y": 204
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": true
+                        },
+                        "angle": 90
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 34,
+                          "y": 358
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950184",
+                  "name": "NativeVesper_L-Wing",
+                  "position": {
+                    "x": 11.9985,
+                    "y": 0.699368,
+                    "z": -16.85
+                  },
+                  "orientation": {
+                    "x": 0.7064337844915878,
+                    "y": 0.03084328336758586,
+                    "z": 0.03084328336758586,
+                    "w": 0.7064337844915876
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.4294315503958015,
+                      "y": 0.475,
+                      "z": 0.2577684136280079
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 56,
+                        "y": 68
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 194,
+                          "y": 2
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "1124",
+              "name": "ClawR",
+              "position": {
+                "x": 4,
+                "y": -16,
+                "z": 4
+              },
+              "orientation": {
+                "x": 0.17364817766693033,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.984807753012208
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "1126",
+              "name": "Wisp0",
+              "position": {
+                "x": -5,
+                "y": -12,
+                "z": -2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "1125",
+                  "name": "Veil0",
+                  "position": {
+                    "x": 0,
+                    "y": -9.0,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": -0.0697564737441253,
+                    "w": 0.9975640502598242
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "1128",
+              "name": "Wisp1",
+              "position": {
+                "x": 0,
+                "y": -12,
+                "z": -2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "1127",
+                  "name": "Veil1",
+                  "position": {
+                    "x": 0,
+                    "y": -12.0,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950188",
+                  "name": "NativeVesper_Tail",
+                  "position": {
+                    "x": 0.0,
+                    "y": -4.5,
+                    "z": 0.5
+                  },
+                  "orientation": {
+                    "x": 0.13052601416497572,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 0.9914448848151897
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.28125,
+                      "y": 0.5363971415762059,
+                      "z": 0.5213005804313964
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 64,
+                        "y": 52
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 134,
+                          "y": 86
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "1130",
+              "name": "Wisp2",
+              "position": {
+                "x": 5,
+                "y": -12,
+                "z": -2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "1129",
+                  "name": "Veil2",
+                  "position": {
+                    "x": 0,
+                    "y": -7.5,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0697564737441253,
+                    "w": 0.9975640502598242
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "1086",
+              "name": "Head",
+              "position": {
+                "x": 0,
+                "y": 12,
+                "z": 3
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "none",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 1,
+                  "y": 1,
+                  "z": 1
+                },
+                "settings": {
+                  "isPiece": false
+                },
+                "textureLayout": {},
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom"
+              },
+              "children": [
+                {
+                  "id": "1083",
+                  "name": "Cowl",
+                  "position": {
+                    "x": 0,
+                    "y": 5,
+                    "z": 0
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1084",
+                  "name": "BoneMask",
+                  "position": {
+                    "x": 0,
+                    "y": 4,
+                    "z": 9
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1085",
+                  "name": "Nose",
+                  "position": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 12
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1087",
+                  "name": "SocketL",
+                  "position": {
+                    "x": -5,
+                    "y": 6,
+                    "z": 12
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1088",
+                  "name": "EyeL",
+                  "position": {
+                    "x": -5,
+                    "y": 7,
+                    "z": 14
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1092",
+                  "name": "EarL",
+                  "position": {
+                    "x": -10,
+                    "y": 16,
+                    "z": -1
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.1908089953765448,
+                    "w": 0.981627183447664
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": [
+                    {
+                      "id": "1089",
+                      "name": "EarBaseL",
+                      "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1090",
+                      "name": "EarTipL",
+                      "position": {
+                        "x": -2,
+                        "y": 15,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.13052619222005157,
+                        "w": 0.9914448613738104
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1091",
+                      "name": "EarVeilL",
+                      "position": {
+                        "x": 0,
+                        "y": 5,
+                        "z": 3
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "950174",
+                      "name": "NativeVesper_R-Ear",
+                      "position": {
+                        "x": -0.449373,
+                        "y": -7.785906,
+                        "z": -0.691985
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.06975646330346988,
+                        "w": 0.997564050989906
+                      },
+                      "shape": {
+                        "type": "box",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 0.40069142954962067,
+                          "y": 0.44767270119294217,
+                          "z": 0.4205343586980886
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 40,
+                            "y": 36,
+                            "z": 16
+                          }
+                        },
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 168,
+                              "y": 284
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "back": {
+                            "offset": {
+                              "x": 208,
+                              "y": 324
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "right": {
+                            "offset": {
+                              "x": 90,
+                              "y": 288
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "bottom": {
+                            "offset": {
+                              "x": 46,
+                              "y": 288
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "left": {
+                            "offset": {
+                              "x": 18,
+                              "y": 308
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "top": {
+                            "offset": {
+                              "x": 2,
+                              "y": 304
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": true
+                            },
+                            "angle": 0
+                          }
+                        }
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "950175",
+                      "name": "NativeVesper_R-Ear2",
+                      "position": {
+                        "x": -1.21977,
+                        "y": 8.189324,
+                        "z": 0.62247
+                      },
+                      "orientation": {
+                        "x": 0.08694372010114057,
+                        "y": 0.00607969622999956,
+                        "z": 0.06949101692506363,
+                        "w": 0.9937679937467528
+                      },
+                      "shape": {
+                        "type": "box",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 0.40069142954962067,
+                          "y": 0.4468784784476176,
+                          "z": 0.04213782471230873
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 40,
+                            "y": 36,
+                            "z": 2
+                          }
+                        },
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 212,
+                              "y": 324
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "back": {
+                            "offset": {
+                              "x": 252,
+                              "y": 284
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "1093",
+                  "name": "FangL",
+                  "position": {
+                    "x": -4,
+                    "y": -5,
+                    "z": 11
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1106",
+                  "name": "SocketR",
+                  "position": {
+                    "x": 5,
+                    "y": 6,
+                    "z": 12
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1107",
+                  "name": "EyeR",
+                  "position": {
+                    "x": 5,
+                    "y": 7,
+                    "z": 14
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "1111",
+                  "name": "EarR",
+                  "position": {
+                    "x": 10,
+                    "y": 16,
+                    "z": -1
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": -0.1908089953765448,
+                    "w": 0.981627183447664
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": [
+                    {
+                      "id": "1108",
+                      "name": "EarBaseR",
+                      "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1109",
+                      "name": "EarTipR",
+                      "position": {
+                        "x": 2,
+                        "y": 15,
+                        "z": 0
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": -0.13052619222005157,
+                        "w": 0.9914448613738104
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "1110",
+                      "name": "EarVeilR",
+                      "position": {
+                        "x": 0,
+                        "y": 5,
+                        "z": 3
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                      },
+                      "shape": {
+                        "type": "none",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": 1,
+                          "y": 1,
+                          "z": 1
+                        },
+                        "settings": {
+                          "isPiece": false
+                        },
+                        "textureLayout": {},
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "950181",
+                      "name": "NativeVesper_L-Ear",
+                      "position": {
+                        "x": 0.449373,
+                        "y": -7.785906,
+                        "z": -0.691985
+                      },
+                      "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": -0.06975646330346988,
+                        "w": 0.997564050989906
+                      },
+                      "shape": {
+                        "type": "box",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": -0.40069142954962067,
+                          "y": 0.44767270119294217,
+                          "z": 0.4205343586980886
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 40,
+                            "y": 36,
+                            "z": 16
+                          }
+                        },
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 168,
+                              "y": 284
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "back": {
+                            "offset": {
+                              "x": 208,
+                              "y": 324
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "right": {
+                            "offset": {
+                              "x": 90,
+                              "y": 288
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "bottom": {
+                            "offset": {
+                              "x": 46,
+                              "y": 288
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "left": {
+                            "offset": {
+                              "x": 18,
+                              "y": 308
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "top": {
+                            "offset": {
+                              "x": 2,
+                              "y": 304
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": true
+                            },
+                            "angle": 0
+                          }
+                        }
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "950182",
+                      "name": "NativeVesper_L-Ear2",
+                      "position": {
+                        "x": 1.21977,
+                        "y": 8.189324,
+                        "z": 0.62247
+                      },
+                      "orientation": {
+                        "x": 0.08694372010114057,
+                        "y": -0.00607969622999956,
+                        "z": -0.06949101692506363,
+                        "w": 0.9937679937467528
+                      },
+                      "shape": {
+                        "type": "box",
+                        "offset": {
+                          "x": 0,
+                          "y": 0,
+                          "z": 0
+                        },
+                        "stretch": {
+                          "x": -0.40069142954962067,
+                          "y": 0.4468784784476176,
+                          "z": 0.04213782471230873
+                        },
+                        "settings": {
+                          "size": {
+                            "x": 40,
+                            "y": 36,
+                            "z": 2
+                          }
+                        },
+                        "visible": true,
+                        "doubleSided": false,
+                        "shadingMode": "flat",
+                        "unwrapMode": "custom",
+                        "textureLayout": {
+                          "front": {
+                            "offset": {
+                              "x": 212,
+                              "y": 324
+                            },
+                            "mirror": {
+                              "x": false,
+                              "y": false
+                            },
+                            "angle": 0
+                          },
+                          "back": {
+                            "offset": {
+                              "x": 252,
+                              "y": 284
+                            },
+                            "mirror": {
+                              "x": true,
+                              "y": false
+                            },
+                            "angle": 0
+                          }
+                        }
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "1112",
+                  "name": "FangR",
+                  "position": {
+                    "x": 4,
+                    "y": -5,
+                    "z": 11
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "none",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 1,
+                      "y": 1,
+                      "z": 1
+                    },
+                    "settings": {
+                      "isPiece": false
+                    },
+                    "textureLayout": {},
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom"
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950167",
+                  "name": "NativeVesper_Head",
+                  "position": {
+                    "x": 0.0,
+                    "y": 4.857469,
+                    "z": 0.831222
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.375,
+                      "y": 0.46940327960966705,
+                      "z": 0.4205343586980886
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 56,
+                        "y": 42,
+                        "z": 42
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 194,
+                          "y": 238
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "back": {
+                        "offset": {
+                          "x": 62,
+                          "y": 242
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 122,
+                          "y": 284
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 2,
+                          "y": 284
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": true
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 164,
+                          "y": 284
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 134,
+                          "y": 238
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950168",
+                  "name": "NativeVesper_Nose",
+                  "position": {
+                    "x": 0.0,
+                    "y": 11.429115,
+                    "z": 10.503512
+                  },
+                  "orientation": {
+                    "x": -0.13052601416497567,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 0.9914448848151897
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.375,
+                      "y": 0.46628977351967754,
+                      "z": 0.42398400789065543
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 18,
+                        "y": 12,
+                        "z": 14
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 44,
+                          "y": 340
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 66,
+                          "y": 340
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 152,
+                          "y": 368
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": true
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 80,
+                          "y": 340
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 22,
+                          "y": 340
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950169",
+                  "name": "NativeVesper_Nose-Hair",
+                  "position": {
+                    "x": 0.0,
+                    "y": 6.631901,
+                    "z": 13.813705
+                  },
+                  "orientation": {
+                    "x": -0.043618922136886285,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 0.999048241894062
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.375,
+                      "y": 0.46905127225319987,
+                      "z": 0.42092695759986987
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 16,
+                        "y": 12
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": true,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 2,
+                          "y": 348
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950170",
+                  "name": "NativeVesper_Snout",
+                  "position": {
+                    "x": 0.0,
+                    "y": 8.612695,
+                    "z": 9.662443
+                  },
+                  "orientation": {
+                    "x": -0.04361898964655644,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 0.9990482389465555
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.375,
+                      "y": 0.4690512621174454,
+                      "z": 0.4209269506927414
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 22,
+                        "y": 8,
+                        "z": 8
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 62,
+                          "y": 308
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 110,
+                          "y": 288
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 134,
+                          "y": 342
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 118,
+                          "y": 288
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 134,
+                          "y": 330
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950171",
+                  "name": "NativeVesper_Jaw",
+                  "position": {
+                    "x": 0.0,
+                    "y": 3.114353,
+                    "z": 8.705719
+                  },
+                  "orientation": {
+                    "x": 0.08715602773919051,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 0.9961946731581762
+                  },
+                  "shape": {
+                    "type": "box",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.375,
+                      "y": 0.46800431828294387,
+                      "z": 0.42209069122999304
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 36,
+                        "y": 16,
+                        "z": 8
+                      }
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "flat",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 22,
+                          "y": 308
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "back": {
+                        "offset": {
+                          "x": 22,
+                          "y": 308
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "right": {
+                        "offset": {
+                          "x": 240,
+                          "y": 118
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "bottom": {
+                        "offset": {
+                          "x": 22,
+                          "y": 328
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "left": {
+                        "offset": {
+                          "x": 248,
+                          "y": 118
+                        },
+                        "mirror": {
+                          "x": true,
+                          "y": false
+                        },
+                        "angle": 0
+                      },
+                      "top": {
+                        "offset": {
+                          "x": 62,
+                          "y": 328
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950172",
+                  "name": "NativeVesper_L-Eye",
+                  "position": {
+                    "x": 7.125,
+                    "y": 9.551502,
+                    "z": 9.87271
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": -0.375,
+                      "y": 0.46940327960966705,
+                      "z": 0.4205343586980886
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 6,
+                        "y": 6
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 248,
+                          "y": 160
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "id": "950173",
+                  "name": "NativeVesper_R-Eye",
+                  "position": {
+                    "x": -7.125,
+                    "y": 9.551502,
+                    "z": 9.87271
+                  },
+                  "orientation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0,
+                    "w": 1.0
+                  },
+                  "shape": {
+                    "type": "quad",
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "stretch": {
+                      "x": 0.375,
+                      "y": 0.46940327960966705,
+                      "z": 0.4205343586980886
+                    },
+                    "settings": {
+                      "size": {
+                        "x": 6,
+                        "y": 6
+                      },
+                      "normal": "+Z"
+                    },
+                    "visible": true,
+                    "doubleSided": false,
+                    "shadingMode": "fullbright",
+                    "unwrapMode": "custom",
+                    "textureLayout": {
+                      "front": {
+                        "offset": {
+                          "x": 248,
+                          "y": 160
+                        },
+                        "mirror": {
+                          "x": false,
+                          "y": false
+                        },
+                        "angle": 0
+                      }
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "950163",
+              "name": "NativeVesper_Pelvis",
+              "position": {
+                "x": 0.0,
+                "y": 3.684934,
+                "z": 1.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "box",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 0.2059848407035152,
+                  "y": 0.4157533234538526,
+                  "z": 0.36363636363636365
+                },
+                "settings": {
+                  "size": {
+                    "x": 62,
+                    "y": 40,
+                    "z": 44
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 198
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "back": {
+                    "offset": {
+                      "x": 68,
+                      "y": 198
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "right": {
+                    "offset": {
+                      "x": 200,
+                      "y": 160
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {
+                      "x": 134,
+                      "y": 186
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": true
+                    },
+                    "angle": 0
+                  },
+                  "left": {
+                    "offset": {
+                      "x": 244,
+                      "y": 160
+                    },
+                    "mirror": {
+                      "x": true,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "top": {
+                    "offset": {
+                      "x": 134,
+                      "y": 190
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950164",
+              "name": "NativeVesper_Pelvis-Hair-L",
+              "position": {
+                "x": 7.158434,
+                "y": 3.684934,
+                "z": 8.065036
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.3420200805197873,
+                "z": 0.0,
+                "w": 0.9396926436453773
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 0.3144827328011964,
+                  "y": 0.4157533234538526,
+                  "z": 0.3297919803394071
+                },
+                "settings": {
+                  "size": {
+                    "x": 8,
+                    "y": 40
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 240,
+                      "y": 74
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950165",
+              "name": "NativeVesper_Pelvis-Hair-R",
+              "position": {
+                "x": -7.158434,
+                "y": 3.684934,
+                "z": 8.065036
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": -0.3420200805197873,
+                "z": 0.0,
+                "w": 0.9396926436453773
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": -0.3144827328011964,
+                  "y": 0.4157533234538526,
+                  "z": 0.3297919803394071
+                },
+                "settings": {
+                  "size": {
+                    "x": 8,
+                    "y": 40
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 240,
+                      "y": 74
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950166",
+              "name": "NativeVesper_Pelvis-Hair-Bot",
+              "position": {
+                "x": 0.0,
+                "y": -8.315066,
+                "z": 8.431695
+              },
+              "orientation": {
+                "x": 0.08715602773919048,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.9961946731581761
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 0.2746464542713536,
+                  "y": 0.41427767978946883,
+                  "z": 0.3653166310770815
+                },
+                "settings": {
+                  "size": {
+                    "x": 46,
+                    "y": 18
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 202,
+                      "y": 138
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950179",
+              "name": "NativeVesper_R-Thigh",
+              "position": {
+                "x": -4.0,
+                "y": -16.0,
+                "z": 2.917511
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "box",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 0.1102941176470588,
+                  "y": 0.27767567311218566,
+                  "z": 0.1353109918760682
+                },
+                "settings": {
+                  "size": {
+                    "x": 12,
+                    "y": 32,
+                    "z": 12
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 118,
+                      "y": 330
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "back": {
+                    "offset": {
+                      "x": 118,
+                      "y": 330
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "right": {
+                    "offset": {
+                      "x": 102,
+                      "y": 328
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {
+                      "x": 44,
+                      "y": 356
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "left": {
+                    "offset": {
+                      "x": 102,
+                      "y": 328
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950180",
+              "name": "NativeVesper_R-Foot",
+              "position": {
+                "x": -4.0,
+                "y": -20.303972,
+                "z": 4.0
+              },
+              "orientation": {
+                "x": -0.7071069999998646,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071065623731627
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 0.08823529411764705,
+                  "y": 0.10824886049590371,
+                  "z": 0.27767584496511705
+                },
+                "settings": {
+                  "size": {
+                    "x": 34,
+                    "y": 60
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 202,
+                      "y": 74
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950186",
+              "name": "NativeVesper_L-Thigh",
+              "position": {
+                "x": 4.0,
+                "y": -16.0,
+                "z": 2.917511
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "box",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": -0.1102941176470588,
+                  "y": 0.27767567311218566,
+                  "z": 0.1353109918760682
+                },
+                "settings": {
+                  "size": {
+                    "x": 12,
+                    "y": 32,
+                    "z": 12
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 118,
+                      "y": 330
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "back": {
+                    "offset": {
+                      "x": 118,
+                      "y": 330
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "right": {
+                    "offset": {
+                      "x": 102,
+                      "y": 328
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "bottom": {
+                    "offset": {
+                      "x": 44,
+                      "y": 356
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  },
+                  "left": {
+                    "offset": {
+                      "x": 102,
+                      "y": 328
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950187",
+              "name": "NativeVesper_L-Foot",
+              "position": {
+                "x": 4.0,
+                "y": -20.303972,
+                "z": 4.0
+              },
+              "orientation": {
+                "x": -0.7071069999998646,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071065623731627
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": -0.08823529411764705,
+                  "y": 0.10824886049590371,
+                  "z": 0.27767584496511705
+                },
+                "settings": {
+                  "size": {
+                    "x": 34,
+                    "y": 60
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 202,
+                      "y": 74
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            },
+            {
+              "id": "950189",
+              "name": "ConnectedPelvisVeil",
+              "position": {
+                "x": 0.0,
+                "y": -13.0,
+                "z": 2.0
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "stretch": {
+                  "x": 0.140625,
+                  "y": 0.17708333333333334,
+                  "z": 1
+                },
+                "settings": {
+                  "size": {
+                    "x": 128,
+                    "y": 192
+                  },
+                  "normal": "+Z"
+                },
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat",
+                "unwrapMode": "custom",
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

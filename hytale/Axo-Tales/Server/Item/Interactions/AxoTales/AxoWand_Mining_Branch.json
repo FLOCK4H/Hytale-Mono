@@ -1,0 +1,6 @@
+{
+  "Type": "AxoTales_Input",
+  "WandCast": true,
+  "Next": "AxoWandMining_Secondary",
+  "Failed": "AxoMiningBook_Primary"
+}

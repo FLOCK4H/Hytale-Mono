@@ -5,7 +5,7 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.EntityEventSystem;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.event.events.ecs.DropItemEvent;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
@@ -16,13 +16,13 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import javax.annotation.Nonnull;
 import java.util.UUID;
 
-/**
- * Records who dropped an Arcane Crystal item so the bonding system can assign that player as the Kudu Adept's master.
- */
+
+
+
 public final class KuduAdeptCrystalDropOwnerSystem extends EntityEventSystem<EntityStore, DropItemEvent.Drop> {
 
-    private static final String ARCANE_CRYSTAL_SHARD_ITEM_ID = "Ingredient_Crystal_Arcane";
-    private static final String ARCANE_CRYSTAL_BLOCK_ITEM_ID = "Rock_Crystal_Arcane_Large";
+    private static final String ARCANE_CRYSTAL_SHARD_ITEM_ID = "Axo_Arcane_Crystal_Shards";
+    private static final String ARCANE_CRYSTAL_BLOCK_ITEM_ID = "Axo_Arcane_Crystal";
 
     private final PluginErrorReporter errors;
     private final PluginDebugReporter debug;

@@ -1,0 +1,80 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Ancient_Arrow.name",
+    "Description": "server.items.flock4h.AxoTales_Ancient_Arrow.description"
+  },
+  "Model": "Items/AxoTales/Scout/Ancient_Arrow.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Ancient_Relic_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Ancient_Arrow.png",
+  "Quality": "Epic",
+  "MaxStack": 64,
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "PlayerAnimationsId": "Dagger",
+  "ItemSoundSetId": "ISS_Weapons_Arrows",
+  "Recipe": {
+    "TimeSeconds": 12,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Adamantite",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Aequalis_Bar",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Revel_Bar",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 12
+      },
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 16
+      },
+      {
+        "ItemId": "Ingredient_Feathers_Light",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      }
+    ],
+    "OutputQuantity": 4,
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Armory"
+        ]
+      }
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Arrow"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.5,
+    "Rotation": [
+      45.0,
+      90.0,
+      0.0
+    ],
+    "Translation": [
+      -25.0,
+      -25.0
+    ]
+  }
+}

@@ -22,12 +22,12 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Safety-net: prevents Kudu Adepts from damaging players.
- *
- * <p>This is intended to make the "friendly adept" behavior robust even if the underlying role/template still attempts
- * to swing at players due to attitude/targeting edge cases.</p>
- */
+
+
+
+
+
+
 public final class KuduAdeptNoPlayerDamageSystem extends DamageEventSystem {
 
     private static final long DEBUG_INTERVAL_NANOS = 5_000_000_000L;
@@ -96,13 +96,13 @@ public final class KuduAdeptNoPlayerDamageSystem extends DamageEventSystem {
             Ref<EntityStore> attackerRef;
             Ref<EntityStore> projectileRef = null;
             String sourceType;
-            if (source instanceof Damage.EntitySource entitySource) {
-                attackerRef = entitySource.getRef();
-                sourceType = "EntitySource";
-            } else if (source instanceof Damage.ProjectileSource projectileSource) {
-                attackerRef = projectileSource.getRef(); // shooter
+            if (source instanceof Damage.ProjectileSource projectileSource) {
+                attackerRef = projectileSource.getRef();
                 projectileRef = projectileSource.getProjectile();
                 sourceType = "ProjectileSource";
+            } else if (source instanceof Damage.EntitySource entitySource) {
+                attackerRef = entitySource.getRef();
+                sourceType = "EntitySource";
             } else {
                 return;
             }
@@ -123,9 +123,9 @@ public final class KuduAdeptNoPlayerDamageSystem extends DamageEventSystem {
             try {
                 attackerRoleName = attackerNpc.getRoleName();
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
-            if (attackerRoleName == null || !attackerRoleName.equals(roleName)) {
+            if (!CompanionLoyalty.mage(attackerRoleName,roleName)) {
                 return;
             }
 
@@ -147,7 +147,7 @@ public final class KuduAdeptNoPlayerDamageSystem extends DamageEventSystem {
                     attackerUuid = attackerUuidComponent.getUuid();
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
 
             UUID projectileUuid = null;
@@ -158,7 +158,7 @@ public final class KuduAdeptNoPlayerDamageSystem extends DamageEventSystem {
                         projectileUuid = projectileUuidComponent.getUuid();
                     }
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
             }
 

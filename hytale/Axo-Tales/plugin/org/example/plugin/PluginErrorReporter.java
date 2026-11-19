@@ -16,10 +16,10 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.time.Instant;
 
-/**
- * Reports exceptions to the player chat (when available) and writes a persistent log file under the plugin data
- * directory.
- */
+
+
+
+
 public final class PluginErrorReporter {
 
     private static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
@@ -43,7 +43,7 @@ public final class PluginErrorReporter {
                 );
                 ctx.sendMessage(Message.raw("Details saved to: " + logFile));
             } catch (Throwable ignored) {
-                // Ignore: we already logged to file + server log.
+
             }
         }
     }

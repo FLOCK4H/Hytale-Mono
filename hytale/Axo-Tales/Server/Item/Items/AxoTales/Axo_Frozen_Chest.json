@@ -1,0 +1,142 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.frozen_chest.name",
+    "Description": "server.items.flock4h.frozen_chest.description"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Furniture.Containers"
+  ],
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Ingredient_Bar_Copper",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Rock_Ice",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Ice_Essence",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Blood_Magic"
+        ]
+      }
+    ],
+    "TimeSeconds": 5,
+    "KnowledgeRequired": false
+  },
+  "BlockType": {
+    "BlockParticleSetId": "Ice",
+    "BlockSoundSetId": "Ice",
+    "PhysicalMaterialId": "Ice",
+    "CustomModel": "Items/AxoTales/FrozenChest/Chest.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/FrozenChest/Chest_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "DrawType": "Model",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks"
+      }
+    },
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "ConnectedBlockRuleSet": {
+      "Type": "CustomTemplate",
+      "TemplateShapeAssetId": "ChestConnectedBlockTemplate",
+      "TemplateShapeBlockPatterns": {
+        "Default": "Axo_Frozen_Chest",
+        "Double": "Axo_Frozen_Chest_Double"
+      }
+    },
+    "State": {
+      "Definitions": {
+        "CloseWindow": {
+          "InteractionSoundEventId": "SFX_Chest_Wooden_Close",
+          "CustomModelAnimation": "Blocks/Animations/Chest/Chest_Close.blockyanim"
+        },
+        "OpenWindow": {
+          "InteractionSoundEventId": "SFX_Chest_Wooden_Open",
+          "CustomModelAnimation": "Blocks/Animations/Chest/Chest_Open.blockyanim"
+        }
+      }
+    },
+    "BlockEntity": {
+      "Components": {
+        "ItemContainerBlock": {
+          "Capacity": 36
+        }
+      }
+    },
+    "Supporting": {
+      "Up": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "NESW",
+    "InteractionHint": "server.interactionHints.openDoor",
+    "Interactions": {
+      "Use": "Open_Container"
+    },
+    "HitboxType": "Chest_Small",
+    "ParticleColor": "#5bbaca",
+    "TextureComputedColor": "#70DEED"
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ],
+    "Family": [
+      "Axo_Frozen_Chest"
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Axo_Frozen_Chest.png",
+  "IconProperties": {
+    "Scale": 0.5,
+    "Translation": [
+      0,
+      -13
+    ],
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "ItemLevel": 22,
+  "MaxStack": 10,
+  "Quality": "Rare",
+  "Model": "Items/AxoTales/FrozenChest/Chest.blockymodel",
+  "Texture": "Items/AxoTales/FrozenChest/Chest_Atlas.png"
+}

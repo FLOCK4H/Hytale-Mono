@@ -1,0 +1,19 @@
+{
+  "Type": "Charging",
+  "Effects": {
+    "ItemAnimationId": "StabCharging"
+  },
+  "AllowIndefiniteHold": false,
+  "Next": {
+    "0": {
+      "Type": "Chaining",
+      "ChainingAllowance": 1.041666667,
+      "Next": [
+        "AxoTempoSword_Longsword_Swing_Left",
+        "AxoTempoSword_Longsword_Swing_Right",
+        "AxoTempoSword_Longsword_Swing_Up_Left"
+      ]
+    },
+    "1.304166667": "AxoTempoSword_Longsword_Stab_Charged"
+  }
+}

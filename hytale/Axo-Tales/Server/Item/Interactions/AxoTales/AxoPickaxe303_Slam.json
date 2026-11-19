@@ -1,0 +1,22 @@
+{
+  "Type": "AxoTales_BloodIndustry",
+  "Mode": "pickaxeSlam",
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 1.5,
+    "Effects": {
+      "ItemAnimationId": "GroundStrike",
+      "ClearAnimationOnFinish": false,
+      "WaitForAnimationToFinish": false,
+      "WorldSoundEventId": "SFX_Tool_T1_Swing"
+    },
+    "Next": {
+      "Type": "AxoTales_BloodIndustry",
+      "Mode": "pickaxeImpact",
+      "Next": {
+        "Type": "Simple",
+        "RunTime": 0.7
+      }
+    }
+  }
+}

@@ -1,88 +1,29 @@
 # Arsenal
 
-Browse the [complete item catalog](catalog.md) for every item, its actual crafting cost and the relevant controls guide, including the new shortbows, Spoiled Heart and Arcane Oraculum.
+The [item catalog](catalog.md) lists every item and its recipe. The pages below explain how to use them.
 
-<div class="page-header">
-  <p class="eyebrow">What you can build around</p>
-  <p class="lead-text">Axo Tales splits cleanly into gear, spellbooks, potions, and world-fed utility. This section is the quickest way to understand what belongs in a loadout and what each lane is good at.</p>
+## Equipment and items {#collection-map}
+
+<div class="guide-paths">
+  <a class="guide-path" href="gear/"><img src="../assets/images/catalog/Axo_Ancient_Sword.png" alt="" width="50" height="50"><div><h3>Gear and spellblade</h3><p>Three armor sets, swords, Bloodfang Daggers, pickaxes and stealth equipment.</p></div></a>
+  <a class="guide-path" href="spellbooks/"><img src="../assets/images/catalog/Axo_Healing_Book.png" alt="" width="50" height="50"><div><h3>Spellbooks</h3><p>Seventeen books for healing, travel, mining, combat and blood magic.</p></div></a>
+  <a class="guide-path" href="arcane-equipment/"><img src="../assets/images/catalog/Axo_Arcane_Wand.png" alt="" width="50" height="50"><div><h3>Wand and pouch</h3><p>Cast spells from carried books. The pouch holds up to 18 books.</p></div></a>
+  <a class="guide-path" href="astral-satchel/"><img src="../assets/images/catalog/Axo_Astral_Satchel.png" alt="" width="50" height="50"><div><h3>Astral Satchel</h3><p>Store items, search the bag and use its ingredients at workbenches.</p></div></a>
+  <a class="guide-path" href="scout-gear/"><img src="../assets/images/catalog/Axo_Spyglass.png" alt="" width="50" height="50"><div><h3>Arrows and Spyglass</h3><p>Elemental shortbows, homing Ancient Arrows, target inspection and the Oraculum.</p></div></a>
+  <a class="guide-path" href="potions/"><img src="../assets/images/catalog/Axo_Swift_Potion.png" alt="" width="50" height="50"><div><h3>Potions</h3><p>Drinkable speed, strength, jump and invisibility buffs, plus the throwable Curse Potion.</p></div></a>
 </div>
 
-## Collection map
+## Crafting and armor {#how-the-arsenal-hangs-together}
 
-<div class="card-grid">
-  <a class="card media-card" href="gear/" data-reveal>
-    <div class="media-card__visual">
-      <img src="../assets/images/items/sar_legs.png" alt="Sa'r Boots icon">
-      <img src="../assets/images/items/sar_hands.png" alt="Sa'r Warfists icon">
-      <img src="../assets/images/items/ancient_sword.png" alt="Ancient Sword icon">
-    </div>
-    <div class="media-card__copy">
-      <h3>Gear and spellblade</h3>
-      <p>Mana scaling, movement perks, invisibility, Warfists stun shots, and both arcane swords.</p>
-    </div>
-  </a>
-  <a class="card media-card" href="spellbooks/" data-reveal>
-    <div class="media-card__visual">
-      <img src="../assets/images/items/heal_book.png" alt="Healing Book icon">
-      <img src="../assets/images/items/teleport_book.png" alt="Teleport Book icon">
-      <img src="../assets/images/items/doom_book.png" alt="Doom Book icon">
-    </div>
-    <div class="media-card__copy">
-      <h3>Spellbooks</h3>
-      <p>Twelve books that cover healing, blink, mining, summoning, burst, terrain control, and utility light.</p>
-    </div>
-  </a>
-  <a class="card media-card" href="potions/" data-reveal>
-    <div class="media-card__visual">
-      <img src="../assets/images/potions/swift_potion.png" alt="Swift Potion icon">
-      <img src="../assets/images/potions/strength_potion.png" alt="Strength Potion icon">
-      <img src="../assets/images/potions/invisibility_potion.png" alt="Invisibility Potion icon">
-    </div>
-    <div class="media-card__copy">
-      <h3>Potions</h3>
-      <p>Fast drinkable buffs plus one throwable curse lane, all built off Axo's Empty Potion Bottle.</p>
-    </div>
-  </a>
-  <a class="card media-card" href="../blocks-ores/" data-reveal>
-    <div class="media-card__visual">
-      <img src="../assets/images/blocks/arcane_matter.png" alt="Arcane Matter icon">
-      <img src="../assets/images/blocks/arcane_crystal.png" alt="Arcane Crystal icon">
-      <img src="../assets/images/blocks/cloud_block.png" alt="Cloud Block icon">
-    </div>
-    <div class="media-card__copy">
-      <h3>World resources and blocks</h3>
-      <p>Arcane Matter, deterministic crystals, creature drops, and the Cloud/Bounce movement pair.</p>
-    </div>
-  </a>
-</div>
-
-## How the arsenal hangs together
-
-<div class="card-grid">
-  <div class="card" data-reveal>
-    <h3>Start with resource access</h3>
-    <p>Arcane Matter and Arcane Crystal Shards are the real spine of the mod. Once those are flowing, every other lane opens quickly.</p>
-  </div>
-  <div class="card" data-reveal>
-    <h3>Mana gear makes the books better</h3>
-    <p>Axo Tales armor pieces add max mana and mana regeneration, so spellbooks feel much better once you have at least one real gear piece online.</p>
-  </div>
-  <div class="card" data-reveal>
-    <h3>Encounters and equipment</h3>
-    <p>Cursed Knights supply Evil Cores for equipment. Elder Mages accept Arcane Crystals and assist in combat.</p>
-  </div>
-</div>
+Most equipment uses Arcane Matter, Crystal Shards and Evil Cores from Cursed Knights. Some recipes also need Agretis, Revel or Aequalis Bars from their respective regions. Armor improves your stats and grants bonuses for a complete set. Wearing a complete Veil, Sa'r or Ancient set also unlocks permanent Backpack space.
 
 ## Next pages
 
-- [Gear and Spellblade](gear.md) if you want to choose a build anchor first.
-- [Spellbooks](spellbooks.md) if you want the click-by-click book reference.
-- [Crafting Flow](../crafting.md) if you want the fastest progression order.
+- [Gear and Spellblade](gear.md) for armor bonuses, weapons and pickaxe controls.
+- [Spellbooks](spellbooks.md) for every book's action and cast timing.
+- [Crafting Flow](../crafting.md) for workbench tabs and progression.
+- [Blood Magic](../blood-magic.md) for blood, DNA, companions and specimen storage.
 
-## One focus for your collection
+## Casting with the wand {#one-focus-for-your-collection}
 
-The [Arcane Wand and Spellbook Pouch](arcane-equipment.md) let you carry books in one container and select their spells with LMB. Direct book casting remains available.
-
-For expandable storage, see [Axo's Astral Satchel](astral-satchel.md): three-row search, view filters and draggable paging.
-
-For homing ammunition and a focused target readout, see [Ancient Arrows and Axo's Spyglass](scout-gear.md), including the complete configurable display-field list.
+The [Arcane Wand and Spellbook Pouch](arcane-equipment.md) let you store books together and select their spells with LMB. You can also use loose books from your inventory or cast directly from a book in your hand.

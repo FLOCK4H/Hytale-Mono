@@ -3,7 +3,7 @@ package org.example.plugin;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 import com.hypixel.hytale.server.core.asset.type.attitude.Attitude;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
@@ -12,6 +12,7 @@ import com.hypixel.hytale.server.core.util.TargetUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.role.Role;
 import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -22,16 +23,16 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Continuously steers Horde Book minions to attack nearby entities while never attacking their owner.
- *
- * <p>Mechanics:
- * <ul>
- *   <li>Refresh owner/minion friendly attitude overrides.</li>
- *   <li>Select nearby non-owner, non-minion targets and set {@link MarkedEntitySupport#DEFAULT_TARGET_SLOT}.</li>
- *   <li>Force a short-lived {@link Attitude#HOSTILE} override for the selected target to increase reliability.</li>
- * </ul>
- */
+
+
+
+
+
+
+
+
+
+
 public final class HordeBookMinionAggroSystem extends TickingSystem<EntityStore> {
 
     private static final long TICK_INTERVAL_NANOS = 500_000_000L;
@@ -153,23 +154,23 @@ public final class HordeBookMinionAggroSystem extends TickingSystem<EntityStore>
                         continue;
                     }
                     Role role = npc.getRole();
-                    if (role == null || role.getMarkedEntitySupport() == null || role.getWorldSupport() == null) {
+                    if (role == null || MarkedEntitySupport.get(minionRef, store) == null || WorldSupport.get(minionRef, store) == null) {
                         continue;
                     }
 
                     try {
-                        role.getWorldSupport().overrideAttitude(ownerRef, Attitude.FRIENDLY, ownerFriendlySeconds);
+                        WorldSupport.get(minionRef, store).overrideAttitude(ownerRef, Attitude.FRIENDLY, ownerFriendlySeconds);
                         for (com.hypixel.hytale.component.Ref<EntityStore> otherMinionRef : minionRefs) {
                             if (otherMinionRef == null || !otherMinionRef.isValid() || otherMinionRef.equals(minionRef)) {
                                 continue;
                             }
-                            role.getWorldSupport().overrideAttitude(otherMinionRef, Attitude.FRIENDLY, ownerFriendlySeconds);
+                            WorldSupport.get(minionRef, store).overrideAttitude(otherMinionRef, Attitude.FRIENDLY, ownerFriendlySeconds);
                         }
                     } catch (Throwable ignored) {
-                        // Best effort.
+
                     }
 
-                    MarkedEntitySupport marked = role.getMarkedEntitySupport();
+                    MarkedEntitySupport marked = MarkedEntitySupport.get(minionRef, store);
                     var currentTarget = marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
                     if (currentTarget != null && currentTarget.isValid() && !currentTarget.equals(ownerRef) && !minionRefSet.contains(currentTarget)) {
                         usedTargets.add(currentTarget);
@@ -193,13 +194,13 @@ public final class HordeBookMinionAggroSystem extends TickingSystem<EntityStore>
 
                     usedTargets.add(chosen);
                     try {
-                        role.getWorldSupport().overrideAttitude(chosen, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
+                        WorldSupport.get(minionRef, store).overrideAttitude(chosen, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
                     } catch (Throwable ignored) {
-                        // Best effort.
+
                     }
 
                     marked.setMarkedEntity(MarkedEntitySupport.DEFAULT_TARGET_SLOT, chosen);
-                    role.getWorldSupport().requestNewPath();
+                    WorldSupport.get(minionRef, store).requestNewPath();
                     changed++;
 
                     UUIDComponent targetUuidComponent = store.getComponent(chosen, UUIDComponent.getComponentType());

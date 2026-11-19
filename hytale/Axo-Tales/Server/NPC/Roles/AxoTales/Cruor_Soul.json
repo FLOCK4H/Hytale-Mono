@@ -1,0 +1,15 @@
+{
+  "Type": "Generic",
+  "Appearance": "Cruor_Soul",
+  "MotionControllerList": [
+    {
+      "Type": "Walk"
+    }
+  ],
+  "MaxHealth": 100,
+  "Invulnerable": false,
+  "Instructions": [
+    {}
+  ],
+  "NameTranslationKey": "server.npcRoles.Cruor_Soul.name"
+}

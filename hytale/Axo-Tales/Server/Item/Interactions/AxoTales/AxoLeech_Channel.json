@@ -1,0 +1,11 @@
+{
+  "Type": "AxoTales_LeechHold",
+  "AllowIndefiniteHold": true,
+  "Effects": {
+    "ItemAnimationId": "CastLeech"
+  },
+  "Next": {
+    "0": "AxoLeech_Stop"
+  },
+  "Failed": "AxoLeech_Stop"
+}

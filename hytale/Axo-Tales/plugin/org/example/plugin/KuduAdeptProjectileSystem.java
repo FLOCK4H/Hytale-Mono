@@ -7,8 +7,8 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.shape.Box;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.protocol.AnimationSlot;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.entities.ProjectileComponent;
@@ -29,19 +29,20 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Plugin-driven fire-like ranged attacks for bonded Kudu Adepts.
- *
- * <p>Bonding/target selection is handled by {@link KuduAdeptBondSystem}; this system just fires a projectile at the
- * current marked target (excluding the owner).</p>
- */
+
+
+
+
+
+
 public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> {
 
     public static final String DEFAULT_PROJECTILE_ID = "KuduAdept_Firebolt";
 
     private static final long TICK_INTERVAL_NANOS = 150_000_000L;
     private static final long DEBUG_INTERVAL_NANOS = 10_000_000_000L;
-    private static final long ACTION_CLEAR_NANOS = 800_000_000L;
+    private static final long ACTION_CLEAR_NANOS = 1_100_000_000L;
+    private static final long WINDUP_NANOS=300_000_000L;
 
     private static final double RANGE_BLOCKS = 24.0;
     private static final long COOLDOWN_NANOS = (long) (1.35 * 1_000_000_000L);
@@ -59,8 +60,9 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
     private final ConcurrentMap<UUID, Long> nextFireAtNanosByAdept = new ConcurrentHashMap<>();
     private final ConcurrentMap<UUID, Long> nextDebugAtNanosByAdept = new ConcurrentHashMap<>();
     private final ConcurrentMap<UUID, Long> clearActionAtNanosByAdept = new ConcurrentHashMap<>();
+    private final ConcurrentMap<UUID,UUID> pendingTargetByAdept=new ConcurrentHashMap<>();
 
-    private volatile long nextTickAtNanos;
+    private final java.util.Map<Store<EntityStore>,Long> nextTickByStore=java.util.Collections.synchronizedMap(new java.util.WeakHashMap<>());
 
     public KuduAdeptProjectileSystem(
         @Nonnull PluginErrorReporter errors,
@@ -78,11 +80,11 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
         try {
             long nowNanos = System.nanoTime();
-            long next = nextTickAtNanos;
+            long next = nextTickByStore.getOrDefault(store,0L);
             if (next > 0 && nowNanos < next) {
                 return;
             }
-            nextTickAtNanos = nowNanos + TICK_INTERVAL_NANOS;
+            nextTickByStore.put(store,nowNanos + TICK_INTERVAL_NANOS);
 
             if (config == null || config.kuduAdept == null || !config.kuduAdept.enabled) {
                 return;
@@ -106,21 +108,22 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
             double rangeSq = RANGE_BLOCKS * RANGE_BLOCKS;
             String projectileId = DEFAULT_PROJECTILE_ID;
 
-            for (KuduAdeptBondState.BondedAdept bonded : bondState.snapshotAll()) {
-                if (bonded == null) {
-                    continue;
-                }
-
-                UUID adeptUuid = bonded.adeptUuid();
-                UUID ownerUuid = bonded.ownerUuid();
-                if (adeptUuid == null || ownerUuid == null) {
-                    continue;
-                }
+            var mages=new java.util.ArrayList<Ref<EntityStore>>();
+            store.forEachChunk(com.hypixel.hytale.component.query.Query.and(NPCEntity.getComponentType(),UUIDComponent.getComponentType()),(chunk,buffer)->{
+                for(int i=0;i<chunk.size();i++)if(CompanionLoyalty.mage(chunk.getComponent(i,NPCEntity.getComponentType()).getRoleName(),roleName))mages.add(chunk.getReferenceTo(i));
+            });
+            for (var currentAdept : mages) {
+                var adeptId=store.getComponent(currentAdept,UUIDComponent.getComponentType());
+                var bonded=adeptId==null?null:bondState.getByAdept(adeptId.getUuid());
+                UUID adeptUuid=adeptId==null?null:adeptId.getUuid();
+                UUID ownerUuid=CompanionLoyalty.owner(store,currentAdept);
+                if(adeptUuid==null)continue;
 
                 Ref<EntityStore> adeptRef = external.getRefFromUUID(adeptUuid);
                 if (adeptRef == null || !adeptRef.isValid()) {
                     nextFireAtNanosByAdept.remove(adeptUuid);
                     clearActionAtNanosByAdept.remove(adeptUuid);
+                    pendingTargetByAdept.remove(adeptUuid);
                     continue;
                 }
 
@@ -140,35 +143,19 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                 try {
                     npcRoleName = npc.getRoleName();
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
-                if (npcRoleName == null || !npcRoleName.equals(roleName)) {
+                if (!CompanionLoyalty.mage(npcRoleName,roleName)) {
                     continue;
                 }
 
-                KuduAdeptBondState.OwnerTarget ownerTarget = bondState.getOwnerTarget(ownerUuid);
-                if (ownerTarget == null || ownerTarget.targetUuid() == null) {
-                    debugFailureMaybe(store, world, nowNanos, adeptUuid, null, projectileId, "noMasterTarget");
-                    continue;
-                }
-
-                Ref<EntityStore> targetRef = external.getRefFromUUID(ownerTarget.targetUuid());
-                if (targetRef == null || !targetRef.isValid()) {
-                    debugFailureMaybe(store, world, nowNanos, adeptUuid, null, projectileId, "masterTargetInvalidRef");
-                    continue;
-                }
-
-                Ref<EntityStore> ownerRef = external.getRefFromUUID(ownerUuid);
-                if (ownerRef != null && ownerRef.isValid() && targetRef.equals(ownerRef)) {
-                    debugFailureMaybe(store, world, nowNanos, adeptUuid, targetRef, projectileId, "ownerTarget");
-                    continue;
-                }
-
-                // Safety: never shoot players.
-                if (store.getComponent(targetRef, PlayerRef.getComponentType()) != null) {
-                    debugFailureMaybe(store, world, nowNanos, adeptUuid, targetRef, projectileId, "playerTarget");
-                    continue;
-                }
+                var machine=com.hypixel.hytale.server.npc.role.support.StateSupport.get(adeptRef,store);
+                var marked=com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport.get(adeptRef,store);
+                var targetRef=marked==null?null:marked.getMarkedEntityRef(com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport.DEFAULT_TARGET_SLOT);
+                String task=machine==null?null:machine.getStateName();
+                var ownerRef=ownerUuid==null?null:external.getRefFromUUID(ownerUuid);
+                if(task==null || !task.startsWith("Combat") || !CompanionLoyalty.wildTarget(store,targetRef)
+                    || ownerUuid!=null && (ownerRef==null || !ownerRef.isValid())){pendingTargetByAdept.remove(adeptUuid);continue;}
 
                 UUID targetUuid = null;
                 try {
@@ -177,7 +164,7 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                         targetUuid = targetUuidComponent.getUuid();
                     }
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 if (targetUuid == null) {
                     debugFailureMaybe(store, world, nowNanos, adeptUuid, targetRef, projectileId, "targetUuidMissing");
@@ -189,6 +176,7 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                 }
 
                 Vector3d targetPos = getAimPosition(store, targetRef, AIM_HEIGHT_BLOCKS);
+                if(store.getComponent(adeptRef,com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent.getComponentType())!=null || store.getComponent(targetRef,com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent.getComponentType())!=null){pendingTargetByAdept.remove(adeptUuid);continue;}
                 Vector3d origin = getAimPosition(store, adeptRef, AIM_HEIGHT_BLOCKS);
                 if (targetPos == null || origin == null) {
                     continue;
@@ -198,7 +186,7 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                 if (!deltaVec.isFinite()) {
                     continue;
                 }
-                double d2 = deltaVec.squaredLength();
+                double d2 = deltaVec.lengthSquared();
                 if (d2 < 1e-9 || d2 > rangeSq) {
                     continue;
                 }
@@ -208,11 +196,17 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                     continue;
                 }
 
-                playActionAnimationMaybe(store, npc, nowNanos, adeptUuid, adeptRef, ACTION_ANIMATION_CAST);
+                UUID pending=pendingTargetByAdept.get(adeptUuid);
+                if(pending==null){
+                    pendingTargetByAdept.put(adeptUuid,targetUuid);nextFireAtNanosByAdept.put(adeptUuid,nowNanos+WINDUP_NANOS);
+                    playActionAnimationMaybe(store,npc,nowNanos,adeptUuid,adeptRef,ACTION_ANIMATION_CAST);continue;
+                }
+                pendingTargetByAdept.remove(adeptUuid);
+                if(!pending.equals(targetUuid)){nextFireAtNanosByAdept.remove(adeptUuid);continue;}
 
-                Vector3f rotation = rotationFromDirection(deltaVec);
-                float yaw = rotation.getYaw();
-                float pitch = rotation.getPitch();
+                Rotation3f rotation = rotationFromDirection(deltaVec);
+                float yaw = rotation.yaw();
+                float pitch = rotation.pitch();
 
                 Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, projectileId, origin, rotation);
                 if (holder == null) {
@@ -260,10 +254,10 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                         projectileUuid = projectileUuidComponent.getUuid();
                     }
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
 
-                nextFireAtNanosByAdept.put(adeptUuid, nowNanos + COOLDOWN_NANOS);
+                nextFireAtNanosByAdept.put(adeptUuid, nowNanos + COOLDOWN_NANOS - WINDUP_NANOS);
 
                 debug.traceFileOnly(
                     null,
@@ -298,7 +292,7 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
         try {
             com.hypixel.hytale.server.core.entity.AnimationUtils.stopAnimation(adeptRef, AnimationSlot.Action, store);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 
@@ -317,7 +311,7 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
             npc.playAnimation(adeptRef, AnimationSlot.Action, animationId, store);
             clearActionAtNanosByAdept.put(adeptUuid, nowNanos + ACTION_CLEAR_NANOS);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 
@@ -343,7 +337,7 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                 targetUuid = targetUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         debug.traceFileOnly(
@@ -359,12 +353,12 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
 
     private static boolean hasLineOfSight(@Nonnull World world, @Nonnull Vector3d origin, @Nonnull Vector3d targetPos) {
         Vector3d delta = new Vector3d(targetPos.x - origin.x, targetPos.y - origin.y, targetPos.z - origin.z);
-        double maxDistance = Math.sqrt(delta.squaredLength());
+        double maxDistance = Math.sqrt(delta.lengthSquared());
         if (!Double.isFinite(maxDistance) || maxDistance <= 0) {
             return false;
         }
 
-        Vector3d ray = new Vector3d(delta).normalize().scale(maxDistance);
+        Vector3d ray = new Vector3d(delta).normalize().mul(maxDistance);
         CollisionResult result = new CollisionResult(false, false);
         result.setCollisionByMaterial(CollisionMaterial.MATERIAL_SOLID);
         CollisionModule.findBlockCollisionsIterative(world, RAY_POINT_BOX, origin, ray, true, result);
@@ -383,7 +377,7 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                 return pos;
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         try {
@@ -394,16 +388,16 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
                 return new Vector3d(pos.x, pos.y + height, pos.z);
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         return null;
     }
 
-    private static @Nonnull Vector3f rotationFromDirection(@Nonnull Vector3d direction) {
-        double lenSq = direction.squaredLength();
+    private static @Nonnull Rotation3f rotationFromDirection(@Nonnull Vector3d direction) {
+        double lenSq = direction.lengthSquared();
         if (!Double.isFinite(lenSq) || lenSq < 1e-9) {
-            return Vector3f.ZERO;
+            return new Rotation3f();
         }
 
         double len = Math.sqrt(lenSq);
@@ -415,6 +409,6 @@ public final class KuduAdeptProjectileSystem extends TickingSystem<EntityStore> 
         float pitch = (float) Math.asin(clampedY);
         float yaw = (float) Math.atan2(-dx, -dz);
 
-        return new Vector3f(pitch, yaw, 0f);
+        return new Rotation3f(pitch, yaw, 0f);
     }
 }

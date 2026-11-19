@@ -1,0 +1,109 @@
+{
+  "Type": "Generic",
+  "Appearance": "Dreadmaw",
+  "StartState": "Idle",
+  "MaxHealth": 100,
+  "DefaultPlayerAttitude": "Friendly",
+  "DefaultNPCAttitude": "Neutral",
+  "ApplySeparation": true,
+  "SeparationDistance": 2,
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": 6,
+      "RunThreshold": 0.6,
+      "Gravity": 10,
+      "MaxFallSpeed": 15,
+      "MaxRotationSpeed": 240,
+      "Acceleration": 10,
+      "MinJumpHeight": 0.8
+    }
+  ],
+  "Instructions": [
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Idle"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Idle"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Combat"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Combat"
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Idle"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 64
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "SlowDownDistance": 6.5,
+            "StopDistance": 3.5
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Combat"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 64
+          },
+          "BodyMotion": {
+            "Type": "MaintainDistance",
+            "DesiredDistanceRange": [
+              10,
+              14
+            ],
+            "TargetDistanceFactor": 0.5,
+            "MoveThreshold": 0.8,
+            "RelativeForwardsSpeed": 1,
+            "RelativeBackwardsSpeed": 0.7,
+            "StrafingDurationRange": [
+              0.5,
+              1
+            ],
+            "StrafingFrequencyRange": [
+              1.5,
+              3
+            ]
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
+    }
+  ],
+  "NameTranslationKey": "server.npcRoles.AxoTales_Bloodbound.name"
+}

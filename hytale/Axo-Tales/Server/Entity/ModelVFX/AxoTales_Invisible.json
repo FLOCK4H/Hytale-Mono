@@ -1,0 +1,15 @@
+{
+  "SwitchTo": "Disappear",
+  "EffectDirection": "None",
+  "AnimationDuration": 0.01,
+  "AnimationRange": {
+    "X": 1,
+    "Y": 1
+  },
+  "LoopOption": "PlayOnce",
+  "CurveType": "Linear",
+  "HighlightThickness": 0,
+  "UseBloomOnHighlight": false,
+  "PostColorOpacity": 0,
+  "Opacity": 0
+}

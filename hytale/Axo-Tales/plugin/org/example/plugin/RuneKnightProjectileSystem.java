@@ -10,8 +10,8 @@ import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.shape.Box;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.math.vector.Vector3f;
+import org.joml.Vector3d;
+import com.hypixel.hytale.math.vector.Rotation3f;
 import com.hypixel.hytale.protocol.AnimationSlot;
 import com.hypixel.hytale.protocol.GameMode;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
@@ -34,6 +34,8 @@ import com.hypixel.hytale.server.core.util.TargetUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.role.Role;
 import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
+import com.hypixel.hytale.server.npc.role.support.StateSupport;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -44,17 +46,17 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.BiConsumer;
 
-/**
- * Plugin-driven ranged attacks for Rune Knights.
- *
- * <p>Rune Knights currently fail to execute melee attacks reliably on placeholder rigs (e.g., Mannequin), even when
- * aggro/pathing is correct. This system makes combat reproducible by firing a projectile at the current marked target.</p>
- */
+
+
+
+
+
+
 public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore> {
 
     public static final String DEFAULT_PROJECTILE_ID = "RuneKnight_Bolt";
 
-    private static final long TICK_INTERVAL_NANOS = 250_000_000L;
+    private static final long TICK_INTERVAL_NANOS = 50_000_000L;
     private static final long DEBUG_INTERVAL_NANOS = 15_000_000_000L;
     private static final long ACTION_CLEAR_NANOS = 800_000_000L;
 
@@ -77,7 +79,32 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
     private final ConcurrentMap<UUID, Long> nextDebugAtNanosByKnight = new ConcurrentHashMap<>();
     private final ConcurrentMap<UUID, Long> clearActionAtNanosByKnight = new ConcurrentHashMap<>();
 
-    private volatile long nextTickAtNanos;
+    private final SweepClock<Store<EntityStore>> clock=new SweepClock<>();
+    private final java.util.Set<UUID> bookNext=ConcurrentHashMap.newKeySet();
+    private record Cut(Ref<EntityStore> knight,Ref<EntityStore> target,long contact){}
+    private final ConcurrentMap<UUID,Cut> cuts=new ConcurrentHashMap<>();
+    static boolean swordTurn(boolean bookNext,double distance){return !bookNext&&distance<=3.5;}
+    static void equip(Store<EntityStore> store,Ref<EntityStore> ref,boolean book){
+        var hotbar=InventoryComponentAccess.hotbarComponent(store,ref);if(hotbar==null)return;
+        if(hotbar.getInventory().getCapacity()<2)hotbar.ensureCapacity((short)2,new ArrayList<>());
+        var inventory=hotbar.getInventory();
+        for(short slot=0;slot<2;slot++){
+            String id=slot==0?"Axo_Rimefang":"Axo_Frost_Book";var old=inventory.getItemStack(slot);
+            if(com.hypixel.hytale.server.core.inventory.ItemStack.isEmpty(old)||!id.equals(old.getItemId()))inventory.setItemStackForSlot(slot,new com.hypixel.hytale.server.core.inventory.ItemStack(id,1));
+        }
+        byte slot=(byte)(book?1:0);if(hotbar.getActiveSlot()!=slot)hotbar.setActiveSlot(slot,ref,store);
+    }
+    private void releaseCuts(Store<EntityStore> store,long now){
+        for(var entry:cuts.entrySet()){
+            var cut=entry.getValue();if(!cut.knight.isValid()||!cut.target.isValid()){cuts.remove(entry.getKey());continue;}
+            if(cut.knight.getStore()!=store||now<cut.contact)continue;cuts.remove(entry.getKey());
+            if(cut.target.getStore()!=store||!ScoutGearSystem.living(cut.knight,store)||!ScoutGearSystem.living(cut.target,store)||InvisibilityConcealment.hidden(store,cut.target))continue;
+            var a=getAimPosition(store,cut.knight,1.25);var b=getAimPosition(store,cut.target,1.25);
+            if(a==null||b==null||a.distanceSquared(b)>3.5*3.5||!hasLineOfSight(store.getExternalData().getWorld(),a,b))continue;
+            int cause=com.hypixel.hytale.server.core.modules.entity.damage.DamageCause.getAssetMap().getIndex("Physical");
+            if(cause>=0)com.hypixel.hytale.server.core.modules.entity.damage.DamageSystems.executeDamage(cut.target,store,new com.hypixel.hytale.server.core.modules.entity.damage.Damage(new com.hypixel.hytale.server.core.modules.entity.damage.Damage.EntitySource(cut.knight),cause,11));
+        }
+    }
 
     public RuneKnightProjectileSystem(
         @Nonnull PluginErrorReporter errors,
@@ -95,11 +122,8 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
         try {
             long nowNanos = System.nanoTime();
-            long next = nextTickAtNanos;
-            if (next > 0 && nowNanos < next) {
-                return;
-            }
-            nextTickAtNanos = nowNanos + TICK_INTERVAL_NANOS;
+            if(!clock.due(store,nowNanos,TICK_INTERVAL_NANOS))return;
+            releaseCuts(store,nowNanos);
 
             if (config == null
                 || config.runeKnight == null
@@ -149,6 +173,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                 }
 
                 maybeClearActionAnimation(store, nowNanos, knightUuid, knightRef);
+                if(!clearActionAtNanosByKnight.containsKey(knightUuid))equip(store,knightRef,bookNext.contains(knightUuid));
 
                 long nextFireAt = nextFireAtNanosByKnight.getOrDefault(knightUuid, 0L);
                 if (nextFireAt > nowNanos) {
@@ -164,14 +189,14 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                 try {
                     death = store.getComponent(knightRef, DeathComponent.getComponentType());
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
 
                 EntityStatMap stats = null;
                 try {
                     stats = store.getComponent(knightRef, EntityStatMap.getComponentType());
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 EntityStatValue healthStat = stats != null ? stats.get(healthIndex) : null;
                 float healthCurrent = healthStat != null ? healthStat.get() : Float.NaN;
@@ -179,20 +204,21 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                     spawnState.remove(world, knightUuid);
                     nextFireAtNanosByKnight.remove(knightUuid);
                     clearActionAtNanosByKnight.remove(knightUuid);
+                    cuts.remove(knightUuid);bookNext.remove(knightUuid);
                     debugFailureMaybe(store, world, nowNanos, knightUuid, null, projectileId, "dead", null, null);
                     continue;
                 }
 
                 Role role = npc.getRole();
-                if (role == null || role.getMarkedEntitySupport() == null || role.getWorldSupport() == null) {
+                if (role == null || MarkedEntitySupport.get(knightRef, store) == null || WorldSupport.get(knightRef, store) == null) {
                     continue;
                 }
 
                 String stateName = null;
                 try {
-                    stateName = role.getStateSupport() != null ? role.getStateSupport().getStateName() : null;
+                    stateName = StateSupport.get(knightRef, store) != null ? StateSupport.get(knightRef, store).getStateName() : null;
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
                 if (!isAggroState(stateName)) {
                     debugFailureMaybe(store, world, nowNanos, knightUuid, null, projectileId, "notAggro", stateName, null);
@@ -200,12 +226,12 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                     continue;
                 }
 
-                MarkedEntitySupport marked = role.getMarkedEntitySupport();
+                MarkedEntitySupport marked = MarkedEntitySupport.get(knightRef, store);
                 Ref<EntityStore> targetRef = marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
                 String targetSource = "marked";
 
                 if (targetRef != null && targetRef.isValid() && isCreativePlayer(store, targetRef)) {
-                    clearDefaultTarget(role, marked);
+                    clearDefaultTarget(knightRef, store, role, marked);
                     targetRef = null;
                     targetSource = "clearedCreative";
                 }
@@ -216,16 +242,20 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                         targetSource = "nearestPlayer";
                         try {
                             marked.setMarkedEntity(MarkedEntitySupport.DEFAULT_TARGET_SLOT, targetRef);
-                            role.getWorldSupport().requestNewPath();
-                            role.notifySensorMatch();
+                            WorldSupport.get(knightRef, store).requestNewPath();
+                            role.acquireExecutionSupport(knightRef, store).notifySensorMatch();
                         } catch (Throwable ignored) {
-                            // Best effort.
+
                         }
                     }
                 }
                 if (targetRef == null || !targetRef.isValid()) {
                     debugFailureMaybe(store, world, nowNanos, knightUuid, targetRef, projectileId, "noTarget", stateName, targetSource);
                     nextFireAtNanosByKnight.put(knightUuid, nowNanos + cooldownNanos);
+                    continue;
+                }
+                if (InvisibilityConcealment.hidden(store,targetRef)) {
+                    clearDefaultTarget(knightRef,store,role,marked);
                     continue;
                 }
 
@@ -240,19 +270,24 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                     continue;
                 }
 
-                double d2 = deltaVec.squaredLength();
+                double d2 = deltaVec.lengthSquared();
+                if(ArcaneArmorSets.concealed(store,targetRef,d2)) {
+                    clearDefaultTarget(knightRef,store,role,marked);
+                    debugFailureMaybe(store,world,nowNanos,knightUuid,targetRef,projectileId,"arcaneRobeBeyond"+ArcaneArmorSets.ROBE_DETECTION_BLOCKS+"Blocks",stateName,targetSource);
+                    continue;
+                }
                 if (d2 < 1e-9 || d2 > rangeSq) {
                     continue;
                 }
 
                 TransformComponent knightTransform = store.getComponent(knightRef, TransformComponent.getComponentType());
-                Vector3f knightRotation = knightTransform != null ? knightTransform.getRotation() : null;
+                Rotation3f knightRotation = knightTransform != null ? knightTransform.getRotation() : null;
                 if (knightRotation != null && !isFacing(knightRotation, deltaVec, REQUIRE_FACING_MAX_ANGLE_DEGREES)) {
                     try {
-                        role.getWorldSupport().requestNewPath();
-                        role.notifySensorMatch();
+                        WorldSupport.get(knightRef, store).requestNewPath();
+                        role.acquireExecutionSupport(knightRef, store).notifySensorMatch();
                     } catch (Throwable ignored) {
-                        // Best effort.
+
                     }
                     debugFailureMaybe(store, world, nowNanos, knightUuid, targetRef, projectileId, "notFacing", stateName, targetSource);
                     continue;
@@ -263,12 +298,19 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                     continue;
                 }
 
+                if(!bookNext.contains(knightUuid)){
+                    if(!swordTurn(false,Math.sqrt(d2)))continue;
+                    equip(store,knightRef,false);playActionAnimationMaybe(store,npc,nowNanos,knightUuid,knightRef,"AttackRimefang");
+                    cuts.put(knightUuid,new Cut(knightRef,targetRef,nowNanos+300_000_000L));bookNext.add(knightUuid);
+                    nextFireAtNanosByKnight.put(knightUuid,nowNanos+cooldownNanos);continue;
+                }
+                equip(store,knightRef,true);
                 String actionAnimationId = selectActionAnimationId(Math.sqrt(d2));
                 playActionAnimationMaybe(store, npc, nowNanos, knightUuid, knightRef, actionAnimationId);
 
-                Vector3f rotation = rotationFromDirection(deltaVec);
-                float yaw = rotation.getYaw();
-                float pitch = rotation.getPitch();
+                Rotation3f rotation = rotationFromDirection(deltaVec);
+                float yaw = rotation.yaw();
+                float pitch = rotation.pitch();
 
                 Holder<EntityStore> holder = ProjectileComponent.assembleDefaultProjectile(time, projectileId, origin, rotation);
                 if (holder == null) {
@@ -316,10 +358,11 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                         projectileUuid = projectileUuidComponent.getUuid();
                     }
                 } catch (Throwable ignored) {
-                    // Best effort debug info.
+
                 }
 
                 nextFireAtNanosByKnight.put(knightUuid, nowNanos + cooldownNanos);
+                bookNext.remove(knightUuid);
 
                 UUID targetUuid = null;
                 try {
@@ -328,7 +371,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                         targetUuid = targetUuidComponent.getUuid();
                     }
                 } catch (Throwable ignored) {
-                    // Best effort debug info.
+
                 }
 
                 debug.traceFileOnly(
@@ -368,7 +411,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
         try {
             AnimationUtils.stopAnimation(knightRef, AnimationSlot.Action, store);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 
@@ -378,12 +421,12 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
 
     private static boolean hasLineOfSight(@Nonnull World world, @Nonnull Vector3d origin, @Nonnull Vector3d targetPos) {
         Vector3d delta = new Vector3d(targetPos.x - origin.x, targetPos.y - origin.y, targetPos.z - origin.z);
-        double maxDistance = Math.sqrt(delta.squaredLength());
+        double maxDistance = Math.sqrt(delta.lengthSquared());
         if (!Double.isFinite(maxDistance) || maxDistance <= 0) {
             return false;
         }
 
-        Vector3d ray = new Vector3d(delta).normalize().scale(maxDistance);
+        Vector3d ray = new Vector3d(delta).normalize().mul(maxDistance);
         CollisionResult result = new CollisionResult(false, false);
         result.setCollisionByMaterial(CollisionMaterial.MATERIAL_SOLID);
         CollisionModule.findBlockCollisionsIterative(world, RAY_POINT_BOX, origin, ray, true, result);
@@ -406,7 +449,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
             npc.playAnimation(knightRef, AnimationSlot.Action, animationId, store);
             clearActionAtNanosByKnight.put(knightUuid, nowNanos + ACTION_CLEAR_NANOS);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 
@@ -434,7 +477,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                 }
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         Query<EntityStore> query = Query.and(
@@ -455,9 +498,9 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                 try {
                     npcRoleName = npc.getRoleName();
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
-                if (npcRoleName == null || !npcRoleName.equals(roleName)) {
+                if (!EncounterTuning.knightRole(npcRoleName, roleName)) {
                     continue;
                 }
                 UUIDComponent uuidComponent = chunk.getComponent(i, UUIDComponent.getComponentType());
@@ -471,7 +514,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
         try {
             store.forEachChunk(query, visitor);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         ArrayList<KnightSnapshot> out = new ArrayList<>(byUuid.size());
@@ -495,6 +538,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                     continue;
                 }
                 PlayerRef playerRef = chunk.getComponent(i, PlayerRef.getComponentType());
+                if (InvisibilityConcealment.hidden(store,ref)) continue;
                 Player player = chunk.getComponent(i, Player.getComponentType());
                 TransformComponent transform = chunk.getComponent(i, TransformComponent.getComponentType());
                 UUID uuid = playerRef != null ? playerRef.getUuid() : null;
@@ -519,7 +563,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
         try {
             store.forEachChunk(query, visitor);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return out;
     }
@@ -545,6 +589,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
             double dy = p.position.y - knightPos.y;
             double dz = p.position.z - knightPos.z;
             double d2 = dx * dx + dy * dy + dz * dz;
+            if(ArcaneArmorSets.concealed(store,p.playerEntityRef,d2))continue;
             if (d2 < nearestD2) {
                 nearestD2 = d2;
                 nearest = p;
@@ -567,7 +612,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
         @Nullable String stateName,
         @Nullable String targetSource
     ) {
-        // Too noisy with many idle NPCs; only log actionable failures.
+
         if ("notAggro".equals(reason) || "noTarget".equals(reason) || "dead".equals(reason)) {
             return;
         }
@@ -585,7 +630,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                 targetUuid = targetUuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         debug.traceFileOnly(
@@ -627,7 +672,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                 return pos;
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         try {
@@ -638,16 +683,16 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                 return new Vector3d(pos.x, pos.y + height, pos.z);
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
 
         return null;
     }
 
-    private static @Nonnull Vector3f rotationFromDirection(@Nonnull Vector3d direction) {
-        double lenSq = direction.squaredLength();
+    private static @Nonnull Rotation3f rotationFromDirection(@Nonnull Vector3d direction) {
+        double lenSq = direction.lengthSquared();
         if (!Double.isFinite(lenSq) || lenSq < 1e-9) {
-            return Vector3f.ZERO;
+            return new Rotation3f();
         }
 
         double len = Math.sqrt(lenSq);
@@ -659,7 +704,7 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
         float pitch = (float) Math.asin(clampedY);
         float yaw = (float) Math.atan2(-dx, -dz);
 
-        return new Vector3f(pitch, yaw, 0f);
+        return new Rotation3f(pitch, yaw, 0f);
     }
 
     private static long secondsToNanos(double seconds, double defaultSeconds) {
@@ -691,21 +736,21 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
         }
     }
 
-    private static void clearDefaultTarget(@Nonnull Role role, @Nonnull MarkedEntitySupport marked) {
+    private static void clearDefaultTarget(@Nonnull Ref<EntityStore> npcRef, @Nonnull Store<EntityStore> store, @Nonnull Role role, @Nonnull MarkedEntitySupport marked) {
         int slot = resolveDefaultTargetSlotIndex(marked);
         try {
             if (marked.hasMarkedEntityInSlot(slot)) {
                 marked.clearMarkedEntity(slot);
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         try {
-            if (role.getWorldSupport() != null) {
-                role.getWorldSupport().requestNewPath();
+            if (WorldSupport.get(npcRef, store) != null) {
+                WorldSupport.get(npcRef, store).requestNewPath();
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 
@@ -723,14 +768,14 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
                     return i;
                 }
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
         }
         return 0;
     }
 
-    private static boolean isFacing(@Nonnull Vector3f rotation, @Nonnull Vector3d toTarget, double maxAngleDegrees) {
-        double lenSq = toTarget.squaredLength();
+    private static boolean isFacing(@Nonnull Rotation3f rotation, @Nonnull Vector3d toTarget, double maxAngleDegrees) {
+        double lenSq = toTarget.lengthSquared();
         if (!Double.isFinite(lenSq) || lenSq < 1e-9) {
             return false;
         }
@@ -739,8 +784,8 @@ public final class RuneKnightProjectileSystem extends TickingSystem<EntityStore>
         double dirY = toTarget.y / len;
         double dirZ = toTarget.z / len;
 
-        double yaw = rotation.getYaw();
-        double pitch = rotation.getPitch();
+        double yaw = rotation.yaw();
+        double pitch = rotation.pitch();
         double cosPitch = Math.cos(pitch);
         double forwardX = -Math.sin(yaw) * cosPitch;
         double forwardY = Math.sin(pitch);

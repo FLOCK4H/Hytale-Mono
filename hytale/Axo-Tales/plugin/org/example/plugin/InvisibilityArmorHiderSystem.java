@@ -19,19 +19,19 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * While the custom Axo Tales invisibility effect is active on a player, hide all armor visuals so
- * the player is fully invisible (no lingering cloak/armor rendering).
- *
- * <p>This uses {@link PlayerSettings} hide flags and forces an equipment network invalidation so the
- * change is replicated to observers.</p>
- *
- * <p>Debug traces are written to the persistent plugin debug log.</p>
- */
+
+
+
+
+
+
+
+
+
 public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStore> {
 
     private static final String INVISIBILITY_EFFECT_ID = InvisibilityPotionEffectDebugSystem.INVISIBILITY_EFFECT_ID;
-    private static final long SWEEP_INTERVAL_NANOS = 500_000_000L;
+    private static final long SWEEP_INTERVAL_NANOS = 100_000_000L;
 
     private final PluginErrorReporter errors;
     private final PluginDebugReporter debug;
@@ -40,7 +40,7 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
     private final Map<UUID, Boolean> lastActiveByPlayer = new ConcurrentHashMap<>();
 
     private volatile int effectIndex = -1;
-    private long nextSweepAtNanos = 0L;
+    private final SweepClock<Store<EntityStore>> clock=new SweepClock<>();
 
     private record HideBaseline(
         boolean hideHelmet,
@@ -62,10 +62,7 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
     public void tick(float delta, int tickCount, @Nonnull Store<EntityStore> store) {
         try {
             long nowNanos = System.nanoTime();
-            if (nextSweepAtNanos > nowNanos) {
-                return;
-            }
-            nextSweepAtNanos = nowNanos + SWEEP_INTERVAL_NANOS;
+            if(!clock.due(store,nowNanos,SWEEP_INTERVAL_NANOS))return;
 
             int invisIndex = resolveEffectIndex();
             if (invisIndex < 0) {
@@ -107,7 +104,7 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
                             continue;
                         }
 
-                        boolean active = effects.getActiveEffects().containsKey(invisIndex);
+                        boolean active = InvisibilityConcealment.hidden(store,entityRef);
                         Boolean lastActive = lastActiveByPlayer.put(uuid, active);
 
                         if (active) {
@@ -127,7 +124,6 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
 
                             PlayerSettings updated = withHideFlags(settings, true, true, true, true);
                             commandBuffer.putComponent(entityRef, PlayerSettings.getComponentType(), updated);
-                            player.invalidateEquipmentNetwork();
 
                             debug.traceFileOnly(
                                 playerRef,
@@ -149,6 +145,8 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
                         if (baseline == null) {
                             continue;
                         }
+                        var skin=store.getComponent(entityRef,com.hypixel.hytale.server.core.modules.entity.player.PlayerSkinComponent.getComponentType());
+                        if(skin!=null)skin.setNetworkOutdated();
 
                         lastActiveByPlayer.put(uuid, false);
 
@@ -169,7 +167,6 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
                             baseline.hidePants
                         );
                         commandBuffer.putComponent(entityRef, PlayerSettings.getComponentType(), restored);
-                        player.invalidateEquipmentNetwork();
 
                         debug.traceFileOnly(
                             playerRef,
@@ -226,7 +223,8 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
             hideHelmet,
             hideCuirass,
             hideGauntlets,
-            hidePants
+            hidePants,
+            settings.voiceSettings()
         );
     }
 
@@ -239,4 +237,3 @@ public final class InvisibilityArmorHiderSystem extends TickingSystem<EntityStor
         lastActiveByPlayer.remove(uuid);
     }
 }
-

@@ -1,0 +1,78 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Vitae_Extractor.name",
+    "Description": "server.items.flock4h.AxoTales_Vitae_Extractor.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 10,
+  "Model": "Items/AxoTales/BloodMagic/Extractor.blockymodel",
+  "Texture": "Items/AxoTales/BloodMagic/Extractor_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Vitae_Extractor.png",
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Items/AxoTales/BloodMagic/Extractor.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/BloodMagic/Extractor_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Axo_Vitae_Extractor",
+    "VariantRotation": "NESW",
+    "State": {
+      "Definitions": {
+        "OpenWindow": {
+          "InteractionSoundEventId": "SFX_Chest_Wooden_Open"
+        },
+        "CloseWindow": {
+          "InteractionSoundEventId": "SFX_Chest_Wooden_Close"
+        }
+      }
+    },
+    "BlockEntity": {
+      "Components": {
+        "ItemContainerBlock": {
+          "Capacity": 9
+        }
+      }
+    },
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Woods",
+        "DropList": {
+          "Container": {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Axo_Vitae_Extractor",
+              "QuantityMin": 1,
+              "QuantityMax": 1
+            }
+          }
+        }
+      }
+    },
+    "BlockParticleSetId": "Wood",
+    "BlockSoundSetId": "Wood",
+    "PhysicalMaterialId": "Wood",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "InteractionHint": "server.interactionHints.axoVitae",
+    "Interactions": {
+      "Use": "AxoVitae_Use"
+    },
+    "ParticleColor": "#825e34",
+    "TextureComputedColor": "#5E4C2F"
+  },
+  "$AxoLegacyItem": "Axo_Vitae_Extractor"
+}

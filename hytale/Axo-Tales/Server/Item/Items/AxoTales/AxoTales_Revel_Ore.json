@@ -1,0 +1,76 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Revel_Ore.name"
+  },
+  "Categories": [],
+  "SubCategory": "Ore",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Revel_Ore.png",
+  "PlayerAnimationsId": "Block",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "CubeWithModel",
+    "CustomModel": "Resources/AxoTales/Ores/Revel/Veins.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/AxoTales/Ores/Revel/Veins_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "Group": "Stone",
+    "Flags": {},
+    "RandomRotation": "YawStep90",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OreCobalt",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Axo_Revel_Ore"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Slate_Cobble"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "BlockParticleSetId": "Ore",
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Slate.png"
+      }
+    ],
+    "BlockSoundSetId": "Ore",
+    "PhysicalMaterialId": "Stone",
+    "ParticleColor": "#8ad7f3",
+    "TextureComputedColor": "#28292A",
+    "Particles": [
+      {
+        "SystemId": "AxoTales_Revel_Ore_Motes",
+        "Scale": 0.35
+      }
+    ]
+  },
+  "MaxStack": 100,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Tags": {
+    "Type": [
+      "Ore"
+    ],
+    "Family": [
+      "Revel"
+    ]
+  },
+  "Quality": "AxoTales_Internal",
+  "$AxoLegacyItem": "Axo_Revel_Ore_Deposit"
+}

@@ -1,0 +1,20 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Bar_Agretis.name",
+    "Description": "server.items.flock4h.AxoTales_Bar_Agretis.description"
+  },
+  "Model": "Resources/AxoTales/Ores/Agretis/Ingot.blockymodel",
+  "Texture": "Resources/AxoTales/Ores/Agretis/Ingot_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Bar_Agretis.png",
+  "Categories": [],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Ingots",
+  "MaxStack": 100,
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ]
+  },
+  "Quality": "AxoTales_Internal",
+  "$AxoLegacyItem": "Axo_Agretis_Bar"
+}

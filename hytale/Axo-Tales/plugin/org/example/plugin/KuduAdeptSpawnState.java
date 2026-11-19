@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Tracks active Kudu Adepts spawned by this plugin so they can be managed (cleanup/despawn).
- */
+
+
+
 public final class KuduAdeptSpawnState {
 
     public record ActiveKuduAdept(@Nonnull UUID uuid, long spawnedAtNanos, long expiresAtNanos) {

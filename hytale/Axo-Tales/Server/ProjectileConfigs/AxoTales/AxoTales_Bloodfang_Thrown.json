@@ -1,0 +1,31 @@
+{
+  "Model": "AxoTales_Bloodfang_Thrown",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 0,
+    "TerminalVelocityAir": 100,
+    "TerminalVelocityWater": 30,
+    "RotationMode": "Velocity",
+    "Bounciness": 0,
+    "SticksVertically": false
+  },
+  "LaunchForce": 55,
+  "SpawnOffset": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0.35
+  },
+  "Interactions": {
+    "ProjectileSpawn": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "RunTime": 5
+        },
+        "AxoAncient_Projectile_Remove"
+      ]
+    },
+    "ProjectileHit": "AxoAncient_Projectile_Impact",
+    "ProjectileMiss": "AxoAncient_Projectile_Impact"
+  }
+}

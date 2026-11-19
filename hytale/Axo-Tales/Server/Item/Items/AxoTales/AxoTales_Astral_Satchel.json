@@ -1,0 +1,19 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.astral_satchel.name",
+    "Description": "server.items.flock4h.astral_satchel.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 25,
+  "MaxStack": 1,
+  "PlayerAnimationsId": "Item",
+  "Model": "Items/AxoTales/Astral/Satchel.blockymodel",
+  "Texture": "Items/AxoTales/Astral/Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Astral_Satchel.png",
+  "ItemSoundSetId": "ISS_Default",
+  "Interactions": {
+    "Secondary": "AxoAstralSatchel_Use"
+  },
+  "$AxoLegacyItem": "Axo_Astral_Satchel"
+}

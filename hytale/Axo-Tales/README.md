@@ -1,7 +1,7 @@
 # Axo Tales
 
-A magic and progression mod for **Hytale 0.7.6**, with spellbooks, equipment,
-creatures and companions. Current version: **0.1.295**. Requires Java 25.
+A magic and progression mod for **Hytale 0.7.7**, with spellbooks, equipment,
+creatures and companions. This guide covers **0.1.3+**. Requires Java 25.
 
 [Official guidebook](https://flock4h.github.io/Hytale-Mono/) ·
 [Getting started](docs/getting-started.md) · [Item and recipe catalog](docs/items/catalog.md)
@@ -10,7 +10,9 @@ creatures and companions. Current version: **0.1.295**. Requires Java 25.
 
 - Spellbooks and the Arcane Wand for combat, healing, travel and gathering.
 - Arcane Veil, Sa'r and Ancient equipment with set bonuses and backpack progression.
-- Blood magic, the Vitae Extractor, Blood Furnace and loyal companions.
+- Blood magic, the Vitae Extractor, Blood Furnace, Frozen Chests and loyal companions.
+- Arcane and Ancient Pickaxes with held mining and an F ground strike.
+- Axo's Workbench with five crafting tabs, and regenerating poisonous vine screens.
 - Villa, Fossor and Cruor Souls for collection, mining and protection.
 - Whisperion, a tameable flying horse with saved ownership and removable saddle.
 - Cursed Knights, Elder Mages, Chiro, Dreadmaw and Tom Tom encounters.
@@ -21,7 +23,7 @@ creatures and companions. Current version: **0.1.295**. Requires Java 25.
 
 Install exactly one current AxoTales JAR in the server's mods directory or
 `%APPDATA%/Hytale/UserData/Mods`, remove older AxoTales JARs and restart Hytale.
-The mod targets the exact server version `0.7.6`.
+The mod targets the exact server version `0.7.7`.
 
 [Configuration](docs/config.md) covers spell costs, world resources and encounters.
 Whisperion and Tom Tom use native creature spawning in Zone 1 plains, forests,

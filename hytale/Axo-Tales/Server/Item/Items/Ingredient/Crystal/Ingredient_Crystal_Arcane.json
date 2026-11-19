@@ -2,12 +2,10 @@
   "TranslationProperties": {
     "Name": "server.items.Ingredient_Crystal_Arcane.name"
   },
-  "Categories": [
-    "Items.Ingredients"
-  ],
+  "Categories": [],
   "Model": "Resources/Crystals/Crystal_Fragment.blockymodel",
   "Texture": "Items/Crystals/Arcane_Shards_Texture.png",
-  "Quality": "Common",
+  "Quality": "AxoTales_Internal",
   "ItemLevel": 10,
   "PlayerAnimationsId": "Item",
   "IconProperties": {
@@ -36,6 +34,9 @@
     "ParticleSystemId": null
   },
   "ItemSoundSetId": "ISS_Items_Gems",
-  "DropOnDeath": true
+  "DropOnDeath": true,
+  "Interactions": {
+    "Secondary": "AxoSoul_Feed"
+  },
+  "$AxoLegacyItem": "Axo_Arcane_Crystal_Shards"
 }
-

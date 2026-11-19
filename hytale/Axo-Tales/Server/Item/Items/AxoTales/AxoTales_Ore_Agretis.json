@@ -1,0 +1,20 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Ore_Agretis.name",
+    "Description": "server.items.flock4h.AxoTales_Ore_Agretis.description"
+  },
+  "Model": "Resources/AxoTales/Ores/Agretis/Ore.blockymodel",
+  "Texture": "Resources/AxoTales/Ores/Agretis/Ore_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Ore_Agretis.png",
+  "Categories": [],
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 100,
+  "Tags": {
+    "Type": [
+      "Ore"
+    ]
+  },
+  "Quality": "AxoTales_Internal",
+  "$AxoLegacyItem": "Axo_Agretis_Ore"
+}

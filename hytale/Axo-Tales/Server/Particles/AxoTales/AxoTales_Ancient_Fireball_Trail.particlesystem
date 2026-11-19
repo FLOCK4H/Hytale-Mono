@@ -1,0 +1,15 @@
+{
+  "BoundingRadius": 4,
+  "CullDistance": 96,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Ancient_Fireball_Core"
+    },
+    {
+      "SpawnerId": "AxoTales_Ancient_Fireball_Flames"
+    },
+    {
+      "SpawnerId": "AxoTales_Ancient_Fireball_Wake"
+    }
+  ]
+}

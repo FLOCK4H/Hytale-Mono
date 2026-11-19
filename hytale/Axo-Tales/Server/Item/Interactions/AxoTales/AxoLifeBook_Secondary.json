@@ -1,0 +1,10 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.65,
+  "Effects": {
+    "ItemAnimationId": "CastLife",
+    "WaitForAnimationToFinish": true,
+    "ClearAnimationOnFinish": true,
+    "WorldSoundEventId": "SFX_Alchemy_Bench_Craft"
+  }
+}

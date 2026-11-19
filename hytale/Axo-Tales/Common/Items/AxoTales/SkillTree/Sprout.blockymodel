@@ -1,0 +1,6289 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "297229",
+      "name": "ArborRoot",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 0.12,
+          "y": 0.12,
+          "z": 0.12
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "297031",
+          "name": "Heartwood",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297001",
+              "name": "HeartwoodSurface0",
+              "position": {
+                "x": -0.019867981057189555,
+                "y": -0.00024093194047215325,
+                "z": -0.08688503341415824
+              },
+              "orientation": {
+                "x": 0.06165195348222851,
+                "y": -0.6994736950074131,
+                "z": 0.7053726977204928,
+                "w": 0.09687592030538811
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039883414589256413,
+                  "y": 0.03978772049098087,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 88,
+                    "y": 86
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 53,
+                      "y": 1134
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297002",
+              "name": "HeartwoodSurface1",
+              "position": {
+                "x": 0.8357236898554651,
+                "y": 17.28023651876356,
+                "z": -0.23793773452990466
+              },
+              "orientation": {
+                "x": -0.3640520391504847,
+                "y": 0.611883730307385,
+                "z": 0.5853099201758646,
+                "w": 0.3879132773175164
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.037437231827782025,
+                  "y": 0.03649860226372647,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 5,
+                    "y": 5
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 177,
+                      "y": 675
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297003",
+              "name": "HeartwoodSurface2",
+              "position": {
+                "x": 1.0304578902285928,
+                "y": 2.027032122854214,
+                "z": -0.4770845386965476
+              },
+              "orientation": {
+                "x": -0.056336630590020684,
+                "y": 0.8410983513857407,
+                "z": 0.09768810248616183,
+                "w": 0.5289960132010504
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039049536520580234,
+                  "y": 0.03968313573264309,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 40,
+                    "y": 109
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 55,
+                      "y": 916
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297004",
+              "name": "HeartwoodSurface3",
+              "position": {
+                "x": 0.09950621909923553,
+                "y": 2.0610592643566936,
+                "z": -1.2854611994706617
+              },
+              "orientation": {
+                "x": 0.012741014162484571,
+                "y": 0.9899154400442399,
+                "z": 0.08385333405522435,
+                "w": 0.11346235714082911
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03930749368125082,
+                  "y": 0.03997287723657778,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 106
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 265,
+                      "y": 817
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297005",
+              "name": "HeartwoodSurface4",
+              "position": {
+                "x": -1.1487664777293813,
+                "y": 2.1247356351643547,
+                "z": -1.0697169402193083
+              },
+              "orientation": {
+                "x": 0.02744623878628521,
+                "y": 0.9434950489949824,
+                "z": 0.007862340858320922,
+                "w": -0.33015447913767504
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03963244299136333,
+                  "y": 0.03964348275608803,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 56,
+                    "y": 105
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 131,
+                      "y": 917
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297006",
+              "name": "HeartwoodSurface5",
+              "position": {
+                "x": -1.7579007051468896,
+                "y": 2.1697855681782516,
+                "z": 0.04190844082003084
+              },
+              "orientation": {
+                "x": 0.01843319591612934,
+                "y": -0.706305522153008,
+                "z": 0.028209226238743813,
+                "w": 0.7071046359765263
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039617356769456546,
+                  "y": 0.039901345015082905,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 43,
+                    "y": 105
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 242,
+                      "y": 927
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297007",
+              "name": "HeartwoodSurface6",
+              "position": {
+                "x": -1.1471637799027692,
+                "y": 2.157705419026097,
+                "z": 1.3097169402193083
+              },
+              "orientation": {
+                "x": 0.03167737692626701,
+                "y": -0.3306291642938407,
+                "z": -0.004439908533638053,
+                "w": 0.9432185254338682
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03932154014727697,
+                  "y": 0.03983100732222672,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 47,
+                    "y": 105
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 191,
+                      "y": 921
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297008",
+              "name": "HeartwoodSurface7",
+              "position": {
+                "x": 0.10139955148245261,
+                "y": 2.100007816240029,
+                "z": 1.5254611994706617
+              },
+              "orientation": {
+                "x": -0.029537309532123825,
+                "y": 0.11269562120416705,
+                "z": -0.022036430395998056,
+                "w": 0.9929459401409589
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039563538109259146,
+                  "y": 0.039691617139346894,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 57,
+                    "y": 105
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 323,
+                      "y": 821
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297009",
+              "name": "HeartwoodSurface8",
+              "position": {
+                "x": 1.047700833542727,
+                "y": 2.042304327665797,
+                "z": 0.6828645093368929
+              },
+              "orientation": {
+                "x": -0.08475768381425368,
+                "y": 0.531498069977192,
+                "z": 0.03357380148187066,
+                "w": 0.8421393806841115
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03965807550981955,
+                  "y": 0.039835481566330336,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 51,
+                    "y": 107
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 210,
+                      "y": 810
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297010",
+              "name": "HeartwoodSurface9",
+              "position": {
+                "x": 1.0324875366594408,
+                "y": 6.480378331443211,
+                "z": -0.529053757780744
+              },
+              "orientation": {
+                "x": 0.06032726512526327,
+                "y": 0.8421669386419758,
+                "z": -0.0880014177701705,
+                "w": 0.5285557860920156
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03929556594982422,
+                  "y": 0.03999215839894857,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 120
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 192,
+                      "y": 560
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297011",
+              "name": "HeartwoodSurface10",
+              "position": {
+                "x": 0.152837855900319,
+                "y": 6.513390738663452,
+                "z": -1.2309343205802892
+              },
+              "orientation": {
+                "x": 0.02913206697246839,
+                "y": 0.9915717724962796,
+                "z": -0.061232181561207966,
+                "w": 0.11039638854488527
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03950402930045896,
+                  "y": 0.03967091523495119,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 47,
+                    "y": 120
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 141,
+                      "y": 551
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297012",
+              "name": "HeartwoodSurface11",
+              "position": {
+                "x": -0.8418919483554175,
+                "y": 6.56554659879895,
+                "z": -0.957266705719498
+              },
+              "orientation": {
+                "x": 0.036663402941815866,
+                "y": 0.9429066870371327,
+                "z": 0.034230153702188994,
+                "w": -0.3292583651221473
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03971028291137401,
+                  "y": 0.03988425623246743,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 119
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 550
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297013",
+              "name": "HeartwoodSurface12",
+              "position": {
+                "x": -1.2478411678104355,
+                "y": 6.598465348983193,
+                "z": -0.007938960546687428
+              },
+              "orientation": {
+                "x": -0.10018290200289857,
+                "y": -0.7010628332815345,
+                "z": -0.09041103284494269,
+                "w": 0.7002143493798565
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03999589148427373,
+                  "y": 0.03978428984560186,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 42,
+                    "y": 122
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 287,
+                      "y": 691
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297014",
+              "name": "HeartwoodSurface13",
+              "position": {
+                "x": -0.8406832176476888,
+                "y": 6.590411916215088,
+                "z": 0.8372667057194976
+              },
+              "orientation": {
+                "x": -0.12800635126778073,
+                "y": -0.3251343926150358,
+                "z": -0.06019122700429243,
+                "w": 0.9350288856317108
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039945982047070956,
+                  "y": 0.03996710127731402,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 37,
+                    "y": 122
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 333,
+                      "y": 695
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297015",
+              "name": "HeartwoodSurface14",
+              "position": {
+                "x": 0.15441525118423757,
+                "y": 6.545840013075492,
+                "z": 1.1109343205802895
+              },
+              "orientation": {
+                "x": -0.06133674285647403,
+                "y": 0.11334382041598523,
+                "z": -0.01841427915232234,
+                "w": 0.9914897360399492
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0395190253846569,
+                  "y": 0.03971968904445568,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 53,
+                    "y": 120
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 84,
+                      "y": 549
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297016",
+              "name": "HeartwoodSurface15",
+              "position": {
+                "x": 0.9880546626003901,
+                "y": 6.496870460975493,
+                "z": 0.5028645093368931
+              },
+              "orientation": {
+                "x": 0.035514833426321855,
+                "y": 0.5308881861580123,
+                "z": -0.042132319343702734,
+                "w": 0.8456484482758049
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039927147528456025,
+                  "y": 0.0398783669817993,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 50,
+                    "y": 119
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 673
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297017",
+              "name": "HeartwoodSurface16",
+              "position": {
+                "x": 0.9008555188794105,
+                "y": 11.055527110085295,
+                "z": -0.5290537577807441
+              },
+              "orientation": {
+                "x": -0.06912430590025126,
+                "y": 0.8384874200306264,
+                "z": 0.11801800083691363,
+                "w": 0.527477419670881
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03943190742349015,
+                  "y": 0.03993229959336114,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 27,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 146,
+                      "y": 675
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297018",
+              "name": "HeartwoodSurface17",
+              "position": {
+                "x": 0.4023873664492415,
+                "y": 11.074234140843432,
+                "z": -0.9267860767004864
+              },
+              "orientation": {
+                "x": 0.008303606597294405,
+                "y": 0.9858891593866369,
+                "z": 0.12241946525805718,
+                "w": 0.11387313136696936
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039973739285645064,
+                  "y": 0.039926723444042744,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 177,
+                      "y": 684
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297019",
+              "name": "HeartwoodSurface18",
+              "position": {
+                "x": -0.3810300295255054,
+                "y": 11.113773570836088,
+                "z": -0.8219080031408845
+              },
+              "orientation": {
+                "x": 0.03571202996221982,
+                "y": 0.9430016423303526,
+                "z": 0.03150597473614286,
+                "w": -0.3293629108356932
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03956118407943055,
+                  "y": 0.03999975822934896,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 51,
+                    "y": 110
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 796
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297020",
+              "name": "HeartwoodSurface19",
+              "position": {
+                "x": -0.7871615941175069,
+                "y": 11.142941221059527,
+                "z": -0.14329766312530076
+              },
+              "orientation": {
+                "x": 0.025056904547460807,
+                "y": -0.7060102471614303,
+                "z": 0.03482501933779531,
+                "w": 0.7069009127633643
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0393764703706937,
+                  "y": 0.039913093541989,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 111
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 142,
+                      "y": 802
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297021",
+              "name": "HeartwoodSurface20",
+              "position": {
+                "x": -0.38000364395476016,
+                "y": 11.134887788291424,
+                "z": 0.7019080031408845
+              },
+              "orientation": {
+                "x": 0.06558329169302947,
+                "y": -0.33057491696218483,
+                "z": 0.007455289724425332,
+                "w": 0.9414687858772995
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0397800293207183,
+                  "y": 0.03977906134931846,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 112
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 108,
+                      "y": 796
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297022",
+              "name": "HeartwoodSurface21",
+              "position": {
+                "x": 0.4035550359295211,
+                "y": 11.098254770152044,
+                "z": 0.8067860767004864
+              },
+              "orientation": {
+                "x": 0.006056432953867527,
+                "y": 0.1118337589453803,
+                "z": -0.02605988609601658,
+                "w": 0.9933667058627869
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03945069076542969,
+                  "y": 0.03992717914206484,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 49,
+                    "y": 110
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 910
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297023",
+              "name": "HeartwoodSurface22",
+              "position": {
+                "x": 0.9735909902902462,
+                "y": 11.062935945684377,
+                "z": 0.25895655529090605
+              },
+              "orientation": {
+                "x": -0.0785173615569288,
+                "y": 0.5317321804850902,
+                "z": 0.02963590342803046,
+                "w": 0.8427441043393389
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03991041348337489,
+                  "y": 0.039669147851332846,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 47,
+                    "y": 113
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 222,
+                      "y": 693
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297024",
+              "name": "HeartwoodSurface23",
+              "position": {
+                "x": 0.6691040368101248,
+                "y": 15.279567609308055,
+                "z": -0.17926800098447426
+              },
+              "orientation": {
+                "x": 0.038928468004608884,
+                "y": 0.8450342221910425,
+                "z": -0.05391257179116361,
+                "w": 0.5305611862053767
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0393387923466586,
+                  "y": 0.039880391678838605,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 18,
+                    "y": 101
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 340,
+                      "y": 930
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297025",
+              "name": "HeartwoodSurface24",
+              "position": {
+                "x": 0.2389175781632356,
+                "y": 15.296924053567865,
+                "z": -0.43525661954220185
+              },
+              "orientation": {
+                "x": 0.022829075782366065,
+                "y": 0.993448309467624,
+                "z": -0.0049413040868059805,
+                "w": 0.11186989420199106
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03885002336403681,
+                  "y": 0.03974472625721217,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 101
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 175,
+                      "y": 1030
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297026",
+              "name": "HeartwoodSurface25",
+              "position": {
+                "x": -0.07798089547741165,
+                "y": 15.315265743923746,
+                "z": -0.2237995716612332
+              },
+              "orientation": {
+                "x": 0.060238285378208196,
+                "y": 0.9380063723814978,
+                "z": 0.10192531213354038,
+                "w": -0.3257708168220058
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03980423608519946,
+                  "y": 0.03987531812257012,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 34,
+                    "y": 103
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 99,
+                      "y": 1026
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297027",
+              "name": "HeartwoodSurface26",
+              "position": {
+                "x": -0.11025204541843113,
+                "y": 15.322112017740617,
+                "z": 0.15618311835993828
+              },
+              "orientation": {
+                "x": -0.15011729282450015,
+                "y": -0.6927786647270275,
+                "z": -0.14043138099391747,
+                "w": 0.6912319056049289
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03905063579751755,
+                  "y": 0.03979242064717002,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 21,
+                    "y": 108
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1024
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297028",
+              "name": "HeartwoodSurface27",
+              "position": {
+                "x": -0.0776794094054118,
+                "y": 15.321467743119168,
+                "z": 0.2237995716612329
+              },
+              "orientation": {
+                "x": -0.18551399539092964,
+                "y": -0.32079591009123637,
+                "z": -0.08015822564257467,
+                "w": 0.9253373441316759
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03924638282598169,
+                  "y": 0.0397858767441675,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 21,
+                    "y": 108
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 185,
+                      "y": 802
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297029",
+              "name": "HeartwoodSurface28",
+              "position": {
+                "x": 0.23950392338080492,
+                "y": 15.308986012329296,
+                "z": 0.4352566195422017
+              },
+              "orientation": {
+                "x": -0.10939040904095339,
+                "y": 0.11410403197473128,
+                "z": -0.012890973209972319,
+                "w": 0.98734382618552
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03983409655560859,
+                  "y": 0.03986619670860007,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 34,
+                    "y": 103
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 137,
+                      "y": 1026
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297030",
+              "name": "HeartwoodSurface29",
+              "position": {
+                "x": 0.6022420357563466,
+                "y": 15.289737630974217,
+                "z": 0.318956555290906
+              },
+              "orientation": {
+                "x": 0.0034479434559496953,
+                "y": 0.5321033514573408,
+                "z": -0.021986857512835974,
+                "w": 0.8463868578554965
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03875520056134307,
+                  "y": 0.03974441006617793,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 30,
+                    "y": 101
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 53,
+                      "y": 1029
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297042",
+          "name": "Buttress0",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297032",
+              "name": "Buttress0Surface0",
+              "position": {
+                "x": -3.96,
+                "y": 0.12,
+                "z": 0.84
+              },
+              "orientation": {
+                "x": -0.5155082115485352,
+                "y": -0.37629644586368644,
+                "z": 0.7606275699109235,
+                "w": 0.1187348666053552
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03394112549695421,
+                  "y": 0.03394112549695429,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 4,
+                    "y": 4
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 348,
+                      "y": 554
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297033",
+              "name": "Buttress0Surface1",
+              "position": {
+                "x": -5.329070518200751e-17,
+                "y": 2.16,
+                "z": 1.0658141036401502e-16
+              },
+              "orientation": {
+                "x": 0.11873486660535519,
+                "y": 0.760627569910925,
+                "z": 0.3762964458636863,
+                "w": 0.5155082115485335
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.03916283711187033,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 39
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 88,
+                      "y": 1383
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297034",
+              "name": "Buttress0Surface2",
+              "position": {
+                "x": -2.5878943415721625,
+                "y": 0.309896080371147,
+                "z": 0.506931442061162
+              },
+              "orientation": {
+                "x": 0.47788227715888254,
+                "y": 0.7671556142200394,
+                "z": -0.36280239642112794,
+                "w": 0.22688149748095748
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03818376618407356,
+                  "y": 0.03950612686745301,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 70
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 286,
+                      "y": 1138
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297035",
+              "name": "Buttress0Surface3",
+              "position": {
+                "x": -2.759259291396962,
+                "y": 0.5597581915395642,
+                "z": 0.30587609143897426
+              },
+              "orientation": {
+                "x": 0.5058827268333709,
+                "y": 0.7679589389678887,
+                "z": 0.1179405054629023,
+                "w": -0.37471558804258837
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0385167440798487,
+                  "y": 0.03958953474072722,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 68
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 241,
+                      "y": 1184
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297036",
+              "name": "Buttress0Surface4",
+              "position": {
+                "x": -2.6811400730906465,
+                "y": 0.6195759253137487,
+                "z": 0.8194240454774817
+              },
+              "orientation": {
+                "x": -0.2727574574871262,
+                "y": -0.28000610559773353,
+                "z": -0.44882431479338514,
+                "w": 0.8035898734201407
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03818376618407357,
+                  "y": 0.03958303894028708,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 68
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 217,
+                      "y": 1184
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297037",
+              "name": "Buttress0Surface5",
+              "position": {
+                "x": -2.5612446318825857,
+                "y": 0.3040502185948461,
+                "z": 0.6183686948552936
+              },
+              "orientation": {
+                "x": 0.2053033187044986,
+                "y": 0.3141767886975304,
+                "z": -0.5455474779285274,
+                "w": 0.749347344092477
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038516744079848717,
+                  "y": 0.03990063949218515,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 69
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 193,
+                      "y": 1135
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297038",
+              "name": "Buttress0Surface6",
+              "position": {
+                "x": -0.6523264364893951,
+                "y": 1.2408604210514111,
+                "z": -0.33876360661086374
+              },
+              "orientation": {
+                "x": 0.45307766313195486,
+                "y": 0.7992998773427756,
+                "z": -0.28508423554813517,
+                "w": 0.2730701666104264
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.03920122286435395,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 47
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 174,
+                      "y": 1378
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297039",
+              "name": "Buttress0Surface7",
+              "position": {
+                "x": -0.9982269221450843,
+                "y": 1.996054515409614,
+                "z": -0.1353945241177633
+              },
+              "orientation": {
+                "x": 0.43985896336129415,
+                "y": 0.7769418469617422,
+                "z": -0.005679895175636463,
+                "w": -0.4503922707831455
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.039829710924742336,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 49
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1294
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297040",
+              "name": "Buttress0Surface8",
+              "position": {
+                "x": -0.8898391488477995,
+                "y": 2.029667573263698,
+                "z": 0.45720811907221315
+              },
+              "orientation": {
+                "x": -0.12158572685220188,
+                "y": -0.35718427560079385,
+                "z": -0.3902128624037082,
+                "w": 0.8398632188065284
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.039417463266392866,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 50
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 96,
+                      "y": 1278
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297041",
+              "name": "Buttress0Surface9",
+              "position": {
+                "x": -0.4938499592311055,
+                "y": 1.3447228862108047,
+                "z": 0.6605772015653137
+              },
+              "orientation": {
+                "x": 0.14923872894701723,
+                "y": 0.3537200518236763,
+                "z": -0.5207794448404491,
+                "w": 0.7624950469031311
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.03925871417079458,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 47
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 45,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297053",
+          "name": "Buttress1",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297043",
+              "name": "Buttress1Surface0",
+              "position": {
+                "x": 3.2399999999999998,
+                "y": 0.12,
+                "z": 2.52
+              },
+              "orientation": {
+                "x": -0.05290463188003416,
+                "y": 0.47149696016138065,
+                "z": -0.5491627077265143,
+                "w": 0.6879767706301562
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0339411254969543,
+                  "y": 0.033941125496954355,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 4,
+                    "y": 4
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 222,
+                      "y": 685
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297044",
+              "name": "Buttress1Surface1",
+              "position": {
+                "x": 0.0,
+                "y": 2.16,
+                "z": 5.329070518200751e-17
+              },
+              "orientation": {
+                "x": 0.6879767706301562,
+                "y": -0.5491627077265141,
+                "z": -0.4714969601613809,
+                "w": 0.0529046318800348
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.03916283711187033,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 39
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 131,
+                      "y": 1383
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297045",
+              "name": "Buttress1Surface2",
+              "position": {
+                "x": 2.3543911318420303,
+                "y": 0.5015275610187298,
+                "z": 1.4880670465515993
+              },
+              "orientation": {
+                "x": -0.5128848128329996,
+                "y": 0.7201786487177809,
+                "z": -0.07233102328856428,
+                "w": 0.4615843430688689
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03927456617501797,
+                  "y": 0.03955769797835395,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 21,
+                    "y": 69
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 310,
+                      "y": 1138
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297046",
+              "name": "Buttress1Surface3",
+              "position": {
+                "x": 2.1281774530245414,
+                "y": 0.32323788538050907,
+                "z": 1.63458346760981
+              },
+              "orientation": {
+                "x": -0.35287239656714564,
+                "y": 0.7710061443463748,
+                "z": -0.5083466715563737,
+                "w": -0.15038037983278413
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038183766184073556,
+                  "y": 0.03960582661376718,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 71
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 145,
+                      "y": 1133
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297047",
+              "name": "Buttress1Surface4",
+              "position": {
+                "x": 2.0370086669808143,
+                "y": 0.32557786478564804,
+                "z": 1.7536947472797155
+              },
+              "orientation": {
+                "x": 0.010172949318356184,
+                "y": -0.4001590595768733,
+                "z": 0.5621242425297212,
+                "w": 0.7237303186278061
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03927456617501797,
+                  "y": 0.0395867201628961,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 21,
+                    "y": 70
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 237,
+                      "y": 1036
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297048",
+              "name": "Buttress1Surface5",
+              "position": {
+                "x": 2.1496642276837106,
+                "y": 0.6854922754445089,
+                "z": 1.900211168337926
+              },
+              "orientation": {
+                "x": -0.41852151301476115,
+                "y": 0.18906705220316636,
+                "z": 0.3337466654049124,
+                "w": 0.8232293460792939
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038183766184073584,
+                  "y": 0.03952147641954205,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 69
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 334,
+                      "y": 1233
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297049",
+              "name": "Buttress1Surface6",
+              "position": {
+                "x": 0.9963730135367764,
+                "y": 1.9351387294519713,
+                "z": 0.22606128739002596
+              },
+              "orientation": {
+                "x": -0.4522453081678152,
+                "y": 0.7058225702250465,
+                "z": -0.16032330572892062,
+                "w": 0.5211382908991222
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.03961368242599605,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 49
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1241
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297050",
+              "name": "Buttress1Surface7",
+              "position": {
+                "x": 0.6201139277686287,
+                "y": 1.134273196392774,
+                "z": 0.06150325185353228
+              },
+              "orientation": {
+                "x": -0.33195976607351685,
+                "y": 0.8271162277140804,
+                "z": -0.41078651262466676,
+                "w": -0.19218714995053607
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.03951782840614995,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 47
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 131,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297051",
+              "name": "Buttress1Surface8",
+              "position": {
+                "x": 0.18794598039971783,
+                "y": 1.486964974896008,
+                "z": 0.9026601477352272
+              },
+              "orientation": {
+                "x": -0.01621152759034813,
+                "y": -0.4203808698262677,
+                "z": 0.547166209926354,
+                "w": 0.7236202383654888
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.03974527416433434,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 47
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1347
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297052",
+              "name": "Buttress1Surface9",
+              "position": {
+                "x": 0.6748443915231157,
+                "y": 2.0569966427822073,
+                "z": 0.7381021121987333
+              },
+              "orientation": {
+                "x": -0.24245628782320264,
+                "y": 0.25295723327642466,
+                "z": 0.2883501777887962,
+                "w": 0.891112653707318
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.039325976872714,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 51
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 333,
+                      "y": 1307
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297064",
+          "name": "Buttress2",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297054",
+              "name": "Buttress2Surface0",
+              "position": {
+                "x": 1.1999999999999997,
+                "y": 0.1200000000000001,
+                "z": -3.84
+              },
+              "orientation": {
+                "x": -0.3979518037619339,
+                "y": 0.8759456034853738,
+                "z": -0.27116859481250327,
+                "w": 0.028657543591171772
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03394112549695431,
+                  "y": 0.033941125496954314,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 4,
+                    "y": 4
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 217,
+                      "y": 1394
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297055",
+              "name": "Buttress2Surface1",
+              "position": {
+                "x": 2.1316282072803005e-16,
+                "y": 2.1599999999999997,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.028657543591173253,
+                "y": 0.2711685948125043,
+                "z": 0.8759456034853735,
+                "w": -0.39795180376193373
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.03916283711187033,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 39
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1398
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297056",
+              "name": "Buttress2Surface2",
+              "position": {
+                "x": 0.555729440137363,
+                "y": 0.5486911575981995,
+                "z": -2.6971517274311174
+              },
+              "orientation": {
+                "x": -0.30477275204731896,
+                "y": 0.816209656610976,
+                "z": 0.4178694814567537,
+                "w": -0.257488761951973
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0390778918322348,
+                  "y": 0.039956847152827234,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 67
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 169,
+                      "y": 1208
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297057",
+              "name": "Buttress2Surface3",
+              "position": {
+                "x": 0.7478157804830038,
+                "y": 0.3128065824569519,
+                "z": -2.511811065529316
+              },
+              "orientation": {
+                "x": 0.6016346713193453,
+                "y": -0.396709465821005,
+                "z": -0.04252637593388327,
+                "w": 0.6919890384568286
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038183766184073556,
+                  "y": 0.03990070114064619,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 69
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 169,
+                      "y": 1135
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297058",
+              "name": "Buttress2Surface4",
+              "position": {
+                "x": 0.8622703217533577,
+                "y": 0.3075495818684115,
+                "z": -2.4732512398196693
+              },
+              "orientation": {
+                "x": 0.509368597183507,
+                "y": 0.2909751799147984,
+                "z": 0.2729841343294651,
+                "w": 0.7624675332637117
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039077891832235534,
+                  "y": 0.03963823859885803,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 69
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 310,
+                      "y": 1211
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297059",
+              "name": "Buttress2Surface5",
+              "position": {
+                "x": 1.054356662098993,
+                "y": 0.633326604302081,
+                "z": -2.586293301629545
+              },
+              "orientation": {
+                "x": 0.08778406283161523,
+                "y": 0.7564771699530204,
+                "z": 0.5182233094118915,
+                "w": 0.38920541007908804
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03818376618407356,
+                  "y": 0.03994621229991519,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 67
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 265,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297060",
+              "name": "Buttress2Surface6",
+              "position": {
+                "x": -0.06131112593395343,
+                "y": 1.9853664269888287,
+                "z": -1.0038356411921758
+              },
+              "orientation": {
+                "x": -0.34061227058544224,
+                "y": 0.8705782430609362,
+                "z": 0.28793511384837506,
+                "w": -0.20777433443206136
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.039593908486420394,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 49
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 45,
+                      "y": 1279
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297061",
+              "name": "Buttress2Surface7",
+              "position": {
+                "x": -0.2594920610849536,
+                "y": 1.2187239448365979,
+                "z": -0.6584883647834906
+              },
+              "orientation": {
+                "x": 0.5259752349781711,
+                "y": -0.3900875681733251,
+                "z": -0.08377697821405342,
+                "w": 0.7511079544696628
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187032,
+                  "y": 0.039894170835759496,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 46
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 260,
+                      "y": 1404
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297062",
+              "name": "Buttress2Surface8",
+              "position": {
+                "x": 0.7195005536539554,
+                "y": 1.3711378850355957,
+                "z": -0.4335230784082991
+              },
+              "orientation": {
+                "x": 0.45653168844710995,
+                "y": 0.27180849747091257,
+                "z": 0.2920736784180688,
+                "w": 0.795230736655453
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.03998275155582743,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 46
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 217,
+                      "y": 1404
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297063",
+              "name": "Buttress2Surface9",
+              "position": {
+                "x": 0.5213196185029557,
+                "y": 2.0351428684043693,
+                "z": -0.8482072680576477
+              },
+              "orientation": {
+                "x": 0.1592894942283461,
+                "y": 0.8403142191169132,
+                "z": 0.3669947141688496,
+                "w": 0.36580561771319803
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.039367711671523115,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 50
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 96,
+                      "y": 1224
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297075",
+          "name": "Buttress3",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297065",
+              "name": "Buttress3Surface0",
+              "position": {
+                "x": -3.0,
+                "y": 0.11999999999999998,
+                "z": -2.88
+              },
+              "orientation": {
+                "x": 0.6937584220931617,
+                "y": 0.5740870211608252,
+                "z": -0.4329587153774458,
+                "w": -0.040866791998008974
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.033941125496954314,
+                  "y": 0.033941125496954265,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 4,
+                    "y": 4
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 217,
+                      "y": 1378
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297066",
+              "name": "Buttress3Surface1",
+              "position": {
+                "x": -2.1316282072803005e-16,
+                "y": 2.16,
+                "z": 5.329070518200751e-17
+              },
+              "orientation": {
+                "x": 0.0408667919980088,
+                "y": 0.43295871537744524,
+                "z": 0.5740870211608249,
+                "w": 0.6937584220931624
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.03916283711187033,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 39
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 45,
+                      "y": 1432
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297067",
+              "name": "Buttress3Surface2",
+              "position": {
+                "x": -1.8634973682236189,
+                "y": 0.33351151411879,
+                "z": -1.9959942306012057
+              },
+              "orientation": {
+                "x": 0.5565881794865283,
+                "y": 0.7179723824298644,
+                "z": 0.03930413660904478,
+                "w": 0.4161495420750506
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0398605916367795,
+                  "y": 0.0399912860806296,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 21,
+                    "y": 70
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 262,
+                      "y": 1036
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297068",
+              "name": "Buttress3Surface3",
+              "position": {
+                "x": -1.9878519532437382,
+                "y": 0.7005519633036199,
+                "z": -2.1264451893778373
+              },
+              "orientation": {
+                "x": 0.2990765744042877,
+                "y": 0.824073476670123,
+                "z": 0.44887300790809287,
+                "w": -0.17311594514357737
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038183766184073556,
+                  "y": 0.03943487852427335,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 70
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 262,
+                      "y": 1110
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297069",
+              "name": "Buttress3Surface4",
+              "position": {
+                "x": -2.2058098397573844,
+                "y": 0.48529558016304924,
+                "z": -1.746932452868217
+              },
+              "orientation": {
+                "x": 0.11996101575939429,
+                "y": -0.47621990935013225,
+                "z": -0.5061476472848154,
+                "w": 0.7089700358862652
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03986059163677946,
+                  "y": 0.039484535923949474,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 21,
+                    "y": 70
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 237,
+                      "y": 1110
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297070",
+              "name": "Buttress3Surface5",
+              "position": {
+                "x": -1.9725352511624745,
+                "y": 0.3264107740316595,
+                "z": -1.8773834116448478
+              },
+              "orientation": {
+                "x": 0.5375046888670417,
+                "y": 0.13887606734652833,
+                "z": -0.31643224509951584,
+                "w": 0.769202692159607
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03818376618407355,
+                  "y": 0.03954428611193575,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 72
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 358,
+                      "y": 1231
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297071",
+              "name": "Buttress3Surface6",
+              "position": {
+                "x": -0.11053837676036327,
+                "y": 1.5255236283138038,
+                "z": -0.941335094263566
+              },
+              "orientation": {
+                "x": 0.5460822440661338,
+                "y": 0.7167749232319848,
+                "z": 0.05712150656608433,
+                "w": 0.4298430244043732
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03930424351435715,
+                  "y": 0.039292271384972745,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 277,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297072",
+              "name": "Buttress3Surface7",
+              "position": {
+                "x": -0.619313518372089,
+                "y": 2.063019202574952,
+                "z": -0.7920870201863316
+              },
+              "orientation": {
+                "x": 0.2568418144977148,
+                "y": 0.8990509387434746,
+                "z": 0.2688707528239538,
+                "w": -0.23118868948518828
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.03969448708489618,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 51
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 53,
+                      "y": 1224
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297073",
+              "name": "Buttress3Surface8",
+              "position": {
+                "x": -0.9824663702897661,
+                "y": 1.912143419181257,
+                "z": -0.30693245286821697
+              },
+              "orientation": {
+                "x": 0.1982701151762817,
+                "y": -0.5296904050312163,
+                "z": -0.4498876723486307,
+                "w": 0.6911715550531439
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03930424351435714,
+                  "y": 0.03976775065352702,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 49
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 139,
+                      "y": 1279
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297074",
+              "name": "Buttress3Surface9",
+              "position": {
+                "x": -0.5802992772217006,
+                "y": 1.1100180600897696,
+                "z": -0.15768437879098218
+              },
+              "orientation": {
+                "x": 0.4366541486409898,
+                "y": 0.17751382609283367,
+                "z": -0.29648738483490417,
+                "w": 0.8306125610982867
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.039842654176656056,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 47
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 88,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297086",
+          "name": "Buttress4",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297076",
+              "name": "Buttress4Surface0",
+              "position": {
+                "x": 3.7199999999999998,
+                "y": 0.11999999999999998,
+                "z": -1.08
+              },
+              "orientation": {
+                "x": -0.11165532231421317,
+                "y": 0.7815872561994914,
+                "z": -0.368233081051072,
+                "w": 0.4909774414014296
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03394112549695434,
+                  "y": 0.03394112549695427,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 4,
+                    "y": 4
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 45,
+                      "y": 1236
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297077",
+              "name": "Buttress4Surface1",
+              "position": {
+                "x": 1.3322676295501878e-16,
+                "y": 2.16,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.4909774414014299,
+                "y": 0.3682330810510724,
+                "z": 0.7815872561994911,
+                "w": -0.11165532231421303
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039162837111870324,
+                  "y": 0.039162837111870324,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 39
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 88,
+                      "y": 1426
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297078",
+              "name": "Buttress4Surface2",
+              "position": {
+                "x": 2.5101355424385914,
+                "y": 0.6313595818668655,
+                "z": -0.9740123417933755
+              },
+              "orientation": {
+                "x": -0.426838543368582,
+                "y": 0.8122644440669354,
+                "z": 0.29444984961525666,
+                "w": 0.2670854111724791
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03818376618407356,
+                  "y": 0.039768687588293154,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 65
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 217,
+                      "y": 1256
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297079",
+              "name": "Buttress4Surface3",
+              "position": {
+                "x": 2.3893927077252983,
+                "y": 0.3089542716984371,
+                "z": -0.780916519932133
+              },
+              "orientation": {
+                "x": -0.5463404604761016,
+                "y": 0.7500331016696246,
+                "z": -0.17600029933504993,
+                "w": -0.328612754287743
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03887220503731538,
+                  "y": 0.03948733034450456,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 67
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 193,
+                      "y": 1208
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297080",
+              "name": "Buttress4Surface4",
+              "position": {
+                "x": 2.426014750098458,
+                "y": 0.31481298989641915,
+                "z": -0.6658403972429932
+              },
+              "orientation": {
+                "x": 0.3887966119871688,
+                "y": -0.21452393678955403,
+                "z": 0.45552743003083424,
+                "w": 0.7715642782951488
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038183766184073556,
+                  "y": 0.03975197551671218,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 67
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 145,
+                      "y": 1208
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297081",
+              "name": "Buttress4Surface5",
+              "position": {
+                "x": 2.6110814561127222,
+                "y": 0.5500603716429494,
+                "z": -0.47274457538175096
+              },
+              "orientation": {
+                "x": -0.08511957181919168,
+                "y": 0.39153948202134187,
+                "z": 0.5031610826090137,
+                "w": 0.7656895046032053
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038872205037315415,
+                  "y": 0.03978043869841856,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 20,
+                    "y": 65
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 241,
+                      "y": 1256
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297082",
+              "name": "Buttress4Surface6",
+              "position": {
+                "x": 0.8382598251080603,
+                "y": 2.0300626755901523,
+                "z": -0.5013567674091897
+              },
+              "orientation": {
+                "x": -0.36834665179604825,
+                "y": 0.853402162129994,
+                "z": 0.134829487522819,
+                "w": 0.3432877846309511
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187032,
+                  "y": 0.0393533047219996,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 49
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 182,
+                      "y": 1325
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297083",
+              "name": "Buttress4Surface7",
+              "position": {
+                "x": 0.417911209705051,
+                "y": 1.3682693375768513,
+                "z": -0.6991701375499902
+              },
+              "orientation": {
+                "x": -0.5218248258304005,
+                "y": 0.7605711970632378,
+                "z": -0.12270783660377554,
+                "w": -0.3662964539562002
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187031,
+                  "y": 0.039952999830904834,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 45
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 303,
+                      "y": 1414
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297084",
+              "name": "Buttress4Surface8",
+              "position": {
+                "x": 0.6239898823548897,
+                "y": 1.2237647526465625,
+                "z": 0.2836095064455573
+              },
+              "orientation": {
+                "x": 0.3045170073722468,
+                "y": -0.26176265415526606,
+                "z": 0.4301233216831842,
+                "w": 0.808544144283332
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187031,
+                  "y": 0.039862957551543954,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 45
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 45,
+                      "y": 1383
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297085",
+              "name": "Buttress4Surface9",
+              "position": {
+                "x": 0.9825900971069805,
+                "y": 1.9824075166807988,
+                "z": 0.08579613630475698
+              },
+              "orientation": {
+                "x": 0.03554284286605155,
+                "y": 0.4653368471814127,
+                "z": 0.4358163141612267,
+                "w": 0.7695859050731014
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03916283711187033,
+                  "y": 0.0396033251458657,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 48
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 320,
+                      "y": 1362
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297097",
+          "name": "Bough0",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297087",
+              "name": "Bough0Surface0",
+              "position": {
+                "x": 0.0,
+                "y": 5.76,
+                "z": -1.0658141036401502e-16
+              },
+              "orientation": {
+                "x": 0.03366309899684269,
+                "y": 0.7665487515945951,
+                "z": -0.4729282315967931,
+                "w": 0.4331381938289748
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0397747564417433,
+                  "y": 0.03977475644174331,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 32
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 346,
+                      "y": 1414
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297088",
+              "name": "Bough0Surface1",
+              "position": {
+                "x": -6.84,
+                "y": 13.92,
+                "z": 1.92
+              },
+              "orientation": {
+                "x": -0.4331381938289757,
+                "y": 0.47292823159679365,
+                "z": 0.7665487515945942,
+                "w": 0.033663098996843395
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03676955262170051,
+                  "y": 0.036769552621700424,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 6,
+                    "y": 6
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 320,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297089",
+              "name": "Bough0Surface2",
+              "position": {
+                "x": -1.2613889992926595,
+                "y": 8.293919827090535,
+                "z": -0.14285757511488303
+              },
+              "orientation": {
+                "x": -0.26520131522158297,
+                "y": 0.8859231294869708,
+                "z": 0.16247556570916782,
+                "w": 0.34410777612870114
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03994479283875318,
+                  "y": 0.03996062891622507,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 33,
+                    "y": 135
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 154
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297090",
+              "name": "Bough0Surface3",
+              "position": {
+                "x": -1.819066833644144,
+                "y": 7.791720656130037,
+                "z": 0.004761616590077971
+              },
+              "orientation": {
+                "x": -0.32936056231661126,
+                "y": 0.854636012593547,
+                "z": -0.01565159843605322,
+                "w": -0.40109092913588135
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03966250445682999,
+                  "y": 0.03990306651720901,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 46,
+                    "y": 135
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 39,
+                      "y": 153
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297091",
+              "name": "Bough0Surface4",
+              "position": {
+                "x": -1.7506666289775998,
+                "y": 7.710120411966441,
+                "z": 0.5952383834099217
+              },
+              "orientation": {
+                "x": 0.12805357632335368,
+                "y": -0.3541175355833637,
+                "z": 0.2516796975917266,
+                "w": 0.8915494279081229
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03994479283875319,
+                  "y": 0.03981331559882023,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 33,
+                    "y": 137
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 319,
+                      "y": 286
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297092",
+              "name": "Bough0Surface5",
+              "position": {
+                "x": -1.1587886922928445,
+                "y": 8.171519460845143,
+                "z": 0.7428575751148833
+              },
+              "orientation": {
+                "x": -0.049319229684328475,
+                "y": 0.3877998033121583,
+                "z": 0.3449110406983954,
+                "w": 0.8533553188084935
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03966250445682999,
+                  "y": 0.03975254801230062,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 46,
+                    "y": 135
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 121,
+                      "y": 152
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297093",
+              "name": "Bough0Surface6",
+              "position": {
+                "x": -4.656547476235853,
+                "y": 12.313223183795541,
+                "z": 1.1636010847787146
+              },
+              "orientation": {
+                "x": -0.3132820236560345,
+                "y": 0.8520492924145575,
+                "z": 0.29201045205326853,
+                "w": 0.3009921474747764
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03856946079199352,
+                  "y": 0.03998852133899648,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 139
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 282,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297094",
+              "name": "Bough0Surface7",
+              "position": {
+                "x": -4.953977002427156,
+                "y": 12.110693014650158,
+                "z": 0.9647616165900779
+              },
+              "orientation": {
+                "x": -0.344543957906434,
+                "y": 0.8534016016889243,
+                "z": -0.04851177991147647,
+                "w": -0.38812597763454115
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039345083630648085,
+                  "y": 0.03980442374762768,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 33,
+                    "y": 137
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 319,
+                      "y": 145
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297095",
+              "name": "Bough0Surface8",
+              "position": {
+                "x": -4.903143401597065,
+                "y": 12.018988278572998,
+                "z": 1.5356014478752158
+              },
+              "orientation": {
+                "x": 0.2435061705971878,
+                "y": -0.3181766563697887,
+                "z": 0.29581331026314445,
+                "w": 0.8671579127780564
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03856946079199351,
+                  "y": 0.03993751096757348,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 137
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 356,
+                      "y": 145
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297096",
+              "name": "Bough0Surface9",
+              "position": {
+                "x": -4.6211968191861015,
+                "y": 12.302111612226572,
+                "z": 1.3367619796865795
+              },
+              "orientation": {
+                "x": -0.0973774503905934,
+                "y": 0.3677263137369397,
+                "z": 0.3662371794753238,
+                "w": 0.849214530440235
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039345083630648175,
+                  "y": 0.039730274259798956,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 33,
+                    "y": 138
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 282,
+                      "y": 145
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297104",
+          "name": "Crown0_Origin",
+          "position": {
+            "x": -6.84,
+            "y": 16.896,
+            "z": 1.92
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.1953,
+              "y": 0.1953,
+              "z": 0.186
+            },
+            "settings": {
+              "isPiece": false,
+              "size": {
+                "x": 48,
+                "y": 48
+              },
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 273,
+                  "y": 1400
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 180
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "297105",
+              "name": "Crown0_Leave01--C1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.7071067811865476,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.186,
+                  "y": 0.186,
+                  "z": 0.186
+                },
+                "settings": {
+                  "isPiece": false,
+                  "size": {
+                    "x": 48,
+                    "y": 48
+                  },
+                  "normal": "+Z",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 225,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            },
+            {
+              "id": "297106",
+              "name": "Crown0_Leave01--C2",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7372786557579164,
+                "z": 0.0,
+                "w": -0.6755887682339012
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1953,
+                  "y": 0.1953,
+                  "z": 0.186
+                },
+                "settings": {
+                  "isPiece": false,
+                  "size": {
+                    "x": 48,
+                    "y": 48
+                  },
+                  "normal": "+Z",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 225,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            }
+          ]
+        },
+        {
+          "id": "297120",
+          "name": "Bough1",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.12,
+              "y": 0.12,
+              "z": 0.12
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "297110",
+              "name": "Bough1Surface0",
+              "position": {
+                "x": 0.11999999999999994,
+                "y": 7.92,
+                "z": -0.11999999999999994
+              },
+              "orientation": {
+                "x": -0.544889881129362,
+                "y": -0.5621836845026862,
+                "z": 0.622053131318307,
+                "w": -0.00971720839042686
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03977475644174331,
+                  "y": 0.0397747564417433,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 32
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 167,
+                      "y": 1429
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297111",
+              "name": "Bough1Surface1",
+              "position": {
+                "x": 7.56,
+                "y": 15.84,
+                "z": 2.4
+              },
+              "orientation": {
+                "x": -0.009717208390425955,
+                "y": 0.6220531313183068,
+                "z": 0.5621836845026869,
+                "w": 0.5448898811293618
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0367695526217006,
+                  "y": 0.03676955262170043,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 6,
+                    "y": 6
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 338,
+                      "y": 554
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297112",
+              "name": "Bough1Surface2",
+              "position": {
+                "x": 2.083562475878346,
+                "y": 9.746884945948079,
+                "z": 0.31546286014140557
+              },
+              "orientation": {
+                "x": 0.3500545563607592,
+                "y": 0.8382915666494789,
+                "z": 0.01636589711226143,
+                "w": 0.4176855447189252
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.0397747564417433,
+                  "y": 0.03988140105753449,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 137
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 192,
+                      "y": 150
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297113",
+              "name": "Bough1Surface3",
+              "position": {
+                "x": 1.59094963781592,
+                "y": 10.239497282423594,
+                "z": 0.22163341978360268
+              },
+              "orientation": {
+                "x": 0.3019079141300082,
+                "y": 0.8660027021694362,
+                "z": 0.2498242197300091,
+                "w": -0.31061035149716854
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03930027529089005,
+                  "y": 0.03979687283537499,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 136
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 228,
+                      "y": 150
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297114",
+              "name": "Bough1Surface4",
+              "position": {
+                "x": 1.4209196560676622,
+                "y": 10.13690046898881,
+                "z": 1.046073827168734
+              },
+              "orientation": {
+                "x": -0.016154296586906678,
+                "y": -0.40379669921160016,
+                "z": -0.3659885686765225,
+                "w": 0.8382956709930627
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.039774756441743296,
+                  "y": 0.039859006450561625,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 136
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 228,
+                      "y": 290
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297115",
+              "name": "Bough1Surface5",
+              "position": {
+                "x": 2.021578926146217,
+                "y": 9.602499612968257,
+                "z": 0.9522443868109315
+              },
+              "orientation": {
+                "x": 0.21570734414655524,
+                "y": 0.32219897537469533,
+                "z": -0.28950820254186826,
+                "w": 0.8751246554689867
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03930027529089004,
+                  "y": 0.039831613802233455,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 136
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 273,
+                      "y": 287
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297116",
+              "name": "Bough1Surface6",
+              "position": {
+                "x": 5.614744924619289,
+                "y": 13.83982338072529,
+                "z": 1.7151176926540437
+              },
+              "orientation": {
+                "x": 0.38641813434038863,
+                "y": 0.836332790958866,
+                "z": -0.05956556111445973,
+                "w": 0.38429211824986276
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.038569460791993505,
+                  "y": 0.03992685492421521,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 144
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 256,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297117",
+              "name": "Bough1Surface7",
+              "position": {
+                "x": 5.253410282008783,
+                "y": 14.138245710112775,
+                "z": 1.8440164594291577
+              },
+              "orientation": {
+                "x": 0.30760237001074514,
+                "y": 0.8612328924430214,
+                "z": 0.26580204269851,
+                "w": -0.3049720659917877
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03875799434727504,
+                  "y": 0.03997757785347624,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 28,
+                    "y": 144
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 192,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297118",
+              "name": "Bough1Surface8",
+              "position": {
+                "x": 5.2807729434347035,
+                "y": 14.03639120433782,
+                "z": 2.0833456200358174
+              },
+              "orientation": {
+                "x": -0.10470473568934507,
+                "y": -0.3628334938519077,
+                "z": -0.40663406452889644,
+                "w": 0.831887920111929
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03856946079199349,
+                  "y": 0.03978968189456498,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 146
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 166,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "297119",
+              "name": "Bough1Surface9",
+              "position": {
+                "x": 5.470447443327253,
+                "y": 13.817198884707281,
+                "z": 2.2122443868109314
+              },
+              "orientation": {
+                "x": 0.21841295319705203,
+                "y": 0.32130202508671596,
+                "z": -0.29050333517311294,
+                "w": 0.8744533165379474
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.03875799434727507,
+                  "y": 0.039931876743916815,
+                  "z": 0.12
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 28,
+                    "y": 144
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 224,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "297127",
+          "name": "Crown1_Origin",
+          "position": {
+            "x": 7.56,
+            "y": 18.912,
+            "z": 2.4
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.414693242656239,
+            "z": 0.0,
+            "w": 0.9099612708765432
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.2016,
+              "y": 0.2016,
+              "z": 0.192
+            },
+            "settings": {
+              "isPiece": false,
+              "size": {
+                "x": 48,
+                "y": 48
+              },
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 273,
+                  "y": 1400
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 180
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "297128",
+              "name": "Crown1_Leave01--C1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.7071067811865476,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.192,
+                  "y": 0.192,
+                  "z": 0.192
+                },
+                "settings": {
+                  "isPiece": false,
+                  "size": {
+                    "x": 48,
+                    "y": 48
+                  },
+                  "normal": "+Z",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 225,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            },
+            {
+              "id": "297129",
+              "name": "Crown1_Leave01--C2",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7372786557579164,
+                "z": 0.0,
+                "w": -0.6755887682339012
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.2016,
+                  "y": 0.2016,
+                  "z": 0.192
+                },
+                "settings": {
+                  "isPiece": false,
+                  "size": {
+                    "x": 48,
+                    "y": 48
+                  },
+                  "normal": "+Z",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 225,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            }
+          ]
+        },
+        {
+          "id": "297225",
+          "name": "TopCrown_Origin",
+          "position": {
+            "x": 0.48,
+            "y": 21.24,
+            "z": -0.6
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.1908089953765448,
+            "z": 0.0,
+            "w": 0.981627183447664
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.189,
+              "y": 0.189,
+              "z": 0.18
+            },
+            "settings": {
+              "isPiece": false,
+              "size": {
+                "x": 48,
+                "y": 48
+              },
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 273,
+                  "y": 1400
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 180
+              }
+            },
+            "unwrapMode": "custom",
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "flat"
+          },
+          "children": [
+            {
+              "id": "297226",
+              "name": "TopCrown_Leave01--C1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.7071067811865476,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.18,
+                  "y": 0.18,
+                  "z": 0.18
+                },
+                "settings": {
+                  "isPiece": false,
+                  "size": {
+                    "x": 48,
+                    "y": 48
+                  },
+                  "normal": "+Z",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 225,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            },
+            {
+              "id": "297227",
+              "name": "TopCrown_Leave01--C2",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7372786557579164,
+                "z": 0.0,
+                "w": -0.6755887682339012
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.189,
+                  "y": 0.189,
+                  "z": 0.18
+                },
+                "settings": {
+                  "isPiece": false,
+                  "size": {
+                    "x": 48,
+                    "y": 48
+                  },
+                  "normal": "+Z",
+                  "isStaticBox": true
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 225,
+                      "y": 1352
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "unwrapMode": "custom",
+                "visible": true,
+                "doubleSided": true,
+                "shadingMode": "flat"
+              }
+            }
+          ]
+        },
+        {
+          "id": "297228",
+          "name": "HeartSigil",
+          "position": {
+            "x": 0.0,
+            "y": 5.64,
+            "z": 1.3199999999999998
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "quad",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 0.0192,
+              "y": 0.0192,
+              "z": 0.12
+            },
+            "settings": {
+              "size": {
+                "x": 64,
+                "y": 64
+              },
+              "normal": "+Z"
+            },
+            "textureLayout": {
+              "front": {
+                "offset": {
+                  "x": 265,
+                  "y": 1284
+                },
+                "mirror": {
+                  "x": false,
+                  "y": false
+                },
+                "angle": 0
+              }
+            },
+            "visible": true,
+            "doubleSided": true,
+            "shadingMode": "fullbright",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

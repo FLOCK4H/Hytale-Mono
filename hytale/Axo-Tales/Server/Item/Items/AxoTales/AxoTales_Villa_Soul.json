@@ -1,0 +1,27 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.villa_soul.name",
+    "Description": "server.items.flock4h.villa_soul.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 1,
+  "Categories": [],
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "Model": "NPC/AxoTales/Souls/Villa/Soul.blockymodel",
+  "Texture": "NPC/AxoTales/Souls/Villa/Soul_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Villa_Soul.png",
+  "Scale": 0.35,
+  "Interactions": {
+    "Secondary": "AxoSoul_Summon"
+  },
+  "Tags": {
+    "Type": [
+      "Utility"
+    ],
+    "Family": [
+      "AxoTalesSoul"
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Villa_Soul"
+}

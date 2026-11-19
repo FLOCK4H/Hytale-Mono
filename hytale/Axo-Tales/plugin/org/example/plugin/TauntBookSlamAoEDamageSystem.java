@@ -22,16 +22,16 @@ import com.hypixel.hytale.server.core.modules.entitystats.asset.EntityStatType;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Applies Taunt Book slam AoE damage using normal ECS iteration, avoiding {@code Store.forEachChunk(...)} reentrancy.
- */
+
+
+
 public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<EntityStore> {
 
     private final PluginErrorReporter errors;
@@ -193,7 +193,7 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
                 }
             }
 
-            // Refresh snapshot for this target (per slam) only when needed.
+
             if (healthStat != null) {
                 healthCurrent = healthStat.get();
                 healthMin = healthStat.getMin();
@@ -303,7 +303,7 @@ public final class TauntBookSlamAoEDamageSystem extends EntityTickingSystem<Enti
                 }
             }
         } catch (Throwable ignored) {
-            // Use the default stat cache below if asset-map lookup is unavailable.
+
         }
         return fallbackIndex;
     }

@@ -1,0 +1,253 @@
+{
+  "Model": "NPC/AxoTales/Bestiary/Dreadmaw/Model.blockymodel",
+  "Texture": "NPC/AxoTales/Bestiary/Dreadmaw/Atlas.png",
+  "EyeHeight": 1.38,
+  "MinScale": 2,
+  "MaxScale": 2,
+  "HitBox": {
+    "Min": {
+      "X": -0.78,
+      "Y": 0,
+      "Z": -1.4
+    },
+    "Max": {
+      "X": 0.78,
+      "Y": 2.2,
+      "Z": 1.8
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Gore": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Gore.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Roar": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Roar.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Hurt.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Death.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Spawn.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Laydown.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Sleep.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Wake.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Roar.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Attack": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Gore.blockyanim",
+          "Looping": false,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Flee": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Curious": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Sprint": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Run.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "CrouchWalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "Swim": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Walk.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    },
+    "SwimIdle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AxoTales/Bestiary/Dreadmaw/Animations/Idle.blockyanim",
+          "Looping": true,
+          "BlendingDuration": 0.18
+        }
+      ]
+    }
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Dreadmaw_Motes",
+      "Scale": 0.6,
+      "TargetNodeName": "EmberHeart"
+    }
+  ]
+}

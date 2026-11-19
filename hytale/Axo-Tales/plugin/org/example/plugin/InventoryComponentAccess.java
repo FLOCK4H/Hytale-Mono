@@ -11,9 +11,9 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * Thin adapter around the non-deprecated inventory ECS components.
- */
+
+
+
 final class InventoryComponentAccess {
 
     private InventoryComponentAccess() {
@@ -164,7 +164,7 @@ final class InventoryComponentAccess {
             tool.markDirty();
         }
 
-        hotbar.setActiveSlot(slot);
+        hotbar.setActiveSlot(slot, entityRef, accessor);
         hotbar.markDirty();
         return true;
     }

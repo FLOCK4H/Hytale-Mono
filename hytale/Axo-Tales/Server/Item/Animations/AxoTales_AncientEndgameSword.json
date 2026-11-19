@@ -1,0 +1,107 @@
+{
+  "Parent": "Longsword",
+  "Animations": {
+    "SwingLeft": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeft_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeft_ThirdPersonMoving.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeft_FirstPerson.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "Speed": 0.96,
+      "BlendingDuration": 0.1
+    },
+    "SwingRight": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingRight_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingRight_ThirdPersonMoving.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingRight_FirstPerson.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "Speed": 0.96,
+      "BlendingDuration": 0.1
+    },
+    "SwingUpLeft": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingUpLeft_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingUpLeft_ThirdPersonMoving.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Angry.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingUpLeft_FirstPerson.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "Speed": 0.96,
+      "BlendingDuration": 0.1
+    },
+    "SwingDown": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingDown_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingDown_ThirdPersonMoving.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Angry.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingDown_FirstPerson.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "Speed": 0.96,
+      "BlendingDuration": 0.1
+    },
+    "SwingLeftCharging": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeftCharging_ThirdPerson.blockyanim",
+      "Looping": false,
+      "Speed": 0.768,
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeftCharging_ThirdPersonMoving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeftCharging_FirstPerson.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "BlendingDuration": 0.1
+    },
+    "SwingLeftCharged": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeftCharged_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeftCharged_ThirdPersonMoving.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SwingLeftCharged_FirstPerson.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "Speed": 0.96,
+      "BlendingDuration": 0
+    },
+    "StabCharging": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_StabCharging_ThirdPerson.blockyanim",
+      "Looping": false,
+      "Speed": 0.768,
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_StabCharging_ThirdPersonMoving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_StabCharging_FirstPerson.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "BlendingDuration": 0.1
+    },
+    "StabCharged": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_StabCharged_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_StabCharged_ThirdPersonMoving.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_StabCharged_FirstPerson.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "Speed": 1.2,
+      "BlendingDuration": 0
+    },
+    "Guard": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_Guard_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_Guard_ThirdPersonMoving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_Guard_FirstPerson.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "BlendingDuration": 0.1,
+      "Looping": true,
+      "Speed": 1
+    },
+    "GuardBash": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_GuardBash_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_GuardBash_ThirdPersonMoving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_GuardBash_FirstPerson.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Angry.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "BlendingDuration": 0.1,
+      "Speed": 1
+    },
+    "SpellCast": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SpellCast_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SpellCast_ThirdPersonMoving.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Sword_SpellCast_FirstPerson.blockyanim",
+      "KeepPreviousFirstPersonAnimation": true,
+      "Speed": 1,
+      "BlendingDuration": 0.12
+    }
+  }
+}

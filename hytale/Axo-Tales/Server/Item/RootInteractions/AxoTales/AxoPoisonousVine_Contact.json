@@ -1,0 +1,10 @@
+{
+  "Interactions": [
+    {
+      "Type": "ApplyEffect",
+      "EffectId": "Axo_Poisonous_Vine_Poison",
+      "Entity": "User",
+      "Duration": 10
+    }
+  ]
+}

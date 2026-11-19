@@ -9,11 +9,11 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Tracks active Horde Book summons (owner-to-minion mapping + expiry).
- *
- * <p>State is keyed by UUID and safe to access from multiple threads, but intended to be mutated on the world thread.</p>
- */
+
+
+
+
+
 public final class HordeBookSummonState {
 
     public static final class ActiveSummon {

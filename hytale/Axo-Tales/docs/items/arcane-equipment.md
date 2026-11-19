@@ -2,11 +2,11 @@
 
 Use **Axo's Arcane Wand** to cast books in your inventory or a carried pouch. You still need to own each spellbook, and its normal mana cost and cooldown still apply. All spellbooks also work directly from your hand.
 
-All **seventeen** books are supported, including Lightning, Meteorain, [Bloody Book, Leech Book and Book of Life](../blood-magic.md). Storms preserve their 80-mana cost, 40-block radius, eight-second duration and shared cooldown through the wand. The wand also preserves the eight-second extraction and Book of Life's entire-current-mana cost. DNA samples stay in ordinary carried inventory; the pouch stores books.
+All **seventeen** books are supported, including Lightning, Meteorain, [Bloody Book, Leech Book and Book of Life](../blood-magic.md). Storms cast through the wand still cost 80 mana, affect a 40-block radius, last eight seconds and share a cooldown. Blood extraction still takes eight seconds, and Book of Life still spends all your current mana. DNA samples stay in ordinary carried inventory; the pouch stores books.
 
 ## Crafting
 
-The wand is **Epic**, with the gold description title **Voice of the Elder Grove**. The pouch is Rare. Both take 5 seconds to craft at the Arcanist's Workbench, in the **Spellblades** tab, using mid-progression materials.
+The wand is **Epic**, with the gold description title **Voice of the Elder Grove**. The pouch is Rare. Both take 5 seconds to craft at Axo's Workbench, in the **Library** tab, using the ingredients below.
 
 | Item | Ingredients |
 | --- | --- |
@@ -19,7 +19,7 @@ Keep the pouch in your hotbar, storage, backpack or utility/tool inventory. It h
 
 Newly picked-up spellbooks go into an available carried pouch automatically, including when your ordinary inventory is full. If your pouches are full, normal inventory pickup takes over; if everything is full, the book stays on the ground. Books manually taken out of the pouch stay outside it so you can cast by hand.
 
-Hold the pouch and **right-click** to open its inventory. You can move existing books into it manually. Books stay inside the physical pouch when you save, reconnect, drop it or trade it. Different pouches have separate contents.
+The compact leather pouch hangs from its handle in one hand. Hold it and **right-click** to open its inventory. You can move existing books into it manually. Books stay inside the physical pouch when you save, reconnect, drop it or trade it. Different pouches have separate contents.
 
 ## Wand controls
 
@@ -42,11 +42,11 @@ The wand starts with Silver selected. If that book is unavailable, right-clickin
 
 <div class="card-grid">
   <div class="card media-card">
-    <div class="media-card__visual media-card__visual--single"><img src="../../assets/images/items/arcane_wand.png" alt="Walnut wand with silver collars and a turquoise crystal"></div>
-    <div class="media-card__copy"><h3>Axo's Arcane Wand</h3><p>A walnut focus with a charcoal grip, silver fittings and an arcane crystal. Casts the spellbook selected from your pouch.</p></div>
+    <div class="media-card__visual media-card__visual--single"><img src="../../assets/images/catalog/Axo_Arcane_Wand.png" alt="Walnut wand with silver collars and a turquoise crystal"></div>
+    <div class="media-card__copy"><h3>Axo's Arcane Wand</h3><p>Casts the selected spell from books in your inventory or a carried pouch. Made of walnut, with a charcoal grip, silver fittings and an arcane crystal.</p></div>
   </div>
   <div class="card media-card">
-    <div class="media-card__visual media-card__visual--single"><img src="../../assets/images/items/spellbook_pouch.png" alt="Charcoal leather spellbook pouch with silver buckle"></div>
+    <div class="media-card__visual media-card__visual--single"><img src="../../assets/images/catalog/Axo_Spellbook_Pouch.png" alt="Charcoal leather spellbook pouch with silver buckle"></div>
     <div class="media-card__copy"><h3>Axo's Spellbook Pouch</h3><p>A portable 18-slot book container. Keep it with you to make its spells available to your wand.</p></div>
   </div>
 </div>

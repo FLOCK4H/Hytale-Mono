@@ -1,0 +1,25 @@
+{
+  "Types": [
+    {
+      "File": "Ores.Zone3.CopperPlacement"
+    },
+    {
+      "File": "Ores.Zone3.IronPlacement"
+    },
+    {
+      "File": "Ores.Zone3.SilverPlacement"
+    },
+    {
+      "File": "Ores.Zone3.GoldPlacement"
+    },
+    {
+      "File": "Ores.Zone3.CobaltPlacement"
+    },
+    {
+      "File": "Ores.AxoTales.Zone3.AgretisPlacement"
+    },
+    {
+      "File": "Ores.AxoTales.Zone3.RevelPlacement"
+    }
+  ]
+}

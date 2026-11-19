@@ -1,6 +1,6 @@
 package org.example.plugin;
 
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Runtime flight data for Axo's Light Book projectiles.
- */
+
+
+
 public final class LightBookProjectileState {
 
     private final Map<UUID, ActiveProjectile> activeProjectiles = new ConcurrentHashMap<>();
@@ -26,7 +26,7 @@ public final class LightBookProjectileState {
     ) {
         return activeProjectiles.computeIfAbsent(projectileUuid, ignored -> new ActiveProjectile(
             observedPosition,
-            observedVelocity != null && observedVelocity.isFinite() && observedVelocity.squaredLength() > 1e-9
+            observedVelocity != null && observedVelocity.isFinite() && observedVelocity.lengthSquared() > 1e-9
                 ? observedVelocity
                 : new Vector3d(0, 0, 1)
         ));
@@ -100,7 +100,7 @@ public final class LightBookProjectileState {
         }
 
         private static @Nonnull Vector3d normalized(@Nonnull Vector3d direction) {
-            if (!direction.isFinite() || direction.squaredLength() <= 1e-9) {
+            if (!direction.isFinite() || direction.lengthSquared() <= 1e-9) {
                 return new Vector3d(0, 0, 1);
             }
             return new Vector3d(direction).normalize();

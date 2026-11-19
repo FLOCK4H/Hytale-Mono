@@ -1,0 +1,15 @@
+{
+  "Parent": "AxoTales_Wand",
+  "Animations": {
+    "CastLeech": {
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Leech/Wand_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/Leech/Wand_ThirdPersonMoving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Leech/Wand_FirstPerson.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
+      "Speed": 1,
+      "BlendingDuration": 0.15,
+      "Looping": true,
+      "KeepPreviousFirstPersonAnimation": false
+    }
+  }
+}

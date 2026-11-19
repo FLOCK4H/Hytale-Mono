@@ -22,9 +22,9 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Doubles outgoing damage while the Strength Potion effect is active.
- */
+
+
+
 public final class StrengthPotionDamageMultiplierSystem extends DamageEventSystem {
 
     public static final String STRENGTH_EFFECT_ID = "AxoTales_Strength";

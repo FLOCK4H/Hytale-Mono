@@ -1,0 +1,19 @@
+{
+  "Types": [
+    {
+      "File": "Ores.Zone4.IronPlacement"
+    },
+    {
+      "File": "Ores.Zone4.SilverPlacement"
+    },
+    {
+      "File": "Ores.Zone4.AdamantitePlacement"
+    },
+    {
+      "File": "Ores.AxoTales.Zone4.AgretisPlacement"
+    },
+    {
+      "File": "Ores.AxoTales.Zone4.AequalisPlacement"
+    }
+  ]
+}

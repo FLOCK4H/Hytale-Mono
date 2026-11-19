@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="preload" href="{{ 'assets/fonts/Geist-Variable.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+{% endblock %}
+
+{% block header %}
+  {{ super() | replace('role="dialog"', 'role="dialog" aria-label="Search guidebook"') }}
+{% endblock %}

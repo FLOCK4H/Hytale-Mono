@@ -1,0 +1,9 @@
+{
+  "Type": "Simple",
+  "RunTime": 0.3,
+  "Effects": {
+    "ItemAnimationId": "SpyglassRaise",
+    "ClearAnimationOnFinish": false
+  },
+  "Next": "AxoSpyglass_Wield"
+}

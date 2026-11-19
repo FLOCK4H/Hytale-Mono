@@ -1,0 +1,20 @@
+{
+  "Type": "DamageEntity",
+  "Entity": "Target",
+  "DamageCalculator": {
+    "Type": "Absolute",
+    "BaseDamage": {
+      "Physical": 672
+    },
+    "RandomPercentageModifier": 0
+  },
+  "DamageEffects": {
+    "WorldSoundEventId": "SFX_Unarmed_Impact",
+    "Knockback": {
+      "Force": 6,
+      "RelativeX": 0,
+      "RelativeZ": 5,
+      "VelocityY": 3
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Type": "AxoTales_BloodIndustry",
+  "Mode": "pickaxe",
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 0.45,
+    "Effects": {
+      "ItemAnimationId": "Mine",
+      "ClearAnimationOnFinish": true,
+      "WorldSoundEventId": "SFX_Tool_T1_Swing"
+    }
+  }
+}

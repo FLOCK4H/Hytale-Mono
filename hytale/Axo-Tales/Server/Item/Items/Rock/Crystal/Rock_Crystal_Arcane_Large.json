@@ -3,9 +3,7 @@
     "Name": "server.items.Rock_Crystal_Arcane_Large.name"
   },
   "Icon": "Icons/ItemsGenerated/Arcane_Crystal.png",
-  "Categories": [
-    "Blocks.Rocks"
-  ],
+  "Categories": [],
   "PlayerAnimationsId": "Block",
   "BlockType": {
     "Material": "Solid",
@@ -21,7 +19,7 @@
     "Flags": {},
     "Gathering": {
       "Breaking": {
-        "DropList": "Rock_Crystal_Arcane_Large",
+        "DropList": "Axo_Arcane_Crystal",
         "GatherType": "Rocks"
       }
     },
@@ -60,5 +58,10 @@
     "Family": [
       "Crystal"
     ]
-  }
+  },
+  "Interactions": {
+    "Secondary": "AxoSoul_FeedBlock"
+  },
+  "Quality": "AxoTales_Internal",
+  "$AxoLegacyItem": "Axo_Arcane_Crystal"
 }

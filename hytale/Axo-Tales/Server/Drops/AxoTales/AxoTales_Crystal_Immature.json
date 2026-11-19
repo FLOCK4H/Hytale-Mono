@@ -1,0 +1,10 @@
+{
+  "Container": {
+    "Type": "Single",
+    "Item": {
+      "ItemId": "Axo_Arcane_Crystal_Seed",
+      "QuantityMin": 1,
+      "QuantityMax": 1
+    }
+  }
+}

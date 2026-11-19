@@ -1,0 +1,12 @@
+{
+  "IncludeBlockTypes": [
+    "Soil_*",
+    "Rock_*"
+  ],
+  "ExcludeBlockTypes": [
+    "*Water*",
+    "*Mud",
+    "*Lava*",
+    "*Magma*"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.Book_Bloody_Texture.name",
+    "Description": "server.items.flock4h.Book_Bloody_Texture.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 1,
+  "Model": "Items/Books/Axo/Demon.blockymodel",
+  "Texture": "Items/Books/Book_Bloody_Texture.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Bloody_Book.png",
+  "PlayerAnimationsId": "AxoTales_Spellbook",
+  "ItemSoundSetId": "ISS_Weapons_Books",
+  "Tags": {
+    "Family": [
+      "AxoTalesSpellbook"
+    ]
+  },
+  "Interactions": {
+    "Secondary": "AxoBloodyBook_Secondary"
+  },
+  "$AxoLegacyItem": "Axo_Bloody_Book"
+}

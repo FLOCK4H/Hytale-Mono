@@ -1,0 +1,19 @@
+{
+  "Environments": [
+    "Env_Zone1_Plains",
+    "Env_Zone1_Forests",
+    "Env_Zone1_Autumn",
+    "Env_Zone1_Azure"
+  ],
+  "NPCs": [
+    {
+      "Id": "Tom_Tom",
+      "Weight": 2.5,
+      "SpawnBlockSet": "Soil"
+    }
+  ],
+  "DayTimeRange": [
+    0,
+    24
+  ]
+}

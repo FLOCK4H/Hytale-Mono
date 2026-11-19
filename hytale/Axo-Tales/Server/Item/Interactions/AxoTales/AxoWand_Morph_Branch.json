@@ -1,0 +1,6 @@
+{
+  "Type": "AxoTales_Input",
+  "WandCast": true,
+  "Next": "AxoMorphBook_Secondary",
+  "Failed": "AxoMorphBook_Primary"
+}

@@ -7,7 +7,7 @@ import com.hypixel.hytale.component.RemoveReason;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 import com.hypixel.hytale.protocol.ColorLight;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.entities.ProjectileComponent;
@@ -21,9 +21,9 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.UUID;
 
-/**
- * Keeps Axo's Light Book projectiles bright and forces their fast-start/slow-cruise flight profile.
- */
+
+
+
 @SuppressWarnings("deprecation")
 public final class LightBookProjectileSystem extends TickingSystem<EntityStore> {
 
@@ -121,7 +121,7 @@ public final class LightBookProjectileSystem extends TickingSystem<EntityStore> 
                                 "LightBookProjectile event=settle"
                                     + " projectile.uuid=" + projectileUuid
                                     + " reason=impact"
-                                    + " position=" + Vector3d.formatShortString(position)
+                                    + " position=" + VectorFormats.shortString(position)
                                     + " reboundSeconds=" + String.format("%.3f", SETTLE_REBOUND_SECONDS)
                                     + " reboundSpeedBlocksPerSecond=" + String.format("%.3f", SETTLE_REBOUND_SPEED_BLOCKS_PER_SECOND)
                             );
@@ -129,7 +129,7 @@ public final class LightBookProjectileSystem extends TickingSystem<EntityStore> 
                             continue;
                         }
 
-                        double distance = new Vector3d(position).subtract(active.origin()).length();
+                        double distance = new Vector3d(position).sub(active.origin()).length();
                         double maxDistance = getMaxDistanceBlocks();
                         if (Double.isFinite(distance) && distance >= maxDistance) {
                             debug.traceFileOnly(
@@ -139,7 +139,7 @@ public final class LightBookProjectileSystem extends TickingSystem<EntityStore> 
                                     + " reason=maxDistance"
                                     + " distanceBlocks=" + String.format("%.2f", distance)
                                     + " maxDistanceBlocks=" + String.format("%.2f", maxDistance)
-                                    + " position=" + Vector3d.formatShortString(position)
+                                    + " position=" + VectorFormats.shortString(position)
                             );
                             state.clear(projectileUuid);
                             removeRefs.add(projectileRef);
@@ -147,7 +147,7 @@ public final class LightBookProjectileSystem extends TickingSystem<EntityStore> 
                         }
 
                         double speed = computeSpeed(active.elapsedSeconds());
-                        physics.setVelocity(new Vector3d(active.direction()).scale(speed));
+                        physics.setVelocity(new Vector3d(active.direction()).mul(speed));
                         lightRefs.add(projectileRef);
 
                         if (active.elapsedSeconds() >= getSlowdownSeconds() && active.markCruiseLogged()) {
@@ -219,7 +219,7 @@ public final class LightBookProjectileSystem extends TickingSystem<EntityStore> 
         boolean newlySettled = active.markSettled(SETTLE_REBOUND_SECONDS);
         physics.setImpacted(false);
         physics.setResting(false);
-        physics.setVelocity(new Vector3d(active.direction()).scale(-SETTLE_REBOUND_SPEED_BLOCKS_PER_SECOND));
+        physics.setVelocity(new Vector3d(active.direction()).mul(-SETTLE_REBOUND_SPEED_BLOCKS_PER_SECOND));
         return newlySettled;
     }
 
@@ -233,7 +233,7 @@ public final class LightBookProjectileSystem extends TickingSystem<EntityStore> 
         if (remaining > 0.0) {
             double scale = Math.max(0.0, Math.min(1.0, remaining / SETTLE_REBOUND_SECONDS));
             physics.setResting(false);
-            physics.setVelocity(new Vector3d(active.direction()).scale(-SETTLE_REBOUND_SPEED_BLOCKS_PER_SECOND * scale));
+            physics.setVelocity(new Vector3d(active.direction()).mul(-SETTLE_REBOUND_SPEED_BLOCKS_PER_SECOND * scale));
             return;
         }
 
@@ -245,7 +245,7 @@ public final class LightBookProjectileSystem extends TickingSystem<EntityStore> 
         try {
             store.removeEntity(projectileRef, RemoveReason.REMOVE);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 

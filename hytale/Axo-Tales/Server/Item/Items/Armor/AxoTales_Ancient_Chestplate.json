@@ -1,0 +1,121 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.ancient_armor_chestplate.name",
+    "Description": "server.items.flock4h.ancient_armor_chestplate.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 40,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "Categories": [],
+  "Icon": "Icons/ItemsGenerated/AxoTales_Ancient_Chestplate.png",
+  "Model": "Items/AxoTales/AncientArmor/Ancient_Chest.blockymodel",
+  "Texture": "Items/AxoTales/AncientArmor/Ancient_Chest_Atlas.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Chest",
+    "BaseDamageResistance": 0,
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.5,
+          "CalculationType": "Percent"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.5,
+          "CalculationType": "Percent"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 150,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Stamina": [
+        {
+          "Amount": 25,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "Regenerating": {
+      "Stamina": [
+        {
+          "$Comment": "Adds 30% of normal positive stamina regeneration.",
+          "Interval": 0.1,
+          "Amount": 0.09,
+          "RegenType": "Additive",
+          "Conditions": [
+            {
+              "Id": "Stat",
+              "Stat": "StaminaRegenDelay",
+              "Amount": 0
+            },
+            {
+              "Id": "Stat",
+              "Stat": "Stamina",
+              "Amount": 0,
+              "Comparison": "Gte"
+            },
+            {
+              "Id": "Wielding",
+              "Inverse": true,
+              "UseIgnoreFlag": true
+            },
+            {
+              "Id": "Sprinting",
+              "Inverse": true
+            },
+            {
+              "Id": "Gliding",
+              "Inverse": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "MaxDurability": 1200,
+  "DurabilityLossOnHit": 0.5,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Iron"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.391,
+    "Rotation": [
+      15,
+      35,
+      0
+    ],
+    "Translation": [
+      0,
+      0
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Ancient_Chestplate"
+}

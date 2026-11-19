@@ -1,0 +1,9 @@
+{
+  "Interactions": [
+    {
+      "Type": "AxoTales_SkillTree",
+      "Mode": "open"
+    }
+  ],
+  "RequireNewClick": true
+}

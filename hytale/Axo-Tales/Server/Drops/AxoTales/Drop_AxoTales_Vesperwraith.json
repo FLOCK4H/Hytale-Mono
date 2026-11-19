@@ -1,0 +1,67 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Axo_Arcane_Crystal_Shards",
+          "QuantityMin": 1,
+          "QuantityMax": 4
+        }
+      },
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Axo_Evil_Core",
+          "QuantityMin": 1,
+          "QuantityMax": 1
+        }
+      },
+      {
+        "Type": "Choice",
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Axo_Arcane_Matter",
+              "QuantityMin": 1,
+              "QuantityMax": 1
+            },
+            "Weight": 50
+          },
+          {
+            "Type": "Empty",
+            "Weight": 50
+          }
+        ]
+      },
+      {
+        "Type": "Choice",
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Axo_Rimefang",
+              "QuantityMin": 1,
+              "QuantityMax": 1
+            },
+            "Weight": 1
+          },
+          {
+            "Type": "Empty",
+            "Weight": 99
+          }
+        ]
+      },
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Ingredient_Hide_Light",
+          "QuantityMin": 8,
+          "QuantityMax": 8
+        }
+      }
+    ]
+  }
+}

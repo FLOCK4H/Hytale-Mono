@@ -27,8 +27,8 @@
     "Max": 0.55
   },
   "SpawnRate": {
-    "Min": 55,
-    "Max": 90
+    "Min": 18,
+    "Max": 24
   },
   "TotalParticles": {
     "Min": -1,
@@ -67,7 +67,7 @@
     }
   ],
   "Particle": {
-    "Texture": "Particles/Fire_Impact.png",
+    "Texture": "Particles/Textures/Shapes/Spark_Wave_Purple.png",
     "FrameSize": {
       "Width": 32,
       "Height": 32
@@ -76,49 +76,25 @@
     "UVOption": "RandomFlipU",
     "Animation": {
       "0": {
-        "Color": "#87ceeb",
+        "Color": "#ebe0ff",
+        "Opacity": 0.8,
         "Scale": {
           "X": {
-            "Min": 0.18,
-            "Max": 0.28
+            "Min": 0.5,
+            "Max": 0.7
           },
           "Y": {
-            "Min": 0.18,
-            "Max": 0.28
+            "Min": 0.16,
+            "Max": 0.24
           }
-        },
-        "Opacity": 0.0,
-        "FrameIndex": {
-          "Min": 0,
-          "Max": 0
         }
       },
-      "20": {
-        "Opacity": 0.75,
-        "FrameIndex": {
-          "Min": 2,
-          "Max": 2
-        }
-      },
-      "60": {
-        "Opacity": 0.55,
-        "FrameIndex": {
-          "Min": 4,
-          "Max": 4
-        }
+      "55": {
+        "Color": "#aa83d0",
+        "Opacity": 0.5
       },
       "100": {
-        "Opacity": 0.0,
-        "Scale": {
-          "X": {
-            "Min": 2.2,
-            "Max": 1.6
-          },
-          "Y": {
-            "Min": 2.2,
-            "Max": 1.6
-          }
-        }
+        "Opacity": 0
       }
     },
     "InitialAnimationFrame": {
@@ -133,7 +109,7 @@
         }
       },
       "Opacity": 1,
-      "Color": "#87ceeb",
+      "Color": "#ebe0ff",
       "FrameIndex": {
         "Min": 0,
         "Max": 0
@@ -144,4 +120,3 @@
     "SoftParticles": "Disable"
   }
 }
-

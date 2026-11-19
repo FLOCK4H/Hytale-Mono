@@ -1,0 +1,5 @@
+{
+  "Type": "AxoTales_Scout",
+  "Mode": "spyglass",
+  "Next": "AxoSpyglass_Raise"
+}

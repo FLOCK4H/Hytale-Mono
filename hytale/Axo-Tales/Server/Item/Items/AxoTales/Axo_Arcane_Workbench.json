@@ -1,0 +1,139 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.workbench.name",
+    "Description": "server.items.flock4h.workbench.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Axo_Arcane_Workbench.png",
+  "Categories": [
+    "Furniture.Benches"
+  ],
+  "Recipe": {
+    "TimeSeconds": 5,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Thorium",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 12
+      },
+      {
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 20
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Workbench",
+        "Categories": [
+          "Workbench_Crafting"
+        ],
+        "RequiredTierLevel": 2
+      }
+    ]
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Items/AxoTales/Workshop/Workbench.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/Workshop/Workbench_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Bench_Alchemy",
+    "VariantRotation": "NESW",
+    "Bench": {
+      "Type": "Crafting",
+      "LocalOpenSoundEventId": "SFX_Arcane_Workbench_Open_Local",
+      "LocalCloseSoundEventId": "SFX_Arcane_Workbench_Close_Local",
+      "CompletedSoundEventId": "SFX_Arcane_Workbench_Craft",
+      "Categories": [
+        {
+          "Id": "Axo_Workbench_Items",
+          "Name": "server.benchCategories.axoItems",
+          "Icon": "Icons/CraftingCategories/AxoTales/Workbench_Items.png"
+        },
+        {
+          "Id": "Axo_Workbench_Armory",
+          "Name": "server.benchCategories.axoArmory",
+          "Icon": "Icons/CraftingCategories/AxoTales/Workbench_Armory.png"
+        },
+        {
+          "Id": "Axo_Workbench_Library",
+          "Name": "server.benchCategories.axoLibrary",
+          "Icon": "Icons/CraftingCategories/AxoTales/Workbench_Library.png"
+        },
+        {
+          "Id": "Axo_Workbench_Blood_Magic",
+          "Name": "server.benchCategories.axoBlood_Magic",
+          "Icon": "Icons/CraftingCategories/AxoTales/Workbench_Blood_Magic.png"
+        },
+        {
+          "Id": "Axo_Workbench_Alchemy",
+          "Name": "server.benchCategories.axoAlchemy",
+          "Icon": "Icons/CraftingCategories/AxoTales/Workbench_Alchemy.png"
+        }
+      ],
+      "Id": "Axo_Arcane_Workbench"
+    },
+    "BlockEntity": {
+      "Components": {
+        "BenchBlock": {}
+      }
+    },
+    "State": {
+      "Definitions": {
+        "CraftCompleted": {
+          "CustomModelAnimation": "Items/AxoTales/Workshop/Workbench_Craft.blockyanim",
+          "Looping": true
+        },
+        "CraftCompletedInstant": {
+          "CustomModelAnimation": "Items/AxoTales/Workshop/Workbench_Craft.blockyanim"
+        }
+      }
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Benches"
+      }
+    },
+    "BlockParticleSetId": "Wood",
+    "ParticleColor": "#6e4a2f",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockSoundSetId": "Stone",
+    "PhysicalMaterialId": "Stone",
+    "TextureComputedColor": "#4A3728"
+  },
+  "PlayerAnimationsId": "Block",
+  "IconProperties": {
+    "Scale": 0.35,
+    "Rotation": [
+      22.5,
+      45.0,
+      22.5
+    ],
+    "Translation": [
+      11.4,
+      -18.6
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Bench"
+    ]
+  },
+  "MaxStack": 1,
+  "ItemLevel": 10,
+  "ItemSoundSetId": "ISS_Blocks_Wood"
+}

@@ -1,0 +1,24 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.axos_silver_book.name",
+    "Description": "server.items.flock4h.axos_silver_book.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 1,
+  "Icon": "Icons/ItemsGenerated/Silver_Spellbook.png",
+  "Model": "Items/Books/Axo/Demon.blockymodel",
+  "Texture": "Items/Books/Book_Silver_Texture.png",
+  "Interactions": {
+    "Secondary": "AxoSilverBook_Secondary"
+  },
+  "PlayerAnimationsId": "AxoTales_Spellbook",
+  "ItemSoundSetId": "ISS_Weapons_Books",
+  "MaxStack": 1,
+  "Tags": {
+    "Family": [
+      "AxoTalesSpellbook"
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Silver_Book"
+}

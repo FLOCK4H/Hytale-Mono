@@ -1,0 +1,79 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_matter_ore_stone.name",
+    "Description": "server.items.flock4h.arcane_matter_ore_stone.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Ore_Stone_Parent.png",
+  "Categories": [
+    "Blocks.Ores"
+  ],
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "CubeWithModel",
+    "CustomModel": "Items/AxoTales/Astral/Matter_Veins.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/Astral/Matter_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "Group": "Stone",
+    "Flags": {},
+    "RandomRotation": "YawStep90",
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OreIron",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Axo_Arcane_Matter"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Stone_Cobble"
+                }
+              },
+              {
+                "Type": "Droplist",
+                "Weight": 25,
+                "DroplistId": "Drop_AxoTales_Cloud_Or_Bounce"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "BlockParticleSetId": "Ore",
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Stone.png"
+      }
+    ],
+    "ParticleColor": "#9c4cca",
+    "BlockSoundSetId": "Ore",
+    "Particles": [
+      {
+        "SystemId": "AxoTales_Arcane_Matter",
+        "Scale": 0.22
+      }
+    ]
+  },
+  "PlayerAnimationsId": "Block",
+  "Tags": {
+    "Type": [
+      "Ore"
+    ],
+    "Family": [
+      "ArcaneMatter"
+    ]
+  },
+  "MaxStack": 25,
+  "ItemSoundSetId": "ISS_Blocks_Stone"
+}

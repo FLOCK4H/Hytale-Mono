@@ -1,0 +1,23 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Axo_Evil_Core",
+          "QuantityMin": 1,
+          "QuantityMax": 1
+        }
+      },
+      {
+        "Type": "Single",
+        "Item": {
+          "ItemId": "Axo_Arcane_Crystal_Shards",
+          "QuantityMin": 2,
+          "QuantityMax": 5
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "Parent": "Template_Seeds",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.skill_tree_seed.name",
+    "Description": "server.items.flock4h.skill_tree_seed.description"
+  },
+  "Quality": "Rare",
+  "ItemLevel": 10,
+  "Model": "Items/AxoTales/SkillTree/Seed.blockymodel",
+  "Texture": "Items/AxoTales/SkillTree/Seed_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Skill_Tree_Seed.png",
+  "IconProperties": {
+    "Scale": 1.33,
+    "Rotation": [
+      20,
+      35,
+      0
+    ],
+    "Translation": [
+      0,
+      -4
+    ]
+  },
+  "InteractionVars": {
+    "SeedId": {
+      "Interactions": [
+        {
+          "Parent": "Seed_Place",
+          "BlockTypeToPlace": "Axo_Skill_Tree"
+        }
+      ]
+    }
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Life_Essence",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Plant_Flower_Orchid_Purple",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Items"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  }
+}

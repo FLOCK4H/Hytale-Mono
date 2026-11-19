@@ -21,9 +21,9 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Prevents Kudu Adepts from dealing direct/melee damage so their effective damage is projectile-based.
- */
+
+
+
 public final class KuduAdeptNoMeleeDamageSystem extends DamageEventSystem {
 
     private static final long DEBUG_INTERVAL_NANOS = 5_000_000_000L;
@@ -77,8 +77,9 @@ public final class KuduAdeptNoMeleeDamageSystem extends DamageEventSystem {
             }
 
             Damage.Source source = damage.getSource();
+            if(source instanceof Damage.ProjectileSource)return;
             if (!(source instanceof Damage.EntitySource entitySource)) {
-                return; // only cancel direct/melee-like damage; projectiles remain allowed
+                return;
             }
 
             String causeId = getCauseId(damage);
@@ -104,9 +105,9 @@ public final class KuduAdeptNoMeleeDamageSystem extends DamageEventSystem {
             try {
                 attackerRoleName = attackerNpc.getRoleName();
             } catch (Throwable ignored) {
-                // Best effort.
+
             }
-            if (attackerRoleName == null || !attackerRoleName.equals(roleName)) {
+            if (!CompanionLoyalty.mage(attackerRoleName,roleName)) {
                 return;
             }
 

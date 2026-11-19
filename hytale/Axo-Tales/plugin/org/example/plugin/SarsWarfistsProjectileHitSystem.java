@@ -22,9 +22,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Applies Sa'r Warfists projectile on-hit effects.
- */
+
+
+
 public final class SarsWarfistsProjectileHitSystem extends DamageEventSystem {
 
     public static final String WARFISTS_PROJECTILE_ID = SarsWarfistsInputInterceptor.WARFISTS_PROJECTILE_ASSET_ID;

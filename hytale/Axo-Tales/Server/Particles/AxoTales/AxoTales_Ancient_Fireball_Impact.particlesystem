@@ -1,0 +1,12 @@
+{
+  "BoundingRadius": 7,
+  "CullDistance": 96,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Ancient_Fireball_Bloom"
+    },
+    {
+      "SpawnerId": "AxoTales_Ancient_Fireball_Shards"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "CullDistance": 128,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Storm_MeteorCore",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "FixedRotation": false
+    },
+    {
+      "SpawnerId": "AxoTales_Storm_MeteorTrail",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "FixedRotation": false
+    },
+    {
+      "SpawnerId": "AxoTales_Storm_Impact",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "FixedRotation": false,
+      "StartDelay": 1.25
+    }
+  ]
+}

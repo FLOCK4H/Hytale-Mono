@@ -1,8 +1,6 @@
 # Helpful Souls
 
-Villa, Fossor and Cruor are spectral workers with distinct tools and actions. Fossor carries an upright pick and uses a forward mining swing. Villa braces its satchel while delivering cargo.
-
-Villa, Fossor and Cruor are immortal ghost companions. Their ownership, carried items, mining progress and upgrades are saved with the world.
+Villa collects items, Fossor mines resources and Cruor guards you. These immortal ghost companions keep their owner, cargo, mining progress and upgrades when the world is saved.
 
 You may have **three active souls of each type: nine total per player**, including unloaded souls and other worlds on the same server. Returning one frees that type's slot. A fourth summon consumes nothing. Existing excess souls return as saved items when loaded, keeping their cargo, progress and upgrades.
 
@@ -13,7 +11,7 @@ Souls survive logout. Their existing work areas stay loaded and active while the
 
 ## Crafting
 
-Craft at **Workbench → Tools**, five seconds per soul. Every recipe uses **one Evil Core and three Azure Kelps**, plus its special ingredient:
+Craft at **Axo's Workbench → Items**, five seconds per soul. Every recipe uses **one Evil Core and three Azure Kelps**, plus its special ingredient:
 
 | Soul | Special ingredient | Purpose |
 | --- | --- | --- |
@@ -21,12 +19,14 @@ Craft at **Workbench → Tools**, five seconds per soul. Every recipe uses **one
 | Fossor Soul | 1 Iron Pickaxe | Conjures and slowly mines renewable resources |
 | Cruor Soul | 1 Ruby | Follows and protects its owner |
 
-Hold the crafted soul and press **RMB** to summon it into clear space. Villa and Fossor appear in front; Cruor takes a rear guard position. **Interact** with it for status. Hit your soul with **LMB using an empty hand or melee weapon** to return it as a dropped item, even when your inventory is full. It keeps its cargo, upgrades and unfinished mining cycle when summoned again. **Empty hand + Crouch + Interact** also recalls it directly into your inventory if there is room. Another player cannot feed, return or claim your soul. A soul spawned directly with Creative Tools can be claimed by interacting with it or returning it with a melee hit.
+Hold the crafted soul and press **RMB** to summon it into clear space. Villa and Fossor appear in front; Cruor takes a rear guard position. **Interact** with it for status. Each soul binds to the player who summons it. Only that player can collect or feed it.
+
+Hit your soul with **LMB using an empty hand** to return it as a dropped item, even when your inventory is full. Weapons and tools cannot collect it. It keeps its owner, cargo, upgrades and unfinished mining cycle when summoned again. **Empty hand + Crouch + Interact** also recalls it directly into your inventory if there is room. Souls spawned directly with Creative Tools have no summoner and cannot be claimed or collected; summon a soul item instead.
 
 
 ## Villa Soul
 
-Villa works within **50 blocks of the position where you summon it**. It floats to eligible dropped items, collects whole stacks into a nine-slot satchel, and flies to the nearest loaded chest that accepts the carried item. It can merge into an existing stack or use an empty slot. Native item metadata and chest filters are preserved.
+Villa works within **50 blocks of the position where you summon it**. It floats to eligible dropped items, collects whole stacks into a nine-slot satchel, and flies to the nearest loaded chest that accepts the carried item. It can merge into an existing stack or use an empty slot. Item properties stay intact, and Villa respects chest filters.
 
 If a chest fills during delivery, Villa keeps the remainder and looks for another chest. If none can accept its cargo, it waits with everything saved. When no chest can accept a ground item, that item stays available on the ground. Place a chest near its station to begin. Recall and resummon Villa to move its work area.
 
@@ -34,7 +34,7 @@ The 50-block search is a sphere around its station and includes loaded chests in
 
 ## Fossor Soul
 
-Fossor stays at its station, casts a conjuring spell, then swings its spectral pick at a private floating block. It drops **one resource every 60 seconds of active mining**. The block is a protected conjured object: players cannot mine it early, and it does not replace terrain. Its work prop occupies the ghost realm and can share space with terrain. Unloaded areas pause production until loaded again.
+Fossor stays at its station, casts a conjuring spell, then swings its spectral pick at a private floating block. It drops **one resource every 120 seconds of active mining**. The block is a protected conjured object: players cannot mine it early, and it does not replace terrain. Its floating block can overlap terrain without changing it. Unloaded areas pause production until loaded again.
 
 One mined block produces one raw ore, Stone, Dirt or Arcane Matter item. Villa can collect these drops. Unloaded souls do not accumulate offline production.
 

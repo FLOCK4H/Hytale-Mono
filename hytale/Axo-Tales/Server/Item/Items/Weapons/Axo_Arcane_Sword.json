@@ -1,0 +1,396 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.axos_ancient_sword.name",
+    "Description": "server.items.flock4h.axos_ancient_sword.description"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Quality": "Epic",
+  "ItemLevel": 30,
+  "Model": "Items/AxoTales/DarkArcana/Ancient_Sword.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Ancient_Relic_Atlas.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 60
+      },
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 48
+      },
+      {
+        "ItemId": "Ingredient_Fire_Essence",
+        "Quantity": 32
+      },
+      {
+        "ItemId": "Ingredient_Ice_Essence",
+        "Quantity": 32
+      },
+      {
+        "ItemId": "Ingredient_Voidheart",
+        "Quantity": 16
+      },
+      {
+        "ItemId": "Axo_Aequalis_Bar",
+        "Quantity": 24
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Armory"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 12
+  },
+  "PlayerAnimationsId": "AxoTales_AncientSword",
+  "Interactions": {
+    "Primary": "AxoTempoSword_Longsword_Attack",
+    "Secondary": "AxoAncientSword_Secondary"
+  },
+  "InteractionVars": {
+    "Longsword_Swing_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "AxoTales_Ancient_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 83
+            },
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 12,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 2.5,
+              "Duration": 0.3,
+              "VelocityType": "Set",
+              "VelocityConfig": {
+                "AirResistance": 0.97,
+                "AirResistanceMax": 0.96,
+                "GroundResistance": 0.94,
+                "GroundResistanceMax": 0.82,
+                "Threshold": 3,
+                "Style": "Exp"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Right_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "AxoTales_Ancient_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Right_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Right_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 83
+            },
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 12,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 2.5,
+              "Duration": 0.3,
+              "VelocityType": "Set",
+              "VelocityConfig": {
+                "AirResistance": 0.97,
+                "AirResistanceMax": 0.96,
+                "GroundResistance": 0.94,
+                "GroundResistanceMax": 0.82,
+                "Threshold": 3,
+                "Style": "Exp"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Up_Left_Effect": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Left_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "AxoTales_Ancient_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Longsword_Special_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Swing_Up_Left_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Swing_Up_Left_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 83
+            },
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 12,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 2.5,
+              "Duration": 0.3,
+              "VelocityType": "Set",
+              "VelocityConfig": {
+                "AirResistance": 0.97,
+                "AirResistanceMax": 0.96,
+                "GroundResistance": 0.94,
+                "GroundResistanceMax": 0.82,
+                "Threshold": 3,
+                "Style": "Exp"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Longsword_Stab_Charged_Effect": {
+      "Interactions": [
+        {
+          "Type": "ApplyForce",
+          "WaitForGround": false,
+          "Duration": 0.25,
+          "ChangeVelocityType": "Set",
+          "VelocityConfig": {
+            "AirResistance": 0.97,
+            "AirResistanceMax": 0.96,
+            "GroundResistance": 0.94,
+            "GroundResistanceMax": 0.82,
+            "Threshold": 5.0,
+            "Style": "Exp"
+          },
+          "Forces": [
+            {
+              "Direction": {
+                "Z": -1.0
+              },
+              "Force": 10.0,
+              "AdjustVertical": true
+            },
+            {
+              "Direction": {
+                "Z": -1.0
+              },
+              "Force": 6.0
+            }
+          ],
+          "VerticalClamp": [
+            0.0,
+            60.0
+          ]
+        },
+        {
+          "Parent": "Longsword_Stab_Charged_Effect",
+          "Effects": {
+            "Trails": [
+              {
+                "PositionOffset": {
+                  "X": 0.9,
+                  "Y": 0.1,
+                  "Z": 0
+                },
+                "RotationOffset": {
+                  "Pitch": 0,
+                  "Roll": 90,
+                  "Yaw": 0
+                },
+                "TargetNodeName": "Handle",
+                "TrailId": "AxoTales_Ancient_Trail"
+              }
+            ],
+            "WorldSoundEventId": "SFX_Weapon_Charge_Swing"
+          }
+        }
+      ]
+    },
+    "Longsword_Stab_Charged_Damage": {
+      "Interactions": [
+        {
+          "Parent": "Longsword_Stab_Charged_Damage",
+          "DamageCalculator": {
+            "BaseDamage": {
+              "Physical": 105
+            },
+            "Type": "Absolute",
+            "RandomPercentageModifier": 0.15
+          },
+          "DamageEffects": {
+            "WorldSoundEventId": "SFX_Longsword_Special_Impact",
+            "Knockback": {
+              "Type": "Directional",
+              "Force": 12,
+              "RelativeX": 0,
+              "RelativeZ": 0,
+              "VelocityY": 2.5,
+              "Duration": 0.3,
+              "VelocityType": "Set",
+              "VelocityConfig": {
+                "AirResistance": 0.97,
+                "AirResistanceMax": 0.96,
+                "GroundResistance": 0.94,
+                "GroundResistanceMax": 0.82,
+                "Threshold": 3,
+                "Style": "Exp"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      45,
+      90,
+      0
+    ],
+    "Translation": [
+      -42,
+      -43
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Longsword_Axo.png",
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Ancient_Runes",
+      "TargetNodeName": "RunicChannelA",
+      "TargetEntityPart": "PrimaryItem",
+      "Scale": 0.8
+    },
+    {
+      "SystemId": "AxoTales_Ancient_Runes",
+      "TargetNodeName": "HeroBladeTip",
+      "TargetEntityPart": "PrimaryItem",
+      "Scale": 0.55
+    }
+  ],
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Longsword"
+    ]
+  },
+  "Trails": [
+    {
+      "PositionOffset": {
+        "X": 0.9,
+        "Y": 0.1,
+        "Z": 0
+      },
+      "RotationOffset": {
+        "Pitch": 0,
+        "Roll": 90,
+        "Yaw": 0
+      },
+      "TargetNodeName": "Handle",
+      "TrailId": "AxoTales_Ancient_Trail",
+      "TargetEntityPart": "PrimaryItem"
+    }
+  ],
+  "DurabilityLossOnHit": 0.52,
+  "Weapon": {},
+  "Light": {
+    "Radius": 3,
+    "Color": "#8e8edb"
+  },
+  "ItemSoundSetId": "ISS_Weapons_Blade_Large"
+}

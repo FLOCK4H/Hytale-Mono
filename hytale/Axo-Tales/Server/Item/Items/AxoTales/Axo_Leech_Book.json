@@ -1,0 +1,55 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.Book_Leech_Texture.name",
+    "Description": "server.items.flock4h.Book_Leech_Texture.description"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Quality": "Legendary",
+  "MaxStack": 1,
+  "Model": "Items/AxoTales/Leech/Leech.blockymodel",
+  "Texture": "Items/AxoTales/Leech/Leech_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Leech_Book.png",
+  "PlayerAnimationsId": "AxoTales_LeechBook",
+  "ItemSoundSetId": "ISS_Weapons_Books",
+  "Tags": {
+    "Family": [
+      "AxoTalesSpellbook"
+    ]
+  },
+  "Interactions": {
+    "Secondary": "AxoLeechBook_Secondary"
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Axo_Rex_Blood_Sample",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Axo_Dreadmaw_Blood_Sample",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Axo_Yeti_Blood_Sample",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Axo_Emberwulf_Blood_Sample",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Library"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 12
+  }
+}

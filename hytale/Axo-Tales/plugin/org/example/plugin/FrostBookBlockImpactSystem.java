@@ -9,7 +9,7 @@ import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.shape.Box;
 import com.hypixel.hytale.math.util.ChunkUtil;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.entities.ProjectileComponent;
@@ -20,7 +20,6 @@ import com.hypixel.hytale.server.core.modules.collision.CollisionResult;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import javax.annotation.Nonnull;
@@ -29,13 +28,13 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Handles Frost Book projectile terrain impacts by replacing the impacted block with Snow Bricks.
- *
- * <p>This is intentionally implemented for the legacy {@link ProjectileComponent} system by raycasting between the
- * last in-flight position and the current position every tick. Relying on {@code SimplePhysicsProvider.isImpacted()}
- * proved unreliable for some projectile configurations.</p>
- */
+
+
+
+
+
+
+
 public final class FrostBookBlockImpactSystem extends TickingSystem<EntityStore> {
 
     private static final String FROST_PROJECTILE_ID = FrostBookProjectileHitSystem.FROST_PROJECTILE_ID;
@@ -121,7 +120,7 @@ public final class FrostBookBlockImpactSystem extends TickingSystem<EntityStore>
                             continue;
                         }
 
-                        Vector3d deltaVec = new Vector3d(position).subtract(lastPosition);
+                        Vector3d deltaVec = new Vector3d(position).sub(lastPosition);
                         double length = deltaVec.length();
                         if (!Double.isFinite(length) || length <= 1e-6) {
                             int baseX = (int) Math.floor(position.x);
@@ -133,8 +132,8 @@ public final class FrostBookBlockImpactSystem extends TickingSystem<EntityStore>
                             int placedY = baseY;
                             int placedZ = baseZ;
 
-                            // When we first observe a projectile after it already impacted and stopped moving, we may
-                            // not have an in-flight delta to raycast. Try nearby blocks best-effort.
+
+
                             int[][] offsets = new int[][] {
                                 new int[] {0, 0, 0},
                                 new int[] {0, -1, 0},
@@ -222,7 +221,7 @@ public final class FrostBookBlockImpactSystem extends TickingSystem<EntityStore>
         try {
             store.removeEntity(projectileRef, RemoveReason.REMOVE);
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
     }
 
@@ -236,10 +235,7 @@ public final class FrostBookBlockImpactSystem extends TickingSystem<EntityStore>
         }
 
         long chunkIndex = ChunkUtil.indexChunkFromBlock(x, z);
-        WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
-        if (chunk == null) {
-            chunk = world.getChunkIfInMemory(chunkIndex);
-        }
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
         if (chunk == null) {
             return false;
         }
@@ -250,7 +246,7 @@ public final class FrostBookBlockImpactSystem extends TickingSystem<EntityStore>
         } catch (Throwable ignored) {
             return false;
         }
-        if (blockType == null || blockType.isUnknown()) {
+        if (SpellTerrainProtection.protectedAt(world, x, y, z, blockType)) {
             return false;
         }
         if (blockType == BlockType.EMPTY || blockType.getDrawType() == com.hypixel.hytale.protocol.DrawType.Empty) {
@@ -279,7 +275,7 @@ public final class FrostBookBlockImpactSystem extends TickingSystem<EntityStore>
         if (!Double.isFinite(maxDistance) || maxDistance <= 0) {
             return null;
         }
-        Vector3d ray = new Vector3d(direction).normalize().scale(maxDistance);
+        Vector3d ray = new Vector3d(direction).normalize().mul(maxDistance);
         CollisionResult result = new CollisionResult(false, false);
         result.setCollisionByMaterial(CollisionMaterial.MATERIAL_SOLID);
         CollisionModule.findBlockCollisionsIterative(world, RAY_POINT_BOX, origin, ray, true, result);

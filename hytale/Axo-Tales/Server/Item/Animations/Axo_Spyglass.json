@@ -1,0 +1,29 @@
+{
+  "Parent": "Item",
+  "Animations": {
+    "SpyglassRaise": {
+      "Speed": 1,
+      "Looping": false,
+      "BlendingDuration": 0.12,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Spyglass/Raise_ThirdPerson.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Spyglass/Raise_FirstPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/Spyglass/Raise_ThirdPerson.blockyanim"
+    },
+    "SpyglassFocus": {
+      "Speed": 1,
+      "Looping": true,
+      "BlendingDuration": 0.12,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Spyglass/Focus_ThirdPerson.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Spyglass/Focus_FirstPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/Spyglass/Focus_ThirdPerson.blockyanim"
+    },
+    "SpyglassLower": {
+      "Speed": 1,
+      "Looping": false,
+      "BlendingDuration": 0.12,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/Spyglass/Lower_ThirdPerson.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/Spyglass/Lower_FirstPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/Spyglass/Lower_ThirdPerson.blockyanim"
+    }
+  }
+}

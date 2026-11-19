@@ -1,0 +1,9 @@
+{
+  "BoundingRadius": 2,
+  "CullDistance": 48,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Pickaxe_Violet"
+    }
+  ]
+}

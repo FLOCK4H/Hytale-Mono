@@ -18,11 +18,10 @@ import com.hypixel.hytale.server.core.modules.entity.component.TransformComponen
 import com.hypixel.hytale.server.core.modules.entity.damage.DamageModule;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.math.shape.Box;
 import com.hypixel.hytale.math.util.ChunkUtil;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,15 +29,15 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * Triggers the Taunt Book slam when the caster lands.
- *
- * <p>We intentionally detect landing via {@link MovementStatesComponent} (onGround transition) because fall-damage
- * events may not fire (e.g., creative mode / certain movement modes).</p>
- *
- * <p>Defensive fix: clamp overkill slam damage to target remaining health above minimum to avoid crashing server
- * builds where health underflow triggers assertions/exceptions.</p>
- */
+
+
+
+
+
+
+
+
+
 public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStore> {
 
     private static final Box DOWN_RAY_POINT_BOX = new Box(0, 0, 0, 0.01, 0.01, 0.01);
@@ -172,7 +171,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
                 return new GroundState(states.onGround, "movementStates");
             }
         } catch (Throwable ignored) {
-            // Best-effort: fall back to raycast.
+
         }
 
         var external = store.getExternalData();
@@ -452,7 +451,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
 
                         switch (single.reason) {
                             case "blockEmpty", "blockTypeMissingOrUnknown" -> {
-                                // Allow sparse foliage columns and keep scanning downward toward the solid anchor.
+
                             }
                             case "chunkNotLoaded" -> {
                                 skippedChunkNotLoaded++;
@@ -462,7 +461,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
                             case "breakException" -> breakExceptions++;
                             case "breakFailed" -> breakFailed++;
                             default -> {
-                                // Keep the detailed center reason, but don't double-count every surface miss.
+
                             }
                         }
                     }
@@ -518,7 +517,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
                         case "breakException" -> breakExceptions++;
                         case "breakFailed" -> breakFailed++;
                         default -> {
-                            // Count the reason on the center block only; keep the detailed reason in the trace.
+
                         }
                     }
                     break;
@@ -554,8 +553,8 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
     }
 
     private double resolveGroundBreakSparingChance() {
-        // Taunt now clears every breakable block in the crater footprint.
-        // The legacy sparing knob stays in config for compatibility, but the slam ignores it.
+
+
         return 0.0;
     }
 
@@ -622,7 +621,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
         int y,
         int z
     ) {
-        WorldChunk chunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(x, z));
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, ChunkUtil.indexChunkFromBlock(x, z));
         if (chunk == null) {
             return new SingleGroundBreakResult(false, null, "chunkNotLoaded");
         }
@@ -633,7 +632,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
             return new SingleGroundBreakResult(false, blockTypeId, "blockTypeMissingOrUnknown");
         }
 
-        if (isProtectedGroundBlock(blockTypeId)) {
+        if (isProtectedGroundBlock(blockTypeId) || SpellTerrainProtection.protectedAt(world, x, y, z, blockType)) {
             return new SingleGroundBreakResult(false, blockTypeId, "blockProtected.bedrock");
         }
 
@@ -643,7 +642,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
         }
 
         try {
-            boolean broke = chunk.breakBlock(x, y, z);
+            boolean broke = chunk.clearBlock(x, y, z);
             return new SingleGroundBreakResult(broke, blockTypeId, broke ? "broken" : "breakFailed");
         } catch (Throwable t) {
             errors.report(
@@ -660,7 +659,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
         @Nonnull Vector3d landingPosition,
         @Nonnull BlockCollisionData sampleHit
     ) {
-        WorldChunk chunk = world.getChunkIfLoaded(ChunkUtil.indexChunkFromBlock(sampleHit.x, sampleHit.z));
+        WorldBlocks.Column chunk = WorldBlocks.loaded(world, ChunkUtil.indexChunkFromBlock(sampleHit.x, sampleHit.z));
         if (chunk == null) {
             return sampleHit.y;
         }
@@ -684,7 +683,7 @@ public final class TauntBookLandingSystem extends EntityTickingSystem<EntityStor
             }
 
             String blockTypeId = blockType.getId();
-            if (isProtectedGroundBlock(blockTypeId)) {
+            if (isProtectedGroundBlock(blockTypeId) || SpellTerrainProtection.protectedAt(world, sampleHit.x, scanY, sampleHit.z, blockType)) {
                 continue;
             }
             return scanY;

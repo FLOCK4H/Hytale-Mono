@@ -1,0 +1,37 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_matter.name",
+    "Description": "server.items.flock4h.arcane_matter.description"
+  },
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "Model": "Items/AxoTales/Astral/Matter.blockymodel",
+  "Texture": "Items/AxoTales/Astral/Matter_Atlas.png",
+  "Quality": "Rare",
+  "ItemLevel": 10,
+  "PlayerAnimationsId": "Item",
+  "Icon": "Icons/ItemsGenerated/Arcane_Matter.png",
+  "Tags": {
+    "Type": [
+      "Ingredient"
+    ],
+    "Family": [
+      "ArcaneMatter"
+    ]
+  },
+  "ItemEntity": {
+    "ParticleSystemId": "AxoTales_Arcane_Matter"
+  },
+  "MaxStack": 50,
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "DropOnDeath": true,
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Arcane_Matter",
+      "TargetNodeName": "AstralHeart",
+      "TargetEntityPart": "PrimaryItem",
+      "Scale": 0.35
+    }
+  ]
+}

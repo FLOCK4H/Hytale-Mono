@@ -10,9 +10,9 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Tracks active Rune Knights spawned by this plugin so they can be managed (aggro/cleanup).
- */
+
+
+
 public final class RuneKnightSpawnState {
 
     public record ActiveRuneKnight(@Nonnull UUID uuid, long spawnedAtNanos, long expiresAtNanos) {

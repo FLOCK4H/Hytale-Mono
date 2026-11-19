@@ -1,0 +1,13 @@
+{
+  "Parent": "Gloves",
+  "Animations": {
+    "AncientFireball": {
+      "Speed": 1,
+      "BlendingDuration": 0.12,
+      "Looping": false,
+      "ThirdPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Fireball_ThirdPerson.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/AxoTales/AncientEndgame/Fireball_ThirdPersonMoving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/AxoTales/AncientEndgame/Fireball_FirstPerson.blockyanim"
+    }
+  }
+}

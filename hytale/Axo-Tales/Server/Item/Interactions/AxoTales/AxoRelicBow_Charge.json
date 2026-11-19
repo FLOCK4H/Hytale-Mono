@@ -1,0 +1,119 @@
+{
+  "Type": "Charging",
+  "AllowIndefiniteHold": true,
+  "DisplayProgress": false,
+  "Effects": {
+    "ItemAnimationId": "ShootCharging",
+    "ClearAnimationOnFinish": true,
+    "ClearSoundEventOnFinish": true,
+    "WorldSoundEventId": "SFX_Bow_T2_Draw",
+    "LocalSoundEventId": "SFX_Bow_T2_Draw_Local",
+    "Particles": [
+      {
+        "PositionOffset": {
+          "X": 0.075,
+          "Y": -0.4,
+          "Z": 0.075
+        },
+        "RotationOffset": {
+          "Pitch": 0,
+          "Roll": 0,
+          "Yaw": 90
+        },
+        "Scale": 0.5,
+        "TargetNodeName": "Handle",
+        "SystemId": "Bow_Charging"
+      }
+    ]
+  },
+  "HorizontalSpeedMultiplier": 0.67,
+  "Next": {
+    "0.0": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": -1
+      }
+    },
+    "0.1": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": -1
+      },
+      "Next": {
+        "Type": "AxoTales_Relic",
+        "Mode": "fire0",
+        "RunTime": 0.2,
+        "Effects": {
+          "ItemAnimationId": "Shoot",
+          "ClearAnimationOnFinish": true
+        }
+      }
+    },
+    "0.3": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": -1
+      },
+      "Next": {
+        "Type": "AxoTales_Relic",
+        "Mode": "fire1",
+        "RunTime": 0.2,
+        "Effects": {
+          "ItemAnimationId": "Shoot",
+          "ClearAnimationOnFinish": true
+        }
+      }
+    },
+    "0.6": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": -1
+      },
+      "Next": {
+        "Type": "AxoTales_Relic",
+        "Mode": "fire2",
+        "RunTime": 0.2,
+        "Effects": {
+          "ItemAnimationId": "Shoot",
+          "ClearAnimationOnFinish": true
+        }
+      }
+    },
+    "0.9": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": -1
+      },
+      "Next": {
+        "Type": "AxoTales_Relic",
+        "Mode": "fire3",
+        "RunTime": 0.2,
+        "Effects": {
+          "ItemAnimationId": "Shoot",
+          "ClearAnimationOnFinish": true
+        }
+      }
+    },
+    "1.2": {
+      "Type": "ChangeStat",
+      "Behaviour": "Set",
+      "StatModifiers": {
+        "StaminaRegenDelay": -1
+      },
+      "Next": {
+        "Type": "AxoTales_Relic",
+        "Mode": "fire4",
+        "RunTime": 0.2,
+        "Effects": {
+          "ItemAnimationId": "ShootCharged",
+          "ClearAnimationOnFinish": true
+        }
+      }
+    }
+  }
+}

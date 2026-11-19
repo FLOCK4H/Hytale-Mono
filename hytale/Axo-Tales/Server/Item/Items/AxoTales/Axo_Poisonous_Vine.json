@@ -1,0 +1,55 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.poisonous_vine.name"
+  },
+  "Quality": "AxoTales_Internal",
+  "Categories": [],
+  "Icon": "Icons/ItemsGenerated/Axo_Poisonous_Vine.png",
+  "PlayerAnimationsId": "Block",
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "BlockType": {
+    "Material": "Empty",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Items/AxoTales/Workshop/Vine.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/Workshop/Vine_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "VariantRotation": "NESW",
+    "HitboxType": "Plant_Full",
+    "Group": "@Tech",
+    "BlockSoundSetId": "Bramble",
+    "PhysicalMaterialId": "Foliage",
+    "BlockParticleSetId": "Leaves_Branches",
+    "ParticleColor": "#552263",
+    "TextureComputedColor": "#431c55",
+    "BlockEntity": {
+      "Components": {
+        "Axo_PoisonousVineGrowth": {
+          "Schema": 302
+        }
+      }
+    },
+    "Gathering": {
+      "Soft": {
+        "DropList": "Axo_Poisonous_Vine_Seed_Drops"
+      },
+      "Physics": {
+        "DropList": "Empty"
+      }
+    },
+    "Interactions": {
+      "CollisionEnter": "AxoPoisonousVine_Contact"
+    },
+    "Flags": {
+      "IsStackable": false
+    },
+    "Support": {}
+  }
+}

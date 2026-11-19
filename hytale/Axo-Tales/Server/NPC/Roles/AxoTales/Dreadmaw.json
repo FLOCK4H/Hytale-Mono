@@ -1,0 +1,61 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Predator",
+  "Modify": {
+    "Appearance": "Dreadmaw",
+    "DropList": "Drop_AxoTales_Dreadmaw",
+    "MaxHealth": 1440,
+    "MaxSpeed": 8,
+    "WanderRadius": 12,
+    "FlockArray": [],
+    "AttitudeGroup": "PredatorsBig",
+    "IsMemory": true,
+    "MemoriesCategory": "Mythic",
+    "ViewRange": 24,
+    "ViewSector": 270,
+    "HearingRange": 18,
+    "AbsoluteDetectionRange": 3,
+    "AlertedRange": 30,
+    "AlertedTime": [
+      1.5,
+      2.5
+    ],
+    "ThreatenAnimation": "Roar",
+    "ThreatenDelayRange": [
+      0.2,
+      0.4
+    ],
+    "Attack": "AxoDreadmaw_Gore",
+    "AttackDistance": 6.8,
+    "AttackPauseRange": [
+      2.8,
+      3.6
+    ],
+    "CombatAttackPreDelay": [
+      0,
+      0
+    ],
+    "CombatAttackPostDelay": [
+      0.5,
+      0.5
+    ],
+    "CombatBackOffAfterAttack": false,
+    "CombatDirectWeight": 10,
+    "CombatStrafeWeight": 0,
+    "AlwaysSleepAtNight": false,
+    "DayTimeNapWeight": 0,
+    "TimidDuringDay": false,
+    "HardLeashDistance": 72,
+    "KnockbackScale": 0.15,
+    "DeathAnimationTime": 1.5,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Dreadmaw.name",
+      "Description": "Displayed creature name"
+    }
+  }
+}

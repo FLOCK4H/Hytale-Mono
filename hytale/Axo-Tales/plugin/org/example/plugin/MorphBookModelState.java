@@ -16,13 +16,15 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Tracks each player's baseline {@link Model} + {@link PlayerSkin} so Morph Book transformations can be reverted.
- */
+
+
+
 public final class MorphBookModelState {
 
     private final Map<UUID, Model> baselineModelByPlayer = new ConcurrentHashMap<>();
     private final Map<UUID, PlayerSkin> baselineSkinByPlayer = new ConcurrentHashMap<>();
+    private final Map<UUID,Model> observedModels=new ConcurrentHashMap<>();
+    private final java.util.Set<UUID> transformed=ConcurrentHashMap.newKeySet();
 
     public void onPlayerReady(
         @Nonnull PluginErrorReporter errors,
@@ -58,7 +60,23 @@ public final class MorphBookModelState {
     public void clear(@Nonnull UUID uuid) {
         baselineModelByPlayer.remove(uuid);
         baselineSkinByPlayer.remove(uuid);
+        observedModels.remove(uuid);transformed.remove(uuid);
     }
+    void transformed(UUID uuid,boolean active){if(active)transformed.add(uuid);else transformed.remove(uuid);}
+    void observe(UUID uuid,Model model,PlayerSkin skin){
+        if(transformed.contains(uuid)||model==null||WhisperionFlight.MODEL.equals(model.getModelAssetId()))return;
+        if(observedModels.put(uuid,model)!=model)baselineModelByPlayer.put(uuid,new Model(model));
+
+
+        if(!isBlankSkin(skin)&&!skin.equals(baselineSkinByPlayer.get(uuid)))baselineSkinByPlayer.put(uuid,new PlayerSkin(skin));
+    }
+    com.hypixel.hytale.component.system.tick.TickingSystem<EntityStore> observer(){return new com.hypixel.hytale.component.system.tick.TickingSystem<>(){
+        @Override public void tick(float delta,int tick,@Nonnull Store<EntityStore> store){
+            store.forEachChunk(com.hypixel.hytale.component.query.Query.and(PlayerRef.getComponentType(),ModelComponent.getComponentType(),PlayerSkinComponent.getComponentType()),(chunk,buffer)->{
+                for(int i=0;i<chunk.size();i++)observe(chunk.getComponent(i,PlayerRef.getComponentType()).getUuid(),chunk.getComponent(i,ModelComponent.getComponentType()).getModel(),chunk.getComponent(i,PlayerSkinComponent.getComponentType()).getPlayerSkin());
+            });
+        }
+    };}
 
     public @Nullable Model getBaselineModel(@Nonnull UUID uuid) {
         return baselineModelByPlayer.get(uuid);

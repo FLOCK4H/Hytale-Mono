@@ -1,0 +1,127 @@
+$C = "../Common.ui";
+@SpellStyle = ButtonStyle(
+  Default: (Background: #142336(0.0)),
+  Hovered: (Background: (TexturePath: "../AxoTales/SpellHover.png")),
+  Pressed: (Background: (TexturePath: "../AxoTales/SpellPressed.png")),
+  Disabled: (Background: #142336(0.0))
+);
+@SpellTooltipStyle = TextTooltipStyle(
+  Background: (TexturePath: "../Common/TooltipDefaultBackground.png", Border: 24),
+  MaxWidth: 300, LabelStyle: (Wrap: true, FontSize: 14), Padding: 16
+);
+@Backdrop = ButtonStyle(Default: (Background: #070d16(0.22)), Hovered: (Background: #070d16(0.22)), Pressed: (Background: #070d16(0.22)));
+Button #WheelPage { Anchor: (Full: 0); Style: @Backdrop; }
+Group #SpellWheel { Anchor: (Width: 760, Height: 740);
+  Group #Wheel { Anchor: (Left: 0, Top: 20, Width: 760, Height: 660); Background: (TexturePath: "../AxoTales/SpellWheel.png"); }
+  Label { Anchor: (Top: 0, Width: 760, Height: 34); Text: "Arcane Wand"; Style: (FontSize: 24, RenderBold: true, TextColor: #e4dbc3, HorizontalAlignment: Center); }
+  Group { Anchor: (Left: 264, Top: 260, Width: 232, Height: 192); LayoutMode: Top;
+    Label #Selected { Anchor: (Height: 30); Style: (FontSize: 20, RenderBold: true, TextColor: #e4dbc3, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #Summary { Anchor: (Height: 45); Style: (FontSize: 14, TextColor: #b8cddd, HorizontalAlignment: Center, Wrap: true); }
+    Label #Detail { Anchor: (Height: 96); Style: (FontSize: 15, TextColor: #dce7ef, HorizontalAlignment: Center, Wrap: true); }
+  }
+  Button #SpellSilver { Anchor: (Left: 348, Top: 61, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconSilver { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Silver_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Silver"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostSilver { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerSilver { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellHeal { Anchor: (Left: 440, Top: 78, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconHeal { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Heal_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Healing"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostHeal { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerHeal { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellTeleport { Anchor: (Left: 520, Top: 128, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconTeleport { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Teleport_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Teleport"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostTeleport { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerTeleport { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellMining { Anchor: (Left: 577, Top: 203, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconMining { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Mining_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Mining"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostMining { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerMining { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellImmunity { Anchor: (Left: 603, Top: 293, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconImmunity { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Immunity_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Immunity"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostImmunity { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerImmunity { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellLight { Anchor: (Left: 594, Top: 387, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconLight { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Light_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Light"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostLight { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerLight { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellFrost { Anchor: (Left: 552, Top: 471, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconFrost { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Frost_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Frost"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostFrost { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerFrost { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellFlame { Anchor: (Left: 483, Top: 535, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconFlame { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Flame_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Flame"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostFlame { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerFlame { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellHorde { Anchor: (Left: 395, Top: 569, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconHorde { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Horde_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Horde"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostHorde { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerHorde { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellMorph { Anchor: (Left: 301, Top: 569, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconMorph { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Morph_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Morph"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostMorph { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerMorph { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellTaunt { Anchor: (Left: 213, Top: 535, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconTaunt { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Taunt_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Taunt"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostTaunt { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerTaunt { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellDoom { Anchor: (Left: 144, Top: 471, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconDoom { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Doom_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Doom"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostDoom { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerDoom { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellBloody { Anchor: (Left: 102, Top: 387, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconBloody { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Bloody_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Bloody"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostBloody { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerBloody { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellLife { Anchor: (Left: 93, Top: 293, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconLife { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Life_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Book of Life"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostLife { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerLife { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellLightning { Anchor: (Left: 119, Top: 203, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconLightning { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Lightning_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Lightning"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostLightning { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerLightning { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellLeech { Anchor: (Left: 176, Top: 128, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconLeech { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Leech_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Leech"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostLeech { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerLeech { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  Button #SpellMeteorain { Anchor: (Left: 256, Top: 78, Width: 64, Height: 66); Style: @SpellStyle; TextTooltipStyle: @SpellTooltipStyle;
+    ItemIcon #IconMeteorain { Anchor: (Left: 16, Top: 2, Width: 32, Height: 32); ItemId: "Book_Meteorain_Texture"; }
+    Label { Anchor: (Top: 32, Width: 64, Height: 20); Text: "Meteorain"; Style: (FontSize: 13, RenderBold: true, TextColor: #e0eaf0, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Label #CostMeteorain { Anchor: (Top: 49, Width: 64, Height: 18); Style: (FontSize: 11, TextColor: #bfd1df, HorizontalAlignment: Center, ShrinkTextToFit: true); }
+    Group #MarkerMeteorain { Anchor: (Left: 0, Top: 0, Width: 64, Height: 66); Background: (TexturePath: "../AxoTales/SpellSelected.png"); Visible: false; }
+  }
+  TextField #WheelKeyboard { Anchor: (Left: 0, Top: 0, Width: 1, Height: 1); AutoFocus: true; HitTestVisible: false; MaxLength: 1; Background: #070d16(0); Style: (FontSize: 1, TextColor: #d4e1e8(0)); Value: ""; }
+  $C.@TextButton #CloseButton { @Text = "Close · Space / Esc"; Anchor: (Left: 280, Top: 676, Width: 200, Height: 34); }
+  Label { Anchor: (Top: 716, Width: 760, Height: 22); Text: "LMB: spell wheel   RMB: cast   Crouch + RMB: alternate action"; Style: (FontSize: 14, TextColor: #c3d4df, HorizontalAlignment: Center); }
+}

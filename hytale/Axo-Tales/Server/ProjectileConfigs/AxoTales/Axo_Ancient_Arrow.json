@@ -1,0 +1,19 @@
+{
+  "Model": "Axo_Ancient_Arrow",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 0,
+    "TerminalVelocityAir": 100,
+    "TerminalVelocityWater": 100,
+    "RotationMode": "None",
+    "SticksVertically": false,
+    "AllowRolling": false
+  },
+  "LaunchForce": 72,
+  "SpawnOffset": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0.4
+  },
+  "Interactions": {}
+}

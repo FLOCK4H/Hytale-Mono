@@ -1,0 +1,15 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.spoiled_heart.name",
+    "Description": "server.items.flock4h.spoiled_heart.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "Categories": [],
+  "Model": "Items/AxoTales/ArcaneRelics/Spoiled_Heart.blockymodel",
+  "Texture": "Items/AxoTales/ArcaneRelics/Spoiled_Heart_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Spoiled_Heart.png",
+  "PlayerAnimationsId": "Item",
+  "MaxStack": 100,
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "$AxoLegacyItem": "Axo_Spoiled_Heart"
+}

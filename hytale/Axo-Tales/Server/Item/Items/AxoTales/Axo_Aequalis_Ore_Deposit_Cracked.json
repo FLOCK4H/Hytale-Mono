@@ -1,0 +1,39 @@
+{
+  "Parent": "Axo_Aequalis_Ore_Deposit",
+  "Quality": "Template",
+  "HideFromSearch": true,
+  "Categories": [],
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Aequalis_Ore.name"
+  },
+  "BlockType": {
+    "DrawType": "Cube",
+    "Particles": [],
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Rocks",
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Weight": 0,
+                "$Comment": "In this case 'Weight' is interpreted as a percentage chance to spawn, so 20% chance",
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Axo_Aequalis_Ore"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Magma_Cooled"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

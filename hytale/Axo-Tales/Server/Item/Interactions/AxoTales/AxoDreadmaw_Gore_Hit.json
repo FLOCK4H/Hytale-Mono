@@ -1,0 +1,25 @@
+{
+  "Type": "Selector",
+  "RunTime": 0.15,
+  "Selector": {
+    "Id": "Horizontal",
+    "Direction": "ToLeft",
+    "TestLineOfSight": true,
+    "ExtendTop": 1.6,
+    "ExtendBottom": 1.6,
+    "StartDistance": 1.6,
+    "EndDistance": 7.6,
+    "Length": 65,
+    "RollOffset": 0,
+    "YawStartOffset": -32
+  },
+  "HitEntity": {
+    "Interactions": [
+      "AxoDreadmaw_Gore_Damage"
+    ]
+  },
+  "Next": {
+    "Type": "Simple",
+    "RunTime": 0.8
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Trork_Melee",
+  "Modify": {
+    "Appearance": "Kudu_Rune_Knight",
+    "DropList": "Drop_Kudu_Rune_Knight_Core",
+    "Weapons": [
+      "Axo_Rimefang",
+      "Axo_Frost_Book"
+    ],
+    "ViewSector": 270,
+    "HearingRange": 12,
+    "CombatRelativeTurnSpeed": 1.25,
+    "AttackDistance": 3.5,
+    "TargetGroups": [
+      "Outlander"
+    ],
+    "DisableDamageGroups": [
+      "Self",
+      "Outlander"
+    ],
+    "AttitudeGroup": "Outlander",
+    "MaxSpeed": 6.5,
+    "RelativeChaseSpeed": 0.65,
+    "MaxHealth": 220,
+    "NameTranslationKey": "server.npcRoles.Cursed_Knight.name",
+    "AttackSequence": "Component_Instruction_Attack_Sequence_AxoTales_Rune_Knight"
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Kudu_Rune_Knight.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

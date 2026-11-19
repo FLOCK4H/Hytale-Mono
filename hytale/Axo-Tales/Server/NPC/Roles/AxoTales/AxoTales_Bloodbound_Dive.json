@@ -1,0 +1,105 @@
+{
+  "Type": "Generic",
+  "Appearance": "Dreadmaw",
+  "StartState": "Idle",
+  "MaxHealth": 100,
+  "DefaultPlayerAttitude": "Friendly",
+  "DefaultNPCAttitude": "Neutral",
+  "ApplySeparation": true,
+  "SeparationDistance": 2,
+  "MotionControllerList": [
+    {
+      "Type": "Dive"
+    }
+  ],
+  "Instructions": [
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Idle"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Idle"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "State",
+        "State": "Combat"
+      },
+      "Actions": [
+        {
+          "Type": "State",
+          "State": "Combat"
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Idle"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 64
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "SlowDownDistance": 6.5,
+            "StopDistance": 3.5
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Combat"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 10
+          },
+          "BodyMotion": {
+            "Type": "Flee",
+            "SlowDownDistance": 10,
+            "StopDistance": 12,
+            "RelativeSpeed": 0.7
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        },
+        {
+          "Sensor": {
+            "Type": "Target",
+            "Range": 64
+          },
+          "BodyMotion": {
+            "Type": "Seek",
+            "SlowDownDistance": 14,
+            "StopDistance": 12
+          },
+          "HeadMotion": {
+            "Type": "Watch"
+          }
+        }
+      ]
+    }
+  ],
+  "NameTranslationKey": "server.npcRoles.AxoTales_Bloodbound.name",
+  "BreathesInWater": true,
+  "BreathesInAir": false
+}

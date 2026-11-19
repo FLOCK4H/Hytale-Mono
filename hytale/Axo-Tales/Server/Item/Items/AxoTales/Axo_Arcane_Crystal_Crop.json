@@ -1,0 +1,184 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.crystal_crop.name",
+    "Description": "server.items.flock4h.crystal_seed.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "BlockType": {
+    "RandomRotation": "YawStep90",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Resources/Crystals/AxoTales_Arcane_Small.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Crystals/Crystal_Big_Textures/Arcane_Crystal_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "Flags": {
+      "IsStackable": false
+    },
+    "State": {
+      "Definitions": {
+        "Medium": {
+          "CustomModel": "Resources/Crystals/AxoTales_Arcane_Medium.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Resources/Crystals/Crystal_Big_Textures/Arcane_Crystal_Texture.png",
+              "Weight": 1
+            }
+          ],
+          "CustomModelScale": 1,
+          "HitboxType": "Plant_Medium",
+          "BlockParticleSetId": "Crystal",
+          "BlockSoundSetId": "Crystal",
+          "Light": {
+            "Color": "#246"
+          },
+          "Gathering": {
+            "Soft": {
+              "DropList": "AxoTales_Crystal_Immature"
+            }
+          }
+        },
+        "Mature": {
+          "CustomModel": "Resources/Crystals/Crystal_Big.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Resources/Crystals/Crystal_Big_Textures/Arcane_Crystal_Texture.png",
+              "Weight": 1
+            }
+          ],
+          "CustomModelScale": 1,
+          "HitboxType": "Plant_Tall_Small",
+          "BlockParticleSetId": "Crystal",
+          "BlockSoundSetId": "Crystal",
+          "Light": {
+            "Color": "#59c6ff"
+          },
+          "Gathering": {
+            "Soft": {
+              "DropList": "AxoTales_Crystal_Mature"
+            },
+            "Harvest": {
+              "DropList": "AxoTales_Crystal_Harvest"
+            }
+          },
+          "InteractionHint": "server.interactionHints.harvest"
+        }
+      }
+    },
+    "Farming": {
+      "Stages": {
+        "Default": [
+          {
+            "Type": "BlockState",
+            "State": "default",
+            "Duration": {
+              "Min": 300,
+              "Max": 300
+            }
+          },
+          {
+            "Type": "BlockState",
+            "State": "Medium",
+            "Duration": {
+              "Min": 600,
+              "Max": 600
+            },
+            "SoundEventId": "SFX_Crops_Grow"
+          },
+          {
+            "Type": "BlockState",
+            "State": "Mature",
+            "SoundEventId": "SFX_Crops_Grow_Stage_Complete"
+          }
+        ],
+        "Harvested": [
+          {
+            "Type": "BlockState",
+            "State": "default",
+            "Duration": {
+              "Min": 300,
+              "Max": 300
+            }
+          },
+          {
+            "Type": "BlockState",
+            "State": "Medium",
+            "Duration": {
+              "Min": 600,
+              "Max": 600
+            },
+            "SoundEventId": "SFX_Crops_Grow"
+          },
+          {
+            "Type": "BlockState",
+            "State": "Mature",
+            "SoundEventId": "SFX_Crops_Grow_Stage_Complete"
+          }
+        ]
+      },
+      "StartingStageSet": "Default",
+      "StageSetAfterHarvest": "Harvested",
+      "ActiveGrowthModifiers": []
+    },
+    "Gathering": {
+      "Soft": {
+        "DropList": "AxoTales_Crystal_Immature"
+      }
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        },
+        {
+          "TagId": "SubType=Planter"
+        }
+      ]
+    },
+    "Material": "Empty",
+    "HitboxType": "Plant_Small",
+    "BlockParticleSetId": "Crystal",
+    "BlockSoundSetId": "Crystal",
+    "ParticleColor": "#59c6ff",
+    "CustomModelScale": 1,
+    "BlockEntity": {
+      "Components": {
+        "FarmingBlock": {}
+      }
+    },
+    "Light": {
+      "Color": "#134"
+    }
+  },
+  "PlayerAnimationsId": "Item",
+  "Categories": [],
+  "IconProperties": {
+    "Scale": 1.1,
+    "Translation": [
+      2.4,
+      -3
+    ],
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Crystal_Seed.png",
+  "Tags": {
+    "Type": [
+      "Plant"
+    ],
+    "Family": [
+      "Crop"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Items_Foliage"
+}

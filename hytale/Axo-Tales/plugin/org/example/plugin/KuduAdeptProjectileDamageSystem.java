@@ -21,12 +21,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-/**
- * Makes Kudu Adept firebolts deterministic and friendly-fire safe.
- *
- * <p>Adept projectiles only damage the owner's recorded master target. Everything else, including players and other
- * adepts, is cancelled.</p>
- */
+
+
+
+
+
+
 public final class KuduAdeptProjectileDamageSystem extends DamageEventSystem {
 
     private static final float ADEPT_PROJECTILE_DAMAGE = 18f;
@@ -117,7 +117,7 @@ public final class KuduAdeptProjectileDamageSystem extends DamageEventSystem {
             UUID adeptUuid = getUuid(store, adeptRef);
             String attackerRoleName = getNpcRoleName(store, adeptRef);
             KuduAdeptBondState.BondedAdept bonded = adeptUuid != null ? bondState.getByAdept(adeptUuid) : null;
-            if (!roleName.equals(attackerRoleName) && bonded == null) {
+            if (!CompanionLoyalty.mage(attackerRoleName,roleName) && bonded == null) {
                 return;
             }
 
@@ -129,8 +129,7 @@ public final class KuduAdeptProjectileDamageSystem extends DamageEventSystem {
             String decision;
             if (adeptUuid == null) {
                 decision = "deny.adeptUuidMissing";
-            } else if (bonded == null || bonded.ownerUuid() == null) {
-                decision = "deny.unbondedAdept";
+
             } else if (targetRef == null || !targetRef.isValid()) {
                 decision = "deny.invalidTarget";
             } else if (store.getComponent(targetRef, PlayerRef.getComponentType()) != null) {
@@ -141,12 +140,10 @@ public final class KuduAdeptProjectileDamageSystem extends DamageEventSystem {
                 decision = "deny.targetUuidMissing";
             } else if (bondState.getByAdept(targetUuid) != null) {
                 decision = "deny.bondedAdeptTarget";
-            } else if (roleName.equals(targetRoleName)) {
+            } else if (CompanionLoyalty.mage(targetRoleName,roleName)) {
                 decision = "deny.adeptRoleTarget";
-            } else if (ownerTarget == null || ownerTarget.targetUuid() == null) {
-                decision = "deny.noMasterTarget";
-            } else if (!ownerTarget.targetUuid().equals(targetUuid)) {
-                decision = "deny.notMasterTarget";
+            } else if (!CompanionLoyalty.wildTarget(store,targetRef)) {
+                decision = "deny.playerOrPet";
             } else if (damage.isCancelled()) {
                 decision = "deny.cancelledUpstream";
             } else {
@@ -216,7 +213,7 @@ public final class KuduAdeptProjectileDamageSystem extends DamageEventSystem {
                 return uuidComponent.getUuid();
             }
         } catch (Throwable ignored) {
-            // Best effort.
+
         }
         return getUuid(store, targetRef);
     }

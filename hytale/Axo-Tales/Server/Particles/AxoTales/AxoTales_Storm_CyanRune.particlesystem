@@ -1,0 +1,14 @@
+{
+  "CullDistance": 96,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Storm_CyanRune",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "FixedRotation": false
+    }
+  ]
+}

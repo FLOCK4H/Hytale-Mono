@@ -1,0 +1,137 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.arcane_pickaxe.name",
+    "Description": "server.items.flock4h.arcane_pickaxe.description"
+  },
+  "Icon": "Icons/ItemsGenerated/AxoTales_Arcane_Pickaxe.png",
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 35,
+  "Model": "Items/AxoTales/BloodIndustry/Arcane_Pickaxe.blockymodel",
+  "Texture": "Items/AxoTales/BloodIndustry/Arcane_Pickaxe_Atlas.png",
+  "Tool": {
+    "Specs": [
+      {
+        "Power": 1,
+        "GatherType": "SoftBlocks"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "Soils"
+      },
+      {
+        "Power": 0.05,
+        "GatherType": "Woods"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "Rocks",
+        "Quality": 4
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "Benches"
+      },
+      {
+        "Power": 0.001,
+        "GatherType": "Metals",
+        "IsIncorrect": true,
+        "HitSoundLayer": "SFX_Pickaxe_Impact_Poor"
+      },
+      {
+        "Power": 0.17,
+        "GatherType": "VolcanicRocks"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "OreCopper"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "OreIron"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "OreSilver"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "OreGold"
+      },
+      {
+        "Power": 0.25,
+        "GatherType": "OreThorium"
+      },
+      {
+        "Power": 0.25,
+        "GatherType": "OreCobalt"
+      },
+      {
+        "Power": 0.125,
+        "GatherType": "OreAdamantite",
+        "Quality": 4
+      },
+      {
+        "Power": 0.084,
+        "GatherType": "OreMithril"
+      },
+      {
+        "Power": 0.5,
+        "GatherType": "GoblinMetal"
+      }
+    ],
+    "DurabilityLossBlockTypes": [
+      {
+        "BlockSets": [
+          "Stone",
+          "Rock",
+          "Ores",
+          "Soil",
+          "Wood"
+        ],
+        "DurabilityLossOnHit": 0.25
+      }
+    ]
+  },
+  "MaxDurability": 1200,
+  "Categories": [],
+  "PlayerAnimationsId": "AxoTales_Pickaxe303",
+  "ItemSoundSetId": "ISS_Weapons_Wood",
+  "MaxStack": 1,
+  "Interactions": {
+    "Primary": "AxoArcanePickaxe_Primary",
+    "Secondary": "AxoPickaxe303_Secondary",
+    "Use": "AxoPickaxe303_Slam"
+  },
+  "Tags": {
+    "Type": [
+      "Tool"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.45,
+    "Translation": [
+      13.8,
+      -14.4
+    ],
+    "Rotation": [
+      45,
+      270,
+      0
+    ]
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Pickaxe_Violet",
+      "TargetNodeName": "RelicHeart",
+      "TargetEntityPart": "PrimaryItem",
+      "Scale": 0.5
+    },
+    {
+      "SystemId": "AxoTales_Pickaxe_Violet",
+      "TargetNodeName": "ForgedHeadPickaxe2",
+      "TargetEntityPart": "PrimaryItem",
+      "Scale": 0.25
+    }
+  ],
+  "$AxoLegacyItem": "Axo_Arcane_Pickaxe"
+}

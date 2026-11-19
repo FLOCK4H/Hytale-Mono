@@ -6,8 +6,6 @@
   "Debuff": false,
   "StatusEffectIcon": "Icons/ItemsGenerated/Cloak.png",
   "ApplicationEffects": {
-    "EntityBottomTint": "#7ad8ff",
-    "EntityTopTint": "#b4f6ff",
-    "ScreenEffect": "ScreenEffects/Water.png"
+    "ModelVFXId": "AxoTales_Invisible"
   }
 }

@@ -3,13 +3,11 @@
     "Name": "server.items.flock4h.invisibility_cloak.name",
     "Description": "server.items.flock4h.invisibility_cloak.description"
   },
-  "Quality": "Epic",
+  "Quality": "AxoTales_Internal",
   "ItemLevel": 20,
   "PlayerAnimationsId": "Block",
   "ItemSoundSetId": "ISS_Armor_Heavy",
-  "Categories": [
-    "Items.Armors"
-  ],
+  "Categories": [],
   "Icon": "Icons/ItemsGenerated/Cloak.png",
   "Model": "Items/Armors/Cloak/Cloak.blockymodel",
   "Texture": "Items/Armors/Cloak/Cloak_Texture.png",
@@ -54,5 +52,6 @@
       0,
       -25.8
     ]
-  }
+  },
+  "$AxoLegacyItem": "Axo_Invisibility_Cloak"
 }

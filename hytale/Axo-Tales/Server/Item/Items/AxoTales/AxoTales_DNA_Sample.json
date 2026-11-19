@@ -1,0 +1,15 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_DNA_Sample.name",
+    "Description": "server.items.flock4h.AxoTales_DNA_Sample.description"
+  },
+  "Categories": [],
+  "Quality": "AxoTales_Internal",
+  "MaxStack": 1,
+  "Model": "Items/AxoTales/BloodMagic/DNA.blockymodel",
+  "Texture": "Items/AxoTales/BloodMagic/Assay_Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_DNA_Sample.png",
+  "PlayerAnimationsId": "Item",
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "$AxoLegacyItem": "Axo_DNA_Sample"
+}

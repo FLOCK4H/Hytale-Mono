@@ -8,11 +8,11 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-/**
- * Tracks bonded Kudu Adepts (owner-to-adept mapping).
- *
- * <p>State is keyed by UUID and safe to access from multiple threads, but intended to be mutated on the world thread.</p>
- */
+
+
+
+
+
 public final class KuduAdeptBondState {
 
     public record BondedAdept(@Nonnull UUID adeptUuid, @Nonnull UUID ownerUuid, long bondedAtNanos) {

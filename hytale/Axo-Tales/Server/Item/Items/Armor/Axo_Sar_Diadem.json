@@ -1,0 +1,175 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.sar_diadem.name",
+    "Description": "server.items.flock4h.sar_diadem.description"
+  },
+  "Quality": "Epic",
+  "ItemLevel": 20,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "Categories": [
+    "Items.Armors"
+  ],
+  "Icon": "Icons/ItemsGenerated/Sar_Diadem.png",
+  "Model": "Items/AxoTales/DarkArcana/Sar_Head.blockymodel",
+  "Texture": "Items/AxoTales/DarkArcana/Sar_Head_Atlas.png",
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Axo_Arcane_Crystal_Shards",
+        "Quantity": 4
+      },
+      {
+        "ItemId": "Ingredient_Bar_Cobalt",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Aequalis_Bar",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Armory"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 3
+  },
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Head",
+    "BaseDamageResistance": 0,
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Percent"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.08,
+          "CalculationType": "Percent"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Oxygen": [
+        {
+          "Amount": 500,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Health": [
+        {
+          "Amount": 25,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Stamina": [
+        {
+          "Amount": 10,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "Regenerating": {
+      "Stamina": [
+        {
+          "$Comment": "Sa'r armor pieces each add +25% of the default positive stamina regeneration.",
+          "Interval": 0.1,
+          "Amount": 0.075,
+          "RegenType": "Additive",
+          "Conditions": [
+            {
+              "Id": "Stat",
+              "Stat": "StaminaRegenDelay",
+              "Amount": 0
+            },
+            {
+              "Id": "Stat",
+              "Stat": "Stamina",
+              "Amount": 0,
+              "Comparison": "Gte"
+            },
+            {
+              "Id": "Wielding",
+              "Inverse": true
+            },
+            {
+              "Id": "Sprinting",
+              "Inverse": true
+            },
+            {
+              "Id": "Gliding",
+              "Inverse": true
+            }
+          ]
+        }
+      ]
+    },
+    "CosmeticsToHide": [
+      "EarAccessory",
+      "Ear",
+      "HeadAccessory"
+    ]
+  },
+  "MaxDurability": 500,
+  "DurabilityLossOnHit": 0.5,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Iron"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.8,
+    "Rotation": [
+      15,
+      35,
+      0
+    ],
+    "Translation": [
+      0,
+      0
+    ]
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Sar_Runes",
+      "TargetNodeName": "CrownFocus",
+      "TargetEntityPart": "Entity",
+      "Scale": 0.4
+    }
+  ]
+}

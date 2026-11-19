@@ -1,0 +1,55 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.astral_satchel.name",
+    "Description": "server.items.flock4h.astral_satchel.description"
+  },
+  "Categories": [
+    "Items.Tools"
+  ],
+  "Quality": "Epic",
+  "ItemLevel": 25,
+  "MaxStack": 1,
+  "PlayerAnimationsId": "Item",
+  "Model": "Items/AxoTales/Astral/Satchel.blockymodel",
+  "Texture": "Items/AxoTales/Astral/Atlas.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Astral_Satchel.png",
+  "ItemSoundSetId": "ISS_Default",
+  "Interactions": {
+    "Secondary": "AxoAstralSatchel_Use"
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Leather_Heavy",
+        "Quantity": 12
+      },
+      {
+        "ItemId": "Ingredient_Spider_Silk",
+        "Quantity": 8
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 22
+      },
+      {
+        "ItemId": "Axo_Aequalis_Bar",
+        "Quantity": 22
+      },
+      {
+        "ItemId": "Axo_Evil_Core",
+        "Quantity": 7
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Items"
+        ]
+      }
+    ],
+    "KnowledgeRequired": false,
+    "TimeSeconds": 8
+  }
+}

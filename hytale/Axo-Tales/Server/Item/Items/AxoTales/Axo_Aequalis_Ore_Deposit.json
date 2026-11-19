@@ -1,0 +1,77 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Aequalis_Ore.name"
+  },
+  "Categories": [
+    "Blocks.Ores"
+  ],
+  "SubCategory": "Ore",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Aequalis_Ore.png",
+  "PlayerAnimationsId": "Block",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "CubeWithModel",
+    "CustomModel": "Resources/AxoTales/Ores/Aequalis/Veins.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/AxoTales/Ores/Aequalis/Veins_Atlas.png",
+        "Weight": 1
+      }
+    ],
+    "Group": "Stone",
+    "Flags": {},
+    "RandomRotation": "YawStep90",
+    "Textures": [
+      {
+        "Weight": 1,
+        "All": "BlockTextures/Rock_Basalt.png"
+      }
+    ],
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "OreAdamantite",
+        "Quality": 4,
+        "DropList": {
+          "Container": {
+            "Type": "Multiple",
+            "Containers": [
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Axo_Aequalis_Ore"
+                }
+              },
+              {
+                "Type": "Single",
+                "Item": {
+                  "ItemId": "Rock_Magma_Cooled"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "BlockSoundSetId": "Ore",
+    "PhysicalMaterialId": "Stone",
+    "BlockParticleSetId": "Ore",
+    "ParticleColor": "#efd88e",
+    "TextureComputedColor": "#5E0B19",
+    "Particles": [
+      {
+        "SystemId": "AxoTales_Aequalis_Ore_Motes",
+        "Scale": 0.35
+      }
+    ]
+  },
+  "MaxStack": 100,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "Tags": {
+    "Type": [
+      "Ore"
+    ],
+    "Family": [
+      "Aequalis"
+    ]
+  }
+}

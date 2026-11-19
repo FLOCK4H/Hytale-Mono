@@ -1,0 +1,2355 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "830045",
+      "name": "MineralCluster",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": false
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "830011",
+          "name": "MainCleavage",
+          "position": {
+            "x": 0.0,
+            "y": 17.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.004258530845180439,
+            "y": 0.06962636385921277,
+            "z": -0.06089982836083883,
+            "w": 0.9957033922189907
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "830001",
+              "name": "MainCleavageSurface0",
+              "position": {
+                "x": -1.7763568394002505e-15,
+                "y": -14.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.7071067811865475,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 176,
+                    "y": 168
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 93,
+                      "y": 1034
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830002",
+              "name": "MainCleavageSurface1",
+              "position": {
+                "x": 3.552713678800501e-15,
+                "y": 13.998947930046427,
+                "z": 0.009564272305108229
+              },
+              "orientation": {
+                "x": -0.4289206474121879,
+                "y": -0.5118939398793936,
+                "z": -0.48781614806682233,
+                "w": 0.562162857385215
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12428394766156464,
+                  "y": 0.12444969763593616,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 172,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 245,
+                      "y": 669
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830003",
+              "name": "MainCleavageSurface2",
+              "position": {
+                "x": -1.4440717628705126,
+                "y": -0.18155148205928207,
+                "z": -10.5
+              },
+              "orientation": {
+                "x": 0.9968552131369695,
+                "y": 0.0792444574821945,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12464983109798425,
+                  "y": 0.12481828004533718,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 169,
+                    "y": 239
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 196,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830004",
+              "name": "MainCleavageSurface3",
+              "position": {
+                "x": 8.80347668085574,
+                "y": 1.105691217447065,
+                "z": -8.396681350092248
+              },
+              "orientation": {
+                "x": 0.9280825437866553,
+                "y": 0.01845437591133922,
+                "z": 0.37184345945429537,
+                "w": 0.00739388864372374
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12353484169253039,
+                  "y": 0.12470872091640886,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 59,
+                    "y": 244
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830005",
+              "name": "MainCleavageSurface4",
+              "position": {
+                "x": 11.0,
+                "y": 0.5417850508842985,
+                "z": -0.07531864440272718
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": -0.03871577218837015,
+                "z": 0.7060460955092509,
+                "w": -0.03871577218837015
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12483622438133576,
+                  "y": 0.12456960761852567,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 127,
+                    "y": 243
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 65,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830006",
+              "name": "MainCleavageSurface5",
+              "position": {
+                "x": 8.879898852599311,
+                "y": 0.027325851058090933,
+                "z": 7.817799685070948
+              },
+              "orientation": {
+                "x": 0.30428502856545914,
+                "y": -0.029262233532542526,
+                "z": 0.947759061545301,
+                "w": -0.09114331757389035
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12473003205710935,
+                  "y": 0.12460391228403069,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 87,
+                    "y": 229
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 196,
+                      "y": 245
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830007",
+              "name": "MainCleavageSurface6",
+              "position": {
+                "x": -0.35458749121231437,
+                "y": -1.1606556667922217,
+                "z": 9.960651529075031
+              },
+              "orientation": {
+                "x": 0.036513061607391165,
+                "y": -0.003039062689388359,
+                "z": 0.9958849620173763,
+                "w": -0.08288970296528898
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432360984837358,
+                  "y": 0.12446394770935816,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 151,
+                    "y": 222
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 287,
+                      "y": 245
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830008",
+              "name": "MainCleavageSurface7",
+              "position": {
+                "x": -9.350105133733726,
+                "y": -1.1934984229939953,
+                "z": 7.874832741787255
+              },
+              "orientation": {
+                "x": -0.48364294808156955,
+                "y": -0.0019303268622802236,
+                "z": 0.8752562877029911,
+                "w": 0.0034933430338113833
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12318570540523706,
+                  "y": 0.12457127384904325,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 52,
+                    "y": 206
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 250
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830009",
+              "name": "MainCleavageSurface8",
+              "position": {
+                "x": -11.0,
+                "y": -1.1604649491157009,
+                "z": -1.1253186444027268
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": 0.0387157721883702,
+                "z": -0.7060460955092509,
+                "w": -0.0387157721883702
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1248544422189807,
+                  "y": 0.12447373528481276,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 124,
+                    "y": 216
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 65,
+                      "y": 249
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830010",
+              "name": "MainCleavageSurface9",
+              "position": {
+                "x": -10.43683500458386,
+                "y": -0.4694966271773371,
+                "z": -8.962699759600763
+              },
+              "orientation": {
+                "x": 0.8129199527267218,
+                "y": 0.06326584289438944,
+                "z": -0.5771835212659594,
+                "w": -0.044919554324087584
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12396688076233958,
+                  "y": 0.12494966414954387,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 61,
+                    "y": 218
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 369,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "830022",
+          "name": "LeftFracture",
+          "position": {
+            "x": -10.0,
+            "y": 11.0,
+            "z": 3.0
+          },
+          "orientation": {
+            "x": 0.09370900570973766,
+            "y": -0.1518558373586093,
+            "z": 0.1652846131955258,
+            "w": 0.969968774523084
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "830012",
+              "name": "LeftFractureSurface0",
+              "position": {
+                "x": 0.0,
+                "y": -10.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.7071067811865475,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 120,
+                    "y": 104
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 128,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830013",
+              "name": "LeftFractureSurface1",
+              "position": {
+                "x": 1.7763568394002505e-15,
+                "y": 10.499282679577101,
+                "z": 0.00652109475348131
+              },
+              "orientation": {
+                "x": -0.4289206474121882,
+                "y": -0.5118939398793932,
+                "z": -0.4878161480668225,
+                "w": 0.5621628573852148
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1249904213191301,
+                  "y": 0.12449606488542792,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 106,
+                    "y": 122
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 128,
+                      "y": 1206
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830014",
+              "name": "LeftFractureSurface2",
+              "position": {
+                "x": -0.9845943837753506,
+                "y": -0.16003510140405552,
+                "z": -6.5
+              },
+              "orientation": {
+                "x": 0.9968552131369695,
+                "y": 0.07924445748219446,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.124179864418569,
+                  "y": 0.12445635155646789,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 118,
+                    "y": 178
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 245,
+                      "y": 852
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830015",
+              "name": "LeftFractureSurface3",
+              "position": {
+                "x": 6.003573572653528,
+                "y": 0.7177310910315953,
+                "z": -5.196902903700275
+              },
+              "orientation": {
+                "x": 0.9366543596302264,
+                "y": 0.022872515834499688,
+                "z": 0.34940329132153153,
+                "w": 0.008532210661500604
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12365045042464187,
+                  "y": 0.12487308545731292,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 41,
+                    "y": 181
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 405,
+                      "y": 471
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830016",
+              "name": "LeftFractureSurface4",
+              "position": {
+                "x": 7.5,
+                "y": 0.3906288410236165,
+                "z": -0.046625827487403626
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": -0.03871577218837019,
+                "z": 0.7060460955092508,
+                "w": -0.03871577218837019
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1247256058420402,
+                  "y": 0.12496291428034947,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 82,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 669
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830017",
+              "name": "LeftFractureSurface5",
+              "position": {
+                "x": 6.054460264932629,
+                "y": 0.050857551331903394,
+                "z": 4.839600827793792
+              },
+              "orientation": {
+                "x": 0.2829102558932832,
+                "y": -0.027202554293273288,
+                "z": 0.9543590305457856,
+                "w": -0.09176409410018053
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12356172862817273,
+                  "y": 0.12498320432071068,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 62,
+                    "y": 171
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 93,
+                      "y": 854
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830018",
+              "name": "LeftFractureSurface6",
+              "position": {
+                "x": -0.2427874546760851,
+                "y": -0.7553764340824696,
+                "z": 6.166185830311739
+              },
+              "orientation": {
+                "x": 0.03316415235891102,
+                "y": -0.0027495581482224647,
+                "z": 0.9960288169326906,
+                "w": -0.08257829477513554
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1248492294557029,
+                  "y": 0.1244834290202075,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 105,
+                    "y": 167
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 273,
+                      "y": 1034
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830019",
+              "name": "LeftFractureSurface7",
+              "position": {
+                "x": -6.37499955000018,
+                "y": -0.7787499995000005,
+                "z": 4.87500064999974
+              },
+              "orientation": {
+                "x": -0.4641066569715966,
+                "y": 0.00014676339665130352,
+                "z": 0.8857792676252243,
+                "w": -0.00028010797097430544
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12391076187506468,
+                  "y": 0.1246474109679562,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 32,
+                    "y": 156
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 206,
+                      "y": 854
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830020",
+              "name": "LeftFractureSurface8",
+              "position": {
+                "x": -7.5,
+                "y": -0.7736211589763844,
+                "z": -0.6966258274874015
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": 0.03871577218837019,
+                "z": -0.7060460955092508,
+                "w": -0.03871577218837019
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1246612546667472,
+                  "y": 0.12456040387448925,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 80,
+                    "y": 162
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1036
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830021",
+              "name": "LeftFractureSurface9",
+              "position": {
+                "x": -7.115627680955547,
+                "y": -0.3455699457061705,
+                "z": -5.549368029515577
+              },
+              "orientation": {
+                "x": 0.8217159365231936,
+                "y": 0.06536405218654488,
+                "z": -0.5643537642176193,
+                "w": -0.04489197209935371
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12384181887085345,
+                  "y": 0.1242408818313741,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 43,
+                    "y": 164
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 159,
+                      "y": 854
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "830033",
+          "name": "RightFracture",
+          "position": {
+            "x": 8.0,
+            "y": 12.0,
+            "z": -3.0
+          },
+          "orientation": {
+            "x": -0.01750567895157839,
+            "y": 0.19657372409641327,
+            "z": -0.16038970624932478,
+            "w": 0.967123293240612
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "830023",
+              "name": "RightFractureSurface0",
+              "position": {
+                "x": 8.881784197001252e-16,
+                "y": -11.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.7071067811865475,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 112,
+                    "y": 112
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1345
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830024",
+              "name": "RightFractureSurface1",
+              "position": {
+                "x": 8.881784197001252e-16,
+                "y": 11.49933050093864,
+                "z": 0.006086355103249744
+              },
+              "orientation": {
+                "x": -0.4289206474121877,
+                "y": -0.5118939398793938,
+                "z": -0.487816148066822,
+                "w": 0.5621628573852152
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12494425490033458,
+                  "y": 0.1243504554528134,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 114,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 252,
+                      "y": 1354
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830025",
+              "name": "RightFractureSurface2",
+              "position": {
+                "x": -0.9189547581903279,
+                "y": -0.0980327613104528,
+                "z": -7.0
+              },
+              "orientation": {
+                "x": 0.9968552131369693,
+                "y": 0.07924445748219448,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12482219704539216,
+                  "y": 0.12440733982117583,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 114,
+                    "y": 194
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 287,
+                      "y": 471
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830026",
+              "name": "RightFractureSurface3",
+              "position": {
+                "x": 5.601747815230961,
+                "y": 0.7210873907615465,
+                "z": -5.598252184769039
+              },
+              "orientation": {
+                "x": 0.9237353002689591,
+                "y": 0.016324387593099433,
+                "z": 0.3826236894141862,
+                "w": 0.006761782738496871
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12374070978378526,
+                  "y": 0.12470381034785968,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 39,
+                    "y": 197
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 460
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830027",
+              "name": "RightFractureSurface4",
+              "position": {
+                "x": 7.0,
+                "y": 0.3345233672561996,
+                "z": -0.05021242960181804
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": -0.03871577218837015,
+                "z": 0.7060460955092509,
+                "w": -0.03871577218837015
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12401622751004679,
+                  "y": 0.12466640345716742,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 89,
+                    "y": 196
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 45,
+                      "y": 469
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830028",
+              "name": "RightFractureSurface5",
+              "position": {
+                "x": 5.650779271343708,
+                "y": 0.0018139733008499803,
+                "z": 5.211915546492218
+              },
+              "orientation": {
+                "x": 0.31477746479875535,
+                "y": -0.030251407485740706,
+                "z": 0.944332394396266,
+                "w": -0.09075422245722213
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12408730435734351,
+                  "y": 0.12486553083668013,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 64,
+                    "y": 186
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 138,
+                      "y": 478
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830029",
+              "name": "RightFractureSurface6",
+              "position": {
+                "x": -0.2251559388338762,
+                "y": -0.7559685773881704,
+                "z": 6.640396610679529
+              },
+              "orientation": {
+                "x": 0.038243751267407346,
+                "y": -0.003189473029498055,
+                "z": 0.995806276969203,
+                "w": -0.0830487898739401
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12434131358081602,
+                  "y": 0.12451404115704576,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 103,
+                    "y": 182
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 138,
+                      "y": 668
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830030",
+              "name": "RightFractureSurface7",
+              "position": {
+                "x": -5.950151301724163,
+                "y": -0.7769964696264342,
+                "z": 5.249747830459728
+              },
+              "orientation": {
+                "x": -0.49268994003867755,
+                "y": -0.002957240423275968,
+                "z": 0.8701842319111553,
+                "w": 0.005223049583888407
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12398282833730018,
+                  "y": 0.12496192594759577,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 35,
+                    "y": 172
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 245,
+                      "y": 478
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830031",
+              "name": "RightFractureSurface8",
+              "position": {
+                "x": -7.0,
+                "y": -0.7469766327438006,
+                "z": -0.7502124296018169
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": 0.038715772188370155,
+                "z": -0.7060460955092509,
+                "w": -0.038715772188370155
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12414874473547638,
+                  "y": 0.12449488075819255,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 87,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 853
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830032",
+              "name": "RightFractureSurface9",
+              "position": {
+                "x": -6.641793537172489,
+                "y": -0.2864788332145132,
+                "z": -5.974619388482533
+              },
+              "orientation": {
+                "x": 0.8088468927637494,
+                "y": 0.06229435829067165,
+                "z": -0.5829838555732214,
+                "w": -0.04489923309548139
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12332399022485341,
+                  "y": 0.12496425805492171,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 46,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 88,
+                      "y": 669
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "830044",
+          "name": "FrontFracture",
+          "position": {
+            "x": 1.0,
+            "y": 9.0,
+            "z": 10.0
+          },
+          "orientation": {
+            "x": 0.10925400611220526,
+            "y": -0.09837274895917053,
+            "z": 0.06267534879327982,
+            "w": 0.9871464759924389
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "830034",
+              "name": "FrontFractureSurface0",
+              "position": {
+                "x": 8.881784197001252e-16,
+                "y": -8.5,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.7071067811865475,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7071067811865476
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 104,
+                    "y": 88
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1461
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830035",
+              "name": "FrontFractureSurface1",
+              "position": {
+                "x": -8.881784197001252e-16,
+                "y": 8.499378322300176,
+                "z": 0.005651615453019718
+              },
+              "orientation": {
+                "x": -0.42892064741218733,
+                "y": -0.5118939398793941,
+                "z": -0.4878161480668217,
+                "w": 0.5621628573852154
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12460198025421651,
+                  "y": 0.12418286723791742,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 90,
+                    "y": 106
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 118,
+                      "y": 1440
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830036",
+              "name": "FrontFractureSurface2",
+              "position": {
+                "x": -0.8533151326053041,
+                "y": -0.14603042121684773,
+                "z": -5.5
+              },
+              "orientation": {
+                "x": 0.9968552131369695,
+                "y": 0.07924445748219446,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12383717827585564,
+                  "y": 0.1241383122704112,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 101,
+                    "y": 145
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 273,
+                      "y": 1205
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830037",
+              "name": "FrontFractureSurface3",
+              "position": {
+                "x": 5.203384167323286,
+                "y": 0.6147264788900948,
+                "z": -4.397136473803373
+              },
+              "orientation": {
+                "x": 0.9386793710443617,
+                "y": 0.02396207545933276,
+                "z": 0.3438456236056837,
+                "w": 0.008777496377739549
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12401120412560382,
+                  "y": 0.12418264185227916,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 35,
+                    "y": 148
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 206,
+                      "y": 478
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830038",
+              "name": "FrontFractureSurface4",
+              "position": {
+                "x": 6.5,
+                "y": 0.3428397885584431,
+                "z": -0.039452623258570796
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": -0.03871577218837013,
+                "z": 0.7060460955092509,
+                "w": -0.03871577218837013
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424089256557434,
+                  "y": 0.12443987865496443,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 69,
+                    "y": 147
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 367,
+                      "y": 852
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830039",
+              "name": "FrontFractureSurface5",
+              "position": {
+                "x": 5.247167826637642,
+                "y": 0.05058952939077166,
+                "z": 4.095066571556881
+              },
+              "orientation": {
+                "x": 0.27770981890304547,
+                "y": -0.026693564643391527,
+                "z": 0.9558884427392661,
+                "w": -0.09188033047920308
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12288684474130451,
+                  "y": 0.12484424704330388,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 52,
+                    "y": 139
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 382,
+                      "y": 1003
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830040",
+              "name": "FrontFractureSurface6",
+              "position": {
+                "x": -0.21062391743572362,
+                "y": -0.6473809211098178,
+                "z": 5.217555402910018
+              },
+              "orientation": {
+                "x": 0.03238191997966356,
+                "y": -0.002682232199511004,
+                "z": 0.9960608223022248,
+                "w": -0.08250487963432346
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12402917065037802,
+                  "y": 0.12479060777926426,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 90,
+                    "y": 135
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1206
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830041",
+              "name": "FrontFractureSurface7",
+              "position": {
+                "x": -5.524992257540585,
+                "y": -0.6712499622803234,
+                "z": 4.12501091885302
+              },
+              "orientation": {
+                "x": -0.45911348584408884,
+                "y": 0.0006468864840949846,
+                "z": 0.8883765090692937,
+                "w": -0.00125171395357262
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12197633563277965,
+                  "y": 0.12434077614427162,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 28,
+                    "y": 126
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 96,
+                      "y": 1206
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830042",
+              "name": "FrontFractureSurface8",
+              "position": {
+                "x": -6.5,
+                "y": -0.6669102114415582,
+                "z": -0.5894526232585714
+              },
+              "orientation": {
+                "x": 0.7060460955092509,
+                "y": 0.03871577218837017,
+                "z": -0.7060460955092509,
+                "w": -0.03871577218837017
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465385805037843,
+                  "y": 0.12431504095777225,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 67,
+                    "y": 131
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 378,
+                      "y": 1282
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "830043",
+              "name": "FrontFractureSurface9",
+              "position": {
+                "x": -6.166789633629709,
+                "y": -0.3046437544635072,
+                "z": -4.695841699247662
+              },
+              "orientation": {
+                "x": 0.8239656541185729,
+                "y": 0.06590037954516952,
+                "z": -0.5610031504538046,
+                "w": -0.04486876407547606
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12223001886259187,
+                  "y": 0.12467501114568177,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 36,
+                    "y": 132
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 382,
+                      "y": 1146
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

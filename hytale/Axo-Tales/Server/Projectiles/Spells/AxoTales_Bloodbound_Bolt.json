@@ -1,0 +1,20 @@
+{
+  "Appearance": "AxoTales_Bloodbound_Bolt",
+  "Radius": 0.1,
+  "Height": 0.2,
+  "VerticalCenterShot": 0.1,
+  "HorizontalCenterShot": 0.1,
+  "DepthShot": 1,
+  "PitchAdjustShot": false,
+  "SticksVertically": true,
+  "MuzzleVelocity": 22,
+  "TerminalVelocity": 80,
+  "Gravity": 0,
+  "Bounciness": 0,
+  "ImpactSlowdown": 0,
+  "TimeToLive": 3,
+  "Damage": 10,
+  "DeadTimeMiss": 0,
+  "DeadTime": 0,
+  "DeathEffectsOnHit": false
+}

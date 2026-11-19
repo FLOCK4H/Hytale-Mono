@@ -8,12 +8,12 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Tracks short-lived Taunt Book effects (fall damage immunity window + pending slam).
- *
- * <p>State is keyed by player UUID and is safe to access from multiple threads, but intended to be
- * mutated on the world thread.</p>
- */
+
+
+
+
+
+
 public final class TauntBookEffectState {
 
     public static final double STACK_DAMAGE_MULTIPLIER = 1.5d;

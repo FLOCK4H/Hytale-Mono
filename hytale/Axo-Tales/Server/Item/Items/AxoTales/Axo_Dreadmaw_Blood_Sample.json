@@ -1,0 +1,8 @@
+{
+  "Parent": "Axo_Blood_Droplet",
+  "Quality": "Rare",
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Blood_Dreadmaw.name",
+    "Description": "server.items.flock4h.AxoTales_Blood_Dreadmaw.description"
+  }
+}

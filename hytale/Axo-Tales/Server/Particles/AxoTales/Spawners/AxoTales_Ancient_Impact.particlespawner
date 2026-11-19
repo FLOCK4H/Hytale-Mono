@@ -1,0 +1,127 @@
+{
+  "RenderMode": "BlendAdd",
+  "Shape": "Cube",
+  "EmitOffset": {
+    "X": {
+      "Min": -0.1,
+      "Max": 0.1
+    },
+    "Y": {
+      "Min": -0.1,
+      "Max": 0.1
+    },
+    "Z": {
+      "Min": -0.1,
+      "Max": 0.1
+    }
+  },
+  "ParticleRotationInfluence": "BillboardY",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": false,
+  "TrailSpawnerPositionMultiplier": 0,
+  "TrailSpawnerRotationMultiplier": 0,
+  "MaxConcurrentParticles": 18,
+  "ParticleLifeSpan": {
+    "Min": 0.35,
+    "Max": 0.55
+  },
+  "SpawnRate": {
+    "Min": 144,
+    "Max": 144
+  },
+  "TotalParticles": {
+    "Min": 18,
+    "Max": 18
+  },
+  "InitialVelocity": {
+    "Speed": {
+      "Min": 3,
+      "Max": 6
+    },
+    "Yaw": {
+      "Min": 0,
+      "Max": 360
+    },
+    "Pitch": {
+      "Min": -30,
+      "Max": 75
+    }
+  },
+  "Attractors": [
+    {
+      "Position": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "RadialAxis": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "Radius": 0,
+      "RadialAcceleration": 0,
+      "RadialTangentAcceleration": 0,
+      "LinearAcceleration": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      }
+    }
+  ],
+  "Particle": {
+    "Texture": "Particles/Textures/Basic/Glow_Star.png",
+    "FrameSize": {
+      "Width": 32,
+      "Height": 32
+    },
+    "ScaleRatioConstraint": "None",
+    "UVOption": "RandomFlipU",
+    "Animation": {
+      "0": {
+        "Color": "#ebe0ff",
+        "Opacity": 0.8,
+        "Scale": {
+          "X": {
+            "Min": 0.5,
+            "Max": 0.7
+          },
+          "Y": {
+            "Min": 0.16,
+            "Max": 0.24
+          }
+        }
+      },
+      "55": {
+        "Color": "#aa83d0",
+        "Opacity": 0.5
+      },
+      "100": {
+        "Opacity": 0
+      }
+    },
+    "InitialAnimationFrame": {
+      "Scale": {
+        "X": {
+          "Min": 0.18,
+          "Max": 0.28
+        },
+        "Y": {
+          "Min": 0.18,
+          "Max": 0.28
+        }
+      },
+      "Opacity": 1,
+      "Color": "#ebe0ff",
+      "FrameIndex": {
+        "Min": 0,
+        "Max": 0
+      }
+    },
+    "UseSpriteBlending": false,
+    "SoftParticlesFadeFactor": 1.02,
+    "SoftParticles": "Disable"
+  },
+  "SpawnBurst": true
+}

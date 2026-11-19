@@ -4,7 +4,7 @@ import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -13,12 +13,12 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Queues Taunt Book slams for processing on the world thread without calling {@code Store.forEachChunk(...)} from within
- * an ECS system (which can trigger "Store is currently processing!" crashes).
- *
- * <p>Queues are tracked per {@link World} instance to avoid cross-world interference.</p>
- */
+
+
+
+
+
+
 public final class TauntBookSlamQueue {
 
     public static final class SlamRequest {

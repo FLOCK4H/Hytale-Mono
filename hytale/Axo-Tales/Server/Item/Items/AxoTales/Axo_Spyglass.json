@@ -1,0 +1,51 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.AxoTales_Spyglass.name",
+    "Description": "server.items.flock4h.AxoTales_Spyglass.description"
+  },
+  "Model": "Items/AxoTales/Scout/Spyglass.blockymodel",
+  "Texture": "Items/AxoTales/Remaster292/Items_AxoTales_Scout_Spyglass.png",
+  "Icon": "Icons/ItemsGenerated/AxoTales_Spyglass.png",
+  "Quality": "Rare",
+  "MaxStack": 1,
+  "Categories": [
+    "Items.Tools"
+  ],
+  "PlayerAnimationsId": "Axo_Spyglass",
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "Recipe": {
+    "TimeSeconds": 6,
+    "KnowledgeRequired": false,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Bar_Copper",
+        "Quantity": 6
+      },
+      {
+        "ItemId": "Axo_Revel_Bar",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Axo_Arcane_Matter",
+        "Quantity": 2
+      },
+      {
+        "ItemId": "Ingredient_Crystal_Void",
+        "Quantity": 1
+      }
+    ],
+    "OutputQuantity": 1,
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Axo_Arcane_Workbench",
+        "Categories": [
+          "Axo_Workbench_Items"
+        ]
+      }
+    ]
+  },
+  "Interactions": {
+    "Secondary": "AxoSpyglass_Use"
+  }
+}

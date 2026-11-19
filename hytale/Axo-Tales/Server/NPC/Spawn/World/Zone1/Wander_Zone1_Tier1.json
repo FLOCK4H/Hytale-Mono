@@ -1,0 +1,55 @@
+{
+  "Environments": [
+    "Env_Zone1_Plains"
+  ],
+  "NPCs": [
+    {
+      "Weight": 3,
+      "SpawnBlockSet": "Soil",
+      "Id": "Skeleton_Fighter",
+      "Flock": {
+        "Size": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "Weight": 1,
+      "SpawnBlockSet": "Soil",
+      "Id": "Skeleton_Fighter_Wander",
+      "Flock": {
+        "Size": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "Id": "Chiro",
+      "Weight": 0.0004,
+      "SpawnBlockSet": "Soil",
+      "Flock": {
+        "Size": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "Id": "Dreadmaw",
+      "Weight": 0.00036,
+      "SpawnBlockSet": "Soil",
+      "Flock": {
+        "Size": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "DayTimeRange": [
+    0,
+    24
+  ]
+}

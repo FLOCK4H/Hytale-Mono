@@ -1,6 +1,6 @@
 # Mod compatibility
 
-AxoTales uses Hytale **0.7.6**. The installed
+AxoTales uses Hytale **0.7.7**. The installed
 asset packs listed below have **no conflicting asset IDs, Common asset paths
 or translation keys** with AxoTales. Matching filenames in different folders were
 checked too. No vanilla textures or models are replaced by the AxoTales JAR.
@@ -9,8 +9,8 @@ checked too. No vanilla textures or models are replaced by the AxoTales JAR.
 | --- | --- |
 | Arcane Power | 3.2.1 |
 | BetterMap | 1.3.10 |
-| Brightness Tweaks | 0.4.14 |
-| CarryEverything | 0.1.10 |
+| Brightness Tweaks | 0.4.16 |
+| CarryEverything | 0.1.12 |
 | Extended Backpacks | 4.3.0 |
 | EyeSpy | 2026.9.1 |
 | LuckyMining | 1.0.8 |
@@ -26,11 +26,7 @@ combination will behave identically in live gameplay.
 
 ## Shared systems
 
-Axo gear composes its owned modifiers with native Mana, health and stamina;
-removing gear preserves foreign modifiers and the current resource amount.
-Native inventory receipts preserve other mods' stack metadata in the Astral
-Satchel, crafting and soul cargo paths. A separate private mana system needs its
-own integration.
+Axo gear adds to Hytale's Mana, health and stamina stats. Removing it leaves other mods' bonuses and your current resources intact. The Astral Satchel, crafting and soul cargo preserve item data added by other mods. Mods with a separate mana system need their own integration.
 
 With `workarounds.disableWorldMap: false` (the default), AxoTales preserves the
 world's map provider and compass settings. Setting this workaround to `true` explicitly

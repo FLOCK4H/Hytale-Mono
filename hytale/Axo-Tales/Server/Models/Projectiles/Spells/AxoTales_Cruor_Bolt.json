@@ -1,0 +1,25 @@
+{
+  "Model": "NPC/AxoTales/Souls/Cruor_Bolt.blockymodel",
+  "Texture": "NPC/AxoTales/Souls/Cruor/Atlas.png",
+  "MinScale": 1,
+  "MaxScale": 1,
+  "HitBox": {
+    "Min": {
+      "X": -0.08,
+      "Y": -0.08,
+      "Z": -0.08
+    },
+    "Max": {
+      "X": 0.08,
+      "Y": 0.08,
+      "Z": 0.08
+    }
+  },
+  "Particles": [
+    {
+      "SystemId": "AxoTales_Cruor_Soul_Motes",
+      "TargetNodeName": "SpellCore",
+      "Scale": 0.4
+    }
+  ]
+}

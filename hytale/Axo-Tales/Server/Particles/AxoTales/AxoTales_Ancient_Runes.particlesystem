@@ -1,0 +1,12 @@
+{
+  "BoundingRadius": 3,
+  "CullDistance": 64,
+  "Spawners": [
+    {
+      "SpawnerId": "AxoTales_Ancient_Runes"
+    },
+    {
+      "SpawnerId": "AxoTales_Ancient_Lightning"
+    }
+  ]
+}

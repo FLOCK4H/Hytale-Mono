@@ -1,0 +1,98 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.ancient_armor_boots.name",
+    "Description": "server.items.flock4h.ancient_armor_boots.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "ItemLevel": 40,
+  "PlayerAnimationsId": "Block",
+  "ItemSoundSetId": "ISS_Armor_Heavy",
+  "Categories": [],
+  "Icon": "Icons/ItemsGenerated/AxoTales_Ancient_Boots.png",
+  "Model": "Items/AxoTales/AncientArmor/Ancient_Legs.blockymodel",
+  "Texture": "Items/AxoTales/AncientArmor/Ancient_Legs_Atlas.png",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "EquipItem"
+        }
+      ]
+    }
+  },
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "MovementSettings": {
+      "ExtraJumpCount": 1
+    },
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes"
+    ],
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.2,
+          "CalculationType": "Percent"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.2,
+          "CalculationType": "Percent"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 40,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Mana": [
+        {
+          "Amount": 35,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Stamina": [
+        {
+          "Amount": 25,
+          "CalculationType": "Additive"
+        }
+      ]
+    }
+  },
+  "MaxDurability": 900,
+  "DurabilityLossOnHit": 0.5,
+  "Tags": {
+    "Type": [
+      "Armor"
+    ],
+    "Family": [
+      "Iron"
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.572,
+    "Rotation": [
+      15,
+      35,
+      0
+    ],
+    "Translation": [
+      0,
+      0
+    ]
+  },
+  "$AxoLegacyItem": "Axo_Ancient_Boots"
+}

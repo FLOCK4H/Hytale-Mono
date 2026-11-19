@@ -7,7 +7,7 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.tick.TickingSystem;
 import com.hypixel.hytale.math.vector.Transform;
-import com.hypixel.hytale.math.vector.Vector3d;
+import org.joml.Vector3d;
 import com.hypixel.hytale.protocol.GameMode;
 import com.hypixel.hytale.server.core.asset.type.attitude.Attitude;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
@@ -20,6 +20,7 @@ import com.hypixel.hytale.server.core.util.TargetUtil;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
 import com.hypixel.hytale.server.npc.role.Role;
 import com.hypixel.hytale.server.npc.role.support.MarkedEntitySupport;
+import com.hypixel.hytale.server.npc.role.support.WorldSupport;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -29,11 +30,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.BiConsumer;
 
-/**
- * Best-effort: keeps Rune Knights focused on nearby players by forcing the default marked target.
- *
- * <p>This helps reliability for placeholder/variant roles where default AI sensors may be finicky.</p>
- */
+
+
+
+
+
 public final class RuneKnightAggroSystem extends TickingSystem<EntityStore> {
 
     private static final long TICK_INTERVAL_NANOS = 500_000_000L;
@@ -119,6 +120,7 @@ public final class RuneKnightAggroSystem extends TickingSystem<EntityStore> {
                         continue;
                     }
                     double d2 = distSq(knightPos, player.position);
+                    if(ArcaneArmorSets.concealed(store,player.playerEntityRef,d2))continue;
                     if (d2 < nearestD2) {
                         nearestD2 = d2;
                         nearest = player;
@@ -138,25 +140,25 @@ public final class RuneKnightAggroSystem extends TickingSystem<EntityStore> {
                     continue;
                 }
                 Role role = npc.getRole();
-                if (role == null || role.getMarkedEntitySupport() == null || role.getWorldSupport() == null) {
+                if (role == null || MarkedEntitySupport.get(knightRef, store) == null || WorldSupport.get(knightRef, store) == null) {
                     continue;
                 }
 
-                MarkedEntitySupport marked = role.getMarkedEntitySupport();
+                MarkedEntitySupport marked = MarkedEntitySupport.get(knightRef, store);
                 Ref<EntityStore> currentTarget = marked.getMarkedEntityRef(MarkedEntitySupport.DEFAULT_TARGET_SLOT);
                 if (currentTarget != null && currentTarget.isValid() && currentTarget.equals(nearest.playerEntityRef)) {
                     continue;
                 }
 
                 try {
-                    role.getWorldSupport().overrideAttitude(nearest.playerEntityRef, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
+                    WorldSupport.get(knightRef, store).overrideAttitude(nearest.playerEntityRef, Attitude.HOSTILE, TARGET_HOSTILE_OVERRIDE_SECONDS);
                 } catch (Throwable ignored) {
-                    // Best effort.
+
                 }
 
                 marked.setMarkedEntity(MarkedEntitySupport.DEFAULT_TARGET_SLOT, nearest.playerEntityRef);
-                role.getWorldSupport().requestNewPath();
-                role.notifySensorMatch();
+                WorldSupport.get(knightRef, store).requestNewPath();
+                role.acquireExecutionSupport(knightRef, store).notifySensorMatch();
 
                 long nextDebugAt = nextDebugAtNanosByKnight.getOrDefault(knightUuid, 0L);
                 if (nextDebugAt > nowNanos) {
@@ -196,6 +198,7 @@ public final class RuneKnightAggroSystem extends TickingSystem<EntityStore> {
                 if (playerEntityRef == null || !playerEntityRef.isValid()) {
                     continue;
                 }
+                if (InvisibilityConcealment.hidden(store, playerEntityRef)) continue;
                 PlayerRef playerRef = chunk.getComponent(i, PlayerRef.getComponentType());
                 Player player = chunk.getComponent(i, Player.getComponentType());
                 TransformComponent transform = chunk.getComponent(i, TransformComponent.getComponentType());

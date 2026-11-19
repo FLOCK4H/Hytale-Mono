@@ -1,0 +1,6126 @@
+{
+  "lod": "auto",
+  "nodes": [
+    {
+      "id": "640384",
+      "name": "R-Thigh",
+      "position": {
+        "x": -7.92217871081834,
+        "y": 13.2316,
+        "z": -2.865079030887035
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": -0.019200083285561817,
+        "z": 0.0,
+        "w": 0.9998156630099371
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "640383",
+          "name": "RBreeches",
+          "position": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640377",
+              "name": "RBreechesSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 7.1
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12485714285714287,
+                  "y": 0.12474576271186441,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 84,
+                    "y": 177
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 146,
+                      "y": 990
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640378",
+              "name": "RBreechesSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -7.1
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12391304347826088,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 192
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 198,
+                      "y": 423
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640379",
+              "name": "RBreechesSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -11.52,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6828427107020817,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7305654196860355
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12391304347826088,
+                  "y": 0.12484573429436394,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 130,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640380",
+              "name": "RBreechesSurface3",
+              "position": {
+                "x": 5.472,
+                "y": 0.0,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.491910527644304,
+                "y": 0.491910527644304,
+                "z": 0.5079606606743308,
+                "w": 0.5079606606743307
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12462561231173591,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 192,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 502
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640381",
+              "name": "RBreechesSurface4",
+              "position": {
+                "x": 0.0,
+                "y": 11.52,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6828427107020817,
+                "z": 0.7305654196860355,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12391304347826088,
+                  "y": 0.12484573429436394,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640382",
+              "name": "RBreechesSurface5",
+              "position": {
+                "x": -5.472,
+                "y": 0.0,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.491910527644304,
+                "y": -0.491910527644304,
+                "z": -0.5079606606743308,
+                "w": 0.5079606606743307
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12462561231173591,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 192,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 384
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "640401",
+      "name": "R-Calf",
+      "position": {
+        "x": -7.92217871081834,
+        "y": -8.7684,
+        "z": -2.865079030887035
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": -0.019200083285561817,
+        "z": 0.0,
+        "w": 0.9998156630099371
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "640391",
+          "name": "RBootLeather",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640385",
+              "name": "RBootLeatherSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 7.2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12409302325581396,
+                  "y": 0.12452525252525254,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 86,
+                    "y": 198
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 221,
+                      "y": 221
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640386",
+              "name": "RBootLeatherSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -7.2
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12473118279569892,
+                  "y": 0.12465116279069768,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 93,
+                    "y": 215
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 221,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640387",
+              "name": "RBootLeatherSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -12.864,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6803532122046941,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7328843746749922
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12473118279569892,
+                  "y": 0.12448144043623398,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 93,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 131,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640388",
+              "name": "RBootLeatherSurface3",
+              "position": {
+                "x": 5.5680000000000005,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.49188273309608543,
+                "y": 0.49188273309608543,
+                "z": 0.5079875755192494,
+                "w": 0.5079875755192494
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465116279069768,
+                  "y": 0.12420235875989634,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 215,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640389",
+              "name": "RBootLeatherSurface4",
+              "position": {
+                "x": 0.0,
+                "y": 12.864,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6803532122046941,
+                "z": 0.7328843746749922,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12473118279569892,
+                  "y": 0.12448144043623398,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 93,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640390",
+              "name": "RBootLeatherSurface5",
+              "position": {
+                "x": -5.5680000000000005,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.49188273309608543,
+                "y": -0.49188273309608543,
+                "z": -0.5079875755192494,
+                "w": 0.5079875755192494
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465116279069768,
+                  "y": 0.12420235875989634,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 215,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 122
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640400",
+          "name": "RGreave",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 7.1
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640392",
+              "name": "RGreaveSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.673333333333332,
+                "z": 2.25
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12404494382022473,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 89,
+                    "y": 184
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 198,
+                      "y": 619
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640393",
+              "name": "RGreaveSurface1",
+              "position": {
+                "x": 0.4224852071005918,
+                "y": 0.07396449704141972,
+                "z": -2.25
+              },
+              "orientation": {
+                "x": 0.8320502943378437,
+                "y": 0.5547001962252291,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12490842490842492,
+                  "y": 0.12452619843924191,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 210,
+                    "y": 138
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 242
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640394",
+              "name": "RGreaveSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -11.413333333333334,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.611430625120697,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7912980416154926
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1236842105263158,
+                  "y": 0.12238033646320405,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 76,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 234,
+                      "y": 1114
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640395",
+              "name": "RGreaveSurface3",
+              "position": {
+                "x": 5.122922697988181,
+                "y": -2.4844631319676123,
+                "z": -8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.49008817958108447,
+                "y": 0.45770165030812976,
+                "z": 0.5063382961961422,
+                "w": 0.5421663078293419
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12447334480695588,
+                  "y": 0.12224232595047825,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 153,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1171
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640396",
+              "name": "RGreaveSurface4",
+              "position": {
+                "x": 4.510000000000001,
+                "y": 9.826666666666666,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.36646899197148697,
+                "y": 0.5497034879572305,
+                "z": 0.6246068904802022,
+                "w": 0.4164045936534682
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12287749287749286,
+                  "y": 0.12261530636715498,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 226,
+                      "y": 1404
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640397",
+              "name": "RGreaveSurface5",
+              "position": {
+                "x": 0.0,
+                "y": 12.586666666666668,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6400467613736539,
+                "z": 0.7683359572837242,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12365677946321957,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 56,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1363
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640398",
+              "name": "RGreaveSurface6",
+              "position": {
+                "x": -4.51,
+                "y": 9.826666666666666,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.36646899197148697,
+                "y": 0.5497034879572305,
+                "z": 0.6246068904802022,
+                "w": -0.4164045936534682
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12287749287749287,
+                  "y": 0.12261530636715498,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1445
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640399",
+              "name": "RGreaveSurface7",
+              "position": {
+                "x": -5.122922697988181,
+                "y": -2.4844631319676123,
+                "z": -8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.4900881795810844,
+                "y": -0.4577016503081297,
+                "z": -0.5063382961961422,
+                "w": 0.542166307829342
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12447334480695588,
+                  "y": 0.12224232595047825,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 153,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 159,
+                      "y": 1171
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640495",
+          "name": "RKneeCrystal",
+          "position": {
+            "x": 0.0,
+            "y": 8.0,
+            "z": 9.5
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "640435",
+      "name": "R-Foot",
+      "position": {
+        "x": -7.99896488681834,
+        "y": -21.7684,
+        "z": -0.866553590887035
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": -0.019200083285561817,
+        "z": 0.0,
+        "w": 0.9998156630099371
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "640412",
+          "name": "RSole",
+          "position": {
+            "x": 0.0,
+            "y": -2.5,
+            "z": 0.5
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640402",
+              "name": "RSoleSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 11.15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432432432432433,
+                  "y": 0.12384615384615386,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 111,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 117,
+                      "y": 1450
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640403",
+              "name": "RSoleSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -11.15
+              },
+              "orientation": {
+                "x": 0.7071067811865476,
+                "y": 0.7071067811865475,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 28,
+                    "y": 120
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640404",
+              "name": "RSoleSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -1.6800000000000002,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.7048837126825963,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.709322882469471
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12421052631578948,
+                  "y": 0.12458346065672232,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 114,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 988
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640405",
+              "name": "RSoleSurface3",
+              "position": {
+                "x": 7.0068,
+                "y": -1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6459254390799217,
+                "y": 0.26755107714869997,
+                "z": 0.2736110935676706,
+                "w": 0.6605556129068044
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183045,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 278,
+                      "y": 807
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640406",
+              "name": "RSoleSurface4",
+              "position": {
+                "x": 7.2,
+                "y": 0.0,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49323014506478674,
+                "y": 0.49323014506478674,
+                "z": 0.5066794094882577,
+                "w": 0.5066794094882576
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12090909090909091,
+                  "y": 0.12462609099762538,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 160,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640407",
+              "name": "RSoleSurface5",
+              "position": {
+                "x": 7.0068,
+                "y": 1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.26755107714869997,
+                "y": 0.6459254390799217,
+                "z": 0.6605556129068044,
+                "w": 0.2736110935676706
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183047,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 309,
+                      "y": 606
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640408",
+              "name": "RSoleSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 1.6800000000000002,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7048837126825963,
+                "z": 0.709322882469471,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12421052631578948,
+                  "y": 0.12458346065672232,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 114,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 160,
+                      "y": 807
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640409",
+              "name": "RSoleSurface7",
+              "position": {
+                "x": -7.0068,
+                "y": 1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.26755107714869997,
+                "y": 0.6459254390799217,
+                "z": 0.6605556129068044,
+                "w": -0.2736110935676706
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183045,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 186,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640410",
+              "name": "RSoleSurface8",
+              "position": {
+                "x": -7.2,
+                "y": 0.0,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49323014506478674,
+                "y": -0.49323014506478674,
+                "z": -0.5066794094882577,
+                "w": 0.5066794094882576
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12090909090909091,
+                  "y": 0.12462609099762538,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 120,
+                      "y": 988
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640411",
+              "name": "RSoleSurface9",
+              "position": {
+                "x": -7.0068,
+                "y": -1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6459254390799217,
+                "y": -0.26755107714869997,
+                "z": -0.2736110935676706,
+                "w": 0.6605556129068044
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183047,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 309,
+                      "y": 423
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640423",
+          "name": "RSabatons",
+          "position": {
+            "x": 0.0,
+            "y": 0.7,
+            "z": 1.2
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640413",
+              "name": "RSabatonsSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 11.2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432432432432433,
+                  "y": 0.12384615384615386,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 111,
+                    "y": 52
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1450
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640414",
+              "name": "RSabatonsSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -11.2
+              },
+              "orientation": {
+                "x": 0.7071067811865476,
+                "y": 0.7071067811865475,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 56,
+                    "y": 120
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 234,
+                      "y": 990
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640415",
+              "name": "RSabatonsSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -3.36,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.7026738135323082,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7115121304489215
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12448598130841122,
+                  "y": 0.12445416628692203,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 804
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640416",
+              "name": "RSabatonsSurface3",
+              "position": {
+                "x": 6.8136,
+                "y": -2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6448489086385368,
+                "y": 0.2671051636395709,
+                "z": 0.2740464211840839,
+                "w": 0.6616065867424248
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794172,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 306,
+                      "y": 791
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640417",
+              "name": "RSabatonsSurface4",
+              "position": {
+                "x": 7.2,
+                "y": 0.0,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49326055223888604,
+                "y": 0.49326055223888604,
+                "z": 0.5066498076630337,
+                "w": 0.5066498076630338
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12372093023255815,
+                  "y": 0.1244890792969308,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 43,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 113,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640418",
+              "name": "RSabatonsSurface5",
+              "position": {
+                "x": 6.8136,
+                "y": 2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.2671051636395709,
+                "y": 0.6448489086385368,
+                "z": 0.6616065867424248,
+                "w": 0.2740464211840839
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794174,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 291,
+                      "y": 791
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640419",
+              "name": "RSabatonsSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 3.36,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7026738135323082,
+                "z": 0.7115121304489215,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12448598130841122,
+                  "y": 0.12445416628692203,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640420",
+              "name": "RSabatonsSurface7",
+              "position": {
+                "x": -6.8136,
+                "y": 2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.2671051636395709,
+                "y": 0.6448489086385368,
+                "z": 0.6616065867424248,
+                "w": -0.2740464211840839
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794172,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 423
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640421",
+              "name": "RSabatonsSurface8",
+              "position": {
+                "x": -7.2,
+                "y": 0.0,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49326055223888604,
+                "y": -0.49326055223888604,
+                "z": -0.5066498076630337,
+                "w": 0.5066498076630338
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12372093023255815,
+                  "y": 0.1244890792969308,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 43,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 113,
+                      "y": 804
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640422",
+              "name": "RSabatonsSurface9",
+              "position": {
+                "x": -6.8136,
+                "y": -2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6448489086385368,
+                "y": -0.2671051636395709,
+                "z": -0.2740464211840839,
+                "w": 0.6616065867424248
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794174,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 607
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640434",
+          "name": "RAnkleGuard",
+          "position": {
+            "x": 0.0,
+            "y": 5.8,
+            "z": 7.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640424",
+              "name": "RAnkleGuardSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0118999999999998,
+                "z": 1.9
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432432432432435,
+                  "y": 0.12412698412698413,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 74,
+                    "y": 63
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1296
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640425",
+              "name": "RAnkleGuardSurface1",
+              "position": {
+                "x": 0.04311431226889351,
+                "y": -0.0009945631434575136,
+                "z": -1.9
+              },
+              "orientation": {
+                "x": 0.7152139244799346,
+                "y": 0.6989056032326615,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12324122936596708,
+                  "y": 0.12496675483226197,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 70,
+                    "y": 80
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640426",
+              "name": "RAnkleGuardSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -4.074050000000001,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.6737170326299344,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7389894180191728
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444444444444445,
+                  "y": 0.12310513264548657,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 45,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 166,
+                      "y": 1480
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640427",
+              "name": "RAnkleGuardSurface3",
+              "position": {
+                "x": 3.751901393701687,
+                "y": -2.923102128631812,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6126968899111807,
+                "y": 0.2680031995574582,
+                "z": 0.29795640496669723,
+                "w": 0.6811745641606514
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465573895508328,
+                  "y": 0.12326927496060733,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 292,
+                      "y": 1398
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640428",
+              "name": "RAnkleGuardSurface4",
+              "position": {
+                "x": 4.7519681247831045,
+                "y": 0.29293179065243596,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.467877231842597,
+                "y": 0.4787947179321081,
+                "z": 0.531306480150866,
+                "w": 0.5191916198797119
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12389009283248123,
+                  "y": 0.12324501610342403,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 35,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 215,
+                      "y": 1486
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640429",
+              "name": "RAnkleGuardSurface5",
+              "position": {
+                "x": 3.722068214804064,
+                "y": 3.206992017416546,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.23099971689221563,
+                "y": 0.6284389353156415,
+                "z": 0.6971615045734185,
+                "w": 0.2562605547406517
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11983152161588716,
+                  "y": 0.12324132978535354,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 1010
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640430",
+              "name": "RAnkleGuardSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 4.08595,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6760095949051769,
+                "z": 0.7368928196122816,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444444444444445,
+                  "y": 0.12303671359728353,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 45,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 117,
+                      "y": 1480
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640431",
+              "name": "RAnkleGuardSurface7",
+              "position": {
+                "x": -3.7220682148040645,
+                "y": 3.2069920174165456,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": -0.23099971689221557,
+                "y": 0.6284389353156414,
+                "z": 0.6971615045734186,
+                "w": -0.2562605547406517
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11983152161588716,
+                  "y": 0.12324132978535354,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 975
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640432",
+              "name": "RAnkleGuardSurface8",
+              "position": {
+                "x": -4.7519681247831045,
+                "y": 0.29293179065243596,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.467877231842597,
+                "y": -0.4787947179321081,
+                "z": -0.531306480150866,
+                "w": 0.5191916198797119
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12389009283248123,
+                  "y": 0.12324501610342403,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 35,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 254,
+                      "y": 1486
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640433",
+              "name": "RAnkleGuardSurface9",
+              "position": {
+                "x": -3.7519013937016874,
+                "y": -2.923102128631811,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6126968899111807,
+                "y": -0.2680031995574582,
+                "z": -0.29795640496669723,
+                "w": 0.6811745641606514
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465573895508328,
+                  "y": 0.12326927496060733,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 292,
+                      "y": 1363
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "640443",
+      "name": "L-Thigh",
+      "position": {
+        "x": 7.0778312818088605,
+        "y": 13.2316,
+        "z": -2.865078646956155
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.019200083285561817,
+        "z": 0.0,
+        "w": 0.9998156630099371
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "640442",
+          "name": "LBreeches",
+          "position": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640436",
+              "name": "LBreechesSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 7.1
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12485714285714287,
+                  "y": 0.12474576271186441,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 84,
+                    "y": 177
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 146,
+                      "y": 990
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640437",
+              "name": "LBreechesSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -7.1
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12391304347826088,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 192
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 198,
+                      "y": 423
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640438",
+              "name": "LBreechesSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -11.52,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6828427107020817,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7305654196860355
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12391304347826088,
+                  "y": 0.12484573429436394,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 130,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640439",
+              "name": "LBreechesSurface3",
+              "position": {
+                "x": 5.472,
+                "y": 0.0,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.491910527644304,
+                "y": 0.491910527644304,
+                "z": 0.5079606606743308,
+                "w": 0.5079606606743307
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12462561231173591,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 192,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 502
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640440",
+              "name": "LBreechesSurface4",
+              "position": {
+                "x": 0.0,
+                "y": 11.52,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6828427107020817,
+                "z": 0.7305654196860355,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12391304347826088,
+                  "y": 0.12484573429436394,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 92,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 1332
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640441",
+              "name": "LBreechesSurface5",
+              "position": {
+                "x": -5.472,
+                "y": 0.0,
+                "z": 8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.491910527644304,
+                "y": -0.491910527644304,
+                "z": -0.5079606606743308,
+                "w": 0.5079606606743307
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12462561231173591,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 192,
+                    "y": 114
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 384
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "640460",
+      "name": "L-Calf",
+      "position": {
+        "x": 7.0778312818088605,
+        "y": -8.7684,
+        "z": -2.865078646956155
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.019200083285561817,
+        "z": 0.0,
+        "w": 0.9998156630099371
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "640450",
+          "name": "LBootLeather",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640444",
+              "name": "LBootLeatherSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 7.2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12409302325581396,
+                  "y": 0.12452525252525254,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 86,
+                    "y": 198
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 221,
+                      "y": 221
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640445",
+              "name": "LBootLeatherSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -7.2
+              },
+              "orientation": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12473118279569892,
+                  "y": 0.12465116279069768,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 93,
+                    "y": 215
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 221,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640446",
+              "name": "LBootLeatherSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -12.864,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6803532122046941,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7328843746749922
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12473118279569892,
+                  "y": 0.12448144043623398,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 93,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 131,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640447",
+              "name": "LBootLeatherSurface3",
+              "position": {
+                "x": 5.5680000000000005,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.49188273309608543,
+                "y": 0.49188273309608543,
+                "z": 0.5079875755192494,
+                "w": 0.5079875755192494
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465116279069768,
+                  "y": 0.12420235875989634,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 215,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640448",
+              "name": "LBootLeatherSurface4",
+              "position": {
+                "x": 0.0,
+                "y": 12.864,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6803532122046941,
+                "z": 0.7328843746749922,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12473118279569892,
+                  "y": 0.12448144043623398,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 93,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 34,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640449",
+              "name": "LBootLeatherSurface5",
+              "position": {
+                "x": -5.5680000000000005,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.49188273309608543,
+                "y": -0.49188273309608543,
+                "z": -0.5079875755192494,
+                "w": 0.5079875755192494
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465116279069768,
+                  "y": 0.12420235875989634,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 215,
+                    "y": 116
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 122
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640459",
+          "name": "LGreave",
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 7.1
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640451",
+              "name": "LGreaveSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.673333333333332,
+                "z": 2.25
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12404494382022473,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 89,
+                    "y": 184
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 198,
+                      "y": 619
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640452",
+              "name": "LGreaveSurface1",
+              "position": {
+                "x": 0.4224852071005918,
+                "y": 0.07396449704141972,
+                "z": -2.25
+              },
+              "orientation": {
+                "x": 0.8320502943378437,
+                "y": 0.5547001962252291,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12490842490842492,
+                  "y": 0.12452619843924191,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 210,
+                    "y": 138
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 242
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640453",
+              "name": "LGreaveSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -11.413333333333334,
+                "z": 4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.611430625120697,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7912980416154926
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.1236842105263158,
+                  "y": 0.12238033646320405,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 76,
+                    "y": 38
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 234,
+                      "y": 1114
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640454",
+              "name": "LGreaveSurface3",
+              "position": {
+                "x": 5.122922697988181,
+                "y": -2.4844631319676123,
+                "z": -8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.49008817958108447,
+                "y": 0.45770165030812976,
+                "z": 0.5063382961961422,
+                "w": 0.5421663078293419
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12447334480695588,
+                  "y": 0.12224232595047825,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 153,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1171
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640455",
+              "name": "LGreaveSurface4",
+              "position": {
+                "x": 4.510000000000001,
+                "y": 9.826666666666666,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.36646899197148697,
+                "y": 0.5497034879572305,
+                "z": 0.6246068904802022,
+                "w": 0.4164045936534682
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12287749287749286,
+                  "y": 0.12261530636715498,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 226,
+                      "y": 1404
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640456",
+              "name": "LGreaveSurface5",
+              "position": {
+                "x": 0.0,
+                "y": 12.586666666666668,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6400467613736539,
+                "z": 0.7683359572837242,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.12365677946321957,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 56,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1363
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640457",
+              "name": "LGreaveSurface6",
+              "position": {
+                "x": -4.51,
+                "y": 9.826666666666666,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.36646899197148697,
+                "y": 0.5497034879572305,
+                "z": 0.6246068904802022,
+                "w": -0.4164045936534682
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12287749287749287,
+                  "y": 0.12261530636715498,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 54,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1445
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640458",
+              "name": "LGreaveSurface7",
+              "position": {
+                "x": -5.122922697988181,
+                "y": -2.4844631319676123,
+                "z": -8.881784197001252e-16
+              },
+              "orientation": {
+                "x": 0.4900881795810844,
+                "y": -0.4577016503081297,
+                "z": -0.5063382961961422,
+                "w": 0.542166307829342
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12447334480695588,
+                  "y": 0.12224232595047825,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 153,
+                    "y": 37
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 159,
+                      "y": 1171
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "640494",
+      "name": "L-Foot",
+      "position": {
+        "x": 7.15461745780886,
+        "y": -21.7684,
+        "z": -0.866553206956155
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.019200083285561817,
+        "z": 0.0,
+        "w": 0.9998156630099371
+      },
+      "shape": {
+        "type": "none",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "stretch": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "settings": {
+          "isPiece": true
+        },
+        "textureLayout": {},
+        "visible": true,
+        "doubleSided": false,
+        "shadingMode": "flat",
+        "unwrapMode": "custom"
+      },
+      "children": [
+        {
+          "id": "640471",
+          "name": "LSole",
+          "position": {
+            "x": 0.0,
+            "y": -2.5,
+            "z": 0.5
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640461",
+              "name": "LSoleSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 11.15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432432432432433,
+                  "y": 0.12384615384615386,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 111,
+                    "y": 26
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 117,
+                      "y": 1450
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640462",
+              "name": "LSoleSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -11.15
+              },
+              "orientation": {
+                "x": 0.7071067811865476,
+                "y": 0.7071067811865475,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 28,
+                    "y": 120
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640463",
+              "name": "LSoleSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -1.6800000000000002,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.7048837126825963,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.709322882469471
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12421052631578948,
+                  "y": 0.12458346065672232,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 114,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 988
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640464",
+              "name": "LSoleSurface3",
+              "position": {
+                "x": 7.0068,
+                "y": -1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6459254390799217,
+                "y": 0.26755107714869997,
+                "z": 0.2736110935676706,
+                "w": 0.6605556129068044
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183045,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 278,
+                      "y": 807
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640465",
+              "name": "LSoleSurface4",
+              "position": {
+                "x": 7.2,
+                "y": 0.0,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49323014506478674,
+                "y": 0.49323014506478674,
+                "z": 0.5066794094882577,
+                "w": 0.5066794094882576
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12090909090909091,
+                  "y": 0.12462609099762538,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 160,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640466",
+              "name": "LSoleSurface5",
+              "position": {
+                "x": 7.0068,
+                "y": 1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.26755107714869997,
+                "y": 0.6459254390799217,
+                "z": 0.6605556129068044,
+                "w": 0.2736110935676706
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183047,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 309,
+                      "y": 606
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640467",
+              "name": "LSoleSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 1.6800000000000002,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7048837126825963,
+                "z": 0.709322882469471,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12421052631578948,
+                  "y": 0.12458346065672232,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 114,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 160,
+                      "y": 807
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640468",
+              "name": "LSoleSurface7",
+              "position": {
+                "x": -7.0068,
+                "y": 1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.26755107714869997,
+                "y": 0.6459254390799217,
+                "z": 0.6605556129068044,
+                "w": -0.2736110935676706
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183045,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 186,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640469",
+              "name": "LSoleSurface8",
+              "position": {
+                "x": -7.2,
+                "y": 0.0,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49323014506478674,
+                "y": -0.49323014506478674,
+                "z": -0.5066794094882577,
+                "w": 0.5066794094882576
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12090909090909091,
+                  "y": 0.12462609099762538,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 22,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 120,
+                      "y": 988
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640470",
+              "name": "LSoleSurface9",
+              "position": {
+                "x": -7.0068,
+                "y": -1.4700000000000002,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6459254390799217,
+                "y": -0.26755107714869997,
+                "z": -0.2736110935676706,
+                "w": 0.6605556129068044
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11193500346183047,
+                  "y": 0.12461225407633154,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 8,
+                    "y": 179
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 309,
+                      "y": 423
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640482",
+          "name": "LSabatons",
+          "position": {
+            "x": 0.0,
+            "y": 0.7,
+            "z": 1.2
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640472",
+              "name": "LSabatonsSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 11.2
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432432432432433,
+                  "y": 0.12384615384615386,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 111,
+                    "y": 52
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 1450
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640473",
+              "name": "LSabatonsSurface1",
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -11.2
+              },
+              "orientation": {
+                "x": 0.7071067811865476,
+                "y": 0.7071067811865475,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.125,
+                  "y": 0.125,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 56,
+                    "y": 120
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 234,
+                      "y": 990
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640474",
+              "name": "LSabatonsSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -3.36,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.7026738135323082,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7115121304489215
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12448598130841122,
+                  "y": 0.12445416628692203,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 804
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640475",
+              "name": "LSabatonsSurface3",
+              "position": {
+                "x": 6.8136,
+                "y": -2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6448489086385368,
+                "y": 0.2671051636395709,
+                "z": 0.2740464211840839,
+                "w": 0.6616065867424248
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794172,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 306,
+                      "y": 791
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640476",
+              "name": "LSabatonsSurface4",
+              "position": {
+                "x": 7.2,
+                "y": 0.0,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49326055223888604,
+                "y": 0.49326055223888604,
+                "z": 0.5066498076630337,
+                "w": 0.5066498076630338
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12372093023255815,
+                  "y": 0.1244890792969308,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 43,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 113,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640477",
+              "name": "LSabatonsSurface5",
+              "position": {
+                "x": 6.8136,
+                "y": 2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.2671051636395709,
+                "y": 0.6448489086385368,
+                "z": 0.6616065867424248,
+                "w": 0.2740464211840839
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794174,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 291,
+                      "y": 791
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640478",
+              "name": "LSabatonsSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 3.36,
+                "z": 1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.7026738135323082,
+                "z": 0.7115121304489215,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12448598130841122,
+                  "y": 0.12445416628692203,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 107,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 2,
+                      "y": 620
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640479",
+              "name": "LSabatonsSurface7",
+              "position": {
+                "x": -6.8136,
+                "y": 2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": -0.2671051636395709,
+                "y": 0.6448489086385368,
+                "z": 0.6616065867424248,
+                "w": -0.2740464211840839
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794172,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 423
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640480",
+              "name": "LSabatonsSurface8",
+              "position": {
+                "x": -7.2,
+                "y": 0.0,
+                "z": -1.7763568394002505e-15
+              },
+              "orientation": {
+                "x": 0.49326055223888604,
+                "y": -0.49326055223888604,
+                "z": -0.5066498076630337,
+                "w": 0.5066498076630338
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12372093023255815,
+                  "y": 0.1244890792969308,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 43,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 113,
+                      "y": 804
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640481",
+              "name": "LSabatonsSurface9",
+              "position": {
+                "x": -6.8136,
+                "y": -2.9400000000000004,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6448489086385368,
+                "y": -0.2671051636395709,
+                "z": -0.2740464211840839,
+                "w": 0.6616065867424248
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12424508969794174,
+                  "y": 0.12448540024466352,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 11,
+                    "y": 180
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 607
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "640493",
+          "name": "LAnkleGuard",
+          "position": {
+            "x": 0.0,
+            "y": 5.8,
+            "z": 7.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "shape": {
+            "type": "none",
+            "offset": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "stretch": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "settings": {
+              "isPiece": false
+            },
+            "textureLayout": {},
+            "visible": true,
+            "doubleSided": false,
+            "shadingMode": "flat",
+            "unwrapMode": "custom"
+          },
+          "children": [
+            {
+              "id": "640483",
+              "name": "LAnkleGuardSurface0",
+              "position": {
+                "x": 0.0,
+                "y": 0.0118999999999998,
+                "z": 1.9
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12432432432432435,
+                  "y": 0.12412698412698413,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 74,
+                    "y": 63
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1296
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640484",
+              "name": "LAnkleGuardSurface1",
+              "position": {
+                "x": 0.04311431226889351,
+                "y": -0.0009945631434575136,
+                "z": -1.9
+              },
+              "orientation": {
+                "x": 0.7152139244799346,
+                "y": 0.6989056032326615,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12324122936596708,
+                  "y": 0.12496675483226197,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 70,
+                    "y": 80
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 232,
+                      "y": 1212
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640485",
+              "name": "LAnkleGuardSurface2",
+              "position": {
+                "x": 0.0,
+                "y": -4.074050000000001,
+                "z": -4.440892098500626e-16
+              },
+              "orientation": {
+                "x": 0.6737170326299344,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.7389894180191728
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444444444444445,
+                  "y": 0.12310513264548657,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 45,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 166,
+                      "y": 1480
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640486",
+              "name": "LAnkleGuardSurface3",
+              "position": {
+                "x": 3.751901393701687,
+                "y": -2.923102128631812,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6126968899111807,
+                "y": 0.2680031995574582,
+                "z": 0.29795640496669723,
+                "w": 0.6811745641606514
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465573895508328,
+                  "y": 0.12326927496060733,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 292,
+                      "y": 1398
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640487",
+              "name": "LAnkleGuardSurface4",
+              "position": {
+                "x": 4.7519681247831045,
+                "y": 0.29293179065243596,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.467877231842597,
+                "y": 0.4787947179321081,
+                "z": 0.531306480150866,
+                "w": 0.5191916198797119
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12389009283248123,
+                  "y": 0.12324501610342403,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 35,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 215,
+                      "y": 1486
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640488",
+              "name": "LAnkleGuardSurface5",
+              "position": {
+                "x": 3.722068214804064,
+                "y": 3.206992017416546,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.23099971689221563,
+                "y": 0.6284389353156415,
+                "z": 0.6971615045734185,
+                "w": 0.2562605547406517
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11983152161588716,
+                  "y": 0.12324132978535354,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 1010
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640489",
+              "name": "LAnkleGuardSurface6",
+              "position": {
+                "x": 0.0,
+                "y": 4.08595,
+                "z": -2.220446049250313e-16
+              },
+              "orientation": {
+                "x": 0.0,
+                "y": 0.6760095949051769,
+                "z": 0.7368928196122816,
+                "w": 0.0
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12444444444444445,
+                  "y": 0.12303671359728353,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 45,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 117,
+                      "y": 1480
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640490",
+              "name": "LAnkleGuardSurface7",
+              "position": {
+                "x": -3.7220682148040645,
+                "y": 3.2069920174165456,
+                "z": 2.220446049250313e-16
+              },
+              "orientation": {
+                "x": -0.23099971689221557,
+                "y": 0.6284389353156414,
+                "z": 0.6971615045734186,
+                "w": -0.2562605547406517
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.11983152161588716,
+                  "y": 0.12324132978535354,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 23,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 294,
+                      "y": 975
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640491",
+              "name": "LAnkleGuardSurface8",
+              "position": {
+                "x": -4.7519681247831045,
+                "y": 0.29293179065243596,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.467877231842597,
+                "y": -0.4787947179321081,
+                "z": -0.531306480150866,
+                "w": 0.5191916198797119
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12389009283248123,
+                  "y": 0.12324501610342403,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 35,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 254,
+                      "y": 1486
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            },
+            {
+              "id": "640492",
+              "name": "LAnkleGuardSurface9",
+              "position": {
+                "x": -3.7519013937016874,
+                "y": -2.923102128631811,
+                "z": 0.0
+              },
+              "orientation": {
+                "x": 0.6126968899111807,
+                "y": -0.2680031995574582,
+                "z": -0.29795640496669723,
+                "w": 0.6811745641606514
+              },
+              "shape": {
+                "type": "quad",
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0
+                },
+                "stretch": {
+                  "x": 0.12465573895508328,
+                  "y": 0.12326927496060733,
+                  "z": 1.0
+                },
+                "settings": {
+                  "isPiece": false,
+                  "normal": "+Z",
+                  "size": {
+                    "x": 26,
+                    "y": 31
+                  }
+                },
+                "textureLayout": {
+                  "front": {
+                    "offset": {
+                      "x": 292,
+                      "y": 1363
+                    },
+                    "mirror": {
+                      "x": false,
+                      "y": false
+                    },
+                    "angle": 0
+                  }
+                },
+                "visible": true,
+                "doubleSided": false,
+                "shadingMode": "standard",
+                "unwrapMode": "custom"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "Type": "Explode",
+  "Effects": {
+    "WorldSoundEventId": "SFX_Goblin_Lobber_Bomb_Death",
+    "Particles": [
+      {
+        "SystemId": "Explosion_Medium",
+        "TargetEntityPart": "Entity"
+      }
+    ]
+  },
+  "Config": {
+    "DamageEntities": false,
+    "DamageBlocks": false,
+    "EntityDamage": 52,
+    "EntityDamageRadius": 4.25
+  },
+  "Next": "AxoTomTom_Finish"
+}

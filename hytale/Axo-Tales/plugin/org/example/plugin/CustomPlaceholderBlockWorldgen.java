@@ -4,7 +4,6 @@ import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
-import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.events.ChunkPreLoadProcessEvent;
 
 import javax.annotation.Nonnull;
@@ -14,15 +13,15 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Chunk-time worldgen for the Axo Tales surface Arcane Crystal block.
- *
- * <p>Crystals are persistent resource nodes. They are generated above the terrain surface in new chunks and, when
- * enabled by config, in already-generated chunks as they are pre-loaded.</p>
- */
+
+
+
+
+
+
 public final class CustomPlaceholderBlockWorldgen {
 
-    public static final String BLOCK_ITEM_ID = "Rock_Crystal_Arcane_Large";
+    public static final String BLOCK_ITEM_ID = "Axo_Arcane_Crystal";
 
     private static final int CHUNK_WIDTH_BLOCKS = ChunkUtil.SIZE;
     private static final int LOCAL_MIN = 1;
@@ -52,7 +51,7 @@ public final class CustomPlaceholderBlockWorldgen {
     }
 
     public void onChunkPreLoad(@Nonnull ChunkPreLoadProcessEvent event) {
-        WorldChunk chunk = event.getChunk();
+        WorldBlocks.Column chunk = WorldBlocks.preLoad(event);
         if (chunk == null) {
             return;
         }
@@ -92,13 +91,10 @@ public final class CustomPlaceholderBlockWorldgen {
 
         Runnable work = () -> {
             try {
-                WorldChunk current = chunk;
+                WorldBlocks.Column current = chunk;
                 String chunkRef = "event";
 
-                WorldChunk resolved = world.getChunkIfLoaded(chunkIndex);
-                if (resolved == null) {
-                    resolved = world.getChunkIfInMemory(chunkIndex);
-                }
+                WorldBlocks.Column resolved = WorldBlocks.loaded(world, chunkIndex);
                 if (resolved != null) {
                     current = resolved;
                     chunkRef = "world";
@@ -139,7 +135,7 @@ public final class CustomPlaceholderBlockWorldgen {
 
     private @Nonnull PlacementSummary maybePlaceInChunk(
         @Nonnull World world,
-        @Nonnull WorldChunk chunk,
+        @Nonnull WorldBlocks.Column chunk,
         boolean newlyGenerated
     ) {
         double chance = chancePerNewChunk();
@@ -223,7 +219,7 @@ public final class CustomPlaceholderBlockWorldgen {
 
     private @Nonnull PlacementSummary maybePlaceSingleDensityCell(
         @Nonnull World world,
-        @Nonnull WorldChunk chunk,
+        @Nonnull WorldBlocks.Column chunk,
         double chance,
         int target,
         int radiusBlocks,
@@ -312,7 +308,7 @@ public final class CustomPlaceholderBlockWorldgen {
 
     private void maybeLogPlacement(
         @Nonnull World world,
-        @Nonnull WorldChunk chunk,
+        @Nonnull WorldBlocks.Column chunk,
         @Nonnull String chunkRef,
         @Nonnull PlacementSummary summary
     ) {
@@ -377,14 +373,14 @@ public final class CustomPlaceholderBlockWorldgen {
         return serverConfig.worldgen.arcaneCrystalMaxPlacementsPerRadius;
     }
 
-    /**
-     * Forces a visible marker placement at the specified local column in a loaded chunk.
-     *
-     * <p>Intended for debugging when you cannot find any naturally generated crystal markers.</p>
-     *
-     * <p>Must be called on the world thread.</p>
-     */
-    public int placeMarkerAtPlayerColumn(@Nonnull World world, @Nonnull WorldChunk chunk, int localX, int localZ, @Nonnull PlayerRef player) {
+
+
+
+
+
+
+
+    public int placeMarkerAtPlayerColumn(@Nonnull World world, @Nonnull WorldBlocks.Column chunk, int localX, int localZ, @Nonnull PlayerRef player) {
         int crystalTypeId = crystalTypeId();
         if (crystalTypeId < 0) {
             debug.traceFileOnly(player, "Worldgen.ArcaneCrystal command failed reason=missingBlockType blockId=" + BLOCK_ITEM_ID);
@@ -395,15 +391,15 @@ public final class CustomPlaceholderBlockWorldgen {
 
     private int placeMarkerColumn(
         @Nonnull World world,
-        @Nonnull WorldChunk chunk,
+        @Nonnull WorldBlocks.Column chunk,
         int localX,
         int localZ,
         @Nullable PlayerRef player,
         @Nonnull String reason,
         int crystalTypeId
     ) {
-        // Heightmap is per-chunk column; place above surface so the crystal is visible.
-        // Avoid chunk borders to prevent accidental out-of-range neighbor math in engine internals.
+
+
         int safeLocalX = clampLocal(localX);
         int safeLocalZ = clampLocal(localZ);
 
@@ -489,7 +485,7 @@ public final class CustomPlaceholderBlockWorldgen {
         return placed;
     }
 
-    private int countExistingCrystalColumnsNearSurface(@Nonnull WorldChunk chunk, int crystalTypeId) {
+    private int countExistingCrystalColumnsNearSurface(@Nonnull WorldBlocks.Column chunk, int crystalTypeId) {
         int found = 0;
         for (int localX = LOCAL_MIN; localX <= LOCAL_MAX; localX++) {
             for (int localZ = LOCAL_MIN; localZ <= LOCAL_MAX; localZ++) {
@@ -524,10 +520,7 @@ public final class CustomPlaceholderBlockWorldgen {
         for (int chunkX = centerChunkX - chunkRadius; chunkX <= centerChunkX + chunkRadius; chunkX++) {
             for (int chunkZ = centerChunkZ - chunkRadius; chunkZ <= centerChunkZ + chunkRadius; chunkZ++) {
                 long chunkIndex = ChunkUtil.indexChunk(chunkX, chunkZ);
-                WorldChunk chunk = world.getChunkIfLoaded(chunkIndex);
-                if (chunk == null) {
-                    chunk = world.getChunkIfInMemory(chunkIndex);
-                }
+                WorldBlocks.Column chunk = WorldBlocks.loaded(world, chunkIndex);
                 if (chunk == null) {
                     continue;
                 }
@@ -562,7 +555,7 @@ public final class CustomPlaceholderBlockWorldgen {
         return found;
     }
 
-    private boolean columnHasCrystalNearSurface(@Nonnull WorldChunk chunk, int localX, int localZ, int surfaceY, int crystalTypeId) {
+    private boolean columnHasCrystalNearSurface(@Nonnull WorldBlocks.Column chunk, int localX, int localZ, int surfaceY, int crystalTypeId) {
         int fromY = clampY(surfaceY - 4);
         int toY = clampY(surfaceY + 2);
         for (int y = fromY; y <= toY; y++) {
@@ -577,7 +570,7 @@ public final class CustomPlaceholderBlockWorldgen {
         return false;
     }
 
-    private int pruneLegacyCrystalClusters(@Nonnull World world, @Nonnull WorldChunk chunk) {
+    private int pruneLegacyCrystalClusters(@Nonnull World world, @Nonnull WorldBlocks.Column chunk) {
         int crystalTypeId = crystalTypeId();
         if (crystalTypeId < 0 || maxPlacementsPerRadius() != 1) {
             return 0;
@@ -612,7 +605,7 @@ public final class CustomPlaceholderBlockWorldgen {
                             pruned++;
                         }
                     } catch (Throwable ignored) {
-                        // Best-effort legacy cleanup.
+
                     }
                 }
             }
@@ -675,7 +668,7 @@ public final class CustomPlaceholderBlockWorldgen {
         return Math.max(LOCAL_MIN, Math.min(LOCAL_MAX, local));
     }
 
-    private static long seedFor(@Nonnull World world, @Nonnull WorldChunk chunk) {
+    private static long seedFor(@Nonnull World world, @Nonnull WorldBlocks.Column chunk) {
         long seed = SEED_SALT;
 
         UUID worldUuid = worldUuid(world);

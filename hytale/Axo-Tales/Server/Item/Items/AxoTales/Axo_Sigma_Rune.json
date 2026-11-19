@@ -1,0 +1,41 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.flock4h.rune_sigma.name",
+    "Description": "server.items.flock4h.rune.description"
+  },
+  "Quality": "AxoTales_Internal",
+  "Categories": [],
+  "BlockType": {
+    "Material": "Empty",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Items/AxoTales/SkillTree/Rune_Sigma.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Items/AxoTales/SkillTree/Rune_Sigma.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "AxoTales_Rune",
+    "Flags": {
+      "IsStackable": false
+    },
+    "Gathering": {
+      "Soft": {
+        "DropList": "Empty"
+      }
+    },
+    "BlockParticleSetId": "Crystal",
+    "BlockSoundSetId": "Crystal",
+    "Light": {
+      "Color": "#638"
+    },
+    "ParticleColor": "#b986ff"
+  },
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "Icon": "Icons/ItemsGenerated/AxoTales_Rune_Sigma.png",
+  "ItemSoundSetId": "ISS_Items_Foliage"
+}
